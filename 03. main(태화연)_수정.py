@@ -128,7 +128,7 @@ def 검색():
     pag.click(week)
     time.sleep(0.2)
     #검색
-    button = pag.locateCenterOnScreen('./Test/image/test_2.png', region = find_range, confidence=0.85) 
+    button = pag.locateCenterOnScreen("./Test//image/test_2.png", region = find_range, confidence=0.85) 
     if (button == None) :
         None      
     else :
@@ -171,7 +171,6 @@ btn4.pack(side=LEFT)
 btn5 = Button(root, padx=10, pady=5, text="태 화 연", command=job, bg="red", fg="white")
 btn5.pack(side=LEFT)
 
-#btn4 = Button(root, padx=10, pady=5, text="대왕암 Start", command=job1)
-#btn4.pack()
+
 
 root.mainloop()
