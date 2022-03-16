@@ -146,11 +146,7 @@ def 결제_page2():
     #페이지 아래
     pag.hotkey('end')
     time.sleep(0.2)
-<<<<<<< HEAD
     buttonpostion2_1 = pag.locateCenterOnScreen('./image/01_2. payment1.png', region = (0,0,1920,1680), confidence=0.6) #reservation 67%    
-=======
-    buttonpostion2_1 = pag.locateCenterOnScreen('./image/01_2. payment1.png', region = (0,0,1920,1680), confidence=0.7) #reservation 67%    
->>>>>>> f65143813bb9b09dd450b2bc5ba4ded52159cfe6
     if (buttonpostion2_1 == None) :
         결제_page2()
     else :
@@ -216,7 +212,6 @@ def 결제_page5():
         결제_page5()
     else :
         #앱결제
-        
         pag.click(buttonpostion5.x,buttonpostion5.y)
         결제_page6()
 
@@ -391,17 +386,11 @@ btn1.pack(side=LEFT)
 btn2 = Button(root, padx=10, pady=5, text="다 음 달", command=job1, bg="blue", fg="white")
 btn2.pack(side=LEFT)
 
-<<<<<<< HEAD
 btn3 = Button(root, padx=10, pady=5, text="보안문자", command=보안문자_보내기, bg="green", fg="white")
-=======
-btn3 = Button(root, padx=10, pady=5, text="보안문자", command=결제_page1, bg="green", fg="white")
->>>>>>> f65143813bb9b09dd450b2bc5ba4ded52159cfe6
 btn3.pack(side=LEFT)
 
 btn4 = Button(root, padx=10, pady=5, text="자동입력", command=수동결제, bg="black", fg="white")
 btn4.pack(side=LEFT)
 
-#btn4 = Button(root, padx=10, pady=5, text="대왕암 Start", command=job1)
-#btn4.pack()
 
 root.mainloop()
