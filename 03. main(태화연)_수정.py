@@ -128,7 +128,7 @@ def 검색():
     pag.click(week)
     time.sleep(0.2)
     #검색
-    button = pag.locateCenterOnScreen("./Test//image/test_2.png", region = find_range, confidence=0.85) 
+    button = pag.locateCenterOnScreen("./image/test_2.png", region = find_range, confidence=0.85) 
     if (button == None) :
         None      
     else :
@@ -140,7 +140,7 @@ def 검색():
         확인()
         
 def 확인() : 
-    button1 = pag.locateCenterOnScreen('./Test/image/test_3.png', region = (705,69,1151,192),confidence=0.8)   
+    button1 = pag.locateCenterOnScreen('./image/test_3.png', region = (705,69,1151,192),confidence=0.8)   
     print(button1)
     if (button1 == None) :
         확인()      
