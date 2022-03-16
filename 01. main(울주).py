@@ -74,30 +74,30 @@ def 검색():
 def 보안문자_보내기():
     #보안문자 캡처
     pag.click(1800,800)
-    time.sleep(0.2)
+    time.sleep(0.1)
     #이지미 저장
     pag.click(754,1001,button='right')
-    time.sleep(0.2)
+    time.sleep(0.1)
     pag.click(872,680)
-    time.sleep(0.2)
+    time.sleep(0.1)
     #카카오톡 선택
     pag.click(3804,83)
-    time.sleep(0.2)
+    time.sleep(0.1)
     #카카오톡 보안문자 전송
     pag.hotkey('Ctrl','v')
-    time.sleep(0.2)
+    time.sleep(0.1)
     pag.hotkey('enter')
-    time.sleep(0.2)
+    time.sleep(0.1)
     #URL 전송
     pag.click(650,53)
-    time.sleep(0.2)
+    time.sleep(0.1)
     pag.hotkey('ctrl', 'c')
     url = pyperclip.paste()
     kakao_sendmessage("박정철", url)
     #기간
     pag.click(x=907, y=750)
     pag.hotkey('end')
-    pag.sleep(0.2)
+    pag.sleep(0.1)
     #총인원
     pag.click(x=1019, y=747)
     pag.hotkey('end')
@@ -105,10 +105,10 @@ def 보안문자_보내기():
     pag.click(1600,800)
     #페이지 아래
     pag.hotkey('end')
-    time.sleep(0.2)
+    time.sleep(0.1)
     #카카오톡 선택
     pag.click(3804,83)
-    time.sleep(0.2)
+    time.sleep(0.1)
     보안문자_받기()
     
 def 보안문자_받기():
@@ -116,21 +116,18 @@ def 보안문자_받기():
     if (text1 == None) :
         보안문자_받기()
     else :
-        #보안문자 클릭
+        #보안문자 더블 클릭
         pag.doubleClick(89,285)
         #보안문자 받고 입력 하기 
-        time.sleep(0.2)
-        #보안문자 더블클릭
-        pag.click(button='right')
-        time.sleep(0.2)
+        time.sleep(0.1)
         #보안문자 복사
-        pag.click(x=131,y=311)
-        time.sleep(0.2)
+        pag.hotkey('ctrl', 'c')
+        time.sleep(0.1)
         #보안문자 붙여넣기
         pag.click(x=770, y=195)
-        time.sleep(0.2)
+        time.sleep(0.1)
         pag.hotkey('ctrl', 'v')
-        time.sleep(0.2)
+        time.sleep(0.1)
         자동결제()
     
 
@@ -140,30 +137,36 @@ def 결제_page1():
     #다음 클릭
     buttonpostion1 = pag.locateCenterOnScreen('./image/01_1. next.png', region = (0,0,1920,1680), confidence=0.8) #reservation 67%
     pag.click(buttonpostion1.x-30,buttonpostion1.y)
-    time.sleep(0.2) #다음 페이지
+    time.sleep(0.1) #다음 페이지
+    결제_page2()
 #도착시간 차량설정
 def 결제_page2():
+    #페이지 선택
+    pag.click(1600,800)
     #페이지 아래
     pag.hotkey('end')
-    time.sleep(0.3)
-    buttonpostion2_1 = pag.locateCenterOnScreen('./image/01_2. payment1.png', region = (0,0,1920,1680), confidence=0.7) #reservation 67%    
+    time.sleep(0.2)
+    buttonpostion2_1 = pag.locateCenterOnScreen('./image/01_2. payment1.png', region = (0,0,1920,1680), confidence=0.6) #reservation 67%    
     if (buttonpostion2_1 == None) :
         결제_page2()
     else :
         #도착예정시간 선택
-        pag.click(buttonpostion2_1.x,buttonpostion2_1.y)
-        time.sleep(0.2)
+        #pag.click(buttonpostion2_1.x,buttonpostion2_1.y)
+        pag.click(774,246)
+        time.sleep(0.1)
         pag.hotkey('down')
         #페이지 선택
-        pag.click(1600,800)
+        #pag.click(1600,800)
         #개인정보수집 동의
-        buttonpostion2_2 = pag.locateCenterOnScreen('./image/01_2. payment2.png', region = (0,0,1920,1680), confidence=0.7) #reservation 67%    
+        buttonpostion2_2 = pag.locateCenterOnScreen('./image/01_2. payment2.png', region = (0,0,1920,1680), confidence=0.6) #reservation 67%    
         pag.click(buttonpostion2_2.x,buttonpostion2_2.y)
         
         #결제 선택
-        buttonpostion2_3 = pag.locateCenterOnScreen('./image/01_2. payment3.png', region = (0,0,1920,1680), confidence=0.7) #reservation 67%
+        buttonpostion2_3 = pag.locateCenterOnScreen('./image/01_2. payment3.png', region = (0,0,1920,1680), confidence=0.6) #reservation 67%
         pag.click(buttonpostion2_3.x-30,buttonpostion2_3.y)
         time.sleep(0.2)
+        결제_page3()
+        
 #신용카드결제
 def 결제_page3():
     #신용카드결제 
@@ -175,9 +178,11 @@ def 결제_page3():
         #전체동의
         buttonpostion3_2 = pag.locateCenterOnScreen('./image/01_3. next2.png', region = (0,0,1920,1680), confidence=0.7) 
         #다음
-        time.sleep(0.2)
+        time.sleep(0.1)
         pag.click(buttonpostion3_2.x+30,buttonpostion3_2.y)
-        time.sleep(0.2)
+        time.sleep(0.1)
+        결제_page4()
+        
 #카드선택
 def 결제_page4():
     #국민 카드 선택
@@ -186,18 +191,20 @@ def 결제_page4():
         결제_page4()
     else :
         #국민카드 선택
-        time.sleep(0.2)
+        time.sleep(0.1)
         pag.click(buttonpostion4_1.x,buttonpostion4_1.y)
-        time.sleep(0.2)
+        time.sleep(0.1)
         #결제 동의 
         buttonpostion4_2 = pag.locateCenterOnScreen('./image/01_4. next2.png', region = (0,0,1920,1680), confidence=0.7) 
         
         pag.click(buttonpostion4_2.x,buttonpostion4_2.y) 
         #다음
         buttonpostion4_3 = pag.locateCenterOnScreen('./image/01_4. next3.png', region = (0,0,1920,1680), confidence=0.7) 
-        time.sleep(0.2)
+        time.sleep(0.1)
         pag.click(buttonpostion4_3.x,buttonpostion4_3.y) 
-        time.sleep(0.2)
+        time.sleep(0.1)
+        결제_page5()
+        
 #앱결제
 def 결제_page5():
     buttonpostion5 = pag.locateCenterOnScreen('./image/01_5. payment.png', region = (0,0,1920,1680), confidence=0.7) #reservation 67%
@@ -207,6 +214,8 @@ def 결제_page5():
         #앱결제
         
         pag.click(buttonpostion5.x,buttonpostion5.y)
+        결제_page6()
+
 #결제코드보내기       
 def 결제_page6():
     button6 = pag.locateCenterOnScreen('./image/01_6. payment.png', region = (0,0,1920,1680), confidence=0.7)
@@ -214,14 +223,16 @@ def 결제_page6():
         결제_page6()
     else :
         #코드보내기
-        time.sleep(0.2)
+        time.sleep(0.1)
         pag.click(1034,603)
-        time.sleep(0.2)
+        time.sleep(0.1)
         pag.dragTo(1171,660, 0.2, button='left')
-        time.sleep(0.2)
+        time.sleep(0.1)
         pag.hotkey('ctrl', 'c')
         결제코드 = pyperclip.paste() 
         kakao_sendmessage("박정철", 결제코드)
+        결제_page7()
+        
 #이메일 확인
 def 결제_page7():
     buttonpostion7 = pag.locateCenterOnScreen('./image/01_7. next1.png', region = (0,0,1920,1680), confidence=0.9) #reservation 67%
@@ -240,23 +251,17 @@ def 결제_page8():
         #이메일 발송
         pag.click(buttonpostion8.x+50,buttonpostion8.y)
         pag.hotkey('enter')
-        time.sleep(0.2)   
+        time.sleep(0.1)   
         pag.hotkey('esc')
-        time.sleep(0.2)
+        time.sleep(0.1)
         pag.hotkey('enter')
-        time.sleep(0.2)
+        time.sleep(0.1)
         pag.hotkey('esc')
         
         
 def 자동결제():
     결제_page1()
-    결제_page2()
-    결제_page3()
-    결제_page4()
-    결제_page5()
-    결제_page6()
-    결제_page7()
-    결제_page8()
+
 
 def 수동결제():
     #기간
@@ -275,13 +280,7 @@ def 수동결제():
     pag.hotkey('end')
     time.sleep(0.5)
     결제_page1()
-    결제_page2()
-    결제_page3()
-    결제_page4()
-    결제_page5()
-    결제_page6()
-    결제_page7()
-    결제_page8()
+
      
 def log():
     loggin = pag.locateCenterOnScreen('./image/03. loggin.png', region = (1100,0,1250,204), confidence=0.9)
@@ -302,6 +301,35 @@ def log():
         pag.click(1239,162)
         time.sleep(1)        
         pag.click(1239,162)
+        
+def log1():
+    loggin = pag.locateCenterOnScreen('./image/03. loggin.png', region = (1100,0,1250,204), confidence=0.9)
+    if (loggin == None):
+        None
+    else :
+        #코드보내기
+        pag.click(loggin.x,loggin.y)
+        time.sleep(1)
+        pag.click(876,442)
+        time.sleep(1)
+        pag.hotkey('down')
+        time.sleep(1)
+        pag.hotkey('enter')
+        time.sleep(1)
+        pag.hotkey('enter')
+        time.sleep(1)        
+        pag.click(1239,162)
+        time.sleep(1)        
+        pag.click(1239,162)
+        #다음달 선택
+        time.sleep(2)
+        pag.click(986,429)
+        #페이지 선택
+        time.sleep(2)
+        pag.click(1600,800)
+
+
+
 def job():
     while True:
         #페이지 선택
@@ -322,7 +350,7 @@ def job1():
     while True:
         #페이지 선택
         pag.click(1600,800)
-        log()
+        log1()
         pag.hotkey('f5')
         time.sleep(0.3)
         검색()
@@ -353,13 +381,13 @@ e = Entry(root, width=30)
 e.pack()
 e.insert(0,"박정철")
 
-btn1 = Button(root, padx=10, pady=5, text="이    월", command=job, bg="red", fg="white")
+btn1 = Button(root, padx=10, pady=5, text="이 번 달", command=job, bg="red", fg="white")
 btn1.pack(side=LEFT)
 
-btn2 = Button(root, padx=10, pady=5, text="삼    월", command=job1, bg="blue", fg="white")
+btn2 = Button(root, padx=10, pady=5, text="다 음 달", command=job1, bg="blue", fg="white")
 btn2.pack(side=LEFT)
 
-btn3 = Button(root, padx=10, pady=5, text="보안문자", command=보안문자_받기, bg="green", fg="white")
+btn3 = Button(root, padx=10, pady=5, text="보안문자", command=보안문자_보내기, bg="green", fg="white")
 btn3.pack(side=LEFT)
 
 btn4 = Button(root, padx=10, pady=5, text="자동입력", command=수동결제, bg="black", fg="white")
@@ -369,6 +397,3 @@ btn4.pack(side=LEFT)
 #btn4.pack()
 
 root.mainloop()
-
-
-
