@@ -282,7 +282,7 @@ def 수동결제():
 
      
 def log():
-    loggin = pag.locateCenterOnScreen('./image/03. loggin.png', region = (1100,0,1250,204), confidence=0.9)
+    loggin = pag.locateCenterOnScreen('./image/03. loggin.png', region = (1100,0,1250,204), confidence=0.8)
     if (loggin == None):
         None
     else :
@@ -302,7 +302,7 @@ def log():
         pag.click(1239,162)
         
 def log1():
-    loggin = pag.locateCenterOnScreen('./image/03. loggin.png', region = (1100,0,1250,204), confidence=0.9)
+    loggin = pag.locateCenterOnScreen('./image/03. loggin.png', region = (1100,0,1250,204), confidence=0.8)
     if (loggin == None):
         None
     else :
@@ -364,7 +364,7 @@ def job1():
 
 root = Tk()
 root.title("울주해양")
-root.geometry("290x100+1980+0")
+root.geometry("290x100+1580+0")
 root.wm_attributes("-topmost", 1)
 
 #전송할 카카오톡 이름
