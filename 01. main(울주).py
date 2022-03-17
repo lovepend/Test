@@ -112,7 +112,7 @@ def 보안문자_보내기():
     보안문자_받기()
     
 def 보안문자_받기():
-    text1 = pag.locateOnScreen('./image/01. security.png', region = (0,0,1920,1680), confidence=0.9) #reservation 100%
+    text1 = pag.locateOnScreen('./image/01_9. security.png', region = (0,0,1920,1680), confidence=0.9) #reservation 100%
     if (text1 == None) :
         보안문자_받기()
     else :
@@ -282,7 +282,7 @@ def 수동결제():
 
      
 def log():
-    loggin = pag.locateCenterOnScreen('./image/03. loggin.png', region = (1100,0,1250,204), confidence=0.8)
+    loggin = pag.locateCenterOnScreen('./image/01_10. loggin.png', region = (1100,0,1250,204), confidence=0.8)
     if (loggin == None):
         None
     else :
@@ -302,7 +302,7 @@ def log():
         pag.click(1239,162)
         
 def log1():
-    loggin = pag.locateCenterOnScreen('./image/03. loggin.png', region = (1100,0,1250,204), confidence=0.8)
+    loggin = pag.locateCenterOnScreen('./image/01_10. loggin.png', region = (1100,0,1250,204), confidence=0.8)
     if (loggin == None):
         None
     else :
