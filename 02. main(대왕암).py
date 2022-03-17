@@ -128,7 +128,7 @@ def 확인() :
 
 root = Tk()
 root.title("대왕암")
-root.geometry("430x100+1980+0")
+root.geometry("430x100+1380+0")
 root.wm_attributes("-topmost", 1)
 
 #전송할 카카오톡 이름
