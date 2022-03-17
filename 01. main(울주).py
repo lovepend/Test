@@ -74,7 +74,7 @@ def 검색():
 def 보안문자_보내기():
     #보안문자 캡처
     pag.click(1800,800)
-    time.sleep(0.1)
+    time.sleep(0.2)
     #이지미 저장
     pag.click(754,1001,button='right')
     time.sleep(0.1)
