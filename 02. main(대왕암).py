@@ -121,7 +121,7 @@ def 확인() :
         pag.moveTo(button1.x,button1.y)
         time.sleep(0.3) 
         pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
-        kakao_message_me()
+        kakao_message_you()
         time.sleep(500)
 
 ################################## GUI 편집 ################################## 

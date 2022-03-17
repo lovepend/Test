@@ -1,5 +1,6 @@
 #박빙구
 #code = https://kauth.kakao.com/oauth/authorize?client_id=ddcfd4509dc2ec690ebb764199ff2247&redirect_uri=https://example.com/oauth&response_type=code&scope=talk_message,friends
+
 #박정철
 #code = https://kauth.kakao.com/oauth/authorize?client_id=bb6714e8dac2cf258c4d3cc708b8d7ac&redirect_uri=https://example.com/oauth&response_type=code&scope=talk_message,friends
 
@@ -12,7 +13,7 @@ rest_api_key = 'ddcfd4509dc2ec690ebb764199ff2247'
 #rest_api_key = 'bb6714e8dac2cf258c4d3cc708b8d7ac'
 redirect_uri = 'https://example.com/oauth' 
 url_token = 'https://kauth.kakao.com/oauth/token'
-authorize_code = 'jg5QeVqavWeTfoqaHbBSZ_eVrSeJFICoUCLohvJoti5I0cckhq1yQ2qIzAof0VfU5nFY4AopcFAAAAF_lsaOrg' 
+authorize_code = 'L4B_4coBk5-NLz2ivsBRvD7VLSxBRYuYhyK9fXEDrPqm4JRP45sQ25kHKCnKXhemCcwOMgorDR4AAAF_mj89Jw#박정철' 
 
 try: 
     with open("kakao_token.json","r") as fp: # 기존에 저장된 token 파일이 있는지 찾아봅니다. 
