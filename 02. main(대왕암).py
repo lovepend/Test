@@ -104,21 +104,22 @@ def 검색():
         None      
     else :
         print(button)
-        time.sleep(0.2) 
+        time.sleep(0.3) 
         pag.moveTo(button.x,button.y)
-        time.sleep(0.1) 
-        pag.click(button.x,button.y, button='left', clicks=5, interval=0.1)
+        time.sleep(0.3) 
+        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+        time.sleep(1)
         확인()
         
 def 확인() : 
-    button1 = pag.locateCenterOnScreen('./image/03._2. next.png', region = (640,88,1198,390),confidence=0.8)   
+    button1 = pag.locateCenterOnScreen('./image/02._2. next.png', region = (450,51,1395,437),confidence=0.6)   
     print(button1)
     if (button1 == None) :
         확인()      
     else :
-        time.sleep(0.2) 
+        time.sleep(0.3) 
         pag.moveTo(button1.x,button1.y)
-        time.sleep(0.1) 
+        time.sleep(0.3) 
         pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
         kakao_message_me()
         time.sleep(500)
@@ -126,7 +127,7 @@ def 확인() :
 ################################## GUI 편집 ################################## 
 
 root = Tk()
-root.title("태화연")
+root.title("대왕암")
 root.geometry("430x100+1980+0")
 root.wm_attributes("-topmost", 1)
 
@@ -190,7 +191,7 @@ btn3 = Button(root, padx=10, pady=5, text="호 수 뷰", command=호수뷰, bg="
 btn3.pack(side=LEFT)
 btn4 = Button(root, padx=10, pady=5, text="전    체", command=전체, bg="blue", fg="white")
 btn4.pack(side=LEFT)
-btn5 = Button(root, padx=10, pady=5, text="태 화 연", command=job, bg="red", fg="white")
+btn5 = Button(root, padx=10, pady=5, text="대 왕 암", command=job, bg="red", fg="white")
 btn5.pack(side=LEFT)
 
 root.mainloop()
