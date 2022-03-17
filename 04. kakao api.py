@@ -24,11 +24,13 @@ def access_token():
 # 카카오톡 메시지 API
 def refresh_token():
     url = "https://kauth.kakao.com/oauth/token"
+    #url="https://kapi.kakao.com/v2/api/talk/memo/default/send"
 
     data = {
         "grant_type": "refresh_token",
         "client_id": "ddcfd4509dc2ec690ebb764199ff2247",
-        "refresh_token": "{refresh_token}"
+        #"refresh_token": "{refresh_token}"
+        "refresh_token": "CsrbYjjznXydtF3QoSHWF8a9nfjBYQ_oZ0BAxwo9c-wAAAF_mkcY_Q"
     }
     response = requests.post(url, data=data)
     tokens = response.json()
@@ -36,6 +38,7 @@ def refresh_token():
     # kakao_code.json 파일 저장
     with open("kakao_token.json", "w") as fp:
         json.dump(tokens, fp)
+        
     
 
 def kakao_message_me():
@@ -64,6 +67,8 @@ def kakao_message_me():
 
     response = requests.post(url, headers=headers, data=data)
     response.status_code
+
+
 
 def kakao_message_you():
         
@@ -113,4 +118,5 @@ def kakao_message_you():
     response = requests.post(send_url, headers=headers, data=data)
     response.status_code
 
+#refresh_token()
 kakao_message_you()

@@ -95,9 +95,6 @@ def kakao_message_you():
 ################################## 기능 편집 ################################## 
 
 def 검색():
-    #날짜 클릭
-    pag.click(week)
-    time.sleep(0.2)
     #검색
     button = pag.locateCenterOnScreen("./image/02._1. reservation.png", region = find_range, confidence=0.85) 
     if (button == None) :
@@ -164,6 +161,10 @@ def 전체():
 
 def job():
     while True:
+        #날짜 클릭
+        pag.click(week)
+        time.sleep(0.2)
+        #검색 아래위
         검색()
         pag.click(1381,638)
         time.sleep(1)
