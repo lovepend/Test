@@ -34,7 +34,7 @@ def kakao_message_me():
     data={
         "template_object": json.dumps({
             "object_type":"text",
-            "text":"Hello, world!",
+            "text":"Hello, world! 태화연",
             "link":{
                 "web_url":"www.naver.com"
             }

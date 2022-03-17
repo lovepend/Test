@@ -1,4 +1,5 @@
-#REST API = ddcfd4509dc2ec690ebb764199ff2247
+#박빙구 REST API = ddcfd4509dc2ec690ebb764199ff2247
+#박정철 REST API = bb6714e8dac2cf258c4d3cc708b8d7ac
 #code = https://kauth.kakao.com/oauth/authorize?client_id=ddcfd4509dc2ec690ebb764199ff2247&redirect_uri=https://example.com/oauth&response_type=code&scope=talk_message,friends
 #code = 'iXurIJ-hAeIMCo9nXZEtNgVvC9JKn4vuiss4A_RRNXCbN65W5ZBaYQmU6E27eBlAIZctDQo9c00AAAF_izJq_Q'
 

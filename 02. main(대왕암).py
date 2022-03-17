@@ -12,7 +12,7 @@ import json
 #import clipboard
 #import schedule
 
-#태화연 Test 2022.03.17 #Viewer Size 80%
+#대왕암 Test 2022.03.17 #Viewer Size 80% #화면 맨아래로 통일
 
 ################################## 카카오톡 ################################## 
 
@@ -34,7 +34,7 @@ def kakao_message_me():
     data={
         "template_object": json.dumps({
             "object_type":"text",
-            "text":"Hello, world!",
+            "text":"Hello, world! 대왕암",
             "link":{
                 "web_url":"www.naver.com"
             }
@@ -99,7 +99,7 @@ def 검색():
     pag.click(week)
     time.sleep(0.2)
     #검색
-    button = pag.locateCenterOnScreen("./image/test_2.png", region = find_range, confidence=0.85) 
+    button = pag.locateCenterOnScreen("./image/02._1. reservation.png", region = find_range, confidence=0.85) 
     if (button == None) :
         None      
     else :
@@ -111,7 +111,7 @@ def 검색():
         확인()
         
 def 확인() : 
-    button1 = pag.locateCenterOnScreen('./image/test_3.png', region = (705,69,1151,192),confidence=0.8)   
+    button1 = pag.locateCenterOnScreen('./image/03._2. next.png', region = (640,88,1198,390),confidence=0.8)   
     print(button1)
     if (button1 == None) :
         확인()      
@@ -140,29 +140,35 @@ lable1=Label(root, text="카카오톡 이름")
 lable1.pack()
 
 #버튼 기능
+# 541, 590, 645, 699, 755 
 def 테스트():
     global week
-    week = 1120,223
+    week = 717,646 
     
 def 금요일():
     global week
-    week = 1342,114
+    week = 785,646
 
 def 토요일():
     global week
-    week = 1390,114
+    week = 851,646
 
 def 호수뷰():
     global find_range
-    find_range = (918,397,1023,713)
+    find_range = (1250,527,1391,922)
 
 def 전체():
     global find_range
-    find_range = (630,474,1419,1079)
+    find_range = (1250,527,1391,922)
 
 def job():
     while True:
         검색()
+        pag.click(1381,638)
+        time.sleep(1)
+        검색()
+        pag.click(1381,583)
+        time.sleep(1)
         if keyboard.is_pressed("F4"): # F4 누른게 감지되면
             break
 
