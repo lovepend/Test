@@ -72,10 +72,10 @@ def 검색():
 
 #카카오톡 보안문자 캡처 및 전송
 def 보안문자_보내기():
-    #보안문자 캡처
+    #화면클릭
     pag.click(1800,800)
     time.sleep(0.1)
-    #이지미 저장
+    #보안문자 이미지 저장
     pag.click(754,1001,button='right')
     time.sleep(0.1)
     pag.click(872,680)
