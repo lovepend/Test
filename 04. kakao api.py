@@ -112,4 +112,4 @@ def kakao_message_you():
     response = requests.post(send_url, headers=headers, data=data)
     response.status_code
 
-kakao_message_me()
+kakao_message_you()

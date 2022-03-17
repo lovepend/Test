@@ -7,12 +7,12 @@ import requests
 import json 
 
 #박빙구
-#rest_api_key = 'ddcfd4509dc2ec690ebb764199ff2247'
+rest_api_key = 'ddcfd4509dc2ec690ebb764199ff2247'
 #박정철
-rest_api_key = 'bb6714e8dac2cf258c4d3cc708b8d7ac'
+#rest_api_key = 'bb6714e8dac2cf258c4d3cc708b8d7ac'
 redirect_uri = 'https://example.com/oauth' 
 url_token = 'https://kauth.kakao.com/oauth/token'
-authorize_code = '5yHw_3s4XFdc4rXUJl_3WBGNTEBqgVZniDtkY1qjVpKdhto9c-d1w7QRgTCtOyWs9YNPvgo9dGkAAAF_lZvsEg' 
+authorize_code = 'jg5QeVqavWeTfoqaHbBSZ_eVrSeJFICoUCLohvJoti5I0cckhq1yQ2qIzAof0VfU5nFY4AopcFAAAAF_lsaOrg' 
 
 try: 
     with open("kakao_token.json","r") as fp: # 기존에 저장된 token 파일이 있는지 찾아봅니다. 
