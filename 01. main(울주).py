@@ -364,7 +364,7 @@ def job1():
 
 root = Tk()
 root.title("울주해양")
-root.geometry("290x100+1580+0")
+root.geometry("290x100+1559+0")
 root.wm_attributes("-topmost", 1)
 
 #전송할 카카오톡 이름
