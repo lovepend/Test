@@ -12,16 +12,41 @@ import json
 #import clipboard
 #import schedule
 
+#태화연 Test 2022.03.17 #Viewer Size 80%
 
-
-#태화연 Test 2022.01.11 #Vier Size 80%
-
-# 카카오톡 관련 ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+################################## 카카오톡 ################################## 
 
 # 채팅방에 메시지 전송
-def kakao_message():
+def kakao_message_me():
+
+    #2.
+    with open("kakao_token.json","r") as fp:
+        tokens = json.load(fp)
+
+    url="https://kapi.kakao.com/v2/api/talk/memo/default/send"
+
+    # kapi.kakao.com/v2/api/talk/memo/default/send 
+
+    headers={
+        "Authorization" : "Bearer " + tokens["access_token"]
+    }
+
+    data={
+        "template_object": json.dumps({
+            "object_type":"text",
+            "text":"Hello, world!",
+            "link":{
+                "web_url":"www.naver.com"
+            }
+        })
+    }
+
+    response = requests.post(url, headers=headers, data=data)
+    response.status_code
+    
+def kakao_message_you():
         
-    with open("kakao_code.json","r") as fp:
+    with open("kakao_token.json","r") as fp:
         tokens = json.load(fp)
     # print(tokens)
     # print(tokens["access_token"])
@@ -67,18 +92,37 @@ def kakao_message():
     response = requests.post(send_url, headers=headers, data=data)
     response.status_code
 
+################################## 기능 편집 ################################## 
 
-
-
-
+def 검색():
+    #날짜 클릭
+    pag.click(week)
+    time.sleep(0.2)
+    #검색
+    button = pag.locateCenterOnScreen("./image/03._1. reservation.png", region = find_range, confidence=0.85) 
+    if (button == None) :
+        None      
+    else :
+        print(button)
+        time.sleep(0.2) 
+        pag.moveTo(button.x,button.y)
+        time.sleep(0.1) 
+        pag.click(button.x,button.y, button='left', clicks=5, interval=0.1)
+        확인()
         
-#날짜 선택(토요일)
-    #pag.click(week)
-    #날짜 선택(금요일)
-    #pag.click(1342,114)
-    #날짜 선택
-    #pag.click(1120,223)
-    #time.sleep(0.2)
+def 확인() : 
+    button1 = pag.locateCenterOnScreen('./image/03._2. next.png', region = (705,69,1151,192),confidence=0.8)   
+    print(button1)
+    if (button1 == None) :
+        확인()      
+    else :
+        time.sleep(0.2) 
+        pag.moveTo(button1.x,button1.y)
+        time.sleep(0.1) 
+        pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
+        kakao_message_me()
+        time.sleep(500)
+
 ################################## GUI 편집 ################################## 
 
 root = Tk()
@@ -95,6 +139,7 @@ def 카카오톡_입력():
 lable1=Label(root, text="카카오톡 이름")
 lable1.pack()
 
+#버튼 기능
 def 테스트():
     global week
     week = 1120,223
@@ -123,36 +168,7 @@ def job():
 
 #  이미지 관련 ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
 
-def 검색():
-    #날짜 클릭
-    pag.click(week)
-    time.sleep(0.2)
-    #검색
-    button = pag.locateCenterOnScreen("./image/test_2.png", region = find_range, confidence=0.85) 
-    if (button == None) :
-        None      
-    else :
-        print(button)
-        time.sleep(0.2) 
-        pag.moveTo(button.x,button.y)
-        time.sleep(0.1) 
-        pag.click(button.x,button.y, button='left', clicks=5, interval=0.1)
-        확인()
-        
-def 확인() : 
-    button1 = pag.locateCenterOnScreen('./image/test_3.png', region = (705,69,1151,192),confidence=0.8)   
-    print(button1)
-    if (button1 == None) :
-        확인()      
-    else :
-        time.sleep(0.2) 
-        pag.moveTo(button1.x,button1.y)
-        time.sleep(0.1) 
-        pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
-        kakao_message()
-        time.sleep(500)
-        
-        
+
                    
 e = Entry(root, width=30)
 e.pack()
@@ -170,7 +186,5 @@ btn4 = Button(root, padx=10, pady=5, text="전    체", command=전체, bg="blue
 btn4.pack(side=LEFT)
 btn5 = Button(root, padx=10, pady=5, text="태 화 연", command=job, bg="red", fg="white")
 btn5.pack(side=LEFT)
-
-
 
 root.mainloop()

@@ -36,7 +36,34 @@ def refresh_token():
         json.dump(tokens, fp)
     
 
-def kakao_message():
+def kakao_message_me():
+
+    #2.
+    with open("kakao_token.json","r") as fp:
+        tokens = json.load(fp)
+
+    url="https://kapi.kakao.com/v2/api/talk/memo/default/send"
+
+    # kapi.kakao.com/v2/api/talk/memo/default/send 
+
+    headers={
+        "Authorization" : "Bearer " + tokens["access_token"]
+    }
+
+    data={
+        "template_object": json.dumps({
+            "object_type":"text",
+            "text":"Hello, world!",
+            "link":{
+                "web_url":"www.naver.com"
+            }
+        })
+    }
+
+    response = requests.post(url, headers=headers, data=data)
+    response.status_code
+
+def kakao_message_you():
         
     with open("kakao_token.json","r") as fp:
         tokens = json.load(fp)
@@ -84,4 +111,4 @@ def kakao_message():
     response = requests.post(send_url, headers=headers, data=data)
     response.status_code
 
-kakao_message()
+kakao_message_me()
