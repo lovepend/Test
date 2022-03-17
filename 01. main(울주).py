@@ -146,7 +146,7 @@ def 결제_page2():
     #페이지 아래
     pag.hotkey('end')
     time.sleep(0.2)
-    buttonpostion2_1 = pag.locateCenterOnScreen('./image/01_2. payment1.png', region = (0,0,1920,1680), confidence=0.7) #reservation 67%    
+    buttonpostion2_1 = pag.locateCenterOnScreen('./image/01_2. payment1.png', region = (0,0,1920,1680), confidence=0.6) #reservation 67%    
     if (buttonpostion2_1 == None) :
         결제_page2()
     else :
@@ -158,11 +158,11 @@ def 결제_page2():
         #페이지 선택
         #pag.click(1600,800)
         #개인정보수집 동의
-        buttonpostion2_2 = pag.locateCenterOnScreen('./image/01_2. payment2.png', region = (0,0,1920,1680), confidence=0.7) #reservation 67%    
+        buttonpostion2_2 = pag.locateCenterOnScreen('./image/01_2. payment2.png', region = (0,0,1920,1680), confidence=0.6) #reservation 67%    
         pag.click(buttonpostion2_2.x,buttonpostion2_2.y)
         
         #결제 선택
-        buttonpostion2_3 = pag.locateCenterOnScreen('./image/01_2. payment3.png', region = (0,0,1920,1680), confidence=0.7) #reservation 67%
+        buttonpostion2_3 = pag.locateCenterOnScreen('./image/01_2. payment3.png', region = (0,0,1920,1680), confidence=0.6) #reservation 67%
         pag.click(buttonpostion2_3.x-30,buttonpostion2_3.y)
         time.sleep(0.2)
         결제_page3()
@@ -212,7 +212,6 @@ def 결제_page5():
         결제_page5()
     else :
         #앱결제
-        
         pag.click(buttonpostion5.x,buttonpostion5.y)
         결제_page6()
 
@@ -261,13 +260,7 @@ def 결제_page8():
         
 def 자동결제():
     결제_page1()
-    결제_page2()
-    결제_page3()
-    결제_page4()
-    결제_page5()
-    결제_page6()
-    결제_page7()
-    결제_page8()
+
 
 def 수동결제():
     #기간
@@ -289,7 +282,7 @@ def 수동결제():
 
      
 def log():
-    loggin = pag.locateCenterOnScreen('./image/03. loggin.png', region = (1100,0,1250,204), confidence=0.9)
+    loggin = pag.locateCenterOnScreen('./image/03. loggin.png', region = (1100,0,1250,204), confidence=0.8)
     if (loggin == None):
         None
     else :
@@ -307,6 +300,35 @@ def log():
         pag.click(1239,162)
         time.sleep(1)        
         pag.click(1239,162)
+        
+def log1():
+    loggin = pag.locateCenterOnScreen('./image/03. loggin.png', region = (1100,0,1250,204), confidence=0.8)
+    if (loggin == None):
+        None
+    else :
+        #코드보내기
+        pag.click(loggin.x,loggin.y)
+        time.sleep(1)
+        pag.click(876,442)
+        time.sleep(1)
+        pag.hotkey('down')
+        time.sleep(1)
+        pag.hotkey('enter')
+        time.sleep(1)
+        pag.hotkey('enter')
+        time.sleep(1)        
+        pag.click(1239,162)
+        time.sleep(1)        
+        pag.click(1239,162)
+        #다음달 선택
+        time.sleep(2)
+        pag.click(986,429)
+        #페이지 선택
+        time.sleep(2)
+        pag.click(1600,800)
+
+
+
 def job():
     while True:
         #페이지 선택
@@ -327,7 +349,7 @@ def job1():
     while True:
         #페이지 선택
         pag.click(1600,800)
-        log()
+        log1()
         pag.hotkey('f5')
         time.sleep(0.3)
         검색()
@@ -342,7 +364,7 @@ def job1():
 
 root = Tk()
 root.title("울주해양")
-root.geometry("290x100+1980+0")
+root.geometry("290x100+1580+0")
 root.wm_attributes("-topmost", 1)
 
 #전송할 카카오톡 이름
@@ -358,22 +380,17 @@ e = Entry(root, width=30)
 e.pack()
 e.insert(0,"박정철")
 
-btn1 = Button(root, padx=10, pady=5, text="이    월", command=job, bg="red", fg="white")
+btn1 = Button(root, padx=10, pady=5, text="이 번 달", command=job, bg="red", fg="white")
 btn1.pack(side=LEFT)
 
-btn2 = Button(root, padx=10, pady=5, text="삼    월", command=job1, bg="blue", fg="white")
+btn2 = Button(root, padx=10, pady=5, text="다 음 달", command=job1, bg="blue", fg="white")
 btn2.pack(side=LEFT)
 
-btn3 = Button(root, padx=10, pady=5, text="보안문자", command=결제_page1, bg="green", fg="white")
+btn3 = Button(root, padx=10, pady=5, text="보안문자", command=보안문자_보내기, bg="green", fg="white")
 btn3.pack(side=LEFT)
 
 btn4 = Button(root, padx=10, pady=5, text="자동입력", command=수동결제, bg="black", fg="white")
 btn4.pack(side=LEFT)
 
-#btn4 = Button(root, padx=10, pady=5, text="대왕암 Start", command=job1)
-#btn4.pack()
 
 root.mainloop()
-
-
-
