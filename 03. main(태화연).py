@@ -68,23 +68,71 @@ def kakao_message():
     response.status_code
 
 
-#  이미지 관련 ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
 
-def 검색(week,find):
-    #날짜 선택(토요일)
-    pag.click(1390,114)
+
+
+        
+#날짜 선택(토요일)
+    #pag.click(week)
     #날짜 선택(금요일)
     #pag.click(1342,114)
     #날짜 선택
     #pag.click(1120,223)
-    time.sleep(0.2)
+    #time.sleep(0.2)
+################################## GUI 편집 ################################## 
+
+root = Tk()
+root.title("태화연")
+root.geometry("430x100+1980+0")
+root.wm_attributes("-topmost", 1)
+
+#전송할 카카오톡 이름
+def 카카오톡_입력():
+    global kakao_opentalk_name
+    kakao_opentalk_name = e.get()
+    print(kakao_opentalk_name)
+
+lable1=Label(root, text="카카오톡 이름")
+lable1.pack()
+
+def 테스트():
+    global week
+    week = 1120,223
     
-    button = pag.locateCenterOnScreen('./image/test_2.png', region = (918,397,1023,713), confidence=0.85) 
-    #button = pag.locateCenterOnScreen('./image/test_2.png', region = (630,474,1419,1079), confidence=0.85) 
-    print(button)
+def 금요일():
+    global week
+    week = 1342,114
+
+def 토요일():
+    global week
+    week = 1390,114
+
+def 호수뷰():
+    global find_range
+    find_range = (918,397,1023,713)
+
+def 전체():
+    global find_range
+    find_range = (630,474,1419,1079)
+
+def job():
+    while True:
+        검색()
+        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
+            break
+
+#  이미지 관련 ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+
+def 검색():
+    #날짜 클릭
+    pag.click(week)
+    time.sleep(0.2)
+    #검색
+    button = pag.locateCenterOnScreen("./image/test_2.png", region = find_range, confidence=0.85) 
     if (button == None) :
         None      
     else :
+        print(button)
         time.sleep(0.2) 
         pag.moveTo(button.x,button.y)
         time.sleep(0.1) 
@@ -103,39 +151,26 @@ def 확인() :
         pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
         kakao_message()
         time.sleep(500)
-
-    
-def job():
-    while True:
-        검색()
-        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
-            break
-
-################################## GUI 편집 ################################## 
-
-root = Tk()
-root.title("태화연")
-root.geometry("290x100+1980+0")
-root.wm_attributes("-topmost", 1)
-
-#전송할 카카오톡 이름
-def 카카오톡_입력():
-    global kakao_opentalk_name
-    kakao_opentalk_name = e.get()
-    print(kakao_opentalk_name)
-
-lable1=Label(root, text="카카오톡 이름")
-lable1.pack()
-    
+        
+        
+                   
 e = Entry(root, width=30)
 e.pack()
 e.insert(0,"박정철")
 
-btn = Button(root, padx=10, pady=5, text="태 화 연", command=job, bg="red", fg="white")
-btn.pack(side=TOP)
+btn = Button(root, padx=10, pady=5, text="테 스 트", command=테스트, bg="green", fg="white")
+btn.pack(side=LEFT)
+btn1 = Button(root, padx=10, pady=5, text="금 요 일", command=금요일, bg="green", fg="white")
+btn1.pack(side=LEFT)
+btn2 = Button(root, padx=10, pady=5, text="토 요 일", command=토요일, bg="green", fg="white")
+btn2.pack(side=LEFT)
+btn3 = Button(root, padx=10, pady=5, text="호 수 뷰", command=호수뷰, bg="blue", fg="white")
+btn3.pack(side=LEFT)
+btn4 = Button(root, padx=10, pady=5, text="전    체", command=전체, bg="blue", fg="white")
+btn4.pack(side=LEFT)
+btn5 = Button(root, padx=10, pady=5, text="태 화 연", command=job, bg="red", fg="white")
+btn5.pack(side=LEFT)
 
 
-#btn4 = Button(root, padx=10, pady=5, text="대왕암 Start", command=job1)
-#btn4.pack()
 
 root.mainloop()
