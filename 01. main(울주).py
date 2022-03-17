@@ -74,13 +74,10 @@ def 검색():
 def 보안문자_보내기():
     #화면클릭
     pag.click(1800,800)
-<<<<<<< HEAD
     time.sleep(0.1)
     #보안문자 이미지 저장
-=======
     time.sleep(0.2)
     #이지미 저장
->>>>>>> dad96d3608ec5aebed3f15e042698cbeb6393b62
     pag.click(754,1001,button='right')
     time.sleep(0.1)
     pag.click(872,680)
