@@ -120,5 +120,5 @@ def kakao_message_you():
     response = requests.post(send_url, headers=headers, data=data)
     response.status_code
 
-#refresh_token()
+refresh_token()
 kakao_message_you()

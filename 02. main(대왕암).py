@@ -17,6 +17,24 @@ import json
 ################################## 카카오톡 ################################## 
 
 # 채팅방에 메시지 전송
+# 카카오톡 메시지 API
+def refresh_token():
+    url = "https://kauth.kakao.com/oauth/token"
+    #url="https://kapi.kakao.com/v2/api/talk/memo/default/send"
+
+    data = {
+        "grant_type": "refresh_token",
+        "client_id": "ddcfd4509dc2ec690ebb764199ff2247",
+        #"refresh_token": "{refresh_token}"
+        "refresh_token": "CsrbYjjznXydtF3QoSHWF8a9nfjBYQ_oZ0BAxwo9c-wAAAF_mkcY_Q"
+    }
+    response = requests.post(url, data=data)
+    tokens = response.json()
+
+    # kakao_code.json 파일 저장
+    with open("kakao_token.json", "w") as fp:
+        json.dump(tokens, fp)
+        
 def kakao_message_me():
 
     #2.
@@ -118,6 +136,7 @@ def 확인_대왕암() :
         pag.moveTo(button1.x,button1.y)
         time.sleep(0.3) 
         pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
+        refresh_token()
         kakao_message_you()
         time.sleep(500)
         
@@ -158,6 +177,7 @@ def 확인_강동2() :
         pag.moveTo(button2.x,button2.y)
         time.sleep(0.3) 
         pag.click(button2.x,button2.y, button='left', clicks=1, interval=1)
+        refresh_token()
         kakao_message_you()
         time.sleep(500)
 
