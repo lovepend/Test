@@ -95,17 +95,8 @@ def kakao_message_you():
 ################################## 기능 편집 ################################## 
 
 def 검색():
-    print()
-    button = pag.locateCenterOnScreen("./image/03._1. reservation.png", region = find_range, confidence=0.85) 
-    if (button == None) :
-        None      
-    else :
-        print(button)
-        time.sleep(0.2) 
-        pag.moveTo(button.x,button.y)
-        time.sleep(0.1) 
-        pag.click(button.x,button.y, button='left', clicks=5, interval=0.1)
-        확인()
+    button = pag.locateCenterOnScreen("./image/03._1. reservation.png", region = (day.x,day.y,day1.x,day1.y), confidence=0.8)   
+    pag.click(button.x,button.y, button='right', clicks=5, interval=5)
         
 def 확인() : 
     button1 = pag.locateCenterOnScreen('./image/03._2. next.png', region = (705,69,1151,192),confidence=0.8)   
@@ -124,7 +115,7 @@ def 확인() :
 
 root = Tk()
 root.title("태화연")
-root.geometry("460x100+1390+0")
+root.geometry("430x100+1420+0")
 root.wm_attributes("-topmost", 1)
 
 #전송할 카카오톡 이름
@@ -133,14 +124,7 @@ def 카카오톡_입력():
     kakao_opentalk_name = e.get()
     print(kakao_opentalk_name)
 
-e = Entry(root, width=30)
-e.pack()
-e.insert(0,"박정철")
-
 lable1=Label(root, text="카카오톡 이름")
-lable1.pack()
-
-lable1=Label(root, text="날짜선택 -> 범위선택 -> 작업시작(지정은 F4)")
 lable1.pack()
 
 #버튼 기능
@@ -151,7 +135,16 @@ def 날짜선택():
             day  = pag.position()
             print(day)
             time.sleep(0.5)
-            break         
+            break 
+    while True:
+        if keyboard.is_pressed("F4"): 
+            global day1 
+            day1  = pag.position()
+            print(day1)
+            time.sleep(0.5)
+            break 
+    print(day.x,day.y,day1.x,day1.y)
+        
         
 def 금요일():
     global week
@@ -161,24 +154,9 @@ def 토요일():
     global week
     week = 1390,114
 
-def 범위선택():
-    while True:
-        if keyboard.is_pressed("F4"): 
-            global find_range1 
-            find_range1  = pag.position()
-            print(find_range1)
-            time.sleep(0.5)
-            break  
-    while True:
-        if keyboard.is_pressed("F4"): 
-            global find_range2 
-            find_range2  = pag.position()
-            print(find_range2)
-            time.sleep(0.5)
-            break  
-        
+def 호수뷰():
     global find_range
-    find_range = (find_range1.x,find_range1.y,find_range2.x,find_range2.y)
+    find_range = (918,397,1023,713)
 
 def 전체():
     global find_range
@@ -186,27 +164,29 @@ def 전체():
 
 def job():
     while True:
-        #날짜 클릭
-        pag.click(day)
-        time.sleep(0.2)
-        #검색
         검색()
         if keyboard.is_pressed("F4"): # F4 누른게 감지되면
             break
 
 #  이미지 관련 ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
 
-btn0 = Button(root, padx=10, pady=5, text="날짜선택", command=날짜선택, bg="green", fg="white")
-btn0.pack(side=LEFT)
-btn1 = Button(root, padx=10, pady=5, text="날짜선택", command=날짜선택, bg="green", fg="white")
+
+                   
+e = Entry(root, width=30)
+e.pack()
+e.insert(0,"박정철")
+
+btn = Button(root, padx=10, pady=5, text="테 스 트", command=날짜선택, bg="green", fg="white")
+btn.pack(side=LEFT)
+btn1 = Button(root, padx=10, pady=5, text="금 요 일", command=금요일, bg="green", fg="white")
 btn1.pack(side=LEFT)
-btn2 = Button(root, padx=10, pady=5, text="날짜선택", command=날짜선택, bg="green", fg="white")
+btn2 = Button(root, padx=10, pady=5, text="토 요 일", command=토요일, bg="green", fg="white")
 btn2.pack(side=LEFT)
-btn3 = Button(root, padx=10, pady=5, text="범위선택", command=범위선택, bg="blue", fg="white")
+btn3 = Button(root, padx=10, pady=5, text="호 수 뷰", command=호수뷰, bg="blue", fg="white")
 btn3.pack(side=LEFT)
-btn4 = Button(root, padx=10, pady=5, text="범위선택", command=범위선택, bg="blue", fg="white")
+btn4 = Button(root, padx=10, pady=5, text="전    체", command=전체, bg="blue", fg="white")
 btn4.pack(side=LEFT)
-btn5 = Button(root, padx=10, pady=5, text="작업시작", command=job, bg="red", fg="white")
+btn5 = Button(root, padx=10, pady=5, text="태 화 연", command=job, bg="red", fg="white")
 btn5.pack(side=LEFT)
 
 root.mainloop()

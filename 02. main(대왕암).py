@@ -94,9 +94,9 @@ def kakao_message_you():
 
 ################################## 기능 편집 ################################## 
 
-def 검색():
+def 검색_대왕암():
     #검색
-    button = pag.locateCenterOnScreen("./image/02._1. reservation.png", region = find_range, confidence=0.85) 
+    button = pag.locateCenterOnScreen("./image/02._1. reservation.png", region = find_range_대왕암, confidence=0.85) 
     if (button == None) :
         None      
     else :
@@ -106,13 +106,40 @@ def 검색():
         time.sleep(0.3) 
         pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
         time.sleep(1)
-        확인()
-        
-def 확인() : 
+        확인_대왕암()
+
+def 확인_대왕암() : 
     button1 = pag.locateCenterOnScreen('./image/02._2. next.png', region = (450,51,1395,437),confidence=0.6)   
     print(button1)
     if (button1 == None) :
-        확인()      
+        확인_대왕암()      
+    else :
+        time.sleep(0.3) 
+        pag.moveTo(button1.x,button1.y)
+        time.sleep(0.3) 
+        pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
+        kakao_message_you()
+        time.sleep(500)
+        
+def 검색_강동():
+    #검색
+    button = pag.locateCenterOnScreen("./image/02._3. reservation.png", region = find_range_대왕암, confidence=0.85) 
+    if (button == None) :
+        None      
+    else :
+        print(button)
+        time.sleep(0.3) 
+        pag.moveTo(button.x,button.y)
+        time.sleep(0.3) 
+        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+        time.sleep(1)
+        확인_강동()
+        
+def 확인_강동() : 
+    button1 = pag.locateCenterOnScreen('./image/02._4. next.png', region = (450,51,1395,437),confidence=0.6)   
+    print(button1)
+    if (button1 == None) :
+        확인_강동()      
     else :
         time.sleep(0.3) 
         pag.moveTo(button1.x,button1.y)
@@ -125,7 +152,7 @@ def 확인() :
 
 root = Tk()
 root.title("대왕암")
-root.geometry("430x100+1420+0")
+root.geometry("460x100+1390+0")
 root.wm_attributes("-topmost", 1)
 
 #전송할 카카오톡 이름
@@ -134,89 +161,109 @@ def 카카오톡_입력():
     kakao_opentalk_name = e.get()
     print(kakao_opentalk_name)
 
-lable1=Label(root, text="카카오톡 이름")
-lable1.pack()
-
-#버튼 기능 금요일 먼저 다음 토요일
-def 테스트():
-    while True:
-        #금요일 버튼
-        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
-            global Friday 
-            Friday = pag.position() # 위치 뽑아서 저장
-            print(Friday)
-            time.sleep(0.5)
-            break   
-        #토요일 버튼     
-    while True:
-        if keyboard.is_pressed("F4"): 
-            global Saturday 
-            Saturday  = pag.position()
-            print(Saturday)
-            time.sleep(0.5)
-            break  
-    
-def 금요일():
-    while True:
-        #금요일 버튼
-        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
-            global Friday 
-            Friday = pag.position() # 위치 뽑아서 저장
-            print(Friday)
-            time.sleep(0.5)
-            break
-
-def 토요일():
-    while True:
-        if keyboard.is_pressed("F4"): 
-            global Saturday 
-            Saturday  = pag.position()
-            print(Saturday)
-            time.sleep(0.5)
-            break  
-
-def 호수뷰():
-    global find_range
-    find_range = (1250,527,1391,922)
-
-def 전체():
-    global find_range
-    find_range = (1250,527,1391,922)
-
-def job():
-    while True:
-        #날짜 클릭
-        pag.click(Friday)
-        time.sleep(0.2)
-        pag.click(Saturday)
-        time.sleep(0.2)
-        #검색 아래위
-        검색()
-        pag.click(1381,638)
-        time.sleep(1)
-        검색()
-        pag.click(1381,583)
-        time.sleep(1)
-        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
-            break
-
-#  이미지 관련 ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
-                   
 e = Entry(root, width=30)
 e.pack()
 e.insert(0,"박정철")
 
-btn = Button(root, padx=10, pady=5, text="테 스 트", command=테스트, bg="green", fg="white")
-btn.pack(side=LEFT)
-btn1 = Button(root, padx=10, pady=5, text="금 요 일", command=금요일, bg="green", fg="white")
+lable1=Label(root, text="카카오톡 이름")
+lable1.pack()
+
+lable1=Label(root, text="날짜선택 -> 범위선택 -> 작업시작(지정은 F4)")
+lable1.pack()
+
+#버튼 기능
+def 날짜선택_대왕암():
+    while True:
+        if keyboard.is_pressed("F4"): 
+            global day1 
+            day1  = pag.position()
+            print(day1)
+            time.sleep(0.5)
+            break         
+        
+def 날짜선택_강동():
+    while True:
+        if keyboard.is_pressed("F4"): 
+            global day2
+            day2  = pag.position()
+            print(day2)
+            time.sleep(0.5)
+            break  
+
+def 범위선택_대왕암():
+    while True:
+        if keyboard.is_pressed("F4"): 
+            global find_range1 
+            find_range1  = pag.position()
+            print(find_range1)
+            time.sleep(0.5)
+            break  
+    while True:
+        if keyboard.is_pressed("F4"): 
+            global find_range2 
+            find_range2  = pag.position()
+            print(find_range2)
+            time.sleep(0.5)
+            break  
+    global find_range_대왕암
+    find_range_대왕암 = (find_range1.x,find_range1.y,find_range2.x,find_range2.y)
+    
+def 범위선택_강동():
+    while True:
+        if keyboard.is_pressed("F4"): 
+            global find_range3 
+            find_range3  = pag.position()
+            print(find_range3)
+            time.sleep(0.5)
+            break  
+    while True:
+        if keyboard.is_pressed("F4"): 
+            global find_range4
+            find_range4  = pag.position()
+            print(find_range4)
+            time.sleep(0.5)
+            break  
+    global find_range_강동
+    find_range_강동 = (find_range3.x,find_range3.y,find_range4.x,find_range4.y)
+
+def job():
+    while True:
+        #날짜 클릭
+        pag.click(day1)
+        time.sleep(0.2)
+        #검색
+        검색_대왕암()
+        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
+            break
+
+def job1():
+    while True:
+        #날짜 클릭
+        pag.click(day1)
+        time.sleep(0.2)
+        #검색
+        검색_대왕암()
+        #날짜 클릭
+        pag.click(day2)
+        time.sleep(0.2)
+        #검색
+        검색_강동()
+        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
+            break
+
+#  이미지 관련 ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+
+btn0 = Button(root, padx=10, pady=5, text="대왕날짜", command=날짜선택_대왕암, bg="green", fg="white")
+btn0.pack(side=LEFT)
+btn1 = Button(root, padx=10, pady=5, text="강동날짜", command=날짜선택_강동, bg="green", fg="white")
 btn1.pack(side=LEFT)
-btn2 = Button(root, padx=10, pady=5, text="토 요 일", command=토요일, bg="green", fg="white")
+btn2 = Button(root, padx=10, pady=5, text="대왕범위", command=범위선택_대왕암, bg="blue", fg="white")
 btn2.pack(side=LEFT)
-btn3 = Button(root, padx=10, pady=5, text="호 수 뷰", command=호수뷰, bg="blue", fg="white")
+btn3 = Button(root, padx=10, pady=5, text="강동범위", command=범위선택_강동, bg="blue", fg="white")
 btn3.pack(side=LEFT)
-btn4 = Button(root, padx=10, pady=5, text="전    체", command=전체, bg="blue", fg="white")
+btn4 = Button(root, padx=10, pady=5, text="대 왕 암", command=job, bg="red", fg="white")
 btn4.pack(side=LEFT)
-btn5 = Button(root, padx=10, pady=5, text="대 왕 암", command=job, bg="red", fg="white")
+btn5 = Button(root, padx=10, pady=5, text="전체시작", command=job1, bg="red", fg="white")
 btn5.pack(side=LEFT)
 
 root.mainloop()
