@@ -104,12 +104,12 @@ def 검색_대왕암():
         time.sleep(0.3) 
         pag.moveTo(button.x,button.y)
         time.sleep(0.3) 
-        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+        pag.click(button.x,button.y, button='left', clicks=1, interval=1)
         time.sleep(1)
         확인_대왕암()
 
 def 확인_대왕암() : 
-    button1 = pag.locateCenterOnScreen('./image/02._2. next.png', region = (450,51,1395,437),confidence=0.6)   
+    button1 = pag.locateCenterOnScreen('./image/02._2. next.png', confidence=0.6)   
     print(button1)
     if (button1 == None) :
         확인_대왕암()      
@@ -123,7 +123,7 @@ def 확인_대왕암() :
         
 def 검색_강동():
     #검색
-    button = pag.locateCenterOnScreen("./image/02._3. reservation.png", region = find_range_대왕암, confidence=0.85) 
+    button = pag.locateCenterOnScreen("./image/02._3. reservation.png", region = find_range_강동, confidence=0.85) 
     if (button == None) :
         None      
     else :
@@ -131,20 +131,33 @@ def 검색_강동():
         time.sleep(0.3) 
         pag.moveTo(button.x,button.y)
         time.sleep(0.3) 
-        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+        pag.click(button.x,button.y, button='left', clicks=1, interval=1)
         time.sleep(1)
-        확인_강동()
+        확인_강동1()
         
-def 확인_강동() : 
-    button1 = pag.locateCenterOnScreen('./image/02._4. next.png', region = (450,51,1395,437),confidence=0.6)   
+def 확인_강동1() : 
+    button1 = pag.locateCenterOnScreen('./image/02._4. reservation.png', confidence=0.5)   
     print(button1)
     if (button1 == None) :
-        확인_강동()      
+        확인_강동1()      
     else :
         time.sleep(0.3) 
         pag.moveTo(button1.x,button1.y)
         time.sleep(0.3) 
-        pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
+        pag.click(button1.x,button1.y, button='left', clicks=1, interval=1)
+        확인_강동2()
+        time.sleep(1)
+
+def 확인_강동2() : 
+    button2 = pag.locateCenterOnScreen('./image/02._5. next.png', confidence=0.6)   
+    print(button2)
+    if (button2 == None) :
+        확인_강동2()      
+    else :
+        time.sleep(0.3) 
+        pag.moveTo(button2.x,button2.y)
+        time.sleep(0.3) 
+        pag.click(button2.x,button2.y, button='left', clicks=1, interval=1)
         kakao_message_you()
         time.sleep(500)
 
@@ -233,6 +246,13 @@ def job():
         time.sleep(0.2)
         #검색
         검색_대왕암()
+        #page 아래 
+        pag.click(840,727)
+        time.sleep(0.2)
+        검색_대왕암()
+        #page 업 
+        pag.click(840,682)
+        time.sleep(0.2)
         if keyboard.is_pressed("F4"): # F4 누른게 감지되면
             break
 
@@ -243,10 +263,23 @@ def job1():
         time.sleep(0.2)
         #검색
         검색_대왕암()
+        #page 아래 
+        pag.click(840,727)
+        time.sleep(0.2)
+        검색_대왕암()
+        #page 업 
+        pag.click(840,682)
+        time.sleep(0.2)
         #날짜 클릭
         pag.click(day2)
         time.sleep(0.2)
-        #검색
+        #page 아래 
+        pag.click(1804,699)
+        time.sleep(1)
+        pag.hotkey('end')
+        time.sleep(1)
+        pag.hotkey('end')
+        time.sleep(1)
         검색_강동()
         if keyboard.is_pressed("F4"): # F4 누른게 감지되면
             break

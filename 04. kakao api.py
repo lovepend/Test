@@ -84,6 +84,8 @@ def kakao_message_you():
     # Authorization: Bearer {ACCESS_TOKEN}
 
     headers={"Authorization" : "Bearer " + tokens["access_token"]}
+    #headers={"Authorization" : "Bearer " + tokens["refresh_token"]}
+    
 
     result = json.loads(requests.get(friend_url, headers=headers).text)
 
