@@ -137,19 +137,43 @@ def 카카오톡_입력():
 lable1=Label(root, text="카카오톡 이름")
 lable1.pack()
 
-#버튼 기능
-# 541, 590, 645, 699, 755 
+#버튼 기능 금요일 먼저 다음 토요일
 def 테스트():
-    global week
-    week = 717,646 
+    while True:
+        #금요일 버튼
+        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
+            global Friday 
+            Friday = pag.position() # 위치 뽑아서 저장
+            print(Friday)
+            time.sleep(0.5)
+            break   
+        #토요일 버튼     
+    while True:
+        if keyboard.is_pressed("F4"): 
+            global Saturday 
+            Saturday  = pag.position()
+            print(Saturday)
+            time.sleep(0.5)
+            break  
     
 def 금요일():
-    global week
-    week = 785,646
+    while True:
+        #금요일 버튼
+        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
+            global Friday 
+            Friday = pag.position() # 위치 뽑아서 저장
+            print(Friday)
+            time.sleep(0.5)
+            break
 
 def 토요일():
-    global week
-    week = 851,646
+    while True:
+        if keyboard.is_pressed("F4"): 
+            global Saturday 
+            Saturday  = pag.position()
+            print(Saturday)
+            time.sleep(0.5)
+            break  
 
 def 호수뷰():
     global find_range
@@ -162,7 +186,9 @@ def 전체():
 def job():
     while True:
         #날짜 클릭
-        pag.click(week)
+        pag.click(Friday)
+        time.sleep(0.2)
+        pag.click(Saturday)
         time.sleep(0.2)
         #검색 아래위
         검색()
@@ -175,8 +201,6 @@ def job():
             break
 
 #  이미지 관련 ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
-
-
                    
 e = Entry(root, width=30)
 e.pack()
