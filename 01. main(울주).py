@@ -134,7 +134,10 @@ def 보안문자_받기():
         자동결제()
     
 def 결제page():
-#URL 전송
+    #화면클릭
+    pag.click(1800,800)
+    time.sleep(0.1)
+    #URL 전송
     pag.click(650,53)
     time.sleep(0.1)
     pag.hotkey('ctrl', 'c')
