@@ -68,7 +68,8 @@ def 검색():
         print("일박",button)
         print("연박",button_1)
         pag.click(button_1,button='left')     
-        보안문자_보내기()
+        #보안문자_보내기()
+        결제page()
 
 #카카오톡 보안문자 캡처 및 전송
 def 보안문자_보내기():
@@ -132,13 +133,33 @@ def 보안문자_받기():
         time.sleep(0.1)
         자동결제()
     
-
+def 결제page():
+#URL 전송
+    pag.click(650,53)
+    time.sleep(0.1)
+    pag.hotkey('ctrl', 'c')
+    url = pyperclip.paste()
+    kakao_sendmessage("박정철", url)
+    #기간
+    pag.click(x=907, y=750)
+    pag.hotkey('end')
+    pag.sleep(0.1)
+    #총인원
+    pag.click(x=1019, y=747)
+    pag.hotkey('end')
+    #페이지 선택
+    pag.click(1600,800)
+    #페이지 아래
+    pag.hotkey('end')
+    time.sleep(0.5)    
+    결제_page1()
+    
 #  자동 일력★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 #정보 입력 기간, 인원
 def 결제_page1():
     #다음 클릭
-    buttonpostion1 = pag.locateCenterOnScreen('./image/01_1. next.png', region = (0,0,1920,1680), confidence=0.8) #reservation 67%
-    pag.click(buttonpostion1.x-30,buttonpostion1.y)
+    buttonpostion1 = pag.locateCenterOnScreen('./image/01_1. next.png', region = (0,0,1920,1680), confidence=0.6) #reservation 67%
+    pag.click(buttonpostion1.x,buttonpostion1.y)
     time.sleep(0.1) #다음 페이지
     결제_page2()
 #도착시간 차량설정
@@ -388,7 +409,7 @@ btn1.pack(side=LEFT)
 btn2 = Button(root, padx=10, pady=5, text="다 음 달", command=job1, bg="blue", fg="white")
 btn2.pack(side=LEFT)
 
-btn3 = Button(root, padx=10, pady=5, text="보안문자", command=보안문자_보내기, bg="green", fg="white")
+btn3 = Button(root, padx=10, pady=5, text="보안문자", command=결제page, bg="green", fg="white")
 btn3.pack(side=LEFT)
 
 btn4 = Button(root, padx=10, pady=5, text="자동입력", command=수동결제, bg="black", fg="white")
