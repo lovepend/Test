@@ -68,8 +68,6 @@ def kakao_message_me():
     response = requests.post(url, headers=headers, data=data)
     response.status_code
 
-
-
 def kakao_message_you():
         
     with open("kakao_token.json","r") as fp:
@@ -109,6 +107,7 @@ def kakao_message_you():
         "template_object": json.dumps({
             "object_type":"text",
             "text":"test",
+            #"text":kakao_message,
             "link":{
                 "web_url":"www.daum.net",
                 "web_url":"www.naver.com"

@@ -278,6 +278,7 @@ def job():
 
 def job1():
     while True:
+        ##################################대왕암
         #날짜 클릭
         pag.click(day1)
         time.sleep(0.2)
@@ -290,11 +291,12 @@ def job1():
         #page 업 
         pag.click(840,682)
         time.sleep(0.2)
+        ###################################강동
         #날짜 클릭
         pag.click(day2)
         time.sleep(0.2)
         #page 아래 
-        pag.click(1804,699)
+        pag.click(1704,699)
         time.sleep(1)
         pag.hotkey('end')
         time.sleep(1)
