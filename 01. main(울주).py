@@ -242,6 +242,7 @@ def 결제page():
     pag.hotkey('ctrl', 'c')
     url = pyperclip.paste()
     #kakao_sendmessage("박정철", url)
+    refresh_token()
     kakao_message_you(url)
     #화면클릭
     pag.doubleClick(1800,800)
