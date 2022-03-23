@@ -173,7 +173,7 @@ def 검색():
 #카카오톡 보안문자 캡처 및 전송
 def 보안문자_보내기():
     #화면클릭
-    pag.click(1800,800)
+    pag.doubleClick(1800,800)
     time.sleep(0.1)
     #보안문자 이미지 저장
     time.sleep(0.2)
@@ -204,7 +204,7 @@ def 보안문자_보내기():
     pag.click(x=1019, y=747)
     pag.hotkey('end')
     #페이지 선택
-    pag.click(1600,800)
+    pag.doubleClick(1600,800)
     #페이지 아래
     pag.hotkey('end')
     time.sleep(0.1)
@@ -234,7 +234,7 @@ def 보안문자_받기():
     
 def 결제page():
     #화면클릭
-    pag.click(1800,800)
+    pag.doubleClick(1800,800)
     time.sleep(0.1)
     #URL 전송
     pag.click(650,53)
@@ -244,7 +244,7 @@ def 결제page():
     #kakao_sendmessage("박정철", url)
     kakao_message_you(url)
     #화면클릭
-    pag.click(1800,800)
+    pag.doubleClick(1800,800)
     time.sleep(0.2)
     #기간
     pag.click(x=907, y=750)
@@ -254,7 +254,7 @@ def 결제page():
     pag.click(x=1019, y=747)
     pag.hotkey('end')
     #페이지 선택
-    pag.click(1600,800)
+    pag.doubleClick(1600,800)
     #페이지 아래
     pag.hotkey('end')
     time.sleep(0.5)    
@@ -271,7 +271,7 @@ def 결제_page1():
 #도착시간 차량설정
 def 결제_page2():
     #페이지 선택
-    pag.click(1600,800)
+    pag.doubleClick(1600,800)
     #페이지 아래
     pag.hotkey('end')
     time.sleep(0.2)
@@ -404,7 +404,7 @@ def 수동결제():
     pag.click(x=1019, y=747)
     pag.hotkey('pagedown')
     #페이지 선택
-    pag.click(1600,800)
+    pag.doubleClick(1600,800)
     #페이지 아래
     pag.hotkey('end')
     time.sleep(0.5)
@@ -455,14 +455,14 @@ def log1():
         pag.click(986,429)
         #페이지 선택
         time.sleep(2)
-        pag.click(1600,800)
+        pag.doubleClick(1600,800)
 
 
 
 def job():
     while True:
         #페이지 선택
-        pag.click(1600,800)
+        pag.doubleClick(1600,800)
         log()
         pag.hotkey('f5')
         time.sleep(0.3)
@@ -478,7 +478,7 @@ def job():
 def job1():
     while True:
         #페이지 선택
-        pag.click(1600,800)
+        pag.doubleClick(1600,800)
         log1()
         pag.hotkey('f5')
         time.sleep(0.3)
