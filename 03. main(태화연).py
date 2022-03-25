@@ -115,7 +115,7 @@ def kakao_message_you():
 
 def 검색():
     print()
-    button = pag.locateCenterOnScreen("./image/03._1. reservation.png", region = find_range)#, confidence=0.9) 
+    button = pag.locateCenterOnScreen("./image/03._1. reservation.png", confidence=0.9) 
     if (button == None) :
         None      
     else :
