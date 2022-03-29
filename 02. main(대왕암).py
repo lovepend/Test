@@ -98,7 +98,7 @@ def kakao_message_you():
         'receiver_uuids': '["{}"]'.format(friend_id),
         "template_object": json.dumps({
             "object_type":"text",
-            "text":"태화연 확인",
+            "text":"대왕암 확인",
             "link":{
                 "web_url":"www.daum.net",
                 "web_url":"www.naver.com"
@@ -259,7 +259,7 @@ def 범위선택_강동():
     global find_range_강동
     find_range_강동 = (find_range3.x,find_range3.y,find_range4.x,find_range4.y)
 
-def job():
+def 대왕카라반():
     while True:
         #날짜 클릭
         pag.click(day1)
@@ -267,16 +267,52 @@ def job():
         #검색
         검색_대왕암()
         #page 아래 
-        pag.click(840,727)
+        pag.click(840,924)
         time.sleep(0.2)
         검색_대왕암()
         #page 업 
-        pag.click(840,682)
+        pag.click(840,707)
+        time.sleep(0.2)
+        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
+            break
+        
+def 대왕오토():
+    while True:
+        #날짜 클릭
+        pag.click(day1)
+        time.sleep(0.2)
+        #검색
+        검색_대왕암()
+        time.sleep(0.2)
+        #page 위
+        pag.click(840,707)
+        time.sleep(0.2)
+        검색_대왕암()
+        time.sleep(0.2)
+        #page 위
+        pag.click(840,707)
+        time.sleep(0.2)
+        검색_대왕암()
+        time.sleep(0.2)
+        #page 위
+        pag.click(840,707)
+        time.sleep(0.2)
+        검색_대왕암()
+        #page 아래
+        pag.click(840,924)
+        time.sleep(0.2)
+        pag.click(840,924)
+        time.sleep(0.2)
+        pag.click(840,924)
+        time.sleep(0.2)
+        pag.click(840,924)
+        time.sleep(0.2)
+        pag.click(840,924)
         time.sleep(0.2)
         if keyboard.is_pressed("F4"): # F4 누른게 감지되면
             break
 
-def job1():
+def 강동카라반():
     while True:
         ##################################대왕암
         #날짜 클릭
@@ -316,9 +352,9 @@ btn2 = Button(root, padx=10, pady=5, text="대왕범위", command=범위선택_�
 btn2.pack(side=LEFT)
 btn3 = Button(root, padx=10, pady=5, text="강동범위", command=범위선택_강동, bg="blue", fg="white")
 btn3.pack(side=LEFT)
-btn4 = Button(root, padx=10, pady=5, text="대 왕 암", command=job, bg="red", fg="white")
+btn4 = Button(root, padx=10, pady=5, text="대왕카라", command=대왕카라반, bg="red", fg="white")
 btn4.pack(side=LEFT)
-btn5 = Button(root, padx=10, pady=5, text="전체시작", command=job1, bg="red", fg="white")
+btn5 = Button(root, padx=10, pady=5, text="대왕오토", command=대왕오토, bg="red", fg="white")
 btn5.pack(side=LEFT)
 
 root.mainloop()

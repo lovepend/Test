@@ -15,7 +15,8 @@ import schedule
 ################################# 포지션    ##################################
 x0, y0 = 0, 0
 x1, y1 = 597, 0
-x2, y2 = 1920, 0 #1920 1080
+x2, y2 = 1196, 0 #597,0
+x3, y3 = 1920, 0 #1920 1080
 ################################# 인게임위치 ##################################
 #인게임 위치
 인게임_메뉴_X, 인게임_메뉴_Y = 543,53
@@ -29,6 +30,7 @@ x2, y2 = 1920, 0 #1920 1080
 월드보스클릭_X, 월드보스클릭_Y = 375,55
 월드보스입장_X, 월드보스입장_Y = 283,318
 오토클릭_X, 오토클릭_Y = 424, 263
+귀환클릭_X, 귀환클릭_Y = 539,312
 
 ################################# LD 위치    ##################################
 #메뉴위치
@@ -41,6 +43,7 @@ x2, y2 = 1920, 0 #1920 1080
 리니지M_X, 리니지M_Y = 209,123
 #녹화 관련
 녹화설정_X, 녹화설정_Y = 467,106
+녹화닫기_X, 녹화닫기_Y = 505,17
 #녹화 순서 위에서부터
 Record_No01_X ,Record_No01_Y = 434, 142 #메인 시련던전
 Record_No02_X ,Record_No02_Y = 436, 179 
@@ -63,6 +66,8 @@ def 앱초기화(x,y):
     pag.click(최근앱_X+x, 최근앱_Y+y)
     time.sleep(10)
     pag.click(앱닫기_X+x, 앱닫기_Y+y)
+    time.sleep(5)
+    pag.click(앱닫기_X+x, 앱닫기_Y+y)
     time.sleep(10)
     pag.click(리니지M_X+x, 리니지M_Y+y)   
     time.sleep(90)
@@ -71,7 +76,9 @@ def 앱초기화(x,y):
     pag.click(화면가운데_X+x, 화면가운데_Y+y)
     time.sleep(10)
     pag.click(입장하기_X+x, 입장하기_Y+y)
-    time.sleep(60)
+    time.sleep(30)
+    pag.click(귀환클릭_X+x, 귀환클릭_Y+y)
+    time.sleep(5)
     
 def 시련던전(x,y):
     pag.click(인게임_메뉴_X+x, 인게임_메뉴_Y+y)
@@ -97,6 +104,7 @@ def 절전모드실행(x,y):
     pag.click(물약클릭_X+x, 물약클릭_Y+y)
     time.sleep(5)
     pag.click(절전모드시작_X+x, 절전모드시작_Y+y)
+    time.sleep(5)
 
 def 월드보스(x,y):
     pag.click(월드보스클릭_X+x, 월드보스클릭_Y+y)
@@ -111,16 +119,19 @@ def 월드보스(x,y):
 ################################# 스케쥴    ##################################
 #서브02 시련 스타트
 def job_0500():
-    job_0500_(x2,y2)
+    job_0500_(x3,y3)
        
 def job_0500_(x,y):
     앱초기화(x,y)
     시련던전(x,y)
-    pag.click(Record_No01_X ,Record_No01_Y)
-
+    pag.click(Record_No01_X+x ,Record_No01_Y+y)
+    time.sleep(5)
+    pag.click(녹화닫기_X+x, 녹화닫기_Y+y)
+    time.sleep(5)
+    
 #서브02 스케줄 스타트
 def job_0640():
-    job_0640_(x2,y2)
+    job_0640_(x3,y3)
     
 def job_0640_(x,y):
     앱초기화(x,y)
@@ -129,25 +140,37 @@ def job_0640_(x,y):
 
 #서브01 시련 스타트  
 def job_0650():
-    job_0650_(x1,y1)
+    job_0650_(x2,y2)
     
 def job_0650_(x,y):
     앱초기화(x,y)
     시련던전(x,y)
-    pag.click(Record_No02_X ,Record_No02_Y)
+    pag.click(Record_No04_X+x ,Record_No04_Y+y)
+    time.sleep(5)
+    pag.click(녹화닫기_X+x, 녹화닫기_Y+y)
+    time.sleep(5)
     
 #메인00 시련 스타트  
 def job_0700():
     job_0700_(x0,y0)
+    pag.click(Record_No01_X+x0 ,Record_No01_Y+y0)  
+    time.sleep(5)
+    pag.click(녹화닫기_X+x0, 녹화닫기_Y+y0)
+    time.sleep(5)
     
+    job_0700_(x1,y1)
+    pag.click(Record_No03_X+x3 ,Record_No03_Y+y3) 
+    time.sleep(5)
+    pag.click(녹화닫기_X+x0, 녹화닫기_Y+y0)
+    time.sleep(5)
+   
 def job_0700_(x,y):
     앱초기화(x,y)
-    시련던전(x,y)
-    pag.click(Record_No01_X ,Record_No01_Y)  
+    시련던전(x,y) 
 
 #서브01 스케줄 스타트
 def job_0940():
-    job_0940_(x1,y1)
+    job_0940_(x2,y2)
     
 def job_0940_(x,y):
     앱초기화(x,y)
@@ -156,8 +179,8 @@ def job_0940_(x,y):
     
 #서브00 월드보스
 def job_1251():
+    job_1251_(x3,y3)
     job_1251_(x2,y2)
-    job_1251_(x1,y1)
     
 def job_1251_(x,y):
     앱초기화(x,y)
@@ -166,8 +189,8 @@ def job_1251_(x,y):
     
 #각종00 스케줄 스타트
 def job_1303():
-    job_1303_(x1,y1)
     job_1303_(x2,y2)
+    job_1303_(x3,y3)
     
 def job_1303_(x,y):
     앱초기화(x,y)
@@ -176,8 +199,8 @@ def job_1303_(x,y):
     
 #각종00 월드보스
 def job_1851():
+    job_1851_(x3,y3)
     job_1851_(x2,y2)
-    job_1851_(x1,y1)
     job_1851_(x0,y0)
     
 def job_1851_(x,y):
@@ -188,8 +211,8 @@ def job_1851_(x,y):
 #각종00 스케줄 스타트
 def job_1903():
     job_1903_(x0,y0)
-    job_1903_(x1,y1)
     job_1903_(x2,y2)
+    job_1903_(x3,y3)
     
 def job_1903_(x,y):
     앱초기화(x,y)
@@ -204,19 +227,19 @@ schedule.every().day.at("07:00").do(job_0700) # 메인00 시련던전 스타트
 
 schedule.every().day.at("09:40").do(job_0940) # 서브01 스케쥴러 스타트
 
-schedule.every().day.at("12:51").do(job_1251) # 월드보스
+schedule.every().day.at("12:49").do(job_1251) # 월드보스
 schedule.every().day.at("13:03").do(job_1303) # 서브00 스케줄 스타트
 
-schedule.every().day.at("18:51").do(job_1851) # 월드보스
+schedule.every().day.at("18:49").do(job_1851) # 월드보스
 schedule.every().day.at("19:03").do(job_1903) # 각종00 스케줄 스타트
 
-schedule.every().day.at("19:51").do(job_1851) # 월드보스
+schedule.every().day.at("19:49").do(job_1851) # 월드보스
 schedule.every().day.at("20:03").do(job_1903) # 각종00 스케줄 스타트
 
-schedule.every().day.at("20:51").do(job_1851) # 월드보스
+schedule.every().day.at("20:49").do(job_1851) # 월드보스
 schedule.every().day.at("21:03").do(job_1903) # 각종00 스케줄 스타트
 
-schedule.every().day.at("21:51").do(job_1851) # 월드보스
+schedule.every().day.at("21:49").do(job_1851) # 월드보스
 schedule.every().day.at("22:03").do(job_1903) # 각종00 스케줄 스타트
 
 # 10초에 한번씩 실행
@@ -235,3 +258,6 @@ schedule.every().day.at("22:03").do(job_1903) # 각종00 스케줄 스타트
 while True:
     schedule.run_pending()
     time.sleep(1)
+    if keyboard.is_pressed("F4"): 
+        break
+
