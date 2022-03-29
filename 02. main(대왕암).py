@@ -1,4 +1,5 @@
 from gettext import find
+from turtle import position
 import pyautogui as pag
 import win32con
 import win32api
@@ -223,6 +224,23 @@ def 날짜선택_강동():
             time.sleep(0.5)
             break  
 
+def 아래위선택():
+    while True:
+        if keyboard.is_pressed("F4"): 
+            global position_up
+            position_up  = pag.position()
+            print(position_up)
+            time.sleep(0.5)
+            break 
+    
+    while True:
+        if keyboard.is_pressed("F4"): 
+            global position_down
+            position_down  = pag.position()
+            print(position_down)
+            time.sleep(0.5)
+            break 
+
 def 범위선택_대왕암():
     while True:
         if keyboard.is_pressed("F4"): 
@@ -267,11 +285,11 @@ def 대왕카라반():
         #검색
         검색_대왕암()
         #page 아래 
-        pag.click(840,924)
+        pag.click(position_down)
         time.sleep(0.2)
         검색_대왕암()
         #page 업 
-        pag.click(840,707)
+        pag.click(position_up)
         time.sleep(0.2)
         if keyboard.is_pressed("F4"): # F4 누른게 감지되면
             break
@@ -285,29 +303,29 @@ def 대왕오토():
         검색_대왕암()
         time.sleep(0.2)
         #page 위
-        pag.click(840,707)
+        pag.click(position_up)
         time.sleep(0.2)
         검색_대왕암()
         time.sleep(0.2)
         #page 위
-        pag.click(840,707)
+        pag.click(position_up)
         time.sleep(0.2)
         검색_대왕암()
         time.sleep(0.2)
         #page 위
-        pag.click(840,707)
+        pag.click(position_up)
         time.sleep(0.2)
         검색_대왕암()
         #page 아래
-        pag.click(840,924)
+        pag.click(position_down)
         time.sleep(0.2)
-        pag.click(840,924)
+        pag.click(position_down)
         time.sleep(0.2)
-        pag.click(840,924)
+        pag.click(position_down)
         time.sleep(0.2)
-        pag.click(840,924)
+        pag.click(position_down)
         time.sleep(0.2)
-        pag.click(840,924)
+        pag.click(position_down)
         time.sleep(0.2)
         if keyboard.is_pressed("F4"): # F4 누른게 감지되면
             break
@@ -346,15 +364,15 @@ def 강동카라반():
 
 btn0 = Button(root, padx=10, pady=5, text="대왕날짜", command=날짜선택_대왕암, bg="green", fg="white")
 btn0.pack(side=LEFT)
-btn1 = Button(root, padx=10, pady=5, text="강동날짜", command=날짜선택_강동, bg="green", fg="white")
+btn1 = Button(root, padx=10, pady=5, text="커서선택", command=아래위선택, bg="green", fg="white")
 btn1.pack(side=LEFT)
 btn2 = Button(root, padx=10, pady=5, text="대왕범위", command=범위선택_대왕암, bg="blue", fg="white")
 btn2.pack(side=LEFT)
-btn3 = Button(root, padx=10, pady=5, text="강동범위", command=범위선택_강동, bg="blue", fg="white")
+btn3 = Button(root, padx=10, pady=5, text="공공백백", command=범위선택_강동, bg="blue", fg="white")
 btn3.pack(side=LEFT)
-btn4 = Button(root, padx=10, pady=5, text="대왕카라", command=대왕카라반, bg="red", fg="white")
+btn4 = Button(root, padx=10, pady=5, text="카 라 반", command=대왕카라반, bg="red", fg="white")
 btn4.pack(side=LEFT)
-btn5 = Button(root, padx=10, pady=5, text="대왕오토", command=대왕오토, bg="red", fg="white")
+btn5 = Button(root, padx=10, pady=5, text="오 토 캠", command=대왕오토, bg="red", fg="white")
 btn5.pack(side=LEFT)
 
 root.mainloop()
