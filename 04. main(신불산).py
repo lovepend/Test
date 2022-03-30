@@ -114,33 +114,25 @@ def kakao_message_you():
 ################################## 기능 편집 ################################## 
 
 def 검색():
-    print()
-    button = pag.locateCenterOnScreen("./image/04._1. reservation.png", region = find_range, confidence=0.85) 
+    button = pag.locateCenterOnScreen("./image/04._1. reservation.png", region = find_range, confidence=0.7) 
     if (button == None) :
         None      
-    else :
-        print(button)
-        time.sleep(0.2) 
-        pag.moveTo(button.x,button.y)
-        time.sleep(0.1) 
+    else : 
+        time.sleep(0.1)
         pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
         확인()
         
 def 확인() : 
-    button1 = pag.locateCenterOnScreen('./image/04._2. next.png', region = (510,100,1324,333), confidence=0.8)   
+    button1 = pag.locateCenterOnScreen('./image/04._2. next.png',  confidence=0.8)   #region = (510,100,1324,333),
     print(button1)
     if (button1 == None) :
         확인()      
     else :
-        time.sleep(0.2)
-        pag.click(1222,282)
-        #time.sleep(0.2) 
-        #pag.moveTo(button1.x,button1.y)
-        #time.sleep(0.1) 
-        #pag.click(button1.x,button1.y, button='right', clicks=1, interval=0.1)
+        time.sleep(0.1) 
+        pag.click(button1.x,button1.y+27, button='left', clicks=5, interval=0.1)
         refresh_token()
         kakao_message_you()
-        time.sleep(500)
+        time.sleep(60) 
 
 ################################## GUI 편집 ################################## 
 

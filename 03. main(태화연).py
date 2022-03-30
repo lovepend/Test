@@ -114,16 +114,12 @@ def kakao_message_you():
 ################################## 기능 편집 ################################## 
 
 def 검색():
-    print()
     button = pag.locateCenterOnScreen("./image/03._1. reservation.png", confidence=0.9) 
     if (button == None) :
         None      
     else :
-        print(button)
-        time.sleep(0.2) 
-        pag.moveTo(button.x,button.y)
-        time.sleep(0.1) 
-        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+        time.sleep(0.1)
+        pag.click(button.x,button.y, button='left')#, clicks=1, interval=0.1)
         확인()
         
 def 확인() : 
@@ -131,14 +127,13 @@ def 확인() :
     print(button1)
     if (button1 == None) :
         확인()      
-    else :
+    else : 
         time.sleep(0.2) 
-        pag.moveTo(button1.x,button1.y)
-        time.sleep(0.1) 
         pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
         refresh_token()
         kakao_message_you()
-        time.sleep(500)
+        print("완료")
+        
 
 ################################## GUI 편집 ################################## 
 
@@ -208,10 +203,10 @@ def job():
     while True:
         #날짜 클릭
         pag.click(day)
-        time.sleep(0.2)
+        time.sleep(0.1)
         #검색
         검색()
-        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
+        if keyboard.is_pressed("F4") : # F4 누른게 감지되면
             break
 
 #  이미지 관련 ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
