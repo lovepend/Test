@@ -118,25 +118,22 @@ def 검색_대왕암():
     button = pag.locateCenterOnScreen("./image/02._1. reservation.png", region = find_range_대왕암, confidence=0.85) 
     if (button == None) :
         None      
-    else :
-        time.sleep(0.1) 
-        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-        time.sleep(0.2) 
+    else : 
+        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
         확인_대왕암()
         
 
 def 확인_대왕암() :
-    time.sleep(0.1) 
     button1 = pag.locateCenterOnScreen('./image/02._2. next.png', confidence=0.6)   
     print(button1)
     if (button1 == None) :
         확인_대왕암()      
     else :
-        
+        time.sleep(0.15)
         pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
         refresh_token()
         kakao_message_you()
-        time.sleep(10)
+        time.sleep(20)
         
 def 검색_강동():
     #검색

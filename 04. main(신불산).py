@@ -118,21 +118,21 @@ def 검색():
     if (button == None) :
         None      
     else : 
-        time.sleep(0.1)
         pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
         확인()
         
 def 확인() : 
-    time.sleep(0.1) 
+ 
     button1 = pag.locateCenterOnScreen('./image/04._2. next.png',  confidence=0.8)   #region = (510,100,1324,333),
     print(button1)
     if (button1 == None) :
         확인()      
     else :
+        time.sleep(0.15)
         pag.click(button1.x,button1.y+27, button='left', clicks=5, interval=0.1)
         refresh_token()
         kakao_message_you()
-        time.sleep(60) 
+        time.sleep(20) 
 
 ################################## GUI 편집 ################################## 
 
