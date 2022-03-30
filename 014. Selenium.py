@@ -5,18 +5,42 @@ import time
 from bs4 import BeautifulSoup
 import pyautogui as pag
 
-id = "lovepend@nate"
-password = "12345678"
+
+
+id = "lovepend@nate.com"
+password = "*"
 
 
 chrome = webdriver.Chrome('chromedriver.exe')
-chrome.get('https://xn--om2bi2o9qdy7a48exzk3vf68fzzd.kr/reserve/month')
+time.sleep(1)
 
-loggin = chrome.find_element_by_css_selector('#container > div.calendar_w > table > tbody > tr:nth-child(5) > td:nth-child(5) > div > li:nth-child(17) > a > img')
-loggin.click()
-pag.hotkey('enter')
+
+chrome.get('https://www.junggu.ulsan.kr/camping/member/login.do')
+
+input_id = chrome.find_element_by_css_selector('#m_email')
+input_id.send_keys(id)
+print(input_id)
+time.sleep(5)
+
+input_pw = chrome.find_element_by_css_selector('#m_passwd')
+input_pw.send_keys('*')
+print(input_pw)
+time.sleep(5)
+
+logging_A = chrome.find_element_by_css_selector('#loginForm > fieldset > button')
+logging_A.click()
+time.sleep(60)
+
+Re_1 = chrome.find_element_by_css_selector('#siteList > div.rsv_list > div > table:nth-child(1) > tbody > tr:nth-child(1) > td:nth-child(3) > button')
+Re_1.click()
+
+
 
 #m_id
+#siteList > div.rsv_list > div > table:nth-child(1) > tbody > tr:nth-child(1) > td:nth-child(3) > a
+#siteList > div.rsv_list > div > table.board_list.num2 > tbody > tr:nth-child(7) > td:nth-child(3) > button
+#siteList > div.rsv_list > div > table.board_list.num2 > tbody > tr:nth-child(16) > td:nth-child(3) > button
+
 
 
 ##############################################################
@@ -24,10 +48,9 @@ pag.hotkey('enter')
 #link.click()
 
 
-#input_box = chrome.find_element_by_css_selector('body > div.L3eUgb > div.o3j99.ikrT4e.om7nvf > form > div:nth-child(1) > div.A8SBwf > div.RNNXgb > div > div.a4bIc > input')
-#input_box.send_keys('python')
-#print(input_box)
+
+
 
 time.sleep(100)
 
-driver.quit()
+#driver.quit()
