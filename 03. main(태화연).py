@@ -130,8 +130,8 @@ def 확인() :
     else : 
         time.sleep(0.15) 
         pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
-        #refresh_token()
-        #kakao_message_you()
+        refresh_token()
+        kakao_message_you()
         time.sleep(60)
         
 
