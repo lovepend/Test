@@ -118,7 +118,8 @@ def 검색():
     if (button == None) :
         None      
     else :
-        pag.click(button.x,button.y, button='left')#, clicks=1, interval=0.1)
+        time.sleep(0.05) 
+        pag.click(button.x,button.y, button='left', clicks=3, interval=0.1)
         확인()
         
 def 확인() : 
@@ -129,9 +130,9 @@ def 확인() :
     else : 
         time.sleep(0.15) 
         pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
-        refresh_token()
-        kakao_message_you()
-        time.sleep(20)
+        #refresh_token()
+        #kakao_message_you()
+        time.sleep(60)
         
 
 ################################## GUI 편집 ################################## 

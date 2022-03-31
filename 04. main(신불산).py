@@ -118,6 +118,7 @@ def 검색():
     if (button == None) :
         None      
     else : 
+        time.sleep(0.05)
         pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
         확인()
         

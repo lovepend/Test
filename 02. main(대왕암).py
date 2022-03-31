@@ -119,12 +119,13 @@ def 검색_대왕암():
     if (button == None) :
         None      
     else : 
+        time.sleep(0.05) 
         pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
         확인_대왕암()
         
 
 def 확인_대왕암() :
-    button1 = pag.locateCenterOnScreen('./image/02._2. next.png', confidence=0.6)   
+    button1 = pag.locateCenterOnScreen('./image/02._2. next.png', confidence=0.7)   
     print(button1)
     if (button1 == None) :
         확인_대왕암()      
@@ -133,7 +134,7 @@ def 확인_대왕암() :
         pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
         refresh_token()
         kakao_message_you()
-        time.sleep(20)
+        time.sleep(60)
         
 def 검색_강동():
     #검색
