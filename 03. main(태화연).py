@@ -128,7 +128,17 @@ def 확인() :
     if (button1 == None) :
         확인()      
     else : 
-        time.sleep(0.15) 
+        time.sleep(0.05) 
+        pag.click(1105,213)
+        time.sleep(0.05) 
+        pag.click(1105,213)
+        time.sleep(0.05) 
+        pag.click(1105,213)
+        time.sleep(0.05) 
+        pag.click(1105,213)
+        time.sleep(0.05) 
+        pag.click(1105,213)
+        time.sleep(0.05) 
         pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
         refresh_token()
         kakao_message_you()

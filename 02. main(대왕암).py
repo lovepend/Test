@@ -130,7 +130,16 @@ def 확인_대왕암() :
     if (button1 == None) :
         확인_대왕암()      
     else :
-        time.sleep(0.15)
+        pag.click(1084,283)
+        time.sleep(0.05)
+        pag.click(1084,283)
+        time.sleep(0.05)
+        pag.click(1084,283)
+        time.sleep(0.05)
+        pag.click(1084,283)
+        time.sleep(0.05)
+        pag.click(1084,283)
+        time.sleep(0.05)
         pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
         refresh_token()
         kakao_message_you()
