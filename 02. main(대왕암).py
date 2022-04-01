@@ -172,6 +172,8 @@ lable1.pack()
 lable1=Label(root, text="날짜선택 -> 범위선택 -> 작업시작(지정은 F4)")
 lable1.pack()
 
+global end_command
+end_command = 0
 #버튼 기능
 def Reset():
     global end_command

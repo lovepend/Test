@@ -135,8 +135,8 @@ def 결제금액_SetpA() :
     else : 
         pag.click(1269,902, button='left', clicks=100, interval=0.1)
         #pag.click(button1.x,button1.y, button='right', clicks=1, interval=0.1)
-        #refresh_token()
-        #kakao_message_you()
+        refresh_token()
+        kakao_message_you()
         global end_command
         end_command = 1
         print('end')
@@ -165,6 +165,8 @@ lable1=Label(root, text="초기설정 -> 날짜입력 -> 자동입력 -> 범위�
 lable1.pack()
 
 #버튼 기능
+global end_command
+end_command = 0
 def Reset():
     global end_command
     end_command = 0
