@@ -143,7 +143,9 @@ def 확인_대왕암() :
         pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
         refresh_token()
         kakao_message_you()
-        time.sleep(60)
+        global end_command
+        end_command = 1
+        print('end')
         
 def 검색_강동():
     #검색
@@ -210,6 +212,10 @@ lable1=Label(root, text="날짜선택 -> 범위선택 -> 작업시작(지정은 
 lable1.pack()
 
 #버튼 기능
+def Reset():
+    global end_command
+    end_command = 0
+    
 def 날짜선택_대왕암():
     while True:
         if keyboard.is_pressed("F4"): 
@@ -283,6 +289,8 @@ def 범위선택_강동():
 
 def 대왕카라반():
     while True:
+        if end_command == 1 : # end_command 가 1이 되면
+            break
         #날짜 클릭
         pag.click(day1)
         time.sleep(0.2)
@@ -300,9 +308,11 @@ def 대왕카라반():
         
 def 대왕오토():
     while True:
+        if end_command == 1 : # end_command 가 1이 되면
+            break
         #날짜 클릭
         pag.click(day1)
-        time.sleep(0.2)
+        time.sleep(0.5)
         #검색
         검색_대왕암()
         time.sleep(0.2)
