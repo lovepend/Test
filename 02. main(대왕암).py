@@ -1,3 +1,4 @@
+from cgitb import reset
 from gettext import find
 from turtle import position
 import pyautogui as pag
@@ -146,47 +147,7 @@ def 확인_대왕암() :
         global end_command
         end_command = 1
         print('end')
-        
-def 검색_강동():
-    #검색
-    button = pag.locateCenterOnScreen("./image/02._3. reservation.png", region = find_range_강동, confidence=0.85) 
-    if (button == None) :
-        None      
-    else :
-        print(button)
-        time.sleep(0.3) 
-        pag.moveTo(button.x,button.y)
-        time.sleep(0.3) 
-        pag.click(button.x,button.y, button='left', clicks=1, interval=1)
-        time.sleep(1)
-        확인_강동1()
-        
-def 확인_강동1() : 
-    button1 = pag.locateCenterOnScreen('./image/02._4. reservation.png', confidence=0.5)   
-    print(button1)
-    if (button1 == None) :
-        확인_강동1()      
-    else :
-        time.sleep(0.3) 
-        pag.moveTo(button1.x,button1.y)
-        time.sleep(0.3) 
-        pag.click(button1.x,button1.y, button='left', clicks=1, interval=1)
-        확인_강동2()
-        time.sleep(1)
-
-def 확인_강동2() : 
-    button2 = pag.locateCenterOnScreen('./image/02._5. next.png', confidence=0.6)   
-    print(button2)
-    if (button2 == None) :
-        확인_강동2()      
-    else :
-        time.sleep(0.3) 
-        pag.moveTo(button2.x,button2.y)
-        time.sleep(0.3) 
-        pag.click(button2.x,button2.y, button='left', clicks=1, interval=1)
-        refresh_token()
-        kakao_message_you()
-        time.sleep(500)
+               
 
 ################################## GUI 편집 ################################## 
 
@@ -216,7 +177,7 @@ def Reset():
     global end_command
     end_command = 0
     
-def 날짜선택_대왕암():
+def 날짜선택():
     while True:
         if keyboard.is_pressed("F4"): 
             global day1 
@@ -224,15 +185,6 @@ def 날짜선택_대왕암():
             print(day1)
             time.sleep(0.5)
             break         
-        
-def 날짜선택_강동():
-    while True:
-        if keyboard.is_pressed("F4"): 
-            global day2
-            day2  = pag.position()
-            print(day2)
-            time.sleep(0.5)
-            break  
 
 def 아래위선택():
     while True:
@@ -251,7 +203,7 @@ def 아래위선택():
             time.sleep(0.5)
             break 
 
-def 범위선택_대왕암():
+def 범위선택():
     while True:
         if keyboard.is_pressed("F4"): 
             global find_range1 
@@ -268,25 +220,7 @@ def 범위선택_대왕암():
             break  
     global find_range_대왕암
     find_range_대왕암 = (find_range1.x,find_range1.y,find_range2.x,find_range2.y)
-    
-def 범위선택_강동():
-    while True:
-        if keyboard.is_pressed("F4"): 
-            global find_range3 
-            find_range3  = pag.position()
-            print(find_range3)
-            time.sleep(0.5)
-            break  
-    while True:
-        if keyboard.is_pressed("F4"): 
-            global find_range4
-            find_range4  = pag.position()
-            print(find_range4)
-            time.sleep(0.5)
-            break  
-    global find_range_강동
-    find_range_강동 = (find_range3.x,find_range3.y,find_range4.x,find_range4.y)
-
+ 
 def 대왕카라반():
     while True:
         if end_command == 1 : # end_command 가 1이 되면
@@ -350,45 +284,16 @@ def 대왕오토():
         if keyboard.is_pressed("F4"): # F4 누른게 감지되면
             break
 
-def 강동카라반():
-    while True:
-        ##################################대왕암
-        #날짜 클릭
-        pag.click(day1)
-        time.sleep(0.2)
-        #검색
-        검색_대왕암()
-        #page 아래 
-        pag.click(840,727)
-        time.sleep(0.2)
-        검색_대왕암()
-        #page 업 
-        pag.click(840,682)
-        time.sleep(0.2)
-        ###################################강동
-        #날짜 클릭
-        pag.click(day2)
-        time.sleep(0.2)
-        #page 아래 
-        pag.click(1704,699)
-        time.sleep(1)
-        pag.hotkey('end')
-        time.sleep(1)
-        pag.hotkey('end')
-        time.sleep(1)
-        검색_강동()
-        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
-            break
 
 #  이미지 관련 ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
 
-btn0 = Button(root, padx=10, pady=5, text="대왕날짜", command=날짜선택_대왕암, bg="green", fg="white")
+btn0 = Button(root, padx=10, pady=5, text="초기설정", command=reset, bg="green", fg="white")
 btn0.pack(side=LEFT)
-btn1 = Button(root, padx=10, pady=5, text="커서선택", command=아래위선택, bg="green", fg="white")
+btn1 = Button(root, padx=10, pady=5, text="날짜선택", command=날짜선택, bg="green", fg="white")
 btn1.pack(side=LEFT)
-btn2 = Button(root, padx=10, pady=5, text="대왕범위", command=범위선택_대왕암, bg="blue", fg="white")
+btn2 = Button(root, padx=10, pady=5, text="커서선택", command=아래위선택, bg="green", fg="white")
 btn2.pack(side=LEFT)
-btn3 = Button(root, padx=10, pady=5, text="공공백백", command=범위선택_강동, bg="blue", fg="white")
+btn3 = Button(root, padx=10, pady=5, text="범위선택", command=범위선택, bg="blue", fg="white")
 btn3.pack(side=LEFT)
 btn4 = Button(root, padx=10, pady=5, text="카 라 반", command=대왕카라반, bg="red", fg="white")
 btn4.pack(side=LEFT)
