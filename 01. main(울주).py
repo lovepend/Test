@@ -365,16 +365,16 @@ def 결제_page6():
         
 #이메일 확인
 def 결제_page7():
-    buttonpostion7 = pag.locateCenterOnScreen('./image/01_7. next1.png', region = (0,0,1920,1680), confidence=0.9) #reservation 67%
+    buttonpostion7 = pag.locateCenterOnScreen('./image/01_7. next1.png', region = (0,0,1920,1680), confidence=0.7) #reservation 67%
     if (buttonpostion7 == None):
         결제_page7()
     else :
         #이메일 발송
-        buttonpostion7_1 = pag.locateCenterOnScreen('./image/01_7. next2.png', region = (0,0,1920,1680), confidence=0.9) #reservation 67%
+        buttonpostion7_1 = pag.locateCenterOnScreen('./image/01_7. next2.png', region = (0,0,1920,1680), confidence=0.7) #reservation 67%
         pag.click(buttonpostion7_1.x,buttonpostion7_1.y)
 #완료!!!
 def 결제_page8():
-    buttonpostion8 = pag.locateCenterOnScreen('./image/01_8. next1.png', region = (0,0,1920,1680), confidence=0.9) #reservation 67%
+    buttonpostion8 = pag.locateCenterOnScreen('./image/01_8. next1.png', region = (0,0,1920,1680), confidence=0.7) #reservation 67%
     if (buttonpostion8 == None):
         결제_page8()
     else :

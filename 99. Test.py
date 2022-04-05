@@ -168,6 +168,15 @@ def job():
         if keyboard.is_pressed("F4"): # F4 누른게 감지되면
             break
 
+
+def job1():
+    while True:
+        pag.click(821,682)
+        time.sleep(1)
+        pag.hotkey('enter')
+        time.sleep(1)
+        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
+            break
 #  이미지 관련 ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
 
 
@@ -186,7 +195,7 @@ btn3 = Button(root, padx=10, pady=5, text="호 수 뷰", command=호수뷰, bg="
 btn3.pack(side=LEFT)
 btn4 = Button(root, padx=10, pady=5, text="전    체", command=전체, bg="blue", fg="white")
 btn4.pack(side=LEFT)
-btn5 = Button(root, padx=10, pady=5, text="태 화 연", command=job, bg="red", fg="white")
+btn5 = Button(root, padx=10, pady=5, text="태 화 연", command=job1, bg="red", fg="white")
 btn5.pack(side=LEFT)
 
 root.mainloop()
