@@ -133,8 +133,9 @@ def 결제금액_SetpA() :
     if (button1 == None) :
         결제금액_SetpA()      
     else : 
-        pag.click(1269,902, button='left', clicks=100, interval=0.1)
-        #pag.click(button1.x,button1.y, button='right', clicks=1, interval=0.1)
+        button2 = pag.locateCenterOnScreen('./image/03._3. next.png', confidence=0.8)   
+        #pag.click(1269,902, button='left', clicks=100, interval=0.1)
+        pag.click(button2.x,button2.y, button='left', clicks=1, interval=0.1)
         refresh_token()
         kakao_message_you()
         global end_command
