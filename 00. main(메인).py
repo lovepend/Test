@@ -159,7 +159,7 @@ def job_0700():
     time.sleep(5)
     
     job_0700_(x1,y1)
-    pag.click(Record_No03_X+x3 ,Record_No03_Y+y3) 
+    pag.click(Record_No03_X+x1 ,Record_No03_Y+y1) 
     time.sleep(5)
     pag.click(녹화닫기_X+x1, 녹화닫기_Y+y1)
     time.sleep(5)

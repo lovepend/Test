@@ -13,7 +13,7 @@ import json
 #import clipboard
 #import schedule
 
-#태화연 Test 2022.04.01 #Viewer Size 60%
+#태화연 Test 2022.04.01 #Viewer Size 67%
 
 ################################## 카카오톡 ################################## 
 
@@ -120,8 +120,8 @@ def 검색():
     if (button == None) :
         None      
     else :
-        pag.click(button.x,button.y, button='left', clicks=3, interval=0.1)
-        time.sleep(0.2)
+        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+        time.sleep(0.3)
         pag.hotkey('enter')
         time.sleep(0.2)
         pag.hotkey('end')
@@ -159,7 +159,7 @@ e = Entry(root, width=30)
 e.pack()
 e.insert(0,"박정철")
 
-lable1=Label(root, text="카카오톡 이름  뷰어 Size -> 60%")
+lable1=Label(root, text="카카오톡 이름  뷰어 Size -> 67%")
 lable1.pack()
 
 lable1=Label(root, text="초기설정 -> 날짜입력 -> 자동입력 -> 범위선택 -> 작업시작(지정은 F4)")
@@ -189,19 +189,35 @@ def 날짜선택():
             break       
         
 def 자동입력():
-    #pag.click(700,844)
-    #time.sleep(1)
-    #pag.write("62소6403")
-    #time.sleep(1)
-    pag.click(1851,790)
+    #캠핑장 선택
+    pag.click(1005,356)
     time.sleep(1)
-    pag.click(526,272)
+    pag.click(998,448)
     time.sleep(1)
-    pag.click(526,473)
+    #차량 넘버 입력
+    pag.click(704,928)
     time.sleep(1)
-    pag.click(526,672)
+    pyperclip.copy("62소9403")
     time.sleep(1)
-    pag.click(878,871)
+    pag.hotkey('ctrl', 'v')
+    time.sleep(1)
+    #다음페이지
+    pag.click(1847,897)
+    time.sleep(1)
+    #이용준수사항
+    pag.click(480,316)
+    time.sleep(1)
+    #입실정원
+    pag.click(480,538)
+    time.sleep(1)
+    #취소 및 환불 규정
+    pag.click(480,760)
+    time.sleep(1)
+    #개인정보 수집 이용 동의
+    pag.click(875,983)
+    time.sleep(1)
+    #페이지 위로
+    pag.click(1852,243)
 
 def 범위선택():
     while True:
