@@ -16,6 +16,13 @@ import json
 
 #태화연 Test 2022.04.01 #Viewer Size 67%
 
+global end_command
+end_command = 0
+
+def Reset():
+    global end_command
+    end_command = 0
+
 def 태화연_검색():
     button = pag.locateCenterOnScreen("./image/03._1. reservation.png", region=find_range ,confidence=0.8) 
     print(button)
@@ -23,22 +30,35 @@ def 태화연_검색():
         None      
     else :
         pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+        태화연_StepA()
+        
+def 태화연_StepA():
+    button1 = pag.locateCenterOnScreen("./image/03._2. check.png", confidence=0.7) 
+    if (button1 == None) :
+        None
+        태화연_StepA()
+    else :    
+        pag.click(button1.x,button1.y, button='left', clicks=1, interval=0.1)
+        print(button1)
         time.sleep(0.3)
         pag.hotkey('enter')
-        time.sleep(0.2)
-        pag.hotkey('end')
-        태화연_page1()
-        
-def 태화연_page1() : 
-    button1 = pag.locateCenterOnScreen('./image/03._2. next.png', confidence=0.8)   
-    print(button1)
-    if (button1 == None) :
-        태화연_page1()      
+        #time.sleep(2)
+        태화연_StepB()
+            
+def 태화연_StepB() : 
+    button2 = pag.locateCenterOnScreen('./image/03._3. next.png', confidence=0.7)   
+    print(button2)
+    if (button2 == None) :
+        태화연_StepB()      
     else : 
-        button2 = pag.locateCenterOnScreen('./image/03._3. next.png', confidence=0.8)   
-        pag.click(button2.x,button2.y, button='left', clicks=1, interval=0.1)
-        refresh_token()
-        kakao_message_you("태화연")
+        pag.click(1800,800)
+        time.sleep(0.5)
+        pag.hotkey('end')
+        time.sleep(1)
+        button3 = pag.locateCenterOnScreen('./image/03._4. next.png', confidence=0.7)   
+        pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
+        #refresh_token()
+        #kakao_message_you("태화연")
         global end_command
         end_command = 1
         print('end')
@@ -63,7 +83,7 @@ def 태화연_자동입력():
     #캠핑장 선택
     pag.click(1005,356)
     time.sleep(1)
-    pag.click(998,448)
+    pag.click(1013,392)
     time.sleep(1)
     #차량 넘버 입력
     pag.click(704,928)
@@ -87,8 +107,12 @@ def 태화연_자동입력():
     #개인정보 수집 이용 동의
     pag.click(875,983)
     time.sleep(1)
+    #페이지 클릭
+    pag.click(1800,800)
     #페이지 위로
-    pag.click(1852,243)
+    pag.hotkey("home")
+    
+    
 
 def 태화연_범위선택():
     while True:
@@ -109,6 +133,8 @@ def 태화연_범위선택():
     global find_range
     find_range = (find_range1.x,find_range1.y,find_range2.x,find_range2.y)
 
+
+        
 def 태화연_job():
     while True:
         if end_command == 1 : # end_command 가 1이 되면
@@ -119,7 +145,6 @@ def 태화연_job():
         pag.click(태화연_day2)
         time.sleep(0.2)
         #검색
-        태화연_검색()    
+        태화연_검색()   
         if keyboard.is_pressed("F4") : # F4 누른게 감지되면
             break
-        

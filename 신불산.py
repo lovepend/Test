@@ -16,6 +16,13 @@ import json
 
 #신불산 Test 2022.03.21 #Viewer Size 67%
 
+global end_command
+end_command = 0
+
+def Reset():
+    global end_command
+    end_command = 0
+    
 def 신불산_검색():
     button = pag.locateCenterOnScreen("./image/04._1. reservation.png", region = find_range, confidence=0.7) 
     if (button == None) :

@@ -16,6 +16,13 @@ import json
 
 #대왕암 Test 2022.03.17 #Viewer Size 80% #화면 맨아래로 통일
 
+global end_command
+end_command = 0
+
+def Reset():
+    global end_command
+    end_command = 0
+    
 def 대왕암_검색():
     #검색
     button = pag.locateCenterOnScreen("./image/02._1. reservation.png", region = find_range_대왕암, confidence=0.85) 
