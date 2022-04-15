@@ -135,7 +135,6 @@ def 울주_page6():
         time.sleep(0.1)
         pag.hotkey('ctrl', 'c')
         결제코드 = pyperclip.paste() 
-        #kakao_sendmessage("박정철", 결제코드)
         kakao_message_you(결제코드)
         울주_page7()
         
@@ -167,7 +166,6 @@ def 울주_page8():
                 
 def 자동결제():
     울주_page1()
-
 
 def 수동결제():
     #기간
@@ -237,15 +235,10 @@ def 울주_job():
     while True:
         #페이지 선택
         pag.doubleClick(1600,800)
-        울주_log()
+        울주_log1()
         pag.hotkey('f5')
         time.sleep(0.3)
         울주_검색()
-        pag.hotkey('pagedown')
-        time.sleep(0.3)
-        울주_검색()
-        pag.hotkey('home')
-        time.sleep(0.3)
         if keyboard.is_pressed("F4"): # F4 누른게 감지되면
             break
 
@@ -255,13 +248,9 @@ def 울주_job1():
         pag.doubleClick(1600,800)
         울주_log1()
         pag.hotkey('f5')
+        pag.hotkey('end')
         time.sleep(0.3)
         울주_검색()
-        pag.hotkey('pagedown')
-        time.sleep(0.3)
-        울주_검색()
-        pag.hotkey('home')
         time.sleep(0.3)
         if keyboard.is_pressed("F4"): # F4 누른게 감지되면
             break
-
