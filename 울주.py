@@ -14,10 +14,31 @@ import time
 import json
 
 #울주해양예약 시스템 2022.01.11 #Vier Size 67%
+ 
+
+def 울주_범위선택():
+    while True:
+        if keyboard.is_pressed("F4"): 
+            global find_range1 
+            find_range1  = pag.position()
+            print(find_range1)
+            time.sleep(0.5)
+            break  
+    while True:
+        if keyboard.is_pressed("F4"): 
+            global find_range2 
+            find_range2  = pag.position()
+            print(find_range2)
+            time.sleep(0.5)
+            break  
+        
+    global find_range
+    find_range = (find_range1.x,find_range1.y,find_range2.x,find_range2.y)
+
 
 def 울주_검색():
-    Saturday = 1164,102,1263,1080 #토요일만 검색 
-    button = pag.locateCenterOnScreen('./image/01_0. reservation1.png', region = Saturday,confidence=0.9)
+    #Saturday = 1164,102,1263,1080 #토요일만 검색 
+    button = pag.locateCenterOnScreen('./image/01_0. reservation1.png', region = find_range, confidence=0.9)
     if (button == None) :
         None        
     else :
@@ -140,29 +161,23 @@ def 울주_page6():
         
 #이메일 확인
 def 울주_page7():
-    buttonpostion7 = pag.locateCenterOnScreen('./image/01_7. next1.png', region = (0,0,1920,1680), confidence=0.7) #reservation 67%
+    buttonpostion7 = pag.locateCenterOnScreen('./image/01_7. next1.png', confidence=0.7) #reservation 67%
     if (buttonpostion7 == None):
         울주_page7()
     else :
         #이메일 발송
-        buttonpostion7_1 = pag.locateCenterOnScreen('./image/01_7. next2.png', region = (0,0,1920,1680), confidence=0.7) #reservation 67%
+        buttonpostion7_1 = pag.locateCenterOnScreen('./image/01_7. next2.png', confidence=0.7) #reservation 67%
         pag.click(buttonpostion7_1.x,buttonpostion7_1.y)
 
 #완료!!!
 def 울주_page8():
-    buttonpostion8 = pag.locateCenterOnScreen('./image/01_8. next1.png', region = (0,0,1920,1680), confidence=0.7) #reservation 67%
+    buttonpostion8 = pag.locateCenterOnScreen('./image/01_8. next1.png', confidence=0.7) #reservation 67%
     if (buttonpostion8 == None):
         울주_page8()
     else :
         #이메일 발송
-        pag.click(buttonpostion8.x+50,buttonpostion8.y)
-        pag.hotkey('enter')
-        time.sleep(0.1)   
-        pag.hotkey('esc')
-        time.sleep(0.1)
-        pag.hotkey('enter')
-        time.sleep(0.1)
-        pag.hotkey('esc')
+        pag.click(buttonpostion8.x+70,buttonpostion8.y)
+        time.sleep(100)
                 
 def 자동결제():
     울주_page1()

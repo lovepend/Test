@@ -32,6 +32,8 @@ root.wm_attributes("-topmost", 1)
 울주btn1.grid(row=1, column=0)
 울주btn2 = Button(root, padx=10, pady=5, text="다음달달", command=울주_job1, bg="green", fg="white")
 울주btn2.grid(row=1, column=1)
+울주btn3 = Button(root, padx=10, pady=5, text="범위선택", command=울주_범위선택, bg="green", fg="white")
+울주btn3.grid(row=1, column=2)
 
 #태화연에서 예약하기
 태화연lable1=Label(root, text="태 화 연", width=30, height=2)

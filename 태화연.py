@@ -38,7 +38,7 @@ def 태화연_StepA():
         None
         태화연_StepA()
     else :    
-        pag.click(button1.x,button1.y, button='left', clicks=1, interval=0.1)
+        pag.click(button1.x,button1.y, button='left', clicks=10, interval=0.1)
         print(button1)
         time.sleep(0.3)
         pag.hotkey('enter')
