@@ -38,7 +38,7 @@ def 태화연_StepA():
         None
         태화연_StepA()
     else :    
-        pag.click(button1.x,button1.y, button='left', clicks=10, interval=0.1)
+        pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
         print(button1)
         time.sleep(0.3)
         pag.hotkey('enter')
@@ -143,7 +143,7 @@ def 태화연_job():
         pag.click(태화연_day1)
         time.sleep(0.2)
         pag.click(태화연_day2)
-        time.sleep(0.2)
+        time.sleep(0.3)
         #검색
         태화연_검색()   
         if keyboard.is_pressed("F4") : # F4 누른게 감지되면

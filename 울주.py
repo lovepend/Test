@@ -263,9 +263,12 @@ def 울주_job1():
         pag.doubleClick(1600,800)
         울주_log1()
         pag.hotkey('f5')
+        time.sleep(0.3)
+        울주_검색()
         pag.hotkey('end')
         time.sleep(0.3)
         울주_검색()
+        pag.hotkey('home')
         time.sleep(0.3)
         if keyboard.is_pressed("F4"): # F4 누른게 감지되면
             break
