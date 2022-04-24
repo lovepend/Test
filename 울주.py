@@ -36,6 +36,10 @@ def 울주_범위선택():
     find_range = (find_range1.x,find_range1.y,find_range2.x,find_range2.y)
 
 
+def 울주_토요일():
+    global find_range
+    find_range = 1164,102,1263,1080 #토요일만 검색 
+
 def 울주_검색():
     #Saturday = 1164,102,1263,1080 #토요일만 검색 
     button = pag.locateCenterOnScreen('./image/01_0. reservation1.png', region = find_range, confidence=0.9)
@@ -262,6 +266,58 @@ def 울주_job1():
         #페이지 선택
         pag.doubleClick(1600,800)
         울주_log1()
+        pag.hotkey('f5')
+        time.sleep(0.3)
+        울주_검색()
+        pag.hotkey('end')
+        time.sleep(0.3)
+        울주_검색()
+        pag.hotkey('home')
+        time.sleep(0.3)
+        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
+            break
+
+def 울주_job2():
+    while True:
+        #페이지 선택
+        pag.doubleClick(1600,800)
+        울주_log1()
+        #A사이트
+        pag.click(625,505)
+        time.sleep(0.3)
+        pag.hotkey('f5')
+        time.sleep(0.3)
+        울주_검색()
+        pag.hotkey('end')
+        time.sleep(0.3)
+        울주_검색()
+        pag.hotkey('home')
+        time.sleep(0.3)
+        #D사이트
+        pag.click(840,510)
+        time.sleep(0.3)
+        pag.hotkey('f5')
+        time.sleep(0.3)
+        울주_검색()
+        pag.hotkey('end')
+        time.sleep(0.3)
+        울주_검색()
+        pag.hotkey('home')
+        time.sleep(0.3)
+        #E사이트
+        pag.click(918,510)
+        time.sleep(0.3)
+        pag.hotkey('f5')
+        time.sleep(0.3)
+        울주_검색()
+        pag.hotkey('end')
+        time.sleep(0.3)
+        울주_검색()
+        pag.hotkey('home')
+        time.sleep(0.3)
+        #F사이트
+        pag.click(1005,510)
+        time.sleep(0.3)
         pag.hotkey('f5')
         time.sleep(0.3)
         울주_검색()

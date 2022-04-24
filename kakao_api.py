@@ -15,7 +15,7 @@ def access_token():
         "grant_type" : "authorization_code",
         "client_id" : "ddcfd4509dc2ec690ebb764199ff2247",
         "redirect_url" : "https://localhost:3000",
-        "code" : "{코드}"
+        "code" : "VS2QPM4-THsC9ovF6lC3qfTTxjyCzViceHcEGcC7Camljs8U1ITWydxFgGvkg6kJMoUE2worDNIAAAGAW24GqA"
     }
     response = requests.post(url, data=data)
     tokens = response.json()
@@ -30,7 +30,7 @@ def refresh_token():
         "grant_type": "refresh_token",
         "client_id": "ddcfd4509dc2ec690ebb764199ff2247",
         #"refresh_token": "{refresh_token}"
-        "refresh_token": "CsrbYjjznXydtF3QoSHWF8a9nfjBYQ_oZ0BAxwo9c-wAAAF_mkcY_Q"
+        "refresh_token": "E7ajlqhHJmzdyszxBNs9LvMrGHgLa2H0nW1lgQo9dNsAAAGAW25RPA"
     }
     response = requests.post(url, data=data)
     tokens = response.json()
@@ -39,8 +39,6 @@ def refresh_token():
     with open("kakao_token.json", "w") as fp:
         json.dump(tokens, fp)
         
-    
-
 def kakao_message_me():
 
     #2.
@@ -119,5 +117,6 @@ def kakao_message_you(kakao_message_send):
     response = requests.post(send_url, headers=headers, data=data)
     response.status_code
 
+#access_token()
 #refresh_token()
 #kakao_message_you("안녕하세요")
