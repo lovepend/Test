@@ -282,17 +282,7 @@ def 울주_job2():
         #페이지 선택
         pag.doubleClick(1600,800)
         울주_log1()
-        #A사이트
-        pag.click(625,505)
-        time.sleep(0.3)
-        pag.hotkey('f5')
-        time.sleep(0.3)
-        울주_검색()
-        pag.hotkey('end')
-        time.sleep(0.3)
-        울주_검색()
-        pag.hotkey('home')
-        time.sleep(0.3)
+        
         #D사이트
         pag.click(840,510)
         time.sleep(0.3)
