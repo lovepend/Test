@@ -141,7 +141,7 @@ def 태화연_job():
             break
         #날짜 클릭
         pag.click(태화연_day1)
-        time.sleep(0.2)
+        time.sleep(0.1)
         pag.click(태화연_day2)
         time.sleep(0.3)
         #검색
