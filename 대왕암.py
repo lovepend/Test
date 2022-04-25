@@ -51,7 +51,7 @@ def 대왕암_확인() :
         time.sleep(0.05)
         pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
         refresh_token()
-        kakao_message_you()
+        kakao_message_you("대왕암")
         global end_command
         end_command = 1
         print('end')

@@ -50,7 +50,7 @@ def 신불산_확인() :
         time.sleep(0.05)
         pag.click(button1.x,button1.y+27, button='left', clicks=5, interval=0.1)
         refresh_token()
-        kakao_message_you()
+        kakao_message_you("신불산")
         time.sleep(60) 
 
 #버튼 기능

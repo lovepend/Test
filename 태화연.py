@@ -24,7 +24,7 @@ def Reset():
     end_command = 0
 
 def 태화연_검색():
-    button = pag.locateCenterOnScreen("./image/03._1. reservation.png", region=find_range ,confidence=0.6) 
+    button = pag.locateCenterOnScreen("./image/03._1. reservation.png", region=find_range ,confidence=0.7) 
     print(button)
     if (button == None) :
         None      
@@ -64,8 +64,8 @@ def 태화연_StepB() :
         time.sleep(1)
         button3 = pag.locateCenterOnScreen('./image/03._4. next.png', confidence=0.7)   
         pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
-        #refresh_token()
-        #kakao_message_you("태화연")
+        refresh_token()
+        kakao_message_you("태화연")
         global end_command
         end_command = 1
         print('end')
@@ -76,14 +76,14 @@ def 태화연_날짜선택():
             global 태화연_day1 
             태화연_day1  = pag.position()
             print(태화연_day1)
-            time.sleep(0.5)
+            time.sleep(0.2)
             break        
     while True:
         if keyboard.is_pressed("F4"): 
             global 태화연_day2
             태화연_day2  = pag.position()
             print(태화연_day2)
-            time.sleep(0.5)
+            time.sleep(0.2)
             break       
         
 def 태화연_자동입력():
