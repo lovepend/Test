@@ -24,7 +24,7 @@ def Reset():
     end_command = 0
 
 def 태화연_검색():
-    button = pag.locateCenterOnScreen("./image/03._1. reservation.png", region=find_range ,confidence=0.8) 
+    button = pag.locateCenterOnScreen("./image/03._1. reservation.png", region=find_range ,confidence=0.6) 
     print(button)
     if (button == None) :
         None      
@@ -150,13 +150,12 @@ def 태화연_job():
         pag.click(태화연_day1)
         time.sleep(0.1)
         pag.click(태화연_day2)
-        time.sleep(0.3)
-        pag.hotkey('mousewheel', 'down')
-        time.sleep(0.3)
+        time.sleep(0.6)
+        #pag.hotkey('mousewheel', 'down')
+        #time.sleep(0.3)
         #검색
         태화연_검색()   
-        pag.hotkey('mousewheel', 'up')
-        time.sleep(0.3)
-        
+        #pag.hotkey('mousewheel', 'up')
+        #time.sleep(0.3)
         if keyboard.is_pressed("F4") : # F4 누른게 감지되면
             break
