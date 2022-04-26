@@ -38,18 +38,14 @@ def 태화연_StepA():
         None
         태화연_StepA()
     else :    
-        pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
+        #pag.click(button1.x,button1.y, button='left', clicks=1, interval=0.1)
         print(button1)
         time.sleep(0.1) 
         pag.hotkey('enter')
-        time.sleep(0.1)#추가
-        pag.hotkey('enter')#추가
-        time.sleep(0.1)#추가
-        pag.hotkey('enter')#추가
-        time.sleep(1)#추가
+        time.sleep(0.1)
         pag.click(1800,800)#추가
-        time.sleep(0.5)#추가
-        pag.hotkey('pagedown')#추가
+        #time.sleep(0.5)#추가
+        #pag.hotkey('pagedown')#추가
         태화연_StepB()
             
 def 태화연_StepB() : 
