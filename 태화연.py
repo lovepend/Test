@@ -146,7 +146,7 @@ def 태화연_job():
         pag.click(태화연_day1)
         time.sleep(0.1)
         pag.click(태화연_day2)
-        time.sleep(0.6)
+        time.sleep(0.3)
         #pag.hotkey('mousewheel', 'down')
         #time.sleep(0.3)
         #검색

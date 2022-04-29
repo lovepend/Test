@@ -77,9 +77,9 @@ root.wm_attributes("-topmost", 1)
 신불산btn1.grid(row=7, column=0)
 신불산btn2 = Button(root, padx=10, pady=5, text="날짜선택", command=신불산_날짜선택, bg="white", fg="black")
 신불산btn2.grid(row=7, column=1)
-신불산btn3 = Button(root, padx=10, pady=5, text="자동입력", command=신불산_범위선택, bg="white", fg="black")
+신불산btn3 = Button(root, padx=10, pady=5, text="범위선택", command=신불산_범위선택, bg="white", fg="black")
 신불산btn3.grid(row=7, column=2)
-신불산btn4 = Button(root, padx=10, pady=5, text="범위선택", command=신불산_job, bg="green", fg="white")
+신불산btn4 = Button(root, padx=10, pady=5, text="신불산고", command=신불산_job, bg="green", fg="white")
 신불산btn4.grid(row=7, column=3)
 
 
