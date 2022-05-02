@@ -254,7 +254,7 @@ def 울주_job():
     while True:
         #페이지 선택
         pag.doubleClick(1600,800)
-        울주_log1()
+        울주_log()
         pag.hotkey('f5')
         time.sleep(0.3)
         울주_검색()
@@ -265,7 +265,7 @@ def 울주_job1():
     while True:
         #페이지 선택
         pag.doubleClick(1600,800)
-        울주_log1()
+        울주_log()
         pag.hotkey('f5')
         time.sleep(0.3)
         울주_검색()
@@ -281,40 +281,30 @@ def 울주_job2():
     while True:
         #페이지 선택
         pag.doubleClick(1600,800)
-        울주_log1()
-        
+        울주_log()
+        #A사이트
+        pag.click(620,508)
+        time.sleep(0.2)
+        울주_검색()
+        #B사이트
+        pag.click(688,510)
+        time.sleep(0.2)
+        울주_검색()        
+        #C사이트
+        pag.click(759,510)
+        time.sleep(0.2)
+        울주_검색()
         #D사이트
-        pag.click(840,510)
-        time.sleep(0.5)
-        pag.hotkey('f5')
-        time.sleep(0.5)
+        pag.click(843,510)
+        time.sleep(0.2)
         울주_검색()
-        pag.hotkey('end')
-        time.sleep(0.5)
-        울주_검색()
-        pag.hotkey('home')
-        time.sleep(0.5)
         #E사이트
-        pag.click(918,510)
-        time.sleep(0.5)
-        pag.hotkey('f5')
-        time.sleep(0.5)
+        pag.click(928,510)
+        time.sleep(0.2)
         울주_검색()
-        pag.hotkey('end')
-        time.sleep(0.5)
-        울주_검색()
-        pag.hotkey('home')
-        time.sleep(0.5)
         #F사이트
-        pag.click(1005,510)
-        time.sleep(0.3)
-        pag.hotkey('f5')
-        time.sleep(0.3)
+        pag.click(983,510)
+        time.sleep(0.2)
         울주_검색()
-        pag.hotkey('end')
-        time.sleep(0.3)
-        울주_검색()
-        pag.hotkey('home')
-        time.sleep(0.3)
         if keyboard.is_pressed("F4"): # F4 누른게 감지되면
             break
