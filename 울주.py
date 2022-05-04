@@ -170,6 +170,7 @@ def 울주_page7():
         울주_page7()
     else :
         #이메일 발송
+        time.sleep(0.2)
         buttonpostion7_1 = pag.locateCenterOnScreen('./image/01_7. next2.png', confidence=0.7) #reservation 67%
         pag.click(buttonpostion7_1.x,buttonpostion7_1.y)
 
@@ -180,6 +181,7 @@ def 울주_page8():
         울주_page8()
     else :
         #이메일 발송
+        time.sleep(0.2)
         pag.click(buttonpostion8.x+70,buttonpostion8.y)
         time.sleep(100)
                 
@@ -282,28 +284,45 @@ def 울주_job2():
         #페이지 선택
         pag.doubleClick(1600,800)
         울주_log()
-        #A사이트
+        #A사이트 * 2
         pag.click(620,508)
         time.sleep(0.2)
         울주_검색()
-        #B사이트
-        pag.click(688,510)
+        pag.hotkey('pgdn')
         time.sleep(0.2)
-        울주_검색()        
+        울주_검색()
+        pag.click(692,120)
+        #B사이트 * 2
+        #pag.click(620,508)
+        time.sleep(0.2)
+        울주_검색()
+        pag.hotkey('pgdn')
+        time.sleep(0.2)
+        울주_검색()
+        pag.click(765,120)       
         #C사이트
-        pag.click(759,510)
+        #pag.click(759,510)
         time.sleep(0.2)
         울주_검색()
-        #D사이트
-        pag.click(843,510)
+        pag.click(620,508)
+        #D사이트 * 2
+        #pag.click(620,508)
         time.sleep(0.2)
         울주_검색()
-        #E사이트
-        pag.click(928,510)
+        pag.hotkey('pgdn')
         time.sleep(0.2)
         울주_검색()
+        pag.click(913,120)
+        #E사이트  * 2
+        pag.click(620,508)
+        time.sleep(0.2)
+        울주_검색()
+        pag.hotkey('pgdn')
+        time.sleep(0.2)
+        울주_검색()
+        pag.click(992,120)
         #F사이트
-        pag.click(983,510)
+        #pag.click(983,510)
         time.sleep(0.2)
         울주_검색()
         if keyboard.is_pressed("F4"): # F4 누른게 감지되면

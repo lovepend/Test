@@ -60,8 +60,8 @@ def 태화연_StepB() :
         time.sleep(1)
         button3 = pag.locateCenterOnScreen('./image/03._4. next.png', confidence=0.7)   
         pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
-        refresh_token()
-        kakao_message_you("태화연")
+        #refresh_token()
+        #kakao_message_you("태화연")
         global end_command
         end_command = 1
         print('end')
@@ -150,6 +150,7 @@ def 태화연_job():
         #pag.hotkey('mousewheel', 'down')
         #time.sleep(0.3)
         #검색
+        태화연_검색()   
         태화연_검색()   
         #pag.hotkey('mousewheel', 'up')
         #time.sleep(0.3)

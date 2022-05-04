@@ -23,7 +23,7 @@ from kakao_api import *
 ################################## GUI 편집 ################################## 
 root = Tk()
 root.title("캠핑장 예약하기")
-root.geometry("470x300+1440+0")
+root.geometry("470x300+1380+0")
 root.wm_attributes("-topmost", 1)
 
 #울주에서 예약하기
