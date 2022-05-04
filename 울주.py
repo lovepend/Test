@@ -284,46 +284,57 @@ def 울주_job2():
         #페이지 선택
         pag.doubleClick(1600,800)
         울주_log()
+        
         #A사이트 * 2
-        pag.click(620,508)
+        pag.click(620,510)
         time.sleep(0.2)
         울주_검색()
         pag.hotkey('pgdn')
         time.sleep(0.2)
-        울주_검색()
-        pag.click(692,120)
+        울주_검색()    
+        
         #B사이트 * 2
-        #pag.click(620,508)
+        #pag.click(690,510)
+        pag.click(690,120)
         time.sleep(0.2)
         울주_검색()
         pag.hotkey('pgdn')
         time.sleep(0.2)
         울주_검색()
-        pag.click(765,120)       
+        
+            
         #C사이트
-        #pag.click(759,510)
+        #pag.click(760,510)
+        pag.click(765,120)   
         time.sleep(0.2)
         울주_검색()
-        pag.click(620,508)
+        
+        
         #D사이트 * 2
-        #pag.click(620,508)
+        pag.click(840,510)
+        #pag.click(840,120)
         time.sleep(0.2)
         울주_검색()
         pag.hotkey('pgdn')
         time.sleep(0.2)
         울주_검색()
-        pag.click(913,120)
+        
+        
         #E사이트  * 2
-        pag.click(620,508)
+        #pag.click(920,510)
+        pag.click(920,120)
         time.sleep(0.2)
         울주_검색()
         pag.hotkey('pgdn')
         time.sleep(0.2)
         울주_검색()
-        pag.click(992,120)
+        
+        
         #F사이트
-        #pag.click(983,510)
+        #pag.click(990,510)
+        pag.click(990,120)
         time.sleep(0.2)
+        
         울주_검색()
         if keyboard.is_pressed("F4"): # F4 누른게 감지되면
             break
