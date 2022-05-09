@@ -54,8 +54,8 @@ def 울주_검색():
 
 
 def 울주_page1():
-    #refresh_token()
-    #kakao_message_you("울주")
+    refresh_token()
+    kakao_message_you("울주")
     #기간
     pag.click(x=907, y=750)
     pag.sleep(0.1)
