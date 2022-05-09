@@ -98,7 +98,7 @@ def 신불산_job():
     while True:
         #날짜 클릭
         pag.click(신불산_day1)
-        time.sleep(0.2)
+        time.sleep(0.5)
         #검색
         신불산_검색()
         if keyboard.is_pressed("F4"): # F4 누른게 감지되면

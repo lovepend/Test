@@ -48,14 +48,14 @@ def 울주_검색():
     else :
         Friday = ((button.x)-150, (button.y)-8, (button.x)-100, (button.y+8))
         button_1 = pag.locateCenterOnScreen('./image/01_0. reservation2.png', region = Friday,confidence=0.9) #토요일 찾을 범위 설정      
+        print("일박",button)
+        print("연박",button_1)
         pag.click(button_1,button='left')     
         울주_page1()
 
-
-
 def 울주_page1():
-    #refresh_token()
-    #kakao_message_you("울주")
+    refresh_token()
+    kakao_message_you("울주")
     #기간
     pag.click(x=907, y=750)
     pag.sleep(0.1)
@@ -69,8 +69,10 @@ def 울주_page1():
     pag.doubleClick(1600,800)
     #페이지 아래
     pag.hotkey('end')
-    time.sleep(0.3)    
-    pag.click(1175,850, button='left', interval=0.1, clicks=1)
+    time.sleep(0.4)    
+    #다음 클릭
+    buttonpostion1 = pag.locateCenterOnScreen('./image/01_1. next.png', region = (0,0,1920,1680), confidence=0.6) #reservation 67%
+    pag.click(buttonpostion1.x,buttonpostion1.y)
     time.sleep(0.1) 
     #다음 페이지
     울주_page2()
@@ -80,15 +82,51 @@ def 울주_page2():
     pag.doubleClick(1600,800)
     #페이지 아래
     pag.hotkey('end')
-    time.sleep(0.3)
-    pag.click(772,243)
-    time.sleep(0.1)
-    pag.hotkey('down')
-    pag.click(587,637)
-    time.sleep(0.1)
-    pag.click(1177,851)
-    울주_page3()
-    
+    time.sleep(0.2)
+    buttonpostion2_1 = pag.locateCenterOnScreen('./image/01_2. payment1.png', region = (0,0,1920,1680), confidence=0.6) #reservation 67%    
+    if (buttonpostion2_1 == None) :
+        울주_page2()
+    else :
+        pag.click(774,246)
+        time.sleep(0.1)
+        pag.hotkey('down')
+        #페이지 선택
+        pag.click(1600,800)
+        #개인정보수집 동의
+        buttonpostion2_2 = pag.locateCenterOnScreen('./image/01_2. payment2.png', region = (0,0,1920,1680), confidence=0.6) #reservation 67%    
+        pag.click(buttonpostion2_2.x,buttonpostion2_2.y)
+        #결제 선택
+        buttonpostion2_3 = pag.locateCenterOnScreen('./image/01_2. payment3.png', region = (0,0,1920,1680), confidence=0.6) #reservation 67%
+        pag.click(buttonpostion2_3.x-30,buttonpostion2_3.y)
+        time.sleep(0.2)
+        울주_page3()
+
+def 울주_page2():
+    #페이지 선택
+    pag.doubleClick(1600,800)
+    #페이지 아래
+    pag.hotkey('end')
+    time.sleep(0.2)
+    buttonpostion2_1 = pag.locateCenterOnScreen('./image/01_2. payment1.png', region = (0,0,1920,1680), confidence=0.6) #reservation 67%    
+    if (buttonpostion2_1 == None) :
+        울주_page2()
+    else :
+        pag.click(774,246)
+        time.sleep(0.1)
+        pag.hotkey('down')
+        #페이지 선택
+        pag.click(1600,800)
+        #개인정보수집 동의
+        buttonpostion2_2 = pag.locateCenterOnScreen('./image/01_2. payment2.png', region = (0,0,1920,1680), confidence=0.6) #reservation 67%    
+        pag.click(buttonpostion2_2.x,buttonpostion2_2.y)
+        #결제 선택
+        buttonpostion2_3 = pag.locateCenterOnScreen('./image/01_2. payment3.png', region = (0,0,1920,1680), confidence=0.6) #reservation 67%
+        pag.click(buttonpostion2_3.x-30,buttonpostion2_3.y)
+        time.sleep(0.2)
+        울주_page3()
+   
+울주_page2()
+     
 #신용카드결제
 def 울주_page3():
     #신용카드결제 
@@ -171,12 +209,10 @@ def 울주_page8():
         울주_page8()
     else :
         #이메일 발송
-        time.sleep(1)
+        time.sleep(0.2)
         pag.click(buttonpostion8.x+70,buttonpostion8.y)
         time.sleep(100)
-
-울주_page1()
-               
+                
 def 자동결제():
     울주_page1()
 
