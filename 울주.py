@@ -174,9 +174,7 @@ def 울주_page8():
         time.sleep(1)
         pag.click(buttonpostion8.x+70,buttonpostion8.y)
         time.sleep(100)
-
-울주_page1()
-               
+ 
 def 자동결제():
     울주_page1()
 
@@ -250,8 +248,13 @@ def 울주_job():
         pag.doubleClick(1600,800)
         울주_log()
         pag.hotkey('f5')
-        time.sleep(0.3)
+        time.sleep(0.2)
         울주_검색()
+        pag.hotkey('pgdn')
+        time.sleep(0.2)
+        울주_검색()
+        pag.hotkey('pgup')
+        time.sleep(0.2)
         if keyboard.is_pressed("F4"): # F4 누른게 감지되면
             break
 
@@ -260,34 +263,18 @@ def 울주_job1():
         #페이지 선택
         pag.doubleClick(1600,800)
         울주_log()
-        pag.hotkey('f5')
-        time.sleep(0.3)
-        울주_검색()
-        pag.hotkey('end')
-        time.sleep(0.3)
-        울주_검색()
-        pag.hotkey('home')
-        time.sleep(0.3)
-        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
-            break
-
-def 울주_job2():
-    while True:
-        #페이지 선택
-        pag.doubleClick(1600,800)
-        울주_log()
         
         #A사이트 * 2
-        pag.click(620,510)
-        time.sleep(0.2)
-        울주_검색()
-        pag.hotkey('pgdn')
-        time.sleep(0.2)
-        울주_검색()    
+        #pag.click(620,510)
+        #time.sleep(0.2)
+        #울주_검색()
+        #pag.hotkey('pgdn')
+        #time.sleep(0.2)
+        #울주_검색()    
         
         #B사이트 * 2
-        #pag.click(690,510)
-        pag.click(690,120)
+        pag.click(690,510)
+        #pag.click(690,120)
         time.sleep(0.2)
         울주_검색()
         pag.hotkey('pgdn')
@@ -328,5 +315,21 @@ def 울주_job2():
         time.sleep(0.2)
         
         울주_검색()
+        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
+            break
+
+def 울주_job2():
+    while True:
+        #페이지 선택
+        pag.doubleClick(1600,800)
+        울주_log1()
+        pag.hotkey('f5')
+        time.sleep(0.2)
+        울주_검색()
+        pag.hotkey('pgdn')
+        time.sleep(0.2)
+        울주_검색()
+        pag.hotkey('pgup')
+        time.sleep(0.2)
         if keyboard.is_pressed("F4"): # F4 누른게 감지되면
             break
