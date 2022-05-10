@@ -162,9 +162,9 @@ def 울주_page7():
         #이메일 발송
         time.sleep(0.2)
         buttonpostion7_1 = pag.locateCenterOnScreen('./image/01_7. next2.png', confidence=0.7) #reservation 67%
-        pag.click(buttonpostion7_1.x,buttonpostion7_1.y)
+        pag.click(buttonpostion7_1.x,buttonpostion7_1.y, button='left')
         울주_page8()
-        
+
 #완료!!!
 def 울주_page8():
     buttonpostion8 = pag.locateCenterOnScreen('./image/01_8. next1.png', confidence=0.7) #reservation 67%
@@ -173,9 +173,10 @@ def 울주_page8():
     else :
         #이메일 발송
         time.sleep(1)
-        pag.click(buttonpostion8.x+70,buttonpostion8.y)
-        time.sleep(100)
- 
+        pag.click(buttonpostion8.x+70,buttonpostion8.y, button='left')
+        time.sleep(30)
+
+
 def 자동결제():
     울주_page1()
 
