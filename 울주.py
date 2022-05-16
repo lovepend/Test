@@ -244,6 +244,9 @@ def 울주_log():
         time.sleep(1)
         pag.write(울주_id)
         time.sleep(1)
+        #페이지 선택
+        pag.doubleClick(1600,800)
+        time.sleep(1)
         #비밀번호 입력
         pag.moveTo(998,486)
         time.sleep(1)
@@ -275,6 +278,9 @@ def 울주_log1():
         pag.hotkey("delete")
         time.sleep(1)
         pag.write(울주_id)
+        time.sleep(1)
+        #페이지 선택
+        pag.doubleClick(1600,800)
         time.sleep(1)
         #비밀번호 입력
         pag.moveTo(998,486)
