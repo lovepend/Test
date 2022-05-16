@@ -2,6 +2,7 @@ import pyautogui as pag
 import time
 import keyboard
 
+
 while True:
     if keyboard.is_pressed("F4"): # F4 누른게 감지되면
         t1 = pag.position() # 위치 뽑아서 저장

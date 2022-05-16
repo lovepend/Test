@@ -1,5 +1,6 @@
 from gettext import find
 from tkinter import *
+from turtle import pendown
 from kakao_api import *
 from urllib3 import encode_multipart_formdata
 import pyautogui as pag
@@ -19,9 +20,41 @@ import json
 global end_command
 end_command = 0
 
+global 태화연_id
+태화연_id = "id"
+global 태화연_pw
+태화연_pw = "*Zoavld4fkd" 
+global find_range
+find_range = 0,0,1904,1079
+
+def 태화연_log_id1():
+    global 태화연_id
+    태화연_id = "lovepend@nate.com"
+
+def 태화연_log_id2():
+    global 태화연_id
+    태화연_id = "lovepend@kakao.com"
+
+def 태화연_log_id3():
+    global 태화연_id
+    태화연_id = "lovepend@naver.com"
+
+def 태화연_log_id4():
+    global 태화연_id
+    태화연_id = "parkmc7"
+
+def 태화연_log_guest():
+    global 태화연_id
+    태화연_id = "suld2000@naver.com"
+    global 태화연_pw
+    태화연_pw = "Sm88410000!"
+    
 def Reset():
     global end_command
     end_command = 0
+    global 태화연_pw
+    태화연_pw = "*Zoavld4fkd"  
+    print(end_command)
 
 def 태화연_검색():
     button = pag.locateCenterOnScreen("./image/03._1. reservation.png", region=find_range ,confidence=0.7) 
@@ -60,10 +93,11 @@ def 태화연_StepB() :
         time.sleep(1)
         button3 = pag.locateCenterOnScreen('./image/03._4. next.png', confidence=0.7)   
         pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
-        #refresh_token()
-        #kakao_message_you("태화연")
+        refresh_token()
+        kakao_message_you("태화연")
         global end_command
         end_command = 1
+        print(end_command)
         print('end')
 
 def 태화연_날짜선택():
@@ -83,7 +117,29 @@ def 태화연_날짜선택():
             break       
         
 def 태화연_자동입력():
-    #캠핑장 선택
+    #로그인 선택
+    pag.click(1400,128)
+    time.sleep(2)
+    #이메일 입력
+    pag.click(947,427)
+    time.sleep(2)
+    pag.write(태화연_id)
+    time.sleep(2)
+    #페이지 클릭
+    pag.click(1800,800)
+    time.sleep(2)
+    #비밀번호 입력
+    pag.click(941,457)
+    time.sleep(2)
+    pag.write(태화연_pw)
+    time.sleep(2)
+    #로그인 클릭
+    pag.click(931,499)
+    time.sleep(2)
+    #캠핑장 선택 
+    pag.click(543,424)
+    time.sleep(2)
+    #세부 캠핑장 선택
     pag.click(1005,356)
     time.sleep(1)
     pag.click(1013,392)
@@ -91,10 +147,9 @@ def 태화연_자동입력():
     #차량 넘버 입력
     pag.click(704,928)
     time.sleep(1)
-    pyperclip.copy("62소9403")
+    pyperclip.copy("62소6403")
     time.sleep(1)
     pag.hotkey('ctrl', 'v')
-    time.sleep(1)
     #다음페이지
     pag.click(1847,897)
     time.sleep(1)
@@ -112,10 +167,15 @@ def 태화연_자동입력():
     time.sleep(1)
     #페이지 클릭
     pag.click(1800,800)
+    time.sleep(1)
     #페이지 위로
     pag.hotkey("home")
-    
-    
+    time.sleep(1)
+    #날짜 맞추기
+    pag.moveTo(1850,130)    
+    time.sleep(1)
+    pag.dragTo(1847,339, 5, button='left')
+
 
 def 태화연_범위선택():
     while True:
@@ -132,7 +192,6 @@ def 태화연_범위선택():
             print(find_range2)
             time.sleep(0.5)
             break  
-        
     global find_range
     find_range = (find_range1.x,find_range1.y,find_range2.x,find_range2.y)
 
@@ -155,4 +214,8 @@ def 태화연_job():
         #pag.hotkey('mousewheel', 'up')
         #time.sleep(0.3)
         if keyboard.is_pressed("F4") : # F4 누른게 감지되면
+            print("중지")
+            break
+        if end_command == 1 : # end_command 가 1이 되면
+            print(end_command)
             break

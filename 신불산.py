@@ -16,12 +16,55 @@ import json
 
 #신불산 Test 2022.03.21 #Viewer Size 67%
 
+
 global end_command
 end_command = 0
 
+global 신불산_id
+신불산_id = "id"
+global 신불산_pw
+신불산_pw = "*Zoavld4fkd" 
+
+global find_range
+find_range = 860,521,1515,968
+
+def 신불산_log_id1():
+    global 신불산_id
+    신불산_id = "pend"
+
+def 신불산_log_id2():
+    global 신불산_id
+    신불산_id = "lovepend2"
+
+def 신불산_log_id3():
+    global 신불산_id
+    신불산_id = "lovepend3"
+
+def 신불산_log_id4():
+    global 신불산_id
+    신불산_id = "parkmc7"
+
+def 태화연_log_guest():
+    global 신불산_id
+    신불산_id = "suld2000@naver.com"
+    global 신불산_pw
+    신불산_pw = "Sm88410000!"
+    
 def Reset():
     global end_command
     end_command = 0
+    global log_id_no1
+    log_id_no1 = "pend"
+    global log_id_no2
+    log_id_no2 = "lovepend2"
+    global log_id_no3
+    log_id_no3 = "lovepend3"
+    global log_id_no4
+    log_id_no4 = "parkmc7"
+    global 신불산_pw
+    신불산_pw = "*Zoavld4fkd"  
+    global find_range
+    find_range = 860,521,1515,968
     
 def 신불산_검색():
     button = pag.locateCenterOnScreen("./image/04._1. reservation.png", region = find_range, confidence=0.7) 
@@ -56,21 +99,46 @@ def 신불산_확인() :
 #버튼 기능
 def 신불산_날짜선택():
     while True:
-        if keyboard.is_pressed("F4"): 
+        if keyboard.is_pressed("F4"):
             global 신불산_day1
             신불산_day1  = pag.position()
             print(신불산_day1)
             time.sleep(0.5)
             break         
-        
-def 금요일():
-    global week
-    week = 1342,114
 
-def 토요일():
-    global week
-    week = 1390,114
-
+def 신불산_자동입력():      
+    #로그인 클릭
+    pag.click(1112,115)
+    time.sleep(5)
+    #통합회원 로그인
+    pag.click(669,1064)
+    time.sleep(5)
+    #아이디 입력
+    pag.click(900,307)
+    time.sleep(2)
+    pag.write(신불산_id)
+    time.sleep(2)
+    #비밀번호 입력
+    pag.click(900,347)
+    time.sleep(2)
+    pag.write(신불산_pw)
+    time.sleep(2)
+    #로그인 클릭
+    pag.click(900,403)
+    time.sleep(5)
+    #온라인 예약 클릭
+    pag.click(851,785)
+    time.sleep(5)
+    #아무 날짜 선택
+    pag.click(892,821)
+    time.sleep(5)
+    #예약가능 사이트만 보기
+    pag.click(1201,693)
+    time.sleep(5)
+    #등억 선택
+    pag.click(970,692)
+    time.sleep(5)
+     
 def 신불산_범위선택():
     while True:
         if keyboard.is_pressed("F4"): 
@@ -86,7 +154,6 @@ def 신불산_범위선택():
             print(find_range2)
             time.sleep(0.5)
             break  
-        
     global find_range
     find_range = (find_range1.x,find_range1.y,find_range2.x,find_range2.y)
 
