@@ -14,7 +14,36 @@ import time
 import json
 
 #울주해양예약 시스템 2022.01.11 #Vier Size 67%
- 
+
+global 울주_id
+울주_id = "id"
+global 울주_pw
+울주_pw = "*Zoavld4fkd" 
+global find_range
+find_range = 0,0,1904,1079
+
+def 울주_log_id1():
+    global 울주_id
+    울주_id = "lovepend@nate.com"
+
+def 울주_log_id2():
+    global 울주_id
+    울주_id = "lovepend@kakao.com"
+
+def 울주_log_id3():
+    global 울주_id
+    울주_id = "lovepend@naver.com"
+
+def 울주_log_id4():
+    global 울주_id
+    울주_id = "parkmc7"
+
+def 울주_log_guest():
+    global 울주_id
+    울주_id = "suld2000@naver.com"
+    time.sleep(1)
+    global 울주_pw
+    울주_pw = "Sm88410000!"
 
 def 울주_범위선택():
     while True:
@@ -206,17 +235,29 @@ def 울주_log():
         #코드보내기
         pag.click(loggin.x,loggin.y)
         time.sleep(1)
-        pag.click(876,442)
+        #아이디 입력
+        pag.moveTo(998,442)
         time.sleep(1)
-        pag.hotkey('down')
+        pag.dragTo(360,442, 5, button='left')
         time.sleep(1)
+        pag.hotkey("delete")
+        time.sleep(1)
+        pag.write(울주_id)
+        time.sleep(1)
+        #비밀번호 입력
+        pag.moveTo(998,486)
+        time.sleep(1)
+        pag.dragTo(360,486, 5, button='left')
+        time.sleep(1)
+        pag.write(울주_pw)
+        time.sleep(1)
+        #로그인 클릭
         pag.hotkey('enter')
-        time.sleep(1)
-        pag.hotkey('enter')
-        time.sleep(1)        
+        time.sleep(1)  
+        #예약하기      
         pag.click(1239,162)
         time.sleep(1)        
-        pag.click(1239,162)
+        pag.click(1239,162)       
         
 def 울주_log1():
     loggin = pag.locateCenterOnScreen('./image/01_10. loggin.png', region = (1100,0,1250,204), confidence=0.8)
@@ -226,17 +267,29 @@ def 울주_log1():
         #코드보내기
         pag.click(loggin.x,loggin.y)
         time.sleep(1)
-        pag.click(876,442)
+        #아이디 입력
+        pag.moveTo(998,442)
         time.sleep(1)
-        pag.hotkey('down')
+        pag.dragTo(360,442, 5, button='left')
         time.sleep(1)
+        pag.hotkey("delete")
+        time.sleep(1)
+        pag.write(울주_id)
+        time.sleep(1)
+        #비밀번호 입력
+        pag.moveTo(998,486)
+        time.sleep(1)
+        pag.dragTo(360,486, 5, button='left')
+        time.sleep(1)
+        pag.write(울주_pw)
+        time.sleep(1)
+        #로그인 클릭
         pag.hotkey('enter')
-        time.sleep(1)
-        pag.hotkey('enter')
-        time.sleep(1)        
+        time.sleep(1)  
+        #예약하기      
         pag.click(1239,162)
         time.sleep(1)        
-        pag.click(1239,162)
+        pag.click(1239,162) 
         #다음달 선택
         time.sleep(2)
         pag.click(986,429)

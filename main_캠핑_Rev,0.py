@@ -35,13 +35,13 @@ notebook.add(frame1, text="★울주해양")
 
 #울주에서 예약하기
 #로그
-울주log1 = Button(frame1, width=5, padx=10, pady=5, text="NO.1", command=울주_job, bg="orange", fg="black")
+울주log1 = Button(frame1, width=5, padx=10, pady=5, text="NO.1", command=울주_log_id1, bg="orange", fg="black")
 울주log1.place(x=0, y=10)
-울주log2 = Button(frame1, width=5, padx=10, pady=5, text="NO.2", command=울주_job, bg="orange", fg="black")
+울주log2 = Button(frame1, width=5, padx=10, pady=5, text="NO.2", command=울주_log_id2, bg="orange", fg="black")
 울주log2.place(x=60, y=10)
-울주log3 = Button(frame1, width=5, padx=10, pady=5, text="NO.3", command=울주_job, bg="orange", fg="black")
+울주log3 = Button(frame1, width=5, padx=10, pady=5, text="NO.3", command=울주_log_id3, bg="orange", fg="black")
 울주log3.place(x=120, y=10)
-울주log4 = Button(frame1, width=5, padx=10, pady=5, text="NO.4", command=울주_job, bg="orange", fg="black")
+울주log4 = Button(frame1, width=5, padx=10, pady=5, text="NO.4", command=울주_log_id4, bg="orange", fg="black")
 울주log4.place(x=180, y=10)
 #함수
 울주btn1 = Button(frame1, width=5, padx=10, pady=5, text="Saturday", command=울주_토요일, bg="white", fg="black")
