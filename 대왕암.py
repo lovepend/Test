@@ -19,9 +19,39 @@ import json
 global end_command
 end_command = 0
 
-def Reset():
+global 대왕암_id
+대왕암_id = "id"
+global 대왕암_pw
+대왕암_pw = "*Zoavld4fkd" 
+
+global find_range_대왕암
+find_range_대왕암 = 860,521,1515,968
+
+def 대왕암_Reset():
     global end_command
     end_command = 0
+
+def 대왕암_log_id1():
+    global 대왕암_id
+    대왕암_id = "pend"
+
+def 대왕암_log_id2():
+    global 대왕암_id
+    대왕암_id = "lovepend2"
+
+def 대왕암_log_id3():
+    global 대왕암_id
+    대왕암_id = "lovepend3"
+
+def 대왕암_log_id4():
+    global 대왕암_id
+    대왕암_id = "parkmc7"
+
+def 대왕암_log_guest():
+    global 대왕암_id
+    대왕암_id = "suld2000@naver.com"
+    global 대왕암_pw
+    대왕암_pw = "Sm88410000!"
     
 def 대왕암_검색():
     #검색
@@ -55,6 +85,30 @@ def 대왕암_확인() :
         global end_command
         end_command = 1
         print('end')
+
+def 대왕암_자동입력():
+    #로그인 선택
+    pag.click(1296,117)
+    time.sleep(5)
+    #통합회원 로그인
+    pag.click(815,602)
+    time.sleep(5)
+    #아이디 입력
+    pag.click(929,300)
+    time.sleep(2)
+    pag.write(대왕암_id)
+    time.sleep(2)
+    #비밀번호 입력
+    pag.click(918,353)
+    time.sleep(2)
+    pag.write(대왕암_pw)
+    time.sleep(2)
+    #로그인 버튼 클릭
+    pag.click(927,403)
+    time.sleep(5)
+    #온라인 예약
+    pag.click(1080,200)
+    time.sleep(5)   
     
 def 대왕암_날짜선택():
     while True:

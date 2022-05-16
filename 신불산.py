@@ -44,13 +44,13 @@ def 신불산_log_id4():
     global 신불산_id
     신불산_id = "parkmc7"
 
-def 태화연_log_guest():
+def 신불산_log_guest():
     global 신불산_id
     신불산_id = "suld2000@naver.com"
     global 신불산_pw
     신불산_pw = "Sm88410000!"
     
-def Reset():
+def 신불산_Reset():
     global end_command
     end_command = 0
     global log_id_no1

@@ -46,10 +46,11 @@ def 태화연_log_id4():
 def 태화연_log_guest():
     global 태화연_id
     태화연_id = "suld2000@naver.com"
+    time.sleep(1)
     global 태화연_pw
     태화연_pw = "Sm88410000!"
     
-def Reset():
+def 태화연_Reset():
     global end_command
     end_command = 0
     global 태화연_pw
@@ -209,7 +210,6 @@ def 태화연_job():
         #pag.hotkey('mousewheel', 'down')
         #time.sleep(0.3)
         #검색
-        태화연_검색()   
         태화연_검색()   
         #pag.hotkey('mousewheel', 'up')
         #time.sleep(0.3)
