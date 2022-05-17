@@ -38,7 +38,7 @@ def 울주_log_id3():
 
 def 울주_log_id4():
     global 울주_id
-    울주_id = "parkmc7"
+    울주_id = "parkmc7@naver.com"
     print(울주_id)
 
 def 울주_log_guest():
