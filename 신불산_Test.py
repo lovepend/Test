@@ -66,6 +66,7 @@ for tr in table.find_elements_by_tag_name("tr"):
 
 def Test_job():
     while True:
+        time.sleep(0.1)
         driver.find_element_by_xpath(day).click()
         try:
             if (s == True):

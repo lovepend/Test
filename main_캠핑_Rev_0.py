@@ -19,7 +19,6 @@ from 울주 import *
 from 태화연 import *
 from 대왕암 import *
 from 신불산 import *
-from 신불산_Test import *
 from kakao_api import *
         
 ################################## GUI 편집 ################################## 54주6191
@@ -109,8 +108,6 @@ notebook.add(frame3, text="★신불산★")
 신불산btn4.place(x=180, y=50)
 신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="Start", command=신불산_job, bg="green", fg="white")
 신불산btn5.place(x=240, y=50)
-신불산btn6 = Button(frame3, width=5, padx=10, pady=5, text="Selenium", command=Selenium_job, bg="green", fg="white")
-신불산btn6.place(x=300, y=50)
 
 frame4=tkinter.Frame(window)
 notebook.insert(2, frame4, text="★대왕암★")

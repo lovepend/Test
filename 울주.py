@@ -314,7 +314,7 @@ def 울주_job():
     while True:
         #페이지 선택
         pag.doubleClick(1600,800)
-        울주_log()
+        울주_log1()
         pag.hotkey('f5')
         time.sleep(0.2)
         울주_검색()
@@ -330,7 +330,7 @@ def 울주_job1():
     while True:
         #페이지 선택
         pag.doubleClick(1600,800)
-        울주_log()
+        울주_log1()
         
         #A사이트 * 2
         #pag.click(620,510)
