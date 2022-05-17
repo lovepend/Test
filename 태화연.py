@@ -30,18 +30,22 @@ find_range = 0,0,1904,1079
 def 태화연_log_id1():
     global 태화연_id
     태화연_id = "lovepend@nate.com"
+    print(태화연_id)
 
 def 태화연_log_id2():
     global 태화연_id
     태화연_id = "lovepend@kakao.com"
+    print(태화연_id)
 
 def 태화연_log_id3():
     global 태화연_id
     태화연_id = "lovepend@naver.com"
+    print(태화연_id)
 
 def 태화연_log_id4():
     global 태화연_id
     태화연_id = "parkmc7"
+    print(태화연_id)
 
 def 태화연_log_guest():
     global 태화연_id
@@ -49,6 +53,8 @@ def 태화연_log_guest():
     time.sleep(1)
     global 태화연_pw
     태화연_pw = "Sm88410000!"
+    print(태화연_id)
+    print(태화연_pw)
     
 def 태화연_Reset():
     global end_command
@@ -125,6 +131,7 @@ def 태화연_자동입력():
     pag.click(947,427)
     time.sleep(2)
     pag.write(태화연_id)
+    print(태화연_id)
     time.sleep(2)
     #페이지 클릭
     pag.click(1800,800)
@@ -133,6 +140,7 @@ def 태화연_자동입력():
     pag.click(941,457)
     time.sleep(2)
     pag.write(태화연_pw)
+    print(태화연_pw)
     time.sleep(2)
     #로그인 클릭
     pag.click(931,499)
@@ -148,7 +156,7 @@ def 태화연_자동입력():
     #차량 넘버 입력
     pag.click(704,928)
     time.sleep(1)
-    pyperclip.copy("62소6403")
+    pyperclip.copy("62소9403")
     time.sleep(1)
     pag.hotkey('ctrl', 'v')
     #다음페이지
