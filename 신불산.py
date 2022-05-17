@@ -31,24 +31,30 @@ find_range = 860,521,1515,968
 def 신불산_log_id1():
     global 신불산_id
     신불산_id = "pend"
+    print(신불산_id)
 
 def 신불산_log_id2():
     global 신불산_id
     신불산_id = "lovepend2"
+    print(신불산_id)
 
 def 신불산_log_id3():
     global 신불산_id
     신불산_id = "lovepend3"
+    print(신불산_id)
 
 def 신불산_log_id4():
     global 신불산_id
     신불산_id = "parkmc7"
+    print(신불산_id)
 
 def 신불산_log_guest():
     global 신불산_id
     신불산_id = "suld2000@naver.com"
     global 신불산_pw
     신불산_pw = "Sm88410000!"
+    print(신불산_id)
+    print(신불산_pw)
     
 def 신불산_Reset():
     global end_command
@@ -117,11 +123,13 @@ def 신불산_자동입력():
     pag.click(900,307)
     time.sleep(2)
     pag.write(신불산_id)
+    print(신불산_id)
     time.sleep(2)
     #비밀번호 입력
     pag.click(900,347)
     time.sleep(2)
     pag.write(신불산_pw)
+    print(신불산_pw)
     time.sleep(2)
     #로그인 클릭
     pag.click(900,403)

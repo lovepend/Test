@@ -25,6 +25,7 @@ find_range = 0,0,1904,1079
 def 울주_log_id1():
     global 울주_id
     울주_id = "lovepend@nate.com"
+    print(울주_id)
 
 def 울주_log_id2():
     global 울주_id
@@ -33,10 +34,12 @@ def 울주_log_id2():
 def 울주_log_id3():
     global 울주_id
     울주_id = "lovepend@naver.com"
+    print(울주_id)
 
 def 울주_log_id4():
     global 울주_id
     울주_id = "parkmc7"
+    print(울주_id)
 
 def 울주_log_guest():
     global 울주_id
@@ -44,6 +47,8 @@ def 울주_log_guest():
     time.sleep(1)
     global 울주_pw
     울주_pw = "Sm88410000!"
+    print(울주_id)
+    print(울주_pw)
 
 def 울주_범위선택():
     while True:
@@ -243,6 +248,7 @@ def 울주_log():
         pag.hotkey("delete")
         time.sleep(1)
         pag.write(울주_id)
+        print(울주_id)
         time.sleep(1)
         #페이지 선택
         pag.doubleClick(1600,800)
@@ -253,6 +259,7 @@ def 울주_log():
         pag.dragTo(360,486, 5, button='left')
         time.sleep(1)
         pag.write(울주_pw)
+        print(울주_pw)
         time.sleep(1)
         #로그인 클릭
         pag.hotkey('enter')

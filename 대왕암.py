@@ -34,24 +34,30 @@ def 대왕암_Reset():
 def 대왕암_log_id1():
     global 대왕암_id
     대왕암_id = "pend"
+    print(대왕암_id)
 
 def 대왕암_log_id2():
     global 대왕암_id
     대왕암_id = "lovepend2"
+    print(대왕암_id)
 
 def 대왕암_log_id3():
     global 대왕암_id
     대왕암_id = "lovepend3"
+    print(대왕암_id)
 
 def 대왕암_log_id4():
     global 대왕암_id
     대왕암_id = "parkmc7"
+    print(대왕암_id)
 
 def 대왕암_log_guest():
     global 대왕암_id
     대왕암_id = "suld2000@naver.com"
     global 대왕암_pw
     대왕암_pw = "Sm88410000!"
+    print(대왕암_id)
+    print(대왕암_pw)
     
 def 대왕암_검색():
     #검색
@@ -97,11 +103,13 @@ def 대왕암_자동입력():
     pag.click(929,300)
     time.sleep(2)
     pag.write(대왕암_id)
+    print(대왕암_id)
     time.sleep(2)
     #비밀번호 입력
     pag.click(918,353)
     time.sleep(2)
     pag.write(대왕암_pw)
+    print(대왕암_pw)
     time.sleep(2)
     #로그인 버튼 클릭
     pag.click(927,403)
