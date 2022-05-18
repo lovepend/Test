@@ -215,6 +215,7 @@ def 태화연_범위선택():
 def 태화연_job1():
     while True:
         pag.hotkey('enter')
+        time.sleep(0.05)
         if keyboard.is_pressed("F4") : # F4 누른게 감지되면
             print("중지")
             break
