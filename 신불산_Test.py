@@ -22,7 +22,7 @@ driver.find_element_by_xpath('/html/body/header/div[1]/div/ul/ul/li[1]/a').click
 driver.find_element_by_xpath('/html/body/div/div[3]/div[3]/div/div/div/div[1]/a/img').click()
 
 #아이디 입력
-driver.find_element_by_xpath('/html/body/div/div/articel/section/div/div[1]/form/fieldset/label/span/input').send_keys('parkmc7')
+driver.find_element_by_xpath('/html/body/div/div/articel/section/div/div[1]/form/fieldset/label/span/input').send_keys('pend')
 
 driver.find_element_by_xpath('/html/body/div/div/articel/section/div/div[1]/form/fieldset/label/span/input').click()
 
@@ -42,6 +42,7 @@ driver.find_element_by_xpath('/html/body/div/div[2]/ul/li[3]/a/span/img').click(
 day = '/html/body/div/div[3]/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr/td/div/div/div[3]/div[1]/table/tbody/tr/td[7]' #21
 #day = '/html/body/div/div[3]/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr/td/div/div/div[4]/div[1]/table/tbody/tr/td[1]' #22
 #day = '/html/body/div/div[3]/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr/td/div/div/div[4]/div[1]/table/tbody/tr/td[5]' #26
+#day = '/html/body/div/div[3]/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr/td/div/div/div[5]/div[2]/table/thead/tr/td[2]/span'
 driver.find_element_by_xpath(day).click()
 time.sleep(1)
 
@@ -72,8 +73,10 @@ def Test_job():
             if (s == True):
                 print("종료")
             else :
-                xpath = '//*[@id="tableSite"]/tbody/tr[1]/td[4]/button'
-                driver.find_element_by_xpath(xpath).click()
+                click = '//*[@id="tableSite"]/tbody/tr[1]/td[4]/button'
+                #click = '//*[@id="tableSite"]/tbody/tr[2]/td[4]/button' #두번째
+                #click = '//*[@id="tableSite"]/tbody/tr[3]/td[4]/button' #두번째
+                driver.find_element_by_xpath(click).click()
                 last()
         except NameError:
             print("except")

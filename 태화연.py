@@ -81,7 +81,7 @@ def 태화연_StepA():
         #pag.click(button1.x,button1.y, button='left', clicks=1, interval=0.1)
         print(button1)
         time.sleep(0.1) 
-        pag.hotkey('enter')
+        pag.hotkey('enter', clicks=50, interval=0.1)
         time.sleep(0.1)
         pag.click(1800,800)#추가
         #time.sleep(0.5)#추가
@@ -212,7 +212,12 @@ def 태화연_범위선택():
     global find_range
     find_range = (find_range1.x,find_range1.y,find_range2.x,find_range2.y)
 
-
+def 태화연_job1():
+    while True:
+        pag.hotkey('enter')
+        if keyboard.is_pressed("F4") : # F4 누른게 감지되면
+            print("중지")
+            break
         
 def 태화연_job():
     while True:

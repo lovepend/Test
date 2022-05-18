@@ -80,6 +80,8 @@ notebook.add(frame2, text="★태화연★")
 태화연btn4.place(x=180, y=50)
 태화연btn5 = Button(frame2, width=5, padx=10, pady=5, text="Start", command=태화연_job, bg="green", fg="white")
 태화연btn5.place(x=240, y=50)
+태화연btn5 = Button(frame2, width=5, padx=10, pady=5, text="Enter", command=태화연_job1, bg="green", fg="white")
+태화연btn5.place(x=300, y=50)
 
 
 
