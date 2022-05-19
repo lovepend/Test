@@ -69,6 +69,7 @@ def Test_job():
     while True:
         time.sleep(0.1)
         driver.find_element_by_xpath(day).click()
+        print(s)
         try:
             if (s == True):
                 print("종료")

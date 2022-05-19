@@ -1,4 +1,5 @@
 from gettext import find
+from lib2to3.pgen2 import driver
 from tkinter import *
 from kakao_api import *
 import pyautogui as pag
@@ -12,10 +13,18 @@ import schedule
 import pyperclip
 import time
 import json
-
+from bs4 import BeautifulSoup
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.common.exceptions import ElementClickInterceptedException, NoSuchElementException, \
+    ElementNotInteractableException
 #울주해양예약 시스템 2022.01.11 #Vier Size 67%
  
-
+def 울주_Test():
+    driver = webdriver.Chrome()
+    url = "https://camping.ulju.ulsan.kr/Pmreservation.do"
+    driver.get(url)
+    
 def 울주_범위선택():
     while True:
         if keyboard.is_pressed("F4"): 

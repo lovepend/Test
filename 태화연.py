@@ -64,41 +64,49 @@ def 태화연_Reset():
     print(end_command)
 
 def 태화연_검색():
-    button = pag.locateCenterOnScreen("./image/03._1. reservation.png", region=find_range ,confidence=0.7) 
-    print(button)
+    button = pag.locateCenterOnScreen("./image/03_1. reservation.png", region=find_range ,confidence=0.7) 
     if (button == None) :
-        None      
+        태화연_검색()
     else :
-        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+        #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
         태화연_StepA()
         
 def 태화연_StepA():
-    button1 = pag.locateCenterOnScreen("./image/03._2. check.png", confidence=0.7) 
+    button = pag.locateCenterOnScreen("./image/03_2. reservation.png", region=find_range ,confidence=0.7) 
+    print(button)
+    if (button == None) :
+        태화연_job()      
+    else :
+        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+        태화연_StepB()
+        
+def 태화연_StepB():
+    button1 = pag.locateCenterOnScreen("./image/03_3. check.png", confidence=0.7) 
     if (button1 == None) :
-        None
-        태화연_StepA()
+        태화연_StepB()
     else :    
+        pag.click(1131,211,button='left', clicks=30, interval=0.1)
         #pag.click(button1.x,button1.y, button='left', clicks=1, interval=0.1)
-        print(button1)
-        time.sleep(0.1) 
-        pag.hotkey('enter', clicks=50, interval=0.1)
+        #print(button1)
+        #time.sleep(0.1) 
+        #pag.hotkey('enter', clicks=50, interval=0.1)
         time.sleep(0.1)
         pag.click(1800,800)#추가
         #time.sleep(0.5)#추가
         #pag.hotkey('pagedown')#추가
-        태화연_StepB()
+        태화연_StepC()
             
-def 태화연_StepB() : 
-    button2 = pag.locateCenterOnScreen('./image/03._3. next.png', confidence=0.7)   
+def 태화연_StepC() : 
+    button2 = pag.locateCenterOnScreen('./image/03_4. next.png', confidence=0.7)   
     print(button2)
     if (button2 == None) :
-        태화연_StepB()      
+        태화연_StepC()      
     else : 
         pag.click(1800,800)
         time.sleep(0.5)
         pag.hotkey('end')
         time.sleep(1)
-        button3 = pag.locateCenterOnScreen('./image/03._4. next.png', confidence=0.7)   
+        button3 = pag.locateCenterOnScreen('./image/03_5. next.png', confidence=0.7)   
         pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
         refresh_token()
         kakao_message_you("태화연")
