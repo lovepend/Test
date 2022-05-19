@@ -36,6 +36,7 @@ driver.find_element_by_xpath('/html/body/div/div/articel/section/div/div[1]/form
 
 #온라인 예약
 driver.find_element_by_xpath('/html/body/div/div[2]/ul/li[3]/a/span/img').click()
+time.sleep(2)
 
 #날짜 선택
 #day = '/html/body/div/div[3]/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr/td/div/div/div[3]/div[1]/table/tbody/tr/td[6]' #20
