@@ -190,3 +190,5 @@ def 신불산_job():
         if keyboard.is_pressed("F4"): # F4 누른게 감지되면
             break
 
+
+

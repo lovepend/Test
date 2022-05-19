@@ -11,6 +11,12 @@ from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import ElementClickInterceptedException, NoSuchElementException, \
     ElementNotInteractableException
 
+
+#시작하고 
+#1분 10초 예약가능사이트만 클릭
+#1분 38초 시작 
+#2분 13초 종료 35초간 진행
+
 driver = webdriver.Chrome()
 url = "https://camping.ulju.ulsan.kr/Pmreservation.do"
 driver.get(url)
@@ -22,7 +28,7 @@ driver.find_element_by_xpath('/html/body/header/div[1]/div/ul/ul/li[1]/a').click
 driver.find_element_by_xpath('/html/body/div/div[3]/div[3]/div/div/div/div[1]/a/img').click()
 
 #아이디 입력
-driver.find_element_by_xpath('/html/body/div/div/articel/section/div/div[1]/form/fieldset/label/span/input').send_keys('pend')
+driver.find_element_by_xpath('/html/body/div/div/articel/section/div/div[1]/form/fieldset/label/span/input').send_keys('lovepend1')
 
 driver.find_element_by_xpath('/html/body/div/div/articel/section/div/div[1]/form/fieldset/label/span/input').click()
 
@@ -44,36 +50,65 @@ day = '/html/body/div/div[3]/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody
 #day = '/html/body/div/div[3]/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr/td/div/div/div[4]/div[1]/table/tbody/tr/td[5]' #26
 #day = '/html/body/div/div[3]/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr/td/div/div/div[5]/div[2]/table/thead/tr/td[2]/span'
 driver.find_element_by_xpath(day).click()
-time.sleep(1)
+time.sleep(30)
 
 #캠핑장 선택
 #camp = '/html/body/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/input[1]' #작천정
 camp = '/html/body/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/input[2]' #등억
 #camp = '/html/body/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/input[3]' #달빛
 driver.find_element_by_xpath(camp).click() 
-time.sleep(1)
+time.sleep(30)
 #예약가능 선택
 driver.find_element_by_xpath('/html/body/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/input').click()
-time.sleep(1)
+time.sleep(30)
 
 table = driver.find_element_by_xpath("/html/body/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/table/tbody")
+a = "t"+table.text+"t"
 
-for tr in table.find_elements_by_tag_name("tr"):
-    global td
-    td = tr.find_elements_by_tag_name("td")
-    global s
-    s = "{}\n".format(td[2].text)  
-    print(s)
+
+    
+
+#for tr in table.find_elements_by_tag_name("tr"):
+#    global td
+#    td = tr.find_elements_by_tag_name("td")
+#    global s
+#    s = "{}".format(td[2].text)  
+def last():
+    try:
+        xpath = '//*[@id="resModal"]/div[2]/div/div[3]/button[2]'
+        driver.find_element_by_xpath(xpath).click()
+        print("완료")                 
+        time.sleep(50)
+    except ElementNotInteractableException:
+        print("except")
+        last()    
+                
+def 신불산():
+    driver.find_element_by_xpath(day).click()
+    if (a == "tt"):
+        print("예약불가")
+        신불산()        
+    else:
+        print("예약가능")
+        #click = 'tableSite > tbody > tr:nth-child(1) > td:nth-child(4) > button'
+        click = '//*[@id="tableSite"]/tbody/tr[1]/td[4]/button'
+        #click = '//*[@id="tableSite"]/tbody/tr[2]/td[4]/button' #두번째
+        #click = '//*[@id="tableSite"]/tbody/tr[3]/td[4]/button' #세번째
+        driver.find_element_by_xpath(click).click()
+        last()
+
+신불산()
 
 def Test_job():
     while True:
+        print(s)
         time.sleep(0.1)
         driver.find_element_by_xpath(day).click()
-        print(s)
         try:
-            if (s == True):
+            if (s == None):
                 print("종료")
             else :
+                #click = 'tableSite > tbody > tr:nth-child(1) > td:nth-child(4) > button'
                 click = '//*[@id="tableSite"]/tbody/tr[1]/td[4]/button'
                 #click = '//*[@id="tableSite"]/tbody/tr[2]/td[4]/button' #두번째
                 #click = '//*[@id="tableSite"]/tbody/tr[3]/td[4]/button' #두번째
@@ -82,20 +117,6 @@ def Test_job():
         except NameError:
             print("except")
             Test_job()
-        
-
-def last():
-    try:
-        xpath = '//*[@id="resModal"]/div[2]/div/div[3]/button[2]'
-        driver.find_element_by_xpath(xpath).click()
-        print("if")                 
-    except ElementNotInteractableException:
-        print("except")
-        last()
-        
-        
-Test_job()
-
 
 def job1():
     while True:
