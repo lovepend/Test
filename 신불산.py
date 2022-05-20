@@ -71,16 +71,29 @@ def 신불산_Reset():
     신불산_pw = "*Zoavld4fkd"  
     global find_range
     find_range = 860,521,1515,968
-    
-def 신불산_검색():
-    button = pag.locateCenterOnScreen("./image/04._1. reservation.png", region = find_range, confidence=0.7) 
-    if (button == None) :
-        None      
-    else : 
-        time.sleep(0.05)
-        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-        신불산_확인()
-        
+
+global i 
+i = 0
+
+def 신불산_job():
+    while True:
+        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
+            break
+        global i
+        i = i + 1
+        print(i)
+        #날짜 클릭
+        pag.click(신불산_day1)
+        time.sleep(0.5)
+        #검색
+        button = pag.locateCenterOnScreen("./image/04._1. reservation.png", region = find_range, confidence=0.7) 
+        if (button == None) :
+            None      
+        else : 
+            time.sleep(0.05)
+            pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+            신불산_확인()
+                
 def 신불산_확인() : 
     button1 = pag.locateCenterOnScreen('./image/04._2. next.png',  confidence=0.8)   #region = (510,100,1324,333),
     print(button1)
@@ -100,7 +113,7 @@ def 신불산_확인() :
         pag.click(button1.x,button1.y+27, button='left', clicks=5, interval=0.1)
         refresh_token()
         kakao_message_you("신불산")
-        time.sleep(60) 
+        return
 
 #버튼 기능
 def 신불산_날짜선택():
@@ -180,15 +193,7 @@ def 신불산_전체():
     global find_range
     find_range = (630,474,1419,1079)
 
-def 신불산_job():
-    while True:
-        #날짜 클릭
-        pag.click(신불산_day1)
-        time.sleep(0.5)
-        #검색
-        신불산_검색()
-        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
-            break
+
 
 
 

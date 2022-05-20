@@ -45,20 +45,18 @@ day = '/html/body/div/div[3]/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody
 #day = '/html/body/div/div[3]/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr/td/div/div/div[4]/div[1]/table/tbody/tr/td[5]' #26
 #day = '/html/body/div/div[3]/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr/td/div/div/div[5]/div[2]/table/thead/tr/td[2]/span'
 driver.find_element_by_xpath(day).click()
-time.sleep(30)
+time.sleep(2)
 
 #캠핑장 선택
 #camp = '/html/body/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/input[1]' #작천정
 camp = '/html/body/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/input[2]' #등억
 #camp = '/html/body/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/input[3]' #달빛
 driver.find_element_by_xpath(camp).click() 
-time.sleep(30)
+time.sleep(2)
 #예약가능 선택
 driver.find_element_by_xpath('/html/body/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/input').click()
-time.sleep(30)
+time.sleep(2)
 
-table = driver.find_element_by_xpath("/html/body/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/table/tbody")
-a = "t"+table.text+"t"
 
 
     
@@ -80,6 +78,9 @@ def last():
                 
 def 신불산():
     driver.find_element_by_xpath(day).click()
+    time.sleep(0.5)
+    table = driver.find_element_by_xpath("/html/body/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/table/tbody")
+    a = "t"+table.text+"t"
     if (a == "tt"):
         print("예약불가")
         신불산()        
@@ -94,40 +95,40 @@ def 신불산():
 
 신불산()
 
-def Test_job():
-    while True:
-        print(s)
-        time.sleep(0.1)
-        driver.find_element_by_xpath(day).click()
-        try:
-            if (s == None):
-                print("종료")
-            else :
-                #click = 'tableSite > tbody > tr:nth-child(1) > td:nth-child(4) > button'
-                click = '//*[@id="tableSite"]/tbody/tr[1]/td[4]/button'
-                #click = '//*[@id="tableSite"]/tbody/tr[2]/td[4]/button' #두번째
-                #click = '//*[@id="tableSite"]/tbody/tr[3]/td[4]/button' #두번째
-                driver.find_element_by_xpath(click).click()
-                last()
-        except NameError:
-            print("except")
-            Test_job()
+# def Test_job():
+#     while True:
+#         print(s)
+#         time.sleep(0.1)
+#         driver.find_element_by_xpath(day).click()
+#         try:
+#             if (s == None):
+#                 print("종료")
+#             else :
+#                 #click = 'tableSite > tbody > tr:nth-child(1) > td:nth-child(4) > button'
+#                 click = '//*[@id="tableSite"]/tbody/tr[1]/td[4]/button'
+#                 #click = '//*[@id="tableSite"]/tbody/tr[2]/td[4]/button' #두번째
+#                 #click = '//*[@id="tableSite"]/tbody/tr[3]/td[4]/button' #두번째
+#                 driver.find_element_by_xpath(click).click()
+#                 last()
+#         except NameError:
+#             print("except")
+#             Test_job()
 
-def job1():
-    while True:
-        driver.find_element_by_xpath(day).click()
-        try:
-            if (s == True):
-                xpath = '//*[@id="tableSite"]/tbody/tr[1]/td[4]/button'
-                driver.find_element_by_xpath(xpath).click()
-                xpath = '//*[@id="resModal"]/div[2]/div/div[3]/button[2]'
-                driver.find_element_by_xpath(xpath).click()
-                print("if")
-            else :
-                print("종료")
-        except NameError:
-            print("except")
-            job1()
+# def job1():
+#     while True:
+#         driver.find_element_by_xpath(day).click()
+#         try:
+#             if (s == True):
+#                 xpath = '//*[@id="tableSite"]/tbody/tr[1]/td[4]/button'
+#                 driver.find_element_by_xpath(xpath).click()
+#                 xpath = '//*[@id="resModal"]/div[2]/div/div[3]/button[2]'
+#                 driver.find_element_by_xpath(xpath).click()
+#                 print("if")
+#             else :
+#                 print("종료")
+#         except NameError:
+#             print("except")
+#             job1()
 
 
  

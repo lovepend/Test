@@ -62,14 +62,32 @@ def 태화연_Reset():
     global 태화연_pw
     태화연_pw = "*Zoavld4fkd"  
     print(end_command)
-
-def 태화연_검색():
-    button = pag.locateCenterOnScreen("./image/03_1. reservation.png", region=find_range ,confidence=0.7) 
-    if (button == None) :
-        태화연_검색()
-    else :
-        #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-        태화연_StepA()
+ 
+ 
+global i 
+i = 0
+    
+def 태화연_job():
+    while True:
+        if end_command == 1 : # end_command 가 1이 되면
+            break
+        if keyboard.is_pressed("F4") : # F4 누른게 감지되면
+            print("중지")
+            break
+        global i
+        i = i + 1
+        print(i)
+        #날짜 클릭
+        pag.click(태화연_day1)
+        time.sleep(0.1)
+        pag.click(태화연_day2)
+        time.sleep(0.3)
+        button = pag.locateCenterOnScreen("./image/03_1. reservation.png", region=find_range ,confidence=0.7) 
+        if (button == None) :
+            None
+        else :
+            #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+            태화연_StepA()
         
 def 태화연_StepA():
     button = pag.locateCenterOnScreen("./image/03_2. reservation.png", region=find_range ,confidence=0.7) 
@@ -228,24 +246,3 @@ def 태화연_job1():
             print("중지")
             break
         
-def 태화연_job():
-    while True:
-        if end_command == 1 : # end_command 가 1이 되면
-            break
-        #날짜 클릭
-        pag.click(태화연_day1)
-        time.sleep(0.1)
-        pag.click(태화연_day2)
-        time.sleep(0.3)
-        #pag.hotkey('mousewheel', 'down')
-        #time.sleep(0.3)
-        #검색
-        태화연_검색()   
-        #pag.hotkey('mousewheel', 'up')
-        #time.sleep(0.3)
-        if keyboard.is_pressed("F4") : # F4 누른게 감지되면
-            print("중지")
-            break
-        if end_command == 1 : # end_command 가 1이 되면
-            print(end_command)
-            break
