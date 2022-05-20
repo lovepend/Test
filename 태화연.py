@@ -71,7 +71,7 @@ def 태화연_job():
     while True:
         if end_command == 1 : # end_command 가 1이 되면
             break
-        if keyboard.is_pressed("F4") : # F4 누른게 감지되면
+        if keyboard.is_pressed("F2") : # F2 누른게 감지되면
             print("중지")
             break
         global i
@@ -135,14 +135,14 @@ def 태화연_StepC() :
 
 def 태화연_날짜선택():
     while True:
-        if keyboard.is_pressed("F4"): 
+        if keyboard.is_pressed("F2"): 
             global 태화연_day1 
             태화연_day1  = pag.position()
             print(태화연_day1)
             time.sleep(0.2)
             break        
     while True:
-        if keyboard.is_pressed("F4"): 
+        if keyboard.is_pressed("F2"): 
             global 태화연_day2
             태화연_day2  = pag.position()
             print(태화연_day2)
@@ -222,14 +222,14 @@ def 태화연_자동입력():
 
 def 태화연_범위선택():
     while True:
-        if keyboard.is_pressed("F4"): 
+        if keyboard.is_pressed("F2"): 
             global find_range1 
             find_range1  = pag.position()
             print(find_range1)
             time.sleep(0.5)
             break  
     while True:
-        if keyboard.is_pressed("F4"): 
+        if keyboard.is_pressed("F2"): 
             global find_range2 
             find_range2  = pag.position()
             print(find_range2)
@@ -242,7 +242,7 @@ def 태화연_job1():
     while True:
         pag.hotkey('enter')
         time.sleep(0.05)
-        if keyboard.is_pressed("F4") : # F4 누른게 감지되면
+        if keyboard.is_pressed("F2") : # F2 누른게 감지되면
             print("중지")
             break
         

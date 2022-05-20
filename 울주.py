@@ -52,14 +52,14 @@ def 울주_log_guest():
 
 def 울주_범위선택():
     while True:
-        if keyboard.is_pressed("F4"): 
+        if keyboard.is_pressed("F2"): 
             global find_range1 
             find_range1  = pag.position()
             print(find_range1)
             time.sleep(0.5)
             break  
     while True:
-        if keyboard.is_pressed("F4"): 
+        if keyboard.is_pressed("F2"): 
             global find_range2 
             find_range2  = pag.position()
             print(find_range2)
@@ -323,7 +323,7 @@ def 울주_job():
         울주_검색()
         pag.hotkey('pgup')
         time.sleep(0.2)
-        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
+        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             break
 
 def 울주_job1():
@@ -388,7 +388,7 @@ def 울주_job1():
         time.sleep(0.5)
         
         울주_검색()
-        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
+        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             break
 
 def 울주_job2():
@@ -404,5 +404,5 @@ def 울주_job2():
         울주_검색()
         pag.hotkey('pgup')
         time.sleep(0.2)
-        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
+        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             break

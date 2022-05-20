@@ -66,7 +66,7 @@ def 대왕암_오토():
     while True:
         if end_command == 1 : # end_command 가 1이 되면
             break
-        if keyboard.is_pressed("F4") : # F4 누른게 감지되면
+        if keyboard.is_pressed("F2") : # F2 누른게 감지되면
             print("중지")
             break
         global i
@@ -109,7 +109,7 @@ def 대왕암_오토():
         time.sleep(0.2)
         pag.click(대왕암_position_down)
         time.sleep(0.2)
-        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
+        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             break        
 
 
@@ -117,7 +117,7 @@ def 대왕암_카라반():
     while True:
         if end_command == 1 : # end_command 가 1이 되면
             break
-        if keyboard.is_pressed("F4") : # F4 누른게 감지되면
+        if keyboard.is_pressed("F2") : # F2 누른게 감지되면
             print("중지")
             break
         global i
@@ -134,7 +134,7 @@ def 대왕암_카라반():
         #page 업 
         pag.click(대왕암_position_up)
         time.sleep(0.2)
-        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
+        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             break
                     
 def 대왕암_검색():
@@ -209,7 +209,7 @@ def 대왕암_자동입력():
     
 def 대왕암_날짜선택():
     while True:
-        if keyboard.is_pressed("F4"): 
+        if keyboard.is_pressed("F2"): 
             global 대왕암_day1 
             대왕암_day1  = pag.position()
             print(대왕암_day1)
@@ -218,7 +218,7 @@ def 대왕암_날짜선택():
 
 def 대왕암_커서선택():
     while True:
-        if keyboard.is_pressed("F4"): 
+        if keyboard.is_pressed("F2"): 
             global 대왕암_position_up
             대왕암_position_up  = pag.position()
             print(대왕암_position_up)
@@ -226,7 +226,7 @@ def 대왕암_커서선택():
             break 
     
     while True:
-        if keyboard.is_pressed("F4"): 
+        if keyboard.is_pressed("F2"): 
             global 대왕암_position_down
             대왕암_position_down  = pag.position()
             print(대왕암_position_down)
@@ -235,14 +235,14 @@ def 대왕암_커서선택():
 
 def 대왕암_범위선택():
     while True:
-        if keyboard.is_pressed("F4"): 
+        if keyboard.is_pressed("F2"): 
             global find_range1 
             find_range1  = pag.position()
             print(find_range1)
             time.sleep(0.5)
             break  
     while True:
-        if keyboard.is_pressed("F4"): 
+        if keyboard.is_pressed("F2"): 
             global find_range2 
             find_range2  = pag.position()
             print(find_range2)

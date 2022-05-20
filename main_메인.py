@@ -258,6 +258,6 @@ schedule.every().day.at("22:03").do(job_1903) # 각종00 스케줄 스타트
 while True:
     schedule.run_pending()
     time.sleep(1)
-    if keyboard.is_pressed("F4"): 
+    if keyboard.is_pressed("F2"): 
         break
 

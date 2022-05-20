@@ -77,7 +77,7 @@ i = 0
 
 def 신불산_job():
     while True:
-        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
+        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             break
         global i
         i = i + 1
@@ -118,7 +118,7 @@ def 신불산_확인() :
 #버튼 기능
 def 신불산_날짜선택():
     while True:
-        if keyboard.is_pressed("F4"):
+        if keyboard.is_pressed("F2"):
             global 신불산_day1
             신불산_day1  = pag.position()
             print(신불산_day1)
@@ -173,14 +173,14 @@ def 신불산_자동입력():
      
 def 신불산_범위선택():
     while True:
-        if keyboard.is_pressed("F4"): 
+        if keyboard.is_pressed("F2"): 
             global find_range1 
             find_range1  = pag.position()
             print(find_range1)
             time.sleep(0.5)
             break  
     while True:
-        if keyboard.is_pressed("F4"): 
+        if keyboard.is_pressed("F2"): 
             global find_range2 
             find_range2  = pag.position()
             print(find_range2)

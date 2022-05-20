@@ -75,7 +75,7 @@ a = "t"+table.text+"t"
 
 def 신불산():
     while True:
-        if keyboard.is_pressed('f4'):
+        if keyboard.is_pressed('F2'):
             break
         global i
         i = i + 1
