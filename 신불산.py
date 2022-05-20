@@ -126,6 +126,7 @@ def 신불산_날짜선택():
             break         
 
 def 신불산_자동입력():      
+    time.sleep(2)
     #로그인 클릭
     pag.click(1112,115)
     time.sleep(5)

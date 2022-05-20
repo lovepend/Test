@@ -171,6 +171,7 @@ def 대왕암_확인() :
         print('end')
 
 def 대왕암_자동입력():
+    time.sleep(2)
     #로그인 선택
     pag.click(1296,117)
     time.sleep(5)

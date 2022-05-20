@@ -3,7 +3,7 @@ from gettext import find
 from tkinter import *
 import tkinter
 from math import *
-from turtle import width
+from turtle import bgcolor, color, width
 import pyautogui as pag
 import win32con
 import win32api
@@ -31,7 +31,7 @@ notebook=tkinter.ttk.Notebook(window, width=460, height=100)
 notebook.pack()
 
 frame1=tkinter.Frame(window)
-notebook.add(frame1, text="★울주해양")
+notebook.add(frame1, text="★울주해양" )
 
 #울주에서 예약하기
 #로그

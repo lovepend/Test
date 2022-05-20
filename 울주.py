@@ -30,7 +30,8 @@ def 울주_log_id1():
 def 울주_log_id2():
     global 울주_id
     울주_id = "lovepend@kakao.com"
-
+    print(울주_id)
+    
 def 울주_log_id3():
     global 울주_id
     울주_id = "lovepend@naver.com"
@@ -237,6 +238,7 @@ def 울주_log():
     if (loggin == None):
         None
     else :
+        time.sleep(2)
         #코드보내기
         pag.click(loggin.x,loggin.y)
         time.sleep(1)
@@ -274,6 +276,7 @@ def 울주_log1():
     if (loggin == None):
         None
     else :
+        time.sleep(2)
         #코드보내기
         pag.click(loggin.x,loggin.y)
         time.sleep(1)

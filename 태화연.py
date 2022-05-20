@@ -150,6 +150,7 @@ def 태화연_날짜선택():
             break       
         
 def 태화연_자동입력():
+    time.sleep(2)
     #로그인 선택
     pag.click(1400,128)
     time.sleep(2)
