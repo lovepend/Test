@@ -45,7 +45,7 @@ day = '/html/body/div/div[3]/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody
 #day = '/html/body/div/div[3]/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr/td/div/div/div[4]/div[1]/table/tbody/tr/td[5]' #26
 #day = '/html/body/div/div[3]/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr/td/div/div/div[5]/div[2]/table/thead/tr/td[2]/span'
 driver.find_element_by_xpath(day).click()
-time.sleep(2)
+time.sleep(30)
 
 #캠핑장 선택
 #camp = '/html/body/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/input[1]' #작천정
@@ -66,6 +66,36 @@ time.sleep(2)
 #    td = tr.find_elements_by_tag_name("td")
 #    global s
 #    s = "{}".format(td[2].text)  
+global i    
+i = 0
+
+table = driver.find_element_by_xpath("/html/body/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/table/tbody")
+time.sleep(0.01)
+a = "t"+table.text+"t"           
+
+def 신불산():
+    while True:
+        if keyboard.is_pressed('f4'):
+            break
+        global i
+        i = i + 1
+        print(i)
+        time.sleep(0.01)
+        driver.find_element_by_xpath(day).click()
+        time.sleep(0.01)
+        
+        time.sleep(0.01)
+        if (a == "tt"):
+            print("예약불가")
+        else:
+            print("예약가능")
+            #click = 'tableSite > tbody > tr:nth-child(1) > td:nth-child(4) > button'
+            click = '//*[@id="tableSite"]/tbody/tr[1]/td[4]/button'
+            #click = '//*[@id="tableSite"]/tbody/tr[2]/td[4]/button' #두번째
+            #click = '//*[@id="tableSite"]/tbody/tr[3]/td[4]/button' #세번째
+            driver.find_element_by_xpath(click).click()
+            last()
+
 def last():
     try:
         xpath = '//*[@id="resModal"]/div[2]/div/div[3]/button[2]'
@@ -75,26 +105,7 @@ def last():
     except ElementNotInteractableException:
         print("except")
         last()    
-                
-def 신불산():
-    driver.find_element_by_xpath(day).click()
-    time.sleep(0.5)
-    table = driver.find_element_by_xpath("/html/body/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/table/tbody")
-    a = "t"+table.text+"t"
-    if (a == "tt"):
-        print("예약불가")
-        신불산()        
-    else:
-        print("예약가능")
-        #click = 'tableSite > tbody > tr:nth-child(1) > td:nth-child(4) > button'
-        click = '//*[@id="tableSite"]/tbody/tr[1]/td[4]/button'
-        #click = '//*[@id="tableSite"]/tbody/tr[2]/td[4]/button' #두번째
-        #click = '//*[@id="tableSite"]/tbody/tr[3]/td[4]/button' #세번째
-        driver.find_element_by_xpath(click).click()
-        last()
-
-신불산()
-
+        
 # def Test_job():
 #     while True:
 #         print(s)
@@ -130,8 +141,7 @@ def 신불산():
 #             print("except")
 #             job1()
 
-
- 
+신불산()
 
 
 

@@ -58,7 +58,85 @@ def 대왕암_log_guest():
     대왕암_pw = "Sm88410000!"
     print(대왕암_id)
     print(대왕암_pw)
-    
+
+global i 
+i = 0       
+
+def 대왕암_오토():
+    while True:
+        if end_command == 1 : # end_command 가 1이 되면
+            break
+        if keyboard.is_pressed("F4") : # F4 누른게 감지되면
+            print("중지")
+            break
+        global i
+        i = i + 1
+        print(i)
+        #날짜 클릭
+        pag.click(대왕암_day1)
+        time.sleep(0.5)
+        #검색
+        대왕암_검색()
+        time.sleep(0.2)
+        #page 위
+        pag.click(대왕암_position_up)
+        time.sleep(0.2)
+        대왕암_검색()
+        time.sleep(0.2)
+        #page 위
+        pag.click(대왕암_position_up)
+        time.sleep(0.2)
+        대왕암_검색()
+        time.sleep(0.2)
+        #page 위
+        pag.click(대왕암_position_up)
+        time.sleep(0.2)
+        대왕암_검색()
+        #page 위
+        pag.click(대왕암_position_up)
+        time.sleep(0.2)
+        대왕암_검색()
+        #page 아래
+        pag.click(대왕암_position_down)
+        time.sleep(0.2)
+        pag.click(대왕암_position_down)
+        time.sleep(0.2)
+        pag.click(대왕암_position_down)
+        time.sleep(0.2)
+        pag.click(대왕암_position_down)
+        time.sleep(0.2)
+        pag.click(대왕암_position_down)
+        time.sleep(0.2)
+        pag.click(대왕암_position_down)
+        time.sleep(0.2)
+        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
+            break        
+
+
+def 대왕암_카라반():
+    while True:
+        if end_command == 1 : # end_command 가 1이 되면
+            break
+        if keyboard.is_pressed("F4") : # F4 누른게 감지되면
+            print("중지")
+            break
+        global i
+        i = i + 1
+        #날짜 클릭
+        pag.click(대왕암_day1)
+        time.sleep(0.2)
+        #검색
+        대왕암_검색()
+        #page 아래 
+        pag.click(대왕암_position_down)
+        time.sleep(0.2)
+        대왕암_검색()
+        #page 업 
+        pag.click(대왕암_position_up)
+        time.sleep(0.2)
+        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
+            break
+                    
 def 대왕암_검색():
     #검색
     button = pag.locateCenterOnScreen("./image/02._1. reservation.png", region = find_range_대왕암, confidence=0.85) 
@@ -173,67 +251,8 @@ def 대왕암_범위선택():
     global find_range_대왕암
     find_range_대왕암 = (find_range1.x,find_range1.y,find_range2.x,find_range2.y)
  
-def 대왕암_카라반():
-    while True:
-        if end_command == 1 : # end_command 가 1이 되면
-            break
-        #날짜 클릭
-        pag.click(대왕암_day1)
-        time.sleep(0.2)
-        #검색
-        대왕암_검색()
-        #page 아래 
-        pag.click(대왕암_position_down)
-        time.sleep(0.2)
-        대왕암_검색()
-        #page 업 
-        pag.click(대왕암_position_up)
-        time.sleep(0.2)
-        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
-            break
+
         
-def 대왕암_오토():
-    while True:
-        if end_command == 1 : # end_command 가 1이 되면
-            break
-        #날짜 클릭
-        pag.click(대왕암_day1)
-        time.sleep(0.5)
-        #검색
-        대왕암_검색()
-        time.sleep(0.2)
-        #page 위
-        pag.click(대왕암_position_up)
-        time.sleep(0.2)
-        대왕암_검색()
-        time.sleep(0.2)
-        #page 위
-        pag.click(대왕암_position_up)
-        time.sleep(0.2)
-        대왕암_검색()
-        time.sleep(0.2)
-        #page 위
-        pag.click(대왕암_position_up)
-        time.sleep(0.2)
-        대왕암_검색()
-        #page 위
-        pag.click(대왕암_position_up)
-        time.sleep(0.2)
-        대왕암_검색()
-        #page 아래
-        pag.click(대왕암_position_down)
-        time.sleep(0.2)
-        pag.click(대왕암_position_down)
-        time.sleep(0.2)
-        pag.click(대왕암_position_down)
-        time.sleep(0.2)
-        pag.click(대왕암_position_down)
-        time.sleep(0.2)
-        pag.click(대왕암_position_down)
-        time.sleep(0.2)
-        pag.click(대왕암_position_down)
-        time.sleep(0.2)
-        if keyboard.is_pressed("F4"): # F4 누른게 감지되면
-            break
+
 
 
