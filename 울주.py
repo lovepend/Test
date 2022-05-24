@@ -15,13 +15,17 @@ import json
 
 #울주해양예약 시스템 2022.01.11 #Vier Size 67%
 
+################################## 아이디
 global 울주_id
 울주_id = "id"
 global 울주_pw
 울주_pw = "*Zoavld4fkd" 
 global find_range
+
+################################## 범위
 find_range = 0,0,1904,1079
 
+#★★★★★★★★★★★★★★★★★★★ 아이디 입력
 def 울주_log_id1():
     global 울주_id
     울주_id = "lovepend@nate.com"
@@ -51,6 +55,7 @@ def 울주_log_guest():
     print(울주_id)
     print(울주_pw)
 
+#★★★★★★★★★★★★★★★★★★★ 범위 입력
 def 울주_범위선택():
     while True:
         if keyboard.is_pressed("F2"): 
@@ -70,11 +75,11 @@ def 울주_범위선택():
     global find_range
     find_range = (find_range1.x,find_range1.y,find_range2.x,find_range2.y)
 
-
 def 울주_토요일():
     global find_range
     find_range = 1164,102,1263,1080 #토요일만 검색 
 
+#★★★★★★★★★★★★★★★★★★★ 메인 함수
 def 울주_검색():
     #Saturday = 1164,102,1263,1080 #토요일만 검색 
     button = pag.locateCenterOnScreen('./image/01_0. reservation1.png', region = find_range, confidence=0.9)
@@ -85,8 +90,6 @@ def 울주_검색():
         button_1 = pag.locateCenterOnScreen('./image/01_0. reservation2.png', region = Friday,confidence=0.9) #토요일 찾을 범위 설정      
         pag.click(button_1,button='left')     
         울주_page1()
-
-
 
 def 울주_page1():
     refresh_token()
@@ -211,28 +214,7 @@ def 울주_page8():
         pag.click(buttonpostion8.x+70,buttonpostion8.y, button='left')
         time.sleep(30)
 
-
-def 자동결제():
-    울주_page1()
-
-def 수동결제():
-    #기간
-    pag.click(1600,800)
-    pag.hotkey('home')
-    pag.sleep(0.3)
-    pag.click(x=907, y=750)
-    pag.hotkey('pagedown')
-    pag.sleep(0.3)
-    #총인원
-    pag.click(x=1019, y=747)
-    pag.hotkey('pagedown')
-    #페이지 선택
-    pag.doubleClick(1600,800)
-    #페이지 아래
-    pag.hotkey('end')
-    time.sleep(0.5)
-    울주_page1()
-
+#★★★★★★★★★★★★★★★★★★★ 로그
 def 울주_log():
     loggin = pag.locateCenterOnScreen('./image/01_10. loggin.png', region = (1100,0,1250,204), confidence=0.8)
     if (loggin == None):
@@ -270,7 +252,7 @@ def 울주_log():
         pag.click(1239,162)
         time.sleep(1)        
         pag.click(1239,162)       
-        
+       
 def 울주_log1():
     loggin = pag.locateCenterOnScreen('./image/01_10. loggin.png', region = (1100,0,1250,204), confidence=0.8)
     if (loggin == None):
@@ -313,7 +295,85 @@ def 울주_log1():
         time.sleep(2)
         pag.doubleClick(1600,800)
 
-def 울주_job():
+#★★★★★★★★★★★★★★★★★★★ 메인 함수
+def 울주_This_A():
+    while True:
+        #페이지 선택
+        pag.doubleClick(1600,800)
+        울주_log()
+        pag.hotkey('f5')
+        time.sleep(0.2)
+        울주_검색()
+        pag.hotkey('pgdn')
+        time.sleep(0.2)
+        울주_검색()
+        pag.hotkey('pgup')
+        time.sleep(0.2)
+        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+            break
+
+def 울주_This_N():
+    while True:
+        #페이지 선택
+        pag.doubleClick(1600,800)
+        울주_log()
+        
+        #A사이트 * 2
+        #pag.click(620,510)
+        #time.sleep(0.2)
+        #울주_검색()
+        #pag.hotkey('pgdn')
+        #time.sleep(0.2)
+        #울주_검색()    
+        
+        #B사이트 * 2
+        pag.click(690,510)
+        #pag.click(690,120)
+        time.sleep(0.5)
+        울주_검색()
+        pag.hotkey('pgdn')
+        time.sleep(0.5)
+        울주_검색()
+        
+        #C사이트
+        #pag.click(760,510)
+        pag.click(765,120)   
+        time.sleep(0.5)
+        울주_검색()
+        
+        #D사이트 * 2
+        pag.click(840,510)
+        #pag.click(840,120)
+        time.sleep(0.5)
+        울주_검색()
+        pag.hotkey('pgdn')
+        time.sleep(0.5)
+        울주_검색()
+        
+        #E사이트  * 2
+        #pag.click(920,510)
+        pag.click(920,120)
+        time.sleep(0.5)
+        울주_검색()
+        pag.hotkey('pgdn')
+        time.sleep(0.5)
+        울주_검색()
+        
+        #F사이트
+        #pag.click(990,510)
+        pag.click(990,120)
+        time.sleep(0.5)#페이지 선택
+        pag.doubleClick(1600,800)
+        pag.hotkey('pageup')
+        time.sleep(0.5)
+        pag.hotkey('pageup')
+        time.sleep(0.5)
+        
+        울주_검색()
+        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+            break
+
+def 울주_Next_A():
     while True:
         #페이지 선택
         pag.doubleClick(1600,800)
@@ -329,7 +389,7 @@ def 울주_job():
         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             break
 
-def 울주_job1():
+def 울주_Next_N():
     while True:
         #페이지 선택
         pag.doubleClick(1600,800)
@@ -352,13 +412,11 @@ def 울주_job1():
         time.sleep(0.5)
         울주_검색()
         
-            
         #C사이트
         #pag.click(760,510)
         pag.click(765,120)   
         time.sleep(0.5)
         울주_검색()
-        
         
         #D사이트 * 2
         pag.click(840,510)
@@ -369,7 +427,6 @@ def 울주_job1():
         time.sleep(0.5)
         울주_검색()
         
-        
         #E사이트  * 2
         #pag.click(920,510)
         pag.click(920,120)
@@ -378,7 +435,6 @@ def 울주_job1():
         pag.hotkey('pgdn')
         time.sleep(0.5)
         울주_검색()
-        
         
         #F사이트
         #pag.click(990,510)
@@ -391,21 +447,5 @@ def 울주_job1():
         time.sleep(0.5)
         
         울주_검색()
-        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
-            break
-
-def 울주_job2():
-    while True:
-        #페이지 선택
-        pag.doubleClick(1600,800)
-        울주_log1()
-        pag.hotkey('f5')
-        time.sleep(0.2)
-        울주_검색()
-        pag.hotkey('pgdn')
-        time.sleep(0.2)
-        울주_검색()
-        pag.hotkey('pgup')
-        time.sleep(0.2)
         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             break
