@@ -291,6 +291,12 @@ def 대왕암_Karavan():
                     
 #★★★★★★★★★★★★★★★★★★★ 스케쥴러
 def 대왕암_자동():
+    대왕암_Reset()
+    #접속
+    pag.click(466,84)
+    time.sleep(5)
+    pag.click(523,211)
+    time.sleep(5)
     대왕암_자동입력()
     대왕암_Start()
 

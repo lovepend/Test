@@ -449,3 +449,12 @@ def 울주_Next_N():
         울주_검색()
         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             break
+        
+#★★★★★★★★★★★★★★★★★★★ 스케쥴러      
+def 울주_자동():
+    pag.click(466,84)
+    time.sleep(5)
+    pag.click(500,115)
+    time.sleep(5)
+    울주_Next_A()
+    

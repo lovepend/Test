@@ -1,6 +1,7 @@
 from gettext import find
 from tkinter import *
 from turtle import pendown
+from cv2 import goodFeaturesToTrack
 from kakao_api import *
 from urllib3 import encode_multipart_formdata
 import pyautogui as pag
@@ -14,6 +15,13 @@ import schedule
 import requests
 import time
 import json
+import datetime
+
+#now = time.localtime()
+#print( now.tm_hour ) 
+#print( now.tm_min ) 
+#print( now.tm_sec )
+#current_time_m = now.tm_min
 
 #태화연 Test 2022.05.24 #Viewer Size 67%
 
@@ -21,6 +29,8 @@ import json
 global 태화연_end_command
 태화연_end_command = 0
 
+global 태화연_end_command1
+태화연_end_command1 = 0
 ################################## 범위 
 global 태화연_find_range
 태화연_find_range = 0,0,1904,1079
@@ -34,12 +44,18 @@ global 태화연_pw
 ################################## 횟수 
 global 태화연_i
 태화연_i = 0
-
+    
 #★★★★★★★★★★★★★★★★★★★ 리셋 입력
 def 태화연_Reset():
     global 태화연_end_command
     태화연_end_command = 0
- 
+    global 태화연_end_command1
+    태화연_end_command1 = 0
+
+def 태화연_End():
+    global 태화연_end_command1
+    태화연_end_command1 = 1
+    
 #★★★★★★★★★★★★★★★★★★★ 아이디 입력
 def 태화연_Log_Id1():
     global 태화연_id
@@ -209,13 +225,23 @@ def 태화연_자동입력():
        
 #★★★★★★★★★★★★★★★★★★★ 메인 함수
 def 태화연_Start():
+    now = time.localtime()
     global 태화연_find_range
+    global 태화연_end_command
+    global 태화연_end_command1
+    current_time_m = now.tm_min
+    print(current_time_m)
     while True:
-        if 태화연_end_command == 1 : # end_command 가 1이 되면
-            break
-        if keyboard.is_pressed("F2") : # F2 누른게 감지되면
+        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             print("중지")
             break
+        if 태화연_end_command == 1 : # end_command 가 1이 되면
+            break
+        if 태화연_end_command1 == 1 : # F2 누른게 감지되면
+            print("중지")
+            break
+        if current_time_m == 10 : # F2 누른게 감지되면
+            break        
         global 태화연_i
         태화연_i = 태화연_i + 1
         print(태화연_i)
@@ -226,12 +252,14 @@ def 태화연_Start():
         time.sleep(0.1)
         pag.click(태화연_day2)
         time.sleep(0.3)
+        schedule.every().day.at("16:43").do(태화연_End) # 태화연 자동
         button = pag.locateCenterOnScreen("./image/03_1. reservation.png", region=태화연_find_range ,confidence=0.7) 
         if (button == None) :
             None
         else :
             #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
             태화연_StepA()
+
         
 def 태화연_StepA():
     global 태화연_find_range
@@ -277,6 +305,7 @@ def 태화연_StepC() :
         end_command = 1
         print(end_command)
         print('end')
+        태화연_자동()
 
 #★★★★★★★★★★★★★★★★★★★ 서브 함수
 def 태화연_job1():
@@ -289,5 +318,11 @@ def 태화연_job1():
 
 #★★★★★★★★★★★★★★★★★★★ 스케쥴러
 def 태화연_자동():
+    태화연_Reset()
+    #접속 
+    pag.click(476,84)
+    time.sleep(5)
+    pag.click(536,152)
+    time.sleep(5)
     태화연_자동입력()
     태화연_Start()

@@ -24,6 +24,9 @@ import sys
 global 신불산_end_command
 신불산_end_command = 0
 
+global 태화연_end_command1
+태화연_end_command1 = 0
+
 ################################## 범위 
 global 신불산_find_range
 신불산_find_range = 860,521,1515,968
@@ -50,8 +53,12 @@ def 신불산_i_end():
 def 신불산_Reset():
     global end_command
     end_command = 0
-    global find_range
-    find_range = 860,521,1515,968
+
+def 신불산_End():
+    global 신불산_end_command1
+    신불산_end_command1 = 1
+    
+    
     
 #★★★★★★★★★★★★★★★★★★★ 아이디 입력
 def 신불산_Log_Id1():
@@ -185,9 +192,12 @@ def 신불산_Start():
     while True:
         global 신불산_end_command
         global 신불산_find_range
+        global 신불산_end_command1
         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             break
         if 신불산_end_command == 1: # end_command = 1이면 종료
+            break
+        if 신불산_end_command1 == 1: # end_command = 1이면 종료
             break
         global i
         i = i + 1
@@ -226,6 +236,7 @@ def 신불산_StepA() :
         pag.click(button1.x,button1.y+27, button='left', clicks=5, interval=0.1)
         refresh_token()
         kakao_message_you("신불산")
+        time.sleep(30)
         global 신불산_end_command
         신불산_end_command = 1
         return
@@ -233,6 +244,12 @@ def 신불산_StepA() :
 #★★★★★★★★★★★★★★★★★★★ 스케쥴러
   
 def 신불산_자동():
+    신불산_Reset()
+    #접속
+    pag.click(466,84)
+    time.sleep(5)
+    pag.click(496,185)
+    time.sleep(5)
     신불산_자동입력()
     신불산_Start()
 
