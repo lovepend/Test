@@ -169,6 +169,7 @@ notebook.insert(2, frame5, text="★대왕암★")
 대왕암btn4 = Button(frame5, width=5, padx=10, pady=5, text="Day4", command=대왕암_Day4, bg="white", fg="black")
 대왕암btn4.place(x=180, y=50)
 대왕암btn5 = Button(frame5, width=5, padx=10, pady=5, text="Day", command=대왕암_Day, bg="white", fg="black")
+대왕암btn5.place(x=240, y=50)
 #함수
 대왕암btn1 = Button(frame5, width=5, padx=10, pady=5, text="Reset", command=대왕암_Reset, bg="white", fg="black")
 대왕암btn1.place(x=0, y=90)
