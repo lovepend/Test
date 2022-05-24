@@ -1,5 +1,7 @@
 from gettext import find
+import imp
 from tkinter import *
+#from main_캠핑_Rev_0 import *
 from kakao_api import *
 from urllib3 import encode_multipart_formdata
 import pyautogui as pag
@@ -13,118 +15,124 @@ import schedule
 import requests
 import time
 import json
+import datetime
+import sys
 
 #신불산 Test 2022.03.21 #Viewer Size 67%
 
+################################## 리셋 
+global 신불산_end_command
+신불산_end_command = 0
 
-global end_command
-end_command = 0
+################################## 범위 
+global 신불산_find_range
+신불산_find_range = 860,521,1515,968
 
+################################## 아이디
 global 신불산_id
-신불산_id = "id"
+신불산_id = "pend"
 global 신불산_pw
 신불산_pw = "*Zoavld4fkd" 
 
-global find_range
-find_range = 860,521,1515,968
+################################## 횟수 
+global i 
+i = 0
+global i_end
+i_end = 5000
 
-def 신불산_log_id1():
+def 신불산_i_end():  
+    global i 
+    i = 0
+    global i_end
+    i_end = 5000
+    
+#★★★★★★★★★★★★★★★★★★★ 리셋 입력
+def 신불산_Reset():
+    global end_command
+    end_command = 0
+    global find_range
+    find_range = 860,521,1515,968
+    
+#★★★★★★★★★★★★★★★★★★★ 아이디 입력
+def 신불산_Log_Id1():
     global 신불산_id
     신불산_id = "pend"
     print(신불산_id)
 
-def 신불산_log_id2():
+def 신불산_Log_Id2():
     global 신불산_id
     신불산_id = "lovepend2"
     print(신불산_id)
 
-def 신불산_log_id3():
+def 신불산_Log_Id3():
     global 신불산_id
     신불산_id = "lovepend3"
     print(신불산_id)
 
-def 신불산_log_id4():
+def 신불산_Log_Id4():
     global 신불산_id
     신불산_id = "parkmc7"
     print(신불산_id)
 
-def 신불산_log_guest():
+def 신불산_Log_Guest():
     global 신불산_id
     신불산_id = "suld2000@naver.com"
     global 신불산_pw
     신불산_pw = "Sm88410000!"
     print(신불산_id)
     print(신불산_pw)
-    
-def 신불산_Reset():
-    global end_command
-    end_command = 0
-    global log_id_no1
-    log_id_no1 = "pend"
-    global log_id_no2
-    log_id_no2 = "lovepend2"
-    global log_id_no3
-    log_id_no3 = "lovepend3"
-    global log_id_no4
-    log_id_no4 = "parkmc7"
-    global 신불산_pw
-    신불산_pw = "*Zoavld4fkd"  
-    global find_range
-    find_range = 860,521,1515,968
 
-global i 
-i = 0
+#★★★★★★★★★★★★★★★★★★★ 날짜 입력
+       
+def 신불산_Day1():
+    global 신불산_day
+    신불산_day = 890, 685
+    print(신불산_day)
 
-def 신불산_job():
-    while True:
-        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
-            break
-        global i
-        i = i + 1
-        print(i)
-        #날짜 클릭
-        pag.click(신불산_day1)
-        time.sleep(0.5)
-        #검색
-        button = pag.locateCenterOnScreen("./image/04._1. reservation.png", region = find_range, confidence=0.7) 
-        if (button == None) :
-            None      
-        else : 
-            time.sleep(0.05)
-            pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-            신불산_확인()
-                
-def 신불산_확인() : 
-    button1 = pag.locateCenterOnScreen('./image/04._2. next.png',  confidence=0.8)   #region = (510,100,1324,333),
-    print(button1)
-    if (button1 == None) :
-        신불산_확인()      
-    else :
-        pag.click(1225,281)
-        time.sleep(0.05)
-        pag.click(1225,281)
-        time.sleep(0.05)
-        pag.click(1225,281)
-        time.sleep(0.05)
-        pag.click(1225,281)
-        time.sleep(0.05)
-        pag.click(1225,281)
-        time.sleep(0.05)
-        pag.click(button1.x,button1.y+27, button='left', clicks=5, interval=0.1)
-        refresh_token()
-        kakao_message_you("신불산")
-        return
+def 신불산_Day2():
+    global 신불산_day
+    신불산_day = 890, 730
+    print(신불산_day)
 
-#버튼 기능
-def 신불산_날짜선택():
+def 신불산_Day3():
+    global 신불산_day
+    신불산_day = 890, 773
+    print(신불산_day)
+
+def 신불산_Day4():
+    global 신불산_day
+    신불산_day = 890, 824
+    print(신불산_day)
+#★★★★★★★★★★★★★★★★★★★ 날짜 입력
+def 신불산_Day():
     while True:
         if keyboard.is_pressed("F2"):
-            global 신불산_day1
-            신불산_day1  = pag.position()
-            print(신불산_day1)
+            global 신불산_day
+            신불산_day  = pag.position()
+            print(신불산_day)
             time.sleep(0.5)
-            break         
-
+            break 
+ 
+#★★★★★★★★★★★★★★★★★★★ 범위 입력 
+def 신불산_범위선택():
+    while True:
+        if keyboard.is_pressed("F2"): 
+            global 신불산_find_range1 
+            신불산_find_range1  = pag.position()
+            print(신불산_find_range1)
+            time.sleep(0.5)
+            break  
+    while True:
+        if keyboard.is_pressed("F2"): 
+            global 신불산_find_range2 
+            신불산_find_range2  = pag.position()
+            print(신불산_find_range2)
+            time.sleep(0.5)
+            break  
+    global 신불산_find_range
+    신불산_find_range = (신불산_find_range1.x,신불산_find_range1.y,신불산_find_range2.x,신불산_find_range2.y)
+   
+#★★★★★★★★★★★★★★★★★★★ 자동 입력
 def 신불산_자동입력():      
     time.sleep(2)
     #로그인 클릭
@@ -171,29 +179,62 @@ def 신불산_자동입력():
     #등억 선택
     pag.click(970,692)
     time.sleep(5)
-     
-def 신불산_범위선택():
+   
+#★★★★★★★★★★★★★★★★★★★ 메인 함수
+def 신불산_Start():
     while True:
-        if keyboard.is_pressed("F2"): 
-            global find_range1 
-            find_range1  = pag.position()
-            print(find_range1)
-            time.sleep(0.5)
-            break  
-    while True:
-        if keyboard.is_pressed("F2"): 
-            global find_range2 
-            find_range2  = pag.position()
-            print(find_range2)
-            time.sleep(0.5)
-            break  
-    global find_range
-    find_range = (find_range1.x,find_range1.y,find_range2.x,find_range2.y)
+        global 신불산_end_command
+        global 신불산_find_range
+        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+            break
+        if 신불산_end_command == 1: # end_command = 1이면 종료
+            break
+        global i
+        i = i + 1
+        print(i)
+        #날짜 클릭
+        pag.click(신불산_day)
+        time.sleep(0.5)
+        global i_end
+        if i > i_end : # i > 200 크면 종료
+            break
+        #검색
+        button = pag.locateCenterOnScreen("./image/04._1. reservation.png", region = 신불산_find_range, confidence=0.7) 
+        if (button == None) :
+            None      
+        else : 
+            time.sleep(0.05)
+            pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+            신불산_StepA()
+                
+def 신불산_StepA() : 
+    button1 = pag.locateCenterOnScreen('./image/04._2. next.png',  confidence=0.8)   #region = (510,100,1324,333),
+    print(button1)
+    if (button1 == None) :
+        신불산_StepA()      
+    else :
+        pag.click(1225,281)
+        time.sleep(0.05)
+        pag.click(1225,281)
+        time.sleep(0.05)
+        pag.click(1225,281)
+        time.sleep(0.05)
+        pag.click(1225,281)
+        time.sleep(0.05)
+        pag.click(1225,281)
+        time.sleep(0.05)
+        pag.click(button1.x,button1.y+27, button='left', clicks=5, interval=0.1)
+        refresh_token()
+        kakao_message_you("신불산")
+        global 신불산_end_command
+        신불산_end_command = 1
+        return
 
-def 신불산_전체():
-    global find_range
-    find_range = (630,474,1419,1079)
-
+#★★★★★★★★★★★★★★★★★★★ 스케쥴러
+  
+def 신불산_자동():
+    신불산_자동입력()
+    신불산_Start()
 
 
 

@@ -16,42 +16,53 @@ import json
 
 #대왕암 Test 2022.03.17 #Viewer Size 80% #화면 맨아래로 통일
 
-global end_command
-end_command = 0
+################################## 리셋 
+global 대왕암_end_command
+대왕암_end_command = 0
 
+################################## 범위 
+global 대왕암_find_range
+대왕암_find_range = 860,521,1515,968
+
+################################## 아이디
 global 대왕암_id
-대왕암_id = "id"
+대왕암_id = "pend"
 global 대왕암_pw
 대왕암_pw = "*Zoavld4fkd" 
 
-global find_range_대왕암
-find_range_대왕암 = 860,521,1515,968
+################################## 커서
+global 대왕암_position_up
+대왕암_position_up  = 1300,706
+global 대왕암_position_down
+대왕암_position_down  = 1300,909
 
+#★★★★★★★★★★★★★★★★★★★ 리셋 입력
 def 대왕암_Reset():
-    global end_command
-    end_command = 0
+    global 대왕암_end_command
+    대왕암_end_command = 0
 
-def 대왕암_log_id1():
+#★★★★★★★★★★★★★★★★★★★ 아이디 입력
+def 대왕암_Log_Id1():
     global 대왕암_id
     대왕암_id = "pend"
     print(대왕암_id)
 
-def 대왕암_log_id2():
+def 대왕암_Log_Id2():
     global 대왕암_id
     대왕암_id = "lovepend2"
     print(대왕암_id)
 
-def 대왕암_log_id3():
+def 대왕암_Log_Id3():
     global 대왕암_id
     대왕암_id = "lovepend3"
     print(대왕암_id)
 
-def 대왕암_log_id4():
+def 대왕암_Log_Id4():
     global 대왕암_id
     대왕암_id = "parkmc7"
     print(대왕암_id)
 
-def 대왕암_log_guest():
+def 대왕암_Log_Guest():
     global 대왕암_id
     대왕암_id = "suld2000@naver.com"
     global 대왕암_pw
@@ -62,9 +73,117 @@ def 대왕암_log_guest():
 global i 
 i = 0       
 
-def 대왕암_오토():
+#★★★★★★★★★★★★★★★★★★★ 날짜 입력
+def 대왕암_Day1():
+    global 대왕암_day1
+    대왕암_day1 = 878,673
+    print(대왕암_day1)
+
+def 대왕암_Day2():
+    global 대왕암_day1
+    대왕암_day1= 878,729
+    print(대왕암_day1)
+
+def 대왕암_Day3():
+    global 대왕암_day1
+    대왕암_day1 = 878,763
+    print(대왕암_day1)
+
+def 대왕암_Day4():
+    global 대왕암_day1
+    대왕암_day1 = 878,809
+    print(대왕암_day1)
+
+#★★★★★★★★★★★★★★★★★★★ 날짜 입력
+def 대왕암_Day():
     while True:
-        if end_command == 1 : # end_command 가 1이 되면
+        if keyboard.is_pressed("F2"): 
+            global 대왕암_day1 
+            대왕암_day1  = pag.position()
+            print(대왕암_day1)
+            time.sleep(0.5)
+            break         
+
+#★★★★★★★★★★★★★★★★★★★ 커서 입력
+def 대왕암_커서선택():
+    while True:
+        if keyboard.is_pressed("F2"): 
+            global 대왕암_position_up
+            대왕암_position_up  = pag.position()
+            print(대왕암_position_up)
+            time.sleep(0.5)
+            break 
+    
+    while True:
+        if keyboard.is_pressed("F2"): 
+            global 대왕암_position_down
+            대왕암_position_down  = pag.position()
+            print(대왕암_position_down)
+            time.sleep(0.5)
+            break 
+
+#★★★★★★★★★★★★★★★★★★★ 범위 입력
+def 대왕암_범위선택():
+    while True:
+        if keyboard.is_pressed("F2"): 
+            global 대왕암_find_range1 
+            대왕암_find_range1  = pag.position()
+            print(대왕암_find_range1)
+            time.sleep(0.5)
+            break  
+    while True:
+        if keyboard.is_pressed("F2"): 
+            global 대왕암_find_range2 
+            대왕암_find_range2  = pag.position()
+            print(대왕암_find_range2)
+            time.sleep(0.5)
+            break  
+    global 대왕암_find_range
+    대왕암_find_range = (대왕암_find_range1.x,대왕암_find_range1.y,대왕암_find_range2.x,대왕암_find_range2.y)
+ 
+#★★★★★★★★★★★★★★★★★★★ 자동 입력
+def 대왕암_자동입력():
+    time.sleep(2)
+    #로그인 선택
+    pag.click(1296,117)
+    time.sleep(5)
+    #통합회원 로그인
+    pag.click(815,602)
+    time.sleep(5)
+    #아이디 입력
+    pag.moveTo(1000,300)
+    time.sleep(2)
+    pag.dragTo(100,300, 5, button='left')
+    time.sleep(2)
+    pag.hotkey('delete')
+    time.sleep(2)
+    pag.write(대왕암_id)
+    print(대왕암_id)
+    time.sleep(2)
+    #페이지 선택
+    pag.doubleClick(1600,800)
+    time.sleep(1)
+    #비밀번호 입력
+    pag.moveTo(1000,353)
+    time.sleep(2)
+    pag.dragTo(100,353, 5, button='left')
+    time.sleep(2)
+    pag.hotkey('delete')
+    time.sleep(2)
+    pag.write(대왕암_pw)
+    print(대왕암_pw)
+    time.sleep(2)
+    #로그인 버튼 클릭
+    pag.click(927,403)
+    time.sleep(5)
+    #온라인 예약
+    pag.click(1080,200)
+    time.sleep(5)   
+    
+#★★★★★★★★★★★★★★★★★★★ 메인 함수 
+def 대왕암_Start():
+    while True:
+        if 대왕암_end_command == 1 : # 대왕암_end_command 가 1이 되면
             break
         if keyboard.is_pressed("F2") : # F2 누른게 감지되면
             print("중지")
@@ -112,34 +231,9 @@ def 대왕암_오토():
         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             break        
 
-
-def 대왕암_카라반():
-    while True:
-        if end_command == 1 : # end_command 가 1이 되면
-            break
-        if keyboard.is_pressed("F2") : # F2 누른게 감지되면
-            print("중지")
-            break
-        global i
-        i = i + 1
-        #날짜 클릭
-        pag.click(대왕암_day1)
-        time.sleep(0.2)
-        #검색
-        대왕암_검색()
-        #page 아래 
-        pag.click(대왕암_position_down)
-        time.sleep(0.2)
-        대왕암_검색()
-        #page 업 
-        pag.click(대왕암_position_up)
-        time.sleep(0.2)
-        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
-            break
-                    
 def 대왕암_검색():
     #검색
-    button = pag.locateCenterOnScreen("./image/02._1. reservation.png", region = find_range_대왕암, confidence=0.85) 
+    button = pag.locateCenterOnScreen("./image/02._1. reservation.png", region = 대왕암_find_range, confidence=0.85) 
     if (button == None) :
         None      
     else : 
@@ -166,92 +260,42 @@ def 대왕암_확인() :
         pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
         refresh_token()
         kakao_message_you("대왕암")
-        global end_command
-        end_command = 1
+        global 대왕암_end_command
+        대왕암_end_command = 1
         print('end')
 
-def 대왕암_자동입력():
-    time.sleep(2)
-    #로그인 선택
-    pag.click(1296,117)
-    time.sleep(5)
-    #통합회원 로그인
-    pag.click(815,602)
-    time.sleep(5)
-    #아이디 입력
-    pag.moveTo(1000,300)
-    time.sleep(2)
-    pag.dragTo(100,300, 5, button='left')
-    time.sleep(2)
-    pag.hotkey('delete')
-    time.sleep(2)
-    pag.write(대왕암_id)
-    print(대왕암_id)
-    time.sleep(2)
-    #페이지 선택
-    pag.doubleClick(1600,800)
-    time.sleep(1)
-    #비밀번호 입력
-    pag.moveTo(1000,353)
-    time.sleep(2)
-    pag.dragTo(100,353, 5, button='left')
-    time.sleep(2)
-    pag.hotkey('delete')
-    time.sleep(2)
-    pag.write(대왕암_pw)
-    print(대왕암_pw)
-    time.sleep(2)
-    #로그인 버튼 클릭
-    pag.click(927,403)
-    time.sleep(5)
-    #온라인 예약
-    pag.click(1080,200)
-    time.sleep(5)   
-    
-def 대왕암_날짜선택():
+#★★★★★★★★★★★★★★★★★★★ 서브 함수
+def 대왕암_Karavan():
     while True:
-        if keyboard.is_pressed("F2"): 
-            global 대왕암_day1 
-            대왕암_day1  = pag.position()
-            print(대왕암_day1)
-            time.sleep(0.5)
-            break         
+        if 대왕암_end_command == 1 : # 대왕암_end_command 가 1이 되면
+            break
+        if keyboard.is_pressed("F2") : # F2 누른게 감지되면
+            print("중지")
+            break
+        global i
+        i = i + 1
+        #날짜 클릭
+        pag.click(대왕암_day1)
+        time.sleep(0.2)
+        #검색
+        대왕암_검색()
+        #page 아래 
+        pag.click(대왕암_position_down)
+        time.sleep(0.2)
+        대왕암_검색()
+        #page 업 
+        pag.click(대왕암_position_up)
+        time.sleep(0.2)
+        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+            break
+                    
+#★★★★★★★★★★★★★★★★★★★ 스케쥴러
+def 대왕암_자동():
+    대왕암_자동입력()
+    대왕암_Start()
 
-def 대왕암_커서선택():
-    while True:
-        if keyboard.is_pressed("F2"): 
-            global 대왕암_position_up
-            대왕암_position_up  = pag.position()
-            print(대왕암_position_up)
-            time.sleep(0.5)
-            break 
-    
-    while True:
-        if keyboard.is_pressed("F2"): 
-            global 대왕암_position_down
-            대왕암_position_down  = pag.position()
-            print(대왕암_position_down)
-            time.sleep(0.5)
-            break 
 
-def 대왕암_범위선택():
-    while True:
-        if keyboard.is_pressed("F2"): 
-            global find_range1 
-            find_range1  = pag.position()
-            print(find_range1)
-            time.sleep(0.5)
-            break  
-    while True:
-        if keyboard.is_pressed("F2"): 
-            global find_range2 
-            find_range2  = pag.position()
-            print(find_range2)
-            time.sleep(0.5)
-            break  
-    global find_range_대왕암
-    find_range_대왕암 = (find_range1.x,find_range1.y,find_range2.x,find_range2.y)
- 
+
 
         
 
