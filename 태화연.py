@@ -362,8 +362,6 @@ def 태화연_StepC() :
         pag.dragTo(1847,339, 5, button='left')
         태화연_Start()
 
-
-태화연_StepC()
 #★★★★★★★★★★★★★★★★★★★ 서브 함수
 def 태화연_job1():
     while True:
@@ -375,7 +373,14 @@ def 태화연_job1():
 
 #★★★★★★★★★★★★★★★★★★★ 스케쥴러
 def 태화연_자동():
+    pag.click(476,84)
+    time.sleep(5)
+    pag.click(536,152)
+    time.sleep(5)
     태화연_Reset()
+    #로그아웃
+    pag.click(1455,138)
+    time.sleep(5)
     #접속 
     pag.click(476,84)
     time.sleep(5)

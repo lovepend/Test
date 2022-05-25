@@ -70,8 +70,8 @@ def 대왕암_Log_Guest():
     print(대왕암_id)
     print(대왕암_pw)
 
-global i 
-i = 0       
+global 대왕암_i 
+대왕암_i = 0       
 
 #★★★★★★★★★★★★★★★★★★★ 날짜 입력
 def 대왕암_Day1():
@@ -183,13 +183,20 @@ def 대왕암_자동입력():
 #★★★★★★★★★★★★★★★★★★★ 메인 함수 
 def 대왕암_Start():
     while True:
+        tm = time.localtime()
         if 대왕암_end_command == 1 : # 대왕암_end_command 가 1이 되면
+            print("end_command = 1 종료")
             break
         if keyboard.is_pressed("F2") : # F2 누른게 감지되면
-            print("중지")
+            print("F2 종료")
             break
-        global i
-        i = i + 1
+        #종료 조건
+        if (tm.tm_hour == 13 and tm.tm_min == 40) or (tm.tm_hour == 8 and tm.tm_min == 40) : #10시 50분 및 14시 50분 종료
+            print("minute 중지")
+            print(tm.tm_hour ,"시", tm.tm_min ,"분", tm.tm_sec,"초")
+            break
+        global 대왕암_i
+        대왕암_i = i + 1
         print(i)
         #날짜 클릭
         pag.click(대왕암_day1)
@@ -260,9 +267,13 @@ def 대왕암_확인() :
         pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
         refresh_token()
         kakao_message_you("대왕암")
+        time.sleep(30)
         global 대왕암_end_command
         대왕암_end_command = 1
         print('end')
+        pag.click(564,369)
+        time.sleep(5)
+        대왕암_Start()
 
 #★★★★★★★★★★★★★★★★★★★ 서브 함수
 def 대왕암_Karavan():
@@ -291,19 +302,22 @@ def 대왕암_Karavan():
                     
 #★★★★★★★★★★★★★★★★★★★ 스케쥴러
 def 대왕암_자동():
+    #접속
+    pag.click(466,84)
+    time.sleep(5)
+    pag.click(523,211)
+    time.sleep(5)
+    #로그아웃
+    pag.click(1363,120)
+    time.sleep(5)
     대왕암_Reset()
     #접속
     pag.click(466,84)
     time.sleep(5)
     pag.click(523,211)
     time.sleep(5)
+    #대왕암공원캠핑장 선택
+    pag.click(751,117)
+    time.sleep(5)
     대왕암_자동입력()
     대왕암_Start()
-
-
-
-
-        
-
-
-

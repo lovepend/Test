@@ -258,7 +258,18 @@ def 신불산_StepA() :
 #★★★★★★★★★★★★★★★★★★★ 스케쥴러
   
 def 신불산_자동():
+    #접속
+    pag.click(466,84)
+    time.sleep(5)
+    pag.click(496,185)
+    time.sleep(5)
     신불산_Reset()
+    #로그아웃
+    pag.click(1246,118)
+    time.sleep(5)
+    pag.click('enter')
+    time.sleep(5)
+    pag.hotkey('enter')
     #접속
     pag.click(466,84)
     time.sleep(5)
