@@ -20,7 +20,17 @@ from 태화연 import *
 from 대왕암 import *
 from 신불산 import *
 from kakao_api import *
-          
+from Test import *
+
+
+def schedule_job():
+    schedule.every().day.at("08:45:00").do(신불산_자동) # 각종00 스케줄 스타트       
+    schedule.every().day.at("09:45:00").do(태화연_자동) # 각종00 스케줄 스타트      
+    schedule.every().day.at("13:45:00").do(신불산_자동) # 각종00 스케줄 스타트       
+    schedule.every().day.at("15:45:00").do(태화연_자동) # 각종00 스케줄 스타트      
+    while True:
+        schedule.run_pending()
+
 ################################## GUI 편집 ################################## 54주6191
 window = Tk()
 window.title("캠핑장 예약하기")
@@ -34,7 +44,7 @@ frame1=tkinter.Frame(window)
 notebook.add(frame1, text="★Auto" )
 
 #스케쥴 진행
-Autobtn1 = Button(frame1, width=5, padx=10, pady=5, text="", command="", bg="orange", fg="black")
+Autobtn1 = Button(frame1, width=5, padx=10, pady=5, text="스케쥴러", command=schedule_job, bg="orange", fg="black")
 Autobtn1.place(x=0, y=10)
 
 ###################
@@ -54,6 +64,7 @@ notebook.add(frame2, text="★울주해양" )
 #함수
 울주btn1 = Button(frame2, width=5, padx=10, pady=5, text="Saturday", command=울주_토요일, bg="white", fg="black")
 울주btn1.place(x=0, y=50)
+
 울주btn2 = Button(frame2, width=5, padx=10, pady=5, text="Range", command=울주_범위선택, bg="white", fg="black")
 울주btn2.place(x=60, y=50)
 울주btn3 = Button(frame2, width=5, padx=10, pady=5, text="This(A)", command=울주_This_A, bg="green", fg="white")
@@ -64,6 +75,9 @@ notebook.add(frame2, text="★울주해양" )
 울주btn5.place(x=240, y=50)
 울주btn5 = Button(frame2, width=5, padx=10, pady=5, text="Next(N)", command=울주_Next_N, bg="green", fg="white")
 울주btn5.place(x=300, y=50)
+울주btn6 = Button(frame2, width=5, padx=10, pady=5, text="Auto", command=울주_자동, bg="green", fg="white")
+울주btn6.place(x=360, y=50)
+
 
 frame3=tkinter.Frame(window)
 notebook.add(frame3, text="★태화연★")
@@ -188,5 +202,4 @@ notebook.insert(2, frame5, text="★대왕암★")
 
 
 window.mainloop()
-while True:
-    schedule.run_pending()
+

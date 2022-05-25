@@ -24,9 +24,6 @@ import sys
 global 신불산_end_command
 신불산_end_command = 0
 
-global 태화연_end_command1
-태화연_end_command1 = 0
-
 ################################## 범위 
 global 신불산_find_range
 신불산_find_range = 860,521,1515,968
@@ -37,11 +34,13 @@ global 신불산_id
 global 신불산_pw
 신불산_pw = "*Zoavld4fkd" 
 
+################################## 날짜
+global 신불산_day
+신불산_day = 890, 824
+
 ################################## 횟수 
-global i 
-i = 0
-global i_end
-i_end = 5000
+global 신불산_i 
+신불산_i = 0
 
 def 신불산_i_end():  
     global i 
@@ -51,15 +50,9 @@ def 신불산_i_end():
     
 #★★★★★★★★★★★★★★★★★★★ 리셋 입력
 def 신불산_Reset():
-    global end_command
-    end_command = 0
+    global 신불산_end_command
+    신불산_end_command = 0
 
-def 신불산_End():
-    global 신불산_end_command1
-    신불산_end_command1 = 1
-    
-    
-    
 #★★★★★★★★★★★★★★★★★★★ 아이디 입력
 def 신불산_Log_Id1():
     global 신불산_id
@@ -110,6 +103,7 @@ def 신불산_Day4():
     global 신불산_day
     신불산_day = 890, 824
     print(신불산_day)
+
 #★★★★★★★★★★★★★★★★★★★ 날짜 입력
 def 신불산_Day():
     while True:
@@ -192,21 +186,26 @@ def 신불산_Start():
     while True:
         global 신불산_end_command
         global 신불산_find_range
-        global 신불산_end_command1
-        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
-            break
-        if 신불산_end_command == 1: # end_command = 1이면 종료
-            break
-        if 신불산_end_command1 == 1: # end_command = 1이면 종료
-            break
-        global i
-        i = i + 1
-        print(i)
+        global 신불산_i
+        tm = time.localtime()
         #날짜 클릭
         pag.click(신불산_day)
-        time.sleep(0.5)
-        global i_end
-        if i > i_end : # i > 200 크면 종료
+        time.sleep(0.5)        
+        #시간 표현
+        print(tm)
+        #횟수 표현
+        신불산_i = 신불산_i + 1
+        print(신불산_i)
+        #종료 조건
+        if (tm.tm_hour == 10 and tm.tm_min == 50) or (tm.tm_hour == 14 and tm.tm_min == 50) : #10시 50분 및 14시 50분 종료
+            print("minute 중지")
+            print(tm.tm_hour ,"시", tm.tm_min ,"분", tm.tm_sec,"초")
+            break
+        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+            print("F2 종료")
+            break
+        if 신불산_end_command == 1: # end_command = 1이면 종료
+            print("end_command = 1 종료")
             break
         #검색
         button = pag.locateCenterOnScreen("./image/04._1. reservation.png", region = 신불산_find_range, confidence=0.7) 
@@ -237,9 +236,26 @@ def 신불산_StepA() :
         refresh_token()
         kakao_message_you("신불산")
         time.sleep(30)
-        global 신불산_end_command
-        신불산_end_command = 1
-        return
+        #다음 액션 
+        print("Again")        
+        #뒤로
+        pag.hotkey('esc')
+        time.sleep(1)
+        pag.hotkey('esc')
+        time.sleep(1)
+        #온라인 예약 클릭
+        pag.click(851,785)
+        time.sleep(5)
+        #아무 날짜 선택
+        pag.click(신불산_day)
+        time.sleep(5)
+        #예약가능 사이트만 보기
+        pag.click(1201,693)
+        time.sleep(5)
+        #등억 선택
+        pag.click(970,692)
+        time.sleep(5)
+        신불산_Start()
 
 #★★★★★★★★★★★★★★★★★★★ 스케쥴러
   

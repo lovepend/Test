@@ -17,7 +17,7 @@ import json
 
 ################################## 아이디
 global 울주_id
-울주_id = "id"
+울주_id = "lovepend@nate.com"
 global 울주_pw
 울주_pw = "*Zoavld4fkd" 
 global find_range
