@@ -244,8 +244,6 @@ def 태화연_Start():
         time.sleep(0.1)
         pag.click(태화연_day2)
         time.sleep(0.3)
-        #시간 표현
-        print(tm)
         #횟수 표현
         태화연_i = 태화연_i + 1
         print(태화연_i)
@@ -310,14 +308,20 @@ def 태화연_StepC() :
         kakao_message_you("태화연")
         time.sleep(50)
         #다음액션
+        pag.click(773,777)
+        time.sleep(5)
+        pag.click(1018,620)
+        time.sleep(5)
+        pag.click(922,605)
+        time.sleep(5)
         #뒤로
         pag.hotkey('esc')
-        pag.time(1)
+        time.sleep(1)
         pag.hotkey('esc')
-        pag.time(1)
+        time.sleep(1)
         #홈으로
         pag.hotkey('home')
-        pag.time(1)
+        time.sleep(1)
         pag.hotkey
         태화연_Start()
         #세부 캠핑장 선택
@@ -358,6 +362,8 @@ def 태화연_StepC() :
         pag.dragTo(1847,339, 5, button='left')
         태화연_Start()
 
+
+태화연_StepC()
 #★★★★★★★★★★★★★★★★★★★ 서브 함수
 def 태화연_job1():
     while True:

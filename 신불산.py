@@ -173,13 +173,13 @@ def 신불산_자동입력():
     time.sleep(5)
     #아무 날짜 선택
     pag.click(892,821)
-    time.sleep(5)
+    time.sleep(10)
     #예약가능 사이트만 보기
     pag.click(1201,693)
-    time.sleep(5)
+    time.sleep(10)
     #등억 선택
     pag.click(970,692)
-    time.sleep(5)
+    time.sleep(10)
    
 #★★★★★★★★★★★★★★★★★★★ 메인 함수
 def 신불산_Start():
@@ -191,8 +191,6 @@ def 신불산_Start():
         #날짜 클릭
         pag.click(신불산_day)
         time.sleep(0.5)        
-        #시간 표현
-        print(tm)
         #횟수 표현
         신불산_i = 신불산_i + 1
         print(신불산_i)
@@ -244,17 +242,17 @@ def 신불산_StepA() :
         pag.hotkey('esc')
         time.sleep(1)
         #온라인 예약 클릭
-        pag.click(851,785)
+        pag.click(1116,163)
         time.sleep(5)
         #아무 날짜 선택
         pag.click(신불산_day)
-        time.sleep(5)
+        time.sleep(10)
         #예약가능 사이트만 보기
         pag.click(1201,693)
-        time.sleep(5)
+        time.sleep(10)
         #등억 선택
         pag.click(970,692)
-        time.sleep(5)
+        time.sleep(10)
         신불산_Start()
 
 #★★★★★★★★★★★★★★★★★★★ 스케쥴러
