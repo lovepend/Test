@@ -64,9 +64,9 @@ def 대왕암_Log_Id4():
 
 def 대왕암_Log_Guest():
     global 대왕암_id
-    대왕암_id = "suld2000@naver.com"
+    대왕암_id = "ssss8841"
     global 대왕암_pw
-    대왕암_pw = "Sm88410000!"
+    대왕암_pw = "sm@884100!"
     print(대왕암_id)
     print(대왕암_pw)
 
@@ -196,8 +196,8 @@ def 대왕암_Start():
             print(tm.tm_hour ,"시", tm.tm_min ,"분", tm.tm_sec,"초")
             break
         global 대왕암_i
-        대왕암_i = i + 1
-        print(i)
+        대왕암_i = 대왕암_i + 1
+        print(대왕암_i)
         #날짜 클릭
         pag.click(대왕암_day1)
         time.sleep(0.5)
@@ -268,8 +268,6 @@ def 대왕암_확인() :
         refresh_token()
         kakao_message_you("대왕암")
         time.sleep(30)
-        global 대왕암_end_command
-        대왕암_end_command = 1
         print('end')
         pag.click(564,369)
         time.sleep(5)
@@ -302,6 +300,7 @@ def 대왕암_Karavan():
                     
 #★★★★★★★★★★★★★★★★★★★ 스케쥴러
 def 대왕암_자동():
+    time.sleep(5)
     #접속
     pag.click(466,84)
     time.sleep(5)

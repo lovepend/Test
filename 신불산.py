@@ -76,9 +76,9 @@ def 신불산_Log_Id4():
 
 def 신불산_Log_Guest():
     global 신불산_id
-    신불산_id = "suld2000@naver.com"
+    신불산_id = "ssss8841"
     global 신불산_pw
-    신불산_pw = "Sm88410000!"
+    신불산_pw = "sm@884100!"
     print(신불산_id)
     print(신불산_pw)
 
@@ -258,6 +258,10 @@ def 신불산_StepA() :
 #★★★★★★★★★★★★★★★★★★★ 스케쥴러
   
 def 신불산_자동():
+    time.sleep(5)
+    #페이지 클릭
+    pag.click(1800,800)
+    time.sleep(5)
     #접속
     pag.click(466,84)
     time.sleep(5)

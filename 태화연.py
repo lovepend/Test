@@ -323,7 +323,6 @@ def 태화연_StepC() :
         pag.hotkey('home')
         time.sleep(1)
         pag.hotkey
-        태화연_Start()
         #세부 캠핑장 선택
         pag.click(1005,356)
         time.sleep(1)
@@ -373,6 +372,13 @@ def 태화연_job1():
 
 #★★★★★★★★★★★★★★★★★★★ 스케쥴러
 def 태화연_자동():
+    time.sleep(5)
+    #페이지 클릭
+    pag.click(1800,800)
+    time.sleep(5)
+    #페이지 클릭
+    pag.click(1800,800)
+    time.sleep(5)
     pag.click(476,84)
     time.sleep(5)
     pag.click(536,152)
