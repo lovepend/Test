@@ -1,5 +1,4 @@
 from gettext import find
-import imp
 from tkinter import *
 #from main_캠핑_Rev_0 import *
 from kakao_api import *
@@ -19,6 +18,7 @@ import datetime
 import sys
 
 #신불산 Test 2022.03.21 #Viewer Size 67%
+#56분 36초
 
 ################################## 리셋 
 global 신불산_end_command
@@ -206,6 +206,18 @@ def 신불산_Start():
             print("end_command = 1 종료")
             break
         #검색
+        if (tm.tm_hour == 9 and tm.tm_min == 56 and tm.tm_sec == 36) or (tm.tm_hour == 14 and tm.tm_min == 56 and tm.tm_sec == 37) : #9시 56분 및 15시 56분 시작
+            pag.click(신불산_day)
+            for i in range(200):
+                button = pag.locateCenterOnScreen("./image/04._1. reservation.png", region = 신불산_find_range, confidence=0.7) 
+                print(i)
+                if (button == None) :
+                    None
+                else : 
+                    time.sleep(0.05)
+                    pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+                    신불산_StepA()
+                    
         button = pag.locateCenterOnScreen("./image/04._1. reservation.png", region = 신불산_find_range, confidence=0.7) 
         if (button == None) :
             None      
@@ -281,7 +293,5 @@ def 신불산_자동():
     time.sleep(5)
     신불산_자동입력()
     신불산_Start()
-
-
 
 
