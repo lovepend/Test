@@ -270,7 +270,8 @@ def 태화연_Start():
 def 태화연_StepA():
     print("태화연_StepA")
     global 태화연_find_range
-    button = pag.locateCenterOnScreen("./image/03_2. reservation.png", region=태화연_find_range ,confidence=0.7) 
+    button = pag.locateCenterOnScreen("./image/03_2. reservation.png", region=태화연_find_range ,confidence=0.8) 
+    button = pag.locateCenterOnScreen("./image/03_2. reservation.png", region=태화연_find_range ,confidence=0.8) 
     print(button)
     if (button == None) :
         태화연_Start()      
