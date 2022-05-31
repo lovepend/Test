@@ -246,7 +246,7 @@ def 태화연_Start():
         time.sleep(0.3)
         #횟수 표현
         태화연_i = 태화연_i + 1
-        print(태화연_i)
+        
         #종료 조건
         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             print("F2 종료")
@@ -259,7 +259,8 @@ def 태화연_Start():
             print(tm.tm_hour ,"시", tm.tm_min ,"분", tm.tm_sec,"초")
             break        
         #검색
-        button = pag.locateCenterOnScreen("./image/03_1. reservation.png", region=태화연_find_range ,confidence=0.7) 
+        button = pag.locateCenterOnScreen("./image/03_1. reservation.png", region=태화연_find_range ,confidence=0.6) 
+        print(태화연_i)
         if (button == None) :
             None
         else :
@@ -267,6 +268,7 @@ def 태화연_Start():
             태화연_StepA()
    
 def 태화연_StepA():
+    print("태화연_StepA")
     global 태화연_find_range
     button = pag.locateCenterOnScreen("./image/03_2. reservation.png", region=태화연_find_range ,confidence=0.7) 
     print(button)
