@@ -252,7 +252,8 @@ def 태화연_검색():
     print("검색")
     button = pag.locateCenterOnScreen("./image/03_1. reservation.png", region=태화연_find_range ,confidence=0.8) 
     if (button == None) :
-        None     
+        태화연_검색()
+        #None     
     else :
         #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
         태화연_StepA()
