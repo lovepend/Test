@@ -242,7 +242,7 @@ def 신불산_StepA() :
         time.sleep(0.05)
         pag.click(1225,281)
         time.sleep(0.05)
-        pag.click(button1.x,button1.y+27, button='left', clicks=5, interval=0.1)
+        pag.click(button1.x,button1.y+27, button='left', clicks=50, interval=0.1)
         refresh_token()
         kakao_message_you("신불산")
         time.sleep(30)

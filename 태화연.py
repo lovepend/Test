@@ -1,21 +1,17 @@
 from gettext import find
 from tkinter import *
-from turtle import pendown
-from cv2 import goodFeaturesToTrack
 from kakao_api import *
-from urllib3 import encode_multipart_formdata
 import pyautogui as pag
 import win32con
 import win32api
 import win32gui
 import keyboard
-import pyperclip
+import requests
 import clipboard
 import schedule
-import requests
+import pyperclip
 import time
 import json
-import datetime
 
 #now = time.localtime()
 #print( now.tm_hour ) 
@@ -232,12 +228,7 @@ def 태화연_자동입력():
 #★★★★★★★★★★★★★★★★★★★ 메인 함수
 def 태화연_Start():
     while True:
-        global 태화연_find_range
-        global 태화연_end_command
-        global 태화연_end_command1
         global 태화연_i
-        global 태화연_day1
-        global 태화연_day2
         tm = time.localtime()
         #날짜 클릭
         pag.click(태화연_day1)
@@ -246,35 +237,33 @@ def 태화연_Start():
         time.sleep(0.3)
         #횟수 표현
         태화연_i = 태화연_i + 1
-        
         #종료 조건
         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             print("F2 종료")
-            break
-        if 태화연_end_command == 1 : # end_command 가 1이 되면
-            print("end_command = 1 종료")
             break
         if (tm.tm_hour == 9 and tm.tm_min == 50) or (tm.tm_hour == 16 and tm.tm_min == 50) : #9시 50분 및 16시 50분 종료
             print("minute 중지")
             print(tm.tm_hour ,"시", tm.tm_min ,"분", tm.tm_sec,"초")
             break        
         #검색
-        button = pag.locateCenterOnScreen("./image/03_1. reservation.png", region=태화연_find_range ,confidence=0.6) 
-        print(태화연_i)
-        if (button == None) :
-            None
-        else :
-            #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-            태화연_StepA()
-   
+        태화연_검색()
+
+def 태화연_검색():
+    print("검색")
+    button = pag.locateCenterOnScreen("./image/03_1. reservation.png", region=태화연_find_range ,confidence=0.8) 
+    if (button == None) :
+        None     
+    else :
+        #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+        태화연_StepA()
+       
 def 태화연_StepA():
     print("태화연_StepA")
-    global 태화연_find_range
     button = pag.locateCenterOnScreen("./image/03_2. reservation.png", region=태화연_find_range ,confidence=0.8) 
     button = pag.locateCenterOnScreen("./image/03_2. reservation.png", region=태화연_find_range ,confidence=0.8) 
     print(button)
     if (button == None) :
-        태화연_Start()      
+        None     
     else :
         pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
         태화연_StepB()
@@ -397,3 +386,4 @@ def 태화연_자동():
     time.sleep(5)
     태화연_자동입력()
     태화연_Start()
+

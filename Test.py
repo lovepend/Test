@@ -20,11 +20,6 @@ import time
 import datetime
 
 
-
-
-
-
-
 ####################시간예제
 #tm = time.localtime()
 #tm.tm_year
@@ -119,7 +114,6 @@ def 네이버구매() :
         time.sleep(0.5)
         pag.click(x=1110, y=702)
         time.sleep(0.5)
-        
         button1 = pag.locateCenterOnScreen('./image/naver.png',  confidence=0.8)   #region = (510,100,1324,333),
         print(button1)
         if (button1 == None) :
@@ -128,5 +122,6 @@ def 네이버구매() :
             네이버구매()      
         else :
             print("있다")
-            
             time.sleep(100)
+
+

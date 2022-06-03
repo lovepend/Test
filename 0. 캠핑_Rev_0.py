@@ -117,7 +117,7 @@ notebook.add(frame3, text="★태화연★")
 태화연btn4.place(x=180, y=90)
 태화연btn5 = Button(frame3, width=5, padx=10, pady=5, text="Start(A)", command=태화연_자동, bg="green", fg="white")
 태화연btn5.place(x=240, y=90)
-태화연btn5 = Button(frame3, width=5, padx=10, pady=5, text="Enter", command=태화연_job1, bg="green", fg="white")
+태화연btn5 = Button(frame3, width=5, padx=10, pady=5, text="Enter", command=태화연_자동, bg="green", fg="white")
 태화연btn5.place(x=300, y=90)
 
 #신불산 UI===============================================================================================================
