@@ -268,9 +268,11 @@ def 대왕암_확인() :
         refresh_token()
         kakao_message_you("대왕암")
         time.sleep(30)
-        print('end')
-        pag.click(564,369)
+        print('enter')
         time.sleep(5)
+        pag.click(1078,198)
+        time.sleep(5)
+        pag.click(1078,198)
         대왕암_Start()
 
 #★★★★★★★★★★★★★★★★★★★ 서브 함수
