@@ -202,6 +202,4 @@ notebook.insert(2, frame5, text="★대왕암★")
 대왕암btn7 = Button(frame5, width=5, padx=10, pady=5, text="Start(A)", command=대왕암_자동, bg="green", fg="white")
 대왕암btn7.place(x=360, y=90)
 
-
 window.mainloop()
-

@@ -273,7 +273,8 @@ def 태화연_StepB():
     if (button1 == None) :
         태화연_StepB()
     else :    
-        pag.click(1131,211,button='left', clicks=30, interval=0.1)
+        time.sleep(0.1)
+        pag.hotkey('enter')
         #pag.click(button1.x,button1.y, button='left', clicks=1, interval=0.1)
         #print(button1)
         #time.sleep(0.1) 
