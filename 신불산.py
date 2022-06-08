@@ -202,13 +202,10 @@ def 신불산_Start():
         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             print("F2 종료")
             break
-        if 신불산_end_command == 1: # end_command = 1이면 종료
-            print("end_command = 1 종료")
-            break
         #검색
         if (tm.tm_hour == 9 and tm.tm_min == 56 and tm.tm_sec == 36) or (tm.tm_hour == 14 and tm.tm_min == 56 and tm.tm_sec == 37) : #9시 56분 및 15시 56분 시작
             pag.click(신불산_day)
-            for i in range(200):
+            for i in range(100):
                 button = pag.locateCenterOnScreen("./image/04._1. reservation.png", region = 신불산_find_range, confidence=0.7) 
                 print(i)
                 if (button == None) :
@@ -216,17 +213,20 @@ def 신불산_Start():
                 else : 
                     time.sleep(0.05)
                     pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-                    신불산_StepA()
-                    
-        button = pag.locateCenterOnScreen("./image/04._1. reservation.png", region = 신불산_find_range, confidence=0.7) 
-        if (button == None) :
-            None      
-        else : 
-            time.sleep(0.05)
-            pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-            신불산_StepA()
+                    신불산_검색()
+        신불산_검색()            
+
+def 신불산_검색():                    
+    button = pag.locateCenterOnScreen("./image/04._1. reservation.png", region = 신불산_find_range, confidence=0.7) 
+    if (button == None) :
+        None      
+    else : 
+        time.sleep(0.05)
+        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+        신불산_StepA()
                 
 def 신불산_StepA() : 
+    time.sleep(0.2)
     button1 = pag.locateCenterOnScreen('./image/04._2. next.png',  confidence=0.8)   #region = (510,100,1324,333),
     print(button1)
     if (button1 == None) :

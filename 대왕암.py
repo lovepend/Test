@@ -223,18 +223,8 @@ def 대왕암_Start():
         time.sleep(0.2)
         대왕암_검색()
         #page 아래
-        pag.click(대왕암_position_down)
-        time.sleep(0.2)
-        pag.click(대왕암_position_down)
-        time.sleep(0.2)
-        pag.click(대왕암_position_down)
-        time.sleep(0.2)
-        pag.click(대왕암_position_down)
-        time.sleep(0.2)
-        pag.click(대왕암_position_down)
-        time.sleep(0.2)
-        pag.click(대왕암_position_down)
-        time.sleep(0.2)
+        pag.hotkey('end')
+        time.sleep(0.3)
         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             break        
 

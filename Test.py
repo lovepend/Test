@@ -21,15 +21,17 @@ import datetime
 
 
 ####################시간예제
-#tm = time.localtime()
-#tm.tm_year
-#tm.tm_mon
-#tm.tm_mday
-#tm.tm_hour
-#tm.tm_min
-#tm.tm_sec
+tm = time.localtime()
+tm.tm_year
+tm.tm_mon
+tm.tm_mday
+tm.tm_hour
+tm.tm_min
+tm.tm_sec
 
-# global i
+
+
+#global i
 # i = 0
 
 # global end
