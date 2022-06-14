@@ -203,7 +203,7 @@ def 신불산_Start():
             print("F2 종료")
             break
         #검색
-        if (tm.tm_hour == 9 and tm.tm_min == 56 and tm.tm_sec == 36) or (tm.tm_hour == 13 and tm.tm_min == 56 and tm.tm_sec == 37) : #9시 56분 및 15시 56분 시작
+        if (tm.tm_hour == 9 and tm.tm_min == 56 and tm.tm_sec == 36) or (tm.tm_hour == 13 and tm.tm_min == 56 and tm.tm_sec == 36) : #9시 56분 및 15시 56분 시작
         #if (tm.tm_hour == 10 and tm.tm_min == 19 and tm.tm_sec == 10) or (tm.tm_hour == 14 and tm.tm_min == 56 and tm.tm_sec == 37) : #TEST
             pag.click(신불산_day)
             for i in range(100):

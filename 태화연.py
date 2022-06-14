@@ -291,6 +291,8 @@ def 태화연_StepC() :
     if (button2 == None) :
         태화연_StepC()      
     else : 
+        pag.hotkey('down')
+        time.sleep(0.5)
         pag.click(1800,800)
         time.sleep(0.5)
         pag.hotkey('end')
