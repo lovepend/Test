@@ -117,11 +117,12 @@ def 월드보스(x,y):
     
     
 ################################# 스케쥴    ##################################
+
 #서브02 시련 스타트
-def job_0500():
-    job_0500_(x3,y3)
+def 서브02_시련():
+    서브02_시련_(x3,y3)
        
-def job_0500_(x,y):
+def 서브02_시련_(x,y):
     앱초기화(x,y)
     시련던전(x,y)
     pag.click(Record_No01_X+x ,Record_No01_Y+y)
@@ -130,19 +131,19 @@ def job_0500_(x,y):
     time.sleep(5)
     
 #서브02 스케줄 스타트
-def job_0705():
-    job_0705_(x3,y3)
+def 서브02_스케줄():
+    서브02_스케줄_(x3,y3)
     
-def job_0705_(x,y):
+def 서브02_스케줄_(x,y):
     앱초기화(x,y)
     스케줄실행(x,y)
     절전모드실행(x,y)
 
 #서브01 시련 스타트  
-def job_0710():
-    job_0710_(x2,y2)
+def 서브01_시련():
+    서브01_시련_(x2,y2)
     
-def job_0710_(x,y):
+def 서브01_시련_(x,y):
     앱초기화(x,y)
     시련던전(x,y)
     pag.click(Record_No04_X+x ,Record_No04_Y+y)
@@ -151,28 +152,28 @@ def job_0710_(x,y):
     time.sleep(5)
     
 #메인00 시련 스타트  
-def job_0715():
-    job_0715_(x0,y0)
+def 메인00_시련():
+    메인00_시련_(x0,y0)
     pag.click(Record_No01_X+x0 ,Record_No01_Y+y0)  
     time.sleep(5)
     pag.click(녹화닫기_X+x0, 녹화닫기_Y+y0)
     time.sleep(5)
     
-    job_0715_(x1,y1)
+    메인00_시련_(x1,y1)
     pag.click(Record_No03_X+x1 ,Record_No03_Y+y1) 
     time.sleep(5)
     pag.click(녹화닫기_X+x1, 녹화닫기_Y+y1)
     time.sleep(5)
    
-def job_0715_(x,y):
+def 메인00_시련_(x,y):
     앱초기화(x,y)
     시련던전(x,y) 
 
 #서브01 스케줄 스타트
-def job_1020():
-    job_1020_(x2,y2)
+def 서브01_스케줄():
+    서브01_스케줄_(x2,y2)
     
-def job_1020_(x,y):
+def 서브01_스케줄_(x,y):
     앱초기화(x,y)
     스케줄실행(x,y)
     절전모드실행(x,y)
@@ -219,13 +220,11 @@ def job_1903_(x,y):
     스케줄실행(x,y)
     절전모드실행(x,y)
     
-schedule.every().day.at("05:00").do(job_0500) # 서브02 시련던전 스타트
-schedule.every().day.at("07:05").do(job_0705) # 서브02 스케쥴러 스타트
+schedule.every().day.at("05:00").do(서브02_시련) # 서브02 시련던전 스타트
+schedule.every().day.at("08:30").do(서브02_스케줄) # 서브02 스케쥴러 스타트
 
-schedule.every().day.at("07:10").do(job_0710) # 서브01 시련던전 스타트
-schedule.every().day.at("07:15").do(job_0715) # 메인00 시련던전 스타트
-
-schedule.every().day.at("01:20").do(job_1020) # 서브01 스케쥴러 스타트
+schedule.every().day.at("08:35").do(서브01_시련) # 서브01 시련던전 스타트
+schedule.every().day.at("08:40").do(메인00_시련) # 메인00 시련던전 스타트
 
 schedule.every().day.at("12:49").do(job_1251) # 월드보스
 schedule.every().day.at("13:03").do(job_1303) # 서브00 스케줄 스타트
