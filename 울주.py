@@ -97,6 +97,7 @@ def 울주_검색():
 
 def 울주_page1():
     pag.click(859,50)
+    pag.hotkey('ctrl','c')
     refresh_token()
     kakao_message_you(pyperclip.paste())
     #기간
