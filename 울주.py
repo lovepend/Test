@@ -25,6 +25,10 @@ global find_range
 ################################## 범위
 find_range = 0,0,1904,1079
 
+################################## 아이디
+
+
+
 #★★★★★★★★★★★★★★★★★★★ 아이디 입력
 def 울주_log_id1():
     global 울주_id
@@ -92,8 +96,9 @@ def 울주_검색():
         울주_page1()
 
 def 울주_page1():
+    pag.click(859,50)
     refresh_token()
-    kakao_message_you("울주")
+    kakao_message_you(pyperclip.paste())
     #기간
     pag.click(x=907, y=750)
     pag.sleep(0.1)
@@ -119,6 +124,12 @@ def 울주_page2():
     #페이지 아래
     pag.hotkey('end')
     time.sleep(0.3)
+    #방문차량번호
+    pyperclip.copy('62소9403')
+    pag.click(766,285)
+    time.sleep(0.3)
+    pag.hotkey('ctrl','v')
+    #도착예정시간
     pag.click(772,243)
     time.sleep(0.1)
     pag.hotkey('down')
@@ -126,7 +137,7 @@ def 울주_page2():
     time.sleep(0.1)
     pag.click(1177,851)
     울주_page3()
-    
+ 
 #신용카드결제
 def 울주_page3():
     #신용카드결제 
