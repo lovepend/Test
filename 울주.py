@@ -307,7 +307,7 @@ def 울주_This_A():
         pag.hotkey('pgdn')
         time.sleep(0.2)
         울주_검색()
-        pag.hotkey('pgup')
+        pag.hotkey('home')
         time.sleep(0.2)
         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             break
@@ -364,9 +364,9 @@ def 울주_This_N():
         pag.click(990,120)
         time.sleep(0.5)#페이지 선택
         pag.doubleClick(1600,800)
-        pag.hotkey('pageup')
+        pag.hotkey('home')
         time.sleep(0.5)
-        pag.hotkey('pageup')
+        pag.hotkey('home')
         time.sleep(0.5)
         
         울주_검색()
@@ -384,7 +384,7 @@ def 울주_Next_A():
         pag.hotkey('pgdn')
         time.sleep(0.2)
         울주_검색()
-        pag.hotkey('pgup')
+        pag.hotkey('home')
         time.sleep(0.2)
         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             break
@@ -441,9 +441,9 @@ def 울주_Next_N():
         pag.click(990,120)
         time.sleep(0.5)#페이지 선택
         pag.doubleClick(1600,800)
-        pag.hotkey('pageup')
+        pag.hotkey('home')
         time.sleep(0.5)
-        pag.hotkey('pageup')
+        pag.hotkey('home')
         time.sleep(0.5)
         
         울주_검색()
