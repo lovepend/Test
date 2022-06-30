@@ -19,6 +19,7 @@ from 울주 import *
 from 태화연 import *
 from 대왕암 import *
 from 신불산 import *
+from 육부촌 import *
 from kakao_api import *
 from Test import *
 
@@ -48,6 +49,8 @@ notebook.add(frame1, text="★Auto" )
 #스케쥴 진행
 Autobtn1 = Button(frame1, width=5, padx=10, pady=5, text="스케쥴러", command=schedule_job, bg="orange", fg="black")
 Autobtn1.place(x=0, y=10)
+Autobtn1 = Button(frame1, width=5, padx=10, pady=5, text="육부촌", command=육부촌_Start, bg="orange", fg="black")
+Autobtn1.place(x=60, y=10)
 
 ###################
 frame2=tkinter.Frame(window)

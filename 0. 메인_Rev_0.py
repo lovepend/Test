@@ -125,7 +125,7 @@ def 서브02_시련():
 def 서브02_시련_(x,y):
     앱초기화(x,y)
     시련던전(x,y)
-    pag.click(Record_No01_X+x ,Record_No01_Y+y)
+    pag.click(Record_No04_X+x ,Record_No04_Y+y)
     time.sleep(5)
     pag.click(녹화닫기_X+x, 녹화닫기_Y+y)
     time.sleep(5)
