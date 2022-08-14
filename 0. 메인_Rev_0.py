@@ -125,7 +125,7 @@ def 서브02_시련():
 def 서브02_시련_(x,y):
     앱초기화(x,y)
     시련던전(x,y)
-    pag.click(Record_No04_X+x ,Record_No04_Y+y)
+    pag.click(Record_No01_X+x ,Record_No01_Y+y)
     time.sleep(5)
     pag.click(녹화닫기_X+x, 녹화닫기_Y+y)
     time.sleep(5)
@@ -146,7 +146,7 @@ def 서브01_시련():
 def 서브01_시련_(x,y):
     앱초기화(x,y)
     시련던전(x,y)
-    pag.click(Record_No04_X+x ,Record_No04_Y+y)
+    pag.click(Record_No01_X+x ,Record_No01_Y+y)
     time.sleep(5)
     pag.click(녹화닫기_X+x, 녹화닫기_Y+y)
     time.sleep(5)
@@ -223,7 +223,7 @@ def job_1903_(x,y):
 schedule.every().day.at("05:00").do(서브02_시련) # 서브02 시련던전 스타트
 schedule.every().day.at("08:30").do(서브02_스케줄) # 서브02 스케쥴러 스타트
 
-schedule.every().day.at("08:35").do(서브01_시련) # 서브01 시련던전 스타트
+schedule.every().day.at("08:30").do(서브01_시련) # 서브01 시련던전 스타트
 schedule.every().day.at("08:40").do(메인00_시련) # 메인00 시련던전 스타트
 
 schedule.every().day.at("12:49").do(job_1251) # 월드보스
