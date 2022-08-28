@@ -184,14 +184,14 @@ def 태화연_자동입력():
     time.sleep(2)
     #로그인 클릭
     pag.click(931,499)
-    time.sleep(2)
+    time.sleep(5)
     #캠핑장 선택 
-    pag.click(543,424)
+    pag.click(540,420)
     time.sleep(2)
     #세부 캠핑장 선택
-    pag.click(1005,356)
+    #pag.click(1005,356)
     time.sleep(1)
-    pag.click(1013,392)
+    #pag.click(1013,392)
     time.sleep(1)
     #차량 넘버 입력
     pag.click(704,928)

@@ -64,7 +64,7 @@ Record_No13_X ,Record_No13_Y = 435, 328
 ################################# 기능 ##################################
 def 앱초기화(x,y):
     pag.click(최근앱_X+x, 최근앱_Y+y)
-    time.sleep(10)
+    time.sleep(15)
     pag.click(앱닫기_X+x, 앱닫기_Y+y)
     time.sleep(5)
     pag.click(앱닫기_X+x, 앱닫기_Y+y)
@@ -158,17 +158,21 @@ def 메인00_시련():
     time.sleep(5)
     pag.click(녹화닫기_X+x0, 녹화닫기_Y+y0)
     time.sleep(5)
-    
-    메인00_시련_(x1,y1)
-    pag.click(Record_No03_X+x1 ,Record_No03_Y+y1) 
-    time.sleep(5)
-    pag.click(녹화닫기_X+x1, 녹화닫기_Y+y1)
-    time.sleep(5)
-   
+
 def 메인00_시련_(x,y):
     앱초기화(x,y)
     시련던전(x,y) 
 
+#메인00 스케줄 스타트
+def 메인00_스케줄():
+    메인00_스케줄_(x0,y0)
+    
+def 메인00_스케줄_(x,y):
+    앱초기화(x,y)
+    스케줄실행(x,y)
+    절전모드실행(x,y)
+   
+    
 #서브01 스케줄 스타트
 def 서브01_스케줄():
     서브01_스케줄_(x2,y2)
@@ -221,13 +225,13 @@ def job_1903_(x,y):
     절전모드실행(x,y)
     
 schedule.every().day.at("05:00").do(서브02_시련) # 서브02 시련던전 스타트
-schedule.every().day.at("08:30").do(서브02_스케줄) # 서브02 스케쥴러 스타트
+schedule.every().day.at("09:00").do(서브02_스케줄) # 서브02 스케쥴러 스타트
 
-schedule.every().day.at("08:30").do(서브01_시련) # 서브01 시련던전 스타트
-schedule.every().day.at("08:40").do(메인00_시련) # 메인00 시련던전 스타트
+schedule.every().day.at("09:05").do(메인00_시련) # 메인00 시련던전 스타트
+schedule.every().day.at("09:10").do(서브01_시련) # 서브01 시련던전 스타트
 
-schedule.every().day.at("12:49").do(job_1251) # 월드보스
-schedule.every().day.at("13:03").do(job_1303) # 서브00 스케줄 스타트
+schedule.every().day.at("12:49").do(job_1851) # 월드보스
+schedule.every().day.at("13:03").do(job_1903) # 각종00 스케줄 스타트
 
 schedule.every().day.at("18:49").do(job_1851) # 월드보스
 schedule.every().day.at("19:03").do(job_1903) # 각종00 스케줄 스타트
