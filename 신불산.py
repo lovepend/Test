@@ -96,22 +96,22 @@ def 신불산_Day():
        
 def 신불산_Day1():
     global 신불산_day
-    신불산_day.x = 890, 685  
+    신불산_day = 422, 138
     print(신불산_day)
 
 def 신불산_Day2():
     global 신불산_day
-    신불산_day = 890, 730
+    신불산_day = 422, 184
     print(신불산_day)
 
 def 신불산_Day3():
     global 신불산_day
-    신불산_day = 890, 773
+    신불산_day = 422, 231
     print(신불산_day)
 
 def 신불산_Day4():
     global 신불산_day
-    신불산_day = 890, 824
+    신불산_day = 422, 274
     print(신불산_day)
 
 
@@ -192,25 +192,25 @@ def 신불산_Start():
         pag.click(신불산_day)  
         time.sleep(0.1)      
         신불산_검색()     
-        pag.click(신불산_day.x+927 ,신불산_day.y+0)
+        pag.click(신불산_day[0]+927 ,신불산_day[1]+0)
         time.sleep(0.1)    
         신불산_검색()   
-        pag.click(신불산_day.x+0 ,신불산_day.y+539)
+        pag.click(신불산_day[0]+0 ,신불산_day[1]+539)
         time.sleep(0.1)    
         신불산_검색()  
-        pag.click(신불산_day.x+927 ,신불산_day.y+539)
+        pag.click(신불산_day[0]+927 ,신불산_day[1]+539)
         time.sleep(0.1)    
         신불산_검색()   
-        pag.click(신불산_day.x+1920 ,신불산_day.y+0)
+        pag.click(신불산_day[0]+1920 ,신불산_day[1]+0)
         time.sleep(0.1)    
         신불산_검색() 
-        pag.click(신불산_day.x+1920 ,신불산_day.y+540)
+        pag.click(신불산_day[0]+1920 ,신불산_day[1]+540)
         time.sleep(0.1)    
         신불산_검색()
-        pag.click(신불산_day.x+2850 ,신불산_day.y+0)
+        pag.click(신불산_day[0]+2850 ,신불산_day[1]+1)
         time.sleep(0.1)    
         신불산_검색()
-        pag.click(신불산_day.x+2850 ,신불산_day.y+540)
+        pag.click(신불산_day[0]+2850 ,신불산_day[1]+540)
         time.sleep(0.1)    
         신불산_검색()
      
