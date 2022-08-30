@@ -21,7 +21,6 @@ from 대왕암 import *
 from 신불산 import *
 from 육부촌 import *
 from kakao_api import *
-from Test import *
 
 
 def schedule_job():
@@ -160,10 +159,6 @@ notebook.add(frame4, text="★신불산★")
 신불산btn4.place(x=180, y=90)
 신불산btn5 = Button(frame4, width=5, padx=10, pady=5, text="Start(A)", command=신불산_자동, bg="green", fg="white")
 신불산btn5.place(x=240, y=90)
-
-#lable1=Label(frame4, width=5, padx=10, pady=5, text="i 입력")
-#lable1.place(x=330, y=0)
-
 
 #대왕암 UI===============================================================================================================
 frame5=tkinter.Frame(window)

@@ -126,4 +126,17 @@ def 네이버구매() :
             print("있다")
             time.sleep(100)
 
+def 꼬잡():
+    while True:
+        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+            print("F2 종료")
+            break
+        pag.hotkey('end')
+        time.sleep(0.5)
+        pag.hotkey('pageup')
+        time.sleep(0.5)
+        pag.click("좌표입력")
+        time.sleep(0.5)
+        pag.hotkey('ctrl','v')
+
 

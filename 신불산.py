@@ -1,6 +1,8 @@
 from gettext import find
+from re import A
 from tkinter import *
-#from main_캠핑_Rev_0 import *
+from turtle import goto
+
 from kakao_api import *
 from urllib3 import encode_multipart_formdata
 import pyautogui as pag
@@ -24,6 +26,8 @@ import sys
 global 신불산_end_command
 신불산_end_command = 0
 
+################################## 리셋 
+
 ################################## 범위 
 global 신불산_find_range
 신불산_find_range = 860,521,1515,968
@@ -39,9 +43,6 @@ global 신불산_day
 신불산_day = 890, 824
 
 ################################## 횟수 
-global 신불산_i 
-신불산_i = 0
-
 def 신불산_i_end():  
     global i 
     i = 0
@@ -73,6 +74,8 @@ def 신불산_Log_Id4():
     global 신불산_id
     신불산_id = "parkmc7"
     print(신불산_id)
+
+
 
 def 신불산_Log_Guest():
     global 신불산_id
@@ -190,28 +193,28 @@ def 신불산_Start():
             break  
         #날짜 클릭
         pag.click(신불산_day)  
-        time.sleep(0.1)      
+        time.sleep(0.3)      
         신불산_검색()     
         pag.click(신불산_day[0]+927 ,신불산_day[1]+0)
-        time.sleep(0.1)    
+        time.sleep(0.3)          
         신불산_검색()   
         pag.click(신불산_day[0]+0 ,신불산_day[1]+539)
-        time.sleep(0.1)    
+        time.sleep(0.3)       
         신불산_검색()  
         pag.click(신불산_day[0]+927 ,신불산_day[1]+539)
-        time.sleep(0.1)    
+        time.sleep(0.3)         
         신불산_검색()   
         pag.click(신불산_day[0]+1920 ,신불산_day[1]+0)
-        time.sleep(0.1)    
+        time.sleep(0.3)         
         신불산_검색() 
         pag.click(신불산_day[0]+1920 ,신불산_day[1]+540)
-        time.sleep(0.1)    
+        time.sleep(0.3)        
         신불산_검색()
         pag.click(신불산_day[0]+2850 ,신불산_day[1]+1)
-        time.sleep(0.1)    
+        time.sleep(0.3)      
         신불산_검색()
         pag.click(신불산_day[0]+2850 ,신불산_day[1]+540)
-        time.sleep(0.1)    
+        time.sleep(0.3)       
         신불산_검색()
      
 
