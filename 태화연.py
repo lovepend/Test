@@ -121,17 +121,17 @@ def 태화연_Day4():
 def 태화연_Day():
     while True:
         if keyboard.is_pressed("F2"): 
+            time.sleep(0.2)
             global 태화연_day1 
             태화연_day1  = pag.position()
             print(태화연_day1)
-            time.sleep(0.2)
             break        
     while True:
         if keyboard.is_pressed("F2"): 
+            time.sleep(0.2)
             global 태화연_day2
             태화연_day2  = pag.position()
             print(태화연_day2)
-            time.sleep(0.2)
             break    
 
 #★★★★★★★★★★★★★★★★★★★ 범위 입력

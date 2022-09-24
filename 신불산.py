@@ -42,6 +42,10 @@ global 신불산_pw
 global 신불산_day
 신불산_day = 890, 824
 
+################################## 스캔타임
+global time_controll
+time_controll = 0.1
+
 ################################## 횟수 
 def 신불산_i_end():  
     global i 
@@ -97,28 +101,92 @@ def 신불산_Day():
             break 
 #★★★★★★★★★★★★★★★★★★★ 날짜 입력
        
-def 신불산_Day1():
+def 신불산_Day11():
     global 신불산_day
-    신불산_day = 422, 138
+    신불산_day = 370, 138
     print(신불산_day)
 
-def 신불산_Day2():
+def 신불산_Day12():
     global 신불산_day
-    신불산_day = 422, 184
+    신불산_day = 425, 138
     print(신불산_day)
 
-def 신불산_Day3():
+def 신불산_Day21():
     global 신불산_day
-    신불산_day = 422, 231
+    신불산_day = 370, 175
     print(신불산_day)
 
-def 신불산_Day4():
+def 신불산_Day22():
     global 신불산_day
-    신불산_day = 422, 274
+    신불산_day = 425, 175
     print(신불산_day)
 
+def 신불산_Day31():
+    global 신불산_day
+    신불산_day = 370, 220
+    print(신불산_day)
 
- 
+def 신불산_Day32():
+    global 신불산_day
+    신불산_day = 425, 220
+    print(신불산_day)
+
+def 신불산_Day41():
+    global 신불산_day
+    신불산_day = 370, 265
+    print(신불산_day)
+
+def 신불산_Day42():
+    global 신불산_day
+    신불산_day = 425, 265
+    print(신불산_day)
+
+def 신불산_Day51():
+    global 신불산_day
+    신불산_day = 370, 315
+    print(신불산_day)
+
+def 신불산_Day52():
+    global 신불산_day
+    신불산_day = 425, 315
+    print(신불산_day)
+
+#★★★★★★★★★★★★★★★★★★★ 타임 설정
+def time_controll_01():
+    global time_controll
+    time_controll =  0.1
+    print(time_controll)
+
+def time_controll_02():
+    global time_controll
+    time_controll =  0.2
+    print(time_controll)
+
+def time_controll_03():
+    global time_controll
+    time_controll =  0.3
+    print(time_controll)
+
+def time_controll_05():
+    global time_controll
+    time_controll =  0.5
+    print(time_controll)
+
+def time_controll_07():
+    global time_controll
+    time_controll =  0.7
+    print(time_controll)
+
+def time_controll_09():
+    global time_controll
+    time_controll =  0.9
+    print(time_controll)
+
+def time_controll_10():
+    global time_controll
+    time_controll =  1
+    print(time_controll)
+
 #★★★★★★★★★★★★★★★★★★★ 범위 입력 
 def 신불산_범위선택():
     while True:
@@ -189,32 +257,34 @@ def 신불산_자동입력():
 #★★★★★★★★★★★★★★★★★★★ 메인 함수
 def 신불산_Start():
     while True:
+        global time_controll
+        print(time_controll)
         if keyboard.is_pressed("F2"): 
             break  
         #날짜 클릭
         pag.click(신불산_day)  
-        time.sleep(0.3)      
+        time.sleep(time_controll)
         신불산_검색()     
         pag.click(신불산_day[0]+927 ,신불산_day[1]+0)
-        time.sleep(0.3)          
+        time.sleep(time_controll)        
         신불산_검색()   
         pag.click(신불산_day[0]+0 ,신불산_day[1]+539)
-        time.sleep(0.3)       
+        time.sleep(time_controll)     
         신불산_검색()  
         pag.click(신불산_day[0]+927 ,신불산_day[1]+539)
-        time.sleep(0.3)         
+        time.sleep(time_controll)      
         신불산_검색()   
         pag.click(신불산_day[0]+1920 ,신불산_day[1]+0)
-        time.sleep(0.3)         
+        time.sleep(time_controll)      
         신불산_검색() 
         pag.click(신불산_day[0]+1920 ,신불산_day[1]+540)
-        time.sleep(0.3)        
+        time.sleep(time_controll)     
         신불산_검색()
         pag.click(신불산_day[0]+2850 ,신불산_day[1]+1)
-        time.sleep(0.3)      
+        time.sleep(time_controll) 
         신불산_검색()
         pag.click(신불산_day[0]+2850 ,신불산_day[1]+540)
-        time.sleep(0.3)       
+        time.sleep(time_controll)    
         신불산_검색()
      
 
