@@ -152,37 +152,37 @@ def 신불산_Day52():
     print(신불산_day)
 
 #★★★★★★★★★★★★★★★★★★★ 타임 설정
-def time_controll_01():
+def 신불산_time_controll_01():
     global time_controll
     time_controll =  0.1
     print(time_controll)
 
-def time_controll_02():
+def 신불산_time_controll_02():
     global time_controll
     time_controll =  0.2
     print(time_controll)
 
-def time_controll_03():
+def 신불산_time_controll_03():
     global time_controll
     time_controll =  0.3
     print(time_controll)
 
-def time_controll_05():
+def 신불산_time_controll_05():
     global time_controll
     time_controll =  0.5
     print(time_controll)
 
-def time_controll_07():
+def 신불산_time_controll_07():
     global time_controll
     time_controll =  0.7
     print(time_controll)
 
-def time_controll_09():
+def 신불산_time_controll_09():
     global time_controll
     time_controll =  0.9
     print(time_controll)
 
-def time_controll_10():
+def 신불산_time_controll_10():
     global time_controll
     time_controll =  1
     print(time_controll)
