@@ -52,10 +52,10 @@ def 울주_log_id4():
 
 def 울주_log_guest():
     global 울주_id
-    울주_id = "suld2000@naver.com"
+    울주_id = "jhrep2234@nate.com"
     time.sleep(1)
     global 울주_pw
-    울주_pw = "Sm88410000!"
+    울주_pw = "j1902217*"
     print(울주_id)
     print(울주_pw)
 
@@ -96,6 +96,7 @@ def 울주_검색():
         울주_page1()
 
 def 울주_page1():
+    time.sleep(0.1)
     pag.click(859,50)
     pag.hotkey('ctrl','c')
     refresh_token()
@@ -138,6 +139,7 @@ def 울주_page2():
     time.sleep(0.1)
     pag.click(1177,851)
     울주_page3()
+
  
 #신용카드결제
 def 울주_page3():
@@ -167,8 +169,8 @@ def 울주_page4():
         pag.click(buttonpostion4_1.x,buttonpostion4_1.y)
         time.sleep(0.1)
         #결제 동의 
-        buttonpostion4_2 = pag.locateCenterOnScreen('./image/01_4. next2.png', region = (0,0,1920,1680), confidence=0.7) 
-        pag.click(buttonpostion4_2.x,buttonpostion4_2.y) 
+        #buttonpostion4_2 = pag.locateCenterOnScreen('./image/01_4. next2.png', region = (0,0,1920,1680), confidence=0.7) 
+        #pag.click(buttonpostion4_2.x,buttonpostion4_2.y) 
         #다음
         buttonpostion4_3 = pag.locateCenterOnScreen('./image/01_4. next3.png', region = (0,0,1920,1680), confidence=0.7) 
         time.sleep(0.1)

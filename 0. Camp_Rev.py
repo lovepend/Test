@@ -65,6 +65,9 @@ notebook.add(frame2, text="★울주해양" )
 울주log3.place(x=120, y=10)
 울주log4 = Button(frame2, width=5, padx=10, pady=5, text="NO.4", command=울주_log_id4, bg="orange", fg="black")
 울주log4.place(x=180, y=10)
+울주log4 = Button(frame2, width=5, padx=10, pady=5, text="NO.5", command=울주_log_guest, bg="orange", fg="black")
+울주log4.place(x=240, y=10)
+
 #함수
 울주btn1 = Button(frame2, width=5, padx=10, pady=5, text="Saturday", command=울주_토요일, bg="white", fg="black")
 울주btn1.place(x=0, y=50)
