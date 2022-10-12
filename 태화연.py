@@ -89,34 +89,76 @@ def 태화연_Log_Guest():
     print(태화연_pw)
        
 #★★★★★★★★★★★★★★★★★★★ 날짜 입력
-def 태화연_Day1():
+def 태화연_Day11():
     global 태화연_day1
-    태화연_day1 = 557,116
+    태화연_day1 = 570,115
+    global 태화연_day2
+    태화연_day2 = 688,205
+    print(태화연_day2)
+
+def 태화연_Day12():
+    global 태화연_day1
+    태화연_day1 = 570,115
     global 태화연_day2
     태화연_day2 = 716,204
     print(태화연_day2)
 
-def 태화연_Day2():
+def 태화연_Day21():
     global 태화연_day1
-    태화연_day1 = 557,116
+    태화연_day1 = 570,115
+    global 태화연_day2
+    태화연_day2= 688,224
+    print(태화연_day2)
+
+def 태화연_Day22():
+    global 태화연_day1
+    태화연_day1 = 570,115
     global 태화연_day2
     태화연_day2= 716,224
     print(태화연_day2)
 
-def 태화연_Day3():
+def 태화연_Day31():
     global 태화연_day1
-    태화연_day1 = 557,116
+    태화연_day1 = 570,115
     global 태화연_day2
-    태화연_day2 = 716,244
+    태화연_day2 = 688,244
     print(태화연_day2)
 
-def 태화연_Day4():
+def 태화연_Day32():
     global 태화연_day1
-    태화연_day1 = 557,116
+    태화연_day1 = 570,115
+    global 태화연_day2
+    태화연_day2 = 688,244
+    print(태화연_day2)
+
+def 태화연_Day41():
+    global 태화연_day1
+    태화연_day1 = 570,115
     global 태화연_day2
     태화연_day2 = 716,264
     print(태화연_day2)
-  
+
+def 태화연_Day42():
+    global 태화연_day1
+    태화연_day1 = 570,115
+    global 태화연_day2
+    태화연_day2 = 716,264
+    print(태화연_day2)
+
+def 태화연_Day51():
+    global 태화연_day1
+    태화연_day1 = 557,116
+    global 태화연_day2
+    태화연_day2 = 688,284
+    print(태화연_day2)
+
+def 태화연_Day52():
+    global 태화연_day1
+    태화연_day1 = 570,115
+    global 태화연_day2
+    태화연_day2 = 716,284
+    print(태화연_day2)
+
 #★★★★★★★★★★★★★★★★★★★ 날짜 입력
 def 태화연_Day():
     while True:
