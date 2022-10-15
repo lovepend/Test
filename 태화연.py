@@ -128,14 +128,14 @@ def 태화연_Day32():
     global 태화연_day1
     태화연_day1 = 570,115
     global 태화연_day2
-    태화연_day2 = 688,244
+    태화연_day2 = 716,244
     print(태화연_day2)
 
 def 태화연_Day41():
     global 태화연_day1
     태화연_day1 = 570,115
     global 태화연_day2
-    태화연_day2 = 716,264
+    태화연_day2 = 688,264
     print(태화연_day2)
 
 def 태화연_Day42():

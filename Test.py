@@ -51,11 +51,11 @@ tm.tm_sec
 def Test():
     while True:
         from datetime import datetime, timedelta
-        시 = 15
-        분 = 20
+        시 = 16
+        분 = 00
         초 = 58
-        밀리초 = 270000 #383
-        time1 = datetime(2022,10,12,시,분,초,밀리초) 
+        밀리초 = 800000 #383
+        time1 = datetime(2022,10,14,시,분,초,밀리초) 
         time2 = datetime.now()
 
         # print(time1)
