@@ -283,7 +283,7 @@ def 태화연_Start():
         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             print("F2 종료")
             break
-        if (tm.tm_hour == 9 and tm.tm_min == 50) or (tm.tm_hour == 16 and tm.tm_min == 50) : #9시 50분 및 16시 50분 종료
+        if (tm.tm_hour == 9 and tm.tm_min == 50) or (tm.tm_hour == 17 and tm.tm_min == 50) : #9시 50분 및 16시 50분 종료
             print("minute 중지")
             print(tm.tm_hour ,"시", tm.tm_min ,"분", tm.tm_sec,"초")
             break        
