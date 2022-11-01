@@ -15,7 +15,7 @@ def access_token():
         "grant_type" : "authorization_code",
         "client_id" : "ddcfd4509dc2ec690ebb764199ff2247",
         "redirect_url" : "https://localhost:3000",
-        "code" : "oMeaMou0TDFamRpOwIdNUgwTOrMOCtMHz6NRWd-LqqHjnX0v0aZEPWUW61pdDl_STCgFPgo9c-sAAAGDfh7gtA"
+        "code" : "ob0LYAdbVkl17nWd29FXAsMVN5SbdLTvOAMC9r-Lz9AXaHGiU7FbvdIs2UV0v0euHQ5W-gorDNIAAAGEMpSYDw"
     }
     response = requests.post(url, data=data)
     tokens = response.json()
@@ -30,7 +30,7 @@ def refresh_token():
         "grant_type": "refresh_token",
         "client_id": "ddcfd4509dc2ec690ebb764199ff2247",
         #"refresh_token": "{refresh_token}"
-        "refresh_token": "091tl_Z-gSktX83DynWl2h2i4k8fVscGP6vUaj-sCj11GgAAAYN-Hw3x"
+        "refresh_token": "yHxQW4XEKyXGdcaoa-yOuGortjn0NZN7OEdmQX-ACisNIAAAAYQylOWy"
     }
     response = requests.post(url, data=data)
     tokens = response.json()
@@ -119,6 +119,6 @@ def kakao_message_you(kakao_message_send):
 
 #access_token() #access_token()을 발급후 꼭 refresh_token을 기록 할 것 
 
-#refresh_token() #refresh_token을 입력후 테스트 
+refresh_token() #refresh_token을 입력후 테스트 
 
-#kakao_message_you("안녕하세요")
+kakao_message_you("안녕하세요")
