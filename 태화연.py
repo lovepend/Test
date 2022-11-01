@@ -276,14 +276,14 @@ def 태화연_Start():
         pag.click(태화연_day1)
         time.sleep(0.1)
         pag.click(태화연_day2)
-        time.sleep(0.3)
+        time.sleep(0.1)
         #횟수 표현
         태화연_i = 태화연_i + 1
         #종료 조건
         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             print("F2 종료")
             break
-        if (tm.tm_hour == 9 and tm.tm_min == 50) or (tm.tm_hour == 17 and tm.tm_min == 50) : #9시 50분 및 16시 50분 종료
+        if (tm.tm_hour == 11 and tm.tm_min == 5) or (tm.tm_hour == 18 and tm.tm_min == 5) : #9시 50분 및 16시 50분 종료
             print("minute 중지")
             print(tm.tm_hour ,"시", tm.tm_min ,"분", tm.tm_sec,"초")
             break        
