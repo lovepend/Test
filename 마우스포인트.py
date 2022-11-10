@@ -8,13 +8,19 @@ while True:
         t1 = pag.position() # 위치 뽑아서 저장
         print(t1)
         time.sleep(0.5)
-        break        
+        break     
+
+
+
 while True:
     if keyboard.is_pressed("F2"): 
         t2 = pag.position()
         print(t2)
         time.sleep(0.5)
         break      
+
+
+
 while True:
     if keyboard.is_pressed("F2"): 
         t3 = pag.position()
@@ -138,3 +144,4 @@ while True:
         print(t20)
         time.sleep(0.5)
         break   
+

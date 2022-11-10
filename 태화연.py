@@ -37,11 +37,6 @@ global 태화연_id
 global 태화연_pw
 태화연_pw = "*Zoavld4fkd" 
 
-################################## 날짜
-global 태화연_day1
-태화연_day1 = 557,116
-global 태화연_day2
-태화연_day2 = 716,264
 
 ################################## 횟수 
 global 태화연_i
@@ -87,76 +82,153 @@ def 태화연_Log_Guest():
     태화연_pw = "Sm88410000!"
     print(태화연_id)
     print(태화연_pw)
-       
+
+################################## 날짜
+global 태화연_day1
+태화연_day1 = 557,116
+global 태화연_day2
+태화연_day2 = 716,264
+
 #★★★★★★★★★★★★★★★★★★★ 날짜 입력
+# def 태화연_Day11():
+#     global 태화연_day1
+#     태화연_day1 = 662,114
+#     global 태화연_day2
+#     태화연_day2 = 688,205
+#     print(태화연_day2)
+
+# def 태화연_Day12():
+#     global 태화연_day1
+#     태화연_day1 = 662,114
+#     global 태화연_day2
+#     태화연_day2 = 716,204
+#     print(태화연_day2)
+
+# def 태화연_Day21():
+#     global 태화연_day1
+#     태화연_day1 = 662,114
+#     global 태화연_day2
+#     태화연_day2= 688,224
+#     print(태화연_day2)
+
+# def 태화연_Day22():
+#     global 태화연_day1
+#     태화연_day1 = 662,114
+#     global 태화연_day2
+#     태화연_day2= 716,224
+#     print(태화연_day2)
+
+# def 태화연_Day31():
+#     global 태화연_day1
+#     태화연_day1 = 662,114
+#     global 태화연_day2
+#     태화연_day2 = 688,244
+#     print(태화연_day2)
+
+# def 태화연_Day32():
+#     global 태화연_day1
+#     태화연_day1 = 570,115
+#     global 태화연_day2
+#     태화연_day2 = 716,244
+#     print(태화연_day2)
+
+# def 태화연_Day41():
+#     global 태화연_day1
+#     태화연_day1 = 570,115
+#     global 태화연_day2
+#     태화연_day2 = 688,264
+#     print(태화연_day2)
+
+# def 태화연_Day42():
+#     global 태화연_day1
+#     태화연_day1 = 570,115
+#     global 태화연_day2
+#     태화연_day2 = 716,264
+#     print(태화연_day2)
+
+# def 태화연_Day51():
+#     global 태화연_day1
+#     태화연_day1 = 557,116
+#     global 태화연_day2
+#     태화연_day2 = 688,284
+#     print(태화연_day2)
+
+# def 태화연_Day52():
+#     global 태화연_day1
+#     태화연_day1 = 570,115
+#     global 태화연_day2
+#     태화연_day2 = 716,284
+#     print(태화연_day2)
+
+#★★★★★★★★★★★★★★★★★★★ 날짜 입력 (50%)
 def 태화연_Day11():
     global 태화연_day1
-    태화연_day1 = 570,115
+    태화연_day1 = 662,114
     global 태화연_day2
-    태화연_day2 = 688,205
+    태화연_day2 = 747,180
     print(태화연_day2)
 
 def 태화연_Day12():
     global 태화연_day1
-    태화연_day1 = 570,115
+    태화연_day1 = 662,114
     global 태화연_day2
-    태화연_day2 = 716,204
+    태화연_day2 = 767,180
     print(태화연_day2)
 
 def 태화연_Day21():
     global 태화연_day1
-    태화연_day1 = 570,115
+    태화연_day1 = 747,198
     global 태화연_day2
-    태화연_day2= 688,224
+    태화연_day2= 747,198
     print(태화연_day2)
 
 def 태화연_Day22():
     global 태화연_day1
-    태화연_day1 = 570,115
+    태화연_day1 = 662,114
     global 태화연_day2
-    태화연_day2= 716,224
+    태화연_day2= 768,198
     print(태화연_day2)
 
 def 태화연_Day31():
     global 태화연_day1
-    태화연_day1 = 570,115
+    태화연_day1 = 662,114
     global 태화연_day2
-    태화연_day2 = 688,244
+    태화연_day2 = 747,214
     print(태화연_day2)
 
 def 태화연_Day32():
     global 태화연_day1
-    태화연_day1 = 570,115
+    태화연_day1 = 662,114
     global 태화연_day2
-    태화연_day2 = 716,244
+    태화연_day2 = 769,214
     print(태화연_day2)
 
 def 태화연_Day41():
     global 태화연_day1
-    태화연_day1 = 570,115
+    태화연_day1 = 662,114
     global 태화연_day2
-    태화연_day2 = 688,264
+    태화연_day2 = 746,228
     print(태화연_day2)
 
 def 태화연_Day42():
     global 태화연_day1
-    태화연_day1 = 570,115
+    태화연_day1 = 662,114
     global 태화연_day2
-    태화연_day2 = 716,264
+    태화연_day2 = 769,228
     print(태화연_day2)
 
 def 태화연_Day51():
     global 태화연_day1
-    태화연_day1 = 557,116
+    태화연_day1 = 662,114
     global 태화연_day2
-    태화연_day2 = 688,284
+    태화연_day2 = 746,243
     print(태화연_day2)
 
 def 태화연_Day52():
     global 태화연_day1
-    태화연_day1 = 570,115
+    태화연_day1 = 662,114
     global 태화연_day2
-    태화연_day2 = 716,284
+    태화연_day2 = 769,243
     print(태화연_day2)
 
 #★★★★★★★★★★★★★★★★★★★ 날짜 입력
@@ -283,7 +355,7 @@ def 태화연_Start():
         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             print("F2 종료")
             break
-        if (tm.tm_hour == 11 and tm.tm_min == 5) or (tm.tm_hour == 18 and tm.tm_min == 5) : #9시 50분 및 16시 50분 종료
+        if (tm.tm_hour == 11 and tm.tm_min == 5) or (tm.tm_hour == 19 and tm.tm_min == 5) : #9시 50분 및 16시 50분 종료
             print("minute 중지")
             print(tm.tm_hour ,"시", tm.tm_min ,"분", tm.tm_sec,"초")
             break        
@@ -326,7 +398,7 @@ def 태화연_StepB():
         #time.sleep(0.5)#추가
         #pag.hotkey('pagedown')#추가
         태화연_StepC()
-            
+
 def 태화연_StepC() : 
     button2 = pag.locateCenterOnScreen('./image/03_4. next.png', confidence=0.7)   
     print(button2)
@@ -334,9 +406,9 @@ def 태화연_StepC() :
         태화연_StepC()      
     else : 
         pag.hotkey('down')
-        time.sleep(0.5)
+        time.sleep(0.2)
         pag.click(1800,800)
-        time.sleep(0.5)
+        time.sleep(0.2)
         pag.hotkey('end')
         time.sleep(1)
         button3 = pag.locateCenterOnScreen('./image/03_5. next.png', confidence=0.7)   
@@ -416,6 +488,7 @@ def 태화연_자동():
     #페이지 클릭
     pag.click(1800,800)
     time.sleep(5)
+    #로그인
     pag.click(476,84)
     time.sleep(5)
     pag.click(536,152)

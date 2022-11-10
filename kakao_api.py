@@ -119,6 +119,6 @@ def kakao_message_you(kakao_message_send):
 
 #access_token() #access_token()을 발급후 꼭 refresh_token을 기록 할 것 
 
-refresh_token() #refresh_token을 입력후 테스트 
+#refresh_token() #refresh_token을 입력후 테스트 
 
-kakao_message_you("안녕하세요")
+#kakao_message_you("안녕하세요")
