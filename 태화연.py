@@ -19,7 +19,7 @@ import json
 #print( now.tm_sec )
 #current_time_m = now.tm_min
 
-#태화연 Test 2022.05.24 #Viewer Size 67%
+#태화연 Test 2022.11.10 #Viewer Size 50%
 
 ################################## 리셋 
 global 태화연_end_command

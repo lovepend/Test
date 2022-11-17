@@ -1,7 +1,8 @@
 from cgitb import reset
 from gettext import find
-from tkinter import *
 import tkinter
+from tkinter import *
+
 from math import *
 from turtle import bgcolor, color, width
 import pyautogui as pag
@@ -206,7 +207,7 @@ notebook.add(frame4, text="★신불산★")
 
 #대왕암 UI===============================================================================================================
 frame5=tkinter.Frame(window)
-notebook.insert(2, frame5, text="★대왕암★")
+notebook.add(frame5, text="★대왕암★")
 
 #로그
 대왕암log1 = Button(frame5, width=5, padx=10, pady=5, text="NO.1", command=대왕암_Log_Id1, bg="orange", fg="black")
@@ -243,5 +244,45 @@ notebook.insert(2, frame5, text="★대왕암★")
 대왕암btn6.place(x=300, y=90)
 대왕암btn7 = Button(frame5, width=5, padx=10, pady=5, text="Start(A)", command=대왕암_자동, bg="green", fg="white")
 대왕암btn7.place(x=360, y=90)
+
+#테스트 UI===============================================================================================================
+frame6=tkinter.Frame(window)
+notebook.add(frame6, text="★테스트★")
+
+#로그
+테스트log1 = Button(frame6, width=5, padx=10, pady=5, text="NO.1", command="테스트_Log_Id1", bg="orange", fg="black")
+테스트log1.place(x=0, y=10)
+테스트log2 = Button(frame6, width=5, padx=10, pady=5, text="NO.2", command="테스트_Log_Id2", bg="orange", fg="black")
+테스트log2.place(x=60, y=10)
+테스트log3 = Button(frame6, width=5, padx=10, pady=5, text="NO.3", command="테스트_Log_Id2", bg="orange", fg="black")
+테스트log3.place(x=120, y=10)
+테스트log4 = Button(frame6, width=5, padx=10, pady=5, text="NO.4", command="테스트_Log_Id2", bg="orange", fg="black")
+테스트log4.place(x=180, y=10)
+#날짜
+테스트btn1 = Button(frame6, width=5, padx=10, pady=5, text="Day1", command="테스트_Log_Id2", bg="white", fg="black")
+테스트btn1.place(x=0, y=50)
+테스트btn2 = Button(frame6, width=5, padx=10, pady=5, text="Day2", command="테스트_Log_Id2", bg="white", fg="black")
+테스트btn2.place(x=60, y=50)
+테스트btn3 = Button(frame6, width=5, padx=10, pady=5, text="Day3", command="테스트_Log_Id2", bg="white", fg="black")
+테스트btn3.place(x=120, y=50)
+테스트btn4 = Button(frame6, width=5, padx=10, pady=5, text="Day4", command="테스트_Log_Id2", bg="white", fg="black")
+테스트btn4.place(x=180, y=50)
+테스트btn5 = Button(frame6, width=5, padx=10, pady=5, text="Day", command="테스트_Log_Id2", bg="white", fg="black")
+테스트btn5.place(x=240, y=50)
+#함수
+테스트btn1 = Button(frame6, width=5, padx=10, pady=5, text="Reset", command="테스트_Log_Id2", bg="white", fg="black")
+테스트btn1.place(x=0, y=90)
+테스트btn2 = Button(frame6, width=5, padx=10, pady=5, text="Auto", command="테스트_Log_Id2", bg="white", fg="black")
+테스트btn2.place(x=60, y=90)
+테스트btn3 = Button(frame6, width=5, padx=10, pady=5, text="Cursor", command="테스트_Log_Id2", bg="white", fg="black")
+테스트btn3.place(x=120, y=90)
+테스트btn4 = Button(frame6, width=5, padx=10, pady=5, text="Range", command="테스트_Log_Id2", bg="white", fg="black")
+테스트btn4.place(x=180, y=90)
+테스트btn5 = Button(frame6, width=5, padx=10, pady=5, text="Start", command="테스트_Log_Id2", bg="white", fg="black")
+테스트btn5.place(x=240, y=90)
+테스트btn6 = Button(frame6, width=5, padx=10, pady=5, text="Karavan", command="테스트_Log_Id2", bg="green", fg="white")
+테스트btn6.place(x=300, y=90)
+테스트btn7 = Button(frame6, width=5, padx=10, pady=5, text="Start(A)", command="테스트_Log_Id2", bg="green", fg="white")
+테스트btn7.place(x=360, y=90)
 
 window.mainloop()

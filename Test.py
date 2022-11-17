@@ -21,7 +21,6 @@ import schedule
 import json
 import time
 import datetime
-
 from kakao_api import kakao_message_you
 
 
@@ -80,7 +79,7 @@ def Test():
         #     break
 
 
-Test()
+
 
 def Onekey():
     while True:
@@ -168,7 +167,7 @@ def Onekey():
 
 def 이미지_검색():
     #검색
-    button = pag.locateCenterOnScreen("./image/test.png", confidence=0.85) 
+    button = pag.locateCenterOnScreen("./image/naver.png", confidence=0.85) 
     if (button == None) :
         None      
     else : 
@@ -188,3 +187,13 @@ def 이미지_Start():
         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             break      
 
+
+
+a = 1
+b = 2 
+
+
+
+
+
+print(i)
