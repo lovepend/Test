@@ -10,16 +10,12 @@ while True:
         time.sleep(0.5)
         break     
 
-
-
 while True:
     if keyboard.is_pressed("F2"): 
         t2 = pag.position()
         print(t2)
         time.sleep(0.5)
         break      
-
-
 
 while True:
     if keyboard.is_pressed("F2"): 
@@ -83,12 +79,14 @@ while True:
         print(t11)
         time.sleep(0.5)
         break        
+
 while True:
     if keyboard.is_pressed("F2"): 
         t12 = pag.position()
         print(t12)
         time.sleep(0.5)
         break      
+
 while True:
     if keyboard.is_pressed("F2"): 
         t13 = pag.position()
