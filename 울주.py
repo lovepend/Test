@@ -96,7 +96,7 @@ def 울주_검색():
         울주_page1()
 
 def 울주_page1():
-    time.sleep(0.1)
+    time.sleep(0.2)
     pag.click(859,50)
     pag.hotkey('ctrl','c')
     refresh_token()
@@ -319,6 +319,7 @@ def 울주_This_A():
         time.sleep(0.2)
         울주_검색()
         pag.hotkey('pgdn')
+        pag.hotkey('f5')
         time.sleep(0.2)
         울주_검색()
         pag.hotkey('home')
@@ -396,6 +397,7 @@ def 울주_Next_A():
         time.sleep(0.2)
         울주_검색()
         pag.hotkey('pgdn')
+        pag.hotkey('f5')
         time.sleep(0.2)
         울주_검색()
         pag.hotkey('home')
