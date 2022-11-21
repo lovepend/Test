@@ -153,6 +153,32 @@ notebook.add(frame4, text="★신불산★")
 신불산log4.place(x=180, y=10)
 신불산log5 = Button(frame4, width=5, padx=10, pady=5, text="NO.G", command=신불산_Log_Guest, bg="orange", fg="black")
 신불산log5.place(x=240, y=10)
+
+def 시간입력():
+    신불산_min = entry1.get()
+    신불산_sec = entry2.get()
+    시간입력_시작(신불산_min,신불산_sec)
+
+
+lable1=Label(frame4, text="min")
+lable1.place(x=310, y=27)
+    
+entry1 = Entry(frame4, width=5)
+entry1.place(x=310, y=8)
+entry1.insert(0,"58")
+
+lable2=Label(frame4, text="sec")
+lable2.place(x=360, y=27)
+    
+entry2 = Entry(frame4, width=5)
+entry2.place(x=360, y=8)
+entry2.insert(0,"16")
+
+신불산time_s = Button(frame4, width=5, padx=5, pady=5, text="초", command=시간입력, bg="orange", fg="black")
+신불산time_s.place(x=410, y=10)
+
+
+
 #날짜
 신불산day1 = Button(frame4, width=2, padx=10, pady=5, text="금", command=신불산_Day11, bg="white", fg="black")
 신불산day1.place(x=0, y=50)

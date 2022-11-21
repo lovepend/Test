@@ -22,6 +22,15 @@ import sys
 #신불산 Test 2022.03.21 #Viewer Size 67%
 #56분 36초
 
+def 시간입력_시작(min,sec):
+    global 신불산_min
+    global 신불산_sec
+    신불산_min = int(min)
+    신불산_sec = int(sec)
+    print(신불산_min)
+    print(신불산_sec)
+    신불산_Start(신불산_min,신불산_sec)
+
 ################################## 리셋 
 global 신불산_end_command
 신불산_end_command = 0
@@ -253,17 +262,18 @@ def 신불산_자동입력():
     time.sleep(10)
    
 #★★★★★★★★★★★★★★★★★★★ 메인 함수
-def 신불산_Start():
+def 신불산_Start(신불산_min,신불산_sec):
     while True:
         tm = time.localtime()
         global time_controll
         print(time_controll)
-        if keyboard.is_pressed("F2"): 
+        if keyboard.is_pressed("F2"):
+            print("종료") 
             break  
-        if (tm.tm_hour == 9 and tm.tm_min == 58 and tm.tm_sec == 18) or (tm.tm_hour == 13 and tm.tm_min == 58 and tm.tm_sec == 18) : #9시 56분 및 15시 56분 시작
+        if (tm.tm_hour == 9 and tm.tm_min == 신불산_min and tm.tm_sec == 신불산_sec) or (tm.tm_hour == 13 and tm.tm_min == 신불산_min and tm.tm_sec == 신불산_sec) : #9시 56분 및 15시 56분 시작
         #if (tm.tm_hour == 10 and tm.tm_min == 19 and tm.tm_sec == 10) or (tm.tm_hour == 14 and tm.tm_min == 56 and tm.tm_sec == 37) : #TEST
             pag.click(신불산_day)
-            for i in range(100):
+            for i in range(200):
                 button = pag.locateCenterOnScreen("./image/04._1. reservation.png", region = 신불산_find_range, confidence=0.7) 
                 print(i)
                 if (button == None) :
@@ -297,7 +307,8 @@ def 신불산_Start():
         # 신불산_검색()
         # pag.click(신불산_day[0]+2850 ,신불산_day[1]+540)
         # time.sleep(time_controll)    
-        # 신불산_검색()     
+        # 신불산_검색()        
+        
 
 def 신불산_검색():                    
     button = pag.locateCenterOnScreen("./image/04._1. reservation.png",  confidence=0.7) #region = 신불산_find_range,
