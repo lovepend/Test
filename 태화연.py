@@ -2,6 +2,7 @@ from gettext import find
 from tkinter import *
 from kakao_api import *
 import pyautogui as pag
+import webbrowser
 import win32con
 import win32api
 import win32gui
@@ -76,10 +77,10 @@ def 태화연_Log_Id4():
 
 def 태화연_Log_Guest():
     global 태화연_id
-    태화연_id = "suld2000@naver.com"
+    태화연_id = "jhrep2234@nate.com"
     time.sleep(1)
     global 태화연_pw
-    태화연_pw = "Sm88410000!"
+    태화연_pw = "j1902217*"
     print(태화연_id)
     print(태화연_pw)
 
@@ -269,14 +270,15 @@ def 태화연_범위선택():
      
 #★★★★★★★★★★★★★★★★★★★ 자동 입력
 def 태화연_자동입력():
-    time.sleep(2)
+    webbrowser.get("windows-default").open('https://www.junggu.ulsan.kr/camping/index.do')
+    time.sleep(3)
     #로그인 선택
-    pag.click(1400,128)
+    pag.click(1288,120)
     time.sleep(2)
     #이메일 입력
-    pag.moveTo(1000,427)
+    pag.moveTo(990,345)
     time.sleep(2)
-    pag.dragTo(360,427, 5, button='left')
+    pag.dragTo(853,346, 3, button='left')
     time.sleep(2)
     pag.hotkey('delete')
     time.sleep(2)
@@ -287,9 +289,9 @@ def 태화연_자동입력():
     pag.click(1800,800)
     time.sleep(2)
     #비밀번호 입력
-    pag.moveTo(1000,457)    
+    pag.moveTo(990,367)    
     time.sleep(2)
-    pag.dragTo(360,457, 5, button='left')
+    pag.dragTo(869,366, 3, button='left')
     time.sleep(2)
     pag.hotkey('delete')
     time.sleep(2)
@@ -297,10 +299,10 @@ def 태화연_자동입력():
     print(태화연_pw)
     time.sleep(2)
     #로그인 클릭
-    pag.click(931,499)
+    pag.click(926,403)
     time.sleep(5)
     #캠핑장 선택 
-    pag.click(540,420)
+    pag.click(648,339)
     time.sleep(2)
     #세부 캠핑장 선택
     #pag.click(1005,356)
@@ -308,25 +310,28 @@ def 태화연_자동입력():
     #pag.click(1013,392)
     time.sleep(1)
     #차량 넘버 입력
-    pag.click(704,928)
+    pag.click(761,733)
     time.sleep(1)
     pyperclip.copy("62소9403")
     time.sleep(1)
     pag.hotkey('ctrl', 'v')
     #다음페이지
-    pag.click(1847,897)
+    #페이지 클릭
+    pag.click(1800,800)
+    time.sleep(2)
+    pag.hotkey('pagedown')
     time.sleep(1)
     #이용준수사항
-    pag.click(480,316)
+    pag.click(620,312)
     time.sleep(1)
     #입실정원
-    pag.click(480,538)
+    pag.click(620,481)
     time.sleep(1)
     #취소 및 환불 규정
-    pag.click(480,760)
+    pag.click(620,649)
     time.sleep(1)
     #개인정보 수집 이용 동의
-    pag.click(875,983)
+    pag.click(897,819)
     time.sleep(1)
     #페이지 클릭
     pag.click(1800,800)
@@ -335,9 +340,9 @@ def 태화연_자동입력():
     pag.hotkey("home")
     time.sleep(1)
     #날짜 맞추기
-    pag.moveTo(1850,130)    
+    pag.moveTo(1850,696)    
     time.sleep(1)
-    pag.dragTo(1847,339, 5, button='left')
+    pag.dragTo(1850,904, 5, button='left')
        
 #★★★★★★★★★★★★★★★★★★★ 메인 함수
 def 태화연_Start():

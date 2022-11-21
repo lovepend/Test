@@ -2,10 +2,10 @@ from gettext import find
 from re import A
 from tkinter import *
 from turtle import goto
-
 from kakao_api import *
 from urllib3 import encode_multipart_formdata
 import pyautogui as pag
+import webbrowser
 import win32con
 import win32api
 import win32gui
@@ -97,7 +97,6 @@ def 신불산_Log_Guest():
     print(신불산_pw)
 
 #★★★★★★★★★★★★★★★★★★★ 날짜 입력
-
 def 신불산_Day():
     while True:
         if keyboard.is_pressed("F2"):
@@ -110,52 +109,52 @@ def 신불산_Day():
        
 def 신불산_Day11():
     global 신불산_day
-    신불산_day = 370, 138
+    신불산_day = 840, 670
     print(신불산_day)
 
 def 신불산_Day12():
     global 신불산_day
-    신불산_day = 425, 138
+    신불산_day = 890, 670
     print(신불산_day)
 
 def 신불산_Day21():
     global 신불산_day
-    신불산_day = 370, 175
+    신불산_day = 840, 715
     print(신불산_day)
 
 def 신불산_Day22():
     global 신불산_day
-    신불산_day = 425, 175
+    신불산_day = 890, 715
     print(신불산_day)
 
 def 신불산_Day31():
     global 신불산_day
-    신불산_day = 370, 220
+    신불산_day = 840, 760
     print(신불산_day)
 
 def 신불산_Day32():
     global 신불산_day
-    신불산_day = 425, 220
+    신불산_day = 890, 760
     print(신불산_day)
 
 def 신불산_Day41():
     global 신불산_day
-    신불산_day = 370, 265
+    신불산_day = 840, 805
     print(신불산_day)
 
 def 신불산_Day42():
     global 신불산_day
-    신불산_day = 425, 265
+    신불산_day = 890, 805
     print(신불산_day)
 
 def 신불산_Day51():
     global 신불산_day
-    신불산_day = 370, 315
+    신불산_day = 840, 850
     print(신불산_day)
 
 def 신불산_Day52():
     global 신불산_day
-    신불산_day = 425, 315
+    신불산_day = 890, 850
     print(신불산_day)
 
 #★★★★★★★★★★★★★★★★★★★ 타임 설정
@@ -214,7 +213,8 @@ def 신불산_범위선택():
     신불산_find_range = (신불산_find_range1.x,신불산_find_range1.y,신불산_find_range2.x,신불산_find_range2.y)
    
 #★★★★★★★★★★★★★★★★★★★ 자동 입력
-def 신불산_자동입력():      
+def 신불산_자동입력():  
+    webbrowser.get("windows-default").open('https://camping.ulju.ulsan.kr/')
     time.sleep(2)
     #로그인 클릭
     pag.click(1112,115)
@@ -253,13 +253,13 @@ def 신불산_자동입력():
     time.sleep(5)
     #아무 날짜 선택
     pag.click(892,821)
-    time.sleep(10)
+    time.sleep(5)
     #예약가능 사이트만 보기
     pag.click(1201,693)
-    time.sleep(10)
+    time.sleep(5)
     #등억 선택
     pag.click(970,692)
-    time.sleep(10)
+    time.sleep(5)
    
 #★★★★★★★★★★★★★★★★★★★ 메인 함수
 def 신불산_Start(신불산_min,신불산_sec):
@@ -308,7 +308,7 @@ def 신불산_Start(신불산_min,신불산_sec):
         # pag.click(신불산_day[0]+2850 ,신불산_day[1]+540)
         # time.sleep(time_controll)    
         # 신불산_검색()        
-        
+        # 신불산_검색()     
 
 def 신불산_검색():                    
     button = pag.locateCenterOnScreen("./image/04._1. reservation.png",  confidence=0.7) #region = 신불산_find_range,
