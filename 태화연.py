@@ -271,7 +271,7 @@ def 태화연_범위선택():
 #★★★★★★★★★★★★★★★★★★★ 자동 입력
 def 태화연_자동입력():
     webbrowser.get("windows-default").open('https://www.junggu.ulsan.kr/camping/index.do')
-    time.sleep(3)
+    time.sleep(5)
     #로그인 선택
     pag.click(1288,120)
     time.sleep(2)
