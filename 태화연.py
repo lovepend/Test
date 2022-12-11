@@ -178,7 +178,7 @@ def 태화연_Day12():
 
 def 태화연_Day21():
     global 태화연_day1
-    태화연_day1 = 747,198
+    태화연_day1 = 662,114
     global 태화연_day2
     태화연_day2= 747,198
     print(태화연_day2)
@@ -267,11 +267,15 @@ def 태화연_범위선택():
             break  
     global 태화연_find_range
     태화연_find_range = (태화연_find_range1.x,태화연_find_range1.y,태화연_find_range2.x,태화연_find_range2.y)
-     
+
+def 태화연_호수뷰():
+    global 태화연_find_range
+    태화연_find_range = 0,0,1069,361
+
 #★★★★★★★★★★★★★★★★★★★ 자동 입력
 def 태화연_자동입력():
     webbrowser.get("windows-default").open('https://www.junggu.ulsan.kr/camping/index.do')
-    time.sleep(5)
+    time.sleep(10)
     #로그인 선택
     pag.click(1288,120)
     time.sleep(2)

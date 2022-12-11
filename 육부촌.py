@@ -111,70 +111,15 @@ def 육부촌_자동입력():
 #★★★★★★★★★★★★★★★★★★★ 메인 함수 
 def 육부촌_Start():
     while True:
-        tm = time.localtime()
         if keyboard.is_pressed("F2") : # F2 누른게 감지되면
             print("F2 종료")
             break
         #날짜 클릭
-        pag.click(육부촌_day1)
-        time.sleep(0.5)
-        #page 다운
-        pag.hotkey('pgdn')
-        time.sleep(0.2)
-        #검색
+        pag.hotkey('f5')
         육부촌_검색()
         time.sleep(0.2)
-        #page 위
-        pag.hotkey('pgup')
-        time.sleep(0.2)
-        #2번째===========================================
-        pag.click(953,545)
-        time.sleep(0.5)
-        #page 다운
-        pag.hotkey('pgdn')
-        time.sleep(0.2)
-        #검색
-        육부촌_검색()
-        time.sleep(0.2)
-        #page 위
-        pag.hotkey('pgup')
-        time.sleep(0.2)
-        #3번째===========================================
-        pag.click(953,575)
-        time.sleep(0.5)
-        #page 다운
-        pag.hotkey('pgdn')
-        time.sleep(0.2)
-        #검색
-        육부촌_검색()
-        time.sleep(0.2)
-        #page 위
-        pag.hotkey('pgup')
-        time.sleep(0.2)
-        #4번째===========================================
-        pag.click(953,608)
-        time.sleep(0.5)
-        #page 다운
-        pag.hotkey('pgdn')
-        time.sleep(0.2)
-        #검색
-        육부촌_검색()
-        time.sleep(0.2)
-        #page 위
-        pag.hotkey('pgup')
-        time.sleep(0.2)
-        #52번째===========================================
-        pag.click(953,634)
-        time.sleep(0.5)
-        #page 다운
-        pag.hotkey('pgdn')
-        time.sleep(0.2)
-        #검색
-        육부촌_검색()
-        time.sleep(0.2)
-        #page 위
-        pag.hotkey('pgup')
-        time.sleep(0.2)
+
+
      
 
 def 육부촌_검색():
@@ -188,6 +133,7 @@ def 육부촌_검색():
         육부촌_확인()
         
 def 육부촌_확인() :
+    time.sleep(0.5)
     button1 = pag.locateCenterOnScreen('./image/05._2. next.png', confidence=0.7)   
     print(button1)
     if (button1 == None) :
@@ -196,7 +142,32 @@ def 육부촌_확인() :
         pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
         refresh_token()
         kakao_message_you("육부촌")
-        time.sleep(600)
+        육부촌_주소()
+
+def 육부촌_주소():
+    time.sleep(0.5)
+    pag.click(430,13)
+    pyperclip.copy('반구로55')
+    pag.click(809,896)   
+    time.sleep(0.4)
+    pag.hotkey('ctrl','v')
+    time.sleep(0.4)
+    pag.hotkey('enter')
+    pag.click(358,267) 
+    time.sleep(0.4)
+    pag.click(816,954)
+    time.sleep(0.4)
+    pyperclip.copy('107동1001호')
+    pag.hotkey('ctrl','v')
+    time.sleep(0.4)
+    pag.click(1700,900)
+    pag.hotkey('pgdn')
+    time.sleep(0.4)
+    pag.click(1051,873)
+    time.sleep(500)
+
+
+
 
 
 

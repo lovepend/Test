@@ -215,7 +215,7 @@ def 신불산_범위선택():
 #★★★★★★★★★★★★★★★★★★★ 자동 입력
 def 신불산_자동입력():  
     webbrowser.get("windows-default").open('https://camping.ulju.ulsan.kr/')
-    time.sleep(5)
+    time.sleep(10)
     #로그인 클릭
     pag.click(1112,115)
     time.sleep(5)

@@ -101,6 +101,8 @@ notebook.add(frame3, text="★태화연★")
 태화연log4.place(x=180, y=10)
 태화연log5 = Button(frame3, width=5, padx=10, pady=5, text="NO.5", command=태화연_Log_Guest, bg="orange", fg="black")
 태화연log5.place(x=240, y=10)
+태화연log6 = Button(frame3, width=5, padx=10, pady=5, text="호수뷰", command=태화연_호수뷰, bg="white", fg="black")
+태화연log6.place(x=300, y=10)
 #날짜
 태화연day1 = Button(frame3, width=2, padx=10, pady=5, text="금", command=태화연_Day11, bg="white", fg="black")
 태화연day1.place(x=0, y=50)
