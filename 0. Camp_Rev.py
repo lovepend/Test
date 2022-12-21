@@ -66,8 +66,12 @@ notebook.add(frame2, text="★울주해양" )
 울주log3.place(x=120, y=10)
 울주log4 = Button(frame2, width=5, padx=10, pady=5, text="NO.4", command=울주_log_id4, bg="orange", fg="black")
 울주log4.place(x=180, y=10)
-울주log4 = Button(frame2, width=5, padx=10, pady=5, text="NO.5", command=울주_log_guest, bg="orange", fg="black")
-울주log4.place(x=240, y=10)
+울주log5 = Button(frame2, width=5, padx=10, pady=5, text="NO.5", command=울주_log_guest, bg="orange", fg="black")
+울주log5.place(x=240, y=10)
+울주log6 = Button(frame2, width=5, padx=10, pady=5, text="말일", command=울주_특정데이, bg="orange", fg="black")
+울주log6.place(x=300, y=10)
+
+
 
 #함수
 울주btn1 = Button(frame2, width=5, padx=10, pady=5, text="Saturday", command=울주_토요일, bg="white", fg="black")
@@ -125,7 +129,7 @@ notebook.add(frame3, text="★태화연★")
 태화연day10 = Button(frame3, width=2, padx=10, pady=5, text="토", command=태화연_Day52, bg="white", fg="black")
 태화연day10.place(x=270, y=50)
 태화연day11 = Button(frame3, width=5, padx=10, pady=5, text="Day", command=태화연_Day, bg="green", fg="white")
-태화연day11.place(x=300, y=50)
+태화연day11.place(x=300, y=50)   
 #함수
 태화연btn1 = Button(frame3, width=5, padx=10, pady=5, text="Reset", command=태화연_Reset, bg="white", fg="black")
 태화연btn1.place(x=0, y=90)

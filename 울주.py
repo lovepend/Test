@@ -422,14 +422,14 @@ def 울주_Next_N():
         #B사이트 * 2
         pag.click(690,510)
         #pag.click(690,120)
-        time.sleep(0.5)
+        #time.sleep(0.5)
         울주_검색()
         pag.hotkey('pgdn')
         time.sleep(0.5)
         울주_검색()
         
         #C사이트
-        #pag.click(760,510)
+        pag.click(760,510)
         pag.click(765,120)   
         time.sleep(0.5)
         울주_검색()
@@ -465,7 +465,94 @@ def 울주_Next_N():
         울주_검색()
         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             break
+
+def 울주_특정데이():
+    while True:
+        #페이지 선택
+        pag.doubleClick(1600,800)
+        울주_log()
         
+        #A사이트 * 2
+        #pag.click(620,510)
+        #time.sleep(0.2)
+        #울주_검색()
+        #pag.hotkey('pgdn')
+        #time.sleep(0.2)
+        #울주_검색()    
+        
+        #B사이트 * 2
+        pag.click(690,510)
+        #pag.click(690,120)
+        time.sleep(1)
+        #울주_검색()
+        pag.hotkey('pgdn')
+        time.sleep(1)
+        global find_range
+        find_range = (1162,660,1920,1080)
+        울주_검색()
+        
+        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+            break
+
+        #C사이트
+        #pag.click(760,510)
+        pag.click(765,120)   
+        time.sleep(1)
+        pag.hotkey('pgdn')
+        time.sleep(1)
+        find_range = (1164,763,1920,1080)
+        울주_검색()
+        
+        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+            break
+
+        #D사이트 * 2
+        #pag.click(840,510)
+        #pag.click(840,120)
+        pag.click(846,215)
+        #울주_검색()
+        time.sleep(1)
+        pag.doubleClick(1600,800)
+        pag.hotkey('pgdn')
+        time.sleep(1)
+        pag.hotkey('pgdn')
+        time.sleep(1)
+        find_range = (1162,542,1920,1080)
+        울주_검색()
+        
+        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+            break
+
+        #E사이트  * 2
+        #pag.click(920,510)
+        pag.click(920,120)
+        time.sleep(1)
+        #울주_검색()
+        pag.hotkey('pgdn')
+        time.sleep(1)
+        
+        find_range = (1164,709,1920,1080)
+        울주_검색()
+
+        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+            break
+        #F사이트
+        #pag.click(990,510)
+        pag.click(990,120)
+        time.sleep(1)#페이지 선택
+        #울주_검색()
+        pag.hotkey('pgdn')
+        time.sleep(1)
+        find_range = (1164,750,1920,1080)
+        울주_검색()
+        pag.doubleClick(1600,800)
+        pag.hotkey('home')
+        time.sleep(1)
+        pag.hotkey('home')
+        time.sleep(1)
+        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+            break
+
 #★★★★★★★★★★★★★★★★★★★ 스케쥴러      
 def 울주_자동():
     pag.click(466,84)

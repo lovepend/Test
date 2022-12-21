@@ -187,13 +187,35 @@ def 이미지_Start():
         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             break      
 
+def 카카오차단():
+    while True:
+        if keyboard.is_pressed("F2") : # F2 누른게 감지되면
+            print("F2 종료")
+        ################################    
+        pag.rightClick(232,310)
+        time.sleep(0.2)
+        pag.click(280,538)
+        time.sleep(0.2)
+        pag.click(132,390)
+        time.sleep(0.2)
+        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+            break      
+
+def 카카오삭제():
+    while True:
+        if keyboard.is_pressed("F2") : # F2 누른게 감지되면
+            print("F2 종료")
+        ################################    
+        pag.click(844,448)
+        time.sleep(0.2)
+        pag.click(568,350)
+        time.sleep(0.2)
+        pag.click(589,411)
+        time.sleep(0.2)
+        pag.click(711,363)
+        time.sleep(0.2)
+        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+            break      
 
 
-a = 1
-b = 2 
-
-
-
-
-
-print(i)
+카카오삭제()

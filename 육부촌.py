@@ -145,7 +145,7 @@ def 육부촌_확인() :
         육부촌_주소()
 
 def 육부촌_주소():
-    time.sleep(0.5)
+    time.sleep(1)
     pag.click(430,13)
     pyperclip.copy('반구로55')
     pag.click(809,896)   
