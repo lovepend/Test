@@ -1,5 +1,5 @@
-#박빙구 REST API = ddcfd4509dc2ec690ebb764199ff2247
-#code = https://kauth.kakao.com/oauth/authorize?client_id=ddcfd4509dc2ec690ebb764199ff2247&redirect_uri=https://example.com/oauth&response_type=code&scope=talk_message,friends
+#박빙구 REST API = 175e1d2a1cbd7e3bc2eca634e72f5846
+#code = https://kauth.kakao.com/oauth/authorize?client_id=175e1d2a1cbd7e3bc2eca634e72f5846&redirect_uri=https://example.com/oauth&response_type=code&scope=talk_message,friends
 
 #박정철 REST API = bb6714e8dac2cf258c4d3cc708b8d7ac
 #code = https://kauth.kakao.com/oauth/authorize?client_id=bb6714e8dac2cf258c4d3cc708b8d7ac&redirect_uri=https://example.com/oauth&response_type=code&scope=talk_message,friends
@@ -13,9 +13,9 @@ def access_token():
 
     data = {
         "grant_type" : "authorization_code",
-        "client_id" : "ddcfd4509dc2ec690ebb764199ff2247",
+        "client_id" : "175e1d2a1cbd7e3bc2eca634e72f5846",
         "redirect_url" : "https://localhost:3000",
-        "code" : "T8C3atQivM5EFcFSa4Cpu_ExWAIb6mdw7aXkYHzwMfwOiPzUoEY0KMxsYe_JxGpfFZ6bQAopyV8AAAGEnH9duA"
+        "code" : "xYfB3IcSsWShXkqA4GsKwzPqnFfmCqY-MDnjfJ2QPlRin_zd-_7OQLE_ti2qXu2TjGx-aAo9dZoAAAGFUtVfjw"
     }
     response = requests.post(url, data=data)
     tokens = response.json()
@@ -28,9 +28,9 @@ def refresh_token():
 
     data = {
         "grant_type": "refresh_token",
-        "client_id": "ddcfd4509dc2ec690ebb764199ff2247",
+        "client_id": "175e1d2a1cbd7e3bc2eca634e72f5846",
         #"refresh_token": "{refresh_token}"
-        "refresh_token": "xEfOSJ0IDhfHAe43zzgkUxDMNQJMbXvv43UuyXopCj102QAAAYScf64i"
+        "refresh_token": "6MQYpA1X0JngZfsYYs5pMSNegwykR1ZbONFRJM7bCj10EQAAAYVS1Zux"
     }
     response = requests.post(url, data=data)
     tokens = response.json()
@@ -119,6 +119,6 @@ def kakao_message_you(kakao_message_send):
 
 #access_token() #access_token()을 발급후 꼭 refresh_token을 기록 할 것 
 
-#refresh_token() #refresh_token을 입력후 테스트 
+refresh_token() #refresh_token을 입력후 테스트 
 
-#kakao_message_you("안녕하세요")
+kakao_message_you("안녕하세요")
