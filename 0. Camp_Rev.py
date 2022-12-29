@@ -2,7 +2,6 @@ from cgitb import reset
 from gettext import find
 import tkinter
 from tkinter import *
-
 from math import *
 from turtle import bgcolor, color, width
 import pyautogui as pag

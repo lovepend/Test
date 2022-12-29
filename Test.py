@@ -166,15 +166,23 @@ def Onekey():
 
 
 def 이미지_검색():
-    #검색
-    button = pag.locateCenterOnScreen("./image/naver.png", confidence=0.85) 
-    if (button == None) :
-        None      
-    else : 
-        time.sleep(1) 
-        refresh_token()
-        kakao_message_you("이미지")
+    while True:
+        if keyboard.is_pressed("F2") : # F2 누른게 감지되면
+            break
+        pag.click(850,670)
+        time.sleep(1)
+        #검색
+        button = pag.locateCenterOnScreen("./image/naver.png", confidence=0.85) 
+        if (button == None) :
+            pag.click(1000,670)
+            time.sleep(1)
+            None      
+        else : 
+            time.sleep(1) 
+            refresh_token()
+            kakao_message_you("이미지")
 
+이미지_검색()
 def 이미지_Start():
     while True:
         if keyboard.is_pressed("F2") : # F2 누른게 감지되면
@@ -218,4 +226,3 @@ def 카카오삭제():
             break      
 
 
-카카오삭제()
