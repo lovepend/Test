@@ -19,28 +19,28 @@ import json
 #★★★★★★★★★★★★★★★★★★★ 날짜 입력
 def 육부촌_Day1():
     global 육부촌_day1
-    육부촌_day1 = 953, 513
+    육부촌_day1 = 945,379
     print(육부촌_day1)
 
 def 육부촌_Day2():
-    global 육부촌_day1
-    육부촌_day1= 953, 545
-    print(육부촌_day1)
+    global 육부촌_day2
+    육부촌_day2= 945,402
+    print(육부촌_day2)
 
 def 육부촌_Day3():
-    global 육부촌_day1
-    육부촌_day1 = 953, 575
-    print(육부촌_day1)
+    global 육부촌_day3
+    육부촌_day3 = 945,419
+    print(육부촌_day3)
 
 def 육부촌_Day4():
-    global 육부촌_day1
-    육부촌_day1 = 952, 608
-    print(육부촌_day1)
+    global 육부촌_day4
+    육부촌_day4 = 945,439
+    print(육부촌_day4)
 
 def 육부촌_Day5():
-    global 육부촌_day1
-    육부촌_day1 = 952, 634
-    print(육부촌_day1)
+    global 육부촌_day5
+    육부촌_day5 = 945,461
+    print(육부촌_day5)
 
 ################################## 범위 
 global 육부촌_find_range
@@ -54,8 +54,16 @@ global 육부촌_position_down
 
 ################################## 날짜
 global 육부촌_day1
-육부촌_day1 = 953, 513
-
+육부촌_day1 = 945,379
+global 육부촌_day2
+육부촌_day2 = 945,402
+global 육부촌_day3
+육부촌_day3 = 945,419
+global 육부촌_day4
+육부촌_day4 = 945,439
+global 육부촌_day5
+육부촌_day5 = 945,461
+#육부촌_day5 = 902,441
 #★★★★★★★★★★★★★★★★★★★ 날짜 입력
 def 육부촌_Day():
     while True:
@@ -63,7 +71,7 @@ def 육부촌_Day():
             global 육부촌_day1 
             육부촌_day1  = pag.position()
             print(육부촌_day1)
-            time.sleep(0.5)
+            time.sleep(1)
             break         
 
 #★★★★★★★★★★★★★★★★★★★ 커서 입력
@@ -111,13 +119,34 @@ def 육부촌_자동입력():
 #★★★★★★★★★★★★★★★★★★★ 메인 함수 
 def 육부촌_Start():
     while True:
+        global 육부촌_day1
+        global 육부촌_day2
+        global 육부촌_day3
+        global 육부촌_day4
+        global 육부촌_day5
         if keyboard.is_pressed("F2") : # F2 누른게 감지되면
             print("F2 종료")
             break
         #날짜 클릭
-        pag.hotkey('f5')
+        pag.click(육부촌_day1)
+        time.sleep(1)
         육부촌_검색()
-        time.sleep(0.2)
+        pag.click(육부촌_day2)
+        time.sleep(1)
+        육부촌_검색()
+        pag.click(육부촌_day3)
+        time.sleep(1)
+        육부촌_검색()
+        pag.click(육부촌_day4)
+        time.sleep(1)
+        육부촌_검색()
+        pag.click(육부촌_day5)
+        time.sleep(1)
+        육부촌_검색()
+
+
+
+
 
 
      
@@ -146,24 +175,30 @@ def 육부촌_확인() :
 
 def 육부촌_주소():
     time.sleep(1)
-    pag.click(430,13)
+    #주소검색
+    pag.click(837,699)
     pyperclip.copy('반구로55')
-    pag.click(809,896)   
+    time.sleep(0.2)
+    #예)판교역로235
+    pag.click(315,139)
     time.sleep(0.4)
+    #반구로 55 붙이기
     pag.hotkey('ctrl','v')
     time.sleep(0.4)
+    #입력
     pag.hotkey('enter')
-    pag.click(358,267) 
     time.sleep(0.4)
-    pag.click(816,954)
+    #주소클릭
+    pag.click(295,263)   
     time.sleep(0.4)
-    pyperclip.copy('107동1001호')
+    #기본주소 클릭
+    pag.click(862,746) 
+    pyperclip.copy('107동 1001호')
     pag.hotkey('ctrl','v')
     time.sleep(0.4)
-    pag.click(1700,900)
-    pag.hotkey('pgdn')
+    #예약신청
+    pag.click(1021,939)
     time.sleep(0.4)
-    pag.click(1051,873)
     time.sleep(500)
 
 

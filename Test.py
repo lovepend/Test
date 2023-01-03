@@ -169,18 +169,22 @@ def 이미지_검색():
     while True:
         if keyboard.is_pressed("F2") : # F2 누른게 감지되면
             break
-        pag.click(850,670)
-        time.sleep(1)
+        pag.click(1379,346)
+        time.sleep(0.5)
         #검색
-        button = pag.locateCenterOnScreen("./image/naver.png", confidence=0.85) 
-        if (button == None) :
-            pag.click(1000,670)
-            time.sleep(1)
+        button1 = pag.locateCenterOnScreen("./image/222.png", confidence=0.85, region=(0,0,1623,596)) 
+        button2 = pag.locateCenterOnScreen("./image/222.png", confidence=0.85, region=(0,0,1623,596)) 
+        if (button1 == None and button2 == None) :
             None      
         else : 
-            time.sleep(1) 
+            time.sleep(0.5) 
             refresh_token()
             kakao_message_you("이미지")
+            time.sleep(10000)
+            print('찾')
+        
+
+
 
 이미지_검색()
 def 이미지_Start():
