@@ -54,15 +54,17 @@ global 육부촌_position_down
 
 ################################## 날짜
 global 육부촌_day1
-육부촌_day1 = 945,379
+#육부촌_day1 = 945,379 #첫주
+육부촌_day1 = 943, 416 # 21일
 global 육부촌_day2
-육부촌_day2 = 945,402
+육부촌_day2 = 660,439 # 22일
 global 육부촌_day3
-육부촌_day3 = 945,419
+육부촌_day3 = 709,439 # 23일
 global 육부촌_day4
-육부촌_day4 = 945,439
+육부촌_day4 = 945,439 #
 global 육부촌_day5
-육부촌_day5 = 945,461
+육부촌_day5 = 25,49 #뒤로
+#육부촌_day5 = 709, 442 #23일
 #육부촌_day5 = 902,441
 #★★★★★★★★★★★★★★★★★★★ 날짜 입력
 def 육부촌_Day():
@@ -114,8 +116,9 @@ def 육부촌_범위선택():
 #★★★★★★★★★★★★★★★★★★★ 자동 입력
 def 육부촌_자동입력():
     time.sleep(2)
-    
-    
+
+global i 
+i = 0    
 #★★★★★★★★★★★★★★★★★★★ 메인 함수 
 def 육부촌_Start():
     while True:
@@ -124,10 +127,14 @@ def 육부촌_Start():
         global 육부촌_day3
         global 육부촌_day4
         global 육부촌_day5
+        global i
+        i = i +1
+        print(i)
         if keyboard.is_pressed("F2") : # F2 누른게 감지되면
             print("F2 종료")
             break
         #날짜 클릭
+        time.sleep(0.5)
         pag.click(육부촌_day1)
         time.sleep(1)
         육부촌_검색()
@@ -145,15 +152,9 @@ def 육부촌_Start():
         육부촌_검색()
 
 
-
-
-
-
-     
-
 def 육부촌_검색():
     #검색
-    button = pag.locateCenterOnScreen("./image/05._1. reservation.png", region = 육부촌_find_range, confidence=0.85) 
+    button = pag.locateCenterOnScreen("./image/05._1. reservation.png", region = 육부촌_find_range)#, confidence=0.85) 
     if (button == None) :
         None      
     else : 
@@ -174,7 +175,7 @@ def 육부촌_확인() :
         육부촌_주소()
 
 def 육부촌_주소():
-    time.sleep(1)
+    time.sleep(0.5)
     #주소검색
     pag.click(837,699)
     pyperclip.copy('반구로55')
@@ -198,6 +199,8 @@ def 육부촌_주소():
     time.sleep(0.4)
     #예약신청
     pag.click(1021,939)
+    button2 = pag.locateCenterOnScreen('./image/05._3. next.png', confidence=0.7)   
+    pag.click(button2.x,button2.y, button='left', clicks=1, interval=0.1) 
     time.sleep(0.4)
     time.sleep(500)
 
