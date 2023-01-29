@@ -14,7 +14,7 @@ import requests
 import time
 import json
 
-#육부촌 Test 2022.06.28 #Viewer Size 75% #화면 맨아래로 통일
+#육부촌 Test 2022.06.28 #Viewer Size 50% #화면 맨아래로 통일
 
 #★★★★★★★★★★★★★★★★★★★ 날짜 입력
 def 육부촌_Day1():
