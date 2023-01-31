@@ -415,7 +415,9 @@ def 태화연_StepC() :
         태화연_StepC()      
     else : 
         pag.hotkey('down')
-        time.sleep(0.2)
+        time.sleep(0.1)
+        pag.hotkey('down')
+        time.sleep(0.1)
         pag.click(1800,800)
         time.sleep(0.2)
         pag.hotkey('end')

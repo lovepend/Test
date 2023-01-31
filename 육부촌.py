@@ -55,13 +55,13 @@ global 육부촌_position_down
 ################################## 날짜
 global 육부촌_day1
 #육부촌_day1 = 945,379 #첫주
-육부촌_day1 = 943, 416 # 21일
+육부촌_day1 = 900, 402 # 21일
 global 육부촌_day2
-육부촌_day2 = 660,439 # 22일
+육부촌_day2 = 900, 402 # 22일
 global 육부촌_day3
-육부촌_day3 = 709,439 # 23일
+육부촌_day3 = 900, 402 # 23일
 global 육부촌_day4
-육부촌_day4 = 945,439 #
+육부촌_day4 = 900, 421 #
 global 육부촌_day5
 육부촌_day5 = 25,49 #뒤로
 #육부촌_day5 = 709, 442 #23일
@@ -138,15 +138,15 @@ def 육부촌_Start():
         pag.click(육부촌_day1)
         time.sleep(1)
         육부촌_검색()
-        pag.click(육부촌_day2)
-        time.sleep(1)
-        육부촌_검색()
-        pag.click(육부촌_day3)
-        time.sleep(1)
-        육부촌_검색()
-        pag.click(육부촌_day4)
-        time.sleep(1)
-        육부촌_검색()
+        #pag.click(육부촌_day2)
+        #time.sleep(1)
+        #육부촌_검색()
+        #pag.click(육부촌_day3)
+        #time.sleep(1)
+        #육부촌_검색()
+        #pag.click(육부촌_day4)
+        #time.sleep(1)
+        #육부촌_검색()
         pag.click(육부촌_day5)
         time.sleep(1)
         육부촌_검색()
