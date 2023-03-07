@@ -101,26 +101,30 @@ def 울주_page1():
     pag.hotkey('ctrl','c')
     refresh_token()
     kakao_message_you(pyperclip.paste())
+    #페이지 선택
+    pag.doubleClick(1600,800)
+    pag.sleep(0.1)
     #기간
-    pag.click(x=907, y=750)
-    pag.sleep(0.1)
+    pag.click(x=936, y=745)
+    pag.sleep(0.2)
     pag.hotkey('end')
-    pag.sleep(0.1)
+    pag.sleep(0.2)
     #총인원
-    pag.click(x=1019, y=747)
-    pag.sleep(0.1)
+    pag.click(x=1043, y=747)
+    pag.sleep(0.2)
     pag.hotkey('end')
     #페이지 선택
     pag.doubleClick(1600,800)
     #페이지 아래
     pag.hotkey('end')
     time.sleep(0.3)    
-    pag.click(1175,850, button='left', interval=0.1, clicks=1)
+    pag.click(1211,800, button='left', interval=0.1, clicks=1)
     time.sleep(0.1) 
     #다음 페이지
     울주_page2()
 
 def 울주_page2():
+    time.sleep(0.2) 
     #페이지 선택
     pag.doubleClick(1600,800)
     #페이지 아래
@@ -128,16 +132,17 @@ def 울주_page2():
     time.sleep(0.3)
     #방문차량번호
     pyperclip.copy('62소9403')
-    pag.click(766,285)
+    pag.click(803,239)
     time.sleep(0.3)
     pag.hotkey('ctrl','v')
     #도착예정시간
-    pag.click(772,243)
+    pag.click(796,200)
     time.sleep(0.1)
     pag.hotkey('down')
-    pag.click(587,637)
+    #개인정보
+    pag.click(675,591)
     time.sleep(0.1)
-    pag.click(1177,851)
+    pag.click(1203,800)
     울주_page3()
 
  
