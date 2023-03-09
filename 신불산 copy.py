@@ -86,22 +86,22 @@ def 신불산_Log_Guest():
        
 def 신불산_Day1():
     global 신불산_day
-    신불산_day = 890, 685
+    신불산_day = 922, 667
     print(신불산_day)
 
 def 신불산_Day2():
     global 신불산_day
-    신불산_day = 890, 730
+    신불산_day = 922, 712
     print(신불산_day)
 
 def 신불산_Day3():
     global 신불산_day
-    신불산_day = 890, 773
+    신불산_day = 922, 757
     print(신불산_day)
 
 def 신불산_Day4():
     global 신불산_day
-    신불산_day = 890, 824
+    신불산_day = 922, 800
     print(신불산_day)
 
 #★★★★★★★★★★★★★★★★★★★ 날짜 입력

@@ -109,52 +109,52 @@ def 신불산_Day():
        
 def 신불산_Day11():
     global 신불산_day
-    신불산_day = 840, 670
+    신불산_day = 870, 660
     print(신불산_day)
 
 def 신불산_Day12():
     global 신불산_day
-    신불산_day = 890, 670
+    신불산_day = 920, 660
     print(신불산_day)
 
 def 신불산_Day21():
     global 신불산_day
-    신불산_day = 840, 715
+    신불산_day = 870, 715
     print(신불산_day)
 
 def 신불산_Day22():
     global 신불산_day
-    신불산_day = 890, 715
+    신불산_day = 922, 715
     print(신불산_day)
 
 def 신불산_Day31():
     global 신불산_day
-    신불산_day = 840, 760
+    신불산_day = 870, 760
     print(신불산_day)
 
 def 신불산_Day32():
     global 신불산_day
-    신불산_day = 890, 760
+    신불산_day = 922, 760
     print(신불산_day)
 
 def 신불산_Day41():
     global 신불산_day
-    신불산_day = 840, 805
+    신불산_day = 870, 805
     print(신불산_day)
 
 def 신불산_Day42():
     global 신불산_day
-    신불산_day = 890, 805
+    신불산_day = 922, 805
     print(신불산_day)
 
 def 신불산_Day51():
     global 신불산_day
-    신불산_day = 840, 850
+    신불산_day = 870, 850
     print(신불산_day)
 
 def 신불산_Day52():
     global 신불산_day
-    신불산_day = 890, 850
+    신불산_day = 922, 850
     print(신불산_day)
 
 #★★★★★★★★★★★★★★★★★★★ 타임 설정

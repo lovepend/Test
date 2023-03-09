@@ -32,9 +32,9 @@ global 대왕암_pw
 
 ################################## 커서
 global 대왕암_position_up
-대왕암_position_up  = 1300,706
+대왕암_position_up  = 1135,747
 global 대왕암_position_down
-대왕암_position_down  = 1300,909
+대왕암_position_down  = 1135,952
 
 #★★★★★★★★★★★★★★★★★★★ 리셋 입력
 def 대왕암_Reset():
@@ -76,22 +76,22 @@ global 대왕암_i
 #★★★★★★★★★★★★★★★★★★★ 날짜 입력
 def 대왕암_Day1():
     global 대왕암_day1
-    대왕암_day1 = 878,673
+    대왕암_day1 = 913,723
     print(대왕암_day1)
 
 def 대왕암_Day2():
     global 대왕암_day1
-    대왕암_day1= 878,729
+    대왕암_day1= 913,767
     print(대왕암_day1)
 
 def 대왕암_Day3():
     global 대왕암_day1
-    대왕암_day1 = 878,763
+    대왕암_day1 = 913,814
     print(대왕암_day1)
 
 def 대왕암_Day4():
     global 대왕암_day1
-    대왕암_day1 = 878,809
+    대왕암_day1 = 913,901
     print(대왕암_day1)
 
 #★★★★★★★★★★★★★★★★★★★ 날짜 입력
@@ -244,15 +244,15 @@ def 대왕암_확인() :
     if (button1 == None) :
         대왕암_확인()      
     else :
-        pag.click(1084,283)
+        pag.click(1130,283)
         time.sleep(0.05)
-        pag.click(1084,283)
+        pag.click(1130,283)
         time.sleep(0.05)
-        pag.click(1084,283)
+        pag.click(1130,283)
         time.sleep(0.05)
-        pag.click(1084,283)
+        pag.click(1130,283)
         time.sleep(0.05)
-        pag.click(1084,283)
+        pag.click(1130,283)
         time.sleep(0.05)
         pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
         refresh_token()
