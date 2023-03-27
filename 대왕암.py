@@ -14,7 +14,7 @@ import requests
 import time
 import json
 
-#대왕암 Test 2022.03.17 #Viewer Size 80% #화면 맨아래로 통일
+#대왕암 Test 2022.03.17 #Viewer Size 67% #화면 맨아래로 통일
 
 ################################## 리셋 
 global 대왕암_end_command
@@ -22,7 +22,7 @@ global 대왕암_end_command
 
 ################################## 범위 
 global 대왕암_find_range
-대왕암_find_range = 860,521,1515,968
+대왕암_find_range = 921,657,1387,1025
 
 ################################## 아이디
 global 대왕암_id
@@ -32,9 +32,9 @@ global 대왕암_pw
 
 ################################## 커서
 global 대왕암_position_up
-대왕암_position_up  = 1135,747
+대왕암_position_up  = 1335,780
 global 대왕암_position_down
-대왕암_position_down  = 1135,952
+대왕암_position_down  = 1335,979
 
 #★★★★★★★★★★★★★★★★★★★ 리셋 입력
 def 대왕암_Reset():
@@ -76,24 +76,28 @@ global 대왕암_i
 #★★★★★★★★★★★★★★★★★★★ 날짜 입력
 def 대왕암_Day1():
     global 대왕암_day1
-    대왕암_day1 = 913,723
+    대왕암_day1 = 913,761
     print(대왕암_day1)
 
 def 대왕암_Day2():
     global 대왕암_day1
-    대왕암_day1= 913,767
+    대왕암_day1= 913,807
     print(대왕암_day1)
 
 def 대왕암_Day3():
     global 대왕암_day1
-    대왕암_day1 = 913,814
+    대왕암_day1 = 913,852
     print(대왕암_day1)
 
 def 대왕암_Day4():
     global 대왕암_day1
-    대왕암_day1 = 913,901
+    대왕암_day1 = 913,892
     print(대왕암_day1)
 
+def 대왕암_Day5():
+    global 대왕암_day5
+    대왕암_Day5 = 913,947
+    print(대왕암_day5)
 #★★★★★★★★★★★★★★★★★★★ 날짜 입력
 def 대왕암_Day():
     while True:
@@ -183,21 +187,9 @@ def 대왕암_자동입력():
 #★★★★★★★★★★★★★★★★★★★ 메인 함수 
 def 대왕암_Start():
     while True:
-        tm = time.localtime()
-        if 대왕암_end_command == 1 : # 대왕암_end_command 가 1이 되면
-            print("end_command = 1 종료")
-            break
         if keyboard.is_pressed("F2") : # F2 누른게 감지되면
             print("F2 종료")
             break
-        #종료 조건
-        if (tm.tm_hour == 13 and tm.tm_min == 40) or (tm.tm_hour == 8 and tm.tm_min == 40) : #10시 50분 및 14시 50분 종료
-            print("minute 중지")
-            print(tm.tm_hour ,"시", tm.tm_min ,"분", tm.tm_sec,"초")
-            break
-        global 대왕암_i
-        대왕암_i = 대왕암_i + 1
-        print(대왕암_i)
         #날짜 클릭
         pag.click(대왕암_day1)
         time.sleep(0.5)

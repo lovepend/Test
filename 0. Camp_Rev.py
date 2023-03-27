@@ -170,14 +170,14 @@ lable1.place(x=310, y=27)
     
 entry1 = Entry(frame4, width=5)
 entry1.place(x=310, y=8)
-entry1.insert(0,"58")
+entry1.insert(0,"05")
 
 lable2=Label(frame4, text="sec")
 lable2.place(x=360, y=27)
     
 entry2 = Entry(frame4, width=5)
 entry2.place(x=360, y=8)
-entry2.insert(0,"16")
+entry2.insert(0,"00")
 
 신불산time_s = Button(frame4, width=5, padx=5, pady=5, text="초", command=시간입력, bg="orange", fg="black")
 신불산time_s.place(x=410, y=10)

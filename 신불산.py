@@ -273,7 +273,7 @@ def 신불산_Start(신불산_min,신불산_sec):
         if (tm.tm_hour == 9 and tm.tm_min == 신불산_min and tm.tm_sec == 신불산_sec) or (tm.tm_hour == 13 and tm.tm_min == 신불산_min and tm.tm_sec == 신불산_sec) : #9시 56분 및 15시 56분 시작
         #if (tm.tm_hour == 10 and tm.tm_min == 19 and tm.tm_sec == 10) or (tm.tm_hour == 14 and tm.tm_min == 56 and tm.tm_sec == 37) : #TEST
             pag.click(신불산_day)
-            for i in range(200):
+            for i in range(500):
                 button = pag.locateCenterOnScreen("./image/04._1. reservation.png", region = 신불산_find_range, confidence=0.7) 
                 print(i)
                 if (button == None) :
@@ -320,7 +320,7 @@ def 신불산_검색():
         신불산_StepA()
                 
 def 신불산_StepA() : 
-    time.sleep(0.5)
+    time.sleep(0.2)
     button1 = pag.locateCenterOnScreen('./image/04._2. next.png',  confidence=0.8)   #region = (510,100,1324,333),
     print(button1)
     if (button1 == None) :
