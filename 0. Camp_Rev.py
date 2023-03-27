@@ -91,7 +91,7 @@ notebook.add(frame2, text="★울주해양" )
 
 
 frame3=tkinter.Frame(window)
-notebook.add(frame3, text="★태화연★")
+notebook.add(frame3, text="★태화연1★")
 
 #로그
 태화연log1 = Button(frame3, width=5, padx=10, pady=5, text="NO.1", command=태화연_Log_Id1, bg="orange", fg="black")
