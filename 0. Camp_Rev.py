@@ -43,7 +43,7 @@ notebook=tkinter.ttk.Notebook(window, width=460, height=165)
 notebook.pack()
 
 frame1=tkinter.Frame(window)
-notebook.add(frame1, text="★Auto" )
+notebook.add(frame1, text="★Auto1" )
 
 #스케쥴 진행
 Autobtn1 = Button(frame1, width=5, padx=10, pady=5, text="스케쥴러", command=schedule_job, bg="orange", fg="black")
