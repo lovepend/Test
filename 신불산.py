@@ -317,15 +317,24 @@ def 신불산_검색():
         pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
         신불산_StepA()
                 
+<<<<<<< HEAD
 def 신불산_StepA() : 
+=======
+def 신불산_StepA() : ## 예약하기 버튼 순간 정할것
+>>>>>>> 3c8219148627e33e8a7773e9cf098fc5b8351e00
     button1 = pag.locateCenterOnScreen('./image/04._2. next.png',  confidence=0.8)   #region = (510,100,1324,333),
     print(button1)
     if (button1 == None) :
         신불산_StepA()      
     else :
         pag.click(button1.x+20,button1.y+30, button='left', clicks=1, interval=0.1)
+<<<<<<< HEAD
         refresh_token()
         kakao_message_you("신불산")
+=======
+        #refresh_token()
+        #kakao_message_you("신불산")
+>>>>>>> 3c8219148627e33e8a7773e9cf098fc5b8351e00
         time.sleep(30)
         #다음 액션 
 

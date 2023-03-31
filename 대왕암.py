@@ -270,13 +270,9 @@ def 대왕암_확인() :
 #★★★★★★★★★★★★★★★★★★★ 서브 함수
 def 대왕암_Karavan():
     while True:
-        if 대왕암_end_command == 1 : # 대왕암_end_command 가 1이 되면
-            break
         if keyboard.is_pressed("F2") : # F2 누른게 감지되면
             print("중지")
             break
-        global i
-        i = i + 1
         #날짜 클릭
         pag.click(대왕암_day1)
         time.sleep(0.2)
