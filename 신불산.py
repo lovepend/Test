@@ -324,6 +324,8 @@ def 신불산_StepA() : ## 예약하기 버튼 순간 정할것
         신불산_StepA()      
     else :
         pag.click(button1.x+20,button1.y+30, button='left', clicks=1, interval=0.1)
+        button1 = pag.locateCenterOnScreen('./image/04._2. next.png',  confidence=0.8)   #region = (510,100,1324,333),
+        pag.click(button1.x+20,button1.y+30, button='left', clicks=1, interval=0.1)
         refresh_token()
         kakao_message_you("신불산")
         time.sleep(30)
