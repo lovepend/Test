@@ -105,12 +105,12 @@ def 울주_page1():
     pag.doubleClick(1600,800)
     pag.sleep(0.1)
     #기간
-    pag.click(x=936, y=745)
+    pag.click(x=936, y=730)
     pag.sleep(0.2)
     pag.hotkey('end')
     pag.sleep(0.2)
     #총인원
-    pag.click(x=1043, y=747)
+    pag.click(x=1043, y=730)
     pag.sleep(0.2)
     pag.hotkey('end')
     #페이지 선택
@@ -132,15 +132,15 @@ def 울주_page2():
     time.sleep(0.3)
     #방문차량번호
     pyperclip.copy('399수5675')
-    pag.click(803,239)
+    pag.click(800,240)
     time.sleep(0.3)
     pag.hotkey('ctrl','v')
     #도착예정시간
-    pag.click(796,200)
+    pag.click(800,200)
     time.sleep(0.1)
     pag.hotkey('down')
     #개인정보
-    pag.click(675,591)
+    pag.click(770,590)
     time.sleep(0.1)
     pag.click(1203,800)
     울주_page3()
