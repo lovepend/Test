@@ -322,27 +322,51 @@ def 신불산_StepA() : ## 예약하기 버튼 순간 정할것
     print(button1)
     if (button1 == None) :
         신불산_StepA()      
-    else :
+    else :  
         pag.click(button1.x+20,button1.y+30, button='left', clicks=1, interval=0.1)
         button1 = pag.locateCenterOnScreen('./image/04._2. next.png',  confidence=0.8)   #region = (510,100,1324,333),
-        c = 0
-        if (c == 100) :
-          c = c + 1
-          print(c)
-          pag.click(button1.x+20,button1.y+30, button='left', clicks=1, interval=0.1)
-        else:
-          None
-          print('end')
-        print('kakao')
-        refresh_token()
-        tm = time.localtime()
-        kakao_tm = tm.tm_hour,tm.tm_min,tm.tm_sec
-        text = str(kakao_tm)
-        print(text)
-        kakao_message_you(text)
-        time.sleep(30)
-        #다음 액션 
+        pag.click(button1.x+20,button1.y+30, button='left', clicks=1, interval=0.1)
+        pag.click(button1.x+20,button1.y+30, button='left', clicks=1, interval=0.1)
+        pag.click(button1.x+20,button1.y+30, button='left', clicks=1, interval=0.1)
+        button1 = pag.locateCenterOnScreen('./image/04._2. next.png',  confidence=0.8)   #region = (510,100,1324,333),
+        pag.click(button1.x+20,button1.y+30, button='left', clicks=1, interval=0.1)
+        pag.click(button1.x+20,button1.y+30, button='left', clicks=1, interval=0.1)
+        pag.click(button1.x+20,button1.y+30, button='left', clicks=1, interval=0.1)
+        pag.click(button1.x+20,button1.y+30, button='left', clicks=1, interval=0.1)
+        pag.click(button1.x+20,button1.y+30, button='left', clicks=1, interval=0.1)
 
+        
+       
+        # c = 0
+        # while True:
+        #   if (c < 10) :
+        #     c = c + 1
+        #     print(c)
+        #     pag.click(button1.x+20,button1.y+30, button='left', clicks=1, interval=0.1)
+        #   else:
+        #     print('end')
+        #     print('kakao')
+        #     break
+        신불산_StepB()
+
+
+def 신불산_StepB() : ## 예약하기 버튼 순간 정할것
+    time.sleep(1)
+    pag.click(1235,117)
+    button1 = pag.locateCenterOnScreen('./image/04._3. Check.png',  confidence=0.8)   #region = (510,100,1324,333),
+    print(button1)
+    if (button1 == None) :
+      신불산_StepB()  
+      time.sleep(600)   
+    else :
+      refresh_token()
+      tm = time.localtime()
+      kakao_tm = tm.tm_hour,tm.tm_min,tm.tm_sec
+      text = str(kakao_tm)
+      print(text)
+      kakao_message_you(text)
+      time.sleep(30)
+      #다음 액션  
 
 #★★★★★★★★★★★★★★★★★★★ 스케쥴러
   
