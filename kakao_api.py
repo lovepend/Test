@@ -15,7 +15,7 @@ def access_token():
         "grant_type" : "authorization_code",
         "client_id" : "175e1d2a1cbd7e3bc2eca634e72f5846",
         "redirect_url" : "https://localhost:3000",
-        "code" : "z9zT1NXr3ECcTN272YO4YpTC_Xb3s4CiXVhHYbH_GuPa-EcXgXo5aCL4Vqyh8WldYXkA1QoqJQ8AAAGGu49rkQ"
+        "code" : "1vU0YhT8bDNzp129_1EqBs-UbHVJjT2Jwv4TNvLIJyJ5yZ0AXwRxrnjRSm6vx3qQRDyogAopyNoAAAGHWyHSsA"
     }
     response = requests.post(url, data=data)
     tokens = response.json()
@@ -30,7 +30,7 @@ def refresh_token():
         "grant_type": "refresh_token",
         "client_id": "175e1d2a1cbd7e3bc2eca634e72f5846",
         #"refresh_token": "{refresh_token}"
-        "refresh_token": "V1-0iK3LvxC44nOQ7yWAgkgy6ksUd3qIV5kNN79kCj1z6wAAAYa7j6LJ"
+        "refresh_token": "Jj_VTH32sO_0Iey70bSCsuiobeUoL6PBoptoXzVwCj11WgAAAYdbIf6A"
     }
     response = requests.post(url, data=data)
     tokens = response.json()
