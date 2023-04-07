@@ -14,6 +14,8 @@ import requests
 import time
 import json
 
+pag.FAILSAFE=False
+
 #대왕암 Test 2022.03.17 #Viewer Size 67% #화면 맨아래로 통일
 
 ################################## 리셋 

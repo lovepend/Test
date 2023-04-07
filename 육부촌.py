@@ -14,6 +14,8 @@ import requests
 import time
 import json
 
+pag.FAILSAFE=False
+
 #육부촌 Test 2022.06.28 #Viewer Size 50% #화면 맨아래로 통일
 
 #★★★★★★★★★★★★★★★★★★★ 날짜 입력

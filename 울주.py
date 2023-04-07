@@ -13,6 +13,8 @@ import pyperclip
 import time
 import json
 
+pag.FAILSAFE=False
+
 
 #울주해양예약 시스템 2022.01.11 #Vier Size 67%
 

@@ -19,6 +19,8 @@ import json
 import datetime
 import sys
 
+pag.FAILSAFE=False
+
 #신불산 Test 2022.03.21 #Viewer Size 67%
 #56분 36초
 
