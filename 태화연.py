@@ -14,6 +14,8 @@ import pyperclip
 import time
 import json
 
+pag.FAILSAFE=False
+
 #now = time.localtime()
 #print( now.tm_hour ) 
 #print( now.tm_min ) 
