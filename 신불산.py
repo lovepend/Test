@@ -326,28 +326,9 @@ def 신불산_StepA() : ## 예약하기 버튼 순간 정할것
         신불산_StepA()      
     else :  
         #pag.click(button1.x+20,button1.y+30, button='left', clicks=1, interval=0.1)
-        pag.click(1264,247)
+        #pag.click(1264,247)
         pag.click(1264,276)
-        pag.click(1264,276)
-        pag.click(1264,276)
-        pag.click(1264,276)
-        pag.click(1264,276)
-        pag.click(1264,276)
-        pag.click(1264,276)
-        pag.click(1264,276)
-        pag.click(1264,276)
-        pag.click(1264,276)
-        pag.click(1264,276)
-        pag.click(1264,276)
-        pag.click(1264,276)
-        pag.click(1264,276)
-        pag.click(1264,276)
-        pag.click(1264,276)
-        pag.click(1264,276)
-        pag.click(1264,276)
-        pag.click(1264,276)
-        pag.click(1264,276)
-        pag.click(1264,276)       
+        print("끝")
         # c = 0
         # while True:
         #   if (c < 10) :
@@ -358,19 +339,18 @@ def 신불산_StepA() : ## 예약하기 버튼 순간 정할것
         #     print('end')
         #     print('kakao')
         #     break
+        if keyboard.is_pressed("F2"):
+          time.sleep(600)
         신불산_StepB()
-
 
 def 신불산_StepB() : ## 예약하기 버튼 순간 정할것
     time.sleep(1)
     pag.click(1235,117)
     pag.click(1235,117)
-    pag.click(1235,117)
     button1 = pag.locateCenterOnScreen('./image/04._3. Check.png',  confidence=0.8)   #region = (510,100,1324,333),
-    print(button1)
     if (button1 == None) :
+      time.sleep(10) 
       신불산_StepB()  
-      time.sleep(120)  
     else :
       refresh_token()
       tm = time.localtime()
