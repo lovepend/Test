@@ -12,6 +12,7 @@ import schedule
 import pyperclip
 import time
 import json
+import random
 
 pag.FAILSAFE=False
 
@@ -319,12 +320,46 @@ def 울주_log1():
 #★★★★★★★★★★★★★★★★★★★ 메인 함수
 def 울주_This_A():
     while True:
+        i = 1
+        #페이지 선택
+        pag.doubleClick(1600,800)
+        울주_log()
+        pag.hotkey('f5')
+        #울주_검색()
+        time.sleep(5)
+        pag.hotkey('end')
+        ####
+        time.sleep(5)
+        while True: 
+            if i == 1000:
+              pag.hotkey('home')
+              time.sleep(0.5)
+              pag.hotkey('home')
+              time.sleep(0.5)
+              울주_This_A()
+            if i < 1000:
+              i = i+1
+              pag.hotkey('f5')
+              time.sleep(1)
+              울주_검색()
+              print(i)
+            num = random.randrange(20,50)
+            num1 = num/100
+            time.sleep(num1)
+            print(num1)
+            if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+                break
+            
+
+
+def 울주_This_A_Backup():
+    while True:
         #페이지 선택
         pag.doubleClick(1600,800)
         울주_log()
         pag.hotkey('f5')
         time.sleep(0.2)
-        울주_검색()
+        #울주_검색()
         pag.hotkey('pgdn')
         pag.hotkey('f5')
         time.sleep(0.2)
