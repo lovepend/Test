@@ -325,9 +325,9 @@ def 신불산_StepA() : ## 예약하기 버튼 순간 정할것
         #     break
         if keyboard.is_pressed("F2"):
           time.sleep(600)
-        #신불산_StepB()
+        신불산_StepB()
 
-신불산_StepA()
+
 
 def 신불산_StepB() : ## 예약하기 버튼 순간 정할것
     time.sleep(1)
