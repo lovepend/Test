@@ -288,28 +288,6 @@ def 신불산_Start(신불산_min,신불산_sec):
         pag.click(신불산_day)  
         time.sleep(time_controll)
         신불산_검색()     
-        # pag.click(신불산_day[0]+927 ,신불산_day[1]+0)
-        # time.sleep(time_controll)        
-        # 신불산_검색()   
-        # pag.click(신불산_day[0]+0 ,신불산_day[1]+539)
-        # time.sleep(time_controll)     
-        # 신불산_검색()  
-        # pag.click(신불산_day[0]+927 ,신불산_day[1]+539)
-        # time.sleep(time_controll)      
-        # 신불산_검색()   
-        # pag.click(신불산_day[0]+1920 ,신불산_day[1]+0)
-        # time.sleep(time_controll)      
-        # 신불산_검색() 
-        # pag.click(신불산_day[0]+1920 ,신불산_day[1]+540)
-        # time.sleep(time_controll)     
-        # 신불산_검색()
-        # pag.click(신불산_day[0]+2850 ,신불산_day[1]+1)
-        # time.sleep(time_controll) 
-        # 신불산_검색()
-        # pag.click(신불산_day[0]+2850 ,신불산_day[1]+540)
-        # time.sleep(time_controll)    
-        # 신불산_검색()        
-        # 신불산_검색()     
 
 def 신불산_검색():                    
     button = pag.locateCenterOnScreen("./image/04._1. reservation.png",  confidence=0.7) #region = 신불산_find_range,
@@ -325,9 +303,15 @@ def 신불산_StepA() : ## 예약하기 버튼 순간 정할것
     if (button1 == None) :
         신불산_StepA()      
     else :  
-        #pag.click(button1.x+20,button1.y+30, button='left', clicks=1, interval=0.1)
+        pag.click(button1.x+10,button1.y, button='left', clicks=1, interval=0.1)        
+        button1 = pag.locateCenterOnScreen('./image/04._2. next.png',  confidence=0.8)   #region = (510,100,1324,333),
+        pag.click(button1.x+10,button1.y, button='left', clicks=1, interval=0.1)
+        button1 = pag.locateCenterOnScreen('./image/04._2. next.png',  confidence=0.8)   #region = (510,100,1324,333),
+        pag.click(button1.x+10,button1.y, button='left', clicks=1, interval=0.1)
+        button1 = pag.locateCenterOnScreen('./image/04._2. next.png',  confidence=0.8)   #region = (510,100,1324,333),
+        pag.click(button1.x+10,button1.y, button='left', clicks=1, interval=0.1)
         #pag.click(1264,247)
-        pag.click(1264,276)
+        #pag.click(1264,276)
         print("끝")
         # c = 0
         # while True:
@@ -341,7 +325,9 @@ def 신불산_StepA() : ## 예약하기 버튼 순간 정할것
         #     break
         if keyboard.is_pressed("F2"):
           time.sleep(600)
-        신불산_StepB()
+        #신불산_StepB()
+
+신불산_StepA()
 
 def 신불산_StepB() : ## 예약하기 버튼 순간 정할것
     time.sleep(1)
