@@ -331,6 +331,8 @@ def 울주_This_A():
         ####
         time.sleep(5)
         while True: 
+            if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+                break
             if i == 1000:
               pag.hotkey('home')
               time.sleep(0.5)
