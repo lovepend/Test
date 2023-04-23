@@ -89,9 +89,10 @@ def 울주줍줍_토요일():
 #★★★★★★★★★★★★★★★★★★★ 메인 함수
 def 울주줍줍_검색():
     #Saturday = 1164,102,1263,1080 #토요일만 검색 
-    button = pag.locateCenterOnScreen('./image/01. Ulju/01_0. reservation1.png', region = find_range, confidence=0.9)
+    button = pag.locateCenterOnScreen('./image/01. Ulju/01_91. jubjub.png', region = find_range, confidence=0.9)
     if (button == None) :
-        None        
+        None     
+        울주줍줍_검색()   
     else :
         울주줍줍_page1()
 
@@ -131,7 +132,7 @@ def 울주줍줍_page2():
     pag.hotkey('end')
     time.sleep(0.3)
     #방문차량번호
-    pyperclip.copy('399수5675')
+    pyperclip.copy('62소9403')
     pag.click(800,240)
     time.sleep(0.3)
     pag.hotkey('ctrl','v')

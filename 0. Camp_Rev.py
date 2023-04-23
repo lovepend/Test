@@ -48,7 +48,7 @@ frame1=tkinter.Frame(window)
 notebook.add(frame1, text="★Auto1" )
 
 #스케쥴 진행
-Autobtn1 = Button(frame1, width=5, padx=10, pady=5, text="울주줍줍", command=울주줍줍_page1, bg="orange", fg="black")
+Autobtn1 = Button(frame1, width=5, padx=10, pady=5, text="울주줍줍", command=울주줍줍_검색, bg="orange", fg="black")
 Autobtn1.place(x=0, y=10)
 Autobtn1 = Button(frame1, width=5, padx=10, pady=5, text="육부촌", command=육부촌_Start, bg="orange", fg="black")
 Autobtn1.place(x=60, y=10)
@@ -172,7 +172,7 @@ lable1.place(x=310, y=27)
     
 entry1 = Entry(frame4, width=5)
 entry1.place(x=310, y=8)
-entry1.insert(0,"05")
+entry1.insert(0,"403")
 
 lable2=Label(frame4, text="sec")
 lable2.place(x=360, y=27)
