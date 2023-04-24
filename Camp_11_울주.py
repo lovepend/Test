@@ -81,21 +81,26 @@ def 울주_토요일():
 
 #★★★★★★★★★★★★★★★★★★★ 메인 함수
 def 울주_검색():
-  #Saturday = 1164,102,1263,1080 #토요일만 검색 
+  Saturday = 1164,102,1263,1080 #토요일만 검색 
+  global find_range
   button = pag.locateCenterOnScreen('./image/01. Ulju/01_0. reservation1.png', region = find_range, confidence=0.9)
   if (button == None) :
     None        
   else :
     Friday = ((button.x)-150, (button.y)-8, (button.x)-100, (button.y+8))
     button_1 = pag.locateCenterOnScreen('./image/01. Ulju/01_0. reservation2.png', region = Friday,confidence=0.9) #토요일 찾을 범위 설정      
-    pag.click(button_1,button='left')     
-    print("검색")
-    울주_검색1()
+    if (button_1 == None) :
+        None
+        pag.click(button,button='left')
+    else:
+        pag.click(button_1,button='left')     
+        print("검색")
+        울주_검색1()
 
 #새로고침 확인
 def 울주_검색1():
   #Saturday = 1164,102,1263,1080 #토요일만 검색 
-  button = pag.locateCenterOnScreen('./image/91. Ulju/12. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/02. Ulju/12. jubjub.png', confidence=0.9)
   if (button == None) :
     울주_검색1()   
   else :
@@ -226,11 +231,11 @@ def 울주_This_A_Back_up():
 def 울주_This_A():
     while True:
         #페이지 선택
-        pag.doubleClick(1600,800)
-        울주_log()
-        pag.hotkey('f5')
-        time.sleep(0.2)
-        #울주_검색()
+        #pag.doubleClick(1600,800)
+        #울주_log()
+        #pag.hotkey('f5')
+        #time.sleep(0.2)
+        울주_검색()
         pag.hotkey('pgdn')
         pag.hotkey('f5')
         time.sleep(0.2)
