@@ -1,4 +1,4 @@
-from kakao_api import *
+from kakao_01_api import *
 from cgi import print_arguments
 from cgitb import reset
 from ctypes.wintypes import PINT
@@ -21,7 +21,7 @@ import schedule
 import json
 import time
 import datetime
-from kakao_api import kakao_message_you
+from kakao_01_api import kakao_message_you
 
 
 ####################시간예제
