@@ -258,14 +258,21 @@ def 중구_자동입력():
     중구예약()
 
 def 중구예약():
-  time.sleep(5)
+  global 중구_장소
+  global 중구_Car_No
+  time.sleep(15)
+  print("1")  
+  print(중구_장소)  
   pag.click(중구_장소)
+  print("2")  
   time.sleep(5)
   #로그인 클릭
+  print("3")  
   button = pag.locateCenterOnScreen("./image/21. Junggu/11. input.png",  confidence=0.8)
+  print("4")  
   print(button)
   time.sleep(2)
-  pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+  pag.click(button.x,button.y, button='left', clicks=2, interval=0.1)
   time.sleep(2)
   pyperclip.copy(중구_Car_No)
   pag.hotkey('ctrl','v')
@@ -310,7 +317,6 @@ def 중구예약():
   time.sleep(1)
   pag.dragTo(1910,358, 6, button='left')
   태화연_Start()
-
      
 #★★★★★★★★★★★★★★★★★★★ 메인 함수
 def 태화연_Start():
