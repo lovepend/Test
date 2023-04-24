@@ -238,7 +238,11 @@ def 울주_This_A():
         울주_검색()
         pag.hotkey('pgdn')
         pag.hotkey('f5')
-        time.sleep(0.2)
+        #랜덤 새로고침
+        num = random.randrange(20,50)
+        num1 = num/100
+        time.sleep(num1)
+        print(num1)
         울주_검색()
         pag.hotkey('home')
         time.sleep(0.2)
