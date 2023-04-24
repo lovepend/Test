@@ -20,12 +20,12 @@ pag.FAILSAFE=False
 #★★★★★★★★★★★★★★★★★★★ 차량번호 
 global timesetting
 timesetting = 0.2
-Car_No = "62소9403"
+울주_Car_No = "62소9403"
 
 
 def 울주_차량번호_입력(차량번호):
-  global Car_No
-  Car_No = 차량번호
+  global 울주_Car_No
+  울주_Car_No = 차량번호
  
 #pyperclip.copy('62소9403')
 
@@ -115,7 +115,7 @@ def 울주줍줍_Page1_차량방문번호():
     울주줍줍_Page1_차량방문번호()   
   else :
     pag.click(button.x,button.y) 
-    pyperclip.copy(Car_No)
+    pyperclip.copy(울주_Car_No)
     pag.hotkey('ctrl','v')
     #페이지 선택
     pag.doubleClick(1600,800)

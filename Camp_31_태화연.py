@@ -25,13 +25,13 @@ pag.FAILSAFE=False
 #태화연 Test 2022.11.10 #Viewer Size 50%
 
 ################################## 차량번호
-global Car_No
-Car_No = "62소9403"
+global 중구_Car_No
+중구_Car_No = "62소9403"
 
 
 def 중구_차량번호_입력(차량번호):
-  global Car_No
-  Car_No = 차량번호
+  global 중구_Car_No
+  중구_Car_No = 차량번호
 ################################## 리셋 
 global 태화연_end_command
 태화연_end_command = 0
@@ -267,7 +267,7 @@ def 중구예약():
   time.sleep(2)
   pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
   time.sleep(2)
-  pyperclip.copy(Car_No)
+  pyperclip.copy(중구_Car_No)
   pag.hotkey('ctrl','v')
   time.sleep(2)
   #페이지 클릭
