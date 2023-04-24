@@ -216,7 +216,7 @@ def 중구_입화산():
 
 #★★★★★★★★★★★★★★★★★★★ 자동 입력
 def 중구_자동입력():
-  webbrowser.get("windows-default").open('https://www.junggu.ulsan.kr/camping/index.do')  
+  webbrowser.get("windows-default").open('https://www.junggu.ulsan.kr/camping')  
   time.sleep(10)
   button = pag.locateCenterOnScreen("./image/21. Junggu/00. loggin.png",  confidence=0.9)
   print(button)
