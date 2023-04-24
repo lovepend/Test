@@ -46,7 +46,7 @@ frame1=tkinter.Frame(window)
 notebook.add(frame1, text="★Auto1" )
 
 #스케쥴 진행
-Autobtn1 = Button(frame1, width=5, padx=10, pady=5, text="울주줍줍", command=울주줍줍_검색, bg="orange", fg="black")
+Autobtn1 = Button(frame1, width=5, padx=10, pady=5, text="울주줍줍", command=울주줍줍_새로고침, bg="orange", fg="black")
 Autobtn1.place(x=0, y=10)
 Autobtn1 = Button(frame1, width=5, padx=10, pady=5, text="육부촌", command=육부촌_Start, bg="orange", fg="black")
 Autobtn1.place(x=60, y=10)
@@ -70,8 +70,6 @@ notebook.add(frame2, text="★울주해양" )
 울주log6 = Button(frame2, width=5, padx=10, pady=5, text="말일", command=울주_특정데이, bg="orange", fg="black")
 울주log6.place(x=300, y=10)
 
-
-
 #함수
 울주btn1 = Button(frame2, width=5, padx=10, pady=5, text="Saturday", command=울주_토요일, bg="white", fg="black")
 울주btn1.place(x=0, y=50)
@@ -89,6 +87,22 @@ notebook.add(frame2, text="★울주해양" )
 울주btn6 = Button(frame2, width=5, padx=10, pady=5, text="Auto", command=울주_자동, bg="green", fg="white")
 울주btn6.place(x=360, y=50)
 
+울주btn11 = Button(frame2, width=5, padx=10, pady=5, text="울주줍줍", command=울주줍줍_새로고침, bg="white", fg="black")
+울주btn11.place(x=0, y=90)
+
+lable1=Label(frame2, text="차량번호")
+lable1.place(x=310, y=90)
+
+entry_울주 = Entry(frame2, width=10)
+entry_울주.place(x=370, y=90)
+entry_울주.insert(0,"62소9403")
+
+def 차량번호():
+  차량번호 = entry_울주.get()
+  차량번호_입력(차량번호)
+
+울주btn12 = Button(frame2, width=5, padx=10, pady=5, text="차량번호", command=차량번호, bg="white", fg="black")
+울주btn12.place(x=60, y=90)
 
 frame3=tkinter.Frame(window)
 notebook.add(frame3, text="★태화연★")
@@ -170,7 +184,7 @@ lable1.place(x=310, y=27)
     
 entry1 = Entry(frame4, width=5)
 entry1.place(x=310, y=8)
-entry1.insert(0,"403")
+entry1.insert(0,"40")
 
 lable2=Label(frame4, text="sec")
 lable2.place(x=360, y=27)
