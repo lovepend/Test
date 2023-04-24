@@ -258,9 +258,9 @@ def 중구_자동입력():
     중구예약()
 
 def 중구예약():
-  time.sleep(2)
+  time.sleep(5)
   pag.click(중구_장소)
-  time.sleep(2)
+  time.sleep(5)
   #로그인 클릭
   button = pag.locateCenterOnScreen("./image/21. Junggu/11. input.png",  confidence=0.8)
   print(button)

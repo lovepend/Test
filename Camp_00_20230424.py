@@ -224,6 +224,21 @@ notebook.add(frame4, text="03. 중구")
 태화연location4 = Button(frame4, width=5, padx=10, pady=5, text="입화산", command=중구_입화산, bg="white", fg="black")
 태화연location4.place(x=180, y=50)
 
+#차량번호
+lable1=Label(frame4, text="차량번호")
+lable1.place(x=300, y=50)
+
+entry_중구 = Entry(frame4, width=10)
+entry_중구.place(x=360, y=50)
+entry_중구.insert(0,"62소9403")
+
+def 중구_차량번호():
+  차량번호 = entry_중구.get()
+  중구_차량번호_입력(차량번호)
+
+중구btn25 = Button(frame4, width=5, padx=10, pady=5, text="차량번호", command=중구_차량번호, bg="yellow", fg="black")
+중구btn25.place(x=240, y=50)
+
 #날짜
 태화연day1 = Button(frame4, width=2, padx=10, pady=5, text="1F", command=태화연_Day11, bg="white", fg="black")
 태화연day1.place(x=0, y=90)
