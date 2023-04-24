@@ -23,8 +23,6 @@ from 신불산 import *
 from 육부촌 import *
 from kakao_api import *
 
-
-
 def schedule_job():
     schedule.every().day.at("08:45:00").do(신불산_자동) 
     schedule.every().day.at("09:45:00").do(태화연_자동) 

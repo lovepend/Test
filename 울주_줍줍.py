@@ -89,6 +89,10 @@ def 울주줍줍_토요일():
 #★★★★★★★★★★★★★★★★★★★ 메인 함수
 def 울주줍줍_검색():
     #Saturday = 1164,102,1263,1080 #토요일만 검색 
+    pag.hotkey('f5')
+    time.sleep(0.5)
+    if keyboard.is_pressed("F2"): 
+      time.sleep(100)
     button = pag.locateCenterOnScreen('./image/01. Ulju/01_91. jubjub.png', region = find_range, confidence=0.9)
     if (button == None) :
         None     
