@@ -188,7 +188,7 @@ def 울주_log1():
         pag.click(1239,162) 
         #다음달 선택
         time.sleep(2)
-        pag.click(986,429)
+        pag.click(1018,429)
         #페이지 선택
         time.sleep(2)
         pag.doubleClick(1600,800)
@@ -231,21 +231,21 @@ def 울주_This_A_Back_up():
 def 울주_This_A():
     while True:
         #페이지 선택
-        #pag.doubleClick(1600,800)
-        #울주_log()
-        #pag.hotkey('f5')
-        #time.sleep(0.2)
-        울주_검색()
-        pag.hotkey('pgdn')
+        pag.doubleClick(1600,800)
+        울주_log()
         pag.hotkey('f5')
+        time.sleep(0.2)
+        울주_검색()
+        # pag.hotkey('pgdn')
+        # pag.hotkey('f5')
         #랜덤 새로고침
-        num = random.randrange(20,50)
+        num = random.randrange(20,40)
         num1 = num/100
         time.sleep(num1)
         print(num1)
-        울주_검색()
-        pag.hotkey('home')
-        time.sleep(0.2)
+        # 울주_검색()
+        # pag.hotkey('home')
+        # time.sleep(0.2)
         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             break
 
@@ -317,6 +317,11 @@ def 울주_Next_A():
         pag.hotkey('f5')
         time.sleep(0.2)
         울주_검색()
+        #랜덤 새로고침
+        num = random.randrange(20,40)
+        num1 = num/100
+        time.sleep(num1)
+        print(num1)
         # pag.hotkey('pgdn')
         # pag.hotkey('f5')
         # time.sleep(0.2)
