@@ -90,9 +90,13 @@ def 차량번호():
 #함수
 울주btn1 = Button(frame2, width=5, padx=10, pady=5, text="Saturday", command=울주_토요일, bg="white", fg="black")
 울주btn1.place(x=0, y=90)
-
 울주btn2 = Button(frame2, width=5, padx=10, pady=5, text="Range", command=울주_범위선택, bg="white", fg="black")
 울주btn2.place(x=60, y=90)
+울주btn11 = Button(frame2, width=5, padx=10, pady=5, text="앱결제", command=울주_앱결제, bg="white", fg="black")
+울주btn11.place(x=0, y=90)
+울주btn21 = Button(frame2, width=5, padx=10, pady=5, text="간편결제", command=울주_간편결제, bg="white", fg="black")
+울주btn21.place(x=60, y=90)
+
 
 울주btn3 = Button(frame2, width=5, padx=10, pady=5, text="This(A)", command=울주_This_A, bg="green", fg="white")
 울주btn3.place(x=0, y=130)

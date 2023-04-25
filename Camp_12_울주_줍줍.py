@@ -59,7 +59,8 @@ def 울주줍줍_Page1_기간():
     울주줍줍_Page1_기간()   
   else :
     pag.click(button.x,button.y) 
-    pag.hotkey('end')
+    pag.hotkey('down')
+    #pag.hotkey('end')
     print("기간")
     울주줍줍_Page1_총인원()
 
@@ -163,6 +164,19 @@ def 울주줍줍_Page3_KB_Pay():
     print("카드선택")
     울주줍줍_Page4_다음()
 
+
+
+def 울주_앱결제():
+  global Card
+  Card = 1
+  print("앱결제")
+
+def 울주_간편결제():
+  global Card
+  Card = 0
+  print("간편결제")
+  
+
 #다음
 def 울주줍줍_Page4_다음():
   button = pag.locateCenterOnScreen('./image/02. Ulju/41. jubjub.png', confidence=0.9)
@@ -171,8 +185,16 @@ def 울주줍줍_Page4_다음():
   else :
     pag.click(button.x,button.y) 
     print("기간")
-    울주줍줍_Page5_앱결제()   
+    global Card
+    if (Card == 1) :
+      울주줍줍_Page5_앱결제() 
+    if (Card == 0) :
+      울주줍줍_Page5_간편결제()  
 
+
+
+
+####################################국민카드 앱결제######################################
 #앱결제
 def 울주줍줍_Page5_앱결제():
   button = pag.locateCenterOnScreen('./image/02. Ulju/51. jubjub.png', confidence=0.9)
@@ -211,3 +233,57 @@ def 울주줍줍_Page7_확인():
     pag.click(button.x,button.y)
     print("확인")
     time.sleep(10000)
+
+
+####################################국민카드 간편결제######################################
+def 울주줍줍_Page5_간편결제():
+  button = pag.locateCenterOnScreen('./image/02. Ulju/51. jubjub_Pass.png', confidence=0.9)
+  if (button == None) :
+    울주줍줍_Page5_간편결제()   
+  else :
+    pag.click(button.x,button.y)
+    print("간편결제")
+    울주줍줍_Page6_인증서결제()   
+
+def 울주줍줍_Page6_인증서결제():
+  button = pag.locateCenterOnScreen('./image/02. Ulju/61. jubjub_Pass.png', confidence=0.9)
+  if (button == None) :
+    울주줍줍_Page6_인증서결제()   
+  else :
+    pag.click(button.x,button.y)
+    print("간편결제")
+    울주줍줍_Page7_결제비밀번호()   
+
+def 울주줍줍_Page7_결제비밀번호():
+  button = pag.locateCenterOnScreen('./image/02. Ulju/71. jubjub_Pass.png', confidence=0.9)
+  if (button == None) :
+    울주줍줍_Page7_결제비밀번호()   
+  else :
+    pag.click(button.x,button.y)
+    print("결제비밀번호")
+    pyperclip.copy("170416")
+    pag.hotkey('ctrl','v')
+    울주줍줍_Page7_결제진행()   
+
+def 울주줍줍_Page7_결제진행():
+  button = pag.locateCenterOnScreen('./image/02. Ulju/71. jubjub_Next.png', confidence=0.9)
+  if (button == None) :
+    울주줍줍_Page7_결제진행()   
+  else :
+    pag.click(button.x,button.y)
+    print("결제진행")
+    pyperclip.copy("170416")
+    pag.hotkey('ctrl','v')
+    울주줍줍_Page8_확인()  
+
+#앱결제
+def 울주줍줍_Page8_확인():
+  time.sleep(timesetting)
+  button = pag.locateCenterOnScreen('./image/02. Ulju/71. jubjub.png', confidence=0.9)
+  if (button == None) :
+    울주줍줍_Page8_확인()   
+  else :
+    pag.click(button.x,button.y)
+    print("확인")
+    time.sleep(10000)
+
