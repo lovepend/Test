@@ -82,7 +82,7 @@ def 신불산_Log_Id2():
 
 def 신불산_Log_Id3():
     global 신불산_id
-    신불산_id = "lovepend3"
+    신불산_id = "lovepend1"
     print(신불산_id)
 
 def 신불산_Log_Id4():
