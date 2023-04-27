@@ -22,6 +22,7 @@ from Camp_41_대왕암 import *
 from Camp_21_신불산 import *
 from Camp_51_육부촌 import *
 from kakao_01_api import *
+from Movie_Factory import *
 
 def schedule_job():
     schedule.every().day.at("08:45:00").do(신불산_자동) 
@@ -43,13 +44,13 @@ notebook=tkinter.ttk.Notebook(window, width=460, height=165)
 notebook.pack()
 
 frame1=tkinter.Frame(window)
-notebook.add(frame1, text="00. 공백" )
+notebook.add(frame1, text="00. Movie" )
 
 # #스케쥴 진행
-# Autobtn1 = Button(frame1, width=5, padx=10, pady=5, text="울주줍줍", command=울주줍줍_새로고침, bg="orange", fg="black")
-# Autobtn1.place(x=0, y=10)
-# Autobtn1 = Button(frame1, width=5, padx=10, pady=5, text="육부촌", command=육부촌_Start, bg="orange", fg="black")
-# Autobtn1.place(x=60, y=10)
+Autobtn1 = Button(frame1, width=5, padx=10, pady=5, text="날짜선택", command=Movie_Factory_Day, bg="orange", fg="black")
+Autobtn1.place(x=0, y=10)
+Autobtn2 = Button(frame1, width=5, padx=10, pady=5, text="시작", command=Movie_Factory, bg="orange", fg="black")
+Autobtn2.place(x=60, y=10)
 
 #울주 UI=============================================================================================================== 
 frame2=tkinter.Frame(window)

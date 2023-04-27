@@ -313,11 +313,6 @@ def 신불산_StepA() : ## 예약하기 버튼 순간 정할것
         pag.click(button1.x+10,button1.y, button='left', clicks=1, interval=0.1)        
         button1 = pag.locateCenterOnScreen('./image/11. Sinbul/22. next.png',  confidence=0.8)   #region = (510,100,1324,333),
         pag.click(button1.x+10,button1.y, button='left', clicks=1, interval=0.1)
-        button1 = pag.locateCenterOnScreen('./image/11. Sinbul/22. next.png',  confidence=0.8)   #region = (510,100,1324,333),
-        pag.click(button1.x+10,button1.y, button='left', clicks=1, interval=0.1)
-        button1 = pag.locateCenterOnScreen('./image/11. Sinbul/22. next.png',  confidence=0.8)   #region = (510,100,1324,333),
-        pag.click(button1.x+10,button1.y, button='left', clicks=1, interval=0.1)
-        #pag.click(1264,247)
         #pag.click(1264,276)
         print("끝")
         # c = 0
@@ -335,21 +330,21 @@ def 신불산_StepA() : ## 예약하기 버튼 순간 정할것
         신불산_StepB()
 
 def 신불산_StepB() : ## 예약하기 버튼 순간 정할것
-    time.sleep(1)
-    pag.click(1235,117)
-    pag.click(1235,117)
-    button1 = pag.locateCenterOnScreen('./image/11. Sinbul/23. Check.png',  confidence=0.8)   #region = (510,100,1324,333),
-    if (button1 == None) :
-      time.sleep(10) 
-      신불산_StepB()  
-    else :
-      refresh_token()
-      tm = time.localtime()
-      kakao_tm = tm.tm_hour,tm.tm_min,tm.tm_sec
-      text = str(kakao_tm)
-      print(text)
-      kakao_message_you(text)
-      time.sleep(120)
+    time.sleep(300)
+    # pag.click(1235,117)
+    # pag.click(1235,117)
+    # button1 = pag.locateCenterOnScreen('./image/11. Sinbul/23. Check.png',  confidence=0.8)   #region = (510,100,1324,333),
+    # if (button1 == None) :
+    #   time.sleep(10) 
+    #   신불산_StepB()  
+    # else :
+    #   refresh_token()
+    #   tm = time.localtime()
+    #   kakao_tm = tm.tm_hour,tm.tm_min,tm.tm_sec
+    #   text = str(kakao_tm)
+    #   print(text)
+    #   kakao_message_you(text)
+    #   time.sleep(120)
       #다음 액션  
 
 #★★★★★★★★★★★★★★★★★★★ 스케쥴러
