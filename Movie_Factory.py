@@ -51,25 +51,44 @@ def Movie_Factory_Day():
   print("끝")
 
 def Movie_Factory():
-  #첫날
-  pag.click(Movie_Factory_day1)
-  time.sleep(0.5)
-  #첫타임 선택
-  button = pag.locateCenterOnScreen("./image/91. MovieFactory/02. MovieFactory.png",  confidence=0.9) 
-  time.sleep(0.5)
-  pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-  Movie_Factory_Serch()
-  #두번째 날
-  pag.click(Movie_Factory_day2)
-  time.sleep(0.5)  
-  #두번째 타임 선택
-  button = pag.locateCenterOnScreen("./image/91. MovieFactory/02. MovieFactory.png",  confidence=0.9) 
-  time.sleep(0.5)
-  pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-  Movie_Factory_Serch()
+  while True:
+    if keyboard.is_pressed("F2"):
+      break 
+    #첫날
+    pag.click(Movie_Factory_day1)
+    time.sleep(0.5)
+    #첫타임 선택
+    button = pag.locateCenterOnScreen("./image/91. MovieFactory/02. MovieFactory.png",  confidence=0.9) 
+    time.sleep(0.5)
+    pag.click(button.x,button.y+50, button='left', clicks=1, interval=0.1)
+    Movie_Factory_Serch()
+    #두번째 타임 선택
+    button = pag.locateCenterOnScreen("./image/91. MovieFactory/02. MovieFactory.png",  confidence=0.9) 
+    time.sleep(0.5)
+    pag.click(button.x+100,button.y+50, button='left', clicks=1, interval=0.1)
+    Movie_Factory_Serch()
+
+    if keyboard.is_pressed("F2"):
+      break 
+    #두번째 날
+    pag.click(Movie_Factory_day2)
+    time.sleep(0.5)  
+    #첫타임 선택
+    button = pag.locateCenterOnScreen("./image/91. MovieFactory/02. MovieFactory.png",  confidence=0.9) 
+    time.sleep(0.5)
+    pag.click(button.x,button.y+50, button='left', clicks=1, interval=0.1)
+    Movie_Factory_Serch()
+    #두번째 타임 선택
+    button = pag.locateCenterOnScreen("./image/91. MovieFactory/02. MovieFactory.png",  confidence=0.9) 
+    time.sleep(0.5)
+    pag.click(button.x+100,button.y+50, button='left', clicks=1, interval=0.1)
+    Movie_Factory_Serch()
+
+
+
 
 def Movie_Factory_Serch():
-  button = pag.locateCenterOnScreen("./image/91. MovieFactory/01. MovieFactory.png",  confidence=0.9) 
+  button = pag.locateCenterOnScreen("./image/91. MovieFactory/01. MovieFactory.png",  confidence=0.99) 
   if (button == None) :
     None   
     print("없음")   
@@ -78,3 +97,4 @@ def Movie_Factory_Serch():
     print("있음")   
     refresh_token()
     kakao_message_you("Movie_Factory")
+
