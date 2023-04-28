@@ -320,12 +320,17 @@ def 중구예약():
      
 #★★★★★★★★★★★★★★★★★★★ 메인 함수
 def 태화연_Start():
+  pag.click(태화연_day1)
+  time.sleep(0.1) 
+  태화연_Start1()   
+
+
+
+def 태화연_Start1():
     while True:
         global 태화연_i
         tm = time.localtime()
         #날짜 클릭
-        pag.click(태화연_day1)
-        time.sleep(0.1)
         pag.click(태화연_day2)
         time.sleep(0.1)
         #횟수 표현
@@ -338,6 +343,10 @@ def 태화연_Start():
             print("minute 중지")
             print(tm.tm_hour ,"시", tm.tm_min ,"분", tm.tm_sec,"초")
             break        
+        
+        #날짜 클릭
+        pag.click(태화연_day1)
+        time.sleep(0.1)
         #검색
         태화연_검색()
 
