@@ -97,6 +97,8 @@ def 차량번호():
 울주btn11.place(x=120, y=90)
 울주btn21 = Button(frame2, width=5, padx=10, pady=5, text="간편결제", command=울주_간편결제, bg="white", fg="black")
 울주btn21.place(x=180, y=90)
+울주btn31 = Button(frame2, width=5, padx=10, pady=5, text="NH간편결제", command=울주_NH_간편결제, bg="white", fg="black")
+울주btn31.place(x=240, y=90)
 
 
 울주btn3 = Button(frame2, width=5, padx=10, pady=5, text="This(A)", command=울주_This_A, bg="green", fg="white")

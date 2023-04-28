@@ -28,7 +28,22 @@ def 울주_차량번호_입력(차량번호):
   울주_Car_No = 차량번호
  
 #pyperclip.copy('62소9403')
+def 울주_앱결제():
+  global Card
+  Card = 1
+  print("앱결제")
 
+def 울주_간편결제():
+  global Card
+  Card = 0
+  print("간편결제")
+
+def 울주_NH_간편결제():
+  global Card
+  Card = 2
+  print("NH간편결제")
+  print(Card)
+  
 #★★★★★★★★★★★★★★★★★★★ 메인 함수
 
 #새로고침
@@ -156,26 +171,25 @@ def 울주줍줍_Page3_약관_전체동의():
 
 #신용카드선택
 def 울주줍줍_Page3_KB_Pay():
+  
   button = pag.locateCenterOnScreen('./image/02. Ulju/32. jubjub.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page3_KB_Pay()   
   else :
-    pag.click(button.x,button.y) 
-    print("카드선택")
-    울주줍줍_Page4_다음()
+    global Card 
 
-
-
-def 울주_앱결제():
-  global Card
-  Card = 1
-  print("앱결제")
-
-def 울주_간편결제():
-  global Card
-  Card = 0
-  print("간편결제")
-  
+    print(Card)
+    if (Card == 2) :
+      button1 = pag.locateCenterOnScreen('./image/02. Ulju/32. jubjub_NH.png', confidence=0.9)
+      pag.click(button1.x,button1.y) 
+      print(Card)
+      print("농협선택")
+      울주줍줍_Page4_NH_Next() 
+    else :
+      pag.click(button.x,button.y) 
+      print(Card)
+      print("카드선택")
+      울주줍줍_Page4_다음() 
 
 #다음
 def 울주줍줍_Page4_다음():
@@ -190,6 +204,7 @@ def 울주줍줍_Page4_다음():
       울주줍줍_Page5_앱결제() 
     if (Card == 0) :
       울주줍줍_Page5_간편결제()  
+      
 
 
 
@@ -287,3 +302,79 @@ def 울주줍줍_Page8_확인():
     print("확인")
     time.sleep(10000)
 
+
+####################################농협 간편결제######################################
+#다음
+def 울주줍줍_Page4_NH_Next():
+  time.sleep(0.1)
+  print("1")
+  button = pag.locateCenterOnScreen('./image/02. Ulju/41. jubjub_NH.png', confidence=0.7)
+  if (button == None) :
+    울주줍줍_Page4_NH_Next()   
+  else :
+    pag.click(button.x,button.y) 
+    print("기간")
+    울주줍줍_Page5_NH_다른결제()
+
+
+def 울주줍줍_Page5_NH_다른결제():
+  button = pag.locateCenterOnScreen('./image/02. Ulju/51. jubjub_NH_Pass.png', confidence=0.9)
+  if (button == None) :
+    울주줍줍_Page5_NH_다른결제()   
+  else :
+    pag.click(button.x,button.y)
+    print("다른결제")
+    울주줍줍_Page6_NH_원클릭간편결제()   
+
+def 울주줍줍_Page6_NH_원클릭간편결제():
+  button = pag.locateCenterOnScreen('./image/02. Ulju/52. jubjub_NH_Pass.png', confidence=0.9)
+  if (button == None) :
+    울주줍줍_Page6_NH_원클릭간편결제()   
+  else :
+    pag.click(button.x,button.y)
+    print("간편결제")
+    울주줍줍_Page7_NH_입력()   
+
+def 울주줍줍_Page7_NH_입력():
+  button = pag.locateCenterOnScreen('./image/02. Ulju/71. jubjub_NH_Pass.png', confidence=0.9)
+  if (button == None) :
+    울주줍줍_Page7_NH_입력()   
+  else :
+    pag.click(button.x,button.y)
+    print("결제입력")
+    pyperclip.copy("lovepend83")
+    pag.hotkey('ctrl','v')
+    울주줍줍_Page7_NH_입력1()   
+
+def 울주줍줍_Page7_NH_입력1():
+  button = pag.locateCenterOnScreen('./image/02. Ulju/72. jubjub_NH_Pass.png', confidence=0.9)
+  if (button == None) :
+    울주줍줍_Page7_NH_입력1()   
+  else :
+    pag.click(button.x,button.y)
+    print("결제입력1")
+    pyperclip.copy("*1111o")
+    pag.write("*111dgo")
+   # 울주줍줍_Page7_NH_확인()
+
+
+def 울주줍줍_Page7_NH_확인():
+  button = pag.locateCenterOnScreen('./image/02. Ulju/72. jubjub_NH_Pass.png', confidence=0.9)
+  if (button == None) :
+    울주줍줍_Page7_NH_확인()   
+  else :
+    pag.click(button.x,button.y)
+    print("확인")
+    time.sleep(10000)
+  
+
+#앱결제
+def 울주줍줍_Page8_NH_확인():
+  time.sleep(timesetting)
+  button = pag.locateCenterOnScreen('./image/02. Ulju/73. jubjub_NH_Pass.png', confidence=0.9)
+  if (button == None) :
+    울주줍줍_Page8_NH_확인()   
+  else :
+    pag.click(button.x,button.y)
+    print("확인")
+    time.sleep(10000)
