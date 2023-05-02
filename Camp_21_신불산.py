@@ -272,69 +272,73 @@ def 온라인예약():
   
 #★★★★★★★★★★★★★★★★★★★ 메인 함수
 def 신불산_Start(신불산_min,신불산_sec):
-    while True:
-        tm = time.localtime()
-        global time_controll
-        print(time_controll)
-        if keyboard.is_pressed("F2"):
-            print("종료") 
-            break  
-        if (tm.tm_hour == 9 and tm.tm_min == 신불산_min and tm.tm_sec == 신불산_sec) or (tm.tm_hour == 13 and tm.tm_min == 신불산_min and tm.tm_sec == 신불산_sec) : #9시 56분 및 15시 56분 시작
-        #if (tm.tm_hour == 10 and tm.tm_min == 19 and tm.tm_sec == 10) or (tm.tm_hour == 14 and tm.tm_min == 56 and tm.tm_sec == 37) : #TEST
-            pag.click(신불산_day)
-            for i in range(1000):
-                button = pag.locateCenterOnScreen("./image/11. Sinbul/21. reservation.png", region = 신불산_find_range, confidence=0.7) 
-                print(i)
-                if (button == None) :
-                    None
-                else : 
-                    print("else")
-                    pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-                    신불산_StepA()
-        #날짜 클릭
-        pag.click(신불산_day)  
-        time.sleep(time_controll)
-        신불산_검색()     
+  while True:
+    tm = time.localtime()
+    global time_controll
+    print(time_controll)
+    if keyboard.is_pressed("F2"):
+      print("종료") 
+      break  
+    if (tm.tm_hour == 9 and tm.tm_min == 신불산_min and tm.tm_sec == 신불산_sec) or (tm.tm_hour == 13 and tm.tm_min == 신불산_min and tm.tm_sec == 신불산_sec) : #9시 56분 및 15시 56분 시작
+    #if (tm.tm_hour == 10 and tm.tm_min == 19 and tm.tm_sec == 10) or (tm.tm_hour == 14 and tm.tm_min == 56 and tm.tm_sec == 37) : #TEST
+      pag.click(신불산_day)
+      for i in range(1000):
+        button = pag.locateCenterOnScreen("./image/11. Sinbul/21. reservation.png", region = 신불산_find_range, confidence=0.7) 
+        print(i)
+        if (button == None) :
+          None
+        else : 
+          print("else")
+          pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+          신불산_StepA()
+    #날짜 클릭
+    pag.click(신불산_day)  
+    time.sleep(time_controll)
+    신불산_검색()     
 
 def 신불산_검색():                    
-    button = pag.locateCenterOnScreen("./image/11. Sinbul/21. reservation.png", region = 신불산_find_range, confidence=0.7) #region = 신불산_find_range,
-    if (button == None) :
-        None      
-    else : 
-        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-        신불산_StepA()
+  button = pag.locateCenterOnScreen("./image/11. Sinbul/21. reservation.png", region = 신불산_find_range, confidence=0.7) #region = 신불산_find_range,
+  if (button == None) :
+    None      
+  else : 
+    pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+    신불산_StepA()
                 
 def 신불산_StepA() : ## 예약하기 버튼 순간 정할것
-    button1 = pag.locateCenterOnScreen('./image/11. Sinbul/22. next.png',  confidence=0.8)   #region = (510,100,1324,333),
+  button1 = pag.locateCenterOnScreen('./image/11. Sinbul/22. next.png',  confidence=0.8)   #region = (510,100,1324,333),
+  print(button1)
+  if (button1 == None) :
+    신불산_StepA()      
+  else :  
+    tm1 = time.localtime()
+    print(tm1.tm_hour,tm1.tm_min,tm1.tm_sec)
+    kakao_tm = tm1.tm_hour,tm1.tm_min,tm1.tm_sec
+    text = str(kakao_tm)
+    print(text)
+    refresh_token()
+    kakao_message_you(text)
+    time.sleep(0.2)
     print(button1)
-    if (button1 == None) :
-        신불산_StepA()      
-    else :  
-        tm = time.localtime()
-        kakao_tm = tm.tm_hour,tm.tm_min,tm.tm_sec
-        print(tm.tm_hour,tm.tm_min,tm.tm_sec)
-        text = str(kakao_tm)
-        print(text)
-        kakao_message_you(text)
-        pag.doubleClick(button1.x+10,button1.y, button='left', clicks=1, interval=0.1)        
-        button1 = pag.locateCenterOnScreen('./image/11. Sinbul/22. next.png',  confidence=0.8)   #region = (510,100,1324,333),
-        pag.doubleClick(button1.x+10,button1.y, button='left', clicks=1, interval=0.1)
-        #pag.click(1264,276)
-        print("끝")
+    button1 = pag.locateCenterOnScreen('./image/11. Sinbul/22. next.png',  confidence=0.8)
+    pag.click(button1.x+10,button1.y, button='left', clicks=1, interval=0.1)        
+    button1 = pag.locateCenterOnScreen('./image/11. Sinbul/22. next.png',  confidence=0.8)   #region = (510,100,1324,333),
+    pag.click(button1.x+10,button1.y, button='left', clicks=1, interval=0.1)
+    #pag.click(1264,276)
+    print("끝")
         
-        # c = 0
-        # while True:
-        #   if (c < 10) :
-        #     c = c + 1
-        #     print(c)
-        #     pag.click(button1.x+20,button1.y+30, button='left', clicks=1, interval=0.1)
-        #   else:
-        #     print('end')
-        #     print('kakao')
-        #     break
-        if keyboard.is_pressed("F2"):
-          time.sleep(600)
-        신불산_StepB()
+    # c = 0
+    # while True:
+    #   if (c < 10) :
+    #     c = c + 1
+    #     print(c)
+    #     pag.click(button1.x+20,button1.y+30, button='left', clicks=1, interval=0.1)
+    #   else:
+    #     print('end')
+    #     print('kakao')
+    #     break
+  if keyboard.is_pressed("F2"):
+    time.sleep(600)
+  #신불산_StepB()
 
 def 신불산_StepB() : ## 예약하기 버튼 순간 정할것
     time.sleep(300)
