@@ -101,7 +101,7 @@ def 차량번호():
 울주btn31.place(x=240, y=90)
 
 
-울주btn3 = Button(frame2, width=5, padx=10, pady=5, text="This(A)", command=울주_This_A, bg="green", fg="white")
+울주btn3 = Button(frame2, width=5, padx=10, pady=5, text="This(A)", command=울주_This_A_Back_up, bg="green", fg="white")
 울주btn3.place(x=0, y=130)
 울주btn4 = Button(frame2, width=5, padx=10, pady=5, text="This(N)", command=울주_This_N, bg="green", fg="white")
 울주btn4.place(x=60, y=130)
@@ -132,6 +132,11 @@ def 시간입력():
     신불산_min = entry1.get()
     신불산_sec = entry2.get()
     시간입력_시작(신불산_min,신불산_sec)
+
+def 시간입력1():
+    신불산_min = entry1.get()
+    신불산_sec = entry2.get()
+    시간입력_시작1(신불산_min,신불산_sec)
 
 
 lable1=Label(frame3, text="min")
@@ -200,7 +205,7 @@ entry2.insert(0,"38")
 신불산btn3.place(x=120, y=130)
 신불산btn4 = Button(frame3, width=5, padx=10, pady=5, text="Start", command=신불산_Start, bg="white", fg="black")
 신불산btn4.place(x=180, y=130)
-신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="Start(A)", command=신불산_자동, bg="green", fg="white")
+신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="줍기", command=시간입력1, bg="green", fg="white")
 신불산btn5.place(x=240, y=130)
 
 

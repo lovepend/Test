@@ -198,8 +198,10 @@ def 울주_This_A_Back_up():
     while True:
         i = 1
         #페이지 선택
-        pag.doubleClick(1600,800)
+        pag.click(1600,800)
         울주_log()
+        #페이지 선택
+        pag.click(1600,800)
         pag.hotkey('f5')
         #울주_검색()
         time.sleep(5)
@@ -231,7 +233,7 @@ def 울주_This_A_Back_up():
 def 울주_This_A():
     while True:
         #페이지 선택
-        pag.doubleClick(1600,800)
+        pag.click(1600,800)
         울주_log()
         pag.hotkey('f5')
         #랜덤 새로고침
@@ -248,7 +250,7 @@ def 울주_This_A():
         num1 = num/100
         time.sleep(num1)
         print(num1)
-        # 울주_검색()
+        울주_검색()
         pag.hotkey('home')
         time.sleep(0.2)
         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
