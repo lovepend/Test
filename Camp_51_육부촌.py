@@ -156,7 +156,7 @@ def 육부촌_Start():
 
 def 육부촌_검색():
     #검색
-    button = pag.locateCenterOnScreen("./image/41. Kyungju/05._1. reservation.png", region = 육부촌_find_range)#, confidence=0.85) 
+    button = pag.locateCenterOnScreen("./image/51. Kyungju/05._1. reservation.png", region = 육부촌_find_range)#, confidence=0.85) 
     if (button == None) :
         None      
     else : 
@@ -166,7 +166,7 @@ def 육부촌_검색():
         
 def 육부촌_확인() :
     time.sleep(0.5)
-    button1 = pag.locateCenterOnScreen('./image/41. Kyungju/05._2. next.png', confidence=0.7)   
+    button1 = pag.locateCenterOnScreen('./image/51. Kyungju/05._2. next.png', confidence=0.7)   
     print(button1)
     if (button1 == None) :
         육부촌_확인()      
@@ -201,7 +201,7 @@ def 육부촌_주소():
     time.sleep(0.4)
     #예약신청
     pag.click(1021,939)
-    button2 = pag.locateCenterOnScreen('./image/41. Kyungju/05._3. next.png', confidence=0.7)   
+    button2 = pag.locateCenterOnScreen('./image/51. Kyungju/05._3. next.png', confidence=0.7)   
     pag.click(button2.x,button2.y, button='left', clicks=1, interval=0.1) 
     time.sleep(0.4)
     time.sleep(500)

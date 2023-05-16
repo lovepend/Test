@@ -34,6 +34,21 @@ tm.tm_min
 tm.tm_sec
 
 
+def 시간체크():
+  while True:
+    tm = time.localtime()
+    tm.tm_year
+    tm.tm_mon
+    tm.tm_mday
+    tm.tm_hour
+    tm.tm_min
+    tm.tm_sec
+    if keyboard.is_pressed("F2") : # F2 누른게 감지되면
+      print("키 중지")
+      break
+    print(tm.tm_hour, tm.tm_min, tm.tm_sec)
+
+시간체크()
 
 #global i
 # i = 0
@@ -81,13 +96,13 @@ def Test():
 
 
 
-def Onekey():
-    while True:
-        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
-            print("F2 종료")
-            break
-        time.sleep(5)
-        pag.click(x=1783, y=653)
+# def Onekey():
+#     while True:
+#         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+#             print("F2 종료")
+#             break
+#         time.sleep(5)
+#         pag.click(x=1783, y=653)
 
 #Onekey()
 # def Tset1():
@@ -161,72 +176,72 @@ def Onekey():
 #         time.sleep(0.5)
 #         pag.click("좌표입력")
 #         time.sleep(0.5)
-#         pag.hotkey('ctrl','v')
+# #         pag.hotkey('ctrl','v')
 
 
 
-def 이미지_검색():
-    while True:
-        if keyboard.is_pressed("F2") : # F2 누른게 감지되면
-            break
-        pag.click(1379,346)
-        time.sleep(0.5)
-        #검색
-        button1 = pag.locateCenterOnScreen("./image/222.png", confidence=0.85, region=(0,0,1623,596)) 
-        button2 = pag.locateCenterOnScreen("./image/222.png", confidence=0.85, region=(0,0,1623,596)) 
-        if (button1 == None and button2 == None) :
-            None      
-        else : 
-            time.sleep(0.5) 
-            refresh_token()
-            kakao_message_you("이미지")
-            time.sleep(10000)
-            print('찾')
+# def 이미지_검색():
+#     while True:
+#         if keyboard.is_pressed("F2") : # F2 누른게 감지되면
+#             break
+#         pag.click(1379,346)
+#         time.sleep(0.5)
+#         #검색
+#         button1 = pag.locateCenterOnScreen("./image/222.png", confidence=0.85, region=(0,0,1623,596)) 
+#         button2 = pag.locateCenterOnScreen("./image/222.png", confidence=0.85, region=(0,0,1623,596)) 
+#         if (button1 == None and button2 == None) :
+#             None      
+#         else : 
+#             time.sleep(0.5) 
+#             refresh_token()
+#             kakao_message_you("이미지")
+#             time.sleep(10000)
+#             print('찾')
         
 
 
 
-이미지_검색()
-def 이미지_Start():
-    while True:
-        if keyboard.is_pressed("F2") : # F2 누른게 감지되면
-            print("F2 종료")
-        ################################    
-        time.sleep(5)
-        pag.click(x=1783, y=653)
-        이미지_검색()
-        #################
-        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
-            break      
+# 이미지_검색()
+# def 이미지_Start():
+#     while True:
+#         if keyboard.is_pressed("F2") : # F2 누른게 감지되면
+#             print("F2 종료")
+#         ################################    
+#         time.sleep(5)
+#         pag.click(x=1783, y=653)
+#         이미지_검색()
+#         #################
+#         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+#             break      
 
-def 카카오차단():
-    while True:
-        if keyboard.is_pressed("F2") : # F2 누른게 감지되면
-            print("F2 종료")
-        ################################    
-        pag.rightClick(232,310)
-        time.sleep(0.2)
-        pag.click(280,538)
-        time.sleep(0.2)
-        pag.click(132,390)
-        time.sleep(0.2)
-        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
-            break      
+# def 카카오차단():
+#     while True:
+#         if keyboard.is_pressed("F2") : # F2 누른게 감지되면
+#             print("F2 종료")
+#         ################################    
+#         pag.rightClick(232,310)
+#         time.sleep(0.2)
+#         pag.click(280,538)
+#         time.sleep(0.2)
+#         pag.click(132,390)
+#         time.sleep(0.2)
+#         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+#             break      
 
-def 카카오삭제():
-    while True:
-        if keyboard.is_pressed("F2") : # F2 누른게 감지되면
-            print("F2 종료")
-        ################################    
-        pag.click(844,448)
-        time.sleep(0.2)
-        pag.click(568,350)
-        time.sleep(0.2)
-        pag.click(589,411)
-        time.sleep(0.2)
-        pag.click(711,363)
-        time.sleep(0.2)
-        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
-            break      
+# def 카카오삭제():
+#     while True:
+#         if keyboard.is_pressed("F2") : # F2 누른게 감지되면
+#             print("F2 종료")
+#         ################################    
+#         pag.click(844,448)
+#         time.sleep(0.2)
+#         pag.click(568,350)
+#         time.sleep(0.2)
+#         pag.click(589,411)
+#         time.sleep(0.2)
+#         pag.click(711,363)
+#         time.sleep(0.2)
+#         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+#             break      
 
 

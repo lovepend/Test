@@ -83,12 +83,12 @@ def 울주_토요일():
 def 울주_검색():
   Saturday = 1164,102,1263,1080 #토요일만 검색 
   global find_range
-  button = pag.locateCenterOnScreen('./image/01. Ulju/01_0. reservation1.png', region = find_range, confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/11. Ulju/01_0. reservation1.png', region = find_range, confidence=0.9)
   if (button == None) :
     None        
   else :
     Friday = ((button.x)-150, (button.y)-8, (button.x)-100, (button.y+8))
-    button_1 = pag.locateCenterOnScreen('./image/01. Ulju/01_0. reservation2.png', region = Friday,confidence=0.9) #토요일 찾을 범위 설정      
+    button_1 = pag.locateCenterOnScreen('./image/11. Ulju/01_0. reservation2.png', region = Friday,confidence=0.9) #토요일 찾을 범위 설정      
     if (button_1 == None) :
         None
         pag.click(button,button='left')
@@ -100,7 +100,7 @@ def 울주_검색():
 #새로고침 확인
 def 울주_검색1():
   #Saturday = 1164,102,1263,1080 #토요일만 검색 
-  button = pag.locateCenterOnScreen('./image/02. Ulju/12. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/12. jubjub.png', confidence=0.9)
   if (button == None) :
     울주_검색1()   
   else :
@@ -114,7 +114,7 @@ def 울주_검색1():
 
 #★★★★★★★★★★★★★★★★★★★ 로그
 def 울주_log():
-    loggin = pag.locateCenterOnScreen('./image/01. Ulju/01_10. loggin.png', region = (1100,0,1250,204), confidence=0.8)
+    loggin = pag.locateCenterOnScreen('./image/11. Ulju/01_10. loggin.png', region = (1100,0,1250,204), confidence=0.8)
     if (loggin == None):
         None
     else :
@@ -152,7 +152,7 @@ def 울주_log():
         pag.click(1239,162)       
        
 def 울주_log1():
-    loggin = pag.locateCenterOnScreen('./image/01. Ulju/01_10. loggin.png', region = (1100,0,1250,204), confidence=0.8)
+    loggin = pag.locateCenterOnScreen('./image/11. Ulju/01_10. loggin.png', region = (1100,0,1250,204), confidence=0.8)
     if (loggin == None):
         None
     else :
@@ -216,7 +216,7 @@ def 울주_This_A_Back_up():
               time.sleep(0.5)
               pag.hotkey('home')
               time.sleep(0.5)
-              울주_This_A()
+              울주_This_A_Back_up()
             if i < 1000:
               i = i+1
               pag.hotkey('f5')

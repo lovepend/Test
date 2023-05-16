@@ -224,7 +224,7 @@ def 대왕암_Start():
 
 def 대왕암_검색():
     #검색
-    button = pag.locateCenterOnScreen("./image/31. Donggu/02._1. reservation.png", region = 대왕암_find_range, confidence=0.85) 
+    button = pag.locateCenterOnScreen("./image/41. Donggu/02._1. reservation.png", region = 대왕암_find_range, confidence=0.85) 
     if (button == None) :
         None      
     else : 
@@ -233,7 +233,7 @@ def 대왕암_검색():
         대왕암_확인()
         
 def 대왕암_확인() :
-    button1 = pag.locateCenterOnScreen('./image/31. Donggu/02._2. next.png', confidence=0.7)   
+    button1 = pag.locateCenterOnScreen('./image/41. Donggu/02._2. next.png', confidence=0.7)   
     print(button1)
     if (button1 == None) :
         대왕암_확인()      

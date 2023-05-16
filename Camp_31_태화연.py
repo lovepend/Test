@@ -352,7 +352,7 @@ def 태화연_Start1():
 
 def 태화연_검색():
     print("검색")
-    button = pag.locateCenterOnScreen("./image/21. Junggu/21. reservation.png", region=태화연_find_range ,confidence=0.8) 
+    button = pag.locateCenterOnScreen("./image/31. Junggu/21. reservation.png", region=태화연_find_range ,confidence=0.8) 
     if (button == None) :
         태화연_검색()
         #None     
@@ -362,7 +362,7 @@ def 태화연_검색():
        
 def 태화연_StepA():
     print("태화연_StepA")
-    button = pag.locateCenterOnScreen("./image/21. Junggu/22. reservation.png", region=태화연_find_range ,confidence=0.7) 
+    button = pag.locateCenterOnScreen("./image/31. Junggu/22. reservation.png", region=태화연_find_range ,confidence=0.7) 
     print(button)
     if (button == None) :
         None     
@@ -371,7 +371,7 @@ def 태화연_StepA():
         태화연_StepB()
         
 def 태화연_StepB():
-    button1 = pag.locateCenterOnScreen("./image/21. Junggu/23. check.png", confidence=0.7) 
+    button1 = pag.locateCenterOnScreen("./image/31. Junggu/23. check.png", confidence=0.7) 
     if (button1 == None) :
         태화연_StepB()
     else :    
@@ -388,7 +388,7 @@ def 태화연_StepB():
         태화연_StepC()
 
 def 태화연_StepC() : 
-    button2 = pag.locateCenterOnScreen('./image/21. Junggu/24. next.png', confidence=0.7)   
+    button2 = pag.locateCenterOnScreen('./image/31. Junggu/24. next.png', confidence=0.7)   
     print(button2)
     if (button2 == None) :
         태화연_StepC()      
@@ -401,7 +401,7 @@ def 태화연_StepC() :
         time.sleep(0.2)
         pag.hotkey('end')
         time.sleep(1)
-        button3 = pag.locateCenterOnScreen('./image/21. Junggu/25. next.png', confidence=0.7)   
+        button3 = pag.locateCenterOnScreen('./image/31. Junggu/25. next.png', confidence=0.7)   
         pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
         refresh_token()
         kakao_message_you("태화연")

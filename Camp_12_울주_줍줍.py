@@ -49,10 +49,10 @@ def 울주_NH_간편결제():
 #새로고침
 def 울주줍줍_새로고침():
   pag.hotkey('f5')
-  button = pag.locateCenterOnScreen('./image/02. Ulju/11. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/11. jubjub.png', confidence=0.9)
   if (button == None) :
     울주줍줍_새로고침()   
-    print("dd")
+    print(button)
   else :
     print("검색")
     울주줍줍_검색()
@@ -60,7 +60,7 @@ def 울주줍줍_새로고침():
 #새로고침 확인
 def 울주줍줍_검색():
   #Saturday = 1164,102,1263,1080 #토요일만 검색 
-  button = pag.locateCenterOnScreen('./image/02. Ulju/13. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/13. jubjub.png', confidence=0.9)
   if (button == None) :
     울주줍줍_새로고침()   
   else :
@@ -69,7 +69,7 @@ def 울주줍줍_검색():
 
 #기간
 def 울주줍줍_Page1_기간():
-  button = pag.locateCenterOnScreen('./image/02. Ulju/13. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/13. jubjub.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page1_기간()   
   else :
@@ -81,7 +81,7 @@ def 울주줍줍_Page1_기간():
 
 #총인원
 def 울주줍줍_Page1_총인원():
-  button = pag.locateCenterOnScreen('./image/02. Ulju/14. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/14. jubjub.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page1_총인원()   
   else :
@@ -97,7 +97,7 @@ def 울주줍줍_Page1_총인원():
 
 #총인원
 def 울주줍줍_Page1_다음():
-  button = pag.locateCenterOnScreen('./image/02. Ulju/15. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/15. jubjub.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page1_다음()   
   else :
@@ -113,7 +113,7 @@ def 울주줍줍_Page2_도착예정시간():
   pag.hotkey('end')
   pag.hotkey('end')
   time.sleep(timesetting)
-  button = pag.locateCenterOnScreen('./image/02. Ulju/21. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/21. jubjub.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page2_도착예정시간()   
   else :
@@ -126,7 +126,7 @@ def 울주줍줍_Page2_도착예정시간():
 
 #차량방문번호
 def 울주줍줍_Page1_차량방문번호():
-  button = pag.locateCenterOnScreen('./image/02. Ulju/22. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/22. jubjub.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page1_차량방문번호()   
   else :
@@ -140,7 +140,7 @@ def 울주줍줍_Page1_차량방문번호():
 
 #개인정보 수집 및 이용안내
 def 울주줍줍_Page2_개인정보():
-  button = pag.locateCenterOnScreen('./image/02. Ulju/23. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/23. jubjub.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page2_개인정보()   
   else :
@@ -150,7 +150,7 @@ def 울주줍줍_Page2_개인정보():
 
 #예약하기
 def 울주줍줍_Page2_예약하기():
-  button = pag.locateCenterOnScreen('./image/02. Ulju/24. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/24. jubjub.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page2_예약하기()   
   else :
@@ -161,7 +161,7 @@ def 울주줍줍_Page2_예약하기():
 #신용카드결제
 def 울주줍줍_Page3_약관_전체동의():
   time.sleep(timesetting)
-  button = pag.locateCenterOnScreen('./image/02. Ulju/31. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/31. jubjub.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page3_약관_전체동의()   
   else :
@@ -172,7 +172,7 @@ def 울주줍줍_Page3_약관_전체동의():
 #신용카드선택
 def 울주줍줍_Page3_KB_Pay():
   
-  button = pag.locateCenterOnScreen('./image/02. Ulju/32. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/32. jubjub.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page3_KB_Pay()   
   else :
@@ -180,7 +180,7 @@ def 울주줍줍_Page3_KB_Pay():
 
     print(Card)
     if (Card == 2) :
-      button1 = pag.locateCenterOnScreen('./image/02. Ulju/32. jubjub_NH.png', confidence=0.9)
+      button1 = pag.locateCenterOnScreen('./image/12. Ulju/32. jubjub_NH.png', confidence=0.9)
       pag.click(button1.x,button1.y) 
       print(Card)
       print("농협선택")
@@ -193,7 +193,7 @@ def 울주줍줍_Page3_KB_Pay():
 
 #다음
 def 울주줍줍_Page4_다음():
-  button = pag.locateCenterOnScreen('./image/02. Ulju/41. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/41. jubjub.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page4_다음()   
   else :
@@ -212,7 +212,7 @@ def 울주줍줍_Page4_다음():
 ####################################국민카드 앱결제######################################
 #앱결제
 def 울주줍줍_Page5_앱결제():
-  button = pag.locateCenterOnScreen('./image/02. Ulju/51. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/51. jubjub.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page5_앱결제()   
   else :
@@ -222,7 +222,7 @@ def 울주줍줍_Page5_앱결제():
         
 #결제코드
 def 울주줍줍_Page6_결제코드():
-  button = pag.locateCenterOnScreen('./image/02. Ulju/61. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/61. jubjub.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page6_결제코드()   
   else :
@@ -241,7 +241,7 @@ def 울주줍줍_Page6_결제코드():
 #앱결제
 def 울주줍줍_Page7_확인():
   time.sleep(timesetting)
-  button = pag.locateCenterOnScreen('./image/02. Ulju/71. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/71. jubjub.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page7_확인()   
   else :
@@ -252,7 +252,7 @@ def 울주줍줍_Page7_확인():
 
 ####################################국민카드 간편결제######################################
 def 울주줍줍_Page5_간편결제():
-  button = pag.locateCenterOnScreen('./image/02. Ulju/51. jubjub_Pass.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/51. jubjub_Pass.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page5_간편결제()   
   else :
@@ -261,7 +261,7 @@ def 울주줍줍_Page5_간편결제():
     울주줍줍_Page6_인증서결제()   
 
 def 울주줍줍_Page6_인증서결제():
-  button = pag.locateCenterOnScreen('./image/02. Ulju/61. jubjub_Pass.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/61. jubjub_Pass.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page6_인증서결제()   
   else :
@@ -270,7 +270,7 @@ def 울주줍줍_Page6_인증서결제():
     울주줍줍_Page7_결제비밀번호()   
 
 def 울주줍줍_Page7_결제비밀번호():
-  button = pag.locateCenterOnScreen('./image/02. Ulju/71. jubjub_Pass.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/71. jubjub_Pass.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page7_결제비밀번호()   
   else :
@@ -281,7 +281,7 @@ def 울주줍줍_Page7_결제비밀번호():
     울주줍줍_Page7_결제진행()   
 
 def 울주줍줍_Page7_결제진행():
-  button = pag.locateCenterOnScreen('./image/02. Ulju/71. jubjub_Next.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/71. jubjub_Next.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page7_결제진행()   
   else :
@@ -294,7 +294,7 @@ def 울주줍줍_Page7_결제진행():
 #앱결제
 def 울주줍줍_Page8_확인():
   time.sleep(timesetting)
-  button = pag.locateCenterOnScreen('./image/02. Ulju/71. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/71. jubjub.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page8_확인()   
   else :
@@ -308,7 +308,7 @@ def 울주줍줍_Page8_확인():
 def 울주줍줍_Page4_NH_Next():
   time.sleep(0.1)
   print("1")
-  button = pag.locateCenterOnScreen('./image/02. Ulju/41. jubjub_NH.png', confidence=0.7)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/41. jubjub_NH.png', confidence=0.7)
   if (button == None) :
     울주줍줍_Page4_NH_Next()   
   else :
@@ -318,7 +318,7 @@ def 울주줍줍_Page4_NH_Next():
 
 
 def 울주줍줍_Page5_NH_다른결제():
-  button = pag.locateCenterOnScreen('./image/02. Ulju/51. jubjub_NH_Pass.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/51. jubjub_NH_Pass.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page5_NH_다른결제()   
   else :
@@ -327,7 +327,7 @@ def 울주줍줍_Page5_NH_다른결제():
     울주줍줍_Page6_NH_원클릭간편결제()   
 
 def 울주줍줍_Page6_NH_원클릭간편결제():
-  button = pag.locateCenterOnScreen('./image/02. Ulju/52. jubjub_NH_Pass.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/52. jubjub_NH_Pass.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page6_NH_원클릭간편결제()   
   else :
@@ -336,7 +336,7 @@ def 울주줍줍_Page6_NH_원클릭간편결제():
     울주줍줍_Page7_NH_입력()   
 
 def 울주줍줍_Page7_NH_입력():
-  button = pag.locateCenterOnScreen('./image/02. Ulju/71. jubjub_NH_Pass.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/71. jubjub_NH_Pass.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page7_NH_입력()   
   else :
@@ -347,7 +347,7 @@ def 울주줍줍_Page7_NH_입력():
     울주줍줍_Page7_NH_입력1()   
 
 def 울주줍줍_Page7_NH_입력1():
-  button = pag.locateCenterOnScreen('./image/02. Ulju/72. jubjub_NH_Pass.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/72. jubjub_NH_Pass.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page7_NH_입력1()   
   else :
@@ -359,7 +359,7 @@ def 울주줍줍_Page7_NH_입력1():
 
 
 def 울주줍줍_Page7_NH_확인():
-  button = pag.locateCenterOnScreen('./image/02. Ulju/72. jubjub_NH_Pass.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/72. jubjub_NH_Pass.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page7_NH_확인()   
   else :
@@ -371,7 +371,7 @@ def 울주줍줍_Page7_NH_확인():
 #앱결제
 def 울주줍줍_Page8_NH_확인():
   time.sleep(timesetting)
-  button = pag.locateCenterOnScreen('./image/02. Ulju/73. jubjub_NH_Pass.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/73. jubjub_NH_Pass.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page8_NH_확인()   
   else :
