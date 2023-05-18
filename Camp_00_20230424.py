@@ -58,27 +58,22 @@ notebook.add(frame2, text="01. 해양" )
 
 #울주에서 예약하기
 #아이디
-울주log1 = Button(frame2, width=5, padx=10, pady=5, text="NO.1", command=울주_log_id1, bg="orange", fg="black")
+울주log1 = Button(frame2, width=5, padx=10, pady=5, text="ID.1", command=울주_log_id1, bg="orange", fg="black")
 울주log1.place(x=0, y=10)
-울주log2 = Button(frame2, width=5, padx=10, pady=5, text="NO.2", command=울주_log_id2, bg="orange", fg="black")
+울주log2 = Button(frame2, width=5, padx=10, pady=5, text="ID.2", command=울주_log_id2, bg="orange", fg="black")
 울주log2.place(x=60, y=10)
-울주log3 = Button(frame2, width=5, padx=10, pady=5, text="NO.3", command=울주_log_id3, bg="orange", fg="black")
+울주log3 = Button(frame2, width=5, padx=10, pady=5, text="ID.3", command=울주_log_id3, bg="orange", fg="black")
 울주log3.place(x=120, y=10)
-울주log4 = Button(frame2, width=5, padx=10, pady=5, text="NO.4", command=울주_log_id4, bg="orange", fg="black")
+울주log4 = Button(frame2, width=5, padx=10, pady=5, text="ID.4", command=울주_log_id4, bg="orange", fg="black")
 울주log4.place(x=180, y=10)
-울주log5 = Button(frame2, width=5, padx=10, pady=5, text="NO.5", command=울주_log_guest, bg="orange", fg="black")
+울주log5 = Button(frame2, width=5, padx=10, pady=5, text="ID.5", command=울주_log_guest, bg="orange", fg="black")
 울주log5.place(x=240, y=10)
-울주log6 = Button(frame2, width=5, padx=10, pady=5, text="말일", command=울주_특정데이, bg="orange", fg="black")
-울주log6.place(x=300, y=10)
-
-울주btn11 = Button(frame2, width=5, padx=10, pady=5, text="울주줍줍", command=울주줍줍_새로고침, bg="white", fg="black")
-울주btn11.place(x=0, y=50)
 
 lable1=Label(frame2, text="차량번호")
-lable1.place(x=120, y=50)
+lable1.place(x=0, y=57.5)
 
 entry_울주 = Entry(frame2, width=10)
-entry_울주.place(x=180, y=50)
+entry_울주.place(x=60, y=57.5)
 entry_울주.insert(0,"62소9403")
 
 def 차량번호():
@@ -86,7 +81,7 @@ def 차량번호():
   울주_차량번호_입력(차량번호)
 
 울주btn12 = Button(frame2, width=5, padx=10, pady=5, text="차량번호", command=차량번호, bg="yellow", fg="black")
-울주btn12.place(x=60, y=50)
+울주btn12.place(x=180, y=50)
 
 #함수
 울주btn1 = Button(frame2, width=5, padx=10, pady=5, text="Saturday", command=울주_토요일, bg="white", fg="black")
@@ -109,7 +104,7 @@ def 차량번호():
 울주btn5.place(x=120, y=130)
 울주btn5 = Button(frame2, width=5, padx=10, pady=5, text="Next(N)", command=울주_Next_N, bg="green", fg="white")
 울주btn5.place(x=180, y=130)
-울주btn6 = Button(frame2, width=5, padx=10, pady=5, text="Auto", command=울주_자동, bg="green", fg="white")
+울주btn6 = Button(frame2, width=5, padx=10, pady=5, text="울주줍줍", command=울주줍줍_새로고침, bg="green", fg="white")
 울주btn6.place(x=240, y=130)
 
 #신불산 UI===============================================================================================================
@@ -117,15 +112,15 @@ frame3=tkinter.Frame(window)
 notebook.add(frame3, text="02. 신불")
 
 #로그
-신불산log1 = Button(frame3, width=5, padx=10, pady=5, text="NO.1", command=신불산_Log_Id1, bg="orange", fg="black")
+신불산log1 = Button(frame3, width=5, padx=10, pady=5, text="ID.1", command=신불산_Log_Id1, bg="orange", fg="black")
 신불산log1.place(x=0, y=10)
-신불산log2 = Button(frame3, width=5, padx=10, pady=5, text="NO.2", command=신불산_Log_Id2, bg="orange", fg="black")
+신불산log2 = Button(frame3, width=5, padx=10, pady=5, text="ID.2", command=신불산_Log_Id2, bg="orange", fg="black")
 신불산log2.place(x=60, y=10)
-신불산log3 = Button(frame3, width=5, padx=10, pady=5, text="NO.3", command=신불산_Log_Id3, bg="orange", fg="black")
+신불산log3 = Button(frame3, width=5, padx=10, pady=5, text="ID.3", command=신불산_Log_Id3, bg="orange", fg="black")
 신불산log3.place(x=120, y=10)
-신불산log4 = Button(frame3, width=5, padx=10, pady=5, text="NO.4", command=신불산_Log_Id4, bg="orange", fg="black")
+신불산log4 = Button(frame3, width=5, padx=10, pady=5, text="ID.4", command=신불산_Log_Id4, bg="orange", fg="black")
 신불산log4.place(x=180, y=10)
-신불산log5 = Button(frame3, width=5, padx=10, pady=5, text="NO.G", command=신불산_Log_Guest, bg="orange", fg="black")
+신불산log5 = Button(frame3, width=5, padx=10, pady=5, text="ID.G", command=신불산_Log_Guest, bg="orange", fg="black")
 신불산log5.place(x=240, y=10)
 
 def 시간입력():
@@ -151,25 +146,25 @@ lable2.place(x=360, y=27)
     
 entry2 = Entry(frame3, width=5)
 entry2.place(x=360, y=8)
-entry2.insert(0,"38")
+entry2.insert(0,"1")
 
-신불산time_s = Button(frame3, width=5, padx=5, pady=5, text="초", command=시간입력, bg="orange", fg="black")
-신불산time_s.place(x=410, y=10)
+# 신불산time_s = Button(frame3, width=5, padx=5, pady=5, text="시작", command=시간입력, bg="orange", fg="black")
+# 신불산time_s.place(x=400, y=10)
 
 #함수
-신불산btn1 = Button(frame3, width=5, padx=10, pady=5, text="Time 0.1", command=신불산_time_controll_01, bg="white", fg="black")
+신불산btn1 = Button(frame3, width=5, padx=10, pady=5, text="Delay 0.1", command=신불산_time_controll_01, bg="white", fg="black")
 신불산btn1.place(x=0, y=50)
-신불산btn2 = Button(frame3, width=5, padx=10, pady=5, text="Time 0.2", command=신불산_time_controll_02, bg="white", fg="black")
+신불산btn2 = Button(frame3, width=5, padx=10, pady=5, text="Delay 0.2", command=신불산_time_controll_02, bg="white", fg="black")
 신불산btn2.place(x=60, y=50)
-신불산btn3 = Button(frame3, width=5, padx=10, pady=5, text="Time 0.3", command=신불산_time_controll_03, bg="white", fg="black")
+신불산btn3 = Button(frame3, width=5, padx=10, pady=5, text="Delay 0.3", command=신불산_time_controll_03, bg="white", fg="black")
 신불산btn3.place(x=120, y=50)
-신불산btn4 = Button(frame3, width=5, padx=10, pady=5, text="Time 0.5", command=신불산_time_controll_05, bg="white", fg="black")
+신불산btn4 = Button(frame3, width=5, padx=10, pady=5, text="Delay 0.5", command=신불산_time_controll_05, bg="white", fg="black")
 신불산btn4.place(x=180, y=50)
-신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="Time 0.7", command=신불산_time_controll_07, bg="white", fg="black")
+신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="Delay 0.7", command=신불산_time_controll_07, bg="white", fg="black")
 신불산btn5.place(x=240, y=50)
-신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="Time 0.9", command=신불산_time_controll_09, bg="white", fg="black")
+신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="Delay 0.9", command=신불산_time_controll_09, bg="white", fg="black")
 신불산btn5.place(x=300, y=50)
-신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="Time 0.1", command=신불산_time_controll_10, bg="white", fg="black")
+신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="Delay 1", command=신불산_time_controll_10, bg="white", fg="black")
 신불산btn5.place(x=360, y=50)
 
 #날짜
@@ -207,22 +202,23 @@ entry2.insert(0,"38")
 신불산btn4.place(x=180, y=130)
 신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="줍기", command=시간입력1, bg="green", fg="white")
 신불산btn5.place(x=240, y=130)
-
+신불산btn6 = Button(frame3, width=5, padx=10, pady=5, text="실시간", command=시간입력, bg="green", fg="white")
+신불산btn6.place(x=300, y=130)
 
 #중구 UI===============================================================================================================
 frame4=tkinter.Frame(window)
 notebook.add(frame4, text="03. 중구")
 
 #로그
-태화연log1 = Button(frame4, width=5, padx=10, pady=5, text="NO.1", command=태화연_Log_Id1, bg="orange", fg="black")
+태화연log1 = Button(frame4, width=5, padx=10, pady=5, text="ID.1", command=태화연_Log_Id1, bg="orange", fg="black")
 태화연log1.place(x=0, y=10)
-태화연log2 = Button(frame4, width=5, padx=10, pady=5, text="NO.2", command=태화연_Log_Id2, bg="orange", fg="black")
+태화연log2 = Button(frame4, width=5, padx=10, pady=5, text="ID.2", command=태화연_Log_Id2, bg="orange", fg="black")
 태화연log2.place(x=60, y=10)
-태화연log3 = Button(frame4, width=5, padx=10, pady=5, text="NO.3", command=태화연_Log_Id3, bg="orange", fg="black")
+태화연log3 = Button(frame4, width=5, padx=10, pady=5, text="ID.3", command=태화연_Log_Id3, bg="orange", fg="black")
 태화연log3.place(x=120, y=10)
-태화연log4 = Button(frame4, width=5, padx=10, pady=5, text="NO.4", command=태화연_Log_Id4, bg="orange", fg="black")
+태화연log4 = Button(frame4, width=5, padx=10, pady=5, text="ID.4", command=태화연_Log_Id4, bg="orange", fg="black")
 태화연log4.place(x=180, y=10)
-태화연log5 = Button(frame4, width=5, padx=10, pady=5, text="NO.5", command=태화연_Log_Guest, bg="orange", fg="black")
+태화연log5 = Button(frame4, width=5, padx=10, pady=5, text="ID.5", command=태화연_Log_Guest, bg="orange", fg="black")
 태화연log5.place(x=240, y=10)
 태화연log6 = Button(frame4, width=5, padx=10, pady=5, text="호수뷰", command=태화연_호수뷰, bg="white", fg="black")
 태화연log6.place(x=300, y=10)
