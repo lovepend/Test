@@ -320,7 +320,6 @@ def 신불산_Start1(신불산_min,신불산_sec):
         if keyboard.is_pressed("F2"):
           print("종료") 
           break  
-        
         button = pag.locateCenterOnScreen("./image/21. Sinbul/21. reservation.png", region = 신불산_find_range, confidence=0.7) 
         if (button == None) :
           None
@@ -349,13 +348,6 @@ def 신불산_StepA() : ## 예약하기 버튼 순간 정할것
   if (button1 == None) :
     신불산_StepA()      
   else :  
-    tm1 = time.localtime()
-    print(tm1.tm_hour,tm1.tm_min,tm1.tm_sec)
-    kakao_tm = tm1.tm_hour,tm1.tm_min,tm1.tm_sec
-    text = str(kakao_tm)
-    print(text)
-    refresh_token()
-    kakao_message_you(text)
     time.sleep(0.2)
     print(button1)
     button1 = pag.locateCenterOnScreen('./image/21. Sinbul/22. next.png',  confidence=0.8)
@@ -363,6 +355,13 @@ def 신불산_StepA() : ## 예약하기 버튼 순간 정할것
     button1 = pag.locateCenterOnScreen('./image/21. Sinbul/22. next.png',  confidence=0.8)   #region = (510,100,1324,333),
     pag.click(button1.x+10,button1.y, button='left', clicks=1, interval=0.1)
     #pag.click(1264,276)
+    tm1 = time.localtime()
+    print(tm1.tm_hour,tm1.tm_min,tm1.tm_sec)
+    kakao_tm = tm1.tm_hour,tm1.tm_min,tm1.tm_sec
+    text = str(kakao_tm)
+    print(text)
+    refresh_token()
+    kakao_message_you(text)
     
  
     print("끝")
