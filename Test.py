@@ -48,7 +48,27 @@ def 시간체크():
       break
     print(tm.tm_hour, tm.tm_min, tm.tm_sec)
 
-시간체크()
+
+
+# 예약날짜 = pyperclip.paste()
+# #70,97
+# date_1 = 예약날짜[70:78]
+# date_2 = 예약날짜[96:97]
+# print(date_1)
+# print("1")
+
+# date_2 = 예약날짜[96:97]
+# print(date_2)
+# print("2")
+
+# print(date_1,date_2)
+# print("3")
+
+# date3 = date_1 +" // " + date_2
+# print(date3)
+
+# refresh_token
+# kakao_message_you(date3)
 
 #global i
 # i = 0

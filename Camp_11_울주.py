@@ -107,8 +107,12 @@ def 울주_검색1():
     time.sleep(0.2)
     pag.click(859,50)
     pag.hotkey('ctrl','c')
+    예약날짜 = pyperclip.paste() 
+    date_1 = 예약날짜[70:78]
+    date_2 = 예약날짜[96:97]
+    date_3 = date_1 +" // " + date_2
     refresh_token()
-    kakao_message_you(pyperclip.paste())
+    kakao_message_you(date_3)
     print("검색")
     울주줍줍_Page1_기간()
 
