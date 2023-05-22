@@ -146,7 +146,7 @@ lable2.place(x=360, y=27)
     
 entry2 = Entry(frame3, width=5)
 entry2.place(x=360, y=8)
-entry2.insert(0,"1")
+entry2.insert(0,"00")
 
 # 신불산time_s = Button(frame3, width=5, padx=5, pady=5, text="시작", command=시간입력, bg="orange", fg="black")
 # 신불산time_s.place(x=400, y=10)
