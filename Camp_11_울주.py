@@ -109,7 +109,7 @@ def 울주_검색1():
     pag.hotkey('ctrl','c')
     예약날짜 = pyperclip.paste() 
     date_1 = 예약날짜[70:78]
-    date_2 = 예약날짜[96:97]
+    date_2 = 예약날짜[95:98]
     date_3 = date_1 +" // " + date_2
     refresh_token()
     kakao_message_you(date_3)

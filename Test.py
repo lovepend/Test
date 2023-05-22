@@ -57,7 +57,7 @@ def 시간체크():
 # print(date_1)
 # print("1")
 
-# date_2 = 예약날짜[96:97]
+# date_2 = 예약날짜[95:98]
 # print(date_2)
 # print("2")
 

@@ -110,6 +110,8 @@ def 울주줍줍_Page1_다음():
 
 #총인원
 def 울주줍줍_Page2_도착예정시간():
+  #페이지 선택
+  pag.doubleClick(1600,800)
   pag.hotkey('end')
   pag.hotkey('end')
   time.sleep(timesetting)
