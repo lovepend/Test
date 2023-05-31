@@ -265,3 +265,53 @@ def Test():
 #             break      
 
 
+
+def 울주_범위선택():
+    global find_range
+    
+    while True:
+        if keyboard.is_pressed("F2"): 
+            global find_range1 
+            find_range1  = pag.position()
+            print(find_range1)
+            time.sleep(0.5)
+            break  
+    while True:
+        if keyboard.is_pressed("F2"): 
+            global find_range2 
+            find_range2  = pag.position()
+            print(find_range2)
+            time.sleep(0.5)
+            break  
+    find_range = (find_range1.x,find_range1.y,find_range2.x,find_range2.y)
+    print(find_range)
+        
+    
+    
+
+
+def test_검색():
+  global find_range
+  print(find_range)
+  button = pag.locateCenterOnScreen('./image/11. Ulju/01_0. reservation1.png', region = (801, 577, 903, 850), confidence=0.95)
+  img_capture = pag.locateOnScreen("./image/11. Ulju/01_0. reservation1.png", region=(801, 577, 903, 850))
+  pag.moveTo(img_capture)
+  print(button)
+  if (button == None) :
+    None        
+  else :
+    pag.click(button)
+    
+    # Friday = (button.x-150, button.y-8, button.x-100, button.y+8)
+    # print(Friday)
+    # button_1 = pag.locateCenterOnScreen('./image/11. Ulju/01_0. reservation1.png', region = Friday,confidence=0.9) #토요일 찾을 범위 설정      
+    # if (button_1 == None) :
+    #     None
+    #     pag.click(button,button='left')
+    # else:
+    #     pag.click(button_1,button='left')     
+    #     print("검색")
+
+
+울주_범위선택()
+test_검색()

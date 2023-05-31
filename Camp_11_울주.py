@@ -333,12 +333,12 @@ def 울주_Next_A():
         num1 = num/100
         time.sleep(num1)
         print(num1)
-        # pag.hotkey('pgdn')
-        # pag.hotkey('f5')
-        # time.sleep(0.2)
-        # 울주_검색()
-        # pag.hotkey('home')
-        # time.sleep(0.2)
+        pag.hotkey('pgdn')
+        pag.hotkey('f5')
+        time.sleep(0.2)
+        울주_검색()
+        pag.hotkey('home')
+        time.sleep(0.2)
         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             break
 
