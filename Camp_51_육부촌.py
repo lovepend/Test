@@ -160,7 +160,8 @@ def 육부촌_검색():
     else : 
         time.sleep(0.05) 
         pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
-        육부촌_확인()
+        pag.hotkey('enter')
+        육부촌_주소()
         
 def 육부촌_확인() :
     time.sleep(0.2)
