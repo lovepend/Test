@@ -238,15 +238,6 @@ def 대왕암_확인() :
     if (button1 == None) :
         대왕암_확인()      
     else :
-        pag.click(1130,283)
-        time.sleep(0.05)
-        pag.click(1130,283)
-        time.sleep(0.05)
-        pag.click(1130,283)
-        time.sleep(0.05)
-        pag.click(1130,283)
-        time.sleep(0.05)
-        pag.click(1130,283)
         time.sleep(0.05)
         pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
         refresh_token()
@@ -277,16 +268,16 @@ def 대왕암_Karavan():
             break
         #날짜 클릭
         pag.click(대왕암_day1)
-        time.sleep(0.2)
+        time.sleep(0.5)
         #검색
         대왕암_검색()
         #page 아래 
         pag.click(대왕암_position_down)
-        time.sleep(0.2)
+        time.sleep(0.5)
         대왕암_검색()
         #page 업 
         pag.click(대왕암_position_up)
-        time.sleep(0.2)
+        time.sleep(0.5)
         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             break
                     
