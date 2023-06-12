@@ -24,23 +24,32 @@ pag.FAILSAFE=False
 #신불산 Test 2022.03.21 #Viewer Size 67%
 #56분 36초
 
-def 시간입력_시작(min,sec):
+def 시간입력_실시간(min,sec):
   global 신불산_min
   global 신불산_sec
   신불산_min = int(min)
   신불산_sec = int(sec)
   print(신불산_min)
   print(신불산_sec)
-  신불산_Start(신불산_min,신불산_sec)
+  신불산_실시간(신불산_min,신불산_sec)
 
-def 시간입력_시작1(min,sec):
+def 시간입력_줍기(min,sec):
   global 신불산_min
   global 신불산_sec
   신불산_min = int(min)
   신불산_sec = int(sec)
   print(신불산_min)
   print(신불산_sec)
-  신불산_Start1(신불산_min,신불산_sec)
+  신불산_줍기(신불산_min,신불산_sec)
+
+def 시간입력_줍기1(min,sec):
+  global 신불산_min
+  global 신불산_sec
+  신불산_min = int(min)
+  신불산_sec = int(sec)
+  print(신불산_min)
+  print(신불산_sec)
+  신불산_줍기1(신불산_min,신불산_sec)
 
 ################################## 리셋 
 global 신불산_end_command
@@ -280,7 +289,7 @@ def 온라인예약():
 
   
 #★★★★★★★★★★★★★★★★★★★ 메인 함수
-def 신불산_Start(신불산_min,신불산_sec):
+def 신불산_실시간(신불산_min,신불산_sec):
   while True:
     tm = time.localtime()
     global time_controll
@@ -305,7 +314,7 @@ def 신불산_Start(신불산_min,신불산_sec):
     time.sleep(time_controll)
     신불산_검색()     
 
-def 신불산_Start1(신불산_min,신불산_sec):
+def 신불산_줍기(신불산_min,신불산_sec):
   while True:
     tm = time.localtime()
     global time_controll
@@ -333,6 +342,33 @@ def 신불산_Start1(신불산_min,신불산_sec):
     #time.sleep(time_controll)
     #신불산_검색()   
 
+def 신불산_줍기1(신불산_min,신불산_sec):
+  while True:
+    tm = time.localtime()
+    global time_controll
+    print(time_controll)
+    if keyboard.is_pressed("F2"):
+      print("종료") 
+      break  
+    if (tm.tm_min == 신불산_min and tm.tm_sec == 신불산_sec) : #9시 56분 및 15시 56분 시작
+    #if (tm.tm_hour == 10 and tm.tm_min == 19 and tm.tm_sec == 10) or (tm.tm_hour == 14 and tm.tm_min == 56 and tm.tm_sec == 37) : #TEST
+      while True:   
+        if keyboard.is_pressed("F2"):
+          print("종료") 
+          break  
+        pag.click(신불산_day)
+        button = pag.locateCenterOnScreen("./image/21. Sinbul/21. reservation.png", region = 신불산_find_range, confidence=0.7) 
+        if (button == None) :
+          None
+        else : 
+          print("else")
+          pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+          신불산_StepA()
+        
+    #날짜 클릭
+    #pag.click(신불산_day)  
+    #time.sleep(time_controll)
+    #신불산_검색()   
 
 def 신불산_검색():                    
   button = pag.locateCenterOnScreen("./image/21. Sinbul/21. reservation.png", region = 신불산_find_range, confidence=0.7) #region = 신불산_find_range,
@@ -422,5 +458,5 @@ def 신불산_자동():
     pag.click(496,185)
     time.sleep(5)
     신불산_자동입력()
-    신불산_Start()
+    신불산_실시간()
 
