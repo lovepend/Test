@@ -80,6 +80,28 @@ def 시간체크():
 #     global end
 #     end = 1
 #     print(end)
+def 졸린():
+  while True:
+    if keyboard.is_pressed("F2") : # F2 누른게 감지되면
+      print("키 중지")
+      break
+    pag.hotkey('f5')
+    time.sleep(0.5)
+    pag.click(1216,397)
+    time.sleep(0.5)
+    pag.click(1316,461)
+    time.sleep(0.5)
+    button = pag.locateCenterOnScreen("./image/99. Test/01.png", confidence=0.8) 
+    if (button == None) :
+      None
+    else : 
+      print("else")
+      pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+
+졸린()   
+
+
+
 
 
 def Test():
