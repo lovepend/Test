@@ -97,6 +97,7 @@ def 졸린():
     else : 
       print("else")
       pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+      time.sleep(600)
 
 졸린()   
 
