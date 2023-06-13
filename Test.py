@@ -80,6 +80,27 @@ def 시간체크():
 #     global end
 #     end = 1
 #     print(end)
+
+
+def Test_Click1():
+    while True:
+        if keyboard.is_pressed("F2"):
+            global Click1
+            Click1  = pag.position()
+            print(Click1)
+            time.sleep(0.5)
+            break 
+        
+def Test_Click2():
+    while True:
+        if keyboard.is_pressed("F2"):
+            global Click2
+            Click2  = pag.position()
+            print(Click2)
+            time.sleep(0.5)
+            break 
+        
+
 def 졸린():
   while True:
     if keyboard.is_pressed("F2") : # F2 누른게 감지되면
@@ -87,9 +108,9 @@ def 졸린():
       break
     pag.hotkey('f5')
     time.sleep(0.5)
-    pag.click(1216,397)
+    pag.click(Click1)
     time.sleep(0.5)
-    pag.click(1316,461)
+    pag.click(Click2)
     time.sleep(0.5)
     button = pag.locateCenterOnScreen("./image/99. Test/01.png", confidence=0.8) 
     if (button == None) :
@@ -97,8 +118,28 @@ def 졸린():
     else : 
       print("else")
       pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-      time.sleep(600)
+      time.sleep(0.5)
+      pag.click(10,500)
+      pag.hotkey('pgdn')
+      time.sleep(0.5)
+      pag.hotkey('pgdn')
+      time.sleep(0.5)
+      button1 = pag.locateCenterOnScreen("./image/99. Test/02.png", confidence=0.8) 
+      if (button1 == None) :
+        None
+      else : 
+        print("else")
+        pag.click(button1.x,button1.y-5, button='left', clicks=1, interval=0.1)
+        button2 = pag.locateCenterOnScreen("./image/99. Test/03.png", confidence=0.8) 
+        if (button2 == None) :
+          None
+        else : 
+          print("else")
+          pag.click(button2.x,button2.y, button='left', clicks=1, interval=0.1)
+          time.sleep(600)
 
+Test_Click1()
+Test_Click2()
 졸린()   
 
 
