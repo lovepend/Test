@@ -119,7 +119,7 @@ def 졸린():
       print("else")
       pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
       time.sleep(0.5)
-      pag.click(10,500)
+      pag.doubleClick(10,500)
       pag.hotkey('pgdn')
       time.sleep(0.5)
       pag.hotkey('pgdn')
@@ -128,7 +128,7 @@ def 졸린():
       if (button1 == None) :
         None
       else : 
-        print("else")
+        print("else") 
         pag.click(button1.x,button1.y-5, button='left', clicks=1, interval=0.1)
         button2 = pag.locateCenterOnScreen("./image/99. Test/03.png", confidence=0.8) 
         if (button2 == None) :
@@ -379,3 +379,61 @@ def test_검색():
 
 울주_범위선택()
 test_검색()
+
+
+
+# def 신불산_줍기(신불산_min,신불산_sec):
+#   while True:
+#     tm = time.localtime()
+#     global time_controll
+#     print(time_controll)
+#     if keyboard.is_pressed("F2"):
+#       print("종료") 
+#       break  
+#     if (tm.tm_min == 신불산_min and tm.tm_sec == 신불산_sec) : #9시 56분 및 15시 56분 시작
+#     #if (tm.tm_hour == 10 and tm.tm_min == 19 and tm.tm_sec == 10) or (tm.tm_hour == 14 and tm.tm_min == 56 and tm.tm_sec == 37) : #TEST
+#       pag.click(신불산_day)
+#       while True:   
+#         if keyboard.is_pressed("F2"):
+#           print("종료") 
+#           break  
+#         button = pag.locateCenterOnScreen("./image/21. Sinbul/21. reservation.png", region = 신불산_find_range, confidence=0.7) 
+#         if (button == None) :
+#           None
+#         else : 
+#           print("else")
+#           pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+#           신불산_StepA()
+        
+#     #날짜 클릭
+#     #pag.click(신불산_day)  
+#     #time.sleep(time_controll)
+#     #신불산_검색()   
+
+# def 신불산_줍기1(신불산_min,신불산_sec):
+#   while True:
+#     tm = time.localtime()
+#     global time_controll
+#     print(time_controll)
+#     if keyboard.is_pressed("F2"):
+#       print("종료") 
+#       break  
+#     if (tm.tm_min == 신불산_min and tm.tm_sec == 신불산_sec) : #9시 56분 및 15시 56분 시작
+#     #if (tm.tm_hour == 10 and tm.tm_min == 19 and tm.tm_sec == 10) or (tm.tm_hour == 14 and tm.tm_min == 56 and tm.tm_sec == 37) : #TEST
+#       while True:   
+#         if keyboard.is_pressed("F2"):
+#           print("종료") 
+#           break  
+#         pag.click(신불산_day)
+#         button = pag.locateCenterOnScreen("./image/21. Sinbul/21. reservation.png", region = 신불산_find_range, confidence=0.7) 
+#         if (button == None) :
+#           None
+#         else : 
+#           print("else")
+#           pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+#           신불산_StepA()
+        
+#     #날짜 클릭
+#     #pag.click(신불산_day)  
+#     #time.sleep(time_controll)
+#     #신불산_검색()
