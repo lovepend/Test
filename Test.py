@@ -22,7 +22,7 @@ import json
 import time
 import datetime
 from kakao_01_api import kakao_message_you
-
+import random
 
 ####################시간예제
 tm = time.localtime()
@@ -138,9 +138,9 @@ def 졸린():
           pag.click(button2.x,button2.y, button='left', clicks=1, interval=0.1)
           time.sleep(600)
 
-Test_Click1()
-Test_Click2()
-졸린()   
+# Test_Click1()
+# Test_Click2()
+# 졸린()   
 
 
 
@@ -377,8 +377,7 @@ def test_검색():
     #     print("검색")
 
 
-울주_범위선택()
-test_검색()
+
 
 
 
@@ -437,3 +436,92 @@ test_검색()
 #     #pag.click(신불산_day)  
 #     #time.sleep(time_controll)
 #     #신불산_검색()
+
+
+
+#50% 윈도우 화면
+꼬잡문구 = "울산캠핑은 울모캠!!!!"
+
+def 꼬리잡기():
+  num = random.randrange(20,30)
+  num1 = num/100
+  time.sleep(num1)
+  while True:
+    if keyboard.is_pressed("F2"):
+      print("종료") 
+      break 
+    #페이지선택
+    pag.click(10,500)
+    time.sleep(num1)
+    #맨끝이동
+    pag.hotkey('end')
+    time.sleep(num1)
+    #글쓰기 클릭
+    pag.click(994,144)
+    pag.click(994,144)
+    time.sleep(num1)
+    pyperclip.copy(꼬잡문구)
+    pyperclip.copy(꼬잡문구)
+    pyperclip.copy(꼬잡문구)
+    pag.hotkey('ctrl','v')
+    time.sleep(num1)
+    #등록
+    pag.click(1190,161)
+    time.sleep(num1)
+    #도배금지 확인
+    pag.click(1138,231)
+
+
+
+import pandas as pd
+import tensorflow as tf
+import keras.layers
+from tensorflow.python.keras import layers
+
+import numpy as np
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras import layers
+
+
+# 파일경로 = 'https://raw.githubusercontent.com/blackdew/tensorflow1/master/csv/lemonade.csv'
+# 레모네이드 = pd.read_csv(파일경로)
+
+# 파일경로 = 'https://raw.githubusercontent.com/blackdew/tensorflow1/master/csv/boston.csv'
+# 보스턴 = pd.read_csv(파일경로)
+ 
+# 파일경로 = 'https://raw.githubusercontent.com/blackdew/tensorflow1/master/csv/iris.csv'
+# 아이리스 = pd.read_csv(파일경로)
+
+# print(레모네이드.shape)
+# print(보스턴.shape)
+# print(아이리스.shape)
+
+# print(레모네이드.columns)
+# print(보스턴.columns)
+# print(아이리스.columns)
+
+# 독립 = 레모네이드[['온도']]
+# 종속 = 레모네이드[['판매량']]
+# print(독립.shape, 종속.shape)
+
+# 독립 = 보스턴[['crim', 'zn', 'indus', 'chas', 'nox', 
+#             'rm', 'age', 'dis', 'rad', 'tax',
+#             'ptratio', 'b', 'lstat']]
+# 종속 = 보스턴[['medv']]
+# print(독립.shape, 종속.shape)
+ 
+# 독립 = 아이리스[['꽃잎길이', '꽃잎폭', '꽃받침길이', '꽃받침폭']]
+# 종속 = 아이리스[['품종']]
+# print(독립.shape, 종속.shape)
+
+# 레모네이드.head()
+
+# 보스턴.head()
+
+# 아이리스.head()
+
+# X = tf.keras.layers.Input(shape=[1])
+# Y = tf.keras.layers.Dense(1)(X)
+# model = tf.keras.models.Model(X, Y)
+# model.compile(loss='mse')
