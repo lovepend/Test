@@ -101,6 +101,8 @@ def 오류_방지문자():
   else : 
       time.sleep(0.3) 
       pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
+      time.sleep(0.3)
+      pag.moveTo(907,709)
       time.sleep(100)
 
 
