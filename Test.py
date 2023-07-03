@@ -138,9 +138,9 @@ def 졸린():
           pag.click(button2.x,button2.y, button='left', clicks=1, interval=0.1)
           time.sleep(600)
 
-# Test_Click1()
-# Test_Click2()
-# 졸린()   
+Test_Click1()
+Test_Click2()
+졸린()   
 
 
 
@@ -148,7 +148,7 @@ def 졸린():
 
 def Test():
     while True:
-        from datetime import datetime, timedelta
+        from datetime import datetime, timedelta 
         시 = 16
         분 = 00
         초 = 58
@@ -440,7 +440,8 @@ def test_검색():
 
 
 #50% 윈도우 화면
-꼬잡문구 = "울산캠핑은 울모캠!!!!"
+꼬잡문구 = "우리강산 푸르게 푸르게~♡ 울모캠도 푸르게 푸르게~♡"
+
 
 def 꼬리잡기():
   num = random.randrange(20,30)
@@ -481,7 +482,7 @@ from tensorflow.python.keras import layers
 import numpy as np
 import tensorflow as tf
 from tensorflow import keras
-from tensorflow.keras import layers
+#from tensorflow.keras import layers
 
 
 # 파일경로 = 'https://raw.githubusercontent.com/blackdew/tensorflow1/master/csv/lemonade.csv'

@@ -42,4 +42,3 @@ def 마리노_Karavan():
 
     if keyboard.is_pressed("F2"): # F2 누른게 감지되면
       break
-
