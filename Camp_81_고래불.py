@@ -71,9 +71,7 @@ def 고래불_시작():
 
 
 def 고래불_검색():
-  while True:
-    if keyboard.is_pressed("F2"):
-      break
+  
   #검색
     print("2")
     button = pag.locateCenterOnScreen("./image/81. Dolphin/01. Icon.png" , confidence=0.95) 
@@ -81,12 +79,12 @@ def 고래불_검색():
     if (button == None) :
         None      
         print("3")
+        고래불_시작()
     else : 
         time.sleep(0.3) 
         pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
         print("4")
         고래불_예매하기() 
-
 
 def 고래불_예매하기():
   while True:
