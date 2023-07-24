@@ -49,13 +49,19 @@ def 울주_NH_간편결제():
 #새로고침
 def 울주줍줍_새로고침():
   pag.hotkey('f5')
-  button = pag.locateCenterOnScreen('./image/12. Ulju/11. jubjub.png', confidence=0.9)
-  if (button == None) :
-    울주줍줍_새로고침()   
-    print(button)
-  else :
-    print("검색")
-    울주줍줍_검색()
+  울주줍줍_시작()
+
+def 울주줍줍_시작():
+  while True:
+    if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+      break
+    button = pag.locateCenterOnScreen('./image/12. Ulju/11. jubjub.png', confidence=0.9)
+    if (button == None) :
+      print(button)
+      울주줍줍_시작()
+    else :
+      print("검색")
+      울주줍줍_검색()
 
 #새로고침 확인
 def 울주줍줍_검색():
@@ -245,7 +251,7 @@ def 울주줍줍_Page7_확인():
   time.sleep(timesetting)
   button = pag.locateCenterOnScreen('./image/12. Ulju/71. jubjub.png', confidence=0.9)
   if (button == None) :
-    울주줍줍_Page7_확인()   
+    울주줍줍_Page7_확인() 
   else :
     pag.click(button.x,button.y)
     print("확인")
