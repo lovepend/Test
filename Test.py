@@ -24,6 +24,11 @@ import datetime
 from kakao_01_api import kakao_message_you
 import random
 
+
+신불산_find_range = 860,740,1515,968
+button = pag.locateCenterOnScreen("./image/21. Sinbul/21_1. reservation.png", region = 신불산_find_range, confidence=0.7) 
+print(button)
+
 ####################시간예제
 tm = time.localtime()
 tm.tm_year

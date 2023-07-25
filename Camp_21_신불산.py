@@ -58,8 +58,8 @@ global 신불산_end_command
 ################################## 리셋 
 
 ################################## 범위 
-global 신불산_find_range
-신불산_find_range = 860,521,1515,968
+# global 신불산_find_range
+# 신불산_find_range = 860,521,1515,968
 
 #★★★★★★★★★★★★★★★★★★★ 범위 입력 
 def 신불산_범위선택():
@@ -80,17 +80,20 @@ def 신불산_범위선택():
   global 신불산_find_range
   신불산_find_range = (신불산_find_range1.x,신불산_find_range1.y,신불산_find_range2.x,신불산_find_range2.y)
 
-def 신불산_범위선택1():
+def 신불산_range1():
   global 신불산_find_range
-  신불산_find_range = 555,685,1920,1080
+  신불산_find_range = 860,521,1515,968
+  #신불산_find_range = (0,685,1910,1010)
 
-def 신불산_범위선택2():
+def 신불산_range2():
   global 신불산_find_range
-  신불산_find_range = 555,730,1920,1080
+  신불산_find_range = 860,740,1515,968
+  #신불산_find_range = (0,730,1910,1010)
 
-def 신불산_범위선택3():
+def 신불산_range3():
   global 신불산_find_range
-  신불산_find_range = 555,777,1920,1080
+  신불산_find_range = 860,777,1515,968
+  #신불산_find_range = (0,777,1910,1010)
 
 ################################## 아이디
 global 신불산_id
@@ -331,15 +334,18 @@ def 신불산_실시간():
 def 신불산_줍기(신불산_min,신불산_sec):
   while True:
     tm = time.localtime()
-    global time_controll
-    print(time_controll)
+    global time_controll    
     if keyboard.is_pressed("F2"):
       print("종료") 
       break  
     if (tm.tm_min == 신불산_min and tm.tm_sec == 신불산_sec) : #9시 56분 및 15시 56분 시작
     #if (tm.tm_hour == 10 and tm.tm_min == 19 and tm.tm_sec == 10) or (tm.tm_hour == 14 and tm.tm_min == 56 and tm.tm_sec == 37) : #TEST
-      button = pag.locateCenterOnScreen("./image/21. Sinbul/21_1. reservation.png", region = 신불산_find_range, confidence=0.7) 
+      global 신불산_find_range
+      button = pag.locateCenterOnScreen("./image/21. Sinbul/21_1. reservation.png", region = (860,521,1515,968), confidence=0.7) 
+      print("Check1")
+      print(button)
       pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+      print("Check2")
       while True:   
         if keyboard.is_pressed("F2"):
           print("종료") 
@@ -361,11 +367,12 @@ def 신불산_줍기1(신불산_min,신불산_sec):
   while True:
     tm = time.localtime()
     global time_controll
+    global 신불산_find_range
     print(time_controll)
     if keyboard.is_pressed("F2"):
       print("종료") 
       break  
-    button2 = pag.locateCenterOnScreen("./image/21. Sinbul/21_1. reservation.png", region = 신불산_find_range, confidence=0.7)
+    button2 = pag.locateCenterOnScreen("./image/21. Sinbul/21_1. reservation.png", region = (860,521,1515,968), confidence=0.7)
     pag.click(button2.x,button2.y, button='left', clicks=1, interval=0.1)
     if (tm.tm_min == 신불산_min and tm.tm_sec == 신불산_sec) : #9시 56분 및 15시 56분 시작
     #if (tm.tm_hour == 10 and tm.tm_min == 19 and tm.tm_sec == 10) or (tm.tm_hour == 14 and tm.tm_min == 56 and tm.tm_sec == 37) : #TEST

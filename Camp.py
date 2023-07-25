@@ -123,6 +123,19 @@ notebook.add(frame3, text="02. 신불")
 신불산log5 = Button(frame3, width=5, padx=10, pady=5, text="ID.G", command=신불산_Log_Guest, bg="orange", fg="black")
 신불산log5.place(x=240, y=10)
 
+lable1=Label(frame3, text="min")
+lable1.place(x=360, y=27)
+    
+entry1 = Entry(frame3, width=5)
+entry1.place(x=360, y=8)
+entry1.insert(0,"59")
+
+lable2=Label(frame3, text="sec")
+lable2.place(x=410, y=27)
+    
+entry2 = Entry(frame3, width=5)
+entry2.place(x=410, y=8)
+entry2.insert(0,"00")
 
 def 시간_실시간():
     신불산_min = entry1.get()
@@ -145,19 +158,7 @@ def 시간_줍기1():
     print(신불산_min,신불산_sec)
     시간입력_줍기1(신불산_min,신불산_sec)
 
-lable1=Label(frame3, text="min")
-lable1.place(x=360, y=27)
-    
-entry1 = Entry(frame3, width=5)
-entry1.place(x=360, y=8)
-entry1.insert(0,"59")
 
-lable2=Label(frame3, text="sec")
-lable2.place(x=410, y=27)
-    
-entry2 = Entry(frame3, width=5)
-entry2.place(x=410, y=8)
-entry2.insert(0,"00")
 
 # 신불산time_s = Button(frame3, width=5, padx=5, pady=5, text="시작", command=시간입력, bg="orange", fg="black")
 # 신불산time_s.place(x=400, y=10)
@@ -171,11 +172,11 @@ entry2.insert(0,"00")
 신불산btn3.place(x=120, y=50)
 신불산btn4 = Button(frame3, width=5, padx=10, pady=5, text="Delay 0.5", command=신불산_time_controll_05, bg="white", fg="black")
 신불산btn4.place(x=180, y=50)
-신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="첫번째선택", command=신불산_범위선택1, bg="white", fg="black")
+신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="첫번째선택", command=신불산_range1, bg="white", fg="black")
 신불산btn5.place(x=240, y=50)
-신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="두번째선택", command=신불산_범위선택2, bg="white", fg="black")
+신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="두번째선택", command=신불산_range2, bg="white", fg="black")
 신불산btn5.place(x=300, y=50)
-신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="세번째선택", command=신불산_범위선택3, bg="white", fg="black")
+신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="세번째선택", command=신불산_range3, bg="white", fg="black")
 신불산btn5.place(x=360, y=50)
 
 #날짜
