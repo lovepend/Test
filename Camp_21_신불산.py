@@ -61,6 +61,37 @@ global 신불산_end_command
 global 신불산_find_range
 신불산_find_range = 860,521,1515,968
 
+#★★★★★★★★★★★★★★★★★★★ 범위 입력 
+def 신불산_범위선택():
+  while True:
+    if keyboard.is_pressed("F2"): 
+      global 신불산_find_range1 
+      신불산_find_range1  = pag.position()
+      print(신불산_find_range1)
+      time.sleep(0.5)
+      break  
+  while True:
+      if keyboard.is_pressed("F2"): 
+        global 신불산_find_range2 
+        신불산_find_range2  = pag.position()
+        print(신불산_find_range2)
+        time.sleep(0.5)
+        break  
+  global 신불산_find_range
+  신불산_find_range = (신불산_find_range1.x,신불산_find_range1.y,신불산_find_range2.x,신불산_find_range2.y)
+
+def 신불산_범위선택1():
+  global 신불산_find_range
+  신불산_find_range = 555,685,1920,1080
+
+def 신불산_범위선택2():
+  global 신불산_find_range
+  신불산_find_range = 555,730,1920,1080
+
+def 신불산_범위선택3():
+  global 신불산_find_range
+  신불산_find_range = 555,777,1920,1080
+
 ################################## 아이디
 global 신불산_id
 신불산_id = "pend"
@@ -198,39 +229,22 @@ def 신불산_time_controll_05():
     time_controll =  0.5
     print(time_controll)
 
-def 신불산_time_controll_07():
-    global time_controll
-    time_controll =  0.7
-    print(time_controll)
+# def 신불산_time_controll_07():
+#     global time_controll
+#     time_controll =  0.7
+#     print(time_controll)
 
-def 신불산_time_controll_09():
-    global time_controll
-    time_controll =  0.9
-    print(time_controll)
+# def 신불산_time_controll_09():
+#     global time_controll
+#     time_controll =  0.9
+#     print(time_controll)
 
-def 신불산_time_controll_10():
-    global time_controll
-    time_controll =  1
-    print(time_controll)
+# def 신불산_time_controll_10():
+#     global time_controll
+#     time_controll =  1
+#     print(time_controll)
 
-#★★★★★★★★★★★★★★★★★★★ 범위 입력 
-def 신불산_범위선택():
-    while True:
-        if keyboard.is_pressed("F2"): 
-            global 신불산_find_range1 
-            신불산_find_range1  = pag.position()
-            print(신불산_find_range1)
-            time.sleep(0.5)
-            break  
-    while True:
-        if keyboard.is_pressed("F2"): 
-            global 신불산_find_range2 
-            신불산_find_range2  = pag.position()
-            print(신불산_find_range2)
-            time.sleep(0.5)
-            break  
-    global 신불산_find_range
-    신불산_find_range = (신불산_find_range1.x,신불산_find_range1.y,신불산_find_range2.x,신불산_find_range2.y)
+
    
 #★★★★★★★★★★★★★★★★★★★ 자동 입력
 def 신불산_자동입력():  
