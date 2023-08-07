@@ -51,7 +51,7 @@ def 울주_log_guest():
     울주_id = "jhrep2234@nate.com"
     time.sleep(1)
     global 울주_pw
-    울주_pw = "j1902217*"
+    울주_pw = "*qwer1234"
     print(울주_id)
     print(울주_pw)
 
