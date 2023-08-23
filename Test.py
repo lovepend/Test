@@ -143,9 +143,9 @@ def 졸린():
           pag.click(button2.x,button2.y, button='left', clicks=1, interval=0.1)
           time.sleep(600)
 
-Test_Click1()
-Test_Click2()
-졸린()   
+# Test_Click1()
+# Test_Click2()
+# 졸린()   
 
 
 
@@ -443,39 +443,6 @@ def test_검색():
 #     #신불산_검색()
 
 
-
-#50% 윈도우 화면
-꼬잡문구 = "우리강산 푸르게 푸르게~♡ 울모캠도 푸르게 푸르게~♡"
-
-
-def 꼬리잡기():
-  num = random.randrange(20,30)
-  num1 = num/100
-  time.sleep(num1)
-  while True:
-    if keyboard.is_pressed("F2"):
-      print("종료") 
-      break 
-    #페이지선택
-    pag.click(10,500)
-    time.sleep(num1)
-    #맨끝이동
-    pag.hotkey('end')
-    time.sleep(num1)
-    #글쓰기 클릭
-    pag.click(994,144)
-    pag.click(994,144)
-    time.sleep(num1)
-    pyperclip.copy(꼬잡문구)
-    pyperclip.copy(꼬잡문구)
-    pyperclip.copy(꼬잡문구)
-    pag.hotkey('ctrl','v')
-    time.sleep(num1)
-    #등록
-    pag.click(1190,161)
-    time.sleep(num1)
-    #도배금지 확인
-    pag.click(1138,231)
 
 
 
