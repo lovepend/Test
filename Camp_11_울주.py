@@ -247,7 +247,8 @@ def 울주_This_A():
         print(num1)
         time.sleep(0.2)
         #울주_검색()
-        pag.hotkey('pgdn')
+        pag.hotkey('end')
+        #*Zoavld4fkdpag.hotkey('pgdn')
         pag.hotkey('f5')
         #랜덤 새로고침
         num = random.randrange(20,40)

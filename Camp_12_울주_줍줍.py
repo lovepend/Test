@@ -79,7 +79,7 @@ def 울주줍줍_Page1_기간():
   if (button == None) :
     울주줍줍_Page1_기간()   
   else :
-    pag.click(button.x,button.y) 
+    pag.click(button.x,button.y)
     pag.hotkey('down')
     #pag.hotkey('end')
     print("기간")

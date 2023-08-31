@@ -362,7 +362,7 @@ def 태화연_검색():
        
 def 태화연_StepA():
     print("태화연_StepA")
-    button = pag.locateCenterOnScreen("./image/31. Junggu/22. reservation.png", region=태화연_find_range ,confidence=0.7) 
+    button = pag.locateCenterOnScreen("./image/31. Junggu/22. reservation.png", region=태화연_find_range ,confidence=0.9) 
     print(button)
     if (button == None) :
         None     
