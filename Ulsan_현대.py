@@ -105,9 +105,9 @@ def 티켓예매():
     else :
       time.sleep(0.2)
       pag.click(매크로.x,매크로.y)
-      time.sleep(1)
+      time.sleep(5)
       pag.click(958,599)
-      time.sleep(1)
+      time.sleep(2)
       pag.click(874,578)
 
 

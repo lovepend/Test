@@ -246,7 +246,7 @@ def 울주_This_A():
         time.sleep(num1)
         print(num1)
         time.sleep(0.2)
-        #울주_검색()
+        울주_검색()
         pag.hotkey('end')
         #*Zoavld4fkdpag.hotkey('pgdn')
         pag.hotkey('f5')
