@@ -250,7 +250,7 @@ def 육부촌_Karavan():
         global i
         i = i + 1
         #날짜 클릭
-        pag.click(육부촌_day1)
+        pag.click(육부촌_day)
         time.sleep(0.2)
         #검색
         육부촌_검색()
