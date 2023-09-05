@@ -23,6 +23,9 @@ from Camp_21_신불산 import *
 from Camp_51_육부촌 import *
 from kakao_01_api import *
 from Movie_Factory import *
+import cv2
+cv2.useOptimized()
+True
 
 def schedule_job():
     schedule.every().day.at("08:45:00").do(신불산_자동) 

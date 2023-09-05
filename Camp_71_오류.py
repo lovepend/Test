@@ -14,7 +14,9 @@ import requests
 import time
 import json
 pag.FAILSAFE=False
-
+import cv2
+cv2.useOptimized()
+True
 #오류 Test 2023.05.15 #Viewer Size 100% #화면 맨아래로 통일
 
 

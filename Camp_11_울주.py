@@ -15,6 +15,16 @@ import time
 import json
 import random
 pag.FAILSAFE=False
+import cv2
+cv2.useOptimized()
+True
+
+
+
+
+
+
+
 
 #울주해양예약 시스템 2022.01.11 #Vier Size 67%
 

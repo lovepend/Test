@@ -18,8 +18,10 @@ import time
 import json
 import datetime
 import sys
-
 pag.FAILSAFE=False
+import cv2
+cv2.useOptimized()
+True
 
 #신불산 Test 2022.03.21 #Viewer Size 67%
 #56분 36초
@@ -329,6 +331,7 @@ def 신불산_실시간():
     #날짜 클릭
     pag.click(신불산_day)  
     time.sleep(time_controll)
+    kakao_message_you("신불 실시간")
     신불산_검색()     
 
 def 신불산_줍기(신불산_min,신불산_sec):
@@ -512,4 +515,5 @@ def 신불산_자동():
     time.sleep(5)
     신불산_자동입력()
     신불산_실시간()
+
 

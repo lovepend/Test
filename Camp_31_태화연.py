@@ -15,6 +15,9 @@ import time
 import json
 
 pag.FAILSAFE=False
+import cv2
+cv2.useOptimized()
+True
 
 #now = time.localtime()
 #print( now.tm_hour ) 

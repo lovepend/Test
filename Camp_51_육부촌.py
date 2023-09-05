@@ -13,8 +13,25 @@ import schedule
 import requests
 import time
 import json
-
 pag.FAILSAFE=False
+import cv2
+cv2.useOptimized()
+True
+
+
+# from PIL import Image
+# import pytesseract
+
+# pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+# text = pytesseract.image_to_string(Image.open("news.jpg"), lang="Eng")
+# print(text)
+# print(text.replace(" ",""))
+
+# with open("news.txt", "w", encoding="utf8") as f:
+#   f.write(text)
+#   f.write("\n\n\n")
+#   f.write(text.replace(" ",""))
+
 
 #육부촌 Test 2022.06.28 #Viewer Size 50% #화면 맨아래로 통일
 
@@ -160,7 +177,7 @@ def 육부촌_Start1():
     if keyboard.is_pressed("F2") : # F2 누른게 감지되면
       print("F2 종료")
       break
-    pyperclip.copy('https://www.gyeongju.go.kr/hwarang/page.do?mnu_uid=3516&csr_date=2023-09-29&cs_uid=29&csr_numday=1&step=write&initYear=2023&initMonth=9&currentDay=')
+    pyperclip.copy('https://www.gyeongju.go.kr/hwarang/page.do?mnu_uid=3516&csr_date=2023-10-21&cs_uid=30&csr_numday=1&step=write&initYear=2023&initMonth=9&currentDay=')
     button = pag.locateCenterOnScreen("./image/51. Kyungju/05._0. reservation.png", region = 육부촌_find_range, confidence=0.85) 
     if (button == None) :
       None 
