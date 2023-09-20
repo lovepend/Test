@@ -324,18 +324,37 @@ def 중구예약():
 #★★★★★★★★★★★★★★★★★★★ 메인 함수
 def 태화연_Start():
   pag.click(태화연_day1)
-  time.sleep(0.1) 
+  time.sleep(0.2) 
+  pag.click(태화연_day2)
+  time.sleep(0.2)
+  pag.click(태화연_day1)
   태화연_Start1()   
 
-
+def 태화연_JubJub():
+  pag.click(태화연_day1)
+  time.sleep(0.2) 
+  pag.click(797,142)
+  태화연_Start1()   
 
 def 태화연_Start1():
+  while True:
+    #종료 조건
+    if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+      print("F2 종료")
+      break
+    pag.hotkey('enter')     
+    time.sleep(0.1)
+    #검색
+    태화연_StepA()
+
+def 태화연_Start2():
     while True:
         global 태화연_i
         tm = time.localtime()
         #날짜 클릭
         pag.click(태화연_day2)
         time.sleep(0.1)
+        pag.click(10,500)
         #횟수 표현
         태화연_i = 태화연_i + 1
         #종료 조건
@@ -346,7 +365,6 @@ def 태화연_Start1():
             print("minute 중지")
             print(tm.tm_hour ,"시", tm.tm_min ,"분", tm.tm_sec,"초")
             break        
-        
         #날짜 클릭
         pag.click(태화연_day1)
         time.sleep(0.1)
@@ -384,8 +402,8 @@ def 태화연_StepB():
         #print(button1)
         #time.sleep(0.1) 
         #pag.hotkey('enter', clicks=50, interval=0.1)
-        time.sleep(0.1)
-        pag.click(1800,800)#추가
+        #time.sleep(0.1)
+        #pag.click(1800,800)#추가
         #time.sleep(0.5)#추가
         #pag.hotkey('pagedown')#추가
         태화연_StepC()
@@ -396,14 +414,19 @@ def 태화연_StepC() :
     if (button2 == None) :
         태화연_StepC()      
     else : 
-        pag.hotkey('down')
-        time.sleep(0.1)
+        i = 0
+        while i < 150:
+            i = i +1
+            pag.hotkey('down')
+
+            if i == 150 :
+              break
         pag.hotkey('down')
         time.sleep(0.1)
         pag.click(1800,800)
         time.sleep(0.2)
         pag.hotkey('end')
-        time.sleep(1)
+        time.sleep(3)
         button3 = pag.locateCenterOnScreen('./image/31. Junggu/25. next.png', confidence=0.7)   
         pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
         refresh_token()
@@ -497,4 +520,14 @@ def 태화연_자동():
     time.sleep(5)
   
     태화연_Start()
+
+
+
+
+
+
+
+
+
+
 

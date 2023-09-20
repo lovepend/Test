@@ -27,6 +27,7 @@ import cv2
 cv2.useOptimized()
 True
 
+
 def schedule_job():
     schedule.every().day.at("08:45:00").do(신불산_자동) 
     schedule.every().day.at("09:45:00").do(태화연_자동) 
@@ -131,7 +132,7 @@ lable1.place(x=360, y=27)
     
 entry1 = Entry(frame3, width=5)
 entry1.place(x=360, y=8)
-entry1.insert(0,"59")
+entry1.insert(0,"58")
 
 lable2=Label(frame3, text="sec")
 lable2.place(x=410, y=27)
@@ -296,7 +297,7 @@ def 중구_차량번호():
 태화연btn4.place(x=180, y=130)
 태화연btn5 = Button(frame4, width=5, padx=10, pady=5, text="Start(A)", command=태화연_자동, bg="green", fg="white")
 태화연btn5.place(x=240, y=130)
-태화연btn5 = Button(frame4, width=5, padx=10, pady=5, text="Enter", command=태화연_자동, bg="green", fg="white")
+태화연btn5 = Button(frame4, width=5, padx=10, pady=5, text="줍줍", command=태화연_JubJub, bg="green", fg="white")
 태화연btn5.place(x=300, y=130)
 
 

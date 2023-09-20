@@ -93,12 +93,12 @@ def 울주_토요일():
 def 울주_검색():
   Saturday = 1164,102,1263,1080 #토요일만 검색 
   global find_range
-  button = pag.locateCenterOnScreen('./image/11. Ulju/01_0. reservation1.png', region = find_range, confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/11. Ulju/01_0. reservation1.png', region = find_range, confidence=0.95)
   if (button == None) :
     None        
   else :
-    Friday = ((button.x)-150, (button.y)-8, (button.x)-100, (button.y+8))
-    button_1 = pag.locateCenterOnScreen('./image/11. Ulju/01_0. reservation2.png', region = Friday,confidence=0.9) #토요일 찾을 범위 설정      
+    Friday = (button.x)-150, (button.y)-8, (button.x)-100, (button.y+8)
+    button_1 = pag.locateCenterOnScreen('./image/11. Ulju/01_0. reservation1.png', region = Friday,confidence=0.9) #토요일 찾을 범위 설정      
     if (button_1 == None) :
         None
         pag.click(button,button='left')
