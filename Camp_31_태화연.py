@@ -415,11 +415,11 @@ def 태화연_StepC() :
         태화연_StepC()      
     else : 
         i = 0
-        while i < 150:
+        while i < 300:
             i = i +1
             pag.hotkey('down')
 
-            if i == 150 :
+            if i == 300 :
               break
         pag.hotkey('down')
         time.sleep(0.1)
@@ -431,60 +431,7 @@ def 태화연_StepC() :
         pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
         refresh_token()
         kakao_message_you("태화연")
-        time.sleep(50)
-        #다음액션
-        pag.click(773,777)
-        time.sleep(5)
-        pag.click(1018,620)
-        time.sleep(5)
-        pag.click(922,605)
-        time.sleep(5)
-        #뒤로
-        pag.hotkey('esc')
-        time.sleep(1)
-        pag.hotkey('esc')
-        time.sleep(1)
-        #홈으로
-        pag.hotkey('home')
-        time.sleep(1)
-        pag.hotkey
-        #세부 캠핑장 선택
-        pag.click(1005,356)
-        time.sleep(1)
-        pag.click(1013,392)
-        time.sleep(1)
-        #차량 넘버 입력
-        pag.click(704,928)
-        time.sleep(1)
-        pyperclip.copy("62소9403")
-        time.sleep(1)
-        pag.hotkey('ctrl', 'v')
-        #다음페이지
-        pag.click(1847,897)
-        time.sleep(1)
-        #이용준수사항
-        pag.click(480,316)
-        time.sleep(1)
-        #입실정원
-        pag.click(480,538)
-        time.sleep(1)
-        #취소 및 환불 규정
-        pag.click(480,760)
-        time.sleep(1)
-        #개인정보 수집 이용 동의
-        pag.click(875,983)
-        time.sleep(1)
-        #페이지 클릭
-        pag.click(1800,800)
-        time.sleep(1)
-        #페이지 위로
-        pag.hotkey("home")
-        time.sleep(1)
-        #날짜 맞추기
-        pag.moveTo(1850,130)    
-        time.sleep(1)
-        pag.dragTo(1847,339, 5, button='left')
-        태화연_Start()
+        time.sleep(5000)
 
 #★★★★★★★★★★★★★★★★★★★ 서브 함수
 def 태화연_job1():
