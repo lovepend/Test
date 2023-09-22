@@ -336,6 +336,8 @@ def 태화연_JubJub():
   pag.click(797,142)
   태화연_Start1()   
 
+
+# 메인 
 def 태화연_Start1():
   while True:
     #종료 조건
@@ -398,6 +400,7 @@ def 태화연_StepB():
     else :    
         time.sleep(0.1)
         pag.hotkey('enter')
+        time.sleep(0.2)
         #pag.click(button1.x,button1.y, button='left', clicks=1, interval=0.1)
         #print(button1)
         #time.sleep(0.1) 
@@ -409,7 +412,7 @@ def 태화연_StepB():
         태화연_StepC()
 
 def 태화연_StepC() : 
-    button2 = pag.locateCenterOnScreen('./image/31. Junggu/24. next.png', confidence=0.7)   
+    button2 = pag.locateCenterOnScreen('./image/31. Junggu/24. next.png', confidence=0.8)   
     print(button2)
     if (button2 == None) :
         태화연_StepC()      
@@ -432,6 +435,7 @@ def 태화연_StepC() :
         refresh_token()
         kakao_message_you("태화연")
         time.sleep(5000)
+
 
 #★★★★★★★★★★★★★★★★★★★ 서브 함수
 def 태화연_job1():
