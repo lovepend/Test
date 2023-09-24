@@ -326,7 +326,7 @@ def 태화연_Start():
   pag.click(태화연_day1)
   time.sleep(0.2) 
   pag.click(태화연_day2)
-  time.sleep(0.2)
+  time.sleep(5)
   pag.click(태화연_day1)
   태화연_Start1()   
 
@@ -347,7 +347,7 @@ def 태화연_Start1():
     pag.hotkey('enter')     
     time.sleep(0.1)
     #검색
-    태화연_StepA()
+    태화연_검색()
 
 def 태화연_Start2():
     while True:
