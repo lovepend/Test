@@ -221,16 +221,17 @@ def 중구_입화산():
 def 중구_자동입력():
   webbrowser.get("windows-default").open('https://www.junggu.ulsan.kr/camping')  
   time.sleep(10)
-  button = pag.locateCenterOnScreen("./image/21. Junggu/00. loggin.png",  confidence=0.9)
+  button = pag.locateCenterOnScreen("./image/31. Junggu/00. loggin.png",  confidence=0.9)
   print(button)
   if (button == None) :
     time.sleep(2)
     #로그인 클릭
-    button = pag.locateCenterOnScreen("./image/21. Junggu/01. loggin.png",  confidence=0.9)
+    button = pag.locateCenterOnScreen("./image/31. Junggu/01. loggin.png",  confidence=0.9)
     pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)  
     time.sleep(2)
     #아이디  
-    button = pag.locateCenterOnScreen("./image/21. Junggu/02. loggin.png",  confidence=0.9)
+    button = pag.locateCenterOnScreen("./image/31. Junggu/02. loggin.png",  confidence=0.9)
+    print(button)
     pag.click(button.x+40,button.y+25, button='left', clicks=1, interval=0.1)
     time.sleep(1)
     pag.dragTo(100,304, 1, button='left')
@@ -250,7 +251,7 @@ def 중구_자동입력():
     print(태화연_pw)
     time.sleep(2)
     #로그인 클릭
-    button = pag.locateCenterOnScreen("./image/21. Junggu/03. loggin.png",  confidence=0.8)
+    button = pag.locateCenterOnScreen("./image/31. Junggu/03. loggin.png",  confidence=0.8)
     print(button)
     pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
     time.sleep(2)
@@ -271,7 +272,7 @@ def 중구예약():
   time.sleep(5)
   #로그인 클릭
   print("3")  
-  button = pag.locateCenterOnScreen("./image/21. Junggu/11. input.png",  confidence=0.8)
+  button = pag.locateCenterOnScreen("./image/31. Junggu/11. input.png",  confidence=0.8)
   print("4")  
   print(button)
   time.sleep(2)
@@ -280,31 +281,38 @@ def 중구예약():
   pyperclip.copy(중구_Car_No)
   pag.hotkey('ctrl','v')
   time.sleep(2)
+  
+  #이용준수사항
+  button = pag.locateCenterOnScreen("./image/31. Junggu/12. input.png",  confidence=0.9)
+  print(button)
+  time.sleep(1)
+  pag.click(button.x,button.y+130, button='left', clicks=1, interval=0.1)
+  time.sleep(1)
   #페이지 클릭
   pag.click(1800,800)
   time.sleep(2)
   pag.hotkey('end')
   time.sleep(2)
-  #이용준수사항
-  button = pag.locateCenterOnScreen("./image/21. Junggu/12. input.png",  confidence=0.9)
-  print(button)
-  time.sleep(1)
-  pag.click(button.x,button.y+130, button='left', clicks=1, interval=0.1)
-  time.sleep(1)
   #입실정원준수안내
-  button = pag.locateCenterOnScreen("./image/21. Junggu/13. input.png",  confidence=0.9)
+  button = pag.locateCenterOnScreen("./image/31. Junggu/13. input.png",  confidence=0.9)
   print(button)
   time.sleep(1)
   pag.click(button.x,button.y+130, button='left', clicks=1, interval=0.1)
   time.sleep(1)  
   #취소 및 환불규정
-  button = pag.locateCenterOnScreen("./image/21. Junggu/14. input.png",  confidence=0.9)
+  button = pag.locateCenterOnScreen("./image/31. Junggu/14. input.png",  confidence=0.9)
+  print(button)
+  time.sleep(1)
+  pag.click(button.x,button.y+130, button='left', clicks=1, interval=0.1)
+  time.sleep(1)  
+  #재난상황별 지침
+  button = pag.locateCenterOnScreen("./image/31. Junggu/14_1. input.png",  confidence=0.9)
   print(button)
   time.sleep(1)
   pag.click(button.x,button.y+130, button='left', clicks=1, interval=0.1)
   time.sleep(1)  
   #개인정보 수집 
-  button = pag.locateCenterOnScreen("./image/21. Junggu/15. input.png",  confidence=0.9)
+  button = pag.locateCenterOnScreen("./image/31. Junggu/15. input.png",  confidence=0.9)
   print(button)
   time.sleep(1)
   pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
@@ -316,10 +324,10 @@ def 중구예약():
   pag.hotkey("home")
   time.sleep(1)
   #날짜 맞추기
-  pag.moveTo(1910,162)    
+  pag.moveTo(1910,187)    
   time.sleep(1)
-  pag.dragTo(1910,358, 6, button='left')
-  태화연_Start()
+  pag.dragTo(1910,359, 6, button='left')
+  #태화연_Start()
      
 #★★★★★★★★★★★★★★★★★★★ 메인 함수
 def 태화연_Start():
@@ -418,11 +426,11 @@ def 태화연_StepC() :
         태화연_StepC()      
     else : 
         i = 0
-        while i < 300:
+        while i < 100:
             i = i +1
             pag.hotkey('down')
 
-            if i == 300 :
+            if i == 100 :
               break
         pag.hotkey('down')
         time.sleep(0.1)

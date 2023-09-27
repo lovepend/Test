@@ -160,13 +160,36 @@ def 직접선택():
   
 
 
-
-# Test_Click()
+#Test_Click()
 # Test_Click1()
 # Test_Click2()
 # Test_Click3()
-티켓예매()   
+#티켓예매()   
 
+#소이산 예약
+# def 소이산예약():
+#    while True:
+#     if keyboard.is_pressed("F2") : # F2 누른게 감지되면
+#       print("키 중지")
+#       break
+#     pag.click(Click)
+#     time.sleep(1)
+#     if keyboard.is_pressed("F2") : # F2 누른게 감지되면
+#       print("키 중지")
+#       break
+#     소이산검색()
+
+# def 소이산검색():
+#   button = pag.locateCenterOnScreen('./image/99. Ulsan_Foot/99. 1.png', region = (963,565,1891,1068), confidence=0.9 )
+#   if (button == None) :
+#     None 
+#   else :
+#     refresh_token
+#     kakao_message_you("모노레일")
+#     time.sleep(100)
+
+# Test_Click()
+# 소이산예약()
 
 
 

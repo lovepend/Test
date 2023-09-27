@@ -20,12 +20,6 @@ cv2.useOptimized()
 True
 
 
-
-
-
-
-
-
 #울주해양예약 시스템 2022.01.11 #Vier Size 67%
 
 ################################## 아이디
@@ -240,7 +234,7 @@ def 울주_This_A_Back_up():
             num = random.randrange(20,50)
             num1 = num/100
             time.sleep(num1)
-            print(num1)
+            #print(num1)
             if keyboard.is_pressed("F2"): # F2 누른게 감지되면
                 break
             
@@ -254,7 +248,7 @@ def 울주_This_A():
         num = random.randrange(20,40)
         num1 = num/100
         time.sleep(num1)
-        print(num1)
+        #print(num1)
         time.sleep(0.2)
         울주_검색()
         pag.hotkey('end')
@@ -264,7 +258,7 @@ def 울주_This_A():
         num = random.randrange(20,40)
         num1 = num/100
         time.sleep(num1)
-        print(num1)
+        #print(num1)
         울주_검색()
         pag.hotkey('home')
         time.sleep(0.2)
