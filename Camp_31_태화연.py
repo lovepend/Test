@@ -426,18 +426,18 @@ def 태화연_StepC() :
         태화연_StepC()      
     else : 
         i = 0
-        while i < 100:
+        while i < 1:
             i = i +1
             pag.hotkey('down')
 
-            if i == 100 :
+            if i == 1 :
               break
         pag.hotkey('down')
         time.sleep(0.1)
         pag.click(1800,800)
         time.sleep(0.2)
         pag.hotkey('end')
-        time.sleep(3)
+        time.sleep(0.2)
         button3 = pag.locateCenterOnScreen('./image/31. Junggu/25. next.png', confidence=0.7)   
         pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
         refresh_token()
