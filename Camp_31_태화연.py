@@ -425,23 +425,58 @@ def 태화연_StepC() :
     if (button2 == None) :
         태화연_StepC()      
     else : 
-        i = 0
-        while i < 1:
-            i = i +1
-            pag.hotkey('down')
+        # i = 0
+        # while i < 1:
+        #     i = i +1
+        #     pag.hotkey('down')
 
-            if i == 1 :
-              break
+        #     if i == 1 :
+        #       break
         pag.hotkey('down')
         time.sleep(0.1)
         pag.click(1800,800)
         time.sleep(0.2)
         pag.hotkey('end')
-        time.sleep(0.2)
-        button3 = pag.locateCenterOnScreen('./image/31. Junggu/25. next.png', confidence=0.7)   
-        pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
-        refresh_token()
-        kakao_message_you("태화연")
+        time.sleep(0.3)
+        태화연_StepD()
+        # button3 = pag.locateCenterOnScreen('./image/31. Junggu/25. next.png', confidence=0.9)  
+        # time.sleep(0.2) 
+        # pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
+        # print('button3')
+        # print(button3)
+        # # refresh_token()
+        # # kakao_message_you("태화연")
+        # time.sleep(5000)
+
+def 태화연_StepD() : 
+    button3 = pag.locateCenterOnScreen('./image/31. Junggu/25. next.png', confidence=0.9)  
+    print(button3)
+    if (button3 == None) :
+        태화연_StepD()      
+    else : 
+        # i = 0
+        # while i < 1:
+        #     i = i +1
+        #     pag.hotkey('down')
+
+        #     if i == 1 :
+        #       break
+        # pag.hotkey('down')
+        # time.sleep(0.1)
+        # pag.click(1800,800)
+        # time.sleep(0.2)
+        # pag.hotkey('end')
+        # time.sleep(0.3)
+        # button3 = pag.locateCenterOnScreen('./image/31. Junggu/25. next.png', confidence=0.9)  
+        # time.sleep(0.2) 
+        pag.move(button3.x,button3.y, button='left', clicks=1, interval=0.1)
+        # pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
+        # pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
+        # pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
+        print('button3')
+        print(button3)
+        # refresh_token()
+        # kakao_message_you("태화연")
         time.sleep(5000)
 
 

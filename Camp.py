@@ -339,6 +339,8 @@ notebook.add(frame5, text="04. 동구")
 대왕암btn5.place(x=240, y=90)
 대왕암btn6 = Button(frame5, width=5, padx=10, pady=5, text="Karavan", command=대왕암_Karavan, bg="green", fg="white")
 대왕암btn6.place(x=300, y=90)
+
+
 대왕암btn7 = Button(frame5, width=5, padx=10, pady=5, text="Start(A)", command=대왕암_자동, bg="green", fg="white")
 대왕암btn7.place(x=360, y=90)
 
