@@ -437,7 +437,7 @@ def 태화연_StepC() :
         pag.click(1800,800)
         time.sleep(0.2)
         pag.hotkey('end')
-        time.sleep(0.3)
+        time.sleep(0.4)
         태화연_StepD()
         # button3 = pag.locateCenterOnScreen('./image/31. Junggu/25. next.png', confidence=0.9)  
         # time.sleep(0.2) 
@@ -469,14 +469,12 @@ def 태화연_StepD() :
         # time.sleep(0.3)
         # button3 = pag.locateCenterOnScreen('./image/31. Junggu/25. next.png', confidence=0.9)  
         # time.sleep(0.2) 
-        pag.move(button3.x,button3.y, button='left', clicks=1, interval=0.1)
-        # pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
-        # pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
-        # pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
+        pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
+
         print('button3')
         print(button3)
-        # refresh_token()
-        # kakao_message_you("태화연")
+        refresh_token()
+        kakao_message_you("태화연")
         time.sleep(5000)
 
 
