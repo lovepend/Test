@@ -344,16 +344,22 @@ def 신불산_줍기(신불산_min,신불산_sec):
     if (tm.tm_min == 신불산_min and tm.tm_sec == 신불산_sec) : #9시 56분 및 15시 56분 시작
     #if (tm.tm_hour == 10 and tm.tm_min == 19 and tm.tm_sec == 10) or (tm.tm_hour == 14 and tm.tm_min == 56 and tm.tm_sec == 37) : #TEST
       global 신불산_find_range
-      button = pag.locateCenterOnScreen("./image/21. Sinbul/21_1. reservation.png", region = (860,521,1515,968), confidence=0.7) 
-      print("Check1")
-      print(button)
-      pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-      print("Check2")
+      #예약가능 사이트만 보기
+      #button = pag.locateCenterOnScreen("./image/21. Sinbul/21_1. reservation.png", region = (860,521,1515,968), confidence=0.7) 
+      #print("Check1")
+      #print(button)
+      #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+      #print("Check2")
+      #예약가능 사이트만 보기
+      pag.click(782,678)
+      time.sleep(0.2)
+      pag.click(1734,685)
+      time.sleep(0.2)
       while True:   
         if keyboard.is_pressed("F2"):
           print("종료") 
           break  
-        button = pag.locateCenterOnScreen("./image/21. Sinbul/21. reservation.png", region = 신불산_find_range, confidence=0.7) 
+        button = pag.locateCenterOnScreen("./image/21. Sinbul/21. reservation.png",  confidence=0.7) 
         if (button == None) :
           None
         else : 

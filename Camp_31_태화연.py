@@ -93,7 +93,7 @@ def 태화연_Log_Guest():
     태화연_id = "jhrep2234@nate.com"
     time.sleep(1)
     global 태화연_pw
-    태화연_pw = "j1902217*"
+    태화연_pw = "*Zoavld4fkd"
     print(태화연_id)
     print(태화연_pw)
 

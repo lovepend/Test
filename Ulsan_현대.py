@@ -24,6 +24,10 @@ import datetime
 from kakao_01_api import kakao_message_you
 import random
 
+
+#150 %
+
+
 global Click
 Click = 938,391
 
@@ -83,23 +87,23 @@ def 티켓예매():
     time.sleep(0.2)
     pag.click(Click1)
     time.sleep(0.2)
-    검색()
+    #검색()
     time.sleep(0.2)
     if keyboard.is_pressed("F2") : # F2 누른게 감지되면
       print("키 중지")
       break
     pag.click(Click2)
     time.sleep(0.2)
-    검색1()
+    #검색1()
     time.sleep(0.2)
     if keyboard.is_pressed("F2") : # F2 누른게 감지되면
       print("키 중지")
       break
     pag.click(Click3)
     time.sleep(0.2)
-    검색2()
+    #검색2()
     time.sleep(0.2)
-    매크로 = pag.locateCenterOnScreen('./image/99. Ulsan_Foot/03. 1.png', confidence=0.98)
+    매크로 = pag.locateCenterOnScreen('./image/99. Ulsan_Foot/03. 1.png', confidence=1)
     if (매크로 == None) :
       None 
     else :
@@ -114,7 +118,7 @@ def 티켓예매():
     
 def 검색():
   #좌석찾기
-  button = pag.locateCenterOnScreen('./image/99. Ulsan_Foot/01. 1.png', confidence=0.98)
+  button = pag.locateCenterOnScreen('./image/99. Ulsan_Foot/01. 1.png', confidence=1)
   if (button == None) :
     None 
   else :
@@ -127,7 +131,7 @@ def 검색():
 
 def 검색1():
   #좌석찾기
-  button1 = pag.locateCenterOnScreen('./image/99. Ulsan_Foot/01. 1.png', confidence=0.98)
+  button1 = pag.locateCenterOnScreen('./image/99. Ulsan_Foot/01. 1.png', confidence=1)
   if (button1 == None) :
     None 
   else :
@@ -139,7 +143,7 @@ def 검색1():
     
 def 검색2():
   #좌석찾기
-  button2 = pag.locateCenterOnScreen('./image/99. Ulsan_Foot/01. 1.png', confidence=0.98)
+  button2 = pag.locateCenterOnScreen('./image/99. Ulsan_Foot/01. 1.png', confidence=0.99)
   if (button2 == None) :
     None 
   else :
@@ -160,11 +164,11 @@ def 직접선택():
   
 
 
-#Test_Click()
-# Test_Click1()
-# Test_Click2()
-# Test_Click3()
-#티켓예매()   
+Test_Click()
+Test_Click1()
+Test_Click2()
+Test_Click3()
+티켓예매()   
 
 #소이산 예약
 # def 소이산예약():

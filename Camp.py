@@ -13,9 +13,10 @@ import clipboard
 import pyperclip
 import requests
 import schedule
-import json
 import time
 from Camp_11_울주 import *
+
+
 from Camp_12_울주_줍줍 import *
 from Camp_31_태화연 import *
 from Camp_41_대왕암 import *
@@ -29,6 +30,7 @@ True
 
 
 def schedule_job():
+    
     schedule.every().day.at("08:45:00").do(신불산_자동) 
     schedule.every().day.at("09:45:00").do(태화연_자동) 
     schedule.every().day.at("10:55:00").do(대왕암_자동) 
@@ -41,7 +43,7 @@ def schedule_job():
 ################################## GUI 편집 ################################## 54주6191
 window = Tk()
 window.title("캠핑장 예약하기")
-window.geometry("470x190+1380+156")
+window.geometry("470x190+1380+316")
 window.wm_attributes("-topmost", 1)
 
 notebook=tkinter.ttk.Notebook(window, width=460, height=165)
