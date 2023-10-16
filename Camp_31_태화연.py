@@ -42,9 +42,10 @@ global 태화연_end_command
 global 태화연_end_command1
 태화연_end_command1 = 0
 ################################## 범위 
-global 태화연_find_range
-태화연_find_range = 0,0,1904,1079
-
+global 태화연_find_rangeA
+태화연_find_rangeA = 0,0,960,1080
+global 태화연_find_rangeB
+태화연_find_rangeB = 960,0,1920,1080
 ################################## 아이디
 global 태화연_id
 태화연_id = "lovepend@nate.com"
@@ -158,7 +159,8 @@ def 태화연_Day():
         if keyboard.is_pressed("F2"): 
             time.sleep(0.2)
             global 태화연_day1 
-            태화연_day1  = pag.position()
+            #태화연_day1  = pag.position()
+            태화연_day1 = 200,130
             print(태화연_day1)
             break        
     while True:
@@ -168,6 +170,24 @@ def 태화연_Day():
             태화연_day2  = pag.position()
             print(태화연_day2)
             break    
+    while True:
+        if keyboard.is_pressed("F2"): 
+            time.sleep(0.2)
+            global 태화연_day3 
+            #태화연_day3  = pag.position()
+            태화연_day3 = 1167,130
+            print(태화연_day3)
+            break        
+    while True:
+        if keyboard.is_pressed("F2"): 
+            time.sleep(0.2)
+            global 태화연_day4
+            태화연_day4  = pag.position()
+            print(태화연_day4)
+            break    
+
+
+
 
 #★★★★★★★★★★★★★★★★★★★ 범위 입력
 def 태화연_범위선택():
@@ -185,12 +205,40 @@ def 태화연_범위선택():
             print(태화연_find_range2)
             time.sleep(0.5)
             break  
-    global 태화연_find_range
-    태화연_find_range = (태화연_find_range1.x,태화연_find_range1.y,태화연_find_range2.x,태화연_find_range2.y)
+    global 태화연_find_rangeA
+    태화연_find_rangeA = (0,태화연_find_range1.y,960,태화연_find_range2.y)
+    while True:
+        if keyboard.is_pressed("F2"): 
+            global 태화연_find_range3 
+            태화연_find_range3  = pag.position()
+            print(태화연_find_range3)
+            time.sleep(0.5)
+            break  
+    while True:
+        if keyboard.is_pressed("F2"): 
+            global 태화연_find_range4 
+            태화연_find_range4  = pag.position()
+            print(태화연_find_range4)
+            time.sleep(0.5)
+            break  
+    global 태화연_find_rangeB
+    태화연_find_rangeB = (960,태화연_find_range3.y,1920,태화연_find_range4.y)
 
 def 태화연_호수뷰():
-    global 태화연_find_range
-    태화연_find_range = 0,0,1069,361
+    global 태화연_find_rangeA
+    태화연_find_rangeA = 0,0,960,362
+    global 태화연_find_rangeB
+    태화연_find_rangeB = 960,0,1920,362
+
+def 태화연_2_3층():
+    global 태화연_find_rangeA
+    태화연_find_rangeA = 0,362,960,1080
+    global 태화연_find_rangeB
+    태화연_find_rangeB = 960,362,1920,1080
+
+
+
+
 
 #★★★★★★★★★★★★★★★★★★★ 장소선택
 global 중구_장소
@@ -331,12 +379,25 @@ def 중구예약():
      
 #★★★★★★★★★★★★★★★★★★★ 메인 함수
 def 태화연_Start():
+  #A 화면
   pag.click(태화연_day1)
   time.sleep(0.2) 
   pag.click(태화연_day2)
-  time.sleep(5)
-  pag.click(태화연_day1)
   태화연_Start1()   
+  #B 화면
+  pag.click(태화연_day3)
+  time.sleep(0.2) 
+  pag.click(태화연_day4)
+  #달력 A클릭 
+  time.sleep(5)
+  pag.click(태화연_day3)
+  time.sleep(0.2)
+  pag.click(태화연_day1)
+  time.sleep(0.2)
+  pag.hotkey('enter')     
+  time.sleep(0.1)
+  태화연_Start1()  
+
 
 def 태화연_JubJub():
   pag.click(태화연_day1)
@@ -351,11 +412,15 @@ def 태화연_Start1():
     #종료 조건
     if keyboard.is_pressed("F2"): # F2 누른게 감지되면
       print("F2 종료")
+      time.sleep(60)
       break
-    pag.hotkey('enter')     
-    time.sleep(0.1)
+    if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+      print("F2 종료")
+      time.sleep(60)
+      break
     #검색
-    태화연_검색()
+    태화연_검색A()
+    태화연_검색B()
 
 def 태화연_Start2():
     while True:
@@ -379,32 +444,62 @@ def 태화연_Start2():
         pag.click(태화연_day1)
         time.sleep(0.1)
         #검색
-        태화연_검색()
+        태화연_검색A()
 
-def 태화연_검색():
-    print("검색")
-    button = pag.locateCenterOnScreen("./image/31. Junggu/21. reservation.png", region=태화연_find_range ,confidence=0.8) 
+def 태화연_검색A():
+    print("검색A")
+    button = pag.locateCenterOnScreen("./image/31. Junggu/21. reservation.png", region=태화연_find_rangeA ,confidence=0.8) 
     if (button == None) :
-        태화연_검색()
-        #None     
+        #태화연A_검색()
+        None     
     else :
         #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-        태화연_StepA()
-       
-def 태화연_StepA():
+        태화연_StepA_A()
+
+def 태화연_검색B():
+    print("검색B")
+    button = pag.locateCenterOnScreen("./image/31. Junggu/21. reservation.png", region=태화연_find_rangeB ,confidence=0.8) 
+    if (button == None) :
+        #태화연B_검색()
+        None     
+    else :
+        #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+        태화연_StepA_B()
+
+def 태화연_StepA_A():
     print("태화연_StepA")
-    button = pag.locateCenterOnScreen("./image/31. Junggu/22. reservation.png", region=태화연_find_range ,confidence=0.9) 
+    button = pag.locateCenterOnScreen("./image/31. Junggu/22. reservation.png", region=태화연_find_rangeA ,confidence=0.9) 
     print(button)
     if (button == None) :
+        pag.click(태화연_day1)
+        time.sleep(0.1)
+        pag.hotkey('enter')     
+        time.sleep(0.1)
         None     
     else :
         pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-        태화연_StepB()
+        태화연_StepB_A()
         
-def 태화연_StepB():
+def 태화연_StepA_B():
+    print("태화연_StepB")
+    button = pag.locateCenterOnScreen("./image/31. Junggu/22. reservation.png", region=태화연_find_rangeB ,confidence=0.9) 
+    print(button)
+    if (button == None) :
+        pag.click(태화연_day3)
+        time.sleep(0.1)
+        pag.hotkey('enter')     
+        time.sleep(0.1)
+        None     
+    else :
+        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+        태화연_StepB_A()
+
+
+def 태화연_StepB_A():
+    global button1
     button1 = pag.locateCenterOnScreen("./image/31. Junggu/23. check.png", confidence=0.7) 
     if (button1 == None) :
-        태화연_StepB()
+        태화연_StepB_A()
     else :    
         time.sleep(0.1)
         pag.hotkey('enter')
@@ -418,6 +513,7 @@ def 태화연_StepB():
         #time.sleep(0.5)#추가
         #pag.hotkey('pagedown')#추가
         태화연_StepC()
+
 
 def 태화연_StepC() : 
     button2 = pag.locateCenterOnScreen('./image/31. Junggu/24. next.png', confidence=0.8)   
@@ -434,7 +530,8 @@ def 태화연_StepC() :
         #       break
         pag.hotkey('down')
         time.sleep(0.1)
-        pag.click(1800,800)
+        pag.click(button1.x-270 ,button1.y)
+        #pag.click(1800,800)
         time.sleep(0.2)
         pag.hotkey('end')
         time.sleep(0.4)

@@ -15,8 +15,6 @@ import requests
 import schedule
 import time
 from Camp_11_울주 import *
-
-
 from Camp_12_울주_줍줍 import *
 from Camp_31_태화연 import *
 from Camp_41_대왕암 import *
@@ -240,6 +238,9 @@ notebook.add(frame4, text="03. 중구")
 태화연log5.place(x=240, y=10)
 태화연log6 = Button(frame4, width=5, padx=10, pady=5, text="호수뷰", command=태화연_호수뷰, bg="white", fg="black")
 태화연log6.place(x=300, y=10)
+태화연log7 = Button(frame4, width=5, padx=10, pady=5, text="2_3층", command=태화연_2_3층, bg="white", fg="black")
+태화연log7.place(x=360, y=10)
+
 #장소
 태화연location1 = Button(frame4, width=5, padx=10, pady=5, text="태화연", command=중구_태화연, bg="white", fg="black")
 태화연location1.place(x=0, y=50)
