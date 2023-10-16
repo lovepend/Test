@@ -27,7 +27,8 @@ global 대왕암_end_command
 
 ################################## 범위 
 global 대왕암_find_range
-대왕암_find_range = 921,657,1387,1025
+#대왕암_find_range = 921,657,1387,1025
+대왕암_find_range = 0,0,1920,1080
 
 ################################## 아이디
 global 대왕암_id
@@ -112,7 +113,13 @@ def 대왕암_Day():
             print(대왕암_day1)
             time.sleep(0.5)
             break         
-
+    while True:
+        if keyboard.is_pressed("F2"): 
+            global 대왕암_day2
+            대왕암_day2  = pag.position()
+            print(대왕암_day2)
+            time.sleep(0.5)
+            break  
 #★★★★★★★★★★★★★★★★★★★ 커서 입력
 def 대왕암_커서선택():
     while True:
@@ -242,10 +249,31 @@ def 대왕암_확인() :
         대왕암_확인()      
     else :
         time.sleep(0.05)
-        pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
+        print("a")
+        pag.click(button1.x,button1.y, button='left', clicks=1, interval=0.1)
+        button1 = pag.locateCenterOnScreen('./image/41. Donggu/02._2. next.png', confidence=0.7)   
+        time.sleep(0.05)
+        print("b")
+        pag.click(button1.x,button1.y, button='left', clicks=1, interval=0.1)
+        # button1 = pag.locateCenterOnScreen('./image/41. Donggu/02._2. next.png', confidence=0.7)   
+        # time.sleep(0.05)
+        # print("c")
+        # pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
+        # button1 = pag.locateCenterOnScreen('./image/41. Donggu/02._2. next.png', confidence=0.7)  
+        # time.sleep(0.05)
+        # print("d") 
+        # pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
+        # button1 = pag.locateCenterOnScreen('./image/41. Donggu/02._2. next.png', confidence=0.7)   
+        # time.sleep(0.05)
+        # print("e")
+        # pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
+        # button1 = pag.locateCenterOnScreen('./image/41. Donggu/02._2. next.png', confidence=0.7)   
+        # time.sleep(0.05)
+        # print("f")
+        # pag.click(button1.x,button1.y, button='left', clicks=5, interval=0.1)
         refresh_token()
         kakao_message_you("대왕암")
-        time.sleep(30)
+        time.sleep(300)
         pag.hotkey('esc')
         time.sleep(5)
         pag.hotkey('esc')
@@ -274,13 +302,17 @@ def 대왕암_Karavan():
         time.sleep(0.5)
         #검색
         대왕암_검색()
-        #page 아래 
-        pag.click(대왕암_position_down)
+        pag.click(대왕암_day2)
         time.sleep(0.5)
+        #검색
         대왕암_검색()
-        #page 업 
-        pag.click(대왕암_position_up)
-        time.sleep(0.5)
+        #page 아래 
+        # pag.click(대왕암_position_down)
+        # time.sleep(0.5)
+        # 대왕암_검색()
+        # #page 업 
+        # pag.click(대왕암_position_up)
+        # time.sleep(0.5)
         if keyboard.is_pressed("F2"): # F2 누른게 감지되면
             break
                     
