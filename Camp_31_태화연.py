@@ -259,26 +259,24 @@ global 중구_장소
 중구_장소 = 677,341
 
 def 중구_태화연():
-    global 중구_장소X
-    global 중구_장소Y
-    중구_장소X = 194
-    중구_장소Y = 353
-    print(중구_장소)
+    global 중구_url
+    중구_url = 'https://camping.junggu.ulsan.kr/camping/pageCont.do?menuNo=1030300'
+    print(중구_url)
 
 def 중구_황방산():
-    global 중구_장소
-    중구_장소 = 775,326
-    print(중구_장소)
+    global 중구_url
+    중구_url = 'https://camping.junggu.ulsan.kr/camping/pageCont.do?menuNo=1020300'
+    print(중구_url)
 
 def 중구_별뜨락():
-    global 중구_장소
-    중구_장소 = 910,319
-    print(중구_장소)
+    global 중구_url
+    중구_url = 'https://camping.junggu.ulsan.kr/camping/pageCont.do?menuNo=2010400'
+    print(중구_url)
 
 def 중구_입화산():
-    global 중구_장소
-    중구_장소 = 1018,331
-    print(중구_장소)
+    global 중구_url
+    중구_url = 'https://camping.junggu.ulsan.kr/camping/pageCont.do?menuNo=2030300'
+    print(중구_url)
 
 
 #★★★★★★★★★★★★★★★★★★★ 자동 입력
@@ -322,15 +320,20 @@ def 중구_자동입력():
 
 def 중구예약_A():
   #######################첫번째##########################
-  global 중구_장소X
-  global 중구_장소Y
+  #url 클릭
+  pag.click(300,60)
+  time.sleep(0.2)
+  #장소 url 이동 
+  pyperclip.copy(중구_url)
+  time.sleep(0.2)
+  pyperclip.copy(중구_url)
+  time.sleep(0.5)
+  pag.hotkey('ctrl','v')
+  time.sleep(0.2)
+  pag.hotkey('enter')
+  time.sleep(5)
+  #차량넘버 입력
   global 중구_Car_No
-  time.sleep(5)
-  print("1")   
-  pag.click(중구_장소X, 중구_장소Y)
-  print("2")  
-  time.sleep(5)
-  #로그인 클릭
   print("3")  
   button = pag.locateCenterOnScreen("./image/31. Junggu/11. input.png", region=(0,0,960,1080) , confidence=0.8)
   print("4")  
@@ -397,16 +400,22 @@ def 중구예약_A():
   중구예약_B()
 
 def 중구예약_B():
-  #######################첫번째##########################
-  global 중구_장소X
-  global 중구_장소Y
+  #######################두번째##########################
+  #url 클릭
+  time.sleep(1)
+  pag.click(1300,60)
+  time.sleep(0.2)
+  #장소 url 이동 
+  pyperclip.copy(중구_url)
+  time.sleep(0.2)
+  pyperclip.copy(중구_url)
+  time.sleep(0.5)
+  pag.hotkey('ctrl','v')
+  time.sleep(0.2)
+  pag.hotkey('enter')
+  time.sleep(5)
+  #차량넘버 입력
   global 중구_Car_No
-  time.sleep(5)
-  print("1")   
-  pag.click(중구_장소X+960, 중구_장소Y)
-  print("2")  
-  time.sleep(5)
-  #로그인 클릭
   print("3")  
   button = pag.locateCenterOnScreen("./image/31. Junggu/11. input.png", region=(960,0,1920,1080) , confidence=0.8)
   print("4")  

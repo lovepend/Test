@@ -344,10 +344,12 @@ def 대왕암_Start():
 
 #★★★★★★★★★★★★★★★★★★★ 서브 함수
 def 대왕암_Karavan():
+  global i
+  i = 0 
   while True:
     if keyboard.is_pressed("F2") : # F2 누른게 감지되면
-        print("중지")
-        break
+      print("중지")
+      break
     #날짜 클릭
     pag.click(대왕암_day1)
     time.sleep(0.5)
@@ -357,14 +359,25 @@ def 대왕암_Karavan():
     time.sleep(0.5)
     #검색
     대왕암_검색()
-    for i in range(1000):
+    if i == 1000 :
+      #첫번째 리셋
+      time.sleep(1)
+      pag.click(855,803)  
+      time.sleep(1)
+      pag.hotkey('home')
+      #두번째 리셋
+      time.sleep(1)
+      pag.click(1816,807)  
+      time.sleep(1)
+      pag.hotkey('home')
+      time.sleep(1)
+      pag.hotkey('pgdn')
+      i = 1
+    else : 
+      i = i + 1
       print(i)
-      if (i == 1000) :
-        pag.click(855)  
-      else : 
-        None
     if keyboard.is_pressed("F2"): # F2 누른게 감지되면
-        break
+        break  
                   
 #★★★★★★★★★★★★★★★★★★★ 스케쥴러
 def 대왕암_자동():
