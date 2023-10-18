@@ -13,7 +13,6 @@ import schedule
 import pyperclip
 import time
 import json
-
 pag.FAILSAFE=False
 import cv2
 cv2.useOptimized()
