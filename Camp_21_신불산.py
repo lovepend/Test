@@ -471,48 +471,59 @@ def 신불산_StepA() : ## 예약하기 버튼 순간 정할것
   #신불산_StepB()
 
 def 신불산_StepB() : ## 예약하기 버튼 순간 정할것
-    time.sleep(300)
-    # pag.click(1235,117)
-    # pag.click(1235,117)
-    # button1 = pag.locateCenterOnScreen('./image/21. Sinbul/23. Check.png',  confidence=0.8)   #region = (510,100,1324,333),
-    # if (button1 == None) :
-    #   time.sleep(10) 
-    #   신불산_StepB()  
-    # else :
-    #   refresh_token()
-    #   tm = time.localtime()
-    #   kakao_tm = tm.tm_hour,tm.tm_min,tm.tm_sec
-    #   text = str(kakao_tm)
-    #   print(text)
-    #   kakao_message_you(text)
-    #   time.sleep(120)
-      #다음 액션  
+  time.sleep(300)
+  # pag.click(1235,117)
+  # pag.click(1235,117)
+  # button1 = pag.locateCenterOnScreen('./image/21. Sinbul/23. Check.png',  confidence=0.8)   #region = (510,100,1324,333),
+  # if (button1 == None) :
+  #   time.sleep(10) 
+  #   신불산_StepB()  
+  # else :
+  #   refresh_token()
+  #   tm = time.localtime()
+  #   kakao_tm = tm.tm_hour,tm.tm_min,tm.tm_sec
+  #   text = str(kakao_tm)
+  #   print(text)
+  #   kakao_message_you(text)
+  #   time.sleep(120)
+    #다음 액션  
 
 #★★★★★★★★★★★★★★★★★★★ 스케쥴러
   
 def 신불산_자동():
-    time.sleep(5)
-    #페이지 클릭
-    pag.click(1800,800)
-    time.sleep(5)
-    #접속
-    pag.click(466,84)
-    time.sleep(5)
-    pag.click(496,185)
-    time.sleep(5)
-    신불산_Reset()
-    #로그아웃
-    pag.click(1246,118)
-    time.sleep(5)
-    pag.click('enter')
-    time.sleep(5)
-    pag.hotkey('enter')
-    #접속
-    pag.click(466,84)
-    time.sleep(5)
-    pag.click(496,185)
-    time.sleep(5)
-    신불산_자동입력()
-    신불산_실시간()
+  time.sleep(5)
+  #페이지 클릭
+  pag.click(1800,800)
+  time.sleep(5)
+  #접속
+  pag.click(466,84)
+  time.sleep(5)
+  pag.click(496,185)
+  time.sleep(5)
+  신불산_Reset()
+  #로그아웃
+  pag.click(1246,118)
+  time.sleep(5)
+  pag.click('enter')
+  time.sleep(5)
+  pag.hotkey('enter')
+  #접속
+  pag.click(466,84)
+  time.sleep(5)
+  pag.click(496,185)
+  time.sleep(5)
+  신불산_자동입력()
+  신불산_실시간()
 
 
+def 시간_동기화():
+  time.sleep(2)
+  pag.rightClick(1882,1055)
+  time.sleep(3)
+  pag.click(1849,968)
+  pag.click(1849,968)
+  pag.click(1849,968)
+  time.sleep(3)
+  pag.click(1526,671)  
+  time.sleep(10)
+  pag.click(1805,18)  
