@@ -154,6 +154,7 @@ def 신불산_Day():
       print(신불산_day1)
       time.sleep(0.5)
       break 
+  while True:
     if keyboard.is_pressed("F2"):
       global 신불산_day2
       신불산_day2  = pag.position()
@@ -252,10 +253,10 @@ def 신불산_자동입력():
   pag.hotkey('ctrl','v')
   time.sleep(0.2)
   pag.hotkey('enter')
-  time.sleep(2)
+  time.sleep(5)
   #로그인 클릭
-  pag.click(202,1019)
-  time.sleep(2)
+  pag.click(202,1025)
+  time.sleep(5)
   #ID입력
   pag.click(600,272)
   time.sleep(1)
@@ -278,7 +279,7 @@ def 신불산_자동입력():
   time.sleep(0.5)
   pag.click(485,371)
   #온라인예약
-  time.sleep(3)
+  time.sleep(5)
   pag.click(410,534)
   #날짜 클릭
   time.sleep(3)
@@ -295,9 +296,8 @@ def 신불산_자동입력():
   pag.hotkey('ctrl','v')
   time.sleep(0.2)
   pag.hotkey('enter')
-  time.sleep(2)
+  time.sleep(5)
   #날짜 클릭
-  time.sleep(3)
   pag.click(신불산_day2)
   
 #★★★★★★★★★★★★★★★★★★★ 메인 함수

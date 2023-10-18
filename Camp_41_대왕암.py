@@ -70,9 +70,9 @@ def 대왕암_Log_Id4():
 
 def 대왕암_Log_Guest():
     global 대왕암_id
-    대왕암_id = "ssss8841"
+    대왕암_id = "jhrep1201"
     global 대왕암_pw
-    대왕암_pw = "sm@884100!"
+    대왕암_pw = "j1902217**"
     print(대왕암_id)
     print(대왕암_pw)
 
@@ -81,120 +81,168 @@ global 대왕암_i
 
 #★★★★★★★★★★★★★★★★★★★ 날짜 입력
 def 대왕암_Day1():
-    global 대왕암_day1
-    대왕암_day1 = 913,761
-    print(대왕암_day1)
+  global 대왕암_day1
+  대왕암_day1 =  433,766
+  print(대왕암_day1)
+  global 대왕암_day2
+  대왕암_day2 = 1390,766
+  print(대왕암_day2)
 
 def 대왕암_Day2():
-    global 대왕암_day1
-    대왕암_day1= 913,807
-    print(대왕암_day1)
+  global 대왕암_day1
+  대왕암_day1 =  433,814
+  print(대왕암_day1)
+  global 대왕암_day2
+  대왕암_day2 = 1390,814
+  print(대왕암_day2)
 
 def 대왕암_Day3():
-    global 대왕암_day1
-    대왕암_day1 = 913,852
-    print(대왕암_day1)
+  global 대왕암_day1
+  대왕암_day1 =  433,855
+  print(대왕암_day1)
+  global 대왕암_day2
+  대왕암_day2 = 1390,855
+  print(대왕암_day2)
 
 def 대왕암_Day4():
-    global 대왕암_day1
-    대왕암_day1 = 913,892
-    print(대왕암_day1)
+  global 대왕암_day1
+  대왕암_day1 =  433,905
+  print(대왕암_day1)
+  global 대왕암_day2
+  대왕암_day2 = 1390,905
+  print(대왕암_day2)
 
-def 대왕암_Day5():
-    global 대왕암_day5
-    대왕암_Day5 = 913,947
-    print(대왕암_day5)
+
 #★★★★★★★★★★★★★★★★★★★ 날짜 입력
 def 대왕암_Day():
-    while True:
-        if keyboard.is_pressed("F2"): 
-            global 대왕암_day1 
-            대왕암_day1  = pag.position()
-            print(대왕암_day1)
-            time.sleep(0.5)
-            break         
-    while True:
-        if keyboard.is_pressed("F2"): 
-            global 대왕암_day2
-            대왕암_day2  = pag.position()
-            print(대왕암_day2)
-            time.sleep(0.5)
-            break  
+  while True:
+    if keyboard.is_pressed("F2"): 
+      global 대왕암_day1 
+      대왕암_day1  = pag.position()
+      print(대왕암_day1)
+      time.sleep(0.5)
+      break         
+  while True:
+    if keyboard.is_pressed("F2"): 
+      global 대왕암_day2
+      대왕암_day2  = pag.position()
+      print(대왕암_day2)
+      time.sleep(0.5)
+      break  
+    
 #★★★★★★★★★★★★★★★★★★★ 커서 입력
 def 대왕암_커서선택():
-    while True:
-        if keyboard.is_pressed("F2"): 
-            global 대왕암_position_up
-            대왕암_position_up  = pag.position()
-            print(대왕암_position_up)
-            time.sleep(0.5)
-            break 
+  while True:
+    if keyboard.is_pressed("F2"): 
+      global 대왕암_position_up
+      대왕암_position_up  = pag.position()
+      print(대왕암_position_up)
+      time.sleep(0.5)
+      break 
     
-    while True:
-        if keyboard.is_pressed("F2"): 
-            global 대왕암_position_down
-            대왕암_position_down  = pag.position()
-            print(대왕암_position_down)
-            time.sleep(0.5)
-            break 
+  while True:
+    if keyboard.is_pressed("F2"): 
+      global 대왕암_position_down
+      대왕암_position_down  = pag.position()
+      print(대왕암_position_down)
+      time.sleep(0.5)
+      break 
 
 #★★★★★★★★★★★★★★★★★★★ 범위 입력
 def 대왕암_범위선택():
-    while True:
-        if keyboard.is_pressed("F2"): 
-            global 대왕암_find_range1 
-            대왕암_find_range1  = pag.position()
-            print(대왕암_find_range1)
-            time.sleep(0.5)
-            break  
-    while True:
-        if keyboard.is_pressed("F2"): 
-            global 대왕암_find_range2 
-            대왕암_find_range2  = pag.position()
-            print(대왕암_find_range2)
-            time.sleep(0.5)
-            break  
-    global 대왕암_find_range
-    대왕암_find_range = (대왕암_find_range1.x,대왕암_find_range1.y,대왕암_find_range2.x,대왕암_find_range2.y)
+  while True:
+    if keyboard.is_pressed("F2"): 
+      global 대왕암_find_range1 
+      대왕암_find_range1  = pag.position()
+      print(대왕암_find_range1)
+      time.sleep(0.5)
+      break  
+  while True:
+    if keyboard.is_pressed("F2"): 
+      global 대왕암_find_range2 
+      대왕암_find_range2  = pag.position()
+      print(대왕암_find_range2)
+      time.sleep(0.5)
+      break  
+  global 대왕암_find_range
+  대왕암_find_range = (대왕암_find_range1.x,대왕암_find_range1.y,대왕암_find_range2.x,대왕암_find_range2.y)
  
 #★★★★★★★★★★★★★★★★★★★ 자동 입력
 def 대왕암_자동입력():
-    time.sleep(2)
-    #로그인 선택
-    pag.click(1296,117)
-    time.sleep(5)
-    #통합회원 로그인
-    pag.click(815,602)
-    time.sleep(5)
-    #아이디 입력
-    pag.moveTo(1000,300)
-    time.sleep(2)
-    pag.dragTo(100,300, 5, button='left')
-    time.sleep(2)
-    pag.hotkey('delete')
-    time.sleep(2)
-    pag.write(대왕암_id)
-    print(대왕암_id)
-    time.sleep(2)
-    #페이지 선택
-    pag.doubleClick(1600,800)
-    time.sleep(1)
-    #비밀번호 입력
-    pag.moveTo(1000,353)
-    time.sleep(2)
-    pag.dragTo(100,353, 5, button='left')
-    time.sleep(2)
-    pag.hotkey('delete')
-    time.sleep(2)
-    pag.write(대왕암_pw)
-    print(대왕암_pw)
-    time.sleep(2)
-    #로그인 버튼 클릭
-    pag.click(927,403)
-    time.sleep(5)
-    #온라인 예약
-    pag.click(1080,200)
-    time.sleep(5)   
+  time.sleep(1)
+  #url 클릭
+  pag.click(300,60)
+  time.sleep(0.2)
+  #로그인페이지 이동 
+  pyperclip.copy('https://daewangam.donggu.ulsan.kr/login.do?prePage=/camping/main.do')
+  time.sleep(0.2)
+  pyperclip.copy('https://daewangam.donggu.ulsan.kr/login.do?prePage=/camping/main.do')
+  time.sleep(0.2)
+  pag.hotkey('ctrl','v')
+  time.sleep(0.2)
+  pag.hotkey('enter')
+  time.sleep(5)
+  #통합회원 로그인
+  pag.click(367,612)
+  time.sleep(5)
+  #ID입력
+  pag.click(493,270)
+  time.sleep(1)
+  pag.hotkey('ctrl','a')
+  time.sleep(1)
+  pag.hotkey('delete')
+  time.sleep(0.5)
+  pag.write(대왕암_id)
+  print(대왕암_id) 
+  pag.click(900,272)
+  time.sleep(1)
+  #PW입력
+  pag.click(493,320)
+  time.sleep(1)
+  pag.hotkey('ctrl','a')
+  time.sleep(1)
+  pag.hotkey('delete')
+  time.sleep(0.5)
+  pag.write(대왕암_pw)
+  print(대왕암_pw) 
+  time.sleep(2)
+  #로그인 선택
+  pag.click(487,373)
+  time.sleep(5)
+
+  #url 클릭
+  pag.click(300,60)
+  time.sleep(0.2)
+  #로그인페이지 이동 
+  pyperclip.copy('https://daewangam.donggu.ulsan.kr/camping/Pmreservation.do')
+  time.sleep(0.2)
+  pyperclip.copy('https://daewangam.donggu.ulsan.kr/camping/Pmreservation.do')
+  time.sleep(0.2)
+  pag.hotkey('ctrl','v')
+  time.sleep(0.2)
+  pag.hotkey('enter')
+  time.sleep(5)
+  #날짜 클릭
+  pag.click(대왕암_day1)
+
+##################두번째####################
+  #url 클릭
+  pag.click(1300,60)
+  time.sleep(0.2)
+  #예약페이지 이동 
+  pyperclip.copy('https://daewangam.donggu.ulsan.kr/camping/Pmreservation.do')
+  time.sleep(0.2)
+  pyperclip.copy('https://daewangam.donggu.ulsan.kr/camping/Pmreservation.do')
+  time.sleep(0.2)
+  pag.hotkey('ctrl','v')
+  time.sleep(0.2)
+  pag.hotkey('enter')
+  time.sleep(5)
+  #날짜 클릭
+  pag.click(대왕암_day2)
+
+
+ 
     
 #★★★★★★★★★★★★★★★★★★★ 메인 함수 
 def 대왕암_Start():
@@ -293,29 +341,28 @@ def 대왕암_확인() :
 
 #★★★★★★★★★★★★★★★★★★★ 서브 함수
 def 대왕암_Karavan():
-    while True:
-        if keyboard.is_pressed("F2") : # F2 누른게 감지되면
-            print("중지")
-            break
-        #날짜 클릭
-        pag.click(대왕암_day1)
-        time.sleep(0.5)
-        #검색
-        대왕암_검색()
-        pag.click(대왕암_day2)
-        time.sleep(0.5)
-        #검색
-        대왕암_검색()
-        #page 아래 
-        # pag.click(대왕암_position_down)
-        # time.sleep(0.5)
-        # 대왕암_검색()
-        # #page 업 
-        # pag.click(대왕암_position_up)
-        # time.sleep(0.5)
-        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
-            break
-                    
+  while True:
+    if keyboard.is_pressed("F2") : # F2 누른게 감지되면
+        print("중지")
+        break
+    #날짜 클릭
+    pag.click(대왕암_day1)
+    time.sleep(0.5)
+    #검색
+    대왕암_검색()
+    pag.click(대왕암_day2)
+    time.sleep(0.5)
+    #검색
+    대왕암_검색()
+    for i in range(1000):
+      print(i)
+      if (i == None) :
+        None
+      else : 
+        None
+    if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+        break
+                  
 #★★★★★★★★★★★★★★★★★★★ 스케쥴러
 def 대왕암_자동():
     time.sleep(5)

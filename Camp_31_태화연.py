@@ -99,58 +99,76 @@ def 태화연_Log_Guest():
 
 ################################## 날짜
 global 태화연_day1
-태화연_day1 = 682,114
+태화연_day1 = 205,128
+global 태화연_day3
+태화연_day3 = 1163,128
+
+
 
 #★★★★★★★★★★★★★★★★★★★ 날짜 입력 (50%)
 def 태화연_Day11():
-    global 태화연_day2
-    태화연_day2 = 775,180
-    print(태화연_day2)
+  global 태화연_day2
+  태화연_day2 = 297,192
+  print(태화연_day2)
+  global 태화연_day4
+  태화연_day4 = 1257,192
+  print(태화연_day4)
 
 def 태화연_Day12():
-    global 태화연_day2
-    태화연_day2 = 800,180
-    print(태화연_day2)
+  global 태화연_day2
+  태화연_day2 = 319,192
+  print(태화연_day2)
+  global 태화연_day4
+  태화연_day4 = 1280,192
+  print(태화연_day4)
 
 def 태화연_Day21():
-    global 태화연_day2
-    태화연_day2= 775,198
-    print(태화연_day2)
+  global 태화연_day2
+  태화연_day2 = 297,206
+  print(태화연_day2)
+  global 태화연_day4
+  태화연_day4 = 1257,206
+  print(태화연_day4)
 
 def 태화연_Day22():
-    global 태화연_day2
-    태화연_day2= 800,198
-    print(태화연_day2)
+  global 태화연_day2
+  태화연_day2 = 319,206
+  print(태화연_day2)
+  global 태화연_day4
+  태화연_day4 = 1280,206
+  print(태화연_day4)
 
 def 태화연_Day31():
-    global 태화연_day2
-    태화연_day2 = 775,214
-    print(태화연_day2)
+  global 태화연_day2
+  태화연_day2 = 297,222
+  print(태화연_day2)
+  global 태화연_day4
+  태화연_day4 = 1257,222
+  print(태화연_day4)
 
 def 태화연_Day32():
-    global 태화연_day2
-    태화연_day2 = 800,214
-    print(태화연_day2)
+  global 태화연_day2
+  태화연_day2 = 319,222
+  print(태화연_day2)
+  global 태화연_day4
+  태화연_day4 = 1280,222
+  print(태화연_day4)
 
 def 태화연_Day41():
-    global 태화연_day2
-    태화연_day2 = 775,228
-    print(태화연_day2)
+  global 태화연_day2
+  태화연_day2 = 297,238
+  print(태화연_day2)
+  global 태화연_day4
+  태화연_day4 = 1257,238
+  print(태화연_day4)
 
 def 태화연_Day42():
-    global 태화연_day2
-    태화연_day2 = 800,228
-    print(태화연_day2)
-
-def 태화연_Day51():
-    global 태화연_day2
-    태화연_day2 = 775,243
-    print(태화연_day2)
-
-def 태화연_Day52():
-    global 태화연_day2
-    태화연_day2 = 800,243
-    print(태화연_day2)
+  global 태화연_day2
+  태화연_day2 = 319,238
+  print(태화연_day2)
+  global 태화연_day4
+  태화연_day4 = 1280,238
+  print(태화연_day4)
 
 #★★★★★★★★★★★★★★★★★★★ 날짜 입력
 def 태화연_Day():
@@ -184,9 +202,6 @@ def 태화연_Day():
             태화연_day4  = pag.position()
             print(태화연_day4)
             break    
-
-
-
 
 #★★★★★★★★★★★★★★★★★★★ 범위 입력
 def 태화연_범위선택():
@@ -244,8 +259,10 @@ global 중구_장소
 중구_장소 = 677,341
 
 def 중구_태화연():
-    global 중구_장소
-    중구_장소 = 675,341
+    global 중구_장소X
+    global 중구_장소Y
+    중구_장소X = 194
+    중구_장소Y = 353
     print(중구_장소)
 
 def 중구_황방산():
@@ -266,60 +283,56 @@ def 중구_입화산():
 
 #★★★★★★★★★★★★★★★★★★★ 자동 입력
 def 중구_자동입력():
-  webbrowser.get("windows-default").open('https://www.junggu.ulsan.kr/camping')  
-  time.sleep(10)
-  button = pag.locateCenterOnScreen("./image/31. Junggu/00. loggin.png",  confidence=0.9)
-  print(button)
-  if (button == None) :
-    time.sleep(2)
-    #로그인 클릭
-    button = pag.locateCenterOnScreen("./image/31. Junggu/01. loggin.png",  confidence=0.9)
-    pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)  
-    time.sleep(2)
-    #아이디  
-    button = pag.locateCenterOnScreen("./image/31. Junggu/02. loggin.png",  confidence=0.9)
-    print(button)
-    pag.click(button.x+40,button.y+25, button='left', clicks=1, interval=0.1)
-    time.sleep(1)
-    pag.dragTo(100,304, 1, button='left')
-    pag.hotkey('delete')
-    time.sleep(2)
-    pag.write(태화연_id)
-    print(태화연_id)  
-    #페이지 선택
-    pag.doubleClick(1600,800)
-    #비번
-    pag.click(button.x+40,button.y+50, button='left', clicks=1, interval=0.1)
-    time.sleep(2)
-    pag.dragTo(100,352, 1, button='left')
-    pag.hotkey('delete')
-    time.sleep(2)
-    pag.write(태화연_pw)
-    print(태화연_pw)
-    time.sleep(2)
-    #로그인 클릭
-    button = pag.locateCenterOnScreen("./image/31. Junggu/03. loggin.png",  confidence=0.8)
-    print(button)
-    pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-    time.sleep(2)
-    중구예약()
-  else :
-    print(button)
-    time.sleep(2)
-    중구예약()
+  #webbrowser.get("windows-default").open('https://www.junggu.ulsan.kr/camping')  
+  time.sleep(1)
+  #url 클릭
+  pag.click(300,60)
+  time.sleep(0.2)
+  #로그인페이지 이동 
+  pyperclip.copy('https://camping.junggu.ulsan.kr/camping/pageCont.do?menuNo=5010000')
+  time.sleep(0.2)
+  pyperclip.copy('https://camping.junggu.ulsan.kr/camping/pageCont.do?menuNo=5010000')
+  time.sleep(0.2)
+  pag.hotkey('ctrl','v')
+  time.sleep(0.2)
+  pag.hotkey('enter')
+  time.sleep(5)
+  #ID입력
+  pag.hotkey('ctrl','a')
+  time.sleep(1)
+  pag.hotkey('delete')
+  time.sleep(0.5)
+  pag.write(태화연_id)
+  print(태화연_id) 
+  pag.click(655,350)
+  time.sleep(1)
+  #PW입력
+  pag.click(493,370)
+  time.sleep(1)
+  pag.hotkey('ctrl','a')
+  time.sleep(1)
+  pag.hotkey('delete')
+  time.sleep(0.5)
+  pag.write(태화연_pw)
+  print(태화연_pw) 
+  #로그인
+  time.sleep(0.5)
+  pag.click(479,406)
+  중구예약_A()
 
-def 중구예약():
-  global 중구_장소
+def 중구예약_A():
+  #######################첫번째##########################
+  global 중구_장소X
+  global 중구_장소Y
   global 중구_Car_No
-  time.sleep(15)
-  print("1")  
-  print(중구_장소)  
-  pag.click(중구_장소)
+  time.sleep(5)
+  print("1")   
+  pag.click(중구_장소X, 중구_장소Y)
   print("2")  
   time.sleep(5)
   #로그인 클릭
   print("3")  
-  button = pag.locateCenterOnScreen("./image/31. Junggu/11. input.png",  confidence=0.8)
+  button = pag.locateCenterOnScreen("./image/31. Junggu/11. input.png", region=(0,0,960,1080) , confidence=0.8)
   print("4")  
   print(button)
   time.sleep(2)
@@ -330,68 +343,153 @@ def 중구예약():
   time.sleep(2)
   
   #이용준수사항
-  button = pag.locateCenterOnScreen("./image/31. Junggu/12. input.png",  confidence=0.9)
+  button = pag.locateCenterOnScreen("./image/31. Junggu/12. input.png", region=(0,0,960,1080) , confidence=0.9)
   print(button)
   time.sleep(1)
   pag.click(button.x,button.y+130, button='left', clicks=1, interval=0.1)
   time.sleep(1)
   #페이지 클릭
-  pag.click(1800,800)
+  pag.click(10,800)
   time.sleep(2)
   pag.hotkey('end')
-  time.sleep(2)
+  time.sleep(3)
+
   #입실정원준수안내
-  button = pag.locateCenterOnScreen("./image/31. Junggu/13. input.png",  confidence=0.9)
+  button = pag.locateCenterOnScreen("./image/31. Junggu/13. input.png", region=(0,0,960,1080) , confidence=0.9)
   print(button)
   time.sleep(1)
   pag.click(button.x,button.y+130, button='left', clicks=1, interval=0.1)
   time.sleep(1)  
   #취소 및 환불규정
-  button = pag.locateCenterOnScreen("./image/31. Junggu/14. input.png",  confidence=0.9)
+  button = pag.locateCenterOnScreen("./image/31. Junggu/14. input.png", region=(0,0,960,1080) , confidence=0.9)
   print(button)
   time.sleep(1)
   pag.click(button.x,button.y+130, button='left', clicks=1, interval=0.1)
   time.sleep(1)  
   #재난상황별 지침
-  button = pag.locateCenterOnScreen("./image/31. Junggu/14_1. input.png",  confidence=0.9)
+  button = pag.locateCenterOnScreen("./image/31. Junggu/14_1. input.png", region=(0,0,960,1080) , confidence=0.9)
   print(button)
   time.sleep(1)
   pag.click(button.x,button.y+130, button='left', clicks=1, interval=0.1)
   time.sleep(1)  
   #개인정보 수집 
-  button = pag.locateCenterOnScreen("./image/31. Junggu/15. input.png",  confidence=0.9)
+  button = pag.locateCenterOnScreen("./image/31. Junggu/15. input.png", region=(0,0,960,1080) , confidence=0.9)
   print(button)
   time.sleep(1)
   pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
   time.sleep(1)  
   #페이지 클릭
-  pag.click(1800,800)
+  pag.click(10,800)
   time.sleep(1)
   #페이지 위로
   pag.hotkey("home")
   time.sleep(1)
   #날짜 맞추기
-  pag.moveTo(1910,187)    
+  pag.hotkey('down')
   time.sleep(1)
-  pag.dragTo(1910,359, 6, button='left')
+  pag.hotkey('down')
+  time.sleep(1)
+  pag.hotkey('down')
+  time.sleep(1)
+  # pag.moveTo(1910,187)    
+  # time.sleep(1)
+  # pag.dragTo(1910,359, 6, button='left')
+  중구예약_B()
+
+def 중구예약_B():
+  #######################첫번째##########################
+  global 중구_장소X
+  global 중구_장소Y
+  global 중구_Car_No
+  time.sleep(5)
+  print("1")   
+  pag.click(중구_장소X+960, 중구_장소Y)
+  print("2")  
+  time.sleep(5)
+  #로그인 클릭
+  print("3")  
+  button = pag.locateCenterOnScreen("./image/31. Junggu/11. input.png", region=(960,0,1920,1080) , confidence=0.8)
+  print("4")  
+  print(button)
+  time.sleep(2)
+  pag.click(button.x,button.y, button='left', clicks=2, interval=0.1)
+  time.sleep(2)
+  pyperclip.copy(중구_Car_No)
+  pag.hotkey('ctrl','v')
+  time.sleep(2)
+  
+  #이용준수사항
+  button = pag.locateCenterOnScreen("./image/31. Junggu/12. input.png", region=(960,0,1920,1080) , confidence=0.9)
+  print(button)
+  time.sleep(1)
+  pag.click(button.x,button.y+130, button='left', clicks=1, interval=0.1)
+  time.sleep(1)
+  #페이지 클릭
+  pag.click(1850,800)
+  time.sleep(2)
+  pag.hotkey('end')
+  time.sleep(3)
+
+  #입실정원준수안내
+  button = pag.locateCenterOnScreen("./image/31. Junggu/13. input.png", region=(960,0,1920,1080) , confidence=0.9)
+  print(button)
+  time.sleep(1)
+  pag.click(button.x,button.y+130, button='left', clicks=1, interval=0.1)
+  time.sleep(1)  
+  #취소 및 환불규정
+  button = pag.locateCenterOnScreen("./image/31. Junggu/14. input.png", region=(960,0,1920,1080) , confidence=0.9)
+  print(button)
+  time.sleep(1)
+  pag.click(button.x,button.y+130, button='left', clicks=1, interval=0.1)
+  time.sleep(1)  
+  #재난상황별 지침
+  button = pag.locateCenterOnScreen("./image/31. Junggu/14_1. input.png", region=(960,0,1920,1080) , confidence=0.9)
+  print(button)
+  time.sleep(1)
+  pag.click(button.x,button.y+130, button='left', clicks=1, interval=0.1)
+  time.sleep(1)  
+  #개인정보 수집 
+  button = pag.locateCenterOnScreen("./image/31. Junggu/15. input.png", region=(960,0,1920,1080) , confidence=0.9)
+  print(button)
+  time.sleep(1)
+  pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+  time.sleep(1)  
+  #페이지 클릭
+  pag.click(1850,800)
+  time.sleep(1)
+  #페이지 위로
+  pag.hotkey("home")
+  time.sleep(1)
+  #날짜 맞추기
+  pag.hotkey('down')
+  time.sleep(1)
+  pag.hotkey('down')
+  time.sleep(1)
+  pag.hotkey('down')
+  time.sleep(1)
+  global 태화연_day1
+  global 태화연_day3
+  time.sleep(3)
+  pag.click(태화연_day1)
+  time.sleep(1)
+  pag.click(태화연_day2)
+  time.sleep(3)
+  pag.click(태화연_day3)
+  time.sleep(1)
+  pag.click(태화연_day4)
+  # pag.moveTo(1910,187)    
+  # time.sleep(1)
+  # pag.dragTo(1910,359, 6, button='left')
   #태화연_Start()
-     
+
 #★★★★★★★★★★★★★★★★★★★ 메인 함수
 def 태화연_Start():
-  #A 화면
-  pag.click(태화연_day1)
-  time.sleep(0.2) 
-  pag.click(태화연_day2)
-  태화연_Start1()   
-  #B 화면
-  pag.click(태화연_day3)
-  time.sleep(0.2) 
-  pag.click(태화연_day4)
   #달력 A클릭 
-  time.sleep(5)
-  pag.click(태화연_day3)
-  time.sleep(0.2)
+  time.sleep(1)
   pag.click(태화연_day1)
+  time.sleep(0.2)
+  pag.hotkey('enter')
+  pag.click(태화연_day3)
   time.sleep(0.2)
   pag.hotkey('enter')     
   time.sleep(0.1)
@@ -413,12 +511,12 @@ def 태화연_Start1():
       print("F2 종료")
       time.sleep(60)
       break
+    #검색
+    태화연_검색A()
     if keyboard.is_pressed("F2"): # F2 누른게 감지되면
       print("F2 종료")
       time.sleep(60)
       break
-    #검색
-    태화연_검색A()
     태화연_검색B()
 
 def 태화연_Start2():
@@ -566,7 +664,6 @@ def 태화연_StepD() :
         # button3 = pag.locateCenterOnScreen('./image/31. Junggu/25. next.png', confidence=0.9)  
         # time.sleep(0.2) 
         pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
-
         print('button3')
         print(button3)
         refresh_token()
