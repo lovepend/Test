@@ -241,44 +241,7 @@ def 대왕암_자동입력():
   #날짜 클릭
   pag.click(대왕암_day2)
 
-
- 
-    
-#★★★★★★★★★★★★★★★★★★★ 메인 함수 
-def 대왕암_Start():
-    while True:
-        if keyboard.is_pressed("F2") : # F2 누른게 감지되면
-            print("F2 종료")
-            break
-        #날짜 클릭
-        pag.click(대왕암_day1)
-        time.sleep(0.5)
-        #검색
-        대왕암_검색()
-        time.sleep(0.2)
-        #page 위
-        pag.click(대왕암_position_up)
-        time.sleep(0.2)
-        대왕암_검색()
-        time.sleep(0.2)
-        #page 위
-        pag.click(대왕암_position_up)
-        time.sleep(0.2)
-        대왕암_검색()
-        time.sleep(0.2)
-        #page 위
-        pag.click(대왕암_position_up)
-        time.sleep(0.2)
-        대왕암_검색()
-        #page 위
-        pag.click(대왕암_position_up)
-        time.sleep(0.2)
-        대왕암_검색()
-        #page 아래
-        pag.hotkey('end')
-        time.sleep(0.3)
-        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
-            break        
+################################################검색#############################################
 
 def 대왕암_검색():
     #검색
@@ -338,6 +301,46 @@ def 대왕암_확인() :
         time.sleep(5)
         pag.click(1302,712)
         대왕암_Start()
+ 
+    
+#★★★★★★★★★★★★★★★★★★★ 메인 함수 
+def 대왕암_Start():
+  global i
+  i = 0 
+  while True:
+    if keyboard.is_pressed("F2") : # F2 누른게 감지되면
+      print("중지")
+      break
+    #날짜 클릭
+    pag.click(대왕암_day1)
+    time.sleep(0.5)
+    #검색
+    대왕암_검색()
+    pag.click(대왕암_day2)
+    time.sleep(0.5)
+    #검색
+    대왕암_검색()
+    if i == 1000 :
+      #첫번째 리셋
+      time.sleep(1)
+      pag.click(855,803)  
+      time.sleep(1)
+      pag.hotkey('end')
+      #두번째 리셋
+      time.sleep(1)
+      pag.click(1816,807)  
+      time.sleep(1)
+      pag.hotkey('end')
+      time.sleep(1)
+      pag.hotkey('pgup')
+      i = 1
+    else : 
+      i = i + 1
+      print(i)
+    if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+        break  
+
+
 
 #★★★★★★★★★★★★★★★★★★★ 서브 함수
 def 대왕암_Karavan():
@@ -356,8 +359,8 @@ def 대왕암_Karavan():
     대왕암_검색()
     for i in range(1000):
       print(i)
-      if (i == None) :
-        None
+      if (i == 1000) :
+        pag.click(855)  
       else : 
         None
     if keyboard.is_pressed("F2"): # F2 누른게 감지되면
