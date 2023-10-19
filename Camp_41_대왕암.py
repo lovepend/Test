@@ -320,7 +320,7 @@ def 대왕암_Start():
     time.sleep(0.5)
     #검색
     대왕암_검색()
-    if i == 500 :
+    if i == 200 :
       #첫번째 리셋
       time.sleep(1)
       pag.click(855,803)  
@@ -359,7 +359,7 @@ def 대왕암_Karavan():
     time.sleep(0.5)
     #검색
     대왕암_검색()
-    if i == 500 :
+    if i == 200 :
       #첫번째 리셋
       time.sleep(1)
       pag.click(855,803)  
