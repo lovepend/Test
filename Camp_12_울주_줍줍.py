@@ -22,7 +22,7 @@ True
 
 #★★★★★★★★★★★★★★★★★★★ 차량번호 
 global timesetting
-timesetting = 0.2
+timesetting = 0.3
 울주_Car_No = "62소9403"
 
 
@@ -171,7 +171,7 @@ def 울주줍줍_Page2_예약하기():
  
 #신용카드결제
 def 울주줍줍_Page3_약관_전체동의():
-  time.sleep(timesetting)
+  time.sleep(0.5)
   button = pag.locateCenterOnScreen('./image/12. Ulju/31. jubjub.png', confidence=0.9)
   if (button == None) :
     울주줍줍_Page3_약관_전체동의()   
