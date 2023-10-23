@@ -240,6 +240,7 @@ def 신불산_time_controll_02():
 
 #★★★★★★★★★★★★★★★★★★★ 자동 입력
 def 신불산_자동입력():  
+  시간_동기화()
   #webbrowser.get("windows-default").open('https://camping.ulju.ulsan.kr/')
   time.sleep(1)
   #url 클릭
@@ -264,8 +265,11 @@ def 신불산_자동입력():
   time.sleep(1)
   pag.hotkey('ctrl','a')
   time.sleep(1)
-  pag.write(신불산_id)
-  print(신불산_id)  
+  pyperclip.copy(신불산_id)
+  time.sleep(0.2)
+  pyperclip.copy(신불산_id)
+  time.sleep(1)
+  pag.hotkey('ctrl','v')
   #Pw입력
   pag.click(600,321)
   time.sleep(1)
@@ -273,8 +277,11 @@ def 신불산_자동입력():
   time.sleep(1)
   pag.hotkey('ctrl','a')
   time.sleep(1)
-  pag.write(신불산_pw)
-  print(신불산_pw)
+  pyperclip.copy(신불산_pw)
+  time.sleep(0.2)
+  pyperclip.copy(신불산_pw)
+  time.sleep(1)
+  pag.hotkey('ctrl','v')
   #로그인
   time.sleep(0.5)
   pag.click(485,371)
@@ -520,10 +527,10 @@ def 시간_동기화():
   time.sleep(2)
   pag.rightClick(1882,1055)
   time.sleep(3)
-  pag.click(1849,968)
-  pag.click(1849,968)
-  pag.click(1849,968)
+  pag.doubleClick(1830,974)
   time.sleep(3)
-  pag.click(1526,671)  
-  time.sleep(10)
+  pag.click(1573,236)
+  time.sleep(5)
+  pag.click(1573,236)
+  time.sleep(5)
   pag.click(1805,18)  
