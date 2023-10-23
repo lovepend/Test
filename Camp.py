@@ -158,6 +158,7 @@ def 시간_줍기():
 # 신불산time_s = Button(frame3, width=5, padx=5, pady=5, text="시작", command=시간입력, bg="orange", fg="black", font = ("", 7))
 # 신불산time_s.place(x=400, y=10)
 
+
 #함수
 신불산btn1 = Button(frame3, width=5, padx=10, pady=5, text="0.1", command=신불산_time_controll_01, bg="white", fg="black", font = ("", 7))
 신불산btn1.place(x=0, y=35)
