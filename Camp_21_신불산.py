@@ -351,9 +351,9 @@ def 신불산_줍기(신불산_min,신불산_sec):
       #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
       #print("Check2")
       #예약가능 사이트만 보기
-      pag.click(782,678)
+      pag.click(762,686)
       time.sleep(0.2)
-      pag.click(1734,685)
+      pag.click(1734,686)
       time.sleep(0.2)
       while True:   
         if keyboard.is_pressed("F2"):
