@@ -155,6 +155,13 @@ def 시간_줍기():
     print(신불산_min,신불산_sec)
     시간입력_줍기(신불산_min,신불산_sec)
 
+def 시간_줍기1():
+    신불산_min = entry1.get()
+    신불산_sec = entry2.get()
+    #시간입력_시작(신불산_hour,신불산_min,신불산_sec)
+    print(신불산_min,신불산_sec)
+    시간입력_줍기1(신불산_min,신불산_sec)
+
 # 신불산time_s = Button(frame3, width=5, padx=5, pady=5, text="시작", command=시간입력, bg="orange", fg="black", font = ("", 7))
 # 신불산time_s.place(x=400, y=10)
 
@@ -195,13 +202,13 @@ def 시간_줍기():
 #함수
 신불산btn1 = Button(frame3, width=5, padx=10, pady=5, text="Reset", command=신불산_Reset, bg="white", fg="black", font = ("", 7))
 신불산btn1.place(x=0, y=83)
-신불산btn2 = Button(frame3, width=5, padx=10, pady=5, text="자동실행", command=신불산_자동입력, bg="white", fg="black", font = ("", 7))
+신불산btn2 = Button(frame3, width=5, padx=10, pady=5, text="자동입력", command=신불산_자동입력, bg="blue", fg="white", font = ("", 7))
 신불산btn2.place(x=50, y=83)
-신불산btn3 = Button(frame3, width=5, padx=10, pady=5, text="실시간", command=신불산_실시간, bg="white", fg="black", font = ("", 7))
+신불산btn3 = Button(frame3, width=5, padx=10, pady=5, text="실시간", command=시간_실시간, bg="white", fg="black", font = ("", 7))
 신불산btn3.place(x=100, y=83)
-신불산btn4 = Button(frame3, width=5, padx=10, pady=5, text="자동입력", command=신불산_자동입력, bg="blue", fg="white", font = ("", 7))
+신불산btn4 = Button(frame3, width=5, padx=10, pady=5, text="줍기", command=시간_줍기, bg="green", fg="white", font = ("", 7))
 신불산btn4.place(x=150, y=83)
-신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="줍기", command=시간_줍기, bg="green", fg="white", font = ("", 7))
+신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="줍기_V1", command=시간_줍기1, bg="green", fg="white", font = ("", 7))
 신불산btn5.place(x=200, y=83)
 
 

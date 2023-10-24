@@ -298,10 +298,13 @@ def 중구_자동입력():
   #ID입력
   pag.hotkey('ctrl','a')
   time.sleep(1)
-  pag.hotkey('delete')
-  time.sleep(0.5)
-  pag.write(태화연_id)
-  print(태화연_id) 
+  pag.hotkey('ctrl','a')
+  time.sleep(1)
+  pyperclip.copy(태화연_id)
+  time.sleep(0.2)
+  pyperclip.copy(태화연_id)
+  time.sleep(1)
+  pag.hotkey('ctrl','v')
   pag.click(655,350)
   time.sleep(1)
   #PW입력
@@ -309,10 +312,13 @@ def 중구_자동입력():
   time.sleep(1)
   pag.hotkey('ctrl','a')
   time.sleep(1)
-  pag.hotkey('delete')
-  time.sleep(0.5)
-  pag.write(태화연_pw)
-  print(태화연_pw) 
+  pag.hotkey('ctrl','a')
+  time.sleep(1)
+  pyperclip.copy(태화연_pw)
+  time.sleep(0.2)
+  pyperclip.copy(태화연_pw)
+  time.sleep(1)
+  pag.hotkey('ctrl','v')
   #로그인
   time.sleep(0.5)
   pag.click(479,406)
@@ -556,11 +562,11 @@ def 태화연_검색A():
     print("검색A")
     button = pag.locateCenterOnScreen("./image/31. Junggu/21. reservation.png", region=태화연_find_rangeA ,confidence=0.8) 
     if (button == None) :
-        #태화연A_검색()
-        None     
+      #태화연A_검색()
+      None     
     else :
-        #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-        태화연_StepA_A()
+      #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+      태화연_StepA_A()
 
 def 태화연_검색B():
     print("검색B")
