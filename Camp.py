@@ -27,16 +27,15 @@ cv2.useOptimized()
 True
 
 
-def schedule_job():
-    
-    schedule.every().day.at("08:45:00").do(신불산_자동) 
-    schedule.every().day.at("09:45:00").do(태화연_자동) 
-    schedule.every().day.at("10:55:00").do(대왕암_자동) 
-    schedule.every().day.at("13:45:00").do(신불산_자동) 
-    schedule.every().day.at("15:45:00").do(태화연_자동) 
-    schedule.every().day.at("14:55:00").do(대왕암_자동) 
-    while True:
-        schedule.run_pending()
+def schedule_job():    
+  schedule.every().day.at("08:45:00").do(신불산_자동) 
+  schedule.every().day.at("09:45:00").do(태화연_자동) 
+  schedule.every().day.at("10:55:00").do(대왕암_자동) 
+  schedule.every().day.at("13:45:00").do(신불산_자동) 
+  schedule.every().day.at("15:45:00").do(태화연_자동) 
+  schedule.every().day.at("14:55:00").do(대왕암_자동) 
+  while True:
+    schedule.run_pending()
 
 ################################## GUI 편집 ################################## 54주6191
 window = Tk()
