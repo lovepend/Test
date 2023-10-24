@@ -329,11 +329,11 @@ def 신불산_실시간(신불산_min,신불산_sec):
       break  
     #날짜 클릭
     pag.click(신불산_day1)  
-    time.sleep(0.2)
+    time.sleep(0.1)
     신불산_검색()  
-    time.sleep(0.2)
+    time.sleep(0.1)
     pag.click(신불산_day2)  
-    time.sleep(0.2)
+    time.sleep(0.1)
     신불산_검색()     
 
 def 신불산_줍기(신불산_min,신불산_sec):
@@ -386,13 +386,17 @@ def 신불산_줍기1(신불산_min,신불산_sec):
       break  
     #if (tm.tm_min == 신불산_min and tm.tm_sec == 신불산_sec) : #9시 56분 및 15시 56분 시작
     if (tm.tm_min == 신불산_min and tm.tm_sec == 신불산_sec) : 
-      pag.click(신불산_day1)  
-      time.sleep(0.2)
-      신불산_검색()  
-      time.sleep(0.2)
-      pag.click(신불산_day2)  
-      time.sleep(0.2)
-      신불산_검색()   
+      while True:
+        pag.click(신불산_day1)  
+        time.sleep(0.1)
+        신불산_검색()  
+        time.sleep(0.1)
+        pag.click(신불산_day2)  
+        time.sleep(0.1)
+        신불산_검색()   
+        if keyboard.is_pressed("F2"):
+          print("종료") 
+          break  
     else : 
       print("else")
 
