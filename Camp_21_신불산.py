@@ -399,6 +399,7 @@ def 신불산_줍기1(신불산_min,신불산_sec):
           break  
     else : 
       print("else")
+      
 
 def 신불산_검색():  
   global 신불산_find_range             

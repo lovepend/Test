@@ -535,155 +535,165 @@ def 태화연_Start1():
     태화연_검색B()
 
 def 태화연_Start2():
-    while True:
-        global 태화연_i
-        tm = time.localtime()
-        #날짜 클릭
-        pag.click(태화연_day2)
-        time.sleep(0.1)
-        pag.click(10,500)
-        #횟수 표현
-        태화연_i = 태화연_i + 1
-        #종료 조건
-        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
-            print("F2 종료")
-            break
-        if (tm.tm_hour == 11 and tm.tm_min == 5) or (tm.tm_hour == 19 and tm.tm_min == 5) : #9시 50분 및 16시 50분 종료
-            print("minute 중지")
-            print(tm.tm_hour ,"시", tm.tm_min ,"분", tm.tm_sec,"초")
-            break        
-        #날짜 클릭
-        pag.click(태화연_day1)
-        time.sleep(0.1)
-        #검색
-        태화연_검색A()
+  while True:
+    global 태화연_i
+    tm = time.localtime()
+    #날짜 클릭
+    pag.click(태화연_day2)
+    time.sleep(0.1)
+    pag.click(10,500)
+    #횟수 표현
+    태화연_i = 태화연_i + 1
+    #종료 조건
+    if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+        print("F2 종료")
+        break
+    if (tm.tm_hour == 11 and tm.tm_min == 5) or (tm.tm_hour == 19 and tm.tm_min == 5) : #9시 50분 및 16시 50분 종료
+        print("minute 중지")
+        print(tm.tm_hour ,"시", tm.tm_min ,"분", tm.tm_sec,"초")
+        break        
+    #날짜 클릭
+    pag.click(태화연_day1)
+    time.sleep(0.1)
+    #검색
+    태화연_검색A()
 
 def 태화연_검색A():
-    print("검색A")
-    button = pag.locateCenterOnScreen("./image/31. Junggu/21. reservation.png", region=태화연_find_rangeA ,confidence=0.8) 
-    if (button == None) :
-      #태화연A_검색()
-      None     
-    else :
-      #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-      태화연_StepA_A()
+  print("검색A")
+  button = pag.locateCenterOnScreen("./image/31. Junggu/21. reservation.png", region=태화연_find_rangeA ,confidence=0.8) 
+  if (button == None) :
+    #태화연A_검색()
+    None     
+  else :
+    #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+    태화연_StepA_A()
 
 def 태화연_검색B():
-    print("검색B")
-    button = pag.locateCenterOnScreen("./image/31. Junggu/21. reservation.png", region=태화연_find_rangeB ,confidence=0.8) 
-    if (button == None) :
-        #태화연B_검색()
-        None     
-    else :
-        #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-        태화연_StepA_B()
+  print("검색B")
+  button = pag.locateCenterOnScreen("./image/31. Junggu/21. reservation.png", region=태화연_find_rangeB ,confidence=0.8) 
+  if (button == None) :
+    #태화연B_검색()
+    None     
+  else :
+    #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+    태화연_StepA_B()
 
 def 태화연_StepA_A():
-    print("태화연_StepA")
-    button = pag.locateCenterOnScreen("./image/31. Junggu/22. reservation.png", region=태화연_find_rangeA ,confidence=0.9) 
-    print(button)
-    if (button == None) :
-        pag.click(태화연_day1)
-        time.sleep(0.1)
-        pag.hotkey('enter')     
-        time.sleep(0.1)
-        None     
-    else :
-        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-        태화연_StepB_A()
+  print("태화연_StepA")
+  button = pag.locateCenterOnScreen("./image/31. Junggu/22. reservation.png", region=태화연_find_rangeA ,confidence=0.9) 
+  print(button)
+  if (button == None) :
+    pag.click(태화연_day1)
+    time.sleep(0.1)
+    pag.hotkey('enter')     
+    time.sleep(0.1)
+    None     
+  else :
+    pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+    태화연_StepB_A()
         
 def 태화연_StepA_B():
-    print("태화연_StepB")
-    button = pag.locateCenterOnScreen("./image/31. Junggu/22. reservation.png", region=태화연_find_rangeB ,confidence=0.9) 
-    print(button)
-    if (button == None) :
-        pag.click(태화연_day3)
-        time.sleep(0.1)
-        pag.hotkey('enter')     
-        time.sleep(0.1)
-        None     
-    else :
-        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-        태화연_StepB_A()
+  print("태화연_StepB")
+  button = pag.locateCenterOnScreen("./image/31. Junggu/22. reservation.png", region=태화연_find_rangeB ,confidence=0.9) 
+  print(button)
+  if (button == None) :
+    pag.click(태화연_day3)
+    time.sleep(0.1)
+    pag.hotkey('enter')     
+    time.sleep(0.1)
+    None     
+  else :
+    pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+    태화연_StepB_A()
 
 
 def 태화연_StepB_A():
-    global button1
-    button1 = pag.locateCenterOnScreen("./image/31. Junggu/23. check.png", confidence=0.7) 
-    if (button1 == None) :
-        태화연_StepB_A()
-    else :    
-        time.sleep(0.1)
-        pag.hotkey('enter')
-        time.sleep(0.2)
-        #pag.click(button1.x,button1.y, button='left', clicks=1, interval=0.1)
-        #print(button1)
-        #time.sleep(0.1) 
-        #pag.hotkey('enter', clicks=50, interval=0.1)
-        #time.sleep(0.1)
-        #pag.click(1800,800)#추가
-        #time.sleep(0.5)#추가
-        #pag.hotkey('pagedown')#추가
-        태화연_StepC()
+  global button1
+  button1 = pag.locateCenterOnScreen("./image/31. Junggu/23. check.png", confidence=0.7) 
+  if (button1 == None) :
+    태화연_StepB_A()
+  else :    
+    time.sleep(0.1)
+    pag.hotkey('enter')
+    time.sleep(0.2)
+    #pag.click(button1.x,button1.y, button='left', clicks=1, interval=0.1)
+    #print(button1)
+    #time.sleep(0.1) 
+    #pag.hotkey('enter', clicks=50, interval=0.1)
+    #time.sleep(0.1)
+    #pag.click(1800,800)#추가
+    #time.sleep(0.5)#추가
+    #pag.hotkey('pagedown')#추가
+    태화연_StepC()
 
 
 def 태화연_StepC() : 
-    button2 = pag.locateCenterOnScreen('./image/31. Junggu/24. next.png', confidence=0.8)   
-    print(button2)
-    if (button2 == None) :
-        태화연_StepC()      
-    else : 
-        # i = 0
-        # while i < 1:
-        #     i = i +1
-        #     pag.hotkey('down')
+  button2 = pag.locateCenterOnScreen('./image/31. Junggu/24. next.png', confidence=0.8)   
+  print(button2)
+  if (button2 == None) :
+      태화연_StepC()      
+  else : 
+    # i = 0
+    # while i < 1:
+    #     i = i +1
+    #     pag.hotkey('down')
 
-        #     if i == 1 :
-        #       break
-        pag.hotkey('down')
-        time.sleep(0.1)
-        pag.click(button1.x-270 ,button1.y)
-        #pag.click(1800,800)
-        time.sleep(0.2)
-        pag.hotkey('end')
-        time.sleep(0.4)
-        태화연_StepD()
-        # button3 = pag.locateCenterOnScreen('./image/31. Junggu/25. next.png', confidence=0.9)  
-        # time.sleep(0.2) 
-        # pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
-        # print('button3')
-        # print(button3)
-        # # refresh_token()
-        # # kakao_message_you("태화연")
-        # time.sleep(5000)
+    #     if i == 1 :
+    #       break
+    pag.hotkey('down')
+    time.sleep(0.1)
+    pag.click(button1.x-270 ,button1.y)
+    #pag.click(1800,800)
+    time.sleep(0.2)
+    pag.hotkey('end')
+    time.sleep(0.4)
+    태화연_StepD()
+    # button3 = pag.locateCenterOnScreen('./image/31. Junggu/25. next.png', confidence=0.9)  
+    # time.sleep(0.2) 
+    # pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
+    # print('button3')
+    # print(button3)
+    # # refresh_token()
+    # # kakao_message_you("태화연")
+    # time.sleep(5000)
 
 def 태화연_StepD() : 
-    button3 = pag.locateCenterOnScreen('./image/31. Junggu/25. next.png', confidence=0.9)  
-    print(button3)
-    if (button3 == None) :
-        태화연_StepD()      
-    else : 
-        # i = 0
-        # while i < 1:
-        #     i = i +1
-        #     pag.hotkey('down')
+  button3 = pag.locateCenterOnScreen('./image/31. Junggu/25. next.png', confidence=0.9)  
+  print(button3)
+  if (button3 == None) :
+    태화연_StepD()      
+  else : 
+    # i = 0
+    # while i < 1:
+    #     i = i +1
+    #     pag.hotkey('down')
 
-        #     if i == 1 :
-        #       break
-        # pag.hotkey('down')
-        # time.sleep(0.1)
-        # pag.click(1800,800)
-        # time.sleep(0.2)
-        # pag.hotkey('end')
-        # time.sleep(0.3)
-        # button3 = pag.locateCenterOnScreen('./image/31. Junggu/25. next.png', confidence=0.9)  
-        # time.sleep(0.2) 
-        pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
-        print('button3')
-        print(button3)
-        refresh_token()
-        kakao_message_you("태화연")
-        time.sleep(5000)
+    #     if i == 1 :
+    #       break
+    # pag.hotkey('down')
+    # time.sleep(0.1)
+    # pag.click(1800,800)
+    # time.sleep(0.2)
+    # pag.hotkey('end')
+    # time.sleep(0.3)
+    # button3 = pag.locateCenterOnScreen('./image/31. Junggu/25. next.png', confidence=0.9)  
+    # time.sleep(0.2) 
+    pag.click(button3.x,button3.y, button='left', clicks=1, interval=0.1)
+    print('button3')
+    print(button3)
+    time.sleep(0.1)
+    i = 0
+    while i < 1:
+      i = i + 1
+      pag.hotkey('enter')
+      if i == 1000 :
+        break
+    refresh_token()
+    kakao_message_you("태화연")
+    time.sleep(500)
+
+
+
 
 
 #★★★★★★★★★★★★★★★★★★★ 서브 함수
