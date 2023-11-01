@@ -150,7 +150,7 @@ def 육부촌_Start():
             break
         pag.hotkey('f5')
         #날짜 클릭
-        #time.sleep(0.5)
+        time.sleep(0.2)
         pag.click(육부촌_day)
         #time.sleep(1)
         육부촌_검색()
@@ -176,7 +176,7 @@ def 육부촌_Start1():
     if keyboard.is_pressed("F2") : # F2 누른게 감지되면
       print("F2 종료")
       break
-    pyperclip.copy('https://www.gyeongju.go.kr/hwarang/page.do?mnu_uid=3516&csr_date=2023-12-31&cs_uid=30&csr_numday=1&step=write&initYear=2023&initMonth=9&currentDay=')
+    pyperclip.copy('https://www.gyeongju.go.kr/hwarang/page.do?mnu_uid=3516&csr_date=2023-12-09&cs_uid=30&csr_numday=1&step=write&initYear=2023&initMonth=9&currentDay=')
     button = pag.locateCenterOnScreen("./image/51. Kyungju/05._99. reservation.png", region = 육부촌_find_range, confidence=0.85) 
     if (button == None) :
       None  
