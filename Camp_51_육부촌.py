@@ -166,7 +166,6 @@ def 육부촌_Start():
         #pag.click(육부촌_day5)
         #time.sleep(1)
         육부촌_검색()
-
 def 육부촌_자동입력():
     time.sleep(2)
   
@@ -177,21 +176,53 @@ def 육부촌_Start1():
     if keyboard.is_pressed("F2") : # F2 누른게 감지되면
       print("F2 종료")
       break
-    pyperclip.copy('https://www.gyeongju.go.kr/hwarang/page.do?mnu_uid=3516&csr_date=2023-10-21&cs_uid=30&csr_numday=1&step=write&initYear=2023&initMonth=9&currentDay=')
-    button = pag.locateCenterOnScreen("./image/51. Kyungju/05._0. reservation.png", region = 육부촌_find_range, confidence=0.85) 
+    pyperclip.copy('https://www.gyeongju.go.kr/hwarang/page.do?mnu_uid=3516&csr_date=2023-12-31&cs_uid=30&csr_numday=1&step=write&initYear=2023&initMonth=9&currentDay=')
+    button = pag.locateCenterOnScreen("./image/51. Kyungju/05._99. reservation.png", region = 육부촌_find_range, confidence=0.85) 
     if (button == None) :
-      None 
+      None  
+    else : 
+      육부촌_Start2()
       pag.hotkey('enter')     
       time.sleep(0.1)   
       pag.click(815,47) 
       time.sleep(0.1)   
       pag.hotkey('ctrl','v')
       time.sleep(0.1)
-      pag.hotkey('enter')  
-    else : 
-      time.sleep(0.5)
+      pag.hotkey('enter') 
+      time.sleep(0.3)
       육부촌_주소()
-    
+      
+
+def 육부촌_Start2(): 
+  while True:
+    if keyboard.is_pressed("F2") : # F2 누른게 감지되면
+      print("F2 종료")
+      break
+    button = pag.locateCenterOnScreen("./image/51. Kyungju/05._0. reservation.png", region = 육부촌_find_range, confidence=0.85) 
+    if (button == None) :
+      pag.hotkey('enter')     
+      time.sleep(0.1)   
+      pag.click(815,47) 
+      time.sleep(0.1)   
+      pag.hotkey('ctrl','v')
+      time.sleep(0.1)
+      pag.hotkey('enter') 
+      time.sleep(0.3)
+      육부촌_Start1()
+    else: 
+      육부촌_주소()
+
+# def 육부촌_Start3(): 
+#   while True:
+#     if keyboard.is_pressed("F2") : # F2 누른게 감지되면
+#       print("F2 종료")
+#       break
+#     button = pag.locateCenterOnScreen("./image/51. Kyungju/05._0. reservation.png", region = 육부촌_find_range, confidence=0.85) 
+#     if (button == None) :
+#       육부촌_Start1()
+#     else: 
+#       육부촌_주소()
+
 
 def 육부촌_검색():
     #검색
@@ -215,14 +246,14 @@ def 육부촌_확인() :
         #refresh_token()
         #kakao_message_you("육부촌")
         육부촌_주소()
+        time.sleep(0.3)
 
 def 육부촌_주소():
-    time.sleep(0.2)
     #주소검색
     button = pag.locateCenterOnScreen('./image/51. Kyungju/05._4. Adress.png', confidence=0.7)   
     pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
     pyperclip.copy('반구로55')
-    time.sleep(1)
+    time.sleep(0.3)
     #예)판교역로235
     button = pag.locateCenterOnScreen('./image/51. Kyungju/05._5. Adress.png', confidence=0.7)   
     pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
@@ -252,11 +283,6 @@ def 육부촌_주소():
     #pag.click(button2.x,button2.y, button='left', clicks=1, interval=0.1) 
     #time.sleep(0.4)
     time.sleep(500)
-
-
-
-
-
 
 #★★★★★★★★★★★★★★★★★★★ 서브 함수
 def 육부촌_Karavan():
