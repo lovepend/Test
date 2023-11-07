@@ -21,7 +21,7 @@ from Camp_41_대왕암 import *
 from Camp_21_신불산 import *
 from Camp_51_육부촌 import *
 from kakao_01_api import *
-from Movie_Factory import *
+from Test.Movie_Factory import *
 import cv2
 cv2.useOptimized()
 True
