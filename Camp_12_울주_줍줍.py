@@ -24,7 +24,7 @@ True
 global timesetting
 timesetting = 0.3
 울주_Car_No = "62소9403"
-
+울주_보안문자_No = "999999"
 
 def 울주_차량번호_입력(차량번호):
   global 울주_Car_No
