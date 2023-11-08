@@ -29,7 +29,11 @@ timesetting = 0.3
 def 울주_차량번호_입력(차량번호):
   global 울주_Car_No
   울주_Car_No = 차량번호
- 
+
+def 울주_보안문자_입력(보안문자):
+  global 울주_보안문자_No
+  울주_보안문자_No = 보안문자
+
 #pyperclip.copy('62소9403')
 def 울주_앱결제():
   global Card
@@ -107,10 +111,14 @@ def 울주줍줍_Page1_총인원():
 #보안문자
 def 울주줍줍_Page1_다음():
   pag.click(779,143)
-  while True:
-    if keyboard.is_pressed("enter"): 
-      time.sleep(0.3)
-      울주줍줍_Page2_도착예정시간()
+  pyperclip.copy(울주_보안문자_No)
+  print(울주_보안문자_No)
+  pag.hotkey('ctrl','v')
+  time.sleep(0.1)
+  pag.hotkey('enter')
+  time.sleep(0.3)
+  울주줍줍_Page2_도착예정시간()
+
 # def 울주줍줍_Page1_다음():
 #   button = pag.locateCenterOnScreen('./image/12. Ulju/15. jubjub.png', confidence=0.9)
 #   if (button == None) :
@@ -126,7 +134,6 @@ def 울주줍줍_Page1_다음():
 #총인원
 def 울주줍줍_Page2_도착예정시간():
   #페이지 선택
-  pag.doubleClick(1600,800)
   pag.hotkey('end')
   pag.hotkey('end')
   time.sleep(timesetting)

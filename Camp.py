@@ -110,6 +110,20 @@ def 차량번호():
 울주btn6 = Button(frame2, width=5, padx=10, pady=5, text="울주줍줍", command=울주줍줍_새로고침, bg="green", fg="white", font = ("", 7))
 울주btn6.place(x=200, y=83)
 
+lable1=Label(frame2, text="차량번호", font = ("", 7))
+lable1.place(x=0, y=130)
+
+entry_울주 = Entry(frame2, width=25, borderwidth=2 , font = ("", 7))
+entry_울주.place(x=50, y=130)
+entry_울주.insert(0,"보안문자",)
+
+def 보안문자():
+  차량번호 = entry_울주.get()
+  울주_보안문자_입력(차량번호)
+
+울주btn12 = Button(frame2, width=5, padx=10, pady=5, text="보안문자", command=보안문자, bg="yellow", fg="black", font = ("", 7))
+울주btn12.place(x=200, y=130)
+
 #신불산 UI===============================================================================================================
 frame3=tkinter.Frame(window)
 notebook.add(frame3, text="3.신불")
