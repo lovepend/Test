@@ -104,18 +104,24 @@ def 울주줍줍_Page1_총인원():
     time.sleep(0.3)
     울주줍줍_Page1_다음()
 
-#총인원
+#보안문자
 def 울주줍줍_Page1_다음():
-  button = pag.locateCenterOnScreen('./image/12. Ulju/15. jubjub.png', confidence=0.9)
-  if (button == None) :
-    울주줍줍_Page1_다음()   
-  else :
-    pag.click(button.x,button.y) 
-    pag.click(button.x,button.y) 
-    pag.hotkey('end')
-    print("다음")
-    time.sleep(timesetting)
-    울주줍줍_Page2_도착예정시간()
+  pag.click(779,143)
+  while True:
+    if keyboard.is_pressed("enter"): 
+      time.sleep(0.3)
+      울주줍줍_Page2_도착예정시간()
+# def 울주줍줍_Page1_다음():
+#   button = pag.locateCenterOnScreen('./image/12. Ulju/15. jubjub.png', confidence=0.9)
+#   if (button == None) :
+#     울주줍줍_Page1_다음()   
+#   else :
+#     pag.click(button.x,button.y) 
+#     pag.click(button.x,button.y) 
+#     pag.hotkey('end')
+#     print("다음")
+#     time.sleep(timesetting)
+#     울주줍줍_Page2_도착예정시간()
 
 #총인원
 def 울주줍줍_Page2_도착예정시간():

@@ -341,6 +341,8 @@ def 육부촌_refresh_AI():
       pag.hotkey('ctrl','v')
       time.sleep(0.1)
       pag.hotkey('enter') 
+      time.sleep(0.1)
+      pag.hotkey('enter') 
       time.sleep(0.3)
       육부촌_줍줍AI()
     else: 
@@ -353,11 +355,11 @@ def 육부촌_주소_AI():
       print("F2 종료")
       break
     print("1")
-    time.sleep(0.2)
+    time.sleep(0.1)
     pag.click(150,551)
-    time.sleep(0.2)
+    time.sleep(0.1)
     pag.hotkey('end')
-    time.sleep(1)
+    time.sleep(0.5)
     #주소검색
     print("2")
     button = pag.locateCenterOnScreen('./image/51. Kyungju/05._92. reservation.png', confidence=0.7)   
@@ -390,7 +392,8 @@ def 육부촌_주소_AI():
     #자동입력방지
     pag.click(977,274)
     im1 =  pag.screenshot('captcha.png', region=(700,245,200,70))
-    file = r"C:\Users\LinkTech\Documents\Visual Studio Code\Test\captcha.png"
+    #file = r"C:\Users\LinkTech\Documents\Visual Studio Code\Test\captcha.png"
+    file = r"captcha.png"
     reader = easyocr.Reader(['en'], gpu=True)
     #reader = easyocr.Reader(['ko', 'en'], gpu=True, model_storage_directory= 'korean_g2.pth')
     img = cv2.imread(file)
