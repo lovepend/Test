@@ -19,7 +19,7 @@ import cv2
 cv2.useOptimized()
 True
 
-i = 0
+
 #울주해양예약 시스템 2022.01.11 #Vier Size 67%
 
 ################################## 아이디
@@ -98,7 +98,6 @@ def 울주_토요일():
 def 울주_검색():
   #Saturday = 1164,102,1263,1080 #토요일만 검색 
   global find_range
-  print(find_range)
   #button = pag.locateCenterOnScreen('./image/11. Ulju/01_0. reservation1.png', region = find_range, confidence=0.95)
   button = pag.locateCenterOnScreen(reservation, region = find_range, confidence=0.95)
   if (button == None) :
@@ -180,7 +179,6 @@ def 울주_log():
     #예약하기      
     pag.click(775,172)
     time.sleep(1)    
-    print("1")    
 
 
 def 울주_log1():
@@ -220,82 +218,90 @@ def 울주_log1():
     time.sleep(1)  
     #예약하기      
     pag.click(775,172)
-    time.sleep(1)    
-    print("1")       
+    time.sleep(1)          
     #다음달 선택
     pag.click(535,439)
     time.sleep(2)
-    print("2")
+
 
 #★★★★★★★★★★★★★★★★★★★ 보안 문자
 
-def 보안문자_자동입력():
-  #보안문자 복사
+def 보안문자_카톡입력():
+  #셋팅
+  pag.click(1800,800)
+  time.sleep(0.3)
+  pag.hotkey("home")
+  time.sleep(1)
+  pag.hotkey("f5")
+  time.sleep(1)
+  print("1")
+  button = pag.locateCenterOnScreen('./image/12. Ulju/14. jubjub.png', region=(960,0,1920,1080), confidence=0.9)
+  time.sleep(0.5)
+  pag.click(button.x,button.y) 
+  print("2")
+  time.sleep(0.3)
+  pag.hotkey("end")
+  time.sleep(0.3)
+  #페이지 클릭
+  pag.click(1800,800)
+  time.sleep(0.3)
+  pag.hotkey("end")
+  time.sleep(1)
+  print("3")
+
+  #보안문자 복사 #3000회
   button = pag.locateCenterOnScreen('./image/12. Ulju/15. jubjub.png', region=(960,0,1920,1080), confidence=0.9)
-  time.sleep(0.2)
+  time.sleep(1)
   pag.rightClick(button.x-80,button.y-15) 
-  time.sleep(0.2)
+  time.sleep(1)
   pag.click(button.x+20,button.y+80) 
-  time.sleep(0.2)
+  time.sleep(0.3)
   #카카오 클릭 및 사진 전송
   pag.click(74,1055)
-  time.sleep(0.2)
+  time.sleep(0.3)
   pag.hotkey('ctrl','v')
-  time.sleep(0.2)
+  time.sleep(0.3)
   pag.hotkey('enter')
+  time.sleep(1)
 
   #문자 입력 
   while True :
-    button = pag.locateCenterOnScreen('./image/11. Ulju/01_11. text.png', confidence=0.9)
+    button = pag.locateCenterOnScreen('./image/11. Ulju/01_11. text.png', region=(0,240,960,1080),  confidence=0.9)
     if button == None :
       None
     else :
       pag.doubleClick(82,294)
-      time.sleep(0.2)      
+      time.sleep(0.3)      
+      pag.hotkey('ctrl','c')
       pag.hotkey('ctrl','c')
       카카오_보안문자 = pyperclip.paste()
       울주_보안문자_No = 카카오_보안문자  
       print(울주_보안문자_No)
       울주_보안문자_입력(울주_보안문자_No)
+      print(울주_보안문자_No)
+      time.sleep(1)
+      button = pag.locateCenterOnScreen('./image/12. Ulju/15. jubjub.png', region=(960,0,1920,1080), confidence=0.9)
+      time.sleep(1)
+      pag.click(button.x,button.y) 
+      time.sleep(1)
+      pag.hotkey('ctrl','v')
+      time.sleep(1)
+      pag.hotkey('enter')
+      time.sleep(1)
+      pag.click(990,60)
+      break
+
+
+
+
+
+
 
 #★★★★★★★★★★★★★★★★★★★ 메인 함수
-def 울주_This_A_Back_up():
-  while True:
-    i = 1
-    #페이지 선택
-    pag.click(10,800)
-    울주_log()
-    #페이지 선택
-    pag.click(10,800)
-    pag.hotkey('f5')
-    #울주_검색()
-    time.sleep(5)
-    pag.hotkey('end')
-    ####
-    time.sleep(5)
-    while True: 
-      if keyboard.is_pressed("F2"): # F2 누른게 감지되면
-        break
-      if i == 1000:
-        pag.hotkey('home')
-        time.sleep(0.5)
-        pag.hotkey('home')
-        time.sleep(0.5)
-        울주_This_A_Back_up()
-      if i < 1000:
-        i = i+1
-        pag.hotkey('f5')
-        time.sleep(1)
-        울주_검색()
-        print(i)
-      num = random.randrange(20,50)
-      num1 = num/100
-      time.sleep(num1)
-      #print(num1)
-      if keyboard.is_pressed("F2"): # F2 누른게 감지되면
-        break
+
             
 def 울주_This_A():
+  i=0
   while True:
     i=i+1
     print(i)
@@ -321,8 +327,13 @@ def 울주_This_A():
     울주_검색()
     pag.hotkey('home')
     time.sleep(0.2)
+    if i == 2000 :
+      보안문자_자동입력()
+      i=0
+    else :
+       None
     if keyboard.is_pressed("F2"): # F2 누른게 감지되면
-        break
+      break
 
 def 울주_This_N():
     while True:
@@ -562,3 +573,39 @@ def 울주_자동():
     time.sleep(5)
     울주_Next_A()
     
+
+def 울주_This_A_Back_up():
+  while True:
+    i = 1
+    #페이지 선택
+    pag.click(10,800)
+    울주_log()
+    #페이지 선택
+    pag.click(10,800)
+    pag.hotkey('f5')
+    #울주_검색()
+    time.sleep(5)
+    pag.hotkey('end')
+    ####
+    time.sleep(5)
+    while True: 
+      if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+        break
+      if i == 1000:
+        pag.hotkey('home')
+        time.sleep(0.5)
+        pag.hotkey('home')
+        time.sleep(0.5)
+        울주_This_A_Back_up()
+      if i < 1000:
+        i = i+1
+        pag.hotkey('f5')
+        time.sleep(1)
+        울주_검색()
+        print(i)
+      num = random.randrange(20,50)
+      num1 = num/100
+      time.sleep(num1)
+      #print(num1)
+      if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+        break

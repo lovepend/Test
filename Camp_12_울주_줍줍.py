@@ -37,7 +37,22 @@ def 울주_보안문자_입력(보안문자):
   global 울주_보안문자_No
   울주_보안문자_No = 보안문자
 
-
+def 보안문자_자동입력():
+#문자 입력 
+  while True :
+    button = pag.locateCenterOnScreen('./image/12. Ulju/15. jubjub.png', region=(960,0,1920,1080), confidence=0.9)
+    if button == None :
+      None
+    else :
+      time.sleep(1)
+      pag.click(button.x,button.y) 
+      time.sleep(1)
+      pag.write(울주_보안문자_No)
+      time.sleep(1)
+      pag.hotkey('enter')
+      time.sleep(1)
+      pag.click(990,60)
+      break
 
 #pyperclip.copy('62소9403')
 def 울주_앱결제():
