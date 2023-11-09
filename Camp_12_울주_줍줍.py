@@ -24,7 +24,10 @@ True
 global timesetting
 timesetting = 0.3
 울주_Car_No = "62소9403"
-울주_보안문자_No = "999999"
+
+import random
+t= random.choice(range(11111,99999))
+울주_보안문자_No = t
 
 def 울주_차량번호_입력(차량번호):
   global 울주_Car_No
@@ -33,6 +36,8 @@ def 울주_차량번호_입력(차량번호):
 def 울주_보안문자_입력(보안문자):
   global 울주_보안문자_No
   울주_보안문자_No = 보안문자
+
+
 
 #pyperclip.copy('62소9403')
 def 울주_앱결제():
@@ -62,7 +67,7 @@ def 울주줍줍_시작():
   while True:
     if keyboard.is_pressed("F2"): # F2 누른게 감지되면
       break
-    button = pag.locateCenterOnScreen('./image/12. Ulju/11. jubjub.png', confidence=0.9)
+    button = pag.locateCenterOnScreen('./image/12. Ulju/11. jubjub.png', region=(0,0,960,1080), confidence=0.9)
     if (button == None) :
       print(button)
       울주줍줍_시작()
@@ -73,16 +78,17 @@ def 울주줍줍_시작():
 #새로고침 확인
 def 울주줍줍_검색():
   #Saturday = 1164,102,1263,1080 #토요일만 검색 
-  button = pag.locateCenterOnScreen('./image/12. Ulju/13. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/13. jubjub.png', region=(0,0,960,1080), confidence=0.9)
   if (button == None) :
     울주줍줍_새로고침()   
   else :
     print("검색")
     울주줍줍_Page1_기간()
 
+
 #기간
 def 울주줍줍_Page1_기간():
-  button = pag.locateCenterOnScreen('./image/12. Ulju/13. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/13. jubjub.png', region=(1,1,960,1080), confidence=0.9)
   if (button == None) :
     울주줍줍_Page1_기간()   
   else :
@@ -92,32 +98,38 @@ def 울주줍줍_Page1_기간():
     print("기간")
     울주줍줍_Page1_총인원()
 
+
+
 #총인원
 def 울주줍줍_Page1_총인원():
-  button = pag.locateCenterOnScreen('./image/12. Ulju/14. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/14. jubjub.png', region=(0,0,960,1080), confidence=0.9)
   if (button == None) :
     울주줍줍_Page1_총인원()   
   else :
     pag.click(button.x,button.y) 
     pag.hotkey('end')
     #페이지 선택
-    pag.doubleClick(1600,800)
+    pag.click(10,800)
     pag.hotkey('end')
     pag.hotkey('end')
     print("기간")
-    time.sleep(0.3)
+    time.sleep(0.5)
     울주줍줍_Page1_다음()
 
 #보안문자
 def 울주줍줍_Page1_다음():
-  pag.click(779,143)
-  pyperclip.copy(울주_보안문자_No)
-  print(울주_보안문자_No)
-  pag.hotkey('ctrl','v')
-  time.sleep(0.1)
-  pag.hotkey('enter')
-  time.sleep(0.3)
-  울주줍줍_Page2_도착예정시간()
+  button = pag.locateCenterOnScreen('./image/12. Ulju/15. jubjub.png', region=(0,0,960,1080), confidence=0.9)
+  if (button == None) :
+    울주줍줍_Page1_다음()   
+  else :
+    pag.click(button.x,button.y) 
+    pyperclip.copy(울주_보안문자_No)
+    print(울주_보안문자_No)
+    pag.hotkey('ctrl','v')
+    time.sleep(0.1)
+    pag.hotkey('enter')
+    time.sleep(0.3)
+    울주줍줍_Page2_도착예정시간()
 
 # def 울주줍줍_Page1_다음():
 #   button = pag.locateCenterOnScreen('./image/12. Ulju/15. jubjub.png', confidence=0.9)
@@ -137,20 +149,20 @@ def 울주줍줍_Page2_도착예정시간():
   pag.hotkey('end')
   pag.hotkey('end')
   time.sleep(timesetting)
-  button = pag.locateCenterOnScreen('./image/12. Ulju/21. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/21. jubjub.png', region=(0,0,960,1080), confidence=0.9)
   if (button == None) :
     울주줍줍_Page2_도착예정시간()   
   else :
     pag.click(button.x,button.y) 
     pag.hotkey('end')
     #페이지 선택
-    pag.doubleClick(1600,800)
+    pag.click(10,800)
     print("도착시간")
     울주줍줍_Page1_차량방문번호()
 
 #차량방문번호
 def 울주줍줍_Page1_차량방문번호():
-  button = pag.locateCenterOnScreen('./image/12. Ulju/22. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/22. jubjub.png', region=(0,0,960,1080), confidence=0.9)
   if (button == None) :
     울주줍줍_Page1_차량방문번호()   
   else :
@@ -158,13 +170,13 @@ def 울주줍줍_Page1_차량방문번호():
     pyperclip.copy(울주_Car_No)
     pag.hotkey('ctrl','v')
     #페이지 선택
-    pag.doubleClick(1600,800)
+    pag.click(10,800)
     print("차량")
     울주줍줍_Page2_개인정보()
 
 #개인정보 수집 및 이용안내
 def 울주줍줍_Page2_개인정보():
-  button = pag.locateCenterOnScreen('./image/12. Ulju/23. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/23. jubjub.png', region=(0,0,960,1080), confidence=0.9)
   if (button == None) :
     울주줍줍_Page2_개인정보()   
   else :
@@ -174,7 +186,7 @@ def 울주줍줍_Page2_개인정보():
 
 #예약하기
 def 울주줍줍_Page2_예약하기():
-  button = pag.locateCenterOnScreen('./image/12. Ulju/24. jubjub.png', confidence=0.9)
+  button = pag.locateCenterOnScreen('./image/12. Ulju/24. jubjub.png', region=(0,0,960,1080), confidence=0.9)
   if (button == None) :
     울주줍줍_Page2_예약하기()   
   else :

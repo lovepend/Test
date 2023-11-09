@@ -1,6 +1,9 @@
 import pyautogui as pag
 import time
 import keyboard
+import random
+
+
 
 
 while True:

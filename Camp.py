@@ -87,8 +87,10 @@ def 차량번호():
 울주btn12.place(x=200, y=35)
 
 #함수
-울주btn1 = Button(frame2, width=5, padx=10, pady=5, text="Saturday", command=울주_토요일, bg="blue", fg="white", font = ("", 7))
-울주btn1.place(x=0, y=59)
+울주btn0 = Button(frame2, width=3, padx=3, pady=5, text="F", command=울주_금요일, bg="blue", fg="white", font = ("", 7))
+울주btn0.place(x=0, y=59)
+울주btn1= Button(frame2, width=3, padx=3, pady=5, text="S", command=울주_토요일, bg="blue", fg="white", font = ("", 7))
+울주btn1.place(x=25, y=59)
 울주btn2 = Button(frame2, width=5, padx=10, pady=5, text="Range", command=울주_범위선택, bg="white", fg="black", font = ("", 7))
 울주btn2.place(x=50, y=59)
 울주btn11 = Button(frame2, width=5, padx=10, pady=5, text="앱결제", command=울주_앱결제, bg="blue", fg="white", font = ("", 7))
@@ -115,7 +117,7 @@ lable1.place(x=0, y=130)
 
 entry_울주1 = Entry(frame2, width=25, borderwidth=2 , font = ("", 7))
 entry_울주1.place(x=50, y=130)
-entry_울주1.insert(0,"보안문자",)
+entry_울주1.insert(0,"16874",)
 
 def 보안문자():
   보안문자 = entry_울주1.get()
