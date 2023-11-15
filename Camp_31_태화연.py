@@ -581,7 +581,7 @@ def 태화연_검색B():
     #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
     태화연_StepA_B()
 
-태화연_검색B()
+
 
 #예약하기 클릭 A
 def 태화연_StepA_A():
