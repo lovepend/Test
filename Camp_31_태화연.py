@@ -596,6 +596,8 @@ def 태화연_StepA_A():
     pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
     태화연_StepB_A()
 
+
+
 #예약하기 클릭 B    
 def 태화연_StepA_B():
   print("태화연_StepB")
@@ -639,9 +641,6 @@ def 태화연_StepB_A():
       #time.sleep(0.5)#추가
       #pag.hotkey('pagedown')#추가
     #태화연_StepC()
-
-
-
 
 #체크 확인 B
 def 태화연_StepC() : 
