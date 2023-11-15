@@ -96,133 +96,143 @@ def 울주_토요일():
 
 #★★★★★★★★★★★★★★★★★★★ 메인 함수
 def 울주_검색():
-  #Saturday = 1164,102,1263,1080 #토요일만 검색 
-  global find_range
-  #button = pag.locateCenterOnScreen('./image/11. Ulju/01_0. reservation1.png', region = find_range, confidence=0.95)
-  button = pag.locateCenterOnScreen(reservation, region = find_range, confidence=0.95)
-  if (button == None) :
-    None        
-  else :
-    Friday = (button.x)-150, (button.y)-8, (button.x)-100, (button.y+8)
-    #button_1 = pag.locateCenterOnScreen('./image/11. Ulju/01_0. reservation1.png', region = Friday,confidence=0.9) #토요일 찾을 범위 설정      
-    button_1 = pag.locateCenterOnScreen(reservation, region = Friday,confidence=0.9) #토요일 찾을 범위 설정   
-    if (button_1 == None) :
-      None
-      pag.click(button,button='left')
-    else:
-      pag.click(button_1,button='left')     
-      print("검색")
-      울주_검색1()
+  try : 
+    global find_range
+    #button = pag.locateCenterOnScreen('./image/11. Ulju/01_0. reservation1.png', region = find_range, confidence=0.95)
+    button = pag.locateCenterOnScreen(reservation, region = find_range, confidence=0.95)
+    if (button == None) :
+      None        
+    else :
+      Friday = (button.x)-150, (button.y)-8, (button.x)-100, (button.y+8)
+      #button_1 = pag.locateCenterOnScreen('./image/11. Ulju/01_0. reservation1.png', region = Friday,confidence=0.9) #토요일 찾을 범위 설정      
+      button_1 = pag.locateCenterOnScreen(reservation, region = Friday,confidence=0.9) #토요일 찾을 범위 설정   
+      if (button_1 == None) :
+        None
+        pag.click(button,button='left')
+      else:
+        pag.click(button_1,button='left')     
+        print("검색")
+        울주_검색1()
+  except pag.ImageNotFoundException:
+    울주_검색() 
+     
+           
 
 #새로고침 확인
 def 울주_검색1():
-  #Saturday = 1164,102,1263,1080 #토요일만 검색 
-  button = pag.locateCenterOnScreen('./image/12. Ulju/12. jubjub.png', confidence=0.9)
-  if (button == None) :
-    울주_검색1()   
-  else :
-    time.sleep(0.2)
-    #URL 클릭
-    pag.click(316,60)
-    #URL 복사
-    pag.hotkey('ctrl','c')
-    pag.hotkey('ctrl','c')
-    예약날짜 = pyperclip.paste() 
-    # date_1 = 예약날짜[70:78]
-    # date_2 = 예약날짜[95:98]
-    # date_3 = date_1 +" // " + date_2
-    date_3 = (예약날짜[70:78] +" // " + 예약날짜[95:98])
-    print(date_3)
-    refresh_token()
-    kakao_message_you(date_3)
-    print("검색")
-    울주줍줍_Page1_기간()
-
+  try:
+    #Saturday = 1164,102,1263,1080 #토요일만 검색 
+    button = pag.locateCenterOnScreen('./image/12. Ulju/12. jubjub.png', confidence=0.9)
+    if (button == None) :
+      울주_검색1()   
+    else :
+      time.sleep(0.2)
+      #URL 클릭
+      pag.click(316,60)
+      #URL 복사
+      pag.hotkey('ctrl','c')
+      pag.hotkey('ctrl','c')
+      예약날짜 = pyperclip.paste() 
+      # date_1 = 예약날짜[70:78]
+      # date_2 = 예약날짜[95:98]
+      # date_3 = date_1 +" // " + date_2
+      date_3 = (예약날짜[70:78] +" // " + 예약날짜[95:98])
+      print(date_3)
+      refresh_token()
+      kakao_message_you(date_3)
+      print("검색")
+      울주줍줍_Page1_기간()
+  except pag.ImageNotFoundException:
+    울주_검색1() 
 
 
 #★★★★★★★★★★★★★★★★★★★ 로그
 def 울주_log():
-  loggin = pag.locateCenterOnScreen('./image/11. Ulju/01_10. loggin.png', region = (712,96,82,58), confidence=0.8)
-  if (loggin == None):
-    None
-  else :
-    time.sleep(2)
-    #코드보내기
-    pag.click(loggin.x,loggin.y)
-    time.sleep(1)
-    #아이디 입력
-    pag.click(548,454)
-    time.sleep(1)
-    pag.hotkey("ctrl","a")
-    time.sleep(1)
-    pag.hotkey("delete")
-    time.sleep(1)
-    pag.write(울주_id)
-    print(울주_id)
-    time.sleep(1)
-    #페이지 선택
-    pag.doubleClick(10,800)
-    time.sleep(1)
-    #비밀번호 입력
-    pag.click(548,495)
-    time.sleep(1)
-    pag.hotkey("ctrl","a")
-    time.sleep(1)
-    pag.hotkey("delete")
-    time.sleep(1)
-    pag.write(울주_pw)
-    print(울주_pw)
-    time.sleep(1)
-    #로그인 클릭
-    pag.hotkey('enter')
-    time.sleep(1)  
-    #예약하기      
-    pag.click(775,172)
-    time.sleep(1)    
-
+  try:
+    loggin = pag.locateCenterOnScreen('./image/11. Ulju/01_10. loggin.png', region = (712,96,82,58), confidence=0.8)
+    if (loggin == None):
+      None
+    else :
+      time.sleep(2)
+      #코드보내기
+      pag.click(loggin.x,loggin.y)
+      time.sleep(1)
+      #아이디 입력
+      pag.click(548,454)
+      time.sleep(1)
+      pag.hotkey("ctrl","a")
+      time.sleep(1)
+      pag.hotkey("delete")
+      time.sleep(1)
+      pag.write(울주_id)
+      print(울주_id)
+      time.sleep(1)
+      #페이지 선택
+      pag.doubleClick(10,800)
+      time.sleep(1)
+      #비밀번호 입력
+      pag.click(548,495)
+      time.sleep(1)
+      pag.hotkey("ctrl","a")
+      time.sleep(1)
+      pag.hotkey("delete")
+      time.sleep(1)
+      pag.write(울주_pw)
+      print(울주_pw)
+      time.sleep(1)
+      #로그인 클릭
+      pag.hotkey('enter')
+      time.sleep(1)  
+      #예약하기      
+      pag.click(775,172)
+      time.sleep(1)    
+  except pag.ImageNotFoundException:
+    울주_log()
 
 def 울주_log1():
-  loggin = pag.locateCenterOnScreen('./image/11. Ulju/01_10. loggin.png', region = (712,96,82,58), confidence=0.8)
-  if (loggin == None):
-    None
-  else :
-    time.sleep(2)
-    #코드보내기
-    pag.click(loggin.x,loggin.y)
-    time.sleep(1)
-    #아이디 입력
-    pag.click(548,454)
-    time.sleep(1)
-    pag.hotkey("ctrl","a")
-    time.sleep(1)
-    pag.hotkey("delete")
-    time.sleep(1)
-    pag.write(울주_id)
-    print(울주_id)
-    time.sleep(1)
-    #페이지 선택
-    pag.doubleClick(14,129)
-    time.sleep(1)
-    #비밀번호 입력
-    pag.click(548,495)
-    time.sleep(1)
-    pag.hotkey("ctrl","a")
-    time.sleep(1)
-    pag.hotkey("delete")
-    time.sleep(1)
-    pag.write(울주_pw)
-    print(울주_pw)
-    time.sleep(1)
-    #로그인 클릭
-    pag.hotkey('enter')
-    time.sleep(1)  
-    #예약하기      
-    pag.click(775,172)
-    time.sleep(1)          
-    #다음달 선택
-    pag.click(535,439)
-    time.sleep(2)
-
+  try:
+    loggin = pag.locateCenterOnScreen('./image/11. Ulju/01_10. loggin.png', region = (712,96,82,58), confidence=0.8)
+    if (loggin == None):
+      None
+    else :
+      time.sleep(2)
+      #코드보내기
+      pag.click(loggin.x,loggin.y)
+      time.sleep(1)
+      #아이디 입력
+      pag.click(548,454)
+      time.sleep(1)
+      pag.hotkey("ctrl","a")
+      time.sleep(1)
+      pag.hotkey("delete")
+      time.sleep(1)
+      pag.write(울주_id)
+      print(울주_id)
+      time.sleep(1)
+      #페이지 선택
+      pag.doubleClick(14,129)
+      time.sleep(1)
+      #비밀번호 입력
+      pag.click(548,495)
+      time.sleep(1)
+      pag.hotkey("ctrl","a")
+      time.sleep(1)
+      pag.hotkey("delete")
+      time.sleep(1)
+      pag.write(울주_pw)
+      print(울주_pw)
+      time.sleep(1)
+      #로그인 클릭
+      pag.hotkey('enter')
+      time.sleep(1)  
+      #예약하기      
+      pag.click(775,172)
+      time.sleep(1)          
+      #다음달 선택
+      pag.click(535,439)
+      time.sleep(2)
+  except pag.ImageNotFoundException:
+    울주_log1()
 
 #★★★★★★★★★★★★★★★★★★★ 보안 문자
 
