@@ -20,6 +20,7 @@ True
 import easyocr
 import cv2
 
+url = 'https://www.gyeongju.go.kr/hwarang/page.do?mnu_uid=3516&cs_uid=30&csr_date=2023-11-14&csr_numday=1&step=write&initYear=2023&initMonth=11'
 
 # from PIL import Image
 # import pytesseract
@@ -319,7 +320,7 @@ def 육부촌_줍줍AI():
     if keyboard.is_pressed("F2") : # F2 누른게 감지되면
       print("F2 종료")
       break
-    pyperclip.copy('https://www.gyeongju.go.kr/hwarang/page.do?mnu_uid=3516&csr_date=2023-11-07&cs_uid=24&csr_numday=1&step=write&initYear=2023&initMonth=11&currentDay=#self')
+    pyperclip.copy(url)
     button = pag.locateCenterOnScreen("./image/51. Kyungju/05._99. reservation.png", region = 육부촌_find_range, confidence=0.85) 
     if (button == None) :
       None  
@@ -404,11 +405,12 @@ def 육부촌_주소_AI():
     input_text2 = input_text1.strip(']')
     input_text3 = input_text2.strip("'")
     
-                                    
+                            
     print(text)
     pyperclip.copy(input_text3)
     pag.hotkey('ctrl','v')
-
+    time.sleep(0.1)
+    pag.hotkey('enter')
 
 
 
@@ -418,4 +420,5 @@ def 육부촌_주소_AI():
     #pag.click(button2.x,button2.y, button='left', clicks=1, interval=0.1) 
     #time.sleep(0.4)
     time.sleep(500)
+
 

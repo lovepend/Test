@@ -286,6 +286,7 @@ def 중구_자동입력():
   #url 클릭
   pag.click(300,60)
   time.sleep(0.2)
+  pag.hotkey('ctrl','a')
   #로그인페이지 이동 
   pyperclip.copy('https://camping.junggu.ulsan.kr/camping/pageCont.do?menuNo=5010000')
   time.sleep(0.2)
@@ -329,6 +330,7 @@ def 중구예약_A():
   #url 클릭
   pag.click(300,60)
   time.sleep(0.2)
+  pag.hotkey('ctrl','a')
   #장소 url 이동 
   pyperclip.copy(중구_url)
   time.sleep(0.2)
@@ -411,6 +413,7 @@ def 중구예약_B():
   time.sleep(1)
   pag.click(1300,60)
   time.sleep(0.2)
+  pag.hotkey('ctrl','a')
   #장소 url 이동 
   pyperclip.copy(중구_url)
   time.sleep(0.2)
@@ -578,6 +581,7 @@ def 태화연_검색B():
     #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
     태화연_StepA_B()
 
+#예약하기 클릭 A
 def 태화연_StepA_A():
   print("태화연_StepA")
   button = pag.locateCenterOnScreen("./image/31. Junggu/22. reservation.png", region=태화연_find_rangeA ,confidence=0.9) 
@@ -591,7 +595,8 @@ def 태화연_StepA_A():
   else :
     pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
     태화연_StepB_A()
-        
+
+#예약하기 클릭 B    
 def 태화연_StepA_B():
   print("태화연_StepB")
   button = pag.locateCenterOnScreen("./image/31. Junggu/22. reservation.png", region=태화연_find_rangeB ,confidence=0.9) 
@@ -607,6 +612,7 @@ def 태화연_StepA_B():
     태화연_StepB_A()
 
 
+#체크 확인 A
 def 태화연_StepB_A():
   global button1
   button1 = pag.locateCenterOnScreen("./image/31. Junggu/23. check.png", confidence=0.7) 
@@ -615,23 +621,34 @@ def 태화연_StepB_A():
   else :    
     time.sleep(0.1)
     pag.hotkey('enter')
-    time.sleep(0.2)
-    #pag.click(button1.x,button1.y, button='left', clicks=1, interval=0.1)
-    #print(button1)
-    #time.sleep(0.1) 
-    #pag.hotkey('enter', clicks=50, interval=0.1)
-    #time.sleep(0.1)
-    #pag.click(1800,800)#추가
-    #time.sleep(0.5)#추가
-    #pag.hotkey('pagedown')#추가
-    태화연_StepC()
+    time.sleep(0.5)
+    button1_1 = pag.locateCenterOnScreen("./image/31. Junggu/23. check.png", confidence=0.7) 
+    time.sleep(0.1)
+    if (button1_1 == None) :
+      태화연_StepC()
+    else :
+      pag.hotkey('enter')
+      time.sleep(0.5)
+      태화연_Start()
+      #pag.click(button1.x,button1.y, button='left', clicks=1, interval=0.1)
+      #print(button1)
+      #time.sleep(0.1) 
+      #pag.hotkey('enter', clicks=50, interval=0.1)
+      #time.sleep(0.1)
+      #pag.click(1800,800)#추가
+      #time.sleep(0.5)#추가
+      #pag.hotkey('pagedown')#추가
+    #태화연_StepC()
 
 
+
+
+#체크 확인 B
 def 태화연_StepC() : 
   button2 = pag.locateCenterOnScreen('./image/31. Junggu/24. next.png', confidence=0.8)   
   print(button2)
   if (button2 == None) :
-      태화연_StepC()      
+    태화연_StepC()      
   else : 
     # i = 0
     # while i < 1:
@@ -642,7 +659,7 @@ def 태화연_StepC() :
     #       break
     pag.hotkey('down')
     time.sleep(0.1)
-    pag.click(button1.x-270 ,button1.y)
+    pag.click(button2.x-270 ,button2.y)
     #pag.click(1800,800)
     time.sleep(0.2)
     pag.hotkey('end')
@@ -656,6 +673,7 @@ def 태화연_StepC() :
     # # refresh_token()
     # # kakao_message_you("태화연")
     # time.sleep(5000)
+
 
 def 태화연_StepD() : 
   button3 = pag.locateCenterOnScreen('./image/31. Junggu/25. next.png', confidence=0.9)  
