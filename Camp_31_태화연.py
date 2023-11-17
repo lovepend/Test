@@ -586,25 +586,7 @@ def 태화연_StepB():
         time.sleep(0.1)
         pag.hotkey('enter')
         time.sleep(0.5)
-        #이미 예약된 상태 리셋 
-        try :
-          button1 = pag.locateCenterOnScreen("./image/31. Junggu/90. Reject.png", confidence=0.7) 
-          if (button1 == None) :
-            태화연_StepC()
-          else :    
-            time.sleep(1)
-            pag.hotkey('enter')
-            time.sleep(0.3)
-            pag.click(태화연_day1)
-            time.sleep(0.3)
-            pag.click(태화연_day2)
-            time.sleep(0.3)
-            pag.click(태화연_day3)
-            time.sleep(0.3)
-            pag.click(태화연_day4)
-            태화연_Start()
-        except :
-          태화연_StepC()
+        태화연_StepC()
     except :
       태화연_StepB()
 
@@ -612,12 +594,31 @@ def 태화연_StepB():
 #▶▶▶▶▶▶▶▶▶  
 def 태화연_StepC() : 
   while True :
+    #이미 예약된 상태 리셋 
+    try :
+      button = pag.locateCenterOnScreen("./image/31. Junggu/90. Reject.png", confidence=0.7) 
+      if (button == None) :
+        None
+      else :    
+        time.sleep(1)
+        pag.hotkey('enter')
+        time.sleep(1)
+        pag.click(태화연_day1)
+        time.sleep(0.3)
+        pag.click(태화연_day2)
+        time.sleep(0.3)
+        pag.click(태화연_day3)
+        time.sleep(0.3)
+        pag.click(태화연_day4)
+        태화연_Start()
+    except :
+      None
     try :  
       print("태화연_StepC")
-      button = pag.locateCenterOnScreen('./image/31. Junggu/24. next.png', confidence=0.8)   
-      print(button)
-      if (button == None) :
-        태화연_StepC()      
+      button1 = pag.locateCenterOnScreen('./image/31. Junggu/24. next.png', confidence=0.8)   
+      print(button1)
+      if (button1 == None) :
+        None
       else : 
         pag.hotkey('down')
         time.sleep(0.1)
@@ -627,7 +628,7 @@ def 태화연_StepC() :
         time.sleep(0.4)
         태화연_StepD()
     except :
-      태화연_StepC()
+      None
 
 #메인함수(숙박일 확인)
 #▶▶▶▶▶▶▶▶▶  
