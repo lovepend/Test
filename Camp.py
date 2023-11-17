@@ -298,8 +298,7 @@ def 중구_차량번호():
 태화연btn5.place(x=200, y=83)
 
 #ㅇ
-태화연log6 = Button(frame4, width=5,
-                  padx=10, pady=5, text="호수뷰", command=태화연_호수뷰, bg="white", fg="black", font = ("", 7))
+태화연log6 = Button(frame4, width=5, padx=10, pady=5, text="호수뷰", command=태화연_호수뷰, bg="white", fg="black", font = ("", 7))
 태화연log6.place(x=100, y=107)
 태화연log7 = Button(frame4, width=5, padx=10, pady=5, text="2_3층", command=태화연_2_3층, bg="white", fg="black", font = ("", 7))
 태화연log7.place(x=150, y=107)

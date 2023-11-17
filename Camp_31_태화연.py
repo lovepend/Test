@@ -478,15 +478,15 @@ def 태화연_JubJub():
 #▶▶▶▶▶▶▶▶▶
 def 태화연_Start():
   #달력 A화면 클릭 
-  time.sleep(1)
-  pag.click(태화연_day1)
-  time.sleep(1)
-  pag.hotkey('enter')
-  #달력 B화면 클릭
-  pag.click(태화연_day3)
-  time.sleep(0.2)
-  pag.hotkey('enter')     
-  time.sleep(1)
+  # time.sleep(1)
+  # pag.click(태화연_day1)
+  # time.sleep(1)
+  # pag.hotkey('enter')
+  # #달력 B화면 클릭
+  # pag.click(태화연_day3)
+  # time.sleep(0.2)
+  # pag.hotkey('enter')     
+  # time.sleep(1)
   태화연_Start_검색()  
 
 #메인함수(검색)
@@ -605,6 +605,7 @@ def 태화연_StepC() :
 #▶▶▶▶▶▶▶▶▶  
 def 태화연_StepC_A() : 
   #이미 예약된 상태 리셋 
+  print("이미예약된")
   try :
     button = pag.locateCenterOnScreen("./image/31. Junggu/90. Reject.png", confidence=0.7) 
     if (button == None) :
@@ -614,12 +615,12 @@ def 태화연_StepC_A() :
       pag.hotkey('enter')
       time.sleep(1)
       pag.click(태화연_day1)
-      time.sleep(0.3)
-      pag.click(태화연_day2)
-      time.sleep(0.3)
+      time.sleep(1)
+      pag.hotkey('enter')
+      time.sleep(1)
       pag.click(태화연_day3)
-      time.sleep(0.3)
-      pag.click(태화연_day4)
+      time.sleep(1)
+      pag.hotkey('enter')
       태화연_Start()
   except :
     None
@@ -628,7 +629,7 @@ def 태화연_StepC_A() :
 #▶▶▶▶▶▶▶▶▶  
 def 태화연_StepC_B() : 
   try :  
-    print("태화연_StepC")
+    print("태화연_StepC_B")
     button = pag.locateCenterOnScreen('./image/31. Junggu/24. next.png', confidence=0.8)   
     print(button)
     if (button == None) :
@@ -666,9 +667,6 @@ def 태화연_StepD() :
       time.sleep(500)
   except :
     태화연_StepD()
-
-
-
 
 #★★★★★★★★★★★★★★★★★★★ 서브 함수
 def 태화연_job1():
