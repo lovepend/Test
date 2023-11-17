@@ -1,22 +1,16 @@
-from gettext import find
 from tkinter import *
 from kakao_01_api import *
 import pyautogui as pag
-import webbrowser
 import win32con
 import win32api
 import win32gui
 import keyboard
-import requests
 import clipboard
 import schedule
 import pyperclip
-import time
-import json
-pag.FAILSAFE=False
+import time 
 import cv2
-cv2.useOptimized()
-True
+
 
 #now = time.localtime()
 #print( now.tm_hour ) 
@@ -624,13 +618,15 @@ def 태화연_StepB_A():
     time.sleep(0.1)
     pag.hotkey('enter')
     time.sleep(0.5)
-    button1_1 = pag.locateCenterOnScreen("./image/31. Junggu/23. check.png", confidence=0.7) 
+    button1_1 = pag.locateCenterOnScreen("./image/31. Junggu/90. Reject.png", confidence=0.7) 
     time.sleep(0.1)
     if (button1_1 == None) :
       태화연_StepC()
     else :
       pag.hotkey('enter')
-      time.sleep(0.5)
+      time.sleep(0.2)
+      pag.hotkey('enter')
+      time.sleep(0.2)
       태화연_Start()
       #pag.click(button1.x,button1.y, button='left', clicks=1, interval=0.1)
       #print(button1)
@@ -748,7 +744,6 @@ def 태화연_자동():
     time.sleep(5)
   
     태화연_Start()
-
 
 
 
