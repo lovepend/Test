@@ -592,9 +592,16 @@ def 태화연_StepB():
           if (button1 == None) :
             태화연_StepC()
           else :    
-            time.sleep(0.1)
+            time.sleep(1)
             pag.hotkey('enter')
-            time.sleep(0.5)
+            time.sleep(0.3)
+            pag.click(태화연_day1)
+            time.sleep(0.3)
+            pag.click(태화연_day2)
+            time.sleep(0.3)
+            pag.click(태화연_day3)
+            time.sleep(0.3)
+            pag.click(태화연_day4)
             태화연_Start()
         except :
           태화연_StepC()
@@ -645,8 +652,7 @@ def 태화연_StepD() :
   except :
     태화연_StepD()
 
-
-
+태화연_StepC()
 
 
 #★★★★★★★★★★★★★★★★★★★ 서브 함수
