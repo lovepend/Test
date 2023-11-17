@@ -15,7 +15,7 @@ import cv2
 
 #신불산 Test 2023.11.17 #Viewer Size 67%
 
-# 변수 설정
+#변수 설정
 #★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 #★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 
@@ -110,7 +110,6 @@ def 신불산_i_end():
 def 신불산_Reset():
   global 신불산_end_command
   신불산_end_command = 0
-
 
 #아이디 입력
 #▶▶▶▶▶▶▶▶▶
@@ -347,16 +346,13 @@ def 신불산_줍기(신불산_min,신불산_sec):
     #if (tm.tm_hour == 10 and tm.tm_min == 19 and tm.tm_sec == 10) or (tm.tm_hour == 14 and tm.tm_min == 56 and tm.tm_sec == 37) : #TEST
       global 신불산_find_range
       #예약가능 사이트만 보기
-      #button = pag.locateCenterOnScreen("./image/21. Sinbul/21_1. reservation.png", region = (860,521,1515,968), confidence=0.7) 
-      #print("Check1")
-      #print(button)
-      #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-      #print("Check2")
-      #예약가능 사이트만 보기
-      pag.click(800,686)
-      time.sleep(0.2)
-      pag.click(1750,686)
-      time.sleep(0.2)
+      button = pag.locateCenterOnScreen("./image/21. Sinbul/21_1. reservation.png", region = (0,0,960,1080), confidence=0.7) 
+      print(button)
+      pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+      time.sleep(0.1)
+      button = pag.locateCenterOnScreen("./image/21. Sinbul/21_1. reservation.png", region = (960,0,1920,1080), confidence=0.7) 
+      print(button)
+      pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
       while True:   
         if keyboard.is_pressed("F2"):
           print("종료") 
@@ -371,10 +367,6 @@ def 신불산_줍기(신불산_min,신불산_sec):
             신불산_StepA()
         except :
           None
-    #날짜 클릭
-    #pag.click(신불산_day1)  
-    #time.sleep(time_controll)
-    #신불산_검색()   
 
 def 신불산_줍기1(신불산_min,신불산_sec):
   while True:
@@ -489,7 +481,6 @@ def 신불산_자동():
 # #함수 설정
 # #★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 # #★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-
 
 # #자동입력
 # #▶▶▶▶▶▶▶▶▶

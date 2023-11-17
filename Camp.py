@@ -18,9 +18,6 @@ from Camp_51_육부촌 import *
 from kakao_01_api import *
 from Test.Movie_Factory import *
 
-
-
-
 def schedule_job():    
   schedule.every().day.at("08:45:00").do(신불산_자동) 
   schedule.every().day.at("09:45:00").do(태화연_자동) 
@@ -89,19 +86,19 @@ def 차량번호():
 울주btn2.place(x=50, y=59)
 울주btn11 = Button(frame2, width=5, padx=10, pady=5, text="앱결제", command=울주_앱결제, bg="blue", fg="white", font = ("", 7))
 울주btn11.place(x=100, y=59)
-울주btn21 = Button(frame2, width=5, padx=10, pady=5, text="간편결제", command=울주_간편결제, bg="white", fg="black", font = ("", 7))
+울주btn21 = Button(frame2, width=5, padx=10, pady=5, text="     ", command=울주_간편결제, bg="white", fg="black", font = ("", 7))
 울주btn21.place(x=150, y=59)
-울주btn31 = Button(frame2, width=5, padx=10, pady=5, text="NH간편결제", command=울주_NH_간편결제, bg="white", fg="black", font = ("", 7))
+울주btn31 = Button(frame2, width=5, padx=10, pady=5, text="     ", command=울주_NH_간편결제, bg="white", fg="black", font = ("", 7))
 울주btn31.place(x=200, y=59)
 
 
 울주btn3 = Button(frame2, width=5, padx=10, pady=5, text="This(A)", command=울주_This_A, bg="green", fg="white", font = ("", 7))
 울주btn3.place(x=0, y=83)
-울주btn4 = Button(frame2, width=5, padx=10, pady=5, text="This(N)", command=울주_This_N, bg="white", fg="black", font = ("", 7))
+울주btn4 = Button(frame2, width=5, padx=10, pady=5, text="       ", command=울주_This_N, bg="white", fg="black", font = ("", 7))
 울주btn4.place(x=50, y=83)
-울주btn5 = Button(frame2, width=5, padx=10, pady=5, text="Next(A)", command=울주_Next_A, bg="white", fg="black", font = ("", 7))
+울주btn5 = Button(frame2, width=5, padx=10, pady=5, text="       ", command=울주_Next_A, bg="white", fg="black", font = ("", 7))
 울주btn5.place(x=100, y=83)
-울주btn5 = Button(frame2, width=5, padx=10, pady=5, text="Next(N)", command=보안문자_자동입력, bg="white", fg="black", font = ("", 7))
+울주btn5 = Button(frame2, width=5, padx=10, pady=5, text="       ", command=보안문자_자동입력, bg="white", fg="black", font = ("", 7))
 울주btn5.place(x=150, y=83)
 울주btn6 = Button(frame2, width=5, padx=10, pady=5, text="울주줍줍", command=울주줍줍_새로고침, bg="green", fg="white", font = ("", 7))
 울주btn6.place(x=200, y=83)
@@ -209,7 +206,7 @@ def 시간_줍기1():
 
 
 #함수
-신불산btn1 = Button(frame3, width=5, padx=10, pady=5, text="Reset", command=신불산_Reset, bg="white", fg="black", font = ("", 7))
+신불산btn1 = Button(frame3, width=5, padx=10, pady=5, text="       ", command=신불산_Reset, bg="white", fg="black", font = ("", 7))
 신불산btn1.place(x=0, y=83)
 신불산btn2 = Button(frame3, width=5, padx=10, pady=5, text="자동입력", command=신불산_자동입력, bg="blue", fg="white", font = ("", 7))
 신불산btn2.place(x=50, y=83)
@@ -217,11 +214,11 @@ def 시간_줍기1():
 신불산btn3.place(x=100, y=83)
 신불산btn4 = Button(frame3, width=5, padx=10, pady=5, text="줍기", command=시간_줍기, bg="green", fg="white", font = ("", 7))
 신불산btn4.place(x=150, y=83)
-신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="줍기_V1", command=시간_줍기1, bg="green", fg="white", font = ("", 7))
+신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="        ", command=시간_줍기1, bg="green", fg="white", font = ("", 7))
 신불산btn5.place(x=200, y=83)
 
 
-신불산btn99 = Button(frame3, width=5, padx=10, pady=5, text="동기화", command='시간_동기화', bg="blue", fg="white", font = ("", 7))
+신불산btn99 = Button(frame3, width=5, padx=10, pady=5, text="       ", command='시간_동기화', bg="blue", fg="white", font = ("", 7))
 신불산btn99.place(x=0, y=130)
 
 #중구 UI===============================================================================================================
@@ -286,7 +283,7 @@ def 중구_차량번호():
 태화연day9 = Button(frame4, width=5, padx=10, pady=5, text="Day", command=태화연_Day, bg="blue", fg="white", font = ("", 7))
 태화연day9.place(x=200, y=59)   
 #함수
-태화연btn1 = Button(frame4, width=5, padx=10, pady=5, text="Reset", command='태화연_Reset', bg="white", fg="black", font = ("", 7))
+태화연btn1 = Button(frame4, width=5, padx=10, pady=5, text="       ", command='태화연_Reset', bg="white", fg="black", font = ("", 7))
 태화연btn1.place(x=0, y=83)
 태화연btn2 = Button(frame4, width=5, padx=10, pady=5, text="자동실행", command=중구_자동입력, bg="blue", fg="white", font = ("", 7))
 태화연btn2.place(x=50, y=83)
@@ -294,7 +291,7 @@ def 중구_차량번호():
 태화연btn3.place(x=100, y=83)
 태화연btn4 = Button(frame4, width=5, padx=10, pady=5, text="Start", command=태화연_Start, bg="green", fg="white", font = ("", 7))
 태화연btn4.place(x=150, y=83)
-태화연btn5 = Button(frame4, width=5, padx=10, pady=5, text="Start(A)", command=태화연_JubJub, bg="white", fg="black", font = ("", 7))
+태화연btn5 = Button(frame4, width=5, padx=10, pady=5, text="       ", command=태화연_JubJub, bg="white", fg="black", font = ("", 7))
 태화연btn5.place(x=200, y=83)
 
 #ㅇ
