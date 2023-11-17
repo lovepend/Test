@@ -13,12 +13,11 @@ import datetime
 import sys
 import cv2
 
-#신불산 Test 2022.03.21 #Viewer Size 67%
+#신불산 Test 2023.11.17 #Viewer Size 67%
 
 # 변수 설정
 #★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 #★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-
 
 #타이머 입력
 #▶▶▶▶▶▶▶▶▶
@@ -55,7 +54,7 @@ def 시간입력_줍기1(min,sec):
 global 신불산_find_range
 신불산_find_range = 0,0,1920,1080
 
-#범위 입력
+#범위입력
 #▶▶▶▶▶▶▶▶▶ 
 def 신불산_범위선택():
   while True:
@@ -79,21 +78,16 @@ def 신불산_범위선택():
 def 신불산_range1():
   global 신불산_find_range
   신불산_find_range = 0,720,1920,1080
-  #신불산_find_range = (0,685,1910,1010)
 
 #두번째
 def 신불산_range2():
   global 신불산_find_range
   신불산_find_range = 0,760,1920,1080
-  #신불산_find_range = (0,730,1910,1010)
 
 #세번째
 def 신불산_range3():
   global 신불산_find_range
   신불산_find_range = 0,790,1920,1080
-  #신불산_find_range = (0,777,1910,1010)
-
-
 
 ################################## 날짜
 global 신불산_day1
@@ -247,16 +241,13 @@ def 신불산_time_controll_02():
   time_controll =  0.2
   print(time_controll)
 
-
 #함수 설정
 #★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 #★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 
-
 #자동입력
 #▶▶▶▶▶▶▶▶▶
 def 신불산_자동입력():  
-  시간_동기화()
   #webbrowser.get("windows-default").open('https://camping.ulju.ulsan.kr/')
   time.sleep(1)
   #url 클릭
@@ -324,7 +315,7 @@ def 신불산_자동입력():
   pag.click(신불산_day2)
 
 
-#메인함수
+#메인함수(시작)
 #▶▶▶▶▶▶▶▶▶
 def 신불산_실시간():
   while True:
@@ -412,7 +403,8 @@ def 신불산_줍기1(신불산_min,신불산_sec):
     else : 
       print("else")
       
-
+#메인함수(검색)
+#▶▶▶▶▶▶▶▶▶
 def 신불산_검색():  
   try: 
     global 신불산_find_range             
@@ -425,6 +417,8 @@ def 신불산_검색():
   except :
     None
 
+#메인함수(예약)
+#▶▶▶▶▶▶▶▶▶
 def 신불산_StepA() : ## 예약하기 버튼 순간 정할것
   while True:
     try :
@@ -465,8 +459,8 @@ def 신불산_StepA() : ## 예약하기 버튼 순간 정할것
   if keyboard.is_pressed("F2"):
     time.sleep(600)
 
-#★★★★★★★★★★★★★★★★★★★ 스케쥴러
-  
+#메인함수(스케쥴러)
+#▶▶▶▶▶▶▶▶▶
 def 신불산_자동():
   time.sleep(5)
   #페이지 클릭
@@ -491,21 +485,6 @@ def 신불산_자동():
   time.sleep(5)
   신불산_자동입력()
   신불산_실시간()
-
-def 시간_동기화():
-  time.sleep(2)
-  pag.rightClick(1882,1055)
-  time.sleep(3)
-  pag.doubleClick(1830,974)
-  time.sleep(3)
-  pag.click(1573,236)
-  time.sleep(5)
-  pag.click(1573,236)
-  time.sleep(5)
-  pag.click(1805,18)  
-
-
-
 
 # #함수 설정
 # #★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★

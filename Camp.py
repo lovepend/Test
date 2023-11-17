@@ -1,9 +1,4 @@
-from cgitb import reset
-from gettext import find
 import tkinter
-from tkinter import *
-from math import *
-from turtle import bgcolor, color, width
 import pyautogui as pag
 import win32con
 import win32api
@@ -11,9 +6,9 @@ import win32gui
 import keyboard
 import clipboard
 import pyperclip
-import requests
 import schedule
 import time
+import cv2
 from Camp_11_울주 import *
 from Camp_12_울주_줍줍 import *
 from Camp_31_태화연 import *
@@ -22,9 +17,8 @@ from Camp_21_신불산 import *
 from Camp_51_육부촌 import *
 from kakao_01_api import *
 from Test.Movie_Factory import *
-import cv2
-cv2.useOptimized()
-True
+
+
 
 
 def schedule_job():    
@@ -227,7 +221,7 @@ def 시간_줍기1():
 신불산btn5.place(x=200, y=83)
 
 
-신불산btn99 = Button(frame3, width=5, padx=10, pady=5, text="동기화", command=시간_동기화, bg="blue", fg="white", font = ("", 7))
+신불산btn99 = Button(frame3, width=5, padx=10, pady=5, text="동기화", command='시간_동기화', bg="blue", fg="white", font = ("", 7))
 신불산btn99.place(x=0, y=130)
 
 #중구 UI===============================================================================================================
@@ -292,7 +286,7 @@ def 중구_차량번호():
 태화연day9 = Button(frame4, width=5, padx=10, pady=5, text="Day", command=태화연_Day, bg="blue", fg="white", font = ("", 7))
 태화연day9.place(x=200, y=59)   
 #함수
-태화연btn1 = Button(frame4, width=5, padx=10, pady=5, text="Reset", command=태화연_Reset, bg="white", fg="black", font = ("", 7))
+태화연btn1 = Button(frame4, width=5, padx=10, pady=5, text="Reset", command='태화연_Reset', bg="white", fg="black", font = ("", 7))
 태화연btn1.place(x=0, y=83)
 태화연btn2 = Button(frame4, width=5, padx=10, pady=5, text="자동실행", command=중구_자동입력, bg="blue", fg="white", font = ("", 7))
 태화연btn2.place(x=50, y=83)
@@ -395,3 +389,33 @@ notebook.add(frame6, text="6.육부")
 육부촌btn7.place(x=50, y=83)
 
 window.mainloop()
+
+
+
+# from cgitb import reset
+# from gettext import find
+# import tkinter
+# from tkinter import *
+# from math import *
+# from turtle import bgcolor, color, width
+# import pyautogui as pag
+# import win32con
+# import win32api
+# import win32gui
+# import keyboard
+# import clipboard
+# import pyperclip
+# import requests
+# import schedule
+# import time
+# from Camp_11_울주 import *
+# from Camp_12_울주_줍줍 import *
+# from Camp_31_태화연 import *
+# from Camp_41_대왕암 import *
+# from Camp_21_신불산 import *
+# from Camp_51_육부촌 import *
+# from kakao_01_api import *
+# from Test.Movie_Factory import *
+# import cv2
+# cv2.useOptimized()
+# True
