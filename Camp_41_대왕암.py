@@ -291,23 +291,23 @@ def 대왕암_Karavan():
     time.sleep(0.5)
     #검색
     대왕암_검색()
-    if i == 200 :
-      #첫번째 리셋
-      time.sleep(1)
-      pag.click(855,803)  
-      time.sleep(1)
-      pag.hotkey('home')
-      #두번째 리셋
-      time.sleep(1)
-      pag.click(1816,807)  
-      time.sleep(1)
-      pag.hotkey('home')
-      time.sleep(1)
-      pag.hotkey('pgdn')
-      i = 1
-    else : 
-      i = i + 1
-      print(i)
+    # if i == 200 :
+    #   #첫번째 리셋
+    #   time.sleep(1)
+    #   pag.click(855,803)  
+    #   time.sleep(1)
+    #   pag.hotkey('home')
+    #   #두번째 리셋
+    #   time.sleep(1)
+    #   pag.click(1816,807)  
+    #   time.sleep(1)
+    #   pag.hotkey('home')
+    #   time.sleep(1)
+    #   pag.hotkey('pgdn')
+    #   i = 1
+    # else : 
+    #   i = i + 1
+    #   print(i)
     if keyboard.is_pressed("F2"): # F2 누른게 감지되면
       break 
 

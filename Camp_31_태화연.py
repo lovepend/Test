@@ -663,7 +663,7 @@ def 태화연_StepD() :
       pag.hotkey('enter')
       time.sleep(0.1)
       refresh_token()
-      #kakao_message_you("태화연")
+      kakao_message_you("태화연")
       time.sleep(500)
   except :
     태화연_StepD()

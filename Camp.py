@@ -214,7 +214,7 @@ def 시간_줍기1():
 신불산btn3.place(x=100, y=83)
 신불산btn4 = Button(frame3, width=5, padx=10, pady=5, text="줍기", command=시간_줍기, bg="green", fg="white", font = ("", 7))
 신불산btn4.place(x=150, y=83)
-신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="        ", command=시간_줍기1, bg="green", fg="white", font = ("", 7))
+신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="줍기_광클릭", command=시간_줍기1, bg="green", fg="white", font = ("", 7))
 신불산btn5.place(x=200, y=83)
 
 
