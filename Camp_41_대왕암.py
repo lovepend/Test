@@ -157,7 +157,6 @@ def 대왕암_범위선택():
   global 대왕암_find_range
   대왕암_find_range = (대왕암_find_range1.x,대왕암_find_range1.y,대왕암_find_range2.x,대왕암_find_range2.y)
  
-
 #함수 설정
 #★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 #★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
@@ -291,23 +290,12 @@ def 대왕암_Karavan():
     time.sleep(0.5)
     #검색
     대왕암_검색()
-    # if i == 200 :
-    #   #첫번째 리셋
-    #   time.sleep(1)
-    #   pag.click(855,803)  
-    #   time.sleep(1)
-    #   pag.hotkey('home')
-    #   #두번째 리셋
-    #   time.sleep(1)
-    #   pag.click(1816,807)  
-    #   time.sleep(1)
-    #   pag.hotkey('home')
-    #   time.sleep(1)
-    #   pag.hotkey('pgdn')
-    #   i = 1
-    # else : 
-    #   i = i + 1
-    #   print(i)
+    if i == 200 :
+      대왕암_실패()
+      i = 1
+    else : 
+      i = i + 1
+      print(i)
     if keyboard.is_pressed("F2"): # F2 누른게 감지되면
       break 
 
@@ -324,6 +312,32 @@ def 대왕암_검색():
       time.sleep(0.05) 
       pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
       대왕암_확인()
+  except :
+    None
+
+def 대왕암_실패():
+  try : 
+    print("대왕암_검색")
+    #검색
+    button = pag.locateCenterOnScreen("./image/41. Donggu/99. Reject.png", region = 대왕암_find_range, confidence=0.85) 
+    if (button == None) :
+      None      
+    else : 
+      time.sleep(0.05) 
+      pag.click(button.x+170,button.y+30, button='left', clicks=1, interval=0.1) 
+  except :
+    None
+
+def 대왕암_실패1():
+  try : 
+    print("대왕암_검색")
+    #검색
+    button = pag.locateCenterOnScreen("./image/41. Donggu/98. Reject.png", region = 대왕암_find_range, confidence=0.85) 
+    if (button == None) :
+      None      
+    else : 
+      time.sleep(0.05) 
+      pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
   except :
     None
 
