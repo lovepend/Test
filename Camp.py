@@ -91,7 +91,6 @@ def 차량번호():
 울주btn31 = Button(frame2, width=5, padx=10, pady=5, text="     ", command=울주_NH_간편결제, bg="white", fg="black", font = ("", 7))
 울주btn31.place(x=200, y=59)
 
-
 울주btn3 = Button(frame2, width=5, padx=10, pady=5, text="This(A)", command=울주_This_A, bg="green", fg="white", font = ("", 7))
 울주btn3.place(x=0, y=83)
 울주btn4 = Button(frame2, width=5, padx=10, pady=5, text="       ", command=울주_This_N, bg="white", fg="black", font = ("", 7))
@@ -171,7 +170,6 @@ def 시간_줍기1():
 # 신불산time_s = Button(frame3, width=5, padx=5, pady=5, text="시작", command=시간입력, bg="orange", fg="black", font = ("", 7))
 # 신불산time_s.place(x=400, y=10)
 
-
 #함수
 신불산btn1 = Button(frame3, width=5, padx=10, pady=5, text="0.1", command=신불산_time_controll_01, bg="white", fg="black", font = ("", 7))
 신불산btn1.place(x=0, y=35)
@@ -204,7 +202,6 @@ def 시간_줍기1():
 신불산day9 = Button(frame3, width=5, padx=10, pady=5, text="Day", command=신불산_Day, bg="blue", fg="white", font = ("", 7))
 신불산day9.place(x=200, y=59)
 
-
 #함수
 신불산btn1 = Button(frame3, width=5, padx=10, pady=5, text="       ", command=신불산_Reset, bg="white", fg="black", font = ("", 7))
 신불산btn1.place(x=0, y=83)
@@ -216,7 +213,6 @@ def 시간_줍기1():
 신불산btn4.place(x=150, y=83)
 신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="줍기_광클릭", command=시간_줍기1, bg="green", fg="white", font = ("", 7))
 신불산btn5.place(x=200, y=83)
-
 
 신불산btn99 = Button(frame3, width=5, padx=10, pady=5, text="       ", command='시간_동기화', bg="blue", fg="white", font = ("", 7))
 신불산btn99.place(x=0, y=130)
@@ -236,7 +232,6 @@ notebook.add(frame4, text="4.중구")
 태화연log4.place(x=150, y=10)
 태화연log5 = Button(frame4, width=5, padx=10, pady=5, text="ID.5", command=태화연_Log_Guest, bg="orange", fg="black", font = ("", 7))
 태화연log5.place(x=200, y=10)
-
 
 #장소
 태화연location1 = Button(frame4, width=5, padx=10, pady=5, text="태화연", command=중구_태화연, bg="white", fg="black", font = ("", 7))
@@ -299,7 +294,6 @@ def 중구_차량번호():
 태화연log6.place(x=100, y=107)
 태화연log7 = Button(frame4, width=5, padx=10, pady=5, text="2_3층", command=태화연_2_3층, bg="white", fg="black", font = ("", 7))
 태화연log7.place(x=150, y=107)
-
 
 #대왕암 UI===============================================================================================================
 frame5=tkinter.Frame(window)
@@ -385,8 +379,6 @@ notebook.add(frame6, text="6.육부")
 육부촌btn7.place(x=50, y=83)
 
 window.mainloop()
-
-
 
 # from cgitb import reset
 # from gettext import find
