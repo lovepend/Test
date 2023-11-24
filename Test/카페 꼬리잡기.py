@@ -1,4 +1,4 @@
-from kakao_01_api import *
+
 from cgi import print_arguments
 from cgitb import reset
 from ctypes.wintypes import PINT
@@ -21,7 +21,6 @@ import schedule
 import json
 import time
 import datetime
-from kakao_01_api import kakao_message_you
 import random
 
 #50% 윈도우 화면
@@ -61,7 +60,7 @@ def 마우스셋팅():
           #도배금지
 
 def 꼬리잡기():
-  꼬잡문구 = "울모캠은 사계절 내내 선물이 팡팡 🎉🎉사계절 팡팡님 선물 감사합니다🎁🎁"
+  꼬잡문구 = "소소한 꼬잡 가즈아~♡"
   num = random.randrange(50,80)
   num1 = num/100
   time.sleep(num1)
@@ -89,8 +88,8 @@ def 꼬리잡기():
     #도배금지 확인
     pag.doubleClick(1138,231)
 
-#마우스셋팅()
-#꼬리잡기()
+마우스셋팅()
+꼬리잡기()
 
 Saturday = 1164,102,1263,1080 #토요일만 검색 
 

@@ -381,14 +381,18 @@ def 신불산_줍기1(신불산_min,신불산_sec):
       break  
     #if (tm.tm_min == 신불산_min and tm.tm_sec == 신불산_sec) : #9시 56분 및 15시 56분 시작
     if (tm.tm_min == 신불산_min and tm.tm_sec == 신불산_sec) : 
+      i=0
       while True:
+        i = i + 1
         pag.click(신불산_day1)  
-        time.sleep(0.1)
-        신불산_검색()  
-        time.sleep(0.1)
+        time.sleep(0.1)        
         pag.click(신불산_day2)  
         time.sleep(0.1)
-        신불산_검색()   
+        if i == 20 :
+          while True:
+            신불산_검색()   
+        else :
+          None
         if keyboard.is_pressed("F2"):
           print("종료") 
           break  

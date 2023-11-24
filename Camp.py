@@ -137,7 +137,7 @@ lable1.place(x=25, y=110)
     
 entry1 = Entry(frame3, width=10, font = ("", 7))
 entry1.place(x=50, y=110)
-entry1.insert(0,"58")
+entry1.insert(0,"59")
 
 lable2=Label(frame3, text="초", font = ("", 7))
 lable2.place(x=125, y=110)

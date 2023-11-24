@@ -315,6 +315,8 @@ def 대왕암_검색():
   except :
     None
 
+#메인함수(데이터가져오기 실패)
+#▶▶▶▶▶▶▶▶▶
 def 대왕암_실패():
   try : 
     print("대왕암_검색")
@@ -325,6 +327,18 @@ def 대왕암_실패():
     else : 
       time.sleep(0.05) 
       pag.click(button.x+170,button.y+30, button='left', clicks=1, interval=0.1) 
+      time.sleep(0.1)
+      #첫번째 초기화
+      pag.click(855,800)
+      time.sleep(0.1)
+      pag.hotkey("home")
+      time.sleep(0.1)
+      #두번째 초기화
+      pag.click(1817,800)
+      time.sleep(0.1)
+      pag.hotkey("home")
+      time.sleep(0.1)
+      pag.hotkey("pgdn")
   except :
     None
 
