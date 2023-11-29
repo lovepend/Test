@@ -93,7 +93,7 @@ def 차량번호():
 
 울주btn3 = Button(frame2, width=5, padx=10, pady=5, text="This(A)", command=울주_This_A, bg="green", fg="white", font = ("", 7))
 울주btn3.place(x=0, y=83)
-울주btn4 = Button(frame2, width=5, padx=10, pady=5, text="       ", command=울주_This_N, bg="white", fg="black", font = ("", 7))
+울주btn4 = Button(frame2, width=5, padx=10, pady=5, text="새해맞이", command=울주_This_B, bg="white", fg="black", font = ("", 7))
 울주btn4.place(x=50, y=83)
 울주btn5 = Button(frame2, width=5, padx=10, pady=5, text="       ", command=울주_Next_A, bg="white", fg="black", font = ("", 7))
 울주btn5.place(x=100, y=83)

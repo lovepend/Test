@@ -119,9 +119,28 @@ def 울주줍줍_검색():
       울주줍줍_새로고침()   
     else :
       print("검색")
+      #아래는 일반
       울주줍줍_Page1_기간()
+      #아래는 할인 30
+      #울주줍줍_Page1_기간1()
   except :
     울주줍줍_새로고침()
+
+#메인함수(할인)
+#▶▶▶▶▶▶▶▶▶
+def 울주줍줍_Page1_기간1():
+  try :
+    print("울주줍줍_Page1_기간_할인추가")
+    button = pag.locateCenterOnScreen('./image/12. Ulju/99. jubjub.png', region=(1,1,960,1080), confidence=0.9)
+    if (button == None) :
+      울주줍줍_Page1_기간1()   
+    else :
+      pag.click(button.x,button.y)
+      pag.click(button.x,button.y)
+      print("할인추가")
+      울주줍줍_Page1_기간()
+  except :
+    울주줍줍_Page1_기간1()
 
 #메인함수(기간)
 #▶▶▶▶▶▶▶▶▶
@@ -139,6 +158,23 @@ def 울주줍줍_Page1_기간():
       울주줍줍_Page1_총인원()
   except :
     울주줍줍_Page1_기간()
+
+#메인함수(기간)
+#▶▶▶▶▶▶▶▶▶
+def 울주줍줍_Page1_기간_할인추가():
+  try :
+    print("울주줍줍_Page1_기간")
+    button = pag.locateCenterOnScreen('./image/12. Ulju/13. jubjub.png', region=(1,1,960,1080), confidence=0.9)
+    if (button == None) :
+      울주줍줍_Page1_기간()   
+    else :
+      pag.click(button.x,button.y)
+      pag.hotkey('down')
+      #pag.hotkey('end')
+      print("기간")
+      울주줍줍_Page1_총인원()
+  except :
+    울주줍줍_Page1_기간_할인추가()
 
 #메인함수(총인원)
 #▶▶▶▶▶▶▶▶▶

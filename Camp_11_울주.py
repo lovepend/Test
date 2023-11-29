@@ -341,11 +341,12 @@ def 울주_This_A():
     울주_검색_메인()
     #페이지 아래로
     pag.hotkey('end')
+    time.sleep(0.3)
     #검색
     울주_검색_메인()
     #페이지 위로
     pag.hotkey('home')
-    time.sleep(0.2)
+    time.sleep(0.3)
     if i == 2000 :
       보안문자_자동입력()
       i=0
@@ -355,8 +356,107 @@ def 울주_This_A():
       break
     울주_검색_메인()
 
+  
+#메인함수(검색_30일)
+#범위 설정 해줄 것 
+#▶▶▶▶▶▶▶▶▶
+def 울주_검색_Day1():
+  reservation = './image/11. Ulju/01_0. reservation1.png'
+  global button_Day1
+  try :
+    print("울주_검색_메인")
+    button_Day1 = pag.locateCenterOnScreen(reservation, region = (5,555,215,1027), confidence=0.95)
+    if (button_Day1 == None) :
+      None        
+    else :
+      울주_검색_Day2()
+  except :
+    None
+
+#메인함수(검색_31)
+#▶▶▶▶▶▶▶▶▶
+def 울주_검색_Day2():
+  reservation = './image/11. Ulju/01_0. reservation1.png'
+  global button_Day2
+  try :
+    print("울주_검색_메인")
+    button_Day2 = pag.locateCenterOnScreen(reservation, region = (716,381,815,1028), confidence=0.95)
+    if (button_Day2 == None) :
+      pag.click(button_Day1)          
+    else :
+      pag.click(button_Day2)  
+  except :
+    None
+
+#메인함수(보안문자입력)
+#▶▶▶▶▶▶▶▶▶            
+def 울주_This_B():
+  i=0
+  while True:
+    if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+      break 
+    i= i + 1
+    print(i)
+    #페이지 선택
+    pag.click(10,800)
+    time.sleep(0.5)    
+    pag.hotkey('home')
+    time.sleep(0.5)     
+    #페이지 선택
+    pag.click(10,800)
+    울주_log()
+    #페이지 아래로
+    pag.hotkey('end')
+    time.sleep(0.5)
+    refresh_f5 = 0
+    while True :
+      refresh_f5 = refresh_f5 + 1
+      pag.hotkey('f5')
+      #랜덤 새로고침
+      num = random.randrange(20,40)
+      num1 = num/100
+      time.sleep(num1)
+      time.sleep(0.2)
+      울주_검색_Day1()
+      if refresh_f5 == 10 :
+        보안문자_자동입력()
+        울주_This_B()
+      if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+        break
+
 def 울주_This_N():
-  print("공백")
+  i=0
+  while True:
+    if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+      break 
+    i=i+1
+    print(i)
+    #페이지 선택
+    pag.click(10,800)
+    울주_log()
+    pag.hotkey('f5')
+    #랜덤 새로고침
+    num = random.randrange(20,40)
+    num1 = num/100
+    time.sleep(num1)
+    time.sleep(0.2)
+    #검색
+    울주_검색_메인()
+    #페이지 아래로
+    pag.hotkey('end')
+    #검색
+    울주_검색_메인()
+    #페이지 위로
+    pag.hotkey('home')
+    time.sleep(0.3)
+    if i == 2000 :
+      보안문자_자동입력()
+      i=0
+    else :
+       None
+    if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+      break
+    울주_검색_메인()
 
 def 울주_Next_A():
   print("공백")  
