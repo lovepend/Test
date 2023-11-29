@@ -413,12 +413,12 @@ def 울주_This_B():
       refresh_f5 = refresh_f5 + 1
       pag.hotkey('f5')
       #랜덤 새로고침
-      num = random.randrange(20,40)
+      num = random.randrange(30,50)
       num1 = num/100
       time.sleep(num1)
       time.sleep(0.2)
       울주_검색_Day1()
-      if refresh_f5 == 10 :
+      if refresh_f5 == 2000 :
         보안문자_자동입력()
         울주_This_B()
       if keyboard.is_pressed("F2"): # F2 누른게 감지되면
