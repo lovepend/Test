@@ -388,6 +388,19 @@ def 울주_검색_Day2():
   except :
     None
 
+def 울주_검색_Day3():
+  reservation = './image/11. Ulju/01_0. reservation1.png'
+  global button_Day3
+  try :
+    print("울주_검색_메인")
+    button_Day3 = pag.locateCenterOnScreen(reservation, region = (716,381,815,1028), confidence=0.95)
+    if (button_Day3 == None) :
+      None
+    else :
+      pag.click(button_Day3)  
+  except :
+    None
+
 #메인함수(보안문자입력)
 #▶▶▶▶▶▶▶▶▶            
 def 울주_This_B():
@@ -418,6 +431,7 @@ def 울주_This_B():
       time.sleep(num1)
       time.sleep(0.2)
       울주_검색_Day1()
+      울주_검색_Day3()
       if refresh_f5 == 2000 :
         보안문자_자동입력()
         울주_This_B()

@@ -57,7 +57,7 @@ def 태화연_Log_Id3():
 
 def 태화연_Log_Id4():
   global 태화연_id
-  태화연_id = "parkmc7"
+  태화연_id = "parkmc7@naver.com"
   print(태화연_id)
 
 def 태화연_Log_Guest():
