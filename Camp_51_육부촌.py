@@ -27,7 +27,7 @@ import cv2
 
 #url 입력
 #▶▶▶▶▶▶▶▶▶
-url = 'https://www.gyeongju.go.kr/hwarang/page.do?mnu_uid=3516&csr_date=2023-11-24&cs_uid=26&csr_numday=1&step=write&initYear=2023&initMonth=11&currentDay='
+url = 'https://www.gyeongju.go.kr/hwarang/page.do?mnu_uid=3516&csr_date=2023-12-18&cs_uid=24&csr_numday=1&step=write&initYear=2023&initMonth=12&currentDay='
 
 #날짜입력
 #▶▶▶▶▶▶▶▶▶
@@ -278,7 +278,7 @@ def 육부촌_줍줍():
     try : 
       print("육부촌_줍줍")
       pyperclip.copy(url)
-      button = pag.locateCenterOnScreen("./image/51. Kyungju/05._99. reservation.png", region = 육부촌_find_range, confidence=0.85) 
+      button = pag.locateCenterOnScreen("./image/51. Kyungju/05._99. reservation.png", region = 육부촌_find_range, confidence=0.8) 
       if (button == None) :
         None  
       else : 
@@ -295,7 +295,7 @@ def 육부촌_줍줍_refresh():
       break
     try : 
       print("육부촌_줍줍_refresh")
-      button = pag.locateCenterOnScreen("./image/51. Kyungju/05._91. reservation.png", region = 육부촌_find_range, confidence=0.85) 
+      button = pag.locateCenterOnScreen("./image/51. Kyungju/05._91. reservation.png", region = 육부촌_find_range, confidence=0.8) 
       if (button == None) :
         pag.hotkey('enter')     
         time.sleep(0.1)   
@@ -311,17 +311,17 @@ def 육부촌_줍줍_refresh():
       else: 
         육부촌_주소_AI()
     except :
-        pag.hotkey('enter')     
-        time.sleep(0.1)   
-        pag.click(815,47) 
-        time.sleep(0.1)   
-        pag.hotkey('ctrl','v')
-        time.sleep(0.1)
-        pag.hotkey('enter') 
-        time.sleep(0.1)
-        pag.hotkey('enter') 
-        time.sleep(0.3)
-        육부촌_줍줍() 
+      pag.hotkey('enter')     
+      time.sleep(0.1)   
+      pag.click(815,47) 
+      time.sleep(0.1)   
+      pag.hotkey('ctrl','v')
+      time.sleep(0.1)
+      pag.hotkey('enter') 
+      time.sleep(0.1)
+      pag.hotkey('enter') 
+      time.sleep(0.3)
+      육부촌_줍줍() 
 
 #메인함수(검색)
 #▶▶▶▶▶▶▶▶▶  
@@ -365,7 +365,8 @@ def 육부촌_주소_AI():
       print("자동방지입력")
       button = pag.locateCenterOnScreen('./image/51. Kyungju/05._93. reservation.png', confidence=0.8)   
       pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
-      im1 =  pag.screenshot('captcha.png', region=(727,281,200,70))
+      im1 =  pag.screenshot('captcha.png', region=(722,245,200,70))
+      #im1 =  pag.screenshot('captcha.png', region=(727,281,200,70))
       #file = r"C:\Users\LinkTech\Documents\Visual Studio Code\Test\captcha.png"
       file = r"captcha.png"
       reader = easyocr.Reader(['en'], gpu=True)
