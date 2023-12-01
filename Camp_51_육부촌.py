@@ -14,6 +14,10 @@ import json
 import cv2
 import easyocr
 import cv2
+import multiprocessing as mp
+import threading
+
+
 
 
 
@@ -27,7 +31,7 @@ import cv2
 
 #url 입력
 #▶▶▶▶▶▶▶▶▶
-url = 'https://www.gyeongju.go.kr/hwarang/page.do?mnu_uid=3516&csr_date=2023-12-18&cs_uid=24&csr_numday=1&step=write&initYear=2023&initMonth=12&currentDay='
+url = 'https://www.gyeongju.go.kr/hwarang/page.do?mnu_uid=3516&csr_date=2024-01-20&cs_uid=29&csr_numday=1&step=write&initYear=2024&initMonth=1&currentDay='
 
 #날짜입력
 #▶▶▶▶▶▶▶▶▶
@@ -309,6 +313,11 @@ def 육부촌_줍줍_refresh():
         time.sleep(0.3)
         육부촌_줍줍()
       else: 
+        time.sleep(0.1)
+        pag.click(150,551)
+        time.sleep(0.1)
+        pag.hotkey('end')
+        time.sleep(0.5)
         육부촌_주소_AI()
     except :
       pag.hotkey('enter')     
@@ -321,6 +330,7 @@ def 육부촌_줍줍_refresh():
       time.sleep(0.1)
       pag.hotkey('enter') 
       time.sleep(0.3)
+      
       육부촌_줍줍() 
 
 #메인함수(검색)
@@ -331,13 +341,9 @@ def 육부촌_주소_AI():
       print("F2 종료")
       break
     try :   
+      global input_text3
       print("육부촌_주소_AI")
       print("주소검색")
-      time.sleep(0.1)
-      pag.click(150,551)
-      time.sleep(0.1)
-      pag.hotkey('end')
-      time.sleep(0.5)
       #주소검색
       print("주소입력")
       button = pag.locateCenterOnScreen('./image/51. Kyungju/05._92. reservation.png', confidence=0.7)   
@@ -355,17 +361,19 @@ def 육부촌_주소_AI():
       time.sleep(0.2)
       #입력
       pag.hotkey('enter')
-      time.sleep(0.2)
+      time.sleep(0.3)
       #주소클릭
       print("주소선택")
-      button = pag.locateCenterOnScreen('./image/51. Kyungju/05._6. Adress.png', confidence=0.7)   
+      button = pag.locateCenterOnScreen('./image/51. Kyungju/05._6. Adress.png', confidence=0.6)   
       pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
       time.sleep(0.2)
       #자동입력방지
       print("자동방지입력")
       button = pag.locateCenterOnScreen('./image/51. Kyungju/05._93. reservation.png', confidence=0.8)   
       pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
-      im1 =  pag.screenshot('captcha.png', region=(722,245,200,70))
+      time.sleep(0.1)  
+      #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
+      im1 =  pag.screenshot('captcha.png', region=(button.x-350,button.y-30,150,70 ))
       #im1 =  pag.screenshot('captcha.png', region=(727,281,200,70))
       #file = r"C:\Users\LinkTech\Documents\Visual Studio Code\Test\captcha.png"
       file = r"captcha.png"
@@ -378,8 +386,11 @@ def 육부촌_주소_AI():
       input_text1 = input_text.strip('[')
       input_text2 = input_text1.strip(']')
       input_text3 = input_text2.strip("'")                      
-      print(text)
+      print(text)      
       pyperclip.copy(input_text3)
+      print(input_text3)
+      pyperclip.copy(input_text3)
+      time.sleep(0.1)
       pag.hotkey('ctrl','v')
       time.sleep(0.1)
       pag.hotkey('enter')
@@ -387,5 +398,130 @@ def 육부촌_주소_AI():
     except :
       None
 
+# def 육부촌_문자_AI(): 
+#   #while True:
+#     # if keyboard.is_pressed("F2") : # F2 누른게 감지되면
+#     #   print("F2 종료")
+#     #   break
+#     try :   
+#       global input_text3
+#       time(0.3)
+#       print("육부촌_문자_AI")
+#       #자동입력방지
+#       print("자동방지입력")
+#       button = pag.locateCenterOnScreen('./image/51. Kyungju/05._93. reservation.png', confidence=0.8)   
+#       #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
+#       im1 =  pag.screenshot('captcha.png', region=(button.x-350,button.y-30,150,70 ))
+#       #im1 =  pag.screenshot('captcha.png', region=(727,281,200,70))
+#       #file = r"C:\Users\LinkTech\Documents\Visual Studio Code\Test\captcha.png"
+#       file = r"captcha.png"
+#       reader = easyocr.Reader(['en'], gpu=True)
+#       #reader = easyocr.Reader(['ko', 'en'], gpu=True, model_storage_directory= 'korean_g2.pth')
+#       img = cv2.imread(file)
+#       #img = cv2.imread(im1)
+#       text = reader.readtext(img, detail=0)
+#       input_text = str(text)
+#       input_text1 = input_text.strip('[')
+#       input_text2 = input_text1.strip(']')
+#       input_text3 = input_text2.strip("'")                      
+#       print(text)      
+#       pyperclip.copy(input_text3)
+#       print(input_text3)
+#     except :
+#       None
 
 
+
+
+#육부촌_문자_AI()
+
+
+#def 육부촌_threading():
+#start_time = time.time()
+# print("육부촌_threading")
+
+# th1 = threading.Thread(target=육부촌_문자_AI)
+# th2 = threading.Thread(target=육부촌_주소_AI)
+
+# th1.start()
+# th2.start()
+
+# th1.join()
+# th2.join()
+    
+  #print("--- %s seconds ---" % (time.time() - start_time))
+
+#육부촌_줍줍()
+
+
+# if __name__=='__main__':
+
+#   start_time = time.time()
+#   육부촌_주소_AI()
+#   pool = mp.Pool(processes=4)
+#   pool.close()
+#   pool.join()    
+#   print("--- %s seconds ---" % (time.time() - start_time))
+
+
+# def 육부촌_주소_AI(): 
+#   while True:
+#     if keyboard.is_pressed("F2") : # F2 누른게 감지되면
+#       print("F2 종료")
+#       break
+#     try :   
+#       print("육부촌_주소_AI")
+#       print("주소검색")
+#       time.sleep(0.1)
+#       pag.click(150,551)
+#       time.sleep(0.1)
+#       pag.hotkey('end')
+#       time.sleep(0.5)
+#       #주소검색
+#       print("주소입력")
+#       button = pag.locateCenterOnScreen('./image/51. Kyungju/05._92. reservation.png', confidence=0.7)   
+#       pag.click(button.x,button.y-90, button='left', clicks=1, interval=0.1) 
+#       pyperclip.copy('반구로55')
+#       time.sleep(0.3)
+#       #예)판교역로235
+#       print("반구로55 입력")
+#       button = pag.locateCenterOnScreen('./image/51. Kyungju/05._5. Adress.png', confidence=0.7)   
+#       pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
+#       #pag.click(197,135)
+#       time.sleep(0.2)
+#       #반구로 55 붙이기
+#       pag.hotkey('ctrl','v')
+#       time.sleep(0.2)
+#       #입력
+#       pag.hotkey('enter')
+#       time.sleep(0.3)
+#       #주소클릭
+#       print("주소선택")
+#       button = pag.locateCenterOnScreen('./image/51. Kyungju/05._6. Adress.png', confidence=0.6)   
+#       pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
+#       time.sleep(0.2)
+#       #자동입력방지
+#       print("자동방지입력")
+#       button = pag.locateCenterOnScreen('./image/51. Kyungju/05._93. reservation.png', confidence=0.8)   
+#       pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
+#       im1 =  pag.screenshot('captcha.png', region=(button.x-350,button.y-30,150,70 ))
+#       #im1 =  pag.screenshot('captcha.png', region=(727,281,200,70))
+#       #file = r"C:\Users\LinkTech\Documents\Visual Studio Code\Test\captcha.png"
+#       file = r"captcha.png"
+#       reader = easyocr.Reader(['en'], gpu=True)
+#       #reader = easyocr.Reader(['ko', 'en'], gpu=True, model_storage_directory= 'korean_g2.pth')
+#       img = cv2.imread(file)
+#       #img = cv2.imread(im1)
+#       text = reader.readtext(img, detail=0)
+#       input_text = str(text)
+#       input_text1 = input_text.strip('[')
+#       input_text2 = input_text1.strip(']')
+#       input_text3 = input_text2.strip("'")                      
+#       print(text)
+#       pyperclip.copy(input_text3)
+#       pag.hotkey('ctrl','v')
+#       time.sleep(0.1)
+#       pag.hotkey('enter')
+#       time.sleep(500)
+#     except :
+#       None
