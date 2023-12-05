@@ -349,7 +349,7 @@ def 신불산_줍기(신불산_min,신불산_sec):
       button = pag.locateCenterOnScreen("./image/21. Sinbul/21_1. reservation.png", region = (0,0,960,1080), confidence=0.7) 
       print(button)
       pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
-      time.sleep(0.1)
+      time.sleep(0.05)
       button = pag.locateCenterOnScreen("./image/21. Sinbul/21_1. reservation.png", region = (960,0,1920,1080), confidence=0.7) 
       print(button)
       pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
@@ -423,7 +423,7 @@ def 신불산_StepA() : ## 예약하기 버튼 순간 정할것
       if (button1 == None) :
         신불산_StepA()      
       else :  
-        time.sleep(0.2)
+        #time.sleep(0.2)
         print(button1)
         button1 = pag.locateCenterOnScreen('./image/21. Sinbul/22. next.png',  confidence=0.8)
         pag.click(button1.x+10,button1.y, button='left', clicks=1, interval=0.1)        
