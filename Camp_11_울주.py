@@ -434,12 +434,10 @@ def 울주_This_B():
       time.sleep(num1)
       time.sleep(0.2)
       print("검색1")
-      time.sleep(5)
       울주_검색_Day1()
       print("검색2")
-      time.sleep(5)
       울주_검색_Day3()
-      if refresh_f5 == 5 :
+      if refresh_f5 == 3000 :
         print("보안문자")
         보안문자_자동입력()
         울주_This_B()
