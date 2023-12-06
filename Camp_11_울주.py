@@ -382,7 +382,8 @@ def 울주_검색_Day2():
     print("울주_검색_메인")
     button_Day2 = pag.locateCenterOnScreen(reservation, region = (716,381,815,1028), confidence=0.95)
     if (button_Day2 == None) :
-      pag.click(button_Day1)          
+      pag.click(button_Day1)     
+      울주_예약알림()     
     else :
       pag.click(button_Day2)  
       울주_예약알림()
@@ -432,9 +433,14 @@ def 울주_This_B():
       num1 = num/100
       time.sleep(num1)
       time.sleep(0.2)
+      print("검색1")
+      time.sleep(5)
       울주_검색_Day1()
+      print("검색2")
+      time.sleep(5)
       울주_검색_Day3()
-      if refresh_f5 == 2000 :
+      if refresh_f5 == 5 :
+        print("보안문자")
         보안문자_자동입력()
         울주_This_B()
       if keyboard.is_pressed("F2"): # F2 누른게 감지되면
@@ -488,5 +494,4 @@ def 울주_특정데이():
 def 울주_자동():
   print("공백")  
 
-    
     

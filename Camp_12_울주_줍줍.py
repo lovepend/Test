@@ -251,6 +251,7 @@ def 울주줍줍_Page2_차량방문번호():
     else :
       pag.click(button.x,button.y) 
       pyperclip.copy(울주_Car_No)
+      time.sleep(0.1)
       pag.hotkey('ctrl','v')
       #페이지 선택
       pag.click(10,800)
