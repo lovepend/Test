@@ -385,6 +385,7 @@ def 울주_검색_Day2():
       pag.click(button_Day1)          
     else :
       pag.click(button_Day2)  
+      울주_예약알림()
   except :
     None
 
@@ -398,6 +399,7 @@ def 울주_검색_Day3():
       None
     else :
       pag.click(button_Day3)  
+      울주_예약알림()
   except :
     None
 

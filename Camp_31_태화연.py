@@ -488,6 +488,7 @@ def 태화연_Start():
   # pag.hotkey('enter')     
   # time.sleep(1)
   태화연_Start_검색()  
+  
 
 #메인함수(검색)
 #▶▶▶▶▶▶▶▶▶
