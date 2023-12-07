@@ -634,7 +634,7 @@ def 태화연_StepC_B() :
     button = pag.locateCenterOnScreen('./image/31. Junggu/24. next.png', confidence=0.8)   
     print(button)
     if (button == None) :
-      None
+      태화연_StepC()
     else : 
       pag.hotkey('down')
       time.sleep(0.2)
@@ -644,7 +644,7 @@ def 태화연_StepC_B() :
       time.sleep(0.4)
       태화연_StepD()
   except :
-    None
+    태화연_StepC()
 
 #메인함수(숙박일 확인)
 #▶▶▶▶▶▶▶▶▶  

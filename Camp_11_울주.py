@@ -433,10 +433,7 @@ def 울주_This_B():
       num1 = num/100
       time.sleep(num1)
       time.sleep(0.2)
-      print("검색1")
-      울주_검색_Day1()
-      print("검색2")
-      울주_검색_Day3()
+      울주_검색_메인()
       if refresh_f5 == 3000 :
         print("보안문자")
         보안문자_자동입력()
