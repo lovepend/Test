@@ -427,9 +427,6 @@ def 신불산_StepA() : ## 예약하기 버튼 순간 정할것
         print(button1)
         button1 = pag.locateCenterOnScreen('./image/21. Sinbul/22. next.png',  confidence=0.8)
         pag.click(button1.x+10,button1.y, button='left', clicks=1, interval=0.1)        
-        # button1 = pag.locateCenterOnScreen('./image/21. Sinbul/22. next.png',  confidence=0.8)   #region = (510,100,1324,333),
-        # pag.click(button1.x+10,button1.y, button='left', clicks=1, interval=0.1)
-        #pag.click(1264,276)
         tm1 = time.localtime()
         print(tm1.tm_hour,tm1.tm_min,tm1.tm_sec)
         kakao_tm = tm1.tm_hour,tm1.tm_min,tm1.tm_sec
@@ -438,7 +435,20 @@ def 신불산_StepA() : ## 예약하기 버튼 순간 정할것
         refresh_token()
         kakao_message_you(신불산_sec) 
         print("끝")
-        time.sleep(600)
+        while True:   
+          if keyboard.is_pressed("F2"):
+            print("종료") 
+            break  
+          try :
+            button = pag.locateCenterOnScreen("./image/21. Sinbul/21. reservation.png", region= 신불산_find_range,  confidence=0.7) 
+            if (button == None) :
+              None
+            else : 
+              print("else")
+              pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
+              신불산_StepA()
+          except :
+            None
     except :      
       None
       
