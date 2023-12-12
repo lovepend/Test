@@ -440,7 +440,8 @@ def 신불산_StepA() : ## 예약하기 버튼 순간 정할것
             print("종료") 
             break  
           try :
-            button = pag.locateCenterOnScreen("./image/21. Sinbul/21. reservation.png", region= 신불산_find_range,  confidence=0.7) 
+            신불산_find_range_두번째 = 0,760,1920,1080
+            button = pag.locateCenterOnScreen("./image/21. Sinbul/21. reservation.png", region= 신불산_find_range_두번째,  confidence=0.7) 
             if (button == None) :
               None
             else : 
