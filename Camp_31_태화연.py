@@ -477,6 +477,11 @@ def 태화연_JubJub():
 #메인함수(시작)
 #▶▶▶▶▶▶▶▶▶
 def 태화연_Start():
+  while True:
+    if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+      print("F2 종료")
+      time.sleep(60)
+      break
   #달력 A화면 클릭 
   # time.sleep(1)
   # pag.click(태화연_day1)
@@ -487,8 +492,12 @@ def 태화연_Start():
   # time.sleep(0.2)
   # pag.hotkey('enter')     
   # time.sleep(1)
-  태화연_Start_검색()  
-  
+    태화연_Start_검색()  
+    if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+      print("F2 종료")
+      time.sleep(60)
+      break
+
 
 #메인함수(검색)
 #▶▶▶▶▶▶▶▶▶
@@ -497,13 +506,11 @@ def 태화연_Start_검색():
     #종료 조건
     if keyboard.is_pressed("F2"): # F2 누른게 감지되면
       print("F2 종료")
-      time.sleep(60)
       break
     #검색
     태화연_검색A()
     if keyboard.is_pressed("F2"): # F2 누른게 감지되면
       print("F2 종료")
-      time.sleep(60)
       break
     태화연_검색B()
 
