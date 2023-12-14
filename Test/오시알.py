@@ -60,8 +60,8 @@ import cv2
 # import torch torch.cuda.get_device_name(0) torch.cuda.is_available() print(torch.__version__)
 
 file = r"C:\Users\LinkTech\Documents\Visual Studio Code\Test\captcha.png"
-reader = easyocr.Reader(['en'], gpu=True)
-#reader = easyocr.Reader(['ko', 'en'], gpu=True, model_storage_directory= 'korean_g2.pth')
+#reader = easyocr.Reader(['en'], gpu=True)
+reader = easyocr.Reader(['ko', 'en'], gpu=True, model_storage_directory= 'korean_g2.pth')
 img = cv2.imread(file)
 #img = cv2.imread(im1)
 text = reader.readtext(img, detail=0)
