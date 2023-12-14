@@ -370,6 +370,7 @@ def 울주_검색_Day1():
       None        
     else :
       울주_검색_Day2()
+      None
   except :
     None
 
@@ -416,13 +417,13 @@ def 울주_This_B():
     #페이지 선택
     pag.click(10,800)
     time.sleep(0.5)    
-    pag.hotkey('home')
+    #pag.hotkey('home')
     time.sleep(0.5)     
     #페이지 선택
     pag.click(10,800)
     울주_log()
     #페이지 아래로
-    pag.hotkey('end')
+    #pag.hotkey('end')
     time.sleep(0.5)
     refresh_f5 = 0
     while True :
