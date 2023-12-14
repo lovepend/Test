@@ -432,8 +432,9 @@ def 신불산_StepA() : ## 예약하기 버튼 순간 정할것
         kakao_tm = tm1.tm_hour,tm1.tm_min,tm1.tm_sec
         text = str(kakao_tm)
         print(text)
-        refresh_token()
-        kakao_message_you(신불산_sec) 
+        #refresh_token()
+        #kakao_message_you(신불산_sec) 
+        print(신불산_sec)
         print("끝")
         while True:   
           if keyboard.is_pressed("F2"):
