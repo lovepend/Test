@@ -417,13 +417,13 @@ def 울주_This_B():
     #페이지 선택
     pag.click(10,800)
     time.sleep(0.5)    
-    #pag.hotkey('home')
+    pag.hotkey('home')
     time.sleep(0.5)     
     #페이지 선택
     pag.click(10,800)
     울주_log()
     #페이지 아래로
-    #pag.hotkey('end')
+    pag.hotkey('end')
     time.sleep(0.5)
     refresh_f5 = 0
     while True :
@@ -435,7 +435,7 @@ def 울주_This_B():
       time.sleep(num1)
       time.sleep(0.2)
       울주_검색_메인()
-      if refresh_f5 == 3000 :
+      if refresh_f5 == 3 :
         print("보안문자")
         보안문자_자동입력()
         울주_This_B()

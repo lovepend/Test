@@ -74,6 +74,8 @@ def 보안문자_자동입력():
           time.sleep(1)
           refresh_token() #refresh_token을 입력후 테스트 
           kakao_message_you("울주 보안문자 갱신필요")  
+          time.sleep(10000)
+          break
     except :
       None
 
@@ -183,8 +185,8 @@ def 울주줍줍_Page1_기간_할인추가():
       울주줍줍_Page1_기간()   
     else :
       pag.click(button.x,button.y)
-      pag.hotkey('down')
-      #pag.hotkey('end')
+      #pag.hotkey('down')
+      pag.hotkey('end')
       print("기간")
       울주줍줍_Page1_총인원()
   except :

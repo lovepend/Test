@@ -19,6 +19,7 @@ from kakao_01_api import *
 from Test.Movie_Factory import *
 
 def schedule_job():    
+  
   schedule.every().day.at("08:45:00").do(신불산_자동) 
   schedule.every().day.at("09:45:00").do(태화연_자동) 
   schedule.every().day.at("10:55:00").do(대왕암_자동) 
