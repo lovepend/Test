@@ -435,7 +435,7 @@ def 울주_This_B():
       time.sleep(num1)
       time.sleep(0.2)
       울주_검색_메인()
-      if refresh_f5 == 2 :
+      if refresh_f5 == 2000 :
         print("보안문자")
         보안문자_자동입력()
         울주_This_B()
