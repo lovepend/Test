@@ -50,6 +50,14 @@ def 보안문자_자동입력():
       break
     try :
       print("보안문자_자동입력")
+      pag.click(1850,800)
+      time.sleep(0.5)
+      pag.hotkey('home')
+      time.sleep(0.5)
+      pag.hotkey('down')
+      time.sleep(0.5)
+      pag.hotkey('down')
+      time.sleep(1)
       button = pag.locateCenterOnScreen('./image/12. Ulju/15. jubjub.png', region=(960,0,1920,1080), confidence=0.9)
       if button == None :
         None
@@ -67,6 +75,7 @@ def 보안문자_자동입력():
           time.sleep(1)
           #뒤로가기
           pag.click(990,60)
+          break
         else :
           time.sleep(1)
           pag.hotkey('enter')
