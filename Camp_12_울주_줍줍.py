@@ -177,8 +177,8 @@ def 울주줍줍_Page1_기간():
       울주줍줍_Page1_기간()   
     else :
       pag.click(button.x,button.y)
-      pag.hotkey('down')
-      #pag.hotkey('end')
+      #pag.hotkey('down')
+      pag.hotkey('end')
       print("기간")
       울주줍줍_Page1_총인원()
   except :
