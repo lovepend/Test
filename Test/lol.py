@@ -1,12 +1,13 @@
-import pyautogui as pag
-import keyboard
+import requests
+from bs4 import BeautifulSoup
+import datetime
 
-def lol():
-  while True:
-    if keyboard.is_pressed("F2"): # F2 누른게 감지되면
-      pag.keyUp('c')
-    if keyboard.is_pressed("F3"): # F2 누른게 감지되면
-      pag.keyDown('c')
-    
+url = 'https://search.naver.com/search.naver?sm=top_hty&fbm=1&ie=utf8&query=%EC%8B%9C%EA%B3%84'
 
-lol()
+res = requests.get(url)
+soup = BeautifulSoup(res.text, 'html.parser')
+
+time_str = soup.find('span', {'class': 'time_text'}).text
+now = datetime.datetime.strptime(time_str, '%Y.%m.%d. %H:%M:%S')
+
+print(now)

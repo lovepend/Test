@@ -16,7 +16,9 @@ from Camp_41_대왕암 import *
 from Camp_21_신불산 import *
 from Camp_51_육부촌 import *
 from kakao_01_api import *
-from Test.Movie_Factory import *
+#from Test.Movie_Factory import *
+
+
 
 def schedule_job():    
   
@@ -42,9 +44,9 @@ frame1=tkinter.Frame(window)
 notebook.add(frame1, text="1.임시") 
 
 # #스케쥴 진행
-Autobtn1 = Button(frame1, width=5, padx=10, pady=5, text="날짜""선택", command=Movie_Factory_Day, bg="orange", fg="black", font = ("", 7))
+Autobtn1 = Button(frame1, width=5, padx=10, pady=5, text="날짜""선택", command="Movie_Factory_Day", bg="orange", fg="black", font = ("", 7))
 Autobtn1.place(x=0, y=10)
-Autobtn2 = Button(frame1, width=5, padx=10, pady=5, text="시작", command=Movie_Factory, bg="orange", fg="black", font = ("", 7))
+Autobtn2 = Button(frame1, width=5, padx=10, pady=5, text="시작", command="Movie_Factory", bg="orange", fg="black", font = ("", 7))
 Autobtn2.place(x=50, y=10)
 
 #울주 UI=============================================================================================================== 
@@ -52,7 +54,7 @@ frame2=tkinter.Frame(window)
 notebook.add(frame2, text="2.해양" )
 
 #울주에서 예약하기
-#아이디
+#첫째줄  아이디
 울주log1 = Button(frame2, width=5, padx=10, pady=5, text="ID.1", command=울주_log_id1, bg="orange", fg="black", font = ("", 7))
 울주log1.place(x=0, y=10)
 울주log2 = Button(frame2, width=5, padx=10, pady=5, text="ID.2", command=울주_log_id2, bg="orange", fg="black", font = ("", 7))
@@ -64,6 +66,7 @@ notebook.add(frame2, text="2.해양" )
 울주log5 = Button(frame2, width=5, padx=10, pady=5, text="ID.5", command=울주_log_guest, bg="orange", fg="black", font = ("", 7))
 울주log5.place(x=200, y=10)
 
+#두번째 차량번호
 lable1=Label(frame2, text="차량번호", font = ("", 7))
 lable1.place(x=0, y=37.5)
 
@@ -75,47 +78,49 @@ def 차량번호():
   차량번호 = entry_울주.get()
   울주_차량번호_입력(차량번호)
 
-울주btn12 = Button(frame2, width=5, padx=10, pady=5, text="차량번호", command=차량번호, bg="yellow", fg="black", font = ("", 7))
+울주btn12 = Button(frame2, width=5, padx=10, pady=5, text="차량번호", command=차량번호, bg="blue", fg="white", font = ("", 7))
 울주btn12.place(x=200, y=35)
 
-#함수
-울주btn0 = Button(frame2, width=3, padx=3, pady=5, text="F", command=울주_금요일, bg="blue", fg="white", font = ("", 7))
-울주btn0.place(x=0, y=59)
-울주btn1= Button(frame2, width=3, padx=3, pady=5, text="S", command=울주_토요일, bg="blue", fg="white", font = ("", 7))
-울주btn1.place(x=25, y=59)
-울주btn2 = Button(frame2, width=5, padx=10, pady=5, text="Range", command=울주_범위선택, bg="white", fg="black", font = ("", 7))
-울주btn2.place(x=50, y=59)
-울주btn11 = Button(frame2, width=5, padx=10, pady=5, text="앱결제", command=울주_앱결제, bg="blue", fg="white", font = ("", 7))
-울주btn11.place(x=100, y=59)
-울주btn21 = Button(frame2, width=5, padx=10, pady=5, text="     ", command=울주_간편결제, bg="white", fg="black", font = ("", 7))
-울주btn21.place(x=150, y=59)
-울주btn31 = Button(frame2, width=5, padx=10, pady=5, text="     ", command=울주_NH_간편결제, bg="white", fg="black", font = ("", 7))
-울주btn31.place(x=200, y=59)
-
-울주btn3 = Button(frame2, width=5, padx=10, pady=5, text="This(A)", command=울주_This_A, bg="green", fg="white", font = ("", 7))
-울주btn3.place(x=0, y=83)
-울주btn4 = Button(frame2, width=5, padx=10, pady=5, text="새해맞이", command=울주_This_B, bg="white", fg="black", font = ("", 7))
-울주btn4.place(x=50, y=83)
-울주btn5 = Button(frame2, width=5, padx=10, pady=5, text="       ", command=울주_Next_A, bg="white", fg="black", font = ("", 7))
-울주btn5.place(x=100, y=83)
-울주btn5 = Button(frame2, width=5, padx=10, pady=5, text="       ", command=보안문자_자동입력, bg="white", fg="black", font = ("", 7))
-울주btn5.place(x=150, y=83)
-울주btn6 = Button(frame2, width=5, padx=10, pady=5, text="울주줍줍", command=울주줍줍_새로고침, bg="green", fg="white", font = ("", 7))
-울주btn6.place(x=200, y=83)
-
+#세번째 보안문자
 lable1=Label(frame2, text="보안문자", font = ("", 7))
-lable1.place(x=0, y=130)
+lable1.place(x=0, y=59)
 
 entry_울주1 = Entry(frame2, width=25, borderwidth=2 , font = ("", 7))
-entry_울주1.place(x=50, y=130)
+entry_울주1.place(x=50, y=59)
 entry_울주1.insert(0,"16874",)
 
 def 보안문자():
   보안문자 = entry_울주1.get()
   울주_보안문자_입력(보안문자)
 
-울주btn12 = Button(frame2, width=5, padx=10, pady=5, text="보안문자", command=보안문자, bg="yellow", fg="black", font = ("", 7))
-울주btn12.place(x=200, y=130)
+울주btn12 = Button(frame2, width=5, padx=10, pady=5, text="보안문자", command=보안문자, bg="blue", fg="white", font = ("", 7))
+울주btn12.place(x=200, y=59)
+
+
+#함수
+울주btn0 = Button(frame2, width=3, padx=3, pady=5, text="금", command=울주_금요일, bg="white", fg="black", font = ("", 7))
+울주btn0.place(x=0, y=83)
+울주btn1= Button(frame2, width=3, padx=3, pady=5, text="토", command=울주_토요일, bg="blue", fg="white", font = ("", 7))
+울주btn1.place(x=25, y=83)
+울주btn2 = Button(frame2, width=5, padx=10, pady=5, text="  2박  ", command=울주_기간_2박, bg="white", fg="black", font = ("", 7))
+울주btn2.place(x=50, y=83)
+울주btn11 = Button(frame2, width=5, padx=10, pady=5, text="  3박  ", command=울주_기간_3박, bg="blue", fg="white", font = ("", 7))
+울주btn11.place(x=100, y=83)
+울주btn21 = Button(frame2, width=5, padx=10, pady=5, text="Range", command=울주_범위선택, bg="white", fg="black", font = ("", 7))
+울주btn21.place(x=150, y=83)
+울주btn31 = Button(frame2, width=5, padx=10, pady=5, text="앱결제", command=울주_앱결제, bg="blue", fg="white", font = ("", 7))
+울주btn31.place(x=200, y=83)
+
+울주btn3 = Button(frame2, width=5, padx=10, pady=5, text="This(A)", command=울주_This_A, bg="green", fg="white", font = ("", 7))
+울주btn3.place(x=0, y=107)
+울주btn4 = Button(frame2, width=5, padx=10, pady=5, text="This(B)", command=울주_This_B, bg="white", fg="black", font = ("", 7))
+울주btn4.place(x=50, y=107)
+울주btn5 = Button(frame2, width=5, padx=10, pady=5, text="울주줍줍", command=울주_기간_2박, bg="green", fg="white", font = ("", 7))
+울주btn5.place(x=100, y=107)
+울주btn5 = Button(frame2, width=5, padx=10, pady=5, text="       ", command="       ", bg="white", fg="black", font = ("", 7))
+울주btn5.place(x=150, y=107)
+울주btn6 = Button(frame2, width=5, padx=10, pady=5, text="       ", command="       ", bg="white", fg="black", font = ("", 7))
+울주btn6.place(x=200, y=107)
 
 #신불산 UI===============================================================================================================
 frame3=tkinter.Frame(window)
@@ -130,7 +135,7 @@ notebook.add(frame3, text="3.신불")
 신불산log3.place(x=100, y=10)
 신불산log4 = Button(frame3, width=5, padx=10, pady=5, text="ID.4", command=신불산_Log_Id4, bg="orange", fg="black", font = ("", 7))
 신불산log4.place(x=150, y=10)
-신불산log5 = Button(frame3, width=5, padx=10, pady=5, text="ID.G", command=신불산_Log_Guest, bg="orange", fg="black", font = ("", 7))
+신불산log5 = Button(frame3, width=5, padx=10, pady=5, text="ID.5", command=신불산_Log_Guest, bg="orange", fg="black", font = ("", 7))
 신불산log5.place(x=200, y=10)
 
 lable1=Label(frame3, text="분", font = ("", 7))
@@ -172,11 +177,11 @@ def 시간_줍기1():
 # 신불산time_s.place(x=400, y=10)
 
 #함수
-신불산btn1 = Button(frame3, width=5, padx=10, pady=5, text="0.1", command=신불산_time_controll_01, bg="white", fg="black", font = ("", 7))
+신불산btn1 = Button(frame3, width=5, padx=10, pady=5, text="0.1초", command=신불산_time_controll_01, bg="white", fg="black", font = ("", 7))
 신불산btn1.place(x=0, y=35)
-신불산btn2 = Button(frame3, width=5, padx=10, pady=5, text="0.2", command=신불산_time_controll_02, bg="white", fg="black", font = ("", 7))
+신불산btn2 = Button(frame3, width=5, padx=10, pady=5, text="0.2초", command=신불산_time_controll_02, bg="white", fg="black", font = ("", 7))
 신불산btn2.place(x=50, y=35)
-신불산btn3 = Button(frame3, width=5, padx=10, pady=5, text="첫번째", command=신불산_range1, bg="white", fg="black", font = ("", 7))
+신불산btn3 = Button(frame3, width=5, padx=10, pady=5, text="첫번째", command=신불산_range1, bg="blue", fg="white", font = ("", 7))
 신불산btn3.place(x=100, y=35)
 신불산btn4 = Button(frame3, width=5, padx=10, pady=5, text="두번째", command=신불산_range2, bg="white", fg="black", font = ("", 7))
 신불산btn4.place(x=150, y=35)
@@ -215,8 +220,6 @@ def 시간_줍기1():
 신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="줍기_광클릭", command=시간_줍기1, bg="green", fg="white", font = ("", 7))
 신불산btn5.place(x=200, y=83)
 
-신불산btn99 = Button(frame3, width=5, padx=10, pady=5, text="       ", command='시간_동기화', bg="blue", fg="white", font = ("", 7))
-신불산btn99.place(x=0, y=130)
 
 #중구 UI===============================================================================================================
 frame4=tkinter.Frame(window)

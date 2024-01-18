@@ -39,10 +39,19 @@ def 울주_차량번호_입력(차량번호):
 import random
 t= random.choice(range(11111,99999))
 울주_보안문자_No = t
+울주_기간 = 'end'
 
 def 울주_보안문자_입력(보안문자):
   global 울주_보안문자_No
   울주_보안문자_No = 보안문자
+
+def 울주_기간_2박():
+  global 울주_기간
+  울주_기간 = 'down'  
+
+def 울주_기간_3박():
+  global 울주_기간
+  울주_기간 = 'end'  
 
 def 보안문자_자동입력():
   while True :
@@ -170,6 +179,7 @@ def 울주줍줍_Page1_기간1():
 #메인함수(기간)
 #▶▶▶▶▶▶▶▶▶
 def 울주줍줍_Page1_기간():
+  global 울주_기간
   try :
     print("울주줍줍_Page1_기간")
     button = pag.locateCenterOnScreen('./image/12. Ulju/13. jubjub.png', region=(1,1,960,1080), confidence=0.9)
@@ -178,7 +188,7 @@ def 울주줍줍_Page1_기간():
     else :
       pag.click(button.x,button.y)
       #pag.hotkey('down')
-      pag.hotkey('end')
+      pag.hotkey(울주_기간)
       print("기간")
       울주줍줍_Page1_총인원()
   except :
