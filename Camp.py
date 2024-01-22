@@ -115,7 +115,7 @@ def 보안문자():
 울주btn3.place(x=0, y=107)
 울주btn4 = Button(frame2, width=5, padx=10, pady=5, text="This(B)", command=울주_This_B, bg="white", fg="black", font = ("", 7))
 울주btn4.place(x=50, y=107)
-울주btn5 = Button(frame2, width=5, padx=10, pady=5, text="울주줍줍", command=울주_기간_2박, bg="green", fg="white", font = ("", 7))
+울주btn5 = Button(frame2, width=5, padx=10, pady=5, text="울주줍줍", command=울주줍줍_새로고침, bg="green", fg="white", font = ("", 7))
 울주btn5.place(x=100, y=107)
 울주btn5 = Button(frame2, width=5, padx=10, pady=5, text="       ", command="       ", bg="white", fg="black", font = ("", 7))
 울주btn5.place(x=150, y=107)
