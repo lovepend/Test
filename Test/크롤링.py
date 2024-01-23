@@ -4,6 +4,7 @@ import pyautogui as pag
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import keyboard
+import random
 
 def test():
   # Chrome 웹 드라이버 생성
@@ -47,12 +48,16 @@ def test():
 
 
 while True:
+  
   if keyboard.is_pressed("F2"): # F2 누른게 감지되면
     break 
   test()
   if keyboard.is_pressed("F2"): # F2 누른게 감지되면
     break 
-  time.sleep(1800)
+  num = random.randrange(1800,1830)
+  num1 = num/100
+  time.sleep(num1)
+  time.sleep(0.2)
   if keyboard.is_pressed("F2"): # F2 누른게 감지되면
     break 
   
