@@ -119,6 +119,14 @@ def 크롤링_세번쨰():
   global 크롤링_select
   크롤링_select = 3
 
+def 크롤링_첫째달():
+  global 크롤링_mon
+  크롤링_mon = 1
+
+def 크롤링_둘째달():
+  global 크롤링_mon
+  크롤링_mon = 2  
+
 def 크롤링_시작():
   # Chrome 웹 드라이버 생성
   driver = webdriver.Chrome()
@@ -176,6 +184,17 @@ def 크롤링_시작():
   button.click()
   time.sleep(0.2)
   
+  ###########################달력 클릭
+  if 크롤링_mon == 2 :
+    button = driver.find_element(By.XPATH, '//*[@id="calendar"]/div[1]/div[2]/button/span')
+    # 버튼 클릭
+    button.click()
+    time.sleep(1)
+  else :
+    None
+
+
+
   ###########################날짜 예약 클릭
   button = driver.find_element(By.XPATH, date)
   # 버튼 클릭

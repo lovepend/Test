@@ -81,15 +81,19 @@ notebook.add(frame1, text="1.임시")
 크롤링day10.place(x=225, y=35)
 
 #선택
-크롤링sel1 = Button(frame1, width=5, padx=10, pady=5, text="첫번째", command=크롤링_첫번쨰, bg="white", fg="black", font = ("", 7))
+크롤링sel1 = Button(frame1, width=5, padx=10, pady=5, text="첫째달", command=크롤링_첫째달, bg="green", fg="white", font = ("", 7))
 크롤링sel1.place(x=0, y=59)
-크롤링sel2 = Button(frame1, width=5, padx=10, pady=5, text="두번째", command=크롤링_두번쨰, bg="white", fg="black", font = ("", 7))
+크롤링sel2 = Button(frame1, width=5, padx=10, pady=5, text="둘째달", command=크롤링_둘째달, bg="white", fg="black", font = ("", 7))
 크롤링sel2.place(x=50, y=59)
-크롤링sel3 = Button(frame1, width=5, padx=10, pady=5, text="세번째", command=크롤링_세번쨰, bg="white", fg="black", font = ("", 7))
+크롤링sel3 = Button(frame1, width=5, padx=10, pady=5, text="첫번째", command=크롤링_첫번쨰, bg="green", fg="white", font = ("", 7))
 크롤링sel3.place(x=100, y=59)
+크롤링sel4 = Button(frame1, width=5, padx=10, pady=5, text="두번째", command=크롤링_두번쨰, bg="white", fg="black", font = ("", 7))
+크롤링sel4.place(x=150, y=59)
+크롤링sel5 = Button(frame1, width=5, padx=10, pady=5, text="세번째", command=크롤링_세번쨰, bg="white", fg="black", font = ("", 7))
+크롤링sel5.place(x=200, y=59)
 
 #함수
-크롤링btn1 = Button(frame1, width=5, padx=10, pady=5, text="작괘", command=크롤링_작괘, bg="white", fg="black", font = ("", 7))
+크롤링btn1 = Button(frame1, width=5, padx=10, pady=5, text="작괘", command=크롤링_작괘, bg="green", fg="white", font = ("", 7))
 크롤링btn1.place(x=0, y=83)
 크롤링btn2 = Button(frame1, width=5, padx=10, pady=5, text="등억", command=크롤링_등억, bg="white", fg="black", font = ("", 7))
 크롤링btn2.place(x=50, y=83)
