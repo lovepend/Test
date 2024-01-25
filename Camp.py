@@ -16,6 +16,7 @@ from Camp_41_대왕암 import *
 from Camp_21_신불산 import *
 from Camp_51_육부촌 import *
 from kakao_01_api import *
+from Test.크롤링_신불산 import *
 #from Test.Movie_Factory import *
 
 
@@ -40,14 +41,64 @@ window.wm_attributes("-topmost", 1)
 notebook=tkinter.ttk.Notebook(window, width=460, height=165)
 notebook.pack()
 
+
+#크롤링 UI=============================================================================================================== 
 frame1=tkinter.Frame(window)
 notebook.add(frame1, text="1.임시") 
 
-# #스케쥴 진행
-Autobtn1 = Button(frame1, width=5, padx=10, pady=5, text="날짜""선택", command="Movie_Factory_Day", bg="orange", fg="black", font = ("", 7))
-Autobtn1.place(x=0, y=10)
-Autobtn2 = Button(frame1, width=5, padx=10, pady=5, text="시작", command="Movie_Factory", bg="orange", fg="black", font = ("", 7))
-Autobtn2.place(x=50, y=10)
+#로그
+크롤링log1 = Button(frame1, width=5, padx=10, pady=5, text="ID.1", command=크롤링_Log_Id1, bg="orange", fg="black", font = ("", 7))
+크롤링log1.place(x=0, y=10)
+크롤링log2 = Button(frame1, width=5, padx=10, pady=5, text="ID.2", command=크롤링_Log_Id2, bg="orange", fg="black", font = ("", 7))
+크롤링log2.place(x=50, y=10)
+크롤링log3 = Button(frame1, width=5, padx=10, pady=5, text="ID.3", command=크롤링_Log_Id3, bg="orange", fg="black", font = ("", 7))
+크롤링log3.place(x=100, y=10)
+크롤링log4 = Button(frame1, width=5, padx=10, pady=5, text="ID.4", command=크롤링_Log_Id4, bg="orange", fg="black", font = ("", 7))
+크롤링log4.place(x=150, y=10)
+크롤링log5 = Button(frame1, width=5, padx=10, pady=5, text="ID.5", command=크롤링_Log_Guest, bg="orange", fg="black", font = ("", 7))
+크롤링log5.place(x=200, y=10)
+
+#날짜
+크롤링day1 = Button(frame1, width=2, padx=5, pady=5, text="1F", command=크롤링_Day11, bg="white", fg="black", font = ("", 7))
+크롤링day1.place(x=0, y=35)
+크롤링day2 = Button(frame1, width=2, padx=5, pady=5, text="1S", command=크롤링_Day12, bg="white", fg="black", font = ("", 7))
+크롤링day2.place(x=25, y=35)
+크롤링day3 = Button(frame1, width=2, padx=5, pady=5, text="2F", command=크롤링_Day21, bg="white", fg="black", font = ("", 7))
+크롤링day3.place(x=50, y=35)
+크롤링day4 = Button(frame1, width=2, padx=5, pady=5, text="2S", command=크롤링_Day22, bg="white", fg="black", font = ("", 7))
+크롤링day4.place(x=75, y=35)
+크롤링day5 = Button(frame1, width=2, padx=5, pady=5, text="3F", command=크롤링_Day31, bg="white", fg="black", font = ("", 7))
+크롤링day5.place(x=100, y=35)
+크롤링day6 = Button(frame1, width=2, padx=5, pady=5, text="3S", command=크롤링_Day32, bg="white", fg="black", font = ("", 7))
+크롤링day6.place(x=125, y=35)
+크롤링day7 = Button(frame1, width=2, padx=5, pady=5, text="4F", command=크롤링_Day41, bg="white", fg="black", font = ("", 7))
+크롤링day7.place(x=150, y=35)
+크롤링day8 = Button(frame1, width=2, padx=5, pady=5, text="4S", command=크롤링_Day42, bg="white", fg="black", font = ("", 7))
+크롤링day8.place(x=175, y=35)
+크롤링day9 = Button(frame1, width=2, padx=5, pady=5, text="5S", command=크롤링_Day51, bg="white", fg="black", font = ("", 7))
+크롤링day9.place(x=200, y=35)
+크롤링day10 = Button(frame1, width=2, padx=5, pady=5, text="5S", command=크롤링_Day52, bg="white", fg="black", font = ("", 7))
+크롤링day10.place(x=225, y=35)
+
+#선택
+크롤링sel1 = Button(frame1, width=5, padx=10, pady=5, text="첫번째", command=크롤링_첫번쨰, bg="white", fg="black", font = ("", 7))
+크롤링sel1.place(x=0, y=59)
+크롤링sel2 = Button(frame1, width=5, padx=10, pady=5, text="두번째", command=크롤링_두번쨰, bg="white", fg="black", font = ("", 7))
+크롤링sel2.place(x=50, y=59)
+크롤링sel3 = Button(frame1, width=5, padx=10, pady=5, text="세번째", command=크롤링_세번쨰, bg="white", fg="black", font = ("", 7))
+크롤링sel3.place(x=100, y=59)
+
+#함수
+크롤링btn1 = Button(frame1, width=5, padx=10, pady=5, text="작괘", command=크롤링_작괘, bg="white", fg="black", font = ("", 7))
+크롤링btn1.place(x=0, y=83)
+크롤링btn2 = Button(frame1, width=5, padx=10, pady=5, text="등억", command=크롤링_등억, bg="white", fg="black", font = ("", 7))
+크롤링btn2.place(x=50, y=83)
+크롤링btn3 = Button(frame1, width=5, padx=10, pady=5, text="달빛", command=크롤링_달빛, bg="white", fg="black", font = ("", 7))
+크롤링btn3.place(x=100, y=83)
+크롤링btn4 = Button(frame1, width=5, padx=10, pady=5, text="시작", command=크롤링_시작, bg="blue", fg="white", font = ("", 7))
+크롤링btn4.place(x=150, y=83)
+크롤링btn5 = Button(frame1, width=5, padx=10, pady=5, text="    ", command='시간_줍기1', bg="white", fg="black", font = ("", 7))
+크롤링btn5.place(x=200, y=83)
 
 #울주 UI=============================================================================================================== 
 frame2=tkinter.Frame(window)
