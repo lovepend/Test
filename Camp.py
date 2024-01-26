@@ -101,7 +101,7 @@ notebook.add(frame1, text="1.임시")
 크롤링btn3.place(x=100, y=83)
 크롤링btn4 = Button(frame1, width=5, padx=10, pady=5, text="시작", command=크롤링_시작, bg="blue", fg="white", font = ("", 7))
 크롤링btn4.place(x=150, y=83)
-크롤링btn5 = Button(frame1, width=5, padx=10, pady=5, text="    ", command='시간_줍기1', bg="white", fg="black", font = ("", 7))
+크롤링btn5 = Button(frame1, width=5, padx=10, pady=5, text="사이트", command=크롤링_사이트, bg="white", fg="black", font = ("", 7))
 크롤링btn5.place(x=200, y=83)
 
 #울주 UI=============================================================================================================== 

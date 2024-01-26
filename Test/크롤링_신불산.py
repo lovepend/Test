@@ -13,6 +13,8 @@ global 크롤링_id
 global 크롤링_pw
 크롤링_pw = "*Zoavld4fkd" 
 
+크롤링_사이트 = 0  
+
 def 크롤링_Log_Id1():
   global 크롤링_id
   크롤링_id = "pend"
@@ -127,6 +129,12 @@ def 크롤링_둘째달():
   global 크롤링_mon
   크롤링_mon = 2  
 
+#사이트 입력
+#▶▶▶▶▶▶▶▶▶ 
+def 크롤링_사이트():
+  global 크롤링_사이트
+  크롤링_사이트 = 1  
+
 def 크롤링_시작():
   # Chrome 웹 드라이버 생성
   driver = webdriver.Chrome()
@@ -154,14 +162,14 @@ def 크롤링_시작():
   button = driver.find_element(By.XPATH, '//*[@id="login_ulsan"]/img')
   # 버튼 클릭
   button.click()
-  time.sleep(0.2)
+  time.sleep(0.5)
 
   ###########################로그인 ID입력
   button = driver.find_element(By.XPATH, '//*[@id="loginfrm"]/fieldset/label/span/input')
   # 버튼 클릭
   button.click()
   pyperclip.copy(크롤링_id)
-  time.sleep(0.2)
+  time.sleep(0.5)
   pag.hotkey('ctrl','v')
 
   ###########################로그인 PW입력
@@ -169,43 +177,53 @@ def 크롤링_시작():
   # 버튼 클릭
   button.click()
   pyperclip.copy(크롤링_pw)
-  time.sleep(0.2)
+  time.sleep(0.5)
   pag.hotkey('ctrl','v')
 
   ###########################로그인 클릭
   button = driver.find_element(By.XPATH, '//*[@id="loginfrm"]/div/input')
   # 버튼 클릭
   button.click()
-  time.sleep(0.2)
+  time.sleep(0.5)
   
   ###########################온라인 예약 클릭
   button = driver.find_element(By.XPATH, '//*[@id="main_menu"]/li[4]/a')
   # 버튼 클릭
   button.click()
-  time.sleep(0.2)
+  time.sleep(0.5)
   
   ###########################달력 클릭
   if 크롤링_mon == 2 :
     button = driver.find_element(By.XPATH, '//*[@id="calendar"]/div[1]/div[2]/button/span')
     # 버튼 클릭
     button.click()
-    time.sleep(1)
+    time.sleep(2)
   else :
     None
-
-
 
   ###########################날짜 예약 클릭
   button = driver.find_element(By.XPATH, date)
   # 버튼 클릭
   button.click()
-  time.sleep(1)
+  time.sleep(2)
+
+  if 크롤링_사이트 == 1 :
+    ###########################사이트종류 오토 클릭
+    button = driver.find_element(By.XPATH, '//*[@id="priceCode"]')
+    # 버튼 클릭
+    button.click()
+    time.sleep(0.5)
+    pag.hotkey('down')
+    time.sleep(0.5)
+    pag.hotkey('enter')
+    time.sleep(2)
+    
 
   ###########################캠핑장 선택
   button = driver.find_element(By.XPATH, camp)
   # 버튼 클릭
   button.click()
-  time.sleep(1)
+  time.sleep(2)
 
   if 크롤링_select == 2 or 크롤링_select == 3 :
     # ###########################예약가능 사이트만 보기 클릭
