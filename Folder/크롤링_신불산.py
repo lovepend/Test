@@ -41,7 +41,7 @@ def 크롤링_Log_Guest():
   global 크롤링_pw
   크롤링_pw = "j1902217**"
   print(크롤링_id)
-  print(크롤링_pw)
+
 
 
 #날짜 입력
@@ -52,42 +52,52 @@ def 크롤링_Log_Guest():
 def 크롤링_Day11():
   global date
   date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[1]/div[1]/table/tbody/tr/td[6]'
+  print('1F')
 
 def 크롤링_Day12():
   global date
   date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[1]/div[1]/table/tbody/tr/td[7]'
+  print('1S')
 
 def 크롤링_Day21():
   global date
   date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[2]/div[1]/table/tbody/tr/td[6]'
+  print('2F')
 
 def 크롤링_Day22():
   global date
   date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[2]/div[1]/table/tbody/tr/td[7]'
+  print('2S')
 
 def 크롤링_Day31():
   global date
   date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[3]/div[1]/table/tbody/tr/td[6]'
+  print('3F')
 
 def 크롤링_Day32():
   global date
   date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[3]/div[1]/table/tbody/tr/td[7]'
+  print('3S')
 
 def 크롤링_Day41():
   global date
   date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[4]/div[1]/table/tbody/tr/td[6]'
+  print('4F')
 
 def 크롤링_Day42():
   global date
   date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[4]/div[1]/table/tbody/tr/td[7]'
+  print('4S')
 
 def 크롤링_Day51():
   global date
   date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[5]/div[1]/table/tbody/tr/td[6]'
+  print('5F')
 
 def 크롤링_Day52():
   global date
   date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[5]/div[1]/table/tbody/tr/td[7]'
+  print('5S')
 
 #캠핑장 입력
 #▶▶▶▶▶▶▶▶▶                           
@@ -98,45 +108,55 @@ def 크롤링_Day52():
 def 크롤링_작괘():
   global camp
   camp = '//*[@id="divAjaxTable"]/input[1]'
+  print('작괘')
 
 def 크롤링_등억():
   global camp
   camp = '//*[@id="divAjaxTable"]/input[2]'
+  print('등억')
 
 def 크롤링_달빛():
   global camp
   camp = '//*[@id="divAjaxTable"]/input[3]'
+  print('달빛')
 
 #순서 입력
 #▶▶▶▶▶▶▶▶▶ 
 def 크롤링_첫번쨰():
   global 크롤링_select
   크롤링_select = 1
+  print('첫번째 검색')
 
 def 크롤링_두번쨰():
   global 크롤링_select
   크롤링_select = 2
+  print('두번째 검색')
 
 def 크롤링_세번쨰():
   global 크롤링_select
   크롤링_select = 3
+  print('세번째 검색')
 
 def 크롤링_첫째달():
   global 크롤링_mon
   크롤링_mon = 1
+  print('첫째달 선택')
 
 def 크롤링_둘째달():
   global 크롤링_mon
   크롤링_mon = 2  
+  print('둘째달 선택')
 
 #사이트 입력
 #▶▶▶▶▶▶▶▶▶ 
 def 크롤링_사이트():
   global 크롤링_사이트
   크롤링_사이트 = 1  
+  print('오토사이트 선택')
 
 def 크롤링_시작():
   # Chrome 웹 드라이버 생성
+  global driver
   driver = webdriver.Chrome()
   #크롬 사이즈 변경
   #driver.set_window_size(1920, 1080) 
@@ -145,6 +165,7 @@ def 크롤링_시작():
 
 
   # 웹 페이지로 이동
+  
   driver.get("https://camping.ulju.ulsan.kr/")
   time.sleep(0.2)
   #driver.execute_script("document.body.style.zoom='zoom %'")
@@ -185,56 +206,96 @@ def 크롤링_시작():
   # 버튼 클릭
   button.click()
   time.sleep(0.5)
+  온라인예약()
   
-  ###########################온라인 예약 클릭
-  button = driver.find_element(By.XPATH, '//*[@id="main_menu"]/li[4]/a')
-  # 버튼 클릭
-  button.click()
-  time.sleep(0.5)
-  
-  ###########################달력 클릭
-  if 크롤링_mon == 2 :
-    button = driver.find_element(By.XPATH, '//*[@id="calendar"]/div[1]/div[2]/button/span')
+def 온라인예약():
+  try:
+    ###########################온라인 예약 클릭
+    button = driver.find_element(By.XPATH, '//*[@id="main_menu"]/li[4]/a')
+    # 버튼 클릭
+    button.click()
+    time.sleep(3)
+    달력클릭()
+  except:
+    온라인예약()
+
+def 달력클릭():
+  try:
+    ###########################달력 클릭
+    if 크롤링_mon == 2 :
+      button = driver.find_element(By.XPATH, '//*[@id="calendar"]/div[1]/div[2]/button/span')
+      # 버튼 클릭
+      button.click()
+      time.sleep(3)
+      날짜클릭()
+    else :
+      날짜클릭()
+  except:
+    달력클릭()
+
+def 날짜클릭():
+  try:
+    ###########################날짜 예약 클릭
+    button = driver.find_element(By.XPATH, date)
+    # 버튼 클릭
+    button.click()
+    time.sleep(3)
+    사이트클릭()
+  except:
+    날짜클릭()
+
+def 사이트클릭():
+  try:
+    if 크롤링_사이트 == 1 :
+      ###########################사이트종류 오토 클릭
+      button = driver.find_element(By.XPATH, '//*[@id="priceCode"]')
+      # 버튼 클릭
+      button.click()
+      time.sleep(0.5)
+      pag.hotkey('down')
+      time.sleep(0.5)
+      pag.hotkey('enter')
+      time.sleep(2)
+      캠핑장클릭()
+    else:
+      캠핑장클릭()    
+  except:
+    사이트클릭()
+
+def 캠핑장클릭():
+  try:
+    ###########################캠핑장 선택
+    button = driver.find_element(By.XPATH, camp)
     # 버튼 클릭
     button.click()
     time.sleep(2)
-  else :
-    None
+    예약가능()
+  except:
+    캠핑장클릭()
 
-  ###########################날짜 예약 클릭
-  button = driver.find_element(By.XPATH, date)
-  # 버튼 클릭
-  button.click()
-  time.sleep(2)
+def 예약가능():
+  try:
+    if 크롤링_select == 2 or 크롤링_select == 3 :
+      # ###########################예약가능 사이트만 보기 클릭
+      button = driver.find_element(By.XPATH, '//*[@id="divAjaxTable"]/div/label')
+      # 버튼 클릭
+      button.click()
+      time.sleep(0.2)
+      예약하기()
+    else : 
+      예약하기()
+  except:
+    예약가능()
 
-  if 크롤링_사이트 == 1 :
-    ###########################사이트종류 오토 클릭
-    button = driver.find_element(By.XPATH, '//*[@id="priceCode"]')
+def 예약하기():
+  while True:    
+
+    ###########################날짜 예약 클릭
+    button = driver.find_element(By.XPATH, date)
     # 버튼 클릭
     button.click()
-    time.sleep(0.5)
-    pag.hotkey('down')
-    time.sleep(0.5)
-    pag.hotkey('enter')
-    time.sleep(2)
-    
+    time.sleep(3)
 
-  ###########################캠핑장 선택
-  button = driver.find_element(By.XPATH, camp)
-  # 버튼 클릭
-  button.click()
-  time.sleep(2)
-
-  if 크롤링_select == 2 or 크롤링_select == 3 :
-    # ###########################예약가능 사이트만 보기 클릭
-    button = driver.find_element(By.XPATH, '//*[@id="divAjaxTable"]/div/label')
-    # 버튼 클릭
-    button.click()
-    time.sleep(0.2)
-  else : 
-    None
-
-  while True:      
     try:
       if 크롤링_select == 1 :
         ###########################예약신청 클릭                            *맨처음 [1] 두번째[2] 
@@ -251,9 +312,8 @@ def 크롤링_시작():
       button = driver.find_element(By.XPATH, '//*[@id="resModal"]/div[2]/div/div[3]/button[2]')
       # 버튼 클릭
       button.click()
+
     except:
-        ###########################날짜 예약 클릭
-        button = driver.find_element(By.XPATH, date)
-        # 버튼 클릭
-        button.click()
+      예약하기()
+
 
