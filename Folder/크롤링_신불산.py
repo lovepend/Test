@@ -239,7 +239,7 @@ def 날짜클릭():
     button = driver.find_element(By.XPATH, date)
     # 버튼 클릭
     button.click()
-    time.sleep(3)
+    time.sleep(5)
     사이트클릭()
   except:
     날짜클릭()
@@ -294,7 +294,7 @@ def 예약하기():
     button = driver.find_element(By.XPATH, date)
     # 버튼 클릭
     button.click()
-    time.sleep(3)
+    time.sleep(0.2)
 
     try:
       if 크롤링_select == 1 :
