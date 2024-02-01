@@ -127,7 +127,7 @@ def 육부촌_커서선택():
 #함수 설정
 #★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 #★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-
+i = 0
 #자동입력
 #▶▶▶▶▶▶▶▶▶
 def 육부촌_자동입력():
@@ -146,9 +146,22 @@ def 육부촌_Start():
       break
     pag.hotkey('f5')
     #날짜 클릭
-    time.sleep(0.2)
-    pag.click(육부촌_day)
+    time.sleep(0.3)
+    #pag.click(육부촌_day)
+    # 육부촌_검색()
+    # pag.click(x=981, y=380)
+    # 육부촌_검색()
+    # pag.click(x=975, y=404)
+    # 육부촌_검색()
+    # pag.click(x=977, y=420)
+    # 육부촌_검색()
+    # pag.click(x=975, y=441)
+    # 육부촌_검색()
+    # pag.click(x=974, y=464)
+    # 육부촌_검색()
+    pag.click(x=930, y=466)
     육부촌_검색()
+
 
   #메인함수(시작)
 
@@ -197,11 +210,13 @@ def 육부촌_Start2():
 #▶▶▶▶▶▶▶▶▶
 def 육부촌_검색():
   #검색
-  button = pag.locateCenterOnScreen("./image/51. Kyungju/05._1. reservation.png", region = 육부촌_find_range)#, confidence=0.85) 
+  button = pag.locateCenterOnScreen("./image/51. Kyungju/05._1. reservation.png", region = 육부촌_find_range, confidence=0.95) 
   if (button == None) :
     None      
   else : 
-    time.sleep(0.05) 
+    time.sleep(1)
+    pag.click(2960,990)
+    time.sleep(1) 
     pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
     pag.hotkey('enter')
     육부촌_주소()
@@ -243,8 +258,48 @@ def 육부촌_주소():
   pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
   #pag.click(295,263)   
   time.sleep(0.2)
+
+  #화면 사이즈 조정
+  pag.hotkey('ctrl','+')
+  time.sleep(0.1)
+  pag.hotkey('ctrl','+')
+  time.sleep(0.1)
+  pag.hotkey('ctrl','+')
+  time.sleep(0.1)
+  pag.hotkey('ctrl','+')
+  time.sleep(0.1)
+  pag.hotkey('ctrl','+')
+  time.sleep(0.1)
+
+
   #자동입력방지
-  pag.click(982,797)
+  print("자동방지입력")
+  button = pag.locateCenterOnScreen('./image/51. Kyungju/05._93. reservation.png', confidence=0.8)   
+  pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
+  time.sleep(0.1)  
+  #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
+  im1 =  pag.screenshot('captcha.png', region=(button.x-350,button.y-30,150,70 ))
+  #im1 =  pag.screenshot('captcha.png', region=(727,281,200,70))
+  #file = r"C:\Users\LinkTech\Documents\Visual Studio Code\Test\captcha.png"
+  file = r"captcha.png"
+  reader = easyocr.Reader(['en'], gpu=True)
+  #reader = easyocr.Reader(['ko', 'en'], gpu=True, model_storage_directory= 'korean_g2.pth')
+  img = cv2.imread(file)
+  #img = cv2.imread(im1)
+  text = reader.readtext(img, detail=0)
+  input_text = str(text)
+  input_text1 = input_text.strip('[')
+  input_text2 = input_text1.strip(']')
+  input_text3 = input_text2.strip("'")                      
+  print(text)      
+  pyperclip.copy(input_text3)
+  print(input_text3)
+  pyperclip.copy(input_text3)
+  time.sleep(0.1)
+  pag.hotkey('ctrl','v')
+  time.sleep(0.1)
+  pag.hotkey('enter')
+  time.sleep(500)
   #예약신청
   time.sleep(500)
 
@@ -529,3 +584,5 @@ def 육부촌_주소_AI():
 #       time.sleep(500)
 #     except :
 #       None
+      
+

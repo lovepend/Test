@@ -13,7 +13,11 @@ global 크롤링_id
 global 크롤링_pw
 크롤링_pw = "*Zoavld4fkd" 
 
+
+global 크롤링_사이트
 크롤링_사이트 = 0  
+
+크롤링_타임 = 58
 
 def 크롤링_Log_Id1():
   global 크롤링_id
@@ -168,7 +172,7 @@ def 크롤링_시작():
   j: int = 1
   for j in range(4):
       pag.press('-')
-      time.sleep(1)
+      time.sleep(0.05)
   #크롬 브라우저 꺼짐 방지
 
   # 웹 페이지로 이동
@@ -246,7 +250,7 @@ def 날짜클릭():
     button = driver.find_element(By.XPATH, date)
     # 버튼 클릭
     button.click()
-    time.sleep(5)
+    time.sleep(10)
     사이트클릭()
   except:
     날짜클릭()
@@ -275,7 +279,7 @@ def 캠핑장클릭():
     button = driver.find_element(By.XPATH, camp)
     # 버튼 클릭
     button.click()
-    time.sleep(2)
+    time.sleep(10)
     예약가능()
   except:
     캠핑장클릭()
@@ -294,7 +298,18 @@ def 예약가능():
   except:
     예약가능()
 
+
 def 예약하기():
+  while True:
+    global 크롤링_타임
+    tm = time.localtime()
+    if keyboard.is_pressed("F2"):
+      print("종료") 
+      break  
+    if (tm.tm_min == 크롤링_타임 ) : #9시 56분 및 15시 56분 시작
+      예약하기1()
+
+def 예약하기1():
   try:
     while True:    
       ###########################날짜 예약 클릭
@@ -318,9 +333,10 @@ def 예약하기():
         button = driver.find_element(By.XPATH, '//*[@id="resModal"]/div[2]/div/div[3]/button[2]')
         # 버튼 클릭
         button.click()
+        time.sleep
 
       except:
-        예약하기()
+        예약하기1()
   except:
-      예약하기()
+      예약하기1()
 
