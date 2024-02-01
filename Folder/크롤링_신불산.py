@@ -161,13 +161,20 @@ def 크롤링_시작():
   #크롬 사이즈 변경
   #driver.set_window_size(1920, 1080) 
   driver.maximize_window()
+  driver.get("https://camping.ulju.ulsan.kr/")
+  time.sleep(0.2)
+  
+  pag.keyDown('ctrl')
+  j: int = 1
+  for j in range(4):
+      pag.press('-')
+      time.sleep(1)
   #크롬 브라우저 꺼짐 방지
-
 
   # 웹 페이지로 이동
   
-  driver.get("https://camping.ulju.ulsan.kr/")
-  time.sleep(0.2)
+
+
   #driver.execute_script("document.body.style.zoom='zoom %'")
 
   # 웹 페이지에서 작업 수행
@@ -288,32 +295,32 @@ def 예약가능():
     예약가능()
 
 def 예약하기():
-  while True:    
-
-    ###########################날짜 예약 클릭
-    button = driver.find_element(By.XPATH, date)
-    # 버튼 클릭
-    button.click()
-    time.sleep(0.2)
-
-    try:
-      if 크롤링_select == 1 :
-        ###########################예약신청 클릭                            *맨처음 [1] 두번째[2] 
-        button = driver.find_element(By.XPATH, '//*[@id="tableSite"]/tbody/tr[*]/td[*]/button')
-      if 크롤링_select == 2 :
-        button = driver.find_element(By.XPATH, '//*[@id="tableSite"]/tbody/tr[2]/td[*]/button')
-      if 크롤링_select == 3 :
-        button = driver.find_element(By.XPATH, '//*[@id="tableSite"]/tbody/tr[3]/td[*]/button')
+  try:
+    while True:    
+      ###########################날짜 예약 클릭
+      button = driver.find_element(By.XPATH, date)
       # 버튼 클릭
       button.click()
-      time.sleep(0.3)
+      time.sleep(0.2)
+      try:
+        if 크롤링_select == 1 :
+          ###########################예약신청 클릭                            *맨처음 [1] 두번째[2] 
+          button = driver.find_element(By.XPATH, '//*[@id="tableSite"]/tbody/tr[*]/td[*]/button')
+        if 크롤링_select == 2 :
+          button = driver.find_element(By.XPATH, '//*[@id="tableSite"]/tbody/tr[2]/td[*]/button')
+        if 크롤링_select == 3 :
+          button = driver.find_element(By.XPATH, '//*[@id="tableSite"]/tbody/tr[3]/td[*]/button')
+        # 버튼 클릭
+        button.click()
+        time.sleep(0.3)
 
-      ###########################예약신청 클릭
-      button = driver.find_element(By.XPATH, '//*[@id="resModal"]/div[2]/div/div[3]/button[2]')
-      # 버튼 클릭
-      button.click()
+        ###########################예약신청 클릭
+        button = driver.find_element(By.XPATH, '//*[@id="resModal"]/div[2]/div/div[3]/button[2]')
+        # 버튼 클릭
+        button.click()
 
-    except:
+      except:
+        예약하기()
+  except:
       예약하기()
-
 

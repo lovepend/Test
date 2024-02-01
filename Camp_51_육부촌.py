@@ -31,7 +31,11 @@ import threading
 
 #url 입력
 #▶▶▶▶▶▶▶▶▶
-url = 'https://www.gyeongju.go.kr/hwarang/page.do?mnu_uid=3516&csr_date=2024-01-20&cs_uid=29&csr_numday=1&step=write&initYear=2024&initMonth=1&currentDay='
+def 육부촌_Url(input_url):
+  global url
+  #url = 'https://www.gyeongju.go.kr/hwarang/page.do?mnu_uid=3516&csr_date=2024-02-28&cs_uid=29&csr_numday=1&step=write&initYear=2024&initMonth=2&currentDay='
+  url = input_url
+  print(url)
 
 #날짜입력
 #▶▶▶▶▶▶▶▶▶
