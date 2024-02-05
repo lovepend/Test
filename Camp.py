@@ -104,6 +104,9 @@ notebook.add(frame1, text="1.임시")
 크롤링btn5 = Button(frame1, width=5, padx=10, pady=5, text="사이트", command=크롤링_사이트, bg="white", fg="black", font = ("", 7))
 크롤링btn5.place(x=200, y=83)
 
+크롤링btn6 = Button(frame1, width=5, padx=10, pady=5, text="바로시작", command=크롤링_조건, bg="white", fg="black", font = ("", 7))
+크롤링btn6.place(x=0, y=110)
+
 #울주 UI=============================================================================================================== 
 frame2=tkinter.Frame(window)
 notebook.add(frame2, text="2.해양" )
