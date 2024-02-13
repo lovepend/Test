@@ -21,6 +21,7 @@ from Folder.크롤링_신불산 import *
 
 
 
+
 def schedule_job():    
   
   schedule.every().day.at("08:45:00").do(신불산_자동) 
