@@ -109,6 +109,11 @@ def 크롤링_Day52():
   date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[5]/div[1]/table/tbody/tr/td[7]'
   print('5S')
 
+def 크롤링_Day53():
+  global date
+  date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[6]/div[1]/table/tbody/tr/td[1]'
+  print('6S')
+  
 #캠핑장 입력
 #▶▶▶▶▶▶▶▶▶                           
 #//*[@id="divAjaxTable"]/input[1] 작괘

@@ -106,6 +106,8 @@ notebook.add(frame1, text="1.임시")
 
 크롤링btn6 = Button(frame1, width=5, padx=10, pady=5, text="바로시작", command=크롤링_조건, bg="white", fg="black", font = ("", 7))
 크롤링btn6.place(x=0, y=110)
+크롤링btn7 = Button(frame1, width=5, padx=10, pady=5, text="막주일요일", command=크롤링_Day52, bg="white", fg="black", font = ("", 7))
+크롤링btn7.place(x=50, y=110)
 
 #울주 UI=============================================================================================================== 
 frame2=tkinter.Frame(window)
