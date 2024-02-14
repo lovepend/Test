@@ -17,19 +17,22 @@ from Camp_21_신불산 import *
 from Camp_51_육부촌 import *
 from kakao_01_api import *
 from Folder.크롤링_신불산 import *
+from Folder.크롤링_신불산_스케줄 import *
+
 #from Test.Movie_Factory import *
 
 
 
 
 def schedule_job():    
-  
-  schedule.every().day.at("08:45:00").do(신불산_자동) 
-  schedule.every().day.at("09:45:00").do(태화연_자동) 
-  schedule.every().day.at("10:55:00").do(대왕암_자동) 
-  schedule.every().day.at("13:45:00").do(신불산_자동) 
-  schedule.every().day.at("15:45:00").do(태화연_자동) 
-  schedule.every().day.at("14:55:00").do(대왕암_자동) 
+  # schedule.every().day.at("08:45:00").do(신불산_자동) 
+  # schedule.every().day.at("09:45:00").do(태화연_자동) 
+  # schedule.every().day.at("10:55:00").do(대왕암_자동) 
+  # schedule.every().day.at("13:45:00").do(신불산_자동) 
+  # schedule.every().day.at("15:45:00").do(태화연_자동) 
+  # schedule.every().day.at("14:55:00").do(대왕암_자동) 
+  schedule.every().day.at("09:50:00").do(schedule_start) # 42초 
+  schedule.every().day.at("13:50:00").do(schedule_start) # 42초 
   while True:
     schedule.run_pending()
 
@@ -109,6 +112,8 @@ notebook.add(frame1, text="1.임시")
 크롤링btn6.place(x=0, y=110)
 크롤링btn7 = Button(frame1, width=5, padx=10, pady=5, text="막주일요일", command=크롤링_Day52, bg="white", fg="black", font = ("", 7))
 크롤링btn7.place(x=50, y=110)
+크롤링btn8 = Button(frame1, width=5, padx=10, pady=5, text="스케줄", command=schedule_job, bg="white", fg="black", font = ("", 7))
+크롤링btn8.place(x=100, y=110)
 
 #울주 UI=============================================================================================================== 
 frame2=tkinter.Frame(window)
