@@ -32,7 +32,7 @@ def schedule_job():
   # schedule.every().day.at("15:45:00").do(태화연_자동) 
   # schedule.every().day.at("14:55:00").do(대왕암_자동) 
   schedule.every().day.at("09:57:00").do(schedule_start) # 42초 
-  schedule.every().day.at("13:57:00").do(schedule_start) # 42초 
+  schedule.every().day.at("15:57:00").do(schedule_start) # 42초 
   while True:
     schedule.run_pending()
 

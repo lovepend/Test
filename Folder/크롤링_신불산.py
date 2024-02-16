@@ -217,6 +217,7 @@ def 크롤링_시작():
   # 버튼 클릭
   button.click()
   pyperclip.copy(크롤링_id)
+  
   time.sleep(0.5)
   pag.hotkey('ctrl','v')
 

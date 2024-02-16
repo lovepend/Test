@@ -269,6 +269,7 @@ def 예약하기1():
           break   
         예약하기1()
   except:
+    driver.quit()
     print("except2")
     schedule_start()
 
