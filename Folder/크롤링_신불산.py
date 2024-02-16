@@ -370,8 +370,6 @@ def 예약하기1():
         refresh_token()
         kakao_message_you(크롤링_id) 
         time.sleep(60)
-        
-
       except:
         예약하기1()
   except:
