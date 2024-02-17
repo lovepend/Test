@@ -22,8 +22,6 @@ from Folder.크롤링_신불산_스케줄 import *
 #from Test.Movie_Factory import *
 
 
-
-
 def schedule_job():    
   # schedule.every().day.at("08:45:00").do(신불산_자동) 
   # schedule.every().day.at("09:45:00").do(태화연_자동) 
@@ -32,7 +30,8 @@ def schedule_job():
   # schedule.every().day.at("15:45:00").do(태화연_자동) 
   # schedule.every().day.at("14:55:00").do(대왕암_자동) 
   schedule.every().day.at("09:55:00").do(schedule_start) # 42초 
-  schedule.every().day.at("15:57:00").do(schedule_start) # 42초 
+  schedule.every().day.at("15:55:00").do(schedule_start) # 42초 
+  schedule.every().day.at("17:44:00").do(schedule_start) # 42초 
   while True:
     schedule.run_pending()
 

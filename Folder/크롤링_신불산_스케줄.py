@@ -23,15 +23,15 @@ schedule_pw = "*Zoavld4fkd"
 #3월 29일   / schedule_date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[5]/div[1]/table/tbody/tr/td[6]'
 #3월 30일   / schedule_date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[5]/div[1]/table/tbody/tr/td[7]'
 #3월 31일   / schedule_date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[6]/div[1]/table/tbody/tr/td[1]'
-schedule_date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[5]/div[1]/table/tbody/tr/td[7]'
+schedule_date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[5]/div[1]/table/tbody/tr/td[7]' #30일 토
 
 #오토사이트 입력
 #▶▶▶▶▶▶▶▶▶
-schedule_site = 1   # 0이면 그냥 1이면 오토사이트만 특정
+schedule_site = 1   # 0이면 그냥 1이면 오토사이트만 특정 / 오토사이트만
 
 #시간 
 tm = time.localtime()
-schedule_start_time = 19
+schedule_start_time = 59
 schedule_end_time = 35
 #캠핑장 입력
 #▶▶▶▶▶▶▶▶▶                           
@@ -46,7 +46,7 @@ schedule_select = 1 # (1 : 첫번째 / 2 : 두번째  / 3 :  세번째)
 
 #달력 입력 
 #▶▶▶▶▶▶▶▶▶ 
-schedule_month = 1 #  (1 : 첫째달 / 2 : 다음달)
+schedule_month = 2 #  (1 : 첫째달 / 2 : 다음달)
 
 
 
