@@ -11,7 +11,7 @@ from kakao_01_api import *
 
 #아이디 입력
 #▶▶▶▶▶▶▶▶▶
-schedule_id = "pend"
+schedule_id = "lovepend1"
 schedule_pw = "*Zoavld4fkd" 
 
 
@@ -24,8 +24,8 @@ schedule_date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[5]
 
 #시간 
 tm = time.localtime()
-schedule_start_time = 39
-schedule_end_time = 40
+schedule_start_time = 59
+schedule_end_time = 35
 #캠핑장 입력
 #▶▶▶▶▶▶▶▶▶                           
 #//*[@id="divAjaxTable"]/input[1] 작괘
