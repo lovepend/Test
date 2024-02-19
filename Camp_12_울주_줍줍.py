@@ -1,6 +1,6 @@
 from gettext import find
 from tkinter import *
-from kakao_01_api import *
+from Folder.kakao_01_api import *
 import pyautogui as pag
 import win32con
 import win32api
