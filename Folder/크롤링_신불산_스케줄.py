@@ -6,7 +6,7 @@ import keyboard
 import random
 import time
 import schedule
-from kakao_01_api import *
+
 
 
 #아이디 입력
@@ -209,8 +209,6 @@ def 예약하기1():
         button = driver.find_element(By.XPATH, '//*[@id="resModal"]/div[2]/div/div[3]/button[2]')
         # 버튼 클릭
         button.click()
-        refresh_token()
-        kakao_message_you(schedule_id) 
         time.sleep(60)
       except:
         예약하기1()

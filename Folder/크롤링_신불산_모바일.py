@@ -6,7 +6,6 @@ import keyboard
 import random
 import time
 import schedule
-from kakao_01_api import *
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
@@ -208,8 +207,6 @@ def 예약하기1():
         button.click()
         print('버튼4')
         time.sleep(60)
-        refresh_token()
-        kakao_message_you(schedule_mobile_id + schedule_mobile_camp ) 
         print('끝')
       except:
         print('except1')
