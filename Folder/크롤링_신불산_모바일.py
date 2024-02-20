@@ -76,15 +76,16 @@ def schedule_mobile_start():
   user_agent = "Mozilla/5.0 (Linux; Android 12; SM-S9060) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.61 Mobile Safari/537.36"
   options.add_argument(f"user-agent={user_agent}")
 
-  options.add_experimental_option("detach", True)  # 화면이 꺼지지 않고 유지
+  #options.add_experimental_option("detach", True)  # 화면이 꺼지지 않고 유지
 
   # options.add_argument("--start-maximized")  # 최대 크기로 시작
 
-  service = Service(ChromeDriverManager().install())
+  #service = Service(ChromeDriverManager().install())
 
   global driver
 
-  driver = webdriver.Chrome(service=service, options=options)
+  driver = webdriver.Chrome(options=options)
+  #driver = webdriver.Chrome(service=service, options=options)
 
   driver.get("https://camping.ulju.ulsan.kr/")
 
