@@ -32,7 +32,7 @@ def schedule_job():
   # schedule.every().day.at("14:55:00").do(대왕암_자동) 
   schedule.every().day.at("09:50:00").do(schedule_mobile_start) # 42초 
   schedule.every().day.at("13:50:00").do(schedule_mobile_start) # 42초 
-  #schedule.every().day.at("21:52:30").do(schedule_mobile_start) # 42초 ##
+  schedule.every().day.at("23:38:00").do(schedule_mobile_start) # 42초 ##
   while True:
     schedule.run_pending()
 
@@ -49,6 +49,29 @@ notebook.pack()
 #크롤링 UI=============================================================================================================== 
 frame1=tkinter.Frame(window)
 notebook.add(frame1, text="1.임시") 
+
+lable11=Label(frame1, text="분", font = ("", 7))
+lable11.place(x=25, y=140)
+    
+entry11 = Entry(frame1, width=10, font = ("", 7))
+entry11.place(x=50, y=140)
+entry11.insert(0,"59")
+
+lable12=Label(frame1, text="초", font = ("", 7))
+lable12.place(x=125, y=140)
+    
+entry12 = Entry(frame1, width=10, font = ("", 7))
+entry12.place(x=150, y=140)
+entry12.insert(0,"50")
+
+def 크롤링_시간_실시간():
+  크롤링_min = entry11.get()
+  크롤링_sec = entry12.get()
+  #시간입력_시작(신불산_hour,신불산_min,신불산_sec)
+  print(크롤링_min,크롤링_sec)
+  크롤링_타임(크롤링_min,크롤링_sec)
+  크롤링_모바일_타임(크롤링_min,크롤링_sec)
+
 
 #로그
 크롤링log1 = Button(frame1, width=5, padx=10, pady=5, text="ID.1", command=크롤링_Log_Id1, bg="orange", fg="black", font = ("", 7))
@@ -116,6 +139,14 @@ notebook.add(frame1, text="1.임시")
 크롤링btn8.place(x=100, y=110)
 크롤링btn9 = Button(frame1, width=5, padx=10, pady=5, text="M_스케줄", command=schedule_job, bg="white", fg="black", font = ("", 7))
 크롤링btn9.place(x=150, y=110)
+크롤링btn9 = Button(frame1, width=5, padx=10, pady=5, text="M_스케줄", command=크롤링_시간_실시간, bg="white", fg="black", font = ("", 7))
+크롤링btn9.place(x=200, y=110)
+
+
+
+
+
+
 
 #울주 UI=============================================================================================================== 
 frame2=tkinter.Frame(window)

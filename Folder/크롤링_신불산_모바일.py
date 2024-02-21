@@ -11,7 +11,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
-time_sleep = 10
+time_sleep = 3
 
 #아이디 입력
 #▶▶▶▶▶▶▶▶▶
@@ -27,16 +27,19 @@ schedule_mobile_date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div
 
 #시간 
 tm = time.localtime()
-schedule_mobile_start_time_min = 59
-schedule_mobile_start_time_sec = 30
-schedule_mobile_end_time_min = 35
+
+def 크롤링_모바일_타임(크롤링_min,크롤링_sec):
+  global schedule_mobile_start_time_min, schedule_mobile_start_time_sec, schedule_mobile_end_time_min
+  schedule_mobile_start_time_min = int(크롤링_min)
+  schedule_mobile_start_time_sec = int(크롤링_sec)
+  schedule_mobile_end_time_min = 35
 
 #캠핑장 입력
 #▶▶▶▶▶▶▶▶▶                           
 #//*[@id="divAjaxTable"]/input[1] 작괘
 #//*[@id="divAjaxTable"]/input[2] 등억
 #//*[@id="divAjaxTable"]/input[3] 달빛
-schedule_mobile_camp = '//*[@id="divAjaxTable"]/input[3]'
+schedule_mobile_camp = '//*[@id="divAjaxTable"]/input[2]'
 
 #검색범위 입력 
 #▶▶▶▶▶▶▶▶▶ 
@@ -174,13 +177,14 @@ def schedule_mobile_start():
 def 예약하기():
   print('예약하기')
   while True :
-    global schedule_mobile_start_time_min
-    global schedule_mobile_start_time_sec
+    global schedule_mobile_start_time_min, schedule_mobile_start_time_sec
+    print(schedule_mobile_start_time_min,schedule_mobile_start_time_sec)
     tm = time.localtime()
     if keyboard.is_pressed("F2"):
       print("종료") 
       break  
     if (tm.tm_min == schedule_mobile_start_time_min and tm.tm_sec == schedule_mobile_start_time_sec ) : #9시 56분 및 15시 56분 시작
+      print('예약하기11111')
       예약하기1()
     
 def 예약하기1():  
@@ -214,10 +218,10 @@ def 예약하기1():
         예약하기1()
   except:
     print('땡1')
-    driver.quit()
-    print('땡2')
-    time.sleep(2)
-    print('except2')
-    schedule_mobile_start()
-
+    time.sleep(5000)
+    # driver.quit()
+    # print('땡2')
+    # time.sleep(2)
+    # print('except2')
+    # schedule_mobile_start()
 

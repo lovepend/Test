@@ -24,8 +24,11 @@ schedule_date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[5]
 
 #시간 
 tm = time.localtime()
-schedule_start_time = 59
-schedule_end_time = 35
+
+def 크롤링_스케줄_타임(크롤링_min,크롤링_sec):
+  global schedule_start_time, schedule_end_time
+  schedule_start_time = int(크롤링_min)
+  schedule_end_time = int(크롤링_sec)
 #캠핑장 입력
 #▶▶▶▶▶▶▶▶▶                           
 #//*[@id="divAjaxTable"]/input[1] 작괘

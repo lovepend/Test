@@ -18,9 +18,10 @@ global 크롤링_pw
 global 크롤링_사이트
 크롤링_사이트 = 0  
 
-크롤링_타임 = 59
-
-크롤링_실시간 = 0
+def 크롤링_타임(크롤링_min,크롤링_sec):
+  global 크롤링_타임_min, 크롤링_타임_sec
+  크롤링_타임_min = int(크롤링_min)
+  크롤링_타임_sec = int(크롤링_sec)
 
 def 크롤링_조건():
   global 크롤링_실시간
