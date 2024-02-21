@@ -11,7 +11,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
-time_sleep = 3
+time_sleep = 10
 
 #아이디 입력
 #▶▶▶▶▶▶▶▶▶
