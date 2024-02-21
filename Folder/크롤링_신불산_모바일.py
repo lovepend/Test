@@ -219,9 +219,5 @@ def 예약하기1():
   except:
     print('땡1')
     time.sleep(5000)
-    # driver.quit()
-    # print('땡2')
-    # time.sleep(2)
-    # print('except2')
-    # schedule_mobile_start()
-
+    exit()
+   

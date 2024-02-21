@@ -32,7 +32,7 @@ def schedule_job():
   # schedule.every().day.at("14:55:00").do(대왕암_자동) 
   schedule.every().day.at("09:50:00").do(schedule_mobile_start) # 42초 
   schedule.every().day.at("13:50:00").do(schedule_mobile_start) # 42초 
-  schedule.every().day.at("23:38:00").do(schedule_mobile_start) # 42초 ##
+  #schedule.every().day.at("00:15:00").do(schedule_mobile_start) # 42초 ##
   while True:
     schedule.run_pending()
 
@@ -135,11 +135,11 @@ def 크롤링_시간_실시간():
 크롤링btn6.place(x=0, y=110)
 크롤링btn7 = Button(frame1, width=5, padx=10, pady=5, text="막주일요일", command=크롤링_Day52, bg="white", fg="black", font = ("", 7))
 크롤링btn7.place(x=50, y=110)
-크롤링btn8 = Button(frame1, width=5, padx=10, pady=5, text="P_스케줄", command=schedule_job, bg="white", fg="black", font = ("", 7))
+크롤링btn8 = Button(frame1, width=5, padx=10, pady=5, text="Time", command=크롤링_시간_실시간, bg="blue", fg="white", font = ("", 7))
 크롤링btn8.place(x=100, y=110)
-크롤링btn9 = Button(frame1, width=5, padx=10, pady=5, text="M_스케줄", command=schedule_job, bg="white", fg="black", font = ("", 7))
+크롤링btn9 = Button(frame1, width=5, padx=10, pady=5, text="p_스케줄", command=schedule_job, bg="white", fg="black", font = ("", 7))
 크롤링btn9.place(x=150, y=110)
-크롤링btn9 = Button(frame1, width=5, padx=10, pady=5, text="M_스케줄", command=크롤링_시간_실시간, bg="white", fg="black", font = ("", 7))
+크롤링btn9 = Button(frame1, width=5, padx=10, pady=5, text="M_스케줄", command=schedule_job, bg="white", fg="black", font = ("", 7))
 크롤링btn9.place(x=200, y=110)
 
 
