@@ -295,7 +295,7 @@ def 예약하기_신청():
         button = driver.find_element(By.XPATH, Sinbul_select)
         time.sleep(0.02)
         button.click()
-        time.sleep(0.07)#time.sleep(0.07)
+        time.sleep(0.08)#time.sleep(0.07)###포인트 ㅇㅕ기조정
         # ########################### 우측 하단 예약신청 클릭 
         # print('예약신청 클릭')                            
         # button = driver.find_element(By.XPATH, Sinbul_select)
