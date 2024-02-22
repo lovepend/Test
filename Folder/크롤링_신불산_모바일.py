@@ -10,6 +10,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+import sqlite3
 
 time_sleep = 10
 
@@ -39,7 +40,7 @@ def 크롤링_모바일_타임(크롤링_min,크롤링_sec):
 #//*[@id="divAjaxTable"]/input[1] 작괘
 #//*[@id="divAjaxTable"]/input[2] 등억
 #//*[@id="divAjaxTable"]/input[3] 달빛
-schedule_mobile_camp = '//*[@id="divAjaxTable"]/input[2]'
+schedule_mobile_camp = '//*[@id="divAjaxTable"]/input[3]'
 
 #검색범위 입력 
 #▶▶▶▶▶▶▶▶▶ 
@@ -184,7 +185,12 @@ def 예약하기():
       print("종료") 
       break  
     if (tm.tm_min == schedule_mobile_start_time_min and tm.tm_sec == schedule_mobile_start_time_sec ) : #9시 56분 및 15시 56분 시작
-      print('예약하기11111')
+      
+      ###########################날짜 예약 클릭
+      button = driver.find_element(By.XPATH,schedule_mobile_date)
+      # 버튼 클릭
+      button.click()
+      time.sleep(0.05)
       예약하기1()
     
 def 예약하기1():  
@@ -192,10 +198,10 @@ def 예약하기1():
     while True:  
       print('예약하기1')  
       ###########################날짜 예약 클릭
-      button = driver.find_element(By.XPATH,schedule_mobile_date)
-      # 버튼 클릭
-      button.click()
-      time.sleep(0.05)
+      # button = driver.find_element(By.XPATH,schedule_mobile_date)
+      # # 버튼 클릭
+      # button.click()
+      # time.sleep(0.05)
       try:
         tm = time.localtime()
         if (tm.tm_min == schedule_mobile_end_time_min ) : #9시 56분 및 15시 56분 시작
