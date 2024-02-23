@@ -62,7 +62,7 @@ lable12.place(x=125, y=140)
     
 entry12 = Entry(frame1, width=10, font = ("", 7))
 entry12.place(x=150, y=140)
-entry12.insert(0,"50")
+entry12.insert(0,"30")
 
 
 #시간 입력
