@@ -10,7 +10,7 @@ import time
 global tm
 tm = time.localtime()
 refresh_time_click = 1
-refresh_time_page = 2
+refresh_time_page = 3
 
 #아이디 입력
 #▶▶▶▶▶▶▶▶▶
@@ -280,7 +280,7 @@ def schedule_PC_start():
       예약하기_신청()
     if (Sinbul_live == 2 ) :
       print("실시간 시작") 
-      예약하기_신청()
+      예약하기_신청1()
 
 def 예약하기_신청():
   try:
@@ -320,4 +320,43 @@ def 예약하기_신청():
       print('except2')
       time.sleep(60)
       
+def 예약하기_신청1():
+  try:
+    while True:    
+      global Sinbul_date
+      global Sinbul_select
+      ###########################날짜 예약 클릭
+      button = driver.find_element(By.XPATH, Sinbul_date)
+      # 버튼 클릭
+      button.click()
+      time.sleep(0.1)
+      try:
+        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+          time.sleep(3600)
+          break
+        ########################### 우측 하단 예약신청 클릭 
+        print('예약신청 클릭')                           
+        button = driver.find_element(By.XPATH, Sinbul_select)
+        time.sleep(0.02)
+        button.click()
+        time.sleep(0.08)#time.sleep(0.07)###포인트 ㅇㅕ기조정
+        # ########################### 우측 하단 예약신청 클릭 
+        # print('예약신청 클릭')                            
+        # button = driver.find_element(By.XPATH, Sinbul_select)
+        # button.click()
+        # time.sleep(0.1)
+        ###########################예약신청 클릭
+        print('예약확인 클릭')
+        button = driver.find_element(By.XPATH, '//*[@id="resModal"]/div[2]/div/div[3]/button[2]')
+        time.sleep(0.05)#time.sleep(0.05)
+        button.click()
+        # print('예약확인 클릭')
+        # ###########################예약신청 클릭
+        # button = driver.find_element(By.XPATH, '//*[@id="resModal"]/div[2]/div/div[3]/button[2]')
+        # button.click()
+        time.sleep(60)
+      except:
+        예약하기_신청1()
+  except:
+      예약하기_신청1()
 
