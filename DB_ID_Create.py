@@ -40,7 +40,9 @@ cursor = con.cursor()
 # ##################################################
 
 # 데이터 조회 SQL 
-select_sql = "SELECT * FROM users ;"
+# select_sql = "SELECT spw FROM users WHERE sid='parkmc7' ;"
+select_sql = "SELECT * FROM users;"
+
 # 데이터 조회
 cursor.execute(select_sql)
 
@@ -51,6 +53,6 @@ rows = cursor.fetchall()
 for row in rows:
     print(row)
 
-cursor.execute("SELECT * FROM users")
-rows = cursor.fetchall()
-print(*rows, sep="\n")
+# cursor.execute("SELECT * FROM users")
+# rows = cursor.fetchall()
+# print(*rows, sep="\n")
