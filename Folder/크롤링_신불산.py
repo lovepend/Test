@@ -372,7 +372,7 @@ def 예약하기_신청1():
         # ###########################예약신청 클릭
         # button = driver.find_element(By.XPATH, '//*[@id="resModal"]/div[2]/div/div[3]/button[2]')
         # button.click()
-        time.sleep(60)
+        time.sleep(3600)
       except:
         예약하기_신청1()
   except:
