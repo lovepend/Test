@@ -262,6 +262,19 @@ def schedule_PC_start():
   button.click()
   time.sleep(refresh_time_page)
 
+
+  ###########################사이트종류 오토 클릭
+  button = driver.find_element(By.XPATH, '//*[@id="priceCode"]')
+  # 버튼 클릭
+  button.click()
+  time.sleep(refresh_time_click)
+  pag.hotkey('down')
+  time.sleep(refresh_time_click)
+  pag.hotkey('enter')
+  time.sleep(refresh_time_page)
+
+
+
   ###########################예약하기
   print('예약하기')
   while True:
@@ -285,6 +298,7 @@ def schedule_PC_start():
 def 예약하기_신청():
   try:
     while True:    
+
       try:
         tm = time.localtime()
         if (tm.tm_min == 35 ) : #9시 56분 및 15시 56분 시작
@@ -314,11 +328,15 @@ def 예약하기_신청():
         print(str(Sinbul_time_min_tr) + '분' + str(Sinbul_time_sec_tr) + '초' + str(Sinbul_camp))
       except:
         print('except1')
+        tm = time.localtime()
+        print(tm.tm_min,tm.tm_sec)
         예약하기_신청()
   except:
       print(str(Sinbul_time_min_tr) + '분' + str(Sinbul_time_sec_tr) + '초' + str(Sinbul_camp))
       print('except2')
-      time.sleep(60)
+      tm = time.localtime()
+      print(tm.tm_min,tm.tm_sec)
+      #time.sleep(60)
       
 def 예약하기_신청1():
   try:
@@ -327,6 +345,7 @@ def 예약하기_신청1():
       global Sinbul_select
       ###########################날짜 예약 클릭
       button = driver.find_element(By.XPATH, Sinbul_date)
+      #button = driver.find_element(By.XPATH, '//*[@id="divAjaxTable"]/div/label') #예약가능 사이트만 보기 클릭
       # 버튼 클릭
       button.click()
       time.sleep(0.1)
@@ -358,5 +377,7 @@ def 예약하기_신청1():
       except:
         예약하기_신청1()
   except:
+
       예약하기_신청1()
+
 
