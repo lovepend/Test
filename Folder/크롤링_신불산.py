@@ -298,7 +298,6 @@ def schedule_PC_start():
 def 예약하기_신청():
   try:
     while True:    
-
       try:
         tm = time.localtime()
         if (tm.tm_min == 35 ) : #9시 56분 및 15시 56분 시작
