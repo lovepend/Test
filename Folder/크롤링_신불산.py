@@ -327,14 +327,10 @@ def 예약하기_신청():
         print(str(Sinbul_time_min_tr) + '분' + str(Sinbul_time_sec_tr) + '초' + str(Sinbul_camp))
       except:
         print('except1')
-        tm = time.localtime()
-        print(tm.tm_min,tm.tm_sec)
         예약하기_신청()
   except:
-      print(str(Sinbul_time_min_tr) + '분' + str(Sinbul_time_sec_tr) + '초' + str(Sinbul_camp))
       print('except2')
-      tm = time.localtime()
-      print(tm.tm_min,tm.tm_sec)
+      예약하기_신청()
       #time.sleep(60)
       
 def 예약하기_신청1():
