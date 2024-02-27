@@ -326,11 +326,13 @@ def 예약하기_신청():
         time.sleep(60)
         print(str(Sinbul_time_min_tr) + '분' + str(Sinbul_time_sec_tr) + '초' + str(Sinbul_camp))
       except:
-        print('except1')
-        예약하기_신청()
+        pass
+        #print('except1')        
+        #예약하기_신청()
   except:
-      print('except2')
-      예약하기_신청()
+      pass
+      #print('except2')
+      #예약하기_신청()
       #time.sleep(60)
       
 def 예약하기_신청1():
@@ -370,9 +372,10 @@ def 예약하기_신청1():
         # button.click()
         time.sleep(3600)
       except:
-        예약하기_신청1()
+        pass
+        #예약하기_신청1()
   except:
-
-      예약하기_신청1()
+    pass
+      #예약하기_신청1()
 
 

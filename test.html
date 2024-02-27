@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+
+  <div class="alert-box" id="alert">
+    <p id="title"> Alert 박스 </p>
+    <button onclick="알림창1열기('','none')">버튼1</button></div>
+
+    <button onclick="알림창1열기('아이디 입력하세요','block')">버튼2</button>
+    <button onclick="알림창1열기('비번 입력하세요','block')">버튼2</button>
+  
+    
+  
+  
+
+
+
+  <script>
+
+    function 알림창1열기(massage,input){
+      document.getElementById('title').innerHTML = massage;
+      document.getElementById('alert').style.display = input;
+    }
+
+
+
+
+  </script>
+  
+</body>
+</html>

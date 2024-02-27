@@ -28,27 +28,10 @@ import random
 #150 %
 
 
-global Click
-Click = 938,391
+num = random.randrange(20,40)
+num1 = num/100
+time.sleep(num1)
 
-global Click1
-Click1 = 845,474
-
-global Click2
-Click2 = 845,495
-
-global Click3
-Click3 = 845,517
-
-
-def Test_Click():
-    while True:
-        if keyboard.is_pressed("F2"):
-            global Click
-            Click  = pag.position()
-            print(Click)
-            time.sleep(0.5)
-            break 
 
 def Test_Click1():
     while True:
@@ -77,42 +60,69 @@ def Test_Click3():
             time.sleep(0.5)
             break 
         
+def Test_Click4():
+    while True:
+        if keyboard.is_pressed("F2"):
+            global Click4
+            Click4  = pag.position()
+            print(Click4)
+            time.sleep(0.5)
+            break
+
+def Test_Click5():
+    while True:
+        if keyboard.is_pressed("F2"):
+            global Click5
+            Click5  = pag.position()
+            print(Click5)
+            time.sleep(0.5)
+            break
+
+def Test_Click6():
+    while True:
+        if keyboard.is_pressed("F2"):
+            global Click6
+            Click6  = pag.position()
+            print(Click6)
+            time.sleep(0.5)
+            break
+
+
+def Test_Click7():
+    while True:
+        if keyboard.is_pressed("F2"):
+            global Click7
+            Click7  = pag.position()
+            print(Click7)
+            time.sleep(0.5)
+            break 
 
 def 티켓예매():
-  while True:
-    if keyboard.is_pressed("F2") : # F2 누른게 감지되면
-      print("키 중지")
-      break
-    pag.click(Click)
-    time.sleep(0.2)
-    pag.click(Click1)
-    time.sleep(0.2)
-    #검색()
-    time.sleep(0.2)
-    if keyboard.is_pressed("F2") : # F2 누른게 감지되면
-      print("키 중지")
-      break
-    pag.click(Click2)
-    time.sleep(0.2)
-    #검색1()
-    time.sleep(0.2)
-    if keyboard.is_pressed("F2") : # F2 누른게 감지되면
-      print("키 중지")
-      break
-    pag.click(Click3)
-    time.sleep(0.2)
-    #검색2()
-    time.sleep(0.2)
-    매크로 = pag.locateCenterOnScreen('./image/99. Ulsan_Foot/03. 1.png', confidence=1)
-    if (매크로 == None) :
-      None 
-    else :
+  try:
+    pag.click(Click1)#구역선택
+    time.sleep(num1)
+    pag.click(Click2)#직접선택
+    time.sleep(num1)
+    while True:
+      if keyboard.is_pressed("F2") : # F2 누른게 감지되면
+        print("키 중지")
+        break
+      pag.click(Click3)#새로그침
+      time.sleep(num1)
       time.sleep(0.2)
-      pag.click(매크로.x,매크로.y)
-      time.sleep(5)
-      pag.click(958,599)
-      time.sleep(2)
-      pag.click(874,578)
+      검색1()
+      매크로 = pag.locateCenterOnScreen('./image/99. Ulsan_Foot/03. 1.png', confidence=0.7)
+      if (매크로 == None) :
+        None 
+      else :
+        time.sleep(0.2)
+        pag.click(매크로.x,매크로.y)
+        time.sleep(2)
+        pag.hotkey('f5')
+        time.sleep(2)
+        티켓예매()
+  except:
+     pass
 
 
     
@@ -164,10 +174,10 @@ def 직접선택():
   
 
 
-Test_Click()
-Test_Click1()
-Test_Click2()
-Test_Click3()
+
+Test_Click1() # 사이트 클릭
+Test_Click2() # 직접선택
+Test_Click3() # 좌석도 새로고침
 티켓예매()   
 
 #소이산 예약
