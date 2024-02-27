@@ -30,8 +30,8 @@ def schedule_job():
   # schedule.every().day.at("13:45:00").do(신불산_자동) 
   # schedule.every().day.at("15:45:00").do(태화연_자동) 
   # schedule.every().day.at("14:55:00").do(대왕암_자동) 
-  schedule.every().day.at("09:50:00").do(schedule_PC_start) # 42초 
-  schedule.every().day.at("13:50:00").do(schedule_PC_start) # 42초 
+  schedule.every().day.at("09:52:00").do(schedule_PC_start) # 42초 
+  schedule.every().day.at("13:52:00").do(schedule_PC_start) # 42초 
   #schedule.every().day.at("20:30:30").do(schedule_PC_start) # 42초 ##
   while True:
     schedule.run_pending()
@@ -145,16 +145,10 @@ Sinbulbtn7 = Button(frame1, width=5, padx=10, pady=5, text="31일", command=Sinb
 Sinbulbtn7.place(x=50, y=110)
 Sinbulbtn8 = Button(frame1, width=5, padx=10, pady=5, text="실시간", command=Sinbul_라이브, bg="blue", fg="white", font = ("", 7))
 Sinbulbtn8.place(x=100, y=110)
-Sinbulbtn9 = Button(frame1, width=5, padx=10, pady=5, text="PC시작", command=schedule_job, bg="white", fg="black", font = ("", 7))
+Sinbulbtn9 = Button(frame1, width=5, padx=10, pady=5, text="실시간T", command=Sinbul_라이브_시간, bg="blue", fg="white", font = ("", 7))
 Sinbulbtn9.place(x=150, y=110)
-Sinbulbtn9 = Button(frame1, width=5, padx=10, pady=5, text="M시작", command=schedule_job, bg="blue", fg="white", font = ("", 7))
+Sinbulbtn9 = Button(frame1, width=5, padx=10, pady=5, text="스케줄", command=schedule_job, bg="yellow", fg="black", font = ("", 7))
 Sinbulbtn9.place(x=200, y=110)
-
-
-
-
-
-
 
 
 #울주 UI=============================================================================================================== 

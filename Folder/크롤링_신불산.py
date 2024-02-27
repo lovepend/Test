@@ -10,7 +10,7 @@ import time
 global tm
 tm = time.localtime()
 refresh_time_click = 1
-refresh_time_page = 5
+refresh_time_page = 10
 
 #아이디 입력
 #▶▶▶▶▶▶▶▶▶
@@ -162,6 +162,11 @@ def Sinbul_라이브():
   Sinbul_live = 2
   schedule_PC_start()
 
+def Sinbul_라이브_시간():
+  global Sinbul_live
+  Sinbul_live = 3
+  schedule_PC_start()
+
 #시작시간 입력
 #▶▶▶▶▶▶▶▶▶
 def Sinbul_Time_변수(Sinbul_time_min,Sinbul_time_sec):
@@ -294,6 +299,9 @@ def schedule_PC_start():
     if (Sinbul_live == 2 ) :
       print("실시간 시작") 
       예약하기_신청1()
+    if (Sinbul_live == 3 ) :
+      print("실시간 시작") 
+      예약하기_신청()
 
 def 예약하기_신청():
   try:
