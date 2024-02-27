@@ -3,15 +3,6 @@ import time
 import keyboard
 import random
 
-def test111():
-  while True:
-    if keyboard.is_pressed("F2"): 
-      break
-    pag.click(685,422)
-
-test111()
-
-
 while True:
     if keyboard.is_pressed("F2"): # F2 누른게 감지되면
         t1 = pag.position() # 위치 뽑아서 저장
