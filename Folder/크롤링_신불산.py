@@ -10,7 +10,7 @@ import time
 global tm
 tm = time.localtime()
 refresh_time_click = 1
-refresh_time_page = 3
+refresh_time_page = 5
 
 #아이디 입력
 #▶▶▶▶▶▶▶▶▶
