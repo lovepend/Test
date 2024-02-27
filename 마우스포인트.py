@@ -3,7 +3,13 @@ import time
 import keyboard
 import random
 
+def test111():
+  while True:
+    if keyboard.is_pressed("F2"): 
+      break
+    pag.click(685,422)
 
+test111()
 
 
 while True:

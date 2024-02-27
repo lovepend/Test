@@ -110,21 +110,24 @@ def 티켓예매():
       pag.click(Click3)#새로그침
       time.sleep(num1)
       time.sleep(0.2)
-      검색1()
-      매크로 = pag.locateCenterOnScreen('./image/99. Ulsan_Foot/03. 1.png', confidence=0.7)
-      if (매크로 == None) :
+      검색()
+      button = pag.locateCenterOnScreen('./image/99. Ulsan_Foot/03. 1.png', confidence=0.7)
+      if (button == None) :
         None 
       else :
         time.sleep(0.2)
-        pag.click(매크로.x,매크로.y)
+        pag.click(button.x,button.y)
         time.sleep(2)
         pag.hotkey('f5')
         time.sleep(2)
         티켓예매()
+      button1 = pag.locateCenterOnScreen('./image/99. Ulsan_Foot/03. 2.png', confidence=0.7)  
+      if (button1 == None) :
+        None 
+      else :
+        티켓예매()
   except:
      pass
-
-
     
 def 검색():
   #좌석찾기
@@ -136,30 +139,6 @@ def 검색():
     pag.click(button.x-1.5,button.y)
     time.sleep(0.5)
     pag.click(button.x+4,button.y)
-    time.sleep(0.2)
-    직접선택()
-
-def 검색1():
-  #좌석찾기
-  button1 = pag.locateCenterOnScreen('./image/99. Ulsan_Foot/01. 1.png', confidence=1)
-  if (button1 == None) :
-    None 
-  else :
-    pag.click(button1.x-1.5,button1.y)
-    time.sleep(0.5)
-    pag.click(button1.x+4,button1.y)
-    time.sleep(0.2)
-    직접선택()
-    
-def 검색2():
-  #좌석찾기
-  button2 = pag.locateCenterOnScreen('./image/99. Ulsan_Foot/01. 1.png', confidence=0.99)
-  if (button2 == None) :
-    None 
-  else :
-    pag.click(button2.x-1.5,button2.y)
-    time.sleep(0.5)
-    pag.click(button2.x+4,button2.y)
     time.sleep(0.2)
     직접선택()
 
