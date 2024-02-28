@@ -51,19 +51,18 @@ frame1=tkinter.Frame(window)
 notebook.add(frame1, text="1.임시") 
 
 lable11=Label(frame1, text="분", font = ("", 7))
-lable11.place(x=25, y=140)
+lable11.place(x=0, y=140)
     
 entry11 = Entry(frame1, width=10, font = ("", 7))
-entry11.place(x=50, y=140)
+entry11.place(x=15, y=140)
 entry11.insert(0,"59")
 
 lable12=Label(frame1, text="초", font = ("", 7))
-lable12.place(x=125, y=140)
+lable12.place(x=50, y=140)
     
 entry12 = Entry(frame1, width=10, font = ("", 7))
-entry12.place(x=150, y=140)
+entry12.place(x=65, y=140)
 entry12.insert(0,"30")
-
 
 #시간 입력
 #▶▶▶▶▶▶▶▶▶
@@ -76,9 +75,6 @@ def Sinbul_Time():
   Sinbul_time_sec = int(Sinbul_sec)
   print(Sinbul_time_min,Sinbul_time_sec)
   Sinbul_Time_변수(Sinbul_time_min,Sinbul_time_sec)
-
-
-
 
 #로그
 Sinbullog1 = Button(frame1, width=5, padx=10, pady=5, text="ID.1", command=Sinbul_Log_Id1, bg="orange", fg="black", font = ("", 7))
@@ -138,7 +134,6 @@ Sinbulbtn4 = Button(frame1, width=5, padx=10, pady=5, text="", command=' ', bg="
 Sinbulbtn4.place(x=150, y=83)
 Sinbulbtn5 = Button(frame1, width=5, padx=10, pady=5, text=" ", command=' ', bg="white", fg="black", font = ("", 7))
 Sinbulbtn5.place(x=200, y=83)
-
 Sinbulbtn6 = Button(frame1, width=5, padx=10, pady=5, text="Time", command=Sinbul_Time, bg="blue", fg="white", font = ("", 7))
 Sinbulbtn6.place(x=0, y=110)
 Sinbulbtn7 = Button(frame1, width=5, padx=10, pady=5, text="31일", command=Sinbul_Day53, bg="white", fg="black", font = ("", 7))
@@ -149,6 +144,67 @@ Sinbulbtn9 = Button(frame1, width=5, padx=10, pady=5, text="실시간T", command
 Sinbulbtn9.place(x=150, y=110)
 Sinbulbtn9 = Button(frame1, width=5, padx=10, pady=5, text="스케줄", command=schedule_job, bg="yellow", fg="black", font = ("", 7))
 Sinbulbtn9.place(x=200, y=110)
+
+
+#예약가능사이트만 보기 
+def btn_check():
+    if Sinbul_Auto_Site.get() == True:
+      print("오토사이트만 보기 셋팅")
+      a = 1
+      오토사이트(a)
+    else:
+      print("오토사이트만 보기 해제")
+      a = 2
+      오토사이트(a)
+
+#check start False 
+Sinbul_Auto_Site=tkinter.BooleanVar()
+Sinbul_Auto_Site.set(False)
+
+#ch_val 확인 
+SinBul_btn71= tkinter.Checkbutton(text="오토", font=("맑은고딕", 5), variable=Sinbul_Auto_Site,command= btn_check)
+SinBul_btn71.place(x=100,y=160)
+#ck_btn.pack()
+
+#예약가능 사이트만 보기
+def btn_check1():
+    if Sinbul_Only_Site.get() == True:
+      print("예약가능 사이트만 보기 셋팅")
+      b = 1
+      예약가능사이트(b)
+    else:
+      print("예약가능 사이트만 보기 해제")
+      b = 2
+      예약가능사이트(b)
+
+#check start False 
+Sinbul_Only_Site=tkinter.BooleanVar()
+Sinbul_Only_Site.set(False)
+
+#ch_val 확인 
+SinBul_btn72= tkinter.Checkbutton(text="예약가능", font=("맑은고딕", 5), variable=Sinbul_Only_Site,command= btn_check1)
+SinBul_btn72.place(x=135,y=160)
+#ck_btn.pack()
+
+#예약가능 사이트만 보기
+def btn_check2():
+    if Sinbul_Refesh.get() == True:
+      print("새로고침 원클릭 셋팅")
+      c = 1
+      새로고침_셋팅(c)
+    else:
+      print("새로고침 연타 셋팅")
+      c = 2
+      새로고침_셋팅(c)
+
+#check start False 
+Sinbul_Refesh=tkinter.BooleanVar()
+Sinbul_Refesh.set(False)
+
+#ch_val 확인 
+SinBul_btn73= tkinter.Checkbutton(text="새고로침", font=("맑은고딕", 5), variable=Sinbul_Refesh,command= btn_check2)
+SinBul_btn73.place(x=185,y=160)
+#ck_btn.pack()
 
 
 #울주 UI=============================================================================================================== 
@@ -240,44 +296,6 @@ notebook.add(frame3, text="3.신불")
 신불산log5 = Button(frame3, width=5, padx=10, pady=5, text="ID.5", command=신불산_Log_Guest, bg="orange", fg="black", font = ("", 7))
 신불산log5.place(x=200, y=10)
 
-lable1=Label(frame3, text="분", font = ("", 7))
-lable1.place(x=25, y=110)
-    
-entry1 = Entry(frame3, width=10, font = ("", 7))
-entry1.place(x=50, y=110)
-entry1.insert(0,"59")
-
-lable2=Label(frame3, text="초", font = ("", 7))
-lable2.place(x=125, y=110)
-    
-entry2 = Entry(frame3, width=10, font = ("", 7))
-entry2.place(x=150, y=110)
-entry2.insert(0,"00")
-
-def 시간_실시간():
-    신불산_min = entry1.get()
-    신불산_sec = entry2.get()
-    #시간입력_시작(신불산_hour,신불산_min,신불산_sec)
-    print(신불산_min,신불산_sec)
-    시간입력_실시간(신불산_min,신불산_sec)
-
-def 시간_줍기():
-    신불산_min = entry1.get()
-    신불산_sec = entry2.get()
-    #시간입력_시작1(신불산_hour,신불산_min,신불산_sec)
-    print(신불산_min,신불산_sec)
-    시간입력_줍기(신불산_min,신불산_sec)
-
-def 시간_줍기1():
-    신불산_min = entry1.get()
-    신불산_sec = entry2.get()
-    #시간입력_시작(신불산_hour,신불산_min,신불산_sec)
-    print(신불산_min,신불산_sec)
-    시간입력_줍기1(신불산_min,신불산_sec)
-
-# 신불산time_s = Button(frame3, width=5, padx=5, pady=5, text="시작", command=시간입력, bg="orange", fg="black", font = ("", 7))
-# 신불산time_s.place(x=400, y=10)
-
 #함수
 신불산btn1 = Button(frame3, width=5, padx=10, pady=5, text="0.1초", command=신불산_time_controll_01, bg="white", fg="black", font = ("", 7))
 신불산btn1.place(x=0, y=35)
@@ -310,18 +328,35 @@ def 시간_줍기1():
 신불산day9 = Button(frame3, width=5, padx=10, pady=5, text="Day", command=신불산_Day, bg="blue", fg="white", font = ("", 7))
 신불산day9.place(x=200, y=59)
 
+
 #함수
 신불산btn1 = Button(frame3, width=5, padx=10, pady=5, text="       ", command=신불산_Reset, bg="white", fg="black", font = ("", 7))
 신불산btn1.place(x=0, y=83)
 신불산btn2 = Button(frame3, width=5, padx=10, pady=5, text="자동입력", command=신불산_자동입력, bg="blue", fg="white", font = ("", 7))
 신불산btn2.place(x=50, y=83)
-신불산btn3 = Button(frame3, width=5, padx=10, pady=5, text="실시간", command=시간_실시간, bg="white", fg="black", font = ("", 7))
-신불산btn3.place(x=100, y=83)
-신불산btn4 = Button(frame3, width=5, padx=10, pady=5, text="줍기", command=시간_줍기, bg="green", fg="white", font = ("", 7))
-신불산btn4.place(x=150, y=83)
-신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="줍기_광클릭", command=시간_줍기1, bg="green", fg="white", font = ("", 7))
-신불산btn5.place(x=200, y=83)
+#신불산btn3 = Button(frame3, width=5, padx=10, pady=5, text="실시간", command=시간_실시간, bg="white", fg="black", font = ("", 7))
+#신불산btn3.place(x=100, y=83)
+#신불산btn4 = Button(frame3, width=5, padx=10, pady=5, text="줍기", command=시간_줍기, bg="green", fg="white", font = ("", 7))
+#신불산btn4.place(x=150, y=83)
+#신불산btn5 = Button(frame3, width=5, padx=10, pady=5, text="줍기_광클릭", command=시간_줍기1, bg="green", fg="white", font = ("", 7))
+#신불산btn5.place(x=200, y=83)
 
+lable1=Label(frame3, text="분", font = ("", 7))
+lable1.place(x=25, y=110)
+    
+entry1 = Entry(frame3, width=10, font = ("", 7))
+entry1.place(x=50, y=110)
+entry1.insert(0,"59")
+
+lable2=Label(frame3, text="초", font = ("", 7))
+lable2.place(x=125, y=110)
+    
+entry2 = Entry(frame3, width=10, font = ("", 7))
+entry2.place(x=150, y=110)
+entry2.insert(0,"00")
+
+# 신불산time_s = Button(frame3, width=5, padx=5, pady=5, text="시작", command=시간입력, bg="orange", fg="black", font = ("", 7))
+# 신불산time_s.place(x=400, y=10)
 
 #중구 UI===============================================================================================================
 frame4=tkinter.Frame(window)

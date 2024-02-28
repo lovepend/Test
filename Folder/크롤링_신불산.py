@@ -10,7 +10,7 @@ import time
 global tm
 tm = time.localtime()
 refresh_time_click = 1
-refresh_time_page = 5
+refresh_time_page = 1
 
 #아이디 입력
 #▶▶▶▶▶▶▶▶▶
@@ -26,6 +26,18 @@ global Sinbul_mon
 Sinbul_mon = 2 #1이 첫번째달 / 2가 둘쨋달
 global Sinbul_camp
 Sinbul_camp = '//*[@id="divAjaxTable"]/input[3]'
+global 오토캠핑장 # 1이 오토캠핑장 셋팅 / 2가 오토캠핑장 해제
+오토캠핑장 = 2
+global 예약가능 # 1이 예약가능 사이트만 보기 셋팅 / 2가 예약가능 사이트만 보기 해제
+예약가능 = 2
+global Sinbul_time_min_tr, Sinbul_time_sec_tr #시간설정
+Sinbul_time_min_tr = int(59)
+Sinbul_time_sec_tr = int(30)
+global 새로고침 # 1이 원클릭 / 2가 연타
+새로고침 = 1
+
+
+
 
 def Sinbul_Log_Id1():
   global Sinbul_id
@@ -174,7 +186,28 @@ def Sinbul_Time_변수(Sinbul_time_min,Sinbul_time_sec):
   Sinbul_time_min_tr = Sinbul_time_min
   Sinbul_time_sec_tr = Sinbul_time_sec
 
+#오토캠핑장만 보기
+#▶▶▶▶▶▶▶▶▶
+def 오토사이트(Auto_Site):
+  global 오토캠핑장
+  오토캠핑장 = Auto_Site
+  print(오토캠핑장)
 
+#예약가능 사이트만 보기
+#▶▶▶▶▶▶▶▶▶
+def 예약가능사이트(Only_Site):
+  global 예약가능
+  예약가능 = Only_Site
+  print(예약가능)
+
+#새로고침 셋팅
+#▶▶▶▶▶▶▶▶▶
+def 새로고침_셋팅(Refesh):
+  global 새로고침
+  새로고침 = Refesh
+  print(새로고침)
+
+  ##################################################################################
 def schedule_PC_start():
 
   # Chrome 웹 드라이버 생성
@@ -198,118 +231,214 @@ def schedule_PC_start():
 
   # 웹 페이지에서 작업 수행
   # 예: 웹 페이지의 요소를 찾아 클릭하거나 데이터를 입력할 수 있음
+  로그인()
 
-  ###########################로그인 클릭
-  print('로그인')
-  button = driver.find_element(By.XPATH, '//*[@id="header"]/div[1]/div/ul/li[1]/a')
-  # 버튼 클릭
-  button.click()
-  time.sleep(refresh_time_page)
+###########################로그인 클릭
+def 로그인():
+  try:
+    while True:
+      print('로그인')
+      button = driver.find_element(By.XPATH, '//*[@id="header"]/div[1]/div/ul/li[1]/a')
+      # 버튼 클릭
+      button.click()
+      time.sleep(refresh_time_page)
+      로그인클릭()
+  except:
+    pass
 
-  ###########################로그인 클릭 1
-  print('로그인 클릭')
-  button = driver.find_element(By.XPATH, '//*[@id="login_ulsan"]/img')
-  # 버튼 클릭
-  button.click()
-  time.sleep(refresh_time_page)
+###########################로그인 클릭 1
+def 로그인클릭():
+  try:
+    while True:
+      print('로그인 클릭')
+      button = driver.find_element(By.XPATH, '//*[@id="login_ulsan"]/img')
+      # 버튼 클릭
+      button.click()
+      time.sleep(refresh_time_page)
+      로그인ID()
+  except:
+    pass
 
-  ###########################로그인 ID입력
-  print('로그인 ID')
-  button = driver.find_element(By.XPATH, '//*[@id="loginfrm"]/fieldset/label/span/input')
-  # 버튼 클릭
-  button.click()
-  pyperclip.copy(Sinbul_id)
-  time.sleep(refresh_time_click)
-  pag.hotkey('ctrl','v')
+###########################로그인 ID입력
+def 로그인ID():
+  try:
+    while True:
+      print('로그인 ID')
+      button = driver.find_element(By.XPATH, '//*[@id="loginfrm"]/fieldset/label/span/input')
+      # 버튼 클릭
+      button.click()
+      pyperclip.copy(Sinbul_id)
+      time.sleep(refresh_time_click)
+      pag.hotkey('ctrl','v')
+      로그인PW()
+  except:
+    pass
 
-  ###########################로그인 PW입력
-  print('로그인 PW')
-  button = driver.find_element(By.XPATH, '//*[@id="password"]')
-  # 버튼 클릭
-  button.click()
-  pyperclip.copy(Sinbul_pw)
-  time.sleep(refresh_time_click)
-  pag.hotkey('ctrl','v')
+###########################로그인 PW입력
+def 로그인PW():
+  try:
+    while True:
+      print('로그인 PW')
+      button = driver.find_element(By.XPATH, '//*[@id="password"]')
+      # 버튼 클릭
+      button.click()
+      pyperclip.copy(Sinbul_pw)
+      time.sleep(refresh_time_click)
+      pag.hotkey('ctrl','v')
+      로그인접속()
+  except:
+    pass
 
-  ###########################로그인 클릭
-  print('로그인 접속')
-  button = driver.find_element(By.XPATH, '//*[@id="loginfrm"]/div/input')
-  # 버튼 클릭
-  button.click()
-  time.sleep(refresh_time_page)
+###########################로그인 접속
+def 로그인접속():
+  try:
+    while True:
+      print('로그인 접속')
+      button = driver.find_element(By.XPATH, '//*[@id="loginfrm"]/div/input')
+      # 버튼 클릭
+      button.click()
+      time.sleep(refresh_time_page)
+      온라인예약클릭()      
+  except:
+    pass
 
-  ###########################온라인 예약 클릭
-  print('온라인 예약')
-  button = driver.find_element(By.XPATH, '//*[@id="main_menu"]/li[4]/a')
-  # 버튼 클릭
-  button.click()
-  time.sleep(refresh_time_page)
+###########################온라인 예약 클릭
+def 온라인예약클릭():
+  try:
+    while True:
+      print('온라인 예약')
+      button = driver.find_element(By.XPATH, '//*[@id="main_menu"]/li[4]/a')
+      # 버튼 클릭
+      button.click()
+      time.sleep(refresh_time_page)
+      달력클릭()
+  except:
+    pass
 
-  ###########################달력 클릭
-  print('달력 클릭')
-  if Sinbul_mon == 2 :
-    button = driver.find_element(By.XPATH, '//*[@id="calendar"]/div[1]/div[2]/button/span')
-    # 버튼 클릭
-    button.click()
-    time.sleep(refresh_time_click)
+###########################달력 클릭
+def 달력클릭():
+  try:
+    while True:
+      print('달력 클릭')
+      if Sinbul_mon == 2 :
+        button = driver.find_element(By.XPATH, '//*[@id="calendar"]/div[1]/div[2]/button/span')
+        # 버튼 클릭
+        button.click()
+        time.sleep(refresh_time_click)
+        예약날짜클릭()
+  except:
+    pass
 
-  ###########################날짜 예약 클릭
-  print('날짜 클릭')
-  button = driver.find_element(By.XPATH, Sinbul_date)
-  # 버튼 클릭
-  button.click()
-  time.sleep(refresh_time_page)
+###########################예약 날짜 클릭
+def 예약날짜클릭():
+  try:
+    while True:
+      print('날짜 클릭')
+      button = driver.find_element(By.XPATH, Sinbul_date)
+      # 버튼 클릭
+      button.click()
+      time.sleep(refresh_time_page)
+      캠핑장선택()
+  except:
+    pass
 
-  ###########################캠핑장 선택
-  print('캠핑장 클릭')
-  button = driver.find_element(By.XPATH, Sinbul_camp)
-  # 버튼 클릭
-  button.click()
-  time.sleep(refresh_time_page)
+###########################캠핑장 선택
+def 캠핑장선택():
+  try:
+    while True:
+      print('캠핑장 클릭')
+      time.sleep(refresh_time_page)
+      button = driver.find_element(By.XPATH, Sinbul_camp)
+      # 버튼 클릭
+      button.click()
+      time.sleep(refresh_time_page)
+      print('except2')
+      셋팅_오토사이트()
+  except:
+    print('except1')
+    pass
 
+###########################사이트종류 오토 클릭
+def 셋팅_오토사이트 ():
+  try:
+    while True:
+      if ( 오토캠핑장 == 1):
+        print("오토 사이트만 보기") 
+        button = driver.find_element(By.XPATH, '//*[@id="priceCode"]')
+        # 버튼 클릭
+        button.click()
+        time.sleep(refresh_time_click)
+        pag.hotkey('down')
+        time.sleep(refresh_time_click)
+        pag.hotkey('enter')
+        셋팅_예약가능사이트()
+      else :
+        셋팅_예약가능사이트()
+  except:
+    pass
 
-  ###########################사이트종류 오토 클릭
-  # print("오토사이트") 
-  # button = driver.find_element(By.XPATH, '//*[@id="priceCode"]')
-  # # 버튼 클릭
-  # button.click()
-  # time.sleep(refresh_time_click)
-  # pag.hotkey('down')
-  # time.sleep(refresh_time_click)
-  # pag.hotkey('enter')
-  # time.sleep(refresh_time_page)
+def 셋팅_예약가능사이트():
+  try:
+    while True:
+      if ( 예약가능 == 1 ):
+        print("예약 가능 사이트만 보기") 
+        button = driver.find_element(By.XPATH, '//*[@id="divAjaxTable"]/div/label') #예약가능 사이트만 보기 클릭
+        # 버튼 클릭
+        button.click()
+        time.sleep(refresh_time_page)
+        시작타임()
+      else :
+        시작타임()
+  except :
+    pass
 
-  ###########################날짜 예약 클릭
-  print("시간에 맞추어 시작") 
-  button = driver.find_element(By.XPATH, '//*[@id="divAjaxTable"]/div/label') #예약가능 사이트만 보기 클릭
-  # 버튼 클릭
-  button.click()
-  time.sleep(refresh_time_page)
-
-  ###########################예약하기
+###########################시작 신호 #####################################################
+def 시작타임():
   print('예약하기')
   while True:
+    print("시간에 맞추어 시작") 
     tm = time.localtime()
     if keyboard.is_pressed("F2"):
       print("종료") 
       break  
-    if (tm.tm_min == Sinbul_time_min_tr and tm.tm_sec == Sinbul_time_sec_tr ) : 
+    if (새로고침 == 1 and tm.tm_min == Sinbul_time_min_tr and tm.tm_sec == Sinbul_time_sec_tr ) : 
       ###########################날짜 예약 클릭
-      print("시간에 맞추어 시작") 
-      #button = driver.find_element(By.XPATH, Sinbul_date) #날짜 클릭
-      button = driver.find_element(By.XPATH, '//*[@id="divAjaxTable"]/div/label') #예약가능 사이트만 보기 클릭
+      print("시간에 맞추어 시작//날짜") 
+      button = driver.find_element(By.XPATH, Sinbul_date) #날짜 클릭
       # 버튼 클릭
       button.click()
       time.sleep(0.1)
-      예약하기_신청()
+      예약하기_신청_원클릭()
+    if (새로고침 == 1 and Sinbul_live == 3 and tm.tm_min == Sinbul_time_min_tr and tm.tm_sec == Sinbul_time_sec_tr ) :
+      ###########################날짜 예약 클릭
+      print("시간에 맞추어 시작//날짜") 
+      button = driver.find_element(By.XPATH, Sinbul_date) #날짜 클릭
+      # 버튼 클릭
+      button.click()
+      time.sleep(0.1)
+      예약하기_신청_원클릭()
+    if (새로고침 == 2 and tm.tm_min == Sinbul_time_min_tr and tm.tm_sec == Sinbul_time_sec_tr ) : 
+      ###########################날짜 예약 클릭
+      print("시간에 맞추어 시작//날짜") 
+      button = driver.find_element(By.XPATH, Sinbul_date) #날짜 클릭
+      # 버튼 클릭
+      button.click()
+      time.sleep(0.1)
+      예약하기_신청_실시간()
+    if (새로고침 == 2 and Sinbul_live == 3 and tm.tm_min == Sinbul_time_min_tr and tm.tm_sec == Sinbul_time_sec_tr ) :
+      ###########################날짜 예약 클릭
+      print("시간에 맞추어 시작//날짜") 
+      button = driver.find_element(By.XPATH, Sinbul_date) #날짜 클릭
+      # 버튼 클릭
+      button.click()
+      time.sleep(0.1)
+      예약하기_신청_실시간()
     if (Sinbul_live == 2 ) :
-      print("실시간 시작") 
-      예약하기_신청1()
-    if (Sinbul_live == 3 and tm.tm_min == Sinbul_time_min_tr and tm.tm_sec == Sinbul_time_sec_tr ) :
-      print("실시간 시작") 
-      예약하기_신청()
+      print("실시간 시작//날짜") 
+      예약하기_신청_실시간()
 
-def 예약하기_신청():
+
+def 예약하기_신청_원클릭():
   try:
     while True:    
       try:
@@ -318,38 +447,25 @@ def 예약하기_신청():
           print('35분 종료 ')
           time.sleep(3600)
         ########################### 우측 하단 예약신청 클릭 
-        print('예약신청 클릭')                           
+        print('예약신청 클릭_원클릭')                           
         button = driver.find_element(By.XPATH, Sinbul_select)
         time.sleep(0.02)
         button.click()
         time.sleep(0.08)#time.sleep(0.07)###포인트 ㅇㅕ기조정
-        # ########################### 우측 하단 예약신청 클릭 
-        # print('예약신청 클릭')                            
-        # button = driver.find_element(By.XPATH, Sinbul_select)
-        # button.click()
-        # time.sleep(0.1)
         ###########################예약신청 클릭
-        print('예약확인 클릭')
+        print('예약확인 클릭_원클릭')
         button = driver.find_element(By.XPATH, '//*[@id="resModal"]/div[2]/div/div[3]/button[2]')
         time.sleep(0.05)#time.sleep(0.05)
         button.click()
-        # print('예약확인 클릭')
-        # ###########################예약신청 클릭
-        # button = driver.find_element(By.XPATH, '//*[@id="resModal"]/div[2]/div/div[3]/button[2]')
-        # button.click()
         time.sleep(60)
         print(str(Sinbul_time_min_tr) + '분' + str(Sinbul_time_sec_tr) + '초' + str(Sinbul_camp))
       except:
         pass
-        #print('except1')        
-        #예약하기_신청()
   except:
       pass
-      #print('except2')
-      #예약하기_신청()
-      #time.sleep(60)
+
       
-def 예약하기_신청1():
+def 예약하기_신청_실시간():
   try:
     while True:    
       global Sinbul_date
@@ -365,31 +481,21 @@ def 예약하기_신청1():
           time.sleep(3600)
           break
         ########################### 우측 하단 예약신청 클릭 
-        print('예약신청 클릭')                           
+        print('예약신청 클릭_실시간')                           
         button = driver.find_element(By.XPATH, Sinbul_select)
         time.sleep(0.02)
         button.click()
         time.sleep(0.08)#time.sleep(0.07)###포인트 ㅇㅕ기조정
-        # ########################### 우측 하단 예약신청 클릭 
-        # print('예약신청 클릭')                            
-        # button = driver.find_element(By.XPATH, Sinbul_select)
-        # button.click()
-        # time.sleep(0.1)
         ###########################예약신청 클릭
-        print('예약확인 클릭')
+        print('예약확인 클릭_실시간')
         button = driver.find_element(By.XPATH, '//*[@id="resModal"]/div[2]/div/div[3]/button[2]')
         time.sleep(0.05)#time.sleep(0.05)
         button.click()
-        # print('예약확인 클릭')
-        # ###########################예약신청 클릭
-        # button = driver.find_element(By.XPATH, '//*[@id="resModal"]/div[2]/div/div[3]/button[2]')
-        # button.click()
         time.sleep(3600)
       except:
         pass
-        #예약하기_신청1()
   except:
     pass
-      #예약하기_신청1()
+
 
 

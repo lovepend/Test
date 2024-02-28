@@ -65,20 +65,34 @@ def schedule_start():
   #driver.execute_script("document.body.style.zoom='zoom %'")
   #웹 페이지에서 작업 수행
   #예: 웹 페이지의 요소를 찾아 클릭하거나 데이터를 입력할 수 있음
+  로그인()
 
-  ###########################로그인 클릭
-  print('로그인')
-  button = driver.find_element(By.XPATH, '//*[@id="header"]/div[1]/div/ul/li[1]/a')
-  # 버튼 클릭
-  button.click()
-  time.sleep(0.2)
+def 로그인():
+  try :
+    while True:
+      ###########################로그인 클릭
+      print('로그인')
+      button = driver.find_element(By.XPATH, '//*[@id="header"]/div[1]/div/ul/li[1]/a')
+      # 버튼 클릭
+      button.click()
+      time.sleep(0.2)
+      로그인클릭()
+  except:
+    pass
 
-  ###########################로그인 클릭 1
-  print('로그인 클릭')
-  button = driver.find_element(By.XPATH, '//*[@id="login_ulsan"]/img')
-  # 버튼 클릭
-  button.click()
-  time.sleep(0.5)
+def 로그인클릭():
+  try :
+    while True:
+      ###########################로그인 클릭 1
+      print('로그인 클릭')
+      button = driver.find_element(By.XPATH, '//*[@id="login_ulsan"]/img')
+      # 버튼 클릭
+      button.click()
+      time.sleep(0.5)
+      로그인 
+  except:
+    pass
+
 
   ###########################로그인 ID입력
   print('로그인 ID')
