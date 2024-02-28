@@ -10,7 +10,7 @@ import time
 global tm
 tm = time.localtime()
 refresh_time_click = 1
-refresh_time_page = 10
+refresh_time_page = 5
 
 #아이디 입력
 #▶▶▶▶▶▶▶▶▶
@@ -269,16 +269,22 @@ def schedule_PC_start():
 
 
   ###########################사이트종류 오토 클릭
-  button = driver.find_element(By.XPATH, '//*[@id="priceCode"]')
+  # print("오토사이트") 
+  # button = driver.find_element(By.XPATH, '//*[@id="priceCode"]')
+  # # 버튼 클릭
+  # button.click()
+  # time.sleep(refresh_time_click)
+  # pag.hotkey('down')
+  # time.sleep(refresh_time_click)
+  # pag.hotkey('enter')
+  # time.sleep(refresh_time_page)
+
+  ###########################날짜 예약 클릭
+  print("시간에 맞추어 시작") 
+  button = driver.find_element(By.XPATH, '//*[@id="divAjaxTable"]/div/label') #예약가능 사이트만 보기 클릭
   # 버튼 클릭
   button.click()
-  time.sleep(refresh_time_click)
-  pag.hotkey('down')
-  time.sleep(refresh_time_click)
-  pag.hotkey('enter')
   time.sleep(refresh_time_page)
-
-
 
   ###########################예약하기
   print('예약하기')
@@ -299,7 +305,7 @@ def schedule_PC_start():
     if (Sinbul_live == 2 ) :
       print("실시간 시작") 
       예약하기_신청1()
-    if (Sinbul_live == 3 ) :
+    if (Sinbul_live == 3 and tm.tm_min == Sinbul_time_min_tr and tm.tm_sec == Sinbul_time_sec_tr ) :
       print("실시간 시작") 
       예약하기_신청()
 

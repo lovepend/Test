@@ -30,8 +30,8 @@ def schedule_job():
   # schedule.every().day.at("13:45:00").do(신불산_자동) 
   # schedule.every().day.at("15:45:00").do(태화연_자동) 
   # schedule.every().day.at("14:55:00").do(대왕암_자동) 
-  schedule.every().day.at("09:52:00").do(schedule_PC_start) # 42초 
-  schedule.every().day.at("13:52:00").do(schedule_PC_start) # 42초 
+  schedule.every().day.at("09:50:00").do(schedule_PC_start) # 42초 
+  schedule.every().day.at("13:50:00").do(schedule_PC_start) # 42초 
   #schedule.every().day.at("20:30:30").do(schedule_PC_start) # 42초 ##
   while True:
     schedule.run_pending()
