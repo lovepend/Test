@@ -23,7 +23,7 @@ Sinbul_date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[5]/d
 global Sinbul_live
 Sinbul_live = 1 #1이 시간 / 2가 실시간
 global Sinbul_mon
-Sinbul_mon = 2 #1이 첫번째달 / 2가 둘쨋달
+Sinbul_mon = 1 #1이 첫번째달 / 2가 둘쨋달
 global Sinbul_camp
 Sinbul_camp = '//*[@id="divAjaxTable"]/input[3]'
 global 오토캠핑장 # 1이 오토캠핑장 셋팅 / 2가 오토캠핑장 해제
@@ -212,10 +212,16 @@ def schedule_PC_start():
 
   # Chrome 웹 드라이버 생성
   global driver
-  driver = webdriver.Chrome()
+  #driver = webdriver.Chrome()
+  chrome_options = webdriver.ChromeOptions()
+  chrome_options.add_argument('--window-position=0,0')  # 좌측 상단에 위치
+
+  # Chrome WebDriver 인스턴스 생성
+  driver = webdriver.Chrome(options=chrome_options)
+
   #크롬 사이즈 변경
   #driver.set_window_size(1920, 1080) 
-  driver.maximize_window()
+  #driver.maximize_window()
   driver.get("https://camping.ulju.ulsan.kr/")
   time.sleep(0.2)
   
@@ -224,6 +230,8 @@ def schedule_PC_start():
   for j in range(4):
       pag.press('-')
       time.sleep(0.05)
+  
+  pag.keyUp('ctrl')
   #크롬 브라우저 꺼짐 방지
 
   # 웹 페이지로 이동
@@ -325,6 +333,8 @@ def 달력클릭():
         # 버튼 클릭
         button.click()
         time.sleep(refresh_time_click)
+        예약날짜클릭()
+      else:
         예약날짜클릭()
   except:
     pass
