@@ -59,11 +59,18 @@ def Sinbul_Log_Id4():
   Sinbul_id = "parkmc7"
   print(Sinbul_id)
 
+# def Sinbul_Log_Id5():
+#   global Sinbul_id
+#   Sinbul_id = "jhrep1201"
+#   global Sinbul_pw
+#   Sinbul_pw = "j1902217**"
+#   print(Sinbul_id, Sinbul_pw)
+
 def Sinbul_Log_Id5():
   global Sinbul_id
-  Sinbul_id = "jhrep1201"
+  Sinbul_id = "allstar5"
   global Sinbul_pw
-  Sinbul_pw = "j1902217**"
+  Sinbul_pw = "hanamju1214!"
   print(Sinbul_id, Sinbul_pw)
 
 def Sinbul_Day11():
