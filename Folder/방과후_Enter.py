@@ -30,7 +30,7 @@ def 새로고침():
     if keyboard.is_pressed("F2"): # F2 누른게 감지되면
       break
     try :
-      button = pag.locateCenterOnScreen('./image/99. Afschool/00.png', confidence=0.7)
+      button = pag.locateCenterOnScreen('./image/99. Afschool/00.png', confidence=0.95)
       if (button == None) :
         새로고침()
       else :
@@ -68,8 +68,10 @@ def 신청확인():
         신청확인()
       else :
         print("신청확인 클릭완료")
-        pag.click(button)
+        pag.hotkey('enter')
         time.sleep(1)
+        pag.hotkey('enter')
+        time.sleep(360)
         신청확인()
     except :
       None

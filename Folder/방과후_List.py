@@ -12,9 +12,12 @@ a  = 0.02
 #수강신청 화면 호출 리스트
 #https://afschool.use.go.kr/use1068/ltrReq/112905
 
+
 def 수강신청시작():
   while True:
     print("시작")
+    tm = time.localtime()
+    print(tm.tm_min,tm.tm_sec)
     if keyboard.is_pressed("F2"): # F2 누른게 감지되면
       break
     try :
@@ -79,14 +82,16 @@ def 신청확인():
     if keyboard.is_pressed("F2"): # F2 누른게 감지되면
       break
     try :
-      print("확인 클릭")
+      print("신청확인 클릭")
       button = pag.locateCenterOnScreen('./image/99. Afschool/03.png', confidence=0.8)
       if (button == None) :
         신청확인()
       else :
-        print("확인 클릭완료")
-        pag.click(button)
+        print("신청확인 클릭완료")
+        pag.hotkey('enter')
         time.sleep(1)
+        pag.hotkey('enter')
+        time.sleep(360)
         신청확인()
     except :
       None

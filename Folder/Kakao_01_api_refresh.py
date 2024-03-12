@@ -1,5 +1,5 @@
 #박빙구
-#code = https://kauth.kakao.com/oauth/authorize?client_id=ddcfd4509dc2ec690ebb764199ff2247&redirect_uri=https://example.com/oauth&response_type=code&scope=talk_message,friends
+#code = https://kauth.kakao.com/oauth/authorize?client_id=175e1d2a1cbd7e3bc2eca634e72f5846&redirect_uri=https://example.com/oauth&response_type=code&scope=talk_message,friends
 
 #박정철
 #code = https://kauth.kakao.com/oauth/authorize?client_id=bb6714e8dac2cf258c4d3cc708b8d7ac&redirect_uri=https://example.com/oauth&response_type=code&scope=talk_message,friends
@@ -8,12 +8,12 @@ import requests
 import json 
 
 #박빙구
-rest_api_key = 'ddcfd4509dc2ec690ebb764199ff2247'
+rest_api_key = '175e1d2a1cbd7e3bc2eca634e72f5846'
 #박정철
 #rest_api_key = 'bb6714e8dac2cf258c4d3cc708b8d7ac'
 redirect_uri = 'https://example.com/oauth' 
 url_token = 'https://kauth.kakao.com/oauth/token'
-authorize_code = '56lbuGllC3KGFYFfH9xeDCoWjRRxvizAHyPTwPJze-fYqgkETOVWsd-iPm19a8aKPUCtGgorDKgAAAGAW2xVpA' 
+authorize_code = 'zUqoL-VNgtJHvb3NpS1TThOE1iIGGFIiKSuWW51sJUF6wGaLyJVB5cwa8dYKKwzUAAABji46OXSvm_uHqQwxKA' 
 
 try: 
     with open("kakao_token.json","r") as fp: # 기존에 저장된 token 파일이 있는지 찾아봅니다. 

@@ -415,13 +415,14 @@ def 시작타임():
   while True:
     print("시간에 맞추어 시작") 
     tm = time.localtime()
+    button = driver.find_element(By.XPATH, Sinbul_date) #날짜 클릭
     if keyboard.is_pressed("F2"):
       print("종료") 
       break  
     if (새로고침 == 1 and tm.tm_min == Sinbul_time_min_tr and tm.tm_sec == Sinbul_time_sec_tr ) : 
       ###########################날짜 예약 클릭
       print("시간에 맞추어 시작//날짜") 
-      button = driver.find_element(By.XPATH, Sinbul_date) #날짜 클릭
+      #button = driver.find_element(By.XPATH, Sinbul_date) #날짜 클릭
       # 버튼 클릭
       button.click()
       time.sleep(0.1)
@@ -429,7 +430,7 @@ def 시작타임():
     if (새로고침 == 1 and Sinbul_live == 3 and tm.tm_min == Sinbul_time_min_tr and tm.tm_sec == Sinbul_time_sec_tr ) :
       ###########################날짜 예약 클릭
       print("시간에 맞추어 시작//날짜") 
-      button = driver.find_element(By.XPATH, Sinbul_date) #날짜 클릭
+      #button = driver.find_element(By.XPATH, Sinbul_date) #날짜 클릭
       # 버튼 클릭
       button.click()
       time.sleep(0.1)
@@ -437,7 +438,7 @@ def 시작타임():
     if (새로고침 == 2 and tm.tm_min == Sinbul_time_min_tr and tm.tm_sec == Sinbul_time_sec_tr ) : 
       ###########################날짜 예약 클릭
       print("시간에 맞추어 시작//날짜") 
-      button = driver.find_element(By.XPATH, Sinbul_date) #날짜 클릭
+      #button = driver.find_element(By.XPATH, Sinbul_date) #날짜 클릭
       # 버튼 클릭
       button.click()
       time.sleep(0.1)
@@ -445,7 +446,7 @@ def 시작타임():
     if (새로고침 == 2 and Sinbul_live == 3 and tm.tm_min == Sinbul_time_min_tr and tm.tm_sec == Sinbul_time_sec_tr ) :
       ###########################날짜 예약 클릭
       print("시간에 맞추어 시작//날짜") 
-      button = driver.find_element(By.XPATH, Sinbul_date) #날짜 클릭
+      #button = driver.find_element(By.XPATH, Sinbul_date) #날짜 클릭
       # 버튼 클릭
       button.click()
       time.sleep(0.1)

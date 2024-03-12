@@ -1,8 +1,7 @@
 #박빙구 REST API = 175e1d2a1cbd7e3bc2eca634e72f5846
 #code = https://kauth.kakao.com/oauth/authorize?client_id=175e1d2a1cbd7e3bc2eca634e72f5846&redirect_uri=https://example.com/oauth&response_type=code&scope=talk_message,friends
 
-#박정철 REST API = bb6714e8dac2cf258c4d3cc708b8d7ac
-#code = https://kauth.kakao.com/oauth/authorize?client_id=bb6714e8dac2cf258c4d3cc708b8d7ac&redirect_uri=https://example.com/oauth&response_type=code&scope=talk_message,friends
+
 
 import requests
 import json
@@ -15,7 +14,7 @@ def access_token():
         "grant_type" : "authorization_code",
         "client_id" : "175e1d2a1cbd7e3bc2eca634e72f5846",
         "redirect_url" : "https://localhost:3000",
-        "code" : "X7Lq15gleEZJa01xbk51BGW4YH9Q7iOEYpONNiYpaY9fMDkGzCA8XUesOBEKKiVRAAABjeL86pESmUam6ZdnFg"
+        "code" : "Yj-iPifxG-fHnVDEXx_UbBXZ8fCeR5w3DDZltcjwILwtBo_1K6cfRvwP6KYKKiVQAAABjjBp9TKSBpCp5rpDbg"
     }
     response = requests.post(url, data=data)
     tokens = response.json()
@@ -30,17 +29,17 @@ def refresh_token():
         "grant_type": "refresh_token",
         "client_id": "175e1d2a1cbd7e3bc2eca634e72f5846",
         #"refresh_token": "{refresh_token}"
-        "refresh_token": "Nu8B2zD5j6yabHTvcKZDg4vgonZL75ygP2gKKiWRAAABjeL9UDYq17LwdM8QAg"
+        "refresh_token": "zKpTZkHmvabzrZGMBhvKVicQJGkKBJqdfHcKKiWRAAABjjBqMaEq17LwdM8QAg" 
     }
     response = requests.post(url, data=data)
     tokens = response.json()
+    print(tokens)
 
     # kakao_code.json 파일 저장
     with open("kakao_token.json", "w") as fp:
         json.dump(tokens, fp)
         
 def kakao_message_me():
-
     #2.
     with open("kakao_token.json","r") as fp:
         tokens = json.load(fp)
@@ -50,6 +49,7 @@ def kakao_message_me():
     # kapi.kakao.com/v2/api/talk/memo/default/send 
 
     headers={
+        #"Authorization" : "Bearer " + tokens["access_token"]
         "Authorization" : "Bearer " + tokens["access_token"]
     }
 
@@ -70,8 +70,8 @@ def kakao_message_you(kakao_message_send):
         
     with open("kakao_token.json","r") as fp:
         tokens = json.load(fp)
-    # print(tokens)
-    # print(tokens["access_token"])
+        print(tokens)
+        print(tokens["access_token"])
 
     friend_url = "https://kapi.kakao.com/v1/api/talk/friends"
 
@@ -117,10 +117,11 @@ def kakao_message_you(kakao_message_send):
     response = requests.post(send_url, headers=headers, data=data)
     response.status_code
 
-
 #access_token() #access_token()을 발급후 꼭 refresh_token을 기록 할 것 
 
 #refresh_token() #refresh_token을 입력후 테스트 
+kakao_message_you("안녕하세요")
 
-#kakao_message_you("안녕하세요")
+
+
 

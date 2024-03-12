@@ -267,6 +267,7 @@ def 울주줍줍_Page2_도착예정시간():
       울주줍줍_Page2_도착예정시간()   
     else :
       pag.click(button.x,button.y) 
+      time.sleep(timesetting)
       pag.hotkey('end')
       #페이지 선택
       pag.click(10,800)
