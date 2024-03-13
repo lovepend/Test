@@ -14,7 +14,7 @@ def access_token():
         "grant_type" : "authorization_code",
         "client_id" : "175e1d2a1cbd7e3bc2eca634e72f5846",
         "redirect_url" : "https://localhost:3000",
-        "code" : "Yj-iPifxG-fHnVDEXx_UbBXZ8fCeR5w3DDZltcjwILwtBo_1K6cfRvwP6KYKKiVQAAABjjBp9TKSBpCp5rpDbg"
+        "code" : "yBjoX68Gzi6_Hja1Kj-KnN1trHZiazjYzRoJBikPnUpt1xNUt7c1CyIPBqoKKiUPAAABjjXQsFtDz1szkZmFRA"
     }
     response = requests.post(url, data=data)
     tokens = response.json()
@@ -29,7 +29,7 @@ def refresh_token():
         "grant_type": "refresh_token",
         "client_id": "175e1d2a1cbd7e3bc2eca634e72f5846",
         #"refresh_token": "{refresh_token}"
-        "refresh_token": "zKpTZkHmvabzrZGMBhvKVicQJGkKBJqdfHcKKiWRAAABjjBqMaEq17LwdM8QAg" 
+        "refresh_token": "yspZHMtk-EbRSTrauQdGx2SL7TK0HzpWARoKKw0gAAABjjXQ9zUq17LwdM8QAg" 
     }
     response = requests.post(url, data=data)
     tokens = response.json()
@@ -91,7 +91,7 @@ def kakao_message_you(kakao_message_send):
     print("=============================================")
     friends_list = result.get("elements")
     print(friends_list)
-    # print(type(friends_list))
+    print(type(friends_list))
     print("=============================================")
     print(friends_list[0].get("uuid"))
     friend_id = friends_list[0].get("uuid")
@@ -119,7 +119,7 @@ def kakao_message_you(kakao_message_send):
 
 #access_token() #access_token()을 발급후 꼭 refresh_token을 기록 할 것 
 
-#refresh_token() #refresh_token을 입력후 테스트 
+refresh_token() #refresh_token을 입력후 테스트 
 kakao_message_you("안녕하세요")
 
 

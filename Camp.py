@@ -17,8 +17,7 @@ from Camp_21_신불산 import *
 from Camp_51_육부촌 import *
 from Folder.kakao_01_api import *
 from Folder.크롤링_신불산 import *
-from Folder.크롤링_신불산_스케줄 import *
-from Folder.크롤링_신불산_모바일 import *
+
 
 #from Test.Movie_Factory import *
 
