@@ -19,12 +19,12 @@ Sinbul_id = "pend"
 global Sinbul_pw
 Sinbul_pw = "*Zoavld4fkd" 
 global Sinbul_date
-Sinbul_date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[5]/div[1]/table/tbody/tr/td[2]'
+Sinbul_date = '//*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[5]/div[1]/table/tbody/tr/td[7]'
 global Sinbul_live
 Sinbul_live = 1 #1이 시간 / 2가 실시간
 global Sinbul_mon
 Sinbul_mon = 1 #1이 첫번째달 / 2가 둘쨋달
-global Sinbul_camp
+global Sinbul_camp #3이 달빛
 Sinbul_camp = '//*[@id="divAjaxTable"]/input[3]'
 global 오토캠핑장 # 1이 오토캠핑장 셋팅 / 2가 오토캠핑장 해제
 오토캠핑장 = 2
