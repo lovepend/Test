@@ -5,9 +5,10 @@ import pyperclip
 import keyboard
 import random
 import time
+import time
+from kakao_01_api import *
 
 #시간 
-global tm
 tm = time.localtime()
 refresh_time_click = 1
 refresh_time_page = 1
@@ -197,6 +198,7 @@ def Sinbul_Time_변수(Sinbul_time_min,Sinbul_time_sec):
 def 오토사이트(Auto_Site):
   global 오토캠핑장
   오토캠핑장 = Auto_Site
+  print("오토사이트")
   print(오토캠핑장)
 
 #예약가능 사이트만 보기
@@ -204,6 +206,7 @@ def 오토사이트(Auto_Site):
 def 예약가능사이트(Only_Site):
   global 예약가능
   예약가능 = Only_Site
+  print("예약가능사이트")
   print(예약가능)
 
 #새로고침 셋팅
@@ -211,6 +214,7 @@ def 예약가능사이트(Only_Site):
 def 새로고침_셋팅(Refesh):
   global 새로고침
   새로고침 = Refesh
+  print("새로고침" )
   print(새로고침)
 
   ##################################################################################
@@ -414,6 +418,7 @@ def 셋팅_예약가능사이트():
 ###########################시작 신호 #####################################################
 def 시작타임():
   print('예약하기')
+  time.sleep(10)
   while True:
     print("시간에 맞추어 시작") 
     tm = time.localtime()
@@ -423,7 +428,7 @@ def 시작타임():
     if keyboard.is_pressed("F2"):
       print("종료") 
       break  
-    if (새로고침 == 1 and tm.tm_min == Sinbul_time_min_tr and tm.tm_sec == Sinbul_time_sec_tr ) : 
+    if (새로고침 == 1 and tm.tm_min == Sinbul_time_min_tr and tm.tm_sec == Sinbul_time_sec_tr ) :  #원클릭 #시간
       ###########################날짜 예약 클릭
       print("시간에 맞추어 시작//날짜") 
       #button = driver.find_element(By.XPATH, Sinbul_date) #날짜 클릭
@@ -431,7 +436,7 @@ def 시작타임():
       button.click()
       time.sleep(0.1)
       예약하기_신청_원클릭()
-    if (새로고침 == 1 and Sinbul_live == 3 and tm.tm_min == Sinbul_time_min_tr and tm.tm_sec == Sinbul_time_sec_tr ) :
+    if (새로고침 == 1 and Sinbul_live == 3 and tm.tm_min == Sinbul_time_min_tr and tm.tm_sec == Sinbul_time_sec_tr ) : #원클릭 # 실시간 타이머
       ###########################날짜 예약 클릭
       print("시간에 맞추어 시작//날짜") 
       #button = driver.find_element(By.XPATH, Sinbul_date) #날짜 클릭
@@ -439,7 +444,7 @@ def 시작타임():
       button.click()
       time.sleep(0.1)
       예약하기_신청_원클릭()
-    if (새로고침 == 2 and tm.tm_min == Sinbul_time_min_tr and tm.tm_sec == Sinbul_time_sec_tr ) : 
+    if (새로고침 == 2 and tm.tm_min == Sinbul_time_min_tr and tm.tm_sec == Sinbul_time_sec_tr ) : #연타 #시간
       ###########################날짜 예약 클릭
       print("시간에 맞추어 시작//날짜") 
       #button = driver.find_element(By.XPATH, Sinbul_date) #날짜 클릭
@@ -447,7 +452,7 @@ def 시작타임():
       button.click()
       time.sleep(0.1)
       예약하기_신청_실시간()
-    if (새로고침 == 2 and Sinbul_live == 3 and tm.tm_min == Sinbul_time_min_tr and tm.tm_sec == Sinbul_time_sec_tr ) :
+    if (새로고침 == 2 and Sinbul_live == 3 and tm.tm_min == Sinbul_time_min_tr and tm.tm_sec == Sinbul_time_sec_tr ) : #연타 #실시간 타이머
       ###########################날짜 예약 클릭
       print("시간에 맞추어 시작//날짜") 
       #button = driver.find_element(By.XPATH, Sinbul_date) #날짜 클릭
@@ -455,7 +460,7 @@ def 시작타임():
       button.click()
       time.sleep(0.1)
       예약하기_신청_실시간()
-    if (Sinbul_live == 2 ) :
+    if (Sinbul_live == 2 ) : #실시간 
       print("실시간 시작//날짜") 
       예약하기_신청_실시간()
 
@@ -480,6 +485,9 @@ def 예약하기_신청_원클릭():
         time.sleep(0.05)#time.sleep(0.05)
         button.click()
         time.sleep(60)
+        refresh_token() #refresh_token을 입력후 테스트 
+        kakao_message_you("신불산")
+        time.sleep(300)
         print(str(Sinbul_time_min_tr) + '분' + str(Sinbul_time_sec_tr) + '초' + str(Sinbul_camp))
       except:
         pass
@@ -514,7 +522,10 @@ def 예약하기_신청_실시간():
         button = driver.find_element(By.XPATH, '//*[@id="resModal"]/div[2]/div/div[3]/button[2]')
         time.sleep(0.05)#time.sleep(0.05)
         button.click()
-        time.sleep(3600)
+        time.sleep(60)
+        refresh_token() #refresh_token을 입력후 테스트 
+        kakao_message_you("신불산")
+        time.sleep(300)
       except:
         pass
   except:

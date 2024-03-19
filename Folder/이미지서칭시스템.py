@@ -73,7 +73,7 @@ class App:
 
     def find_image(self, image_path):
         while not self.stop_event.is_set():
-            location = pyautogui.locateCenterOnScreen(image_path, confidence=0.8)
+            location = pyautogui.locateCenterOnScreen(image_path, confidence=0.99)
             if location:
                 pyautogui.click(location)
                 print(f"{image_path} 찾아 클릭함.")

@@ -17,6 +17,7 @@ from Camp_21_신불산 import *
 from Camp_51_육부촌 import *
 from Folder.kakao_01_api import *
 from Folder.크롤링_신불산 import *
+from Folder.Test import *
 
 
 #from Test.Movie_Factory import *
@@ -130,7 +131,7 @@ Sinbulbtn3 = Button(frame1, width=5, padx=10, pady=5, text="달빛", command=Sin
 Sinbulbtn3.place(x=100, y=83)
 Sinbulbtn4 = Button(frame1, width=5, padx=10, pady=5, text="", command=' ', bg="white", fg="black", font = ("", 7))
 Sinbulbtn4.place(x=150, y=83)
-Sinbulbtn5 = Button(frame1, width=5, padx=10, pady=5, text=" ", command=' ', bg="white", fg="black", font = ("", 7))
+Sinbulbtn5 = Button(frame1, width=5, padx=10, pady=5, text=" ", command='', bg="white", fg="black", font = ("", 7))
 Sinbulbtn5.place(x=200, y=83)
 Sinbulbtn6 = Button(frame1, width=5, padx=10, pady=5, text="Time", command=Sinbul_Time, bg="blue", fg="white", font = ("", 7))
 Sinbulbtn6.place(x=0, y=110)
