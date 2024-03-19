@@ -6,7 +6,8 @@ import keyboard
 import random
 import time
 import time
-from kakao_01_api import *
+# from kakao_01_api import *
+from Folder.kakao_01_api import *
 
 #시간 
 tm = time.localtime()

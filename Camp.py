@@ -15,8 +15,8 @@ from Camp_31_태화연 import *
 from Camp_41_대왕암 import *
 from Camp_21_신불산 import *
 from Camp_51_육부촌 import *
-from Folder.kakao_01_api import *
-from Folder.크롤링_신불산 import *
+
+from 크롤링_신불산 import *
 from Folder.Test import *
 
 
