@@ -462,8 +462,9 @@ def 시작타임():
       time.sleep(0.1)
       예약하기_신청_실시간()
     if (Sinbul_live == 2 ) : #실시간 
+      time.sleep(10)
       print("실시간 시작//날짜") 
-      예약하기_신청_실시간()
+      예약하기_신청_실시간1()
 
 
 def 예약하기_신청_원클릭():
@@ -517,7 +518,44 @@ def 예약하기_신청_실시간():
         button = driver.find_element(By.XPATH, Sinbul_select)
         time.sleep(0.02)
         button.click()
-        time.sleep(0.08)#time.sleep(0.07)###포인트 ㅇㅕ기조정
+        time.sleep(0.1)#time.sleep(0.07)###포인트 ㅇㅕ기조정
+        ###########################예약신청 클릭
+        print('예약확인 클릭_실시간_최종확인')
+        button = driver.find_element(By.XPATH, '//*[@id="resModal"]/div[2]/div/div[3]/button[2]')
+        time.sleep(0.05)#time.sleep(0.05)
+        button.click()
+        time.sleep(60)
+        refresh_token() #refresh_token을 입력후 테스트 
+        kakao_message_you("신불산")
+        time.sleep(300)
+      except:
+        pass
+  except:
+    pass
+
+
+def 예약하기_신청_실시간1():
+  try:
+    while True:    
+      global Sinbul_date
+      global Sinbul_select
+      ###########################날짜 예약 클릭
+      button = driver.find_element(By.XPATH, Sinbul_date)
+      time.sleep(0.1)
+      #button = driver.find_element(By.XPATH, '//*[@id="divAjaxTable"]/div/label') #예약가능 사이트만 보기 클릭
+      # 버튼 클릭
+      button.click()
+      time.sleep(0.2)
+      try:
+        if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+          time.sleep(3600)
+          break
+        ########################### 우측 하단 예약신청 클릭 
+        print('예약신청 클릭_실시간_확인')                           
+        button = driver.find_element(By.XPATH, Sinbul_select)
+        time.sleep(0.02)
+        button.click()
+        time.sleep(0.1)#time.sleep(0.07)###포인트 ㅇㅕ기조정
         ###########################예약신청 클릭
         print('예약확인 클릭_실시간_최종확인')
         button = driver.find_element(By.XPATH, '//*[@id="resModal"]/div[2]/div/div[3]/button[2]')
