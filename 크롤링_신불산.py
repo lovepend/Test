@@ -67,6 +67,13 @@ def Sinbul_Log_Id5():
   Sinbul_pw = "j1902217**"
   print(Sinbul_id, Sinbul_pw)
 
+def Sinbul_Log_Id6():
+  global Sinbul_id
+  Sinbul_id = "pump132"
+  global Sinbul_pw
+  Sinbul_pw = "flswls12!!"
+  print(Sinbul_id, Sinbul_pw)
+
 # def Sinbul_Log_Id5():
 #   global Sinbul_id
 #   Sinbul_id = "allstar5"

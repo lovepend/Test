@@ -85,8 +85,10 @@ Sinbullog3 = Button(frame1, width=5, padx=10, pady=5, text="ID.3", command=Sinbu
 Sinbullog3.place(x=100, y=10)
 Sinbullog4 = Button(frame1, width=5, padx=10, pady=5, text="ID.4", command=Sinbul_Log_Id4, bg="orange", fg="black", font = ("", 7))
 Sinbullog4.place(x=150, y=10)
-Sinbullog5 = Button(frame1, width=5, padx=10, pady=5, text="ID.5", command=Sinbul_Log_Id5, bg="orange", fg="black", font = ("", 7))
+Sinbullog5 = Button(frame1, width=2, padx=5, pady=5, text="ID.5", command=Sinbul_Log_Id5, bg="orange", fg="black", font = ("", 7))
 Sinbullog5.place(x=200, y=10)
+Sinbullog6 = Button(frame1, width=2, padx=5, pady=5, text="ID.6", command=Sinbul_Log_Id6, bg="orange", fg="black", font = ("", 7))
+Sinbullog6.place(x=225, y=10)
 
 #날짜
 Sinbulday1 = Button(frame1, width=2, padx=5, pady=5, text="1F", command=Sinbul_Day11, bg="white", fg="black", font = ("", 7))
