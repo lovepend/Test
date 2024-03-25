@@ -503,9 +503,9 @@ def 예약하기_신청_실시간():
       global Sinbul_date
       global Sinbul_select
       ###########################날짜 예약 클릭
-      #button = driver.find_element(By.XPATH, Sinbul_date)
+      button = driver.find_element(By.XPATH, Sinbul_date)
       time.sleep(0.1)
-      button = driver.find_element(By.XPATH, '//*[@id="divAjaxTable"]/div/label') #예약가능 사이트만 보기 클릭
+      #button = driver.find_element(By.XPATH, '//*[@id="divAjaxTable"]/div/label') #예약가능 사이트만 보기 클릭
       # 버튼 클릭
       button.click()
       time.sleep(0.1)
