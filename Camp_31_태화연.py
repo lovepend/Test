@@ -519,7 +519,7 @@ def 태화연_Start_검색():
 def 태화연_검색A():
   try :
     print("태화연_검색A")
-    button = pag.locateCenterOnScreen("./image/31. Junggu/21. reservation.png", region=태화연_find_rangeA ,confidence=0.8) 
+    button = pag.locateCenterOnScreen("./image/31. Junggu/21. reservation.png", region=태화연_find_rangeA ,confidence=0.9) 
     if (button == None) :
       None     
     else :
@@ -532,7 +532,7 @@ def 태화연_검색A():
 def 태화연_검색B():
   try :
     print("태화연_검색B")
-    button = pag.locateCenterOnScreen("./image/31. Junggu/21. reservation.png", region=태화연_find_rangeB ,confidence=0.8) 
+    button = pag.locateCenterOnScreen("./image/31. Junggu/21. reservation.png", region=태화연_find_rangeB ,confidence=0.9) 
     if (button == None) :
       None     
     else :
@@ -545,7 +545,7 @@ def 태화연_검색B():
 def 태화연_StepA_A():
   try :
     print("태화연_StepA_A")
-    button = pag.locateCenterOnScreen("./image/31. Junggu/22. reservation.png", region=태화연_find_rangeA ,confidence=0.9) 
+    button = pag.locateCenterOnScreen("./image/31. Junggu/22. reservation.png", region=태화연_find_rangeA ,confidence=0.95) 
     if (button == None) :
       pag.click(태화연_day1)
       time.sleep(0.1)
@@ -565,7 +565,7 @@ def 태화연_StepA_A():
 def 태화연_StepA_B():
   try :
     print("태화연_StepA_B")
-    button = pag.locateCenterOnScreen("./image/31. Junggu/22. reservation.png", region=태화연_find_rangeB ,confidence=0.9) 
+    button = pag.locateCenterOnScreen("./image/31. Junggu/22. reservation.png", region=태화연_find_rangeB ,confidence=0.95) 
     print(button)
     if (button == None) :
       pag.click(태화연_day3)
