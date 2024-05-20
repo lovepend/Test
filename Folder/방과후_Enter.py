@@ -63,8 +63,8 @@ def 신청확인():
       break
     try :
       print("신청확인 클릭")
-      button = pag.locateCenterOnScreen('./image/99. Afschool/03.png', confidence=0.8)
-      if (button == None) :
+      button1 = pag.locateCenterOnScreen('./image/99. Afschool/03.png', confidence=0.8)
+      if (button1 == None) :
         신청확인()
       else :
         print("신청확인 클릭완료1")
