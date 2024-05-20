@@ -38,6 +38,7 @@ def schedule_job():
 ################################## GUI 편집 ################################## 54주6191
 window = Tk()
 window.title("캠핑장 예약하기")
+<<<<<<< HEAD
 window.geometry("250x190+1660+0")#1번
 #window.geometry("250x190+1660+316")#2번
 #window.geometry("250x190+1660+506")#3번
@@ -45,6 +46,9 @@ window.geometry("250x190+1660+0")#1번
 #window.geometry("250x190+1920+316")#5번
 #window.geometry("250x190+1920+506")#6번
 #window.geometry("250x190+1920+696")#7번
+=======
+window.geometry("250x190+1660+0")
+>>>>>>> 68ee2cabead5336b59c47b3d3802281768acd894
 window.wm_attributes("-topmost", 1)
 
 notebook=tkinter.ttk.Notebook(window, width=460, height=165)
@@ -104,11 +108,11 @@ Sinbulday2.place(x=25, y=35)
 Sinbulday3 = Button(frame1, width=2, padx=5, pady=5, text="2F", command=Sinbul_Day21, bg="white", fg="black", font = ("", 7))
 Sinbulday3.place(x=50, y=35)
 Sinbulday4 = Button(frame1, width=2, padx=5, pady=5, text="2S", command=Sinbul_Day22, bg="white", fg="black", font = ("", 7))
-Sinbulday4.place(x=75, y=35)
 Sinbulday5 = Button(frame1, width=2, padx=5, pady=5, text="3F", command=Sinbul_Day31, bg="white", fg="black", font = ("", 7))
 Sinbulday5.place(x=100, y=35)
 Sinbulday6 = Button(frame1, width=2, padx=5, pady=5, text="3S", command=Sinbul_Day32, bg="white", fg="black", font = ("", 7))
 Sinbulday6.place(x=125, y=35)
+
 Sinbulday7 = Button(frame1, width=2, padx=5, pady=5, text="4F", command=Sinbul_Day41, bg="white", fg="black", font = ("", 7))
 Sinbulday7.place(x=150, y=35)
 Sinbulday8 = Button(frame1, width=2, padx=5, pady=5, text="4S", command=Sinbul_Day42, bg="white", fg="black", font = ("", 7))
