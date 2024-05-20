@@ -38,7 +38,13 @@ def schedule_job():
 ################################## GUI 편집 ################################## 54주6191
 window = Tk()
 window.title("캠핑장 예약하기")
-window.geometry("250x190+1660+316")
+window.geometry("250x190+1660+0")#1번
+#window.geometry("250x190+1660+316")#2번
+#window.geometry("250x190+1660+506")#3번
+#window.geometry("250x190+1920+0")#4번
+#window.geometry("250x190+1920+316")#5번
+#window.geometry("250x190+1920+506")#6번
+#window.geometry("250x190+1920+696")#7번
 window.wm_attributes("-topmost", 1)
 
 notebook=tkinter.ttk.Notebook(window, width=460, height=165)
@@ -533,7 +539,7 @@ entry_육부촌.insert(0,"2024-02-28",)
 
 def 육부촌_Url_Input():
   str1 = "https://www.gyeongju.go.kr/hwarang/page.do?mnu_uid=3516&csr_date="
-  str2 = "&cs_uid=29&csr_numday=1&step=write&initYear=2024&initMonth=2&currentDay="
+  str2 = "&cs_uid=29&csr_numday=1&step=write&initYear=2024&initMonth=6&currentDay="
   input_url = str1 + entry_육부촌.get() + str2
   육부촌_Url(input_url)
   print(input_url)

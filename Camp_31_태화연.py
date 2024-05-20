@@ -519,7 +519,7 @@ def 태화연_Start_검색():
 def 태화연_검색A():
   try :
     print("태화연_검색A")
-    button = pag.locateCenterOnScreen("./image/31. Junggu/21. reservation.png", region=태화연_find_rangeA ,confidence=0.8) 
+    button = pag.locateCenterOnScreen("./image/31. Junggu/21. reservation.png", region=태화연_find_rangeA ,confidence=0.9) 
     if (button == None) :
       None     
     else :
@@ -532,7 +532,7 @@ def 태화연_검색A():
 def 태화연_검색B():
   try :
     print("태화연_검색B")
-    button = pag.locateCenterOnScreen("./image/31. Junggu/21. reservation.png", region=태화연_find_rangeB ,confidence=0.8) 
+    button = pag.locateCenterOnScreen("./image/31. Junggu/21. reservation.png", region=태화연_find_rangeB ,confidence=0.9) 
     if (button == None) :
       None     
     else :

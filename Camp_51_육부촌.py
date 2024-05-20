@@ -34,6 +34,8 @@ import threading
 def 육부촌_Url(input_url):
   global url
   #url = 'https://www.gyeongju.go.kr/hwarang/page.do?mnu_uid=3516&csr_date=2024-02-28&cs_uid=29&csr_numday=1&step=write&initYear=2024&initMonth=2&currentDay='
+  #       https://www.gyeongju.go.kr/hwarang/page.do?mnu_uid=3516&csr_date=2024-04-30&cs_uid=24&csr_numday=1&step=write&initYear=2024&initMonth=1&currentDay=
+  #       https://www.gyeongju.go.kr/hwarang/page.do?mnu_uid=3516&csr_date=2024-04-01&cs_uid=24&csr_numday=1&step=write&initYear=2024&initMonth=1&currentDay=
   url = input_url
   print(url)
 
