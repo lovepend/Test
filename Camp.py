@@ -38,7 +38,6 @@ def schedule_job():
 ################################## GUI 편집 ################################## 54주6191
 window = Tk()
 window.title("캠핑장 예약하기")
-<<<<<<< HEAD
 window.geometry("250x190+1660+0")#1번
 #window.geometry("250x190+1660+316")#2번
 #window.geometry("250x190+1660+506")#3번
@@ -46,9 +45,7 @@ window.geometry("250x190+1660+0")#1번
 #window.geometry("250x190+1920+316")#5번
 #window.geometry("250x190+1920+506")#6번
 #window.geometry("250x190+1920+696")#7번
-=======
-window.geometry("250x190+1660+0")
->>>>>>> 68ee2cabead5336b59c47b3d3802281768acd894
+#window.geometry("250x190+1660+0")
 window.wm_attributes("-topmost", 1)
 
 notebook=tkinter.ttk.Notebook(window, width=460, height=165)
