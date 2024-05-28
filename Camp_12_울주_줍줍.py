@@ -132,16 +132,16 @@ def 울주줍줍_시작():
   while True:
     if keyboard.is_pressed("F2"): # F2 누른게 감지되면
       break
-    try :
-      print("울주줍줍_시작")
-      button = pag.locateCenterOnScreen('./image/12. Ulju/11. jubjub.png', region=(0,0,960,1080), confidence=0.9)
-      if (button == None) :
-        None
-      else :
-        print("검색")
-        울주줍줍_검색()
-    except :
+
+    print("울주줍줍_시작")
+    button = pag.locateCenterOnScreen('./image/12. Ulju/11. jubjub.png', region=(0,0,960,1080), confidence=0.8)
+    if (button == None) :
+      print('none')
       None
+    else :
+      print("검색")
+      울주줍줍_검색()
+
 
 #메인함수(시작_오픈확인)
 #▶▶▶▶▶▶▶▶▶
@@ -420,6 +420,7 @@ def 울주줍줍_Page6_결제코드():
       pag.hotkey('ctrl', 'c')
       결제코드 = pyperclip.paste() 
       print("결제코드")
+      refresh_token()
       kakao_message_you(결제코드)
       울주줍줍_Page7_확인()
   except :
