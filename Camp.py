@@ -107,7 +107,8 @@ Sinbulday3.place(x=50, y=35)
 Sinbulday4 = Button(frame1, width=2, padx=5, pady=5, text="2S", command=Sinbul_Day22, bg="white", fg="black", font = ("", 7))
 Sinbulday5 = Button(frame1, width=2, padx=5, pady=5, text="3F", command=Sinbul_Day31, bg="white", fg="black", font = ("", 7))
 Sinbulday5.place(x=100, y=35)
-Sinbulday6 = Button(frame1, width=2, padx=5, pady=5, text="3S", command=Sinbul_Day32, bg="white", fg="black", font = ("", 7))
+Sinbulday6 = Button(frame1, width=2, padx=5, pady=5, text="3S", command
+                    =Sinbul_Day32, bg="white", fg="black", font = ("", 7))
 Sinbulday6.place(x=125, y=35)
 
 Sinbulday7 = Button(frame1, width=2, padx=5, pady=5, text="4F", command=Sinbul_Day41, bg="white", fg="black", font = ("", 7))
