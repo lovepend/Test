@@ -335,6 +335,8 @@ def 육부촌_자동():
 
 #메인함수(시작_줍줍)
 #▶▶▶▶▶▶▶▶▶
+
+
 def 육부촌_줍줍():
   while True:
     if keyboard.is_pressed("F2") : # F2 누른게 감지되면
@@ -458,6 +460,8 @@ def 육부촌_주소_AI():
       time.sleep(500)
     except :
       None
+
+
 
 # def 육부촌_문자_AI(): 
 #   #while True:
