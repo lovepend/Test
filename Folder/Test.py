@@ -90,13 +90,15 @@ def mouse():
 
 def test1111():
   global tt1
+
   while True:
     print("시작")
     if keyboard.is_pressed("F2"): # F2 누른게 감지되면
       break
     try :
       pag.click(tt1)
-      time.sleep(0.2)
+      
+      time.sleep(0.5)
       pag.hotkey('enter')
     except :
       None
