@@ -69,3 +69,36 @@
 #     t.join()
 
 # print("모든 페이지 로딩 완료.")
+
+
+import pyautogui as pag
+import cv2
+import keyboard
+import time
+
+
+global tt1 
+
+def mouse():
+  while True:
+    global tt1
+    if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+        tt1 = pag.position() # 위치 뽑아서 저장
+        print(tt1)
+        time.sleep(0.5)
+        break    
+
+def test1111():
+  global tt1
+  while True:
+    print("시작")
+    if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+      break
+    try :
+      pag.click(tt1)
+      pag.hotkey('f5')
+    except :
+      None
+
+mouse()
+test1111()
