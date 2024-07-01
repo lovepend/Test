@@ -75,6 +75,7 @@ import pyautogui as pag
 import cv2
 import keyboard
 import time
+import pyperclip
 
 
 
@@ -85,7 +86,7 @@ def 시작():
     print("시작")
     test01() 
     test02()
-    # test03()    
+    test03()    
     
 
 def test01():
@@ -94,11 +95,11 @@ def test01():
     # if keyboard.is_pressed("F2"): # F2 누른게 감지되면
     #   break
     try :
-      button = pag.locateCenterOnScreen('./image/51. Kyungju/98.png', confidence=0.9)
-      if (button == None) :
+      button1 = pag.locateCenterOnScreen('./image/51. Kyungju/98.png', confidence=0.9)
+      if (button1 == None) :
         None
       else :
-        pag.click(button)
+        pag.click(button1)
     except :
       None
   
@@ -108,8 +109,8 @@ def test02():
     # if keyboard.is_pressed("F2"): # F2 누른게 감지되면
     #   break
     try :
-      button = pag.locateCenterOnScreen('./image/51. Kyungju/99.png', confidence=0.9)
-      if (button == None) :
+      button2 = pag.locateCenterOnScreen('./image/51. Kyungju/99.png', confidence=0.9)
+      if (button2 == None) :
         None
       else :
         pag.hotkey('enter')
@@ -118,19 +119,48 @@ def test02():
 
    
 
-# def test03():
-#   print("test03")
-#   button3 = pag.locateCenterOnScreen('./image/51. Kyungju/99.png', confidence=0.9)
-#   if (button3 == None) :
-#     None 
-#     test01()
-#   else :
-#     pag.hotkey('enter')
+def test03():
+  # while True:
+    print("test02")
+    # if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+    #   break
+    try :
+      button3 = pag.locateCenterOnScreen('./image/51. Kyungju/97.png', confidence=0.9)
+      if (button3 == None) :
+        None
+      else :
+        pag.click(button3)
+        time.sleep(1)
+        pag.hotkey('enter')
+        time.sleep(1)
+        button = pag.locateCenterOnScreen('./image/51. Kyungju/96.png', confidence=0.7)   
+        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
+        pyperclip.copy('반구로55')
+        time.sleep(1)
+        #예)판교역로235
+        button = pag.locateCenterOnScreen('./image/51. Kyungju/95.png', confidence=0.7)   
+        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
+        #pag.click(197,135)
+        time.sleep(1)
+        #반구로 55 붙이기
+        pag.hotkey('ctrl','v')
+        time.sleep(1)
+        #입력
+        pag.hotkey('enter')
+        time.sleep(1)
+        #주소클릭
+        button = pag.locateCenterOnScreen('./image/51. Kyungju/94.png', confidence=0.7)   
+        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
+        #pag.click(295,263)   
+        time.sleep(1)
+        pag.hotkey('end')
+        time.sleep(1)
+    except :
+      None
     
 
 
 시작()
-
 
 
 
