@@ -84,7 +84,7 @@ def 시작():
       break
     print("시작")
     test01() 
-    test02()    
+    test02()
     # test03()    
     
 
