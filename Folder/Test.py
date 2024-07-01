@@ -96,6 +96,7 @@ def test1111():
       break
     try :
       pag.click(tt1)
+      time.sleep(0.2)
       pag.hotkey('f5')
     except :
       None
