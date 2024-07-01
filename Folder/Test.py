@@ -89,21 +89,34 @@ def 시작():
     
 
 def test01():
-  print("test01")
-  button = pag.locateCenterOnScreen('./image/51. Kyungju/98.png', confidence=0.9)
-  if (button == None) :
-    None 
-  else :
-    pag.click(button)
-
+  # while True:
+    print("test01")
+    # if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+    #   break
+    try :
+      button = pag.locateCenterOnScreen('./image/51. Kyungju/98.png', confidence=0.9)
+      if (button == None) :
+        None
+      else :
+        pag.click(button)
+    except :
+      None
+  
 def test02():
-  print("test02")
-  button1 = pag.locateCenterOnScreen('./image/51. Kyungju/99.png', confidence=0.9)
-  if (button1 == None) :
-    None 
-  else :
-    pag.hotkey('enter')
-    
+  # while True:
+    print("test02")
+    # if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+    #   break
+    try :
+      button = pag.locateCenterOnScreen('./image/51. Kyungju/99.png', confidence=0.9)
+      if (button == None) :
+        None
+      else :
+        pag.hotkey('enter')
+    except :
+      None
+
+   
 
 # def test03():
 #   print("test03")
