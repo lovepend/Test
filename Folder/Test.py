@@ -87,26 +87,21 @@ def test01():
     if keyboard.is_pressed("F2"): # F2 누른게 감지되면
       break
     try :
-<<<<<<< HEAD
-      button = pag.locateCenterOnScreen('./image/51. Kyungju/98.png', confidence=0.95)
+      button = pag.locateCenterOnScreen('./image/51. Kyungju/98.png', confidence=0.9)
       pag.click(button)
+      print(button)
       time.sleep(0.2)
       test02()
-=======
-      pag.click(tt1)
-      
-      time.sleep(0.5)
-      pag.hotkey('enter')
->>>>>>> a7eefd6ad64e44d34c294fcb84682597eda7b628
     except :
       None
+      print('except1')
 
 def test02():
   while True:
     print("시작")
     if keyboard.is_pressed("F2"): # F2 누른게 감지되면
       break
-    button1 = pag.locateCenterOnScreen('./image/51. Kyungju/99.png', confidence=0.95)
+    button1 = pag.locateCenterOnScreen('./image/51. Kyungju/99.png', confidence=0.9)
     if (button1 == None) :
         None 
     else :
