@@ -97,7 +97,7 @@ def test1111():
     try :
       pag.click(tt1)
       time.sleep(0.2)
-      pag.hotkey('f5')
+      pag.hotkey('enter')
     except :
       None
 
