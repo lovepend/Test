@@ -78,40 +78,45 @@ import time
 
 
 
-
+def 시작():
+  while True:
+    if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+      break
+    print("시작")
+    test01() 
+    test02()    
+    test03()    
     
 
 def test01():
-  while True:
-    print("시작")
-    if keyboard.is_pressed("F2"): # F2 누른게 감지되면
-      break
-    try :
-      button = pag.locateCenterOnScreen('./image/51. Kyungju/98.png', confidence=0.9)
-      pag.click(button)
-      print(button)
-      time.sleep(0.2)
-      test02()
-    except :
-      None
-      print('except1')
+  print("test01")
+  button = pag.locateCenterOnScreen('./image/51. Kyungju/98.png', confidence=0.9)
+  if (button == None) :
+    None 
+  else :
+    pag.click(button)
 
 def test02():
-  while True:
-    print("시작")
-    if keyboard.is_pressed("F2"): # F2 누른게 감지되면
-      break
-    button1 = pag.locateCenterOnScreen('./image/51. Kyungju/99.png', confidence=0.9)
-    if (button1 == None) :
-        None 
-    else :
-      pag.hotkey('enter')
-      time.sleep(0.2)
-      test01()
+  print("test02")
+  button1 = pag.locateCenterOnScreen('./image/51. Kyungju/99.png', confidence=0.9)
+  if (button1 == None) :
+    None 
+  else :
+    pag.hotkey('enter')
+    
+
+# def test03():
+#   print("test03")
+#   button3 = pag.locateCenterOnScreen('./image/51. Kyungju/99.png', confidence=0.9)
+#   if (button3 == None) :
+#     None 
+#     test01()
+#   else :
+#     pag.hotkey('enter')
+    
 
 
-
-test01()
+시작()
 
 
 
