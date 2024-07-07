@@ -455,7 +455,7 @@ def 육부촌_자동입력방지_AI():
       time.sleep(0.1)
       pag.hotkey('ctrl','v')
       time.sleep(0.1)
-      #pag.hotkey('enter')
+      pag.hotkey('enter')
       time.sleep(500)
 
 
