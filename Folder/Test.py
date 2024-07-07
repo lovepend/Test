@@ -125,7 +125,7 @@ def test03():
     # if keyboard.is_pressed("F2"): # F2 누른게 감지되면
     #   break
     try :
-      button3 = pag.locateCenterOnScreen('./image/51. Kyungju/97.png', confidence=0.9)
+      button3 = pag.locateCenterOnScreen('./image/51. Kyungju/97.png', confidence=0.95)
       if (button3 == None) :
         None
       else :
@@ -133,8 +133,9 @@ def test03():
         time.sleep(1)
         pag.hotkey('enter')
         time.sleep(1)
-        button = pag.locateCenterOnScreen('./image/51. Kyungju/96.png', confidence=0.7)   
-        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
+        button = pag.locateCenterOnScreen('./image/51. Kyungju/96.png', confidence=0.95)   
+        pag.반구로55
+        click(button.x,button.y, button='left', clicks=1, interval=0.1) 
         pyperclip.copy('반구로55')
         time.sleep(1)
         #예)판교역로235
@@ -159,8 +160,6 @@ def test03():
       None
     
 
-
-시작()
 
 
 

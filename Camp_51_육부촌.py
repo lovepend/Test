@@ -18,12 +18,8 @@ import multiprocessing as mp
 import threading
 
 
-
-
-
-
 #육부촌 Test 2023.11.17 #Viewer Size 50% #화면 맨아래로 통일 / 일반
-#육부촌 Test 2023.11.17 #Viewer Size 100% #화면 맨아래로 통일 / 줍줍
+
 
 # 변수 설정
 #★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
@@ -334,10 +330,10 @@ def 육부촌_자동():
 
 
 #메인함수(시작_줍줍)
-#▶▶▶▶▶▶▶▶▶
+#▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶
 
-
-def 육부촌_줍줍():
+#URL 및 새로 고침 함수 
+def 육부촌_줍줍(): 
   while True:
     if keyboard.is_pressed("F2") : # F2 누른게 감지되면
       print("F2 종료")
@@ -355,6 +351,8 @@ def 육부촌_줍줍():
 
 #메인함수(검색)
 #▶▶▶▶▶▶▶▶▶  
+
+#URL 접속 성공 시 확인 (꼭 확인하세요 이미지 확인 및 실패시 URL 재접속)
 def 육부촌_줍줍_refresh(): 
   while True:
     if keyboard.is_pressed("F2") : # F2 누른게 감지되면
@@ -376,11 +374,6 @@ def 육부촌_줍줍_refresh():
         time.sleep(0.3)
         육부촌_줍줍()
       else: 
-        time.sleep(0.1)
-        pag.click(150,551)
-        time.sleep(0.1)
-        pag.hotkey('end')
-        time.sleep(0.5)
         육부촌_주소_AI()
     except :
       pag.hotkey('enter')     
@@ -393,8 +386,10 @@ def 육부촌_줍줍_refresh():
       time.sleep(0.1)
       pag.hotkey('enter') 
       time.sleep(0.3)
-      
       육부촌_줍줍() 
+
+
+#URL 접속 성공 시 주소입력 
 
 #메인함수(검색)
 #▶▶▶▶▶▶▶▶▶  
@@ -409,8 +404,8 @@ def 육부촌_주소_AI():
       print("주소검색")
       #주소검색
       print("주소입력")
-      button = pag.locateCenterOnScreen('./image/51. Kyungju/05._92. reservation.png', confidence=0.7)   
-      pag.click(button.x,button.y-90, button='left', clicks=1, interval=0.1) 
+      button = pag.locateCenterOnScreen('./image/51. Kyungju/05._4. Adress.png', confidence=0.7)   
+      pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
       pyperclip.copy('반구로55')
       time.sleep(0.3)
       #예)판교역로235
@@ -430,13 +425,16 @@ def 육부촌_주소_AI():
       button = pag.locateCenterOnScreen('./image/51. Kyungju/05._6. Adress.png', confidence=0.6)   
       pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
       time.sleep(0.2)
+      육부촌_자동입력방지_AI()
+    except :
+      None
+      육부촌_주소_AI()
+
+def 육부촌_자동입력방지_AI(): 
       #자동입력방지
+      pag.click(965,797)
       print("자동방지입력")
-      button = pag.locateCenterOnScreen('./image/51. Kyungju/05._93. reservation.png', confidence=0.8)   
-      pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
-      time.sleep(0.1)  
-      #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
-      im1 =  pag.screenshot('captcha.png', region=(button.x-350,button.y-30,150,70 ))
+      im1 =  pag.screenshot('captcha.png', region=(819,780,923,815))
       #im1 =  pag.screenshot('captcha.png', region=(727,281,200,70))
       #file = r"C:\Users\LinkTech\Documents\Visual Studio Code\Test\captcha.png"
       file = r"captcha.png"
@@ -448,18 +446,17 @@ def 육부촌_주소_AI():
       input_text = str(text)
       input_text1 = input_text.strip('[')
       input_text2 = input_text1.strip(']')
-      input_text3 = input_text2.strip("'")                      
+      input_text3 = input_text2.strip("'")
+      input_text4 = input_text3[:6]
       print(text)      
-      pyperclip.copy(input_text3)
-      print(input_text3)
-      pyperclip.copy(input_text3)
+      pyperclip.copy(input_text4)
+      print(input_text4)
+      pyperclip.copy(input_text4)
       time.sleep(0.1)
       pag.hotkey('ctrl','v')
       time.sleep(0.1)
-      pag.hotkey('enter')
+      #pag.hotkey('enter')
       time.sleep(500)
-    except :
-      None
 
 
 
