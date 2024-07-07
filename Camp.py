@@ -533,9 +533,9 @@ def job():
 
 육부촌btn6 = Button(frame6, width=5, padx=10, pady=5, text="줍줍AI", command=육부촌_줍줍, bg="green", fg="white", font = ("", 7))
 육부촌btn6.place(x=0, y=83)
-육부촌btn7 = Button(frame6, width=5, padx=10, pady=5, text="Start(A)", command=육부촌_Start, bg="green", fg="white", font = ("", 7))
+육부촌btn7 = Button(frame6, width=5, padx=10, pady=5, text="줍줍실시간", command=육부촌_실시간, bg="green", fg="white", font = ("", 7))
 육부촌btn7.place(x=50, y=83)
-육부촌btn8 = Button(frame6, width=5, padx=10, pady=5, text="줍줍시간", command=job, bg="green", fg="white", font = ("", 7))
+육부촌btn8 = Button(frame6, width=5, padx=10, pady=5, text="Start(A)", command=육부촌_Start, bg="green", fg="white", font = ("", 7))
 육부촌btn8.place(x=100, y=83)
 
 #url 주소 입력
@@ -544,7 +544,7 @@ lable1.place(x=0, y=110)
 
 entry_육부촌 = Entry(frame6, width=25, borderwidth=2 , font = ("", 10))
 entry_육부촌.place(x=50, y=110)
-entry_육부촌.insert(0,"2024-07-17",)
+entry_육부촌.insert(0,"2024-08-03",)
 #entry_육부촌.insert(0,"https://www.gyeongju.go.kr/hwarang/page.do?mnu_uid=3516&csr_date=2024-02-28&cs_uid=29&csr_numday=1&step=write&initYear=2024&initMonth=2&currentDay=",)
 
 def 육부촌_Url_Input():

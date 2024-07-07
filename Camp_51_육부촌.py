@@ -589,3 +589,81 @@ def 육부촌_자동입력방지_AI():
 #       None
       
 
+
+
+
+def 육부촌_실시간():
+  while True:
+    if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+      break
+    print("시작")
+    test01() 
+    test02()
+    test03()    
+    
+
+def test01():
+  # while True:
+    print("test01")
+    # if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+    #   break
+    try :
+      button1 = pag.locateCenterOnScreen('./image/51. Kyungju/98.png', confidence=0.9)
+      if (button1 == None) :
+        None
+      else :
+        pag.click(button1)
+    except :
+      None
+  
+def test02():
+  # while True:
+    print("test02")
+    # if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+    #   break
+    try :
+      button2 = pag.locateCenterOnScreen('./image/51. Kyungju/99.png', confidence=0.9)
+      if (button2 == None) :
+        None
+      else :
+        pag.hotkey('enter')
+    except :
+      None
+
+   
+
+def test03():
+  # while True:
+    print("test02")
+    # if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+    #   break
+    try :
+      button3 = pag.locateCenterOnScreen('./image/51. Kyungju/97.png', confidence=0.95)
+      if (button3 == None) :
+        None
+      else :
+        pag.click(button3)
+        time.sleep(1)
+        pag.hotkey('enter')
+        time.sleep(1)
+        button = pag.locateCenterOnScreen('./image/51. Kyungju/05._4. Adress.png', confidence=0.95)   
+        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
+        pyperclip.copy('반구로55')
+        time.sleep(1)
+        #예)판교역로235
+        button = pag.locateCenterOnScreen('./image/51. Kyungju/95.png', confidence=0.7)   
+        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
+        #pag.click(197,135)
+        time.sleep(1)
+        #반구로 55 붙이기
+        pag.hotkey('ctrl','v')
+        time.sleep(1)
+        #입력
+        pag.hotkey('enter')
+        time.sleep(1)
+        #주소클릭
+        button = pag.locateCenterOnScreen('./image/51. Kyungju/94.png', confidence=0.7)   
+        pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
+        time.sleep(1)
+    except :
+      None
