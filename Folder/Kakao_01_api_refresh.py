@@ -13,7 +13,7 @@ rest_api_key = '175e1d2a1cbd7e3bc2eca634e72f5846'
 #rest_api_key = 'bb6714e8dac2cf258c4d3cc708b8d7ac'
 redirect_uri = 'https://example.com/oauth' 
 url_token = 'https://kauth.kakao.com/oauth/token'
-authorize_code = 'zUqoL-VNgtJHvb3NpS1TThOE1iIGGFIiKSuWW51sJUF6wGaLyJVB5cwa8dYKKwzUAAABji46OXSvm_uHqQwxKA' 
+authorize_code = 'UQTKJ26rsd3aowxSVe9EYPpYCmHg-rNAhcgytEtemDDo-uJIOen5cQAAAAQKPXQRAAABkKl3uCQe0jm_MNo9Pw' 
 
 try: 
     with open("kakao_token.json","r") as fp: # 기존에 저장된 token 파일이 있는지 찾아봅니다. 
