@@ -276,7 +276,7 @@ def 육부촌_주소():
   pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
   time.sleep(0.1)  
   #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
-  im1 =  pag.screenshot('captcha.png', region=(button.x-350,button.y-30,150,70 ))
+  im1 =  pag.screenshot('captcha.png', region=(834 , 790 , 79 , 21))
   #im1 =  pag.screenshot('captcha.png', region=(727,281,200,70))
   #file = r"C:\Users\LinkTech\Documents\Visual Studio Code\Test\captcha.png"
   file = r"captcha.png"
@@ -434,7 +434,7 @@ def 육부촌_자동입력방지_AI():
       #자동입력방지
       pag.click(965,797)
       print("자동방지입력")
-      im1 =  pag.screenshot('captcha.png', region=(819,780,923,815))
+      im1 =  pag.screenshot('captcha.png', region=(834 , 790 , 79 , 21))
       #im1 =  pag.screenshot('captcha.png', region=(727,281,200,70))
       #file = r"C:\Users\LinkTech\Documents\Visual Studio Code\Test\captcha.png"
       file = r"captcha.png"
@@ -667,3 +667,4 @@ def test03():
         time.sleep(1)
     except :
       None
+
