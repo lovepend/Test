@@ -16,7 +16,7 @@ import easyocr
 import cv2
 import multiprocessing as mp
 import threading
-
+reader = easyocr.Reader(['en'], gpu=True)
 
 #육부촌 Test 2023.11.17 #Viewer Size 50% #화면 맨아래로 통일 / 일반
 
@@ -276,23 +276,18 @@ def 육부촌_주소():
   pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
   time.sleep(0.1)  
   #pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
-  im1 =  pag.screenshot('captcha.png', region=(834 , 790 , 79 , 21))
+  im1 =  pag.screenshot('captcha.png', region=(834 , 788 , 69 , 22))
   #im1 =  pag.screenshot('captcha.png', region=(727,281,200,70))
   #file = r"C:\Users\LinkTech\Documents\Visual Studio Code\Test\captcha.png"
   file = r"captcha.png"
-  reader = easyocr.Reader(['en'], gpu=True)
-  #reader = easyocr.Reader(['ko', 'en'], gpu=True, model_storage_directory= 'korean_g2.pth')
+  # reader = easyocr.Reader(['en'], gpu=True)
   img = cv2.imread(file)
-  #img = cv2.imread(im1)
   text = reader.readtext(img, detail=0)
+  print(text)
   input_text = str(text)
-  input_text1 = input_text.strip('[')
-  input_text2 = input_text1.strip(']')
-  input_text3 = input_text2.strip("'")                      
-  print(text)      
-  pyperclip.copy(input_text3)
-  print(input_text3)
-  pyperclip.copy(input_text3)
+  input_text1 = input_text[2:8]   
+  print(input_text1) 
+  pyperclip.copy(input_text1)
   time.sleep(0.1)
   pag.hotkey('ctrl','v')
   time.sleep(0.1)
@@ -434,31 +429,23 @@ def 육부촌_자동입력방지_AI():
       #자동입력방지
       pag.click(965,797)
       print("자동방지입력")
-      im1 =  pag.screenshot('captcha.png', region=(834 , 790 , 79 , 21))
+      im1 =  pag.screenshot('captcha.png', region=(834 , 788 , 69 , 22))
       #im1 =  pag.screenshot('captcha.png', region=(727,281,200,70))
       #file = r"C:\Users\LinkTech\Documents\Visual Studio Code\Test\captcha.png"
       file = r"captcha.png"
-      reader = easyocr.Reader(['en'], gpu=True)
-      #reader = easyocr.Reader(['ko', 'en'], gpu=True, model_storage_directory= 'korean_g2.pth')
+      # reader = easyocr.Reader(['en'], gpu=True)
       img = cv2.imread(file)
-      #img = cv2.imread(im1)
       text = reader.readtext(img, detail=0)
+      print(text)
       input_text = str(text)
-      input_text1 = input_text.strip('[')
-      input_text2 = input_text1.strip(']')
-      input_text3 = input_text2.strip("'")
-      input_text4 = input_text3[:6]
-      print(text)      
-      pyperclip.copy(input_text4)
-      print(input_text4)
-      pyperclip.copy(input_text4)
+      input_text1 = input_text[2:8]   
+      print(input_text1) 
+      pyperclip.copy(input_text1)
       time.sleep(0.1)
       pag.hotkey('ctrl','v')
       time.sleep(0.1)
       pag.hotkey('enter')
       time.sleep(500)
-
-
 
 # def 육부촌_문자_AI(): 
 #   #while True:
