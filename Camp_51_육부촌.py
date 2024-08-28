@@ -393,37 +393,65 @@ def 육부촌_주소_AI():
     if keyboard.is_pressed("F2") : # F2 누른게 감지되면
       print("F2 종료")
       break
-    try :   
-      global input_text3
-      print("육부촌_주소_AI")
-      print("주소검색")
-      #주소검색
-      print("주소입력")
-      button = pag.locateCenterOnScreen('./image/51. Kyungju/05._4. Adress.png', confidence=0.7)   
+    button = pag.locateCenterOnScreen('./image/51. Kyungju/05._4. Adress.png', confidence=0.7)  
+    if button == None :
+      None
+    else :
       pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
       pyperclip.copy('반구로55')
       time.sleep(0.3)
       #예)판교역로235
       print("반구로55 입력")
       button = pag.locateCenterOnScreen('./image/51. Kyungju/05._5. Adress.png', confidence=0.7)   
+      time.sleep(0.3)
       pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
       #pag.click(197,135)
-      time.sleep(0.2)
+      time.sleep(0.3)
       #반구로 55 붙이기
-      pag.hotkey('ctrl','v')
-      time.sleep(0.2)
+      pag.hotkey('ctrl','v') #             2024-09-09
+      time.sleep(0.3)
       #입력
       pag.hotkey('enter')
-      time.sleep(0.3)
+      time.sleep(0.5)
       #주소클릭
       print("주소선택")
       button = pag.locateCenterOnScreen('./image/51. Kyungju/05._6. Adress.png', confidence=0.6)   
       pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
       time.sleep(0.2)
-      육부촌_자동입력방지_AI()
-    except :
-      None
-      육부촌_주소_AI()
+      육부촌_자동입력방지_AI()  
+
+    # try :  
+    #   print("육부촌_주소_AI")
+    #   print("주소검색")
+    #   #주소검색
+    #   print("주소입력")
+    #   button = pag.locateCenterOnScreen('./image/51. Kyungju/05._4. Adress.png', confidence=0.7)   
+    #   pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
+    #   pyperclip.copy('반구로55')
+    #   time.sleep(0.4)
+    #   #예)판교역로235
+    #   print("반구로55 입력")
+    #   button = pag.locateCenterOnScreen('./image/51. Kyungju/05._5. Adress.png', confidence=0.7)   
+    #   time.sleep(0.3)
+    #   pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
+    #   #pag.click(197,135)
+    #   time.sleep(0.2)
+    #   #반구로 55 붙이기
+    #   pag.hotkey('ctrl','v') #             2024-09-09
+    #   time.sleep(0.3)
+    #   #입력
+    #   pag.hotkey('enter')
+    #   time.sleep(0.5)
+    #   #주소클릭
+    #   print("주소선택")
+    #   button = pag.locateCenterOnScreen('./image/51. Kyungju/05._6. Adress.png', confidence=0.6)   
+    #   pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
+    #   time.sleep(0.2)
+    #   육부촌_자동입력방지_AI()
+    # except :
+    #   None
+    #   time.sleep(0.2)
+    #   육부촌_주소_AI()
 
 def 육부촌_자동입력방지_AI(): 
       #자동입력방지
