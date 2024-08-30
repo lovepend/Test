@@ -1,94 +1,19 @@
-# from selenium import webdriver
-# from webdriver_manager.chrome import ChromeDriverManager
-# from threading import Thread
-# import time
-# import pyperclip
-# import pyautogui as pag
-# from selenium.webdriver.common.by import By
+from PIL import Image
 
-# # Selenium 작업을 수행할 함수 정의
-# def open_browser(url):
-#     driver = webdriver.Chrome()
-#     driver.get(url)
-#     print(f"{url} - {driver.title}")
-    
-#     try:
-#       while True:
-#         print('로그인')
-#         button = driver.find_element(By.XPATH, '//*[@id="header"]/div[1]/div/ul/li[1]/a')
-#         # 버튼 클릭
-#         button.click()
-#         time.sleep(2)
-#         pass
-#     except:
-#       pass
-    
-#     try:
-#       while True:
-#         print('로그인 클릭')
-#         button = driver.find_element(By.XPATH, '//*[@id="login_ulsan"]/img')
-#         # 버튼 클릭
-#         button.click()
-#         time.sleep(2)
-#         print('로그인 ID')
-#         button = driver.find_element(By.XPATH, '//*[@id="loginfrm"]/fieldset/label/span/input')
-#         # 버튼 클릭
-#         button.click()
-#         pyperclip.copy('pend')
-#         time.sleep(1)
-#         pag.hotkey('ctrl','v')
-#         time.sleep(100)
-#         pass
-#     except:
-#       pass
+# 이미지 파일 경로
+input_image_path = 'captcha1.png'  # 확대할 스크린샷 파일 경로
+output_image_path = 'captcha.png'  # 저장할 파일 경로
 
+# 이미지 열기
+image = Image.open(input_image_path)
 
+# 이미지 크기 가져오기
+width, height = image.size
 
+# 이미지 2배 확대
+enlarged_image = image.resize((width * 2, height * 2))
 
-#     driver.quit()
+# 확대된 이미지 저장
+enlarged_image.save(output_image_path)
 
-# # 실행할 URL 리스트
-# urls = [
-#     "https://camping.ulju.ulsan.kr/",
-#     "https://camping.ulju.ulsan.kr/",
-#     "https://camping.ulju.ulsan.kr/",
-# ]
-
-# # 쓰레드 리스트 초기화
-# threads = []
-
-# # 각 URL에 대해 쓰레드 생성 및 시작
-# for url in urls:
-#     # t = Thread(target=open_browser, args=(url,))
-#     t = Thread(target=open_browser, args=(url,))
-#     t.start()
-#     threads.append(t)
-
-# # 모든 쓰레드가 종료될 때까지 기다림
-# for t in threads:
-#     t.join()
-
-# print("모든 페이지 로딩 완료.")
-
-
-import pyautogui as pag
-import cv2
-import keyboard
-import time
-import pyperclip
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
+print(f"이미지가 {output_image_path}에 저장되었습니다.")

@@ -16,6 +16,7 @@ import easyocr
 import cv2
 import multiprocessing as mp
 import threading
+from PIL import Image
 reader = easyocr.Reader(['en'], gpu=True)
 
 #육부촌 Test 2023.11.17 #Viewer Size 50% #화면 맨아래로 통일 / 일반
@@ -280,6 +281,23 @@ def 육부촌_주소():
   #im1 =  pag.screenshot('captcha.png', region=(727,281,200,70))
   #file = r"C:\Users\LinkTech\Documents\Visual Studio Code\Test\captcha.png"
   file = r"captcha.png"
+  # 이미지 파일 경로
+  input_image_path = 'captcha1.png'  # 확대할 스크린샷 파일 경로
+  output_image_path = 'captcha.png'  # 저장할 파일 경로
+
+  # 이미지 열기
+  image = Image.open(input_image_path)
+
+  # 이미지 크기 가져오기
+  width, height = image.size
+
+  # 이미지 2배 확대
+  enlarged_image = image.resize((width * 2, height * 2))
+
+  # 확대된 이미지 저장
+  enlarged_image.save(output_image_path)
+
+  print(f"이미지가 {output_image_path}에 저장되었습니다.")
   # reader = easyocr.Reader(['en'], gpu=True)
   img = cv2.imread(file)
   text = reader.readtext(img, detail=0)
@@ -457,9 +475,27 @@ def 육부촌_자동입력방지_AI():
       #자동입력방지
       pag.click(965,797)
       print("자동방지입력")
-      im1 =  pag.screenshot('captcha.png', region=(834 , 788 , 69 , 22))
+      im1 =  pag.screenshot('captcha1.png', region=(834 , 788 , 69 , 22))
       #im1 =  pag.screenshot('captcha.png', region=(727,281,200,70))
       #file = r"C:\Users\LinkTech\Documents\Visual Studio Code\Test\captcha.png"
+       # 이미지 파일 경로
+      input_image_path = 'captcha1.png'  # 확대할 스크린샷 파일 경로
+      output_image_path = 'captcha.png'  # 저장할 파일 경로
+
+      # 이미지 열기
+      image = Image.open(input_image_path)
+
+      # 이미지 크기 가져오기
+      width, height = image.size
+
+      # 이미지 2배 확대
+      enlarged_image = image.resize((width * 2, height * 2))
+
+      # 확대된 이미지 저장
+      enlarged_image.save(output_image_path)
+
+      print(f"이미지가 {output_image_path}에 저장되었습니다.")
+
       file = r"captcha.png"
       # reader = easyocr.Reader(['en'], gpu=True)
       img = cv2.imread(file)
