@@ -1,6 +1,8 @@
 #박빙구 REST API = 175e1d2a1cbd7e3bc2eca634e72f5846
 #code = https://kauth.kakao.com/oauth/authorize?client_id=175e1d2a1cbd7e3bc2eca634e72f5846&redirect_uri=https://example.com/oauth&response_type=code&scope=talk_message,friends
 
+#박정철
+#code = https://kauth.kakao.com/oauth/authorize?client_id=bb6714e8dac2cf258c4d3cc708b8d7ac&redirect_uri=https://example.com/oauth&response_type=code&scope=talk_message,friends
 
 
 import requests
@@ -14,7 +16,7 @@ def access_token():
         "grant_type" : "authorization_code",
         "client_id" : "175e1d2a1cbd7e3bc2eca634e72f5846",
         "redirect_url" : "https://localhost:3000",
-        "code" : "UQTKJ26rsd3aowxSVe9EYPpYCmHg-rNAhcgytEtemDDo-uJIOen5cQAAAAQKPXQRAAABkKl3uCQe0jm_MNo9Pw"
+        "code" : "2kg6bD7X8f_ciy56WYYA1qYDhX7XE9V_qrRMg8d77QVQrr2M-LaSBwAAAAQKPXNOAAABkazsdHQq17LwdM8QAg"
     }
     response = requests.post(url, data=data)
     tokens = response.json()
@@ -29,7 +31,7 @@ def refresh_token():
         "grant_type": "refresh_token",
         "client_id": "175e1d2a1cbd7e3bc2eca634e72f5846",
         #"refresh_token": "{refresh_token}"
-        "refresh_token": "t8KxBK3mgJIykzhL_NjMgZe6DUPr_6FYAAAAAgo9c04AAAGQqXidhZIGkKnmukNu" 
+        "refresh_token": "iQz-aEkGBgsOnE_HRaWVax6NmupqF_ZGAAAAAgo8JJoAAAGRrOyxSCrXsvB0zxAC" 
     }
     response = requests.post(url, data=data)
     tokens = response.json()
@@ -119,8 +121,8 @@ def kakao_message_you(kakao_message_send):
 
 #access_token() #access_token()을 발급후 꼭 refresh_token을 기록 할 것 
 
-#refresh_token() #refresh_token을 입력후 테스트 
-#kakao_message_you("안녕하세요")
+refresh_token() #refresh_token을 입력후 테스트 
+kakao_message_you("안녕하세요")
 
 
 
