@@ -1,6 +1,8 @@
 #박빙구 REST API = 175e1d2a1cbd7e3bc2eca634e72f5846
 #code = https://kauth.kakao.com/oauth/authorize?client_id=175e1d2a1cbd7e3bc2eca634e72f5846&redirect_uri=https://example.com/oauth&response_type=code&scope=talk_message,friends
 
+#박정철
+#code = https://kauth.kakao.com/oauth/authorize?client_id=bb6714e8dac2cf258c4d3cc708b8d7ac&redirect_uri=https://example.com/oauth&response_type=code&scope=talk_message,friends
 
 
 import requests
@@ -14,7 +16,7 @@ def access_token():
         "grant_type" : "authorization_code",
         "client_id" : "175e1d2a1cbd7e3bc2eca634e72f5846",
         "redirect_url" : "https://localhost:3000",
-        "code" : "WEum7QPii307ftmX2GWUqNC-buONNVt3GehOnIIBY4tjsJH9S3HIMwAAAAQKPXRpAAABka6NssOo9NUiJo7xnA"
+        "code" : "UQTKJ26rsd3aowxSVe9EYPpYCmHg-rNAhcgytEtemDDo-uJIOen5cQAAAAQKPXQRAAABkKl3uCQe0jm_MNo9Pw"
     }
     response = requests.post(url, data=data)
     tokens = response.json()
@@ -29,7 +31,7 @@ def refresh_token():
         "grant_type": "refresh_token",
         "client_id": "175e1d2a1cbd7e3bc2eca634e72f5846",
         #"refresh_token": "{refresh_token}"
-        "refresh_token": "d2uV_ItBp04iueQdWC0Mlzp0TZKoZcK9AAAAAgo9cxgAAAGRro3vgJIGkKnmukNu" 
+        "refresh_token": "t8KxBK3mgJIykzhL_NjMgZe6DUPr_6FYAAAAAgo9c04AAAGQqXidhZIGkKnmukNu" 
     }
     response = requests.post(url, data=data)
     tokens = response.json()
