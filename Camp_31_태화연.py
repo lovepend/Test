@@ -457,13 +457,13 @@ def 중구예약_B():
   time.sleep(3)
   pag.click(태화연_day1)
   time.sleep(1)
-  pag.click(317,149)#다음달 선택
+  #pag.click(317,149)#다음달 선택
   time.sleep(1)
   pag.click(태화연_day2)
   time.sleep(3)
   pag.click(태화연_day3)
   time.sleep(1)
-  pag.click(1278,149)#다음달 선택
+  #pag.click(1278,149)#다음달 선택
   time.sleep(1)
   pag.click(태화연_day4)
   태화연_Start_검색()#스케쥴
