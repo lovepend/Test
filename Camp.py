@@ -151,10 +151,10 @@ Sinbulbtn8 = Button(frame1, width=5, padx=10, pady=5, text="실시간", command=
 Sinbulbtn8.place(x=100, y=110)
 Sinbulbtn9 = Button(frame1, width=5, padx=10, pady=5, text="실시간T", command=Sinbul_라이브_시간, bg="blue", fg="white", font = ("", 7))
 Sinbulbtn9.place(x=150, y=110)
-Sinbulbtn9 = Button(frame1, width=5, padx=10, pady=5, text="스케줄", command=태화연_자동, bg="yellow", fg="black", font = ("", 7))
-Sinbulbtn9.place(x=200, y=110)
-# Sinbulbtn9 = Button(frame1, width=5, padx=10, pady=5, text="스케줄", command=schedule_job, bg="yellow", fg="black", font = ("", 7))
+# Sinbulbtn9 = Button(frame1, width=5, padx=10, pady=5, text="스케줄", command=태화연_자동, bg="yellow", fg="black", font = ("", 7))
 # Sinbulbtn9.place(x=200, y=110)
+Sinbulbtn9 = Button(frame1, width=5, padx=10, pady=5, text="스케줄", command=schedule_job, bg="yellow", fg="black", font = ("", 7))
+Sinbulbtn9.place(x=200, y=110)
 
 #예약가능사이트만 보기 
 def btn_check():
