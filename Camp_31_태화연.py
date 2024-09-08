@@ -566,7 +566,7 @@ def 태화연_StepA_B():
     button = pag.locateCenterOnScreen("./image/31. Junggu/22. reservation.png", region=태화연_find_rangeB ,confidence=0.95) 
     print(button)
     if (button == None) :
-      pag.click(태화연_day3)
+      pag.click(태화연_day4)
       time.sleep(0.1)
       pag.hotkey('enter')     
       time.sleep(0.1)  
@@ -574,7 +574,7 @@ def 태화연_StepA_B():
       pag.click(button.x,button.y, button='left', clicks=1, interval=0.1)
       태화연_StepB()
   except :
-    pag.click(태화연_day3)
+    pag.click(태화연_day4)
     time.sleep(0.1)
     pag.hotkey('enter')     
     time.sleep(0.1)
@@ -624,7 +624,7 @@ def 태화연_StepC_A() :
       time.sleep(1)
       pag.hotkey('enter')
       time.sleep(1)
-      pag.click(태화연_day3)
+      pag.click(태화연_day4)
       time.sleep(1)
       pag.hotkey('enter')
       태화연_Start()
