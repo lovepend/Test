@@ -1,6 +1,6 @@
-from tkinter import *
 from Folder.kakao_01_api import *
 import pyautogui as pag
+from tkinter import *
 import win32con
 import win32api
 import win32gui
@@ -11,27 +11,11 @@ import pyperclip
 import time 
 import cv2
 
-#태화연 Test 2023.11.17 #Viewer Size 50%
+#태화연 Test 2024.09.08 #Viewer Size 50%
 
-# 변수 설정
-#★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-#★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-
-#차량번호 입력
-#▶▶▶▶▶▶▶▶▶
-global 중구_Car_No
-중구_Car_No = "62소9403"
-
-def 중구_차량번호_입력(차량번호):
-  global 중구_Car_No
-  중구_Car_No = 차량번호
-
-#범위입력
-#▶▶▶▶▶▶▶▶▶
-global 태화연_find_rangeA
-태화연_find_rangeA = 0,0,960,1080
-global 태화연_find_rangeB
-태화연_find_rangeB = 960,0,1920,1080
+#★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+#★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+#변수설정
 
 #아이디입력
 #▶▶▶▶▶▶▶▶▶
@@ -63,18 +47,33 @@ def 태화연_Log_Id4():
 def 태화연_Log_Guest():
   global 태화연_id
   태화연_id = "jhrep2234@nate.com"
-  time.sleep(1)
-  global 태화연_pw
-  태화연_pw = "*Zoavld4fkd"
   print(태화연_id)
-  print(태화연_pw)
+
+#차량번호 입력
+#▶▶▶▶▶▶▶▶▶
+global 중구_Car_No
+중구_Car_No = "62소9403"
+
+def 중구_차량번호_입력(차량번호):
+  global 중구_Car_No
+  중구_Car_No = 차량번호
+
+#범위입력
+#▶▶▶▶▶▶▶▶▶
+global 태화연_find_rangeA
+태화연_find_rangeA = 0,0,960,1080
+global 태화연_find_rangeB
+태화연_find_rangeB = 960,0,960,1080
+#태화연_find_rangeB = 960,0,1920,1080
+
+
 
 #날짜입력
 #▶▶▶▶▶▶▶▶▶
 global 태화연_day1
 태화연_day1 = 205,128
-global 태화연_day3
-태화연_day3 = 1163,128
+global  태화연_day6
+태화연_day6 = 1163,128
 
 def 태화연_Day():
   while True:
@@ -88,89 +87,89 @@ def 태화연_Day():
   while True:
     if keyboard.is_pressed("F2"): 
       time.sleep(0.2)
-      global 태화연_day2
-      태화연_day2  = pag.position()
-      print(태화연_day2)
+      global  태화연_day3
+      태화연_day3  = pag.position()
+      print( 태화연_day3)
       break    
   while True:
     if keyboard.is_pressed("F2"): 
       time.sleep(0.2)
-      global 태화연_day3 
-      #태화연_day3  = pag.position()
-      태화연_day3 = 1167,130
-      print(태화연_day3)
+      global  태화연_day4 
+      # 태화연_day4  = pag.position()
+      태화연_day4 = 1167,130
+      print( 태화연_day4)
       break        
   while True:
     if keyboard.is_pressed("F2"): 
       time.sleep(0.2)
-      global 태화연_day4
-      태화연_day4  = pag.position()
-      print(태화연_day4)
+      global  태화연_day6
+      태화연_day6  = pag.position()
+      print( 태화연_day6)
       break  
 
 def 태화연_Day11():
-  global 태화연_day2
-  태화연_day2 = 297,192
-  print(태화연_day2)
-  global 태화연_day4
-  태화연_day4 = 1257,192
-  print(태화연_day4)
+  global  태화연_day3
+  태화연_day3 = 297,192
+  print( 태화연_day3)
+  global  태화연_day6
+  태화연_day6 = 1257,192
+  print( 태화연_day6)
 
 def 태화연_Day12():
-  global 태화연_day2
-  태화연_day2 = 319,192
-  print(태화연_day2)
-  global 태화연_day4
-  태화연_day4 = 1280,192
-  print(태화연_day4)
+  global  태화연_day3
+  태화연_day3 = 319,192
+  print( 태화연_day3)
+  global  태화연_day6
+  태화연_day6 = 1280,192
+  print( 태화연_day6)
 
-def 태화연_Day21():
-  global 태화연_day2
-  태화연_day2 = 297,206
-  print(태화연_day2)
-  global 태화연_day4
-  태화연_day4 = 1257,206
-  print(태화연_day4)
+def  태화연_day31():
+  global  태화연_day3
+  태화연_day3 = 297,206
+  print( 태화연_day3)
+  global  태화연_day6
+  태화연_day6 = 1257,206
+  print( 태화연_day6)
 
-def 태화연_Day22():
-  global 태화연_day2
-  태화연_day2 = 319,206
-  print(태화연_day2)
-  global 태화연_day4
-  태화연_day4 = 1280,206
-  print(태화연_day4)
+def  태화연_day32():
+  global  태화연_day3
+  태화연_day3 = 319,206
+  print( 태화연_day3)
+  global  태화연_day6
+  태화연_day6 = 1280,206
+  print( 태화연_day6)
 
-def 태화연_Day31():
-  global 태화연_day2
-  태화연_day2 = 297,222
-  print(태화연_day2)
-  global 태화연_day4
-  태화연_day4 = 1257,222
-  print(태화연_day4)
+def  태화연_day41():
+  global  태화연_day3
+  태화연_day3 = 297,222
+  print( 태화연_day3)
+  global  태화연_day6
+  태화연_day6 = 1257,222
+  print( 태화연_day6)
 
-def 태화연_Day32():
-  global 태화연_day2
-  태화연_day2 = 319,222
-  print(태화연_day2)
-  global 태화연_day4
-  태화연_day4 = 1280,222
-  print(태화연_day4)
+def  태화연_day42():
+  global  태화연_day3
+  태화연_day3 = 319,222
+  print( 태화연_day3)
+  global  태화연_day6
+  태화연_day6 = 1280,222
+  print( 태화연_day6)
 
-def 태화연_Day41():
-  global 태화연_day2
-  태화연_day2 = 297,238
-  print(태화연_day2)
-  global 태화연_day4
-  태화연_day4 = 1257,238
-  print(태화연_day4)
+def  태화연_day61():
+  global  태화연_day3
+  태화연_day3 = 297,238
+  print( 태화연_day3)
+  global  태화연_day6
+  태화연_day6 = 1257,238
+  print( 태화연_day6)
 
-def 태화연_Day42():
-  global 태화연_day2
-  태화연_day2 = 319,238
-  print(태화연_day2)
-  global 태화연_day4
-  태화연_day4 = 1280,238
-  print(태화연_day4)
+def  태화연_day62():
+  global  태화연_day3
+  태화연_day3 = 319,238
+  print( 태화연_day3)
+  global  태화연_day6
+  태화연_day6 = 1280,238
+  print( 태화연_day6)
 
 #범위입력
 #▶▶▶▶▶▶▶▶▶
@@ -451,21 +450,18 @@ def 중구예약_B():
   time.sleep(1)
   #날짜 맞추기
   pag.scroll(-413)
-  time.sleep(1)
-  global 태화연_day1
-  global 태화연_day3
   time.sleep(3)
   pag.click(태화연_day1)
   time.sleep(1)
   #pag.click(317,149)#다음달 선택
   time.sleep(1)
-  pag.click(태화연_day2)
-  time.sleep(3)
   pag.click(태화연_day3)
+  time.sleep(3)
+  pag.click(태화연_day4)
   time.sleep(1)
   #pag.click(1278,149)#다음달 선택
   time.sleep(1)
-  pag.click(태화연_day4)
+  pag.click(태화연_day6)
   태화연_Start_검색()#스케쥴
 
 #줍줍함수(시작)
@@ -683,7 +679,9 @@ def 태화연_job1():
             print("중지")
             break
 
-#★★★★★★★★★★★★★★★★★★★ 스케쥴러
+#★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+#★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+#스케줄러
 import subprocess
 import os
 
@@ -699,14 +697,14 @@ def 태화연_자동():
     subprocess.Popen([edge_path, "--new-window", url])
     print("Microsoft Edge가 실행되었습니다.")
     time.sleep(2)
-    pag.hotkey('win','left')    
+    pag.hotkey('win','left')
     time.sleep(2)
     pag.click(600,25)
     time.sleep(2)
   except FileNotFoundError:
     print("Microsoft Edge 실행 파일을 찾을 수 없습니다. 경로를 확인하세요.")
   except Exception as e:
-    print(f"오류 발생: {e}")  
+    print(f"오류 발생: {e}")
 
   # Microsoft Edge의 실행 파일 경로 설정 (Windows의 기본 경로)
   edge_path = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
@@ -721,9 +719,8 @@ def 태화연_자동():
     time.sleep(2)
     pag.hotkey('win','right')
     time.sleep(2)
-    중구_자동입력()  
+    중구_자동입력()
   except FileNotFoundError:
     print("Microsoft Edge 실행 파일을 찾을 수 없습니다. 경로를 확인하세요.")
   except Exception as e:
-    print(f"오류 발생: {e}")  
-  
+    print(f"오류 발생: {e}")
