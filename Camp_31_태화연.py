@@ -123,7 +123,7 @@ def 태화연_Day12():
   태화연_day6 = 1280,192
   print( 태화연_day6)
 
-def  태화연_day31():
+def  태화연_Day21():
   global  태화연_day3
   태화연_day3 = 297,206
   print( 태화연_day3)
@@ -131,7 +131,7 @@ def  태화연_day31():
   태화연_day6 = 1257,206
   print( 태화연_day6)
 
-def  태화연_day32():
+def  태화연_Day22():
   global  태화연_day3
   태화연_day3 = 319,206
   print( 태화연_day3)
@@ -139,7 +139,7 @@ def  태화연_day32():
   태화연_day6 = 1280,206
   print( 태화연_day6)
 
-def  태화연_day41():
+def  태화연_Day31():
   global  태화연_day3
   태화연_day3 = 297,222
   print( 태화연_day3)
@@ -147,7 +147,7 @@ def  태화연_day41():
   태화연_day6 = 1257,222
   print( 태화연_day6)
 
-def  태화연_day42():
+def  태화연_Day32():
   global  태화연_day3
   태화연_day3 = 319,222
   print( 태화연_day3)
@@ -155,7 +155,7 @@ def  태화연_day42():
   태화연_day6 = 1280,222
   print( 태화연_day6)
 
-def  태화연_day61():
+def  태화연_Day41():
   global  태화연_day3
   태화연_day3 = 297,238
   print( 태화연_day3)
@@ -163,7 +163,7 @@ def  태화연_day61():
   태화연_day6 = 1257,238
   print( 태화연_day6)
 
-def  태화연_day62():
+def  태화연_Day42():
   global  태화연_day3
   태화연_day3 = 319,238
   print( 태화연_day3)
