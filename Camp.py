@@ -8,7 +8,6 @@ import clipboard
 import pyperclip
 import schedule
 import time
-
 import cv2
 from Camp_11_울주 import *
 from Camp_12_울주_줍줍 import *
