@@ -72,8 +72,8 @@ global 태화연_find_rangeB
 #▶▶▶▶▶▶▶▶▶
 global 태화연_day1
 태화연_day1 = 205,128
-global  태화연_day6
-태화연_day6 = 1163,128
+global  태화연_day4
+태화연_day4 = 1163,128
 
 def 태화연_Day():
   while True:
