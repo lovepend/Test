@@ -23,7 +23,7 @@ from Folder.Test import *
 
 def schedule_job():    
   # schedule.every().day.at("08:45:00").do(신불산_자동) 
-  schedule.every().day.at("09:50:00").do(태화연_자동) 
+  schedule.every().day.at("08:50:00").do(태화연_자동) 
   # schedule.every().day.at("10:55:00").do(대왕암_자동) 
   # schedule.every().day.at("13:45:00").do(신불산_자동) 
   schedule.every().day.at("15:50:00").do(태화연_자동) 

@@ -12,18 +12,36 @@
 
 # # 결과 출력
 # print(text)
-
-
-
-
-
-
-
-from easyocr import Reader
-import cv2
+from tkinter import *
+# from Folder.kakao_01_api import *
+import pyautogui as pag
+import win32con
+import win32api
+import win32gui
+import keyboard
+import pyperclip
+import clipboard
+import schedule
 import requests
-import numpy as np
-from PIL import ImageFont, ImageDraw, Image
+import time
+import json
+import cv2
+import easyocr
+import cv2
+import multiprocessing as mp
+import threading
+from PIL import Image
+# reader = easyocr.Reader(['en'], gpu=True)
+reader = easyocr.Reader(['ko', 'en'], gpu=True, model_storage_directory= 'korean_g2.pth')
+
+
+
+
+# from easyocr import Reader
+# import cv2
+# import requests
+# import numpy as np
+# from PIL import ImageFont, ImageDraw, Image
 
 
 #clipboard.paste('captcha.png')
@@ -54,14 +72,13 @@ from PIL import ImageFont, ImageDraw, Image
 
 # dir = r"C:\Users\LinkTech\Documents\Visual Studio Code\Test\\"
 
-import easyocr
-import cv2
+# import easyocr
+# import cv2
 
 # import torch torch.cuda.get_device_name(0) torch.cuda.is_available() print(torch.__version__)
 
-file = r"C:\Users\LinkTech\Documents\Visual Studio Code\Test\captcha.png"
+file = r"C:\Users\lovep\Documents\Test\captcha.png"
 #reader = easyocr.Reader(['en'], gpu=True)
-reader = easyocr.Reader(['ko', 'en'], gpu=True, model_storage_directory= 'korean_g2.pth')
 img = cv2.imread(file)
 #img = cv2.imread(im1)
 text = reader.readtext(img, detail=0)

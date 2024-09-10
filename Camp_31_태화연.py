@@ -696,11 +696,11 @@ def 태화연_자동():
   try:
     subprocess.Popen([edge_path, "--new-window", url])
     print("Microsoft Edge가 실행되었습니다.")
-    time.sleep(2)
+    time.sleep(5)
     pag.hotkey('win','left')
-    time.sleep(2)
+    time.sleep(5)
     pag.click(600,25)
-    time.sleep(2)
+    time.sleep(5)
   except FileNotFoundError:
     print("Microsoft Edge 실행 파일을 찾을 수 없습니다. 경로를 확인하세요.")
   except Exception as e:
@@ -716,9 +716,9 @@ def 태화연_자동():
   try:
     subprocess.Popen([edge_path, "--new-window", url])
     print("Microsoft Edge가 실행되었습니다.")
-    time.sleep(2)
+    time.sleep(5)
     pag.hotkey('win','right')
-    time.sleep(2)
+    time.sleep(5)
     중구_자동입력()
   except FileNotFoundError:
     print("Microsoft Edge 실행 파일을 찾을 수 없습니다. 경로를 확인하세요.")
