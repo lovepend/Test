@@ -64,7 +64,7 @@ print(태화연_id)
 #▶▶▶▶▶▶▶▶▶
 def 중구_자동입력():
   #webbrowser.get("windows-default").open('https://www.junggu.ulsan.kr/camping')  
-  time.sleep(1)
+  time.sleep(10)
   #url 클릭
   pag.click(300,60)
   time.sleep(1)
@@ -526,9 +526,10 @@ def 태화연_자동():
   except Exception as e:
     print(f"오류 발생: {e}")  
 
+
 def schedule_job():    
-  schedule.every().day.at("08:50:00").do(태화연_자동) 
-  schedule.every().day.at("15:50:00").do(태화연_자동) 
+  schedule.every().day.at("08:40:00").do(태화연_자동) 
+  schedule.every().day.at("21:40:00").do(태화연_자동) 
   while True:
     schedule.run_pending()
 
