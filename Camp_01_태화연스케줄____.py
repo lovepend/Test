@@ -526,8 +526,6 @@ def 태화연_자동():
   except Exception as e:
     print(f"오류 발생: {e}")  
 
-태화연_자동()
-
 def schedule_job():    
   schedule.every().day.at("08:50:00").do(태화연_자동) 
   schedule.every().day.at("15:50:00").do(태화연_자동) 
