@@ -531,10 +531,12 @@ def 태화연_자동():
     print(f"오류 발생: {e}")  
 
 
-def schedule_job():    
-  schedule.every().day.at("08:40:00").do(태화연_자동) 
-  schedule.every().day.at("15:40:00").do(태화연_자동) 
-  while True:
-    schedule.run_pending()
+태화연_자동()
 
-schedule_job()
+# def schedule_job():    
+#   schedule.every().day.at("08:40:00").do(태화연_자동) 
+#   schedule.every().day.at("15:40:00").do(태화연_자동) 
+#   while True:
+#     schedule.run_pending()
+
+# schedule_job()
