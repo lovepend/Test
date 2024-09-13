@@ -37,6 +37,9 @@ print(태화연_id)
 중구_Car_No = "62소9403"
 #중구_Car_No = "48라7367"
 
+scroll = -413
+#scroll = -300
+
 #장소입력
 # #▶▶▶▶▶▶▶▶▶
 중구_url = 'https://camping.junggu.ulsan.kr/camping/pageCont.do?menuNo=1030300'
@@ -185,7 +188,7 @@ def 중구예약_A():
   pag.hotkey("home")
   time.sleep(5)
   #날짜 맞추기
-  pag.scroll(-413)
+  pag.scroll(scroll)
   time.sleep(3)
   중구예약_B()
 
@@ -262,7 +265,7 @@ def 중구예약_B():
   pag.hotkey("home")
   time.sleep(5)
   #날짜 맞추기
-  pag.scroll(-413)
+  pag.scroll(scroll)
   time.sleep(3)
   pag.click(태화연_day1)
   time.sleep(1)
@@ -530,6 +533,8 @@ def 태화연_자동():
   except Exception as e:
     print(f"오류 발생: {e}")  
 
+
+태화연_자동()
 
 def schedule_job():    
   schedule.every().day.at("08:40:00").do(태화연_자동) 
