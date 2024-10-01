@@ -171,6 +171,7 @@ def 육부촌_Start1():
       print("F2 종료")
       break
     pyperclip.copy('https://www.gyeongju.go.kr/hwarang/page.do?mnu_uid=3516&csr_date=2023-12-09&cs_uid=30&csr_numday=1&step=write&initYear=2023&initMonth=9&currentDay=')
+    #button = pag.locateCenterOnScreen("./image/51. Kyungju/05._99. reservation.png", region = 육부촌_find_range, confidence=0.85) 
     button = pag.locateCenterOnScreen("./image/51. Kyungju/05._99. reservation.png", region = 육부촌_find_range, confidence=0.85) 
     if (button == None) :
       None  
@@ -373,7 +374,7 @@ def 육부촌_줍줍_refresh():
       break
     try : 
       print("육부촌_줍줍_refresh")
-      button = pag.locateCenterOnScreen("./image/51. Kyungju/05._91. reservation.png", region = 육부촌_find_range, confidence=0.8) 
+      button = pag.locateCenterOnScreen("./image/52. Kyungju/05._91. reservation.png", region = 육부촌_find_range, confidence=0.8) 
       if (button == None) :
         pag.hotkey('enter')     
         time.sleep(0.1)   
@@ -387,7 +388,7 @@ def 육부촌_줍줍_refresh():
         time.sleep(0.3)
         육부촌_줍줍()
       else: 
-        육부촌_주소_AI()
+        육부촌_주소1_AI()
     except :
       pag.hotkey('enter')     
       time.sleep(0.1)   
@@ -406,21 +407,24 @@ def 육부촌_줍줍_refresh():
 
 #메인함수(검색)
 #▶▶▶▶▶▶▶▶▶  
-def 육부촌_주소_AI(): 
+def 육부촌_주소1_AI(): 
+  pag.hotkey('pagedown')
+  time.sleep(0.5)
   while True:
     if keyboard.is_pressed("F2") : # F2 누른게 감지되면
       print("F2 종료")
       break
-    button = pag.locateCenterOnScreen('./image/51. Kyungju/05._4. Adress.png', confidence=0.7)  
+    button = pag.locateCenterOnScreen('./image/52. Kyungju/05._4. Adress.png', confidence=0.7)  
     if button == None :
       None
     else :
+      time.sleep(0.5)
       pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
       pyperclip.copy('반구로55')
       time.sleep(0.3)
       #예)판교역로235
       print("반구로55 입력")
-      button = pag.locateCenterOnScreen('./image/51. Kyungju/05._5. Adress.png', confidence=0.7)   
+      button = pag.locateCenterOnScreen('./image/52. Kyungju/05._5. Adress.png', confidence=0.7)   
       time.sleep(0.3)
       pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
       #pag.click(197,135)
@@ -433,10 +437,10 @@ def 육부촌_주소_AI():
       time.sleep(0.5)
       #주소클릭
       print("주소선택")
-      button = pag.locateCenterOnScreen('./image/51. Kyungju/05._6. Adress.png', confidence=0.6)   
+      button = pag.locateCenterOnScreen('./image/52. Kyungju/05._6. Adress.png', confidence=0.6)   
       pag.click(button.x,button.y, button='left', clicks=1, interval=0.1) 
       time.sleep(0.2)
-      육부촌_자동입력방지_AI()  
+      육부촌_자동입력방지1_AI()  
 
     # try :  
     #   print("육부촌_주소_AI")
@@ -471,11 +475,12 @@ def 육부촌_주소_AI():
     #   time.sleep(0.2)
     #   육부촌_주소_AI()
 
-def 육부촌_자동입력방지_AI(): 
+def 육부촌_자동입력방지1_AI(): 
       #자동입력방지
-      pag.click(965,797)
+      pag.click(1005,668)
       print("자동방지입력")
-      im1 =  pag.screenshot('captcha1.png', region=(834 , 788 , 69 , 22))
+      im1 =  pag.screenshot('captcha1.png', region=(730 , 648 , 168 , 43))
+      #im1 =  pag.screenshot('captcha1.png', region=(834 , 788 , 69 , 22))
       #im1 =  pag.screenshot('captcha.png', region=(727,281,200,70))
       #file = r"C:\Users\LinkTech\Documents\Visual Studio Code\Test\captcha.png"
        # 이미지 파일 경로
@@ -512,7 +517,8 @@ def 육부촌_자동입력방지_AI():
       time.sleep(500)
 
 # def 육부촌_문자_AI(): 
-#   #while True:
+#   #while True:522005
+
 #     # if keyboard.is_pressed("F2") : # F2 누른게 감지되면
 #     #   print("F2 종료")
 #     #   break

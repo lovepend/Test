@@ -543,6 +543,7 @@ def job():
 lable1=Label(frame6, text="url", font = ("", 7))
 lable1.place(x=0, y=110)
 
+
 entry_육부촌 = Entry(frame6, width=25, borderwidth=2 , font = ("", 10))
 entry_육부촌.place(x=50, y=110)
 entry_육부촌.insert(0,"2024-08-03",)
