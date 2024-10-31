@@ -3,13 +3,13 @@ import time
 import keyboard
 import random
 
-# while True:w vw v
-#   if keyboard.is_pressed("F2"): # F2 누른게 감지되면
-#     break
-#   pag.click(x=1440, y=444)
+while True:
+  if keyboard.is_pressed("F2"): # F2 누른게 감지되면
+    break
+  pag.click(x=960, y=540)
+  time.sleep(0.3)
 #   num1 = random.randrange(1,10)w
 #   time.sleep(num1)
-pag.click(1603.,927) 
 
 # pag.hotkewwwwwwwwwwwwwwwwwwwsy('f')
 # time.sleep(2) fwwa vww vwsd vw
@@ -17,6 +17,10 @@ pag.click(1603.,927)
 # pag.keyDown('w')   a
 # time.sleep(10)fwsd vwsa vww vwsd vvw
 # pag.keyUp('w')  vwwa
+
+
+
+
 
 while True:
   num = random.randrange(1,6)

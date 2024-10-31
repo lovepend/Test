@@ -19,17 +19,26 @@ import cv2
 #★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 
 
+
+
 #아이디입력
+
+
+
 #▶▶▶▶▶▶▶▶▶
-태화연_id = "lovepend@nate.com"
-#태화연_id = "lovepend@kakao.com"
+#태화연_id = "lovepend@nate.com"
+태화연_id = "lovepend@kakao.com"
 #태화연_id = "lovepend@naver.com"
+
+
 #태화연_id = "parkmc7@naver.com"
 #태화연_id = "jhrep2234@nate.com"
 #태화연_id = "wongiweb@hanmail.net"
 print(태화연_id)
 태화연_pw = "*Zoavld4fkd" 
 #태화연_pw = "Woosun037604@" 
+
+
 
 
 #차량번호 입력

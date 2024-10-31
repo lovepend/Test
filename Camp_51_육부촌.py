@@ -348,6 +348,7 @@ def 육부촌_자동():
 
 #URL 및 새로 고침 함수 
 def 육부촌_줍줍(): 
+  print('육부촌_줍줍')
   while True:
     if keyboard.is_pressed("F2") : # F2 누른게 감지되면
       print("F2 종료")
@@ -368,6 +369,7 @@ def 육부촌_줍줍():
 
 #URL 접속 성공 시 확인 (꼭 확인하세요 이미지 확인 및 실패시 URL 재접속)
 def 육부촌_줍줍_refresh(): 
+  print('육부촌_줍줍_refresh')
   while True:
     if keyboard.is_pressed("F2") : # F2 누른게 감지되면
       print("F2 종료")
@@ -408,13 +410,14 @@ def 육부촌_줍줍_refresh():
 #메인함수(검색)
 #▶▶▶▶▶▶▶▶▶  
 def 육부촌_주소1_AI(): 
+  print('육부촌_주소1_AI')
   pag.hotkey('pagedown')
-  time.sleep(0.5)
+  time.sleep(1)
   while True:
     if keyboard.is_pressed("F2") : # F2 누른게 감지되면
       print("F2 종료")
       break
-    button = pag.locateCenterOnScreen('./image/52. Kyungju/05._4. Adress.png', confidence=0.7)  
+    button = pag.locateCenterOnScreen('./image/52. Kyungju/05._4. Adress.png', confidence=0.8)  
     if button == None :
       None
     else :
@@ -476,10 +479,13 @@ def 육부촌_주소1_AI():
     #   육부촌_주소_AI()
 
 def 육부촌_자동입력방지1_AI(): 
+      print('육부촌_자동입력방지1_AI')
+      pag.click(1029,742)
+      time.sleep(0.2)
       #자동입력방지
-      pag.click(1005,668)
+      pag.click(958,378)
       print("자동방지입력")
-      im1 =  pag.screenshot('captcha1.png', region=(730 , 648 , 168 , 43))
+      im1 =  pag.screenshot('captcha1.png', region=(789 , 362 , 107 , 38))
       #im1 =  pag.screenshot('captcha1.png', region=(834 , 788 , 69 , 22))
       #im1 =  pag.screenshot('captcha.png', region=(727,281,200,70))
       #file = r"C:\Users\LinkTech\Documents\Visual Studio Code\Test\captcha.png"
@@ -494,7 +500,7 @@ def 육부촌_자동입력방지1_AI():
       width, height = image.size
 
       # 이미지 2배 확대
-      enlarged_image = image.resize((width * 2, height * 2))
+      enlarged_image = image.resize((width * 4, height * 4))
 
       # 확대된 이미지 저장
       enlarged_image.save(output_image_path)
