@@ -19,7 +19,7 @@ import threading
 from PIL import Image
 reader = easyocr.Reader(['en'], gpu=True)
 
-#육부촌 Test 2023.11.17 #Viewer Size 50% #화면 맨아래로 통일 / 일반
+#육부촌 Test 2023.11.17 #Viewer Size 67% #화면 맨아래로 통일 / 일반
 
 
 # 변수 설정
@@ -478,9 +478,9 @@ def 육부촌_자동입력방지1_AI():
       pag.click(1029,742)
       time.sleep(0.2)
       #자동입력방지
-      pag.click(976,400)
+      pag.click(988,378)
       print("자동방지입력")
-      im1 =  pag.screenshot('captcha1.png', region=(790 , 386 , 107 , 38))
+      im1 =  pag.screenshot('captcha1.png', region=(787 , 362 , 113 , 38))
       #im1 =  pag.screenshot('captcha1.png', region=(834 , 788 , 69 , 22))
       #im1 =  pag.screenshot('captcha.png', region=(727,281,200,70))
       #file = r"C:\Users\LinkTech\Documents\Visual Studio Code\Test\captcha.png"
@@ -512,7 +512,7 @@ def 육부촌_자동입력방지1_AI():
       print(input_text1) 
       pyperclip.copy(input_text1)
       time.sleep(0.1)
-      pag.hotkey('ctrl','v')
+      pag.write(input_text1)
       time.sleep(0.1)
       pag.hotkey('enter')
       time.sleep(500)
